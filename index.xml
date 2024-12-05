@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Thu, 05 Dec 2024 22:33:13 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 05 Dec 2024 22:55:21 +0100</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://ittechnetworkk.github.io/about/</link>
+      <pubDate>Thu, 05 Dec 2024 22:55:21 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/about/</guid>
+      <description>&lt;p&gt;COMING SOON&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Junos Rollback</title>
       <link>https://ittechnetworkk.github.io/posts/junos-rollback/junos-rollback/</link>
