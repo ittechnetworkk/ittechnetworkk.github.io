@@ -11,10 +11,17 @@
     <atom:link href="https://ittechnetworkk.github.io/tags/junos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Junos Rollback</title>
-      <link>https://ittechnetworkk.github.io/posts/junos-rollback/</link>
+      <link>https://ittechnetworkk.github.io/posts/junos-rollback/junos-rollback/</link>
       <pubDate>Thu, 05 Dec 2024 22:33:13 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/junos-rollback/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/junos-rollback/junos-rollback/</guid>
       <description>&lt;p&gt;Rollback, cihazda yapılan önceki konfigürasyonlara dönebilmeyi sağlayan komuttur. Örneğin cihazda bir konfigürasyon yaptık ve commit ettik. Fakat yapılan konfigürasyon hatalıydı veya başka bir sebepten dolayı eski konfigürasyonu bir şekilde geri almamız gerekiyor. Bu durumda Rollback kullanılır.&lt;/p&gt;&#xA;&lt;p&gt;Rollback dosyalar 50 adettir, 0&amp;rsquo;dan başlar ve sıfırıncı dosya cihazda hali hazırda çalışan konfigürasyon dosyasıdır.&lt;/p&gt;&#xA;&lt;p&gt;Cihaz&amp;rsquo;da 49 Rollback dosyası olması halinde her commit işleminde 49. Rollback dosyasını uçurur.&lt;/p&gt;&#xA;&lt;p&gt;Rollback dosyalarını görmek için;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{master:0}[edit]&#xA;root@vqfx-re# rollback ?             &#xA;Possible completions:&#xA;  &amp;lt;[Enter]&amp;gt;            Execute this command&#xA;  0                    2024-10-07 02:20:28 UTC by root via cli &#xA;  1                    2024-10-07 02:20:20 UTC by root via cli &#xA;  2                    2024-10-07 02:20:19 UTC by root via cli &#xA;  3                    2024-10-07 02:20:18 UTC by root via cli &#xA;  4                    2024-10-07 02:20:17 UTC by root via cli &#xA;  5                    2024-10-07 02:19:57 UTC by root via cli &#xA;  6                    2024-10-07 02:19:37 UTC by root via cli &#xA;  7                    2024-10-07 02:19:34 UTC by root via cli &#xA;  8                    2024-10-07 02:12:37 UTC by root via cli &#xA;  9                    2020-08-19 17:30:33 UTC by root via cli &#xA;  10                   2020-08-19 17:22:59 UTC by root via other &#xA;  |                    Pipe through a command&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Yukarıda görüldüğü gibi, Rollback dosyalarının tarih, saat, kim tarafından, vs. bilgilerini görebiliyoruz. Sıfırıncı dosya çalışan konfigürasyon dosyasıdır.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Junos Commit Usage</title>
+      <link>https://ittechnetworkk.github.io/posts/junos-commit-usage/junos-commit-usage/</link>
+      <pubDate>Fri, 22 Nov 2024 17:53:48 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/junos-commit-usage/junos-commit-usage/</guid>
+      <description>&lt;p&gt;JunOS sistemlerde bir diğer önemli konu ise Commit kullanımıdır.&lt;/p&gt;&#xA;&lt;p&gt;JunOS&amp;rsquo;da commit işlemi, yapılan konfigürasyonu etkinleştirmek için kullanılır. Yani yapılan konfigürasyonu commit etmezsek yaptığımız konfigürasyon geçerli olmaz.&lt;/p&gt;&#xA;&lt;p&gt;Bundan dolayı mutlaka konfigürasyon sonrası commit etmemiz gerekiyor.&lt;/p&gt;&#xA;&lt;p&gt;Commit işlemi yaparken bazı parametreler var ki işleri kolaylaştırır.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Commit tipleri:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&amp;ldquo;commit&amp;rdquo;&lt;/strong&gt; : Bu komut, direkt olarak yapılan konfigürasyonu etkileştirir.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&amp;ldquo;commit check&amp;rdquo;&lt;/strong&gt; : Bu komut, yapılan konfigürasyondan emin olmadığımız durumlarda, yapılan konfigürasyonun doğruluğunu kontrol eder. Eğer bir konfigürasyon hatası varsa bize ilgili kısmın hatasını gösterir.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

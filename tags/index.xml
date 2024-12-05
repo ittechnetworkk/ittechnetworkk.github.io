@@ -23,5 +23,26 @@
       <guid>https://ittechnetworkk.github.io/tags/junos/</guid>
       <description></description>
     </item>
+    <item>
+      <title>Etherchannel</title>
+      <link>https://ittechnetworkk.github.io/tags/etherchannel/</link>
+      <pubDate>Fri, 22 Mar 2024 22:57:40 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/etherchannel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LACP</title>
+      <link>https://ittechnetworkk.github.io/tags/lacp/</link>
+      <pubDate>Fri, 22 Mar 2024 22:57:40 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/lacp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PaGP</title>
+      <link>https://ittechnetworkk.github.io/tags/pagp/</link>
+      <pubDate>Fri, 22 Mar 2024 22:57:40 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/pagp/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
