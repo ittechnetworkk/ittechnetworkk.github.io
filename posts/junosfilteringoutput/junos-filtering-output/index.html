@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Juniper Çıktı Filtreleme | ittechnetworkk</title>
+  <link rel = 'canonical' href = 'https://ittechnetworkk.github.io/posts/junosfilteringoutput/junos-filtering-output/'>
+  <meta name="description" content="Hello, I’m Soner from Turkey. I prefer working with the CLI rather than GUI. On this site, I share my expertise in various technologies, insights into newly learned tools, as well as details of the projects I have completed and those I plan to undertake. I run this blog with the motivation to learn, have fun, and help others along the way.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:url" content="https://ittechnetworkk.github.io/posts/junosfilteringoutput/junos-filtering-output/">
+  <meta property="og:site_name" content="ittechnetworkk">
+  <meta property="og:title" content="Juniper Çıktı Filtreleme">
+  <meta property="og:description" content="JunOS işletim sisteminde çıktıları filtrelemek çoğu zaman hayat kurtarır. JunOS’da bazı çıktılar çok uzun olabiliyor, bu çıktıları filtrelemek amacımıza ulaşmak için zamandan tasarruf sağlıyor.
+JunOS FreeBSD tabanlı olduğu için Linux işletim sistemi bilenler için komutlara aşağı yukarı aşinalık gösterir.
+Linux bilen JunOS’da ve benzeri sistemlerde bir şekilde yolunu bulur.
+Çıktıları filtrelemek JunOS’da oldukça kolaydır. Aşağıdaki filtreleme komutlarını ve açıklamalarını görebilirsiniz.
+Çıktıları filtrelemek için temel olarak pipe “|” komutu ve devamında amaca uygun komutu kullanmak işi çözecektir.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-11-16T22:57:40+01:00">
+    <meta property="article:modified_time" content="2024-11-16T22:57:40+01:00">
+    <meta property="article:tag" content="Junos">
+    <meta property="article:tag" content="Juniper">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Juniper Çıktı Filtreleme">
+  <meta name="twitter:description" content="JunOS işletim sisteminde çıktıları filtrelemek çoğu zaman hayat kurtarır. JunOS’da bazı çıktılar çok uzun olabiliyor, bu çıktıları filtrelemek amacımıza ulaşmak için zamandan tasarruf sağlıyor.
+JunOS FreeBSD tabanlı olduğu için Linux işletim sistemi bilenler için komutlara aşağı yukarı aşinalık gösterir.
+Linux bilen JunOS’da ve benzeri sistemlerde bir şekilde yolunu bulur.
+Çıktıları filtrelemek JunOS’da oldukça kolaydır. Aşağıdaki filtreleme komutlarını ve açıklamalarını görebilirsiniz.
+Çıktıları filtrelemek için temel olarak pipe “|” komutu ve devamında amaca uygun komutu kullanmak işi çözecektir.">
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://ittechnetworkk.github.io/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://ittechnetworkk.github.io/images/favicon.ico" />
+
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://ittechnetworkk.github.io/posts/junosclihelpcommands/junos-cli-help-commands/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://ittechnetworkk.github.io/posts/junos-commit-usage/junos-commit-usage/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fjunosfilteringoutput%2fjunos-filtering-output%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fjunosfilteringoutput%2fjunos-filtering-output%2f&text=Juniper%20%c3%87%c4%b1kt%c4%b1%20Filtreleme" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fjunosfilteringoutput%2fjunos-filtering-output%2f&title=Juniper%20%c3%87%c4%b1kt%c4%b1%20Filtreleme" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fjunosfilteringoutput%2fjunos-filtering-output%2f&is_video=false&description=Juniper%20%c3%87%c4%b1kt%c4%b1%20Filtreleme" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Juniper%20%c3%87%c4%b1kt%c4%b1%20Filtreleme&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fjunosfilteringoutput%2fjunos-filtering-output%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fjunosfilteringoutput%2fjunos-filtering-output%2f&title=Juniper%20%c3%87%c4%b1kt%c4%b1%20Filtreleme" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fjunosfilteringoutput%2fjunos-filtering-output%2f&title=Juniper%20%c3%87%c4%b1kt%c4%b1%20Filtreleme" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fjunosfilteringoutput%2fjunos-filtering-output%2f&name=Juniper%20%c3%87%c4%b1kt%c4%b1%20Filtreleme&description=%3cp%3eJunOS%20i%c5%9fletim%20sisteminde%20%c3%a7%c4%b1kt%c4%b1lar%c4%b1%20filtrelemek%20%c3%a7o%c4%9fu%20zaman%20hayat%20kurtar%c4%b1r.%20JunOS%26rsquo%3bda%20baz%c4%b1%20%c3%a7%c4%b1kt%c4%b1lar%20%c3%a7ok%20uzun%20olabiliyor%2c%20bu%20%c3%a7%c4%b1kt%c4%b1lar%c4%b1%20filtrelemek%20amac%c4%b1m%c4%b1za%20ula%c5%9fmak%20i%c3%a7in%20zamandan%20tasarruf%20sa%c4%9fl%c4%b1yor.%3c%2fp%3e%0a%3cp%3eJunOS%20FreeBSD%20tabanl%c4%b1%20oldu%c4%9fu%20i%c3%a7in%20Linux%20i%c5%9fletim%20sistemi%20bilenler%20i%c3%a7in%20komutlara%20a%c5%9fa%c4%9f%c4%b1%20yukar%c4%b1%20a%c5%9final%c4%b1k%20g%c3%b6sterir.%3c%2fp%3e%0a%3cp%3eLinux%20bilen%20JunOS%26rsquo%3bda%20ve%20benzeri%20sistemlerde%20bir%20%c5%9fekilde%20yolunu%20bulur.%3c%2fp%3e%0a%3cp%3e%c3%87%c4%b1kt%c4%b1lar%c4%b1%20filtrelemek%20JunOS%26rsquo%3bda%20olduk%c3%a7a%20kolayd%c4%b1r.%20A%c5%9fa%c4%9f%c4%b1daki%20filtreleme%20komutlar%c4%b1n%c4%b1%20ve%20a%c3%a7%c4%b1klamalar%c4%b1n%c4%b1%20g%c3%b6rebilirsiniz.%3c%2fp%3e%0a%3cp%3e%c3%87%c4%b1kt%c4%b1lar%c4%b1%20filtrelemek%20i%c3%a7in%20temel%20olarak%20pipe%20%26ldquo%3b%7c%26rdquo%3b%20komutu%20ve%20devam%c4%b1nda%20amaca%20uygun%20komutu%20kullanmak%20i%c5%9fi%20%c3%a7%c3%b6zecektir.%3c%2fp%3e" aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fjunosfilteringoutput%2fjunos-filtering-output%2f&t=Juniper%20%c3%87%c4%b1kt%c4%b1%20Filtreleme" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Juniper Çıktı Filtreleme
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2024-11-16 22:57:40 &#43;0100 CET" itemprop="datePublished">2024-11-16</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          11 minute read
+        </div>
+        
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/junos" rel="tag">junos</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/juniper" rel="tag">juniper</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <p>JunOS işletim sisteminde çıktıları filtrelemek çoğu zaman hayat kurtarır. JunOS&rsquo;da bazı çıktılar çok uzun olabiliyor, bu çıktıları filtrelemek amacımıza ulaşmak için zamandan tasarruf sağlıyor.</p>
+<p>JunOS FreeBSD tabanlı olduğu için Linux işletim sistemi bilenler için komutlara aşağı yukarı aşinalık gösterir.</p>
+<p>Linux bilen JunOS&rsquo;da ve benzeri sistemlerde bir şekilde yolunu bulur.</p>
+<p>Çıktıları filtrelemek JunOS&rsquo;da oldukça kolaydır. Aşağıdaki filtreleme komutlarını ve açıklamalarını görebilirsiniz.</p>
+<p>Çıktıları filtrelemek için temel olarak pipe &ldquo;|&rdquo; komutu ve devamında amaca uygun komutu kullanmak işi çözecektir.</p>
+<p>Genel olarak neleri kullanabildiğimizi görmek için:
+İlk olarak filtreleme yapmak istediğimiz komut</p>
+<pre tabindex="0"><code>root# show | ?
+Possible completions:
+  compare              Compare configuration changes with prior version
+  count                Count occurrences
+  display              Show additional kinds of information
+  except               Show only text that does not match a pattern
+  find                 Search for first occurrence of pattern
+  hold                 Hold text without exiting the --More-- prompt
+  last                 Display end of output only
+  match                Show only text that matches a pattern
+  no-more              Don&#39;t paginate output
+  request              Make system-level requests
+  resolve              Resolve IP addresses
+  save                 Save output text to file
+  trim                 Trim specified number of columns from start of line
+[edit]
+</code></pre><p>Show komutunun olduğu gibi kullanıldığı durumdaki çıktısına bakalım ilk önce:</p>
+<pre tabindex="0"><code>root# show    
+## Last changed: 2024-10-03 20:35:44 UTC
+version 12.1X47-D20.7;
+system {
+    services {
+        ssh;
+        web-management {
+            http {
+                interface ge-0/0/0.0;
+            }
+        }
+    }
+    syslog {
+        user * {
+            any emergency;
+        }
+        file messages {
+            any any;
+            authorization info;
+        }
+        file interactive-commands {
+            interactive-commands any;
+        }
+    }
+    license {                           
+        autoupdate {
+            url https://ae1.juniper.net/junos/key_retrieval;
+        }
+    }
+    ## Warning: missing mandatory statement(s): &#39;root-authentication&#39;
+}
+interfaces {
+    ge-0/0/0 {
+        unit 0 {
+            family inet {
+                address 192.168.1.1/24;
+                ##
+                ## Warning: Incompatible with interface assigned with address
+                ##
+                dhcp-client;
+            }
+        }
+    }
+}
+security {
+    screen {
+        ids-option untrust-screen {
+            icmp {                      
+                ping-death;
+            }
+            ip {
+                source-route-option;
+                tear-drop;
+            }
+            tcp {
+                syn-flood {
+                    alarm-threshold 1024;
+                    attack-threshold 200;
+                    source-threshold 1024;
+                    destination-threshold 2048;
+                    queue-size 2000; ## Warning: &#39;queue-size&#39; is deprecated
+                    timeout 20;
+                }
+                land;
+            }
+        }
+    }
+    policies {
+        from-zone trust to-zone trust {
+            policy default-permit {
+---(more 54%)---
+</code></pre><p>Ve daha da uzuyor.</p>
+<ul>
+<li><strong>| display set:</strong></li>
+</ul>
+<p>Bu komut ile configürasyonları satır satır gösterir.</p>
+<p>Örneğin:</p>
+<pre tabindex="0"><code>root# show | display set 
+set version 12.1X47-D20.7
+set system services ssh
+set system services web-management http interface ge-0/0/0.0
+set system syslog user * any emergency
+set system syslog file messages any any
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands any
+set system license autoupdate url https://ae1.juniper.net/junos/key_retrieval
+set interfaces ge-0/0/0 unit 0 family inet address 192.168.1.1/24
+set interfaces ge-0/0/0 unit 0 family inet dhcp-client
+set security screen ids-option untrust-screen icmp ping-death
+set security screen ids-option untrust-screen ip source-route-option
+set security screen ids-option untrust-screen ip tear-drop
+set security screen ids-option untrust-screen tcp syn-flood alarm-threshold 1024
+set security screen ids-option untrust-screen tcp syn-flood attack-threshold 200
+set security screen ids-option untrust-screen tcp syn-flood source-threshold 1024
+set security screen ids-option untrust-screen tcp syn-flood destination-threshold 2048
+set security screen ids-option untrust-screen tcp syn-flood queue-size 2000
+set security screen ids-option untrust-screen tcp syn-flood timeout 20
+set security screen ids-option untrust-screen tcp land
+---(more)---
+</code></pre><p>Bu komut süslü parantezleri, tabları vs. kaldırır ve komutları olduğu gibi gösterir.</p>
+<ul>
+<li><strong>| count:</strong></li>
+</ul>
+<p>Bu komut çıktının kaç satır olduğunu gösterir.</p>
+<p>Örneğin:</p>
+<pre tabindex="0"><code>root# show |count         
+Count: 126 lines
+
+[edit]
+</code></pre><p>Fakat bu komut çıktıları satır satır saydığı için dosyadaki süslü parantezleri de saydığı için satır sayısını yüksek gösterdi.</p>
+<p>Biz bu komutu &ldquo;show | display set | count&rdquo; şeklinde kullanırsak daha doğru bir sonuç alacağız.</p>
+<p>Örneğin:</p>
+<pre tabindex="0"><code>root# show |display set | count
+Count: 39 lines
+
+[edit]
+</code></pre><ul>
+<li><strong>| compare:</strong></li>
+</ul>
+<p>Bu komut yapılan değişiklikleri bize gösterir. Bu komu bizim hali hazırda kullandığımız konfigürasyon dosyası ile o anda yapılan konfigürasyonu karşılaştırır.  Fakat commit işlemi yaptıktan sonra bu komutu çalıştırırsak birşey görünmeyecektir. Çünkü gösterilecek herhangi bir değişiklik kalmayacaktır. Yapılan değişiklik ana konfigürasyon dosyasına kayıt edilecektir.</p>
+<p>Örneğin:</p>
+<pre tabindex="0"><code>root# show | compare 
+[edit system]
+-   autoinstallation {
+-       delete-upon-commit;
+-       traceoptions {
+-           level verbose;
+-           flag {
+-               all;
+-           }
+-       }
+-   }
+[edit interfaces ge-0/0/0 unit 0]
++     family inet {
++         address 192.168.1.1/24;
++     }
+
+[edit]
+</code></pre><p>Burada &ldquo;-&rdquo; ile gösterilenler silinen konfigürasyonlar, &ldquo;+&rdquo; ile gösterilenler eklenen konfigürasyonlardır.</p>
+<ul>
+<li><strong>| except:</strong></li>
+</ul>
+<p>Bu komuttan sonra vereceğimiz kelimeyi ve o kelimenin kapsadığı çıktıları çıkarır.</p>
+<p>Örneğin:</p>
+<pre tabindex="0"><code>root# show | display set 
+set version 12.1X47-D20.7
+set system services ssh
+set system services web-management http interface ge-0/0/0.0
+set system syslog user * any emergency
+set system syslog file messages any any
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands any
+set system license autoupdate url https://ae1.juniper.net/junos/key_retrieval
+set interfaces ge-0/0/0 unit 0 family inet address 192.168.1.1/24
+set security screen ids-option untrust-screen icmp ping-death
+set security screen ids-option untrust-screen ip source-route-option
+set security screen ids-option untrust-screen ip tear-drop
+set security screen ids-option untrust-screen tcp syn-flood alarm-threshold 1024
+set security screen ids-option untrust-screen tcp syn-flood attack-threshold 200
+set security screen ids-option untrust-screen tcp syn-flood source-threshold 1024
+set security screen ids-option untrust-screen tcp syn-flood destination-threshold 2048
+set security screen ids-option untrust-screen tcp syn-flood queue-size 2000
+set security screen ids-option untrust-screen tcp syn-flood timeout 20
+set security screen ids-option untrust-screen tcp land
+set security policies from-zone trust to-zone trust policy default-permit match source-address any
+set security policies from-zone trust to-zone trust policy default-permit match destination-address any
+set security policies from-zone trust to-zone trust policy default-permit match application any
+set security policies from-zone trust to-zone trust policy default-permit then permit
+set security policies from-zone trust to-zone untrust policy default-permit match source-address any
+set security policies from-zone trust to-zone untrust policy default-permit match destination-address any
+set security policies from-zone trust to-zone untrust policy default-permit match application any
+set security policies from-zone trust to-zone untrust policy default-permit then permit
+set security policies from-zone untrust to-zone trust policy default-deny match source-address any
+set security policies from-zone untrust to-zone trust policy default-deny match destination-address any
+set security policies from-zone untrust to-zone trust policy default-deny match application any
+set security policies from-zone untrust to-zone trust policy default-deny then deny
+set security zones security-zone trust tcp-rst
+set security zones security-zone untrust screen untrust-screen
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services http
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services https
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services ssh
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services telnet
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services dhcp
+
+[edit]
+</code></pre><p>Ben bu çıktıdaki &ldquo;screen&rdquo; geçen satırları görmek istemiyorum.</p>
+<pre tabindex="0"><code>root# show | display set |except screen    
+set version 12.1X47-D20.7
+set system services ssh
+set system services web-management http interface ge-0/0/0.0
+set system syslog user * any emergency
+set system syslog file messages any any
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands any
+set system license autoupdate url https://ae1.juniper.net/junos/key_retrieval
+set interfaces ge-0/0/0 unit 0 family inet address 192.168.1.1/24
+set security policies from-zone trust to-zone trust policy default-permit match source-address any
+set security policies from-zone trust to-zone trust policy default-permit match destination-address any
+set security policies from-zone trust to-zone trust policy default-permit match application any
+set security policies from-zone trust to-zone trust policy default-permit then permit
+set security policies from-zone trust to-zone untrust policy default-permit match source-address any
+set security policies from-zone trust to-zone untrust policy default-permit match destination-address any
+set security policies from-zone trust to-zone untrust policy default-permit match application any
+set security policies from-zone trust to-zone untrust policy default-permit then permit
+set security policies from-zone untrust to-zone trust policy default-deny match source-address any
+set security policies from-zone untrust to-zone trust policy default-deny match destination-address any
+set security policies from-zone untrust to-zone trust policy default-deny match application any
+set security policies from-zone untrust to-zone trust policy default-deny then deny
+set security zones security-zone trust tcp-rst
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services http
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services https
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services ssh
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services telnet
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services dhcp
+
+[edit]
+</code></pre><p>Görüldüğü gibi &ldquo;screen&rdquo; geçen hiçbir satır yok.</p>
+<ul>
+<li><strong>| find:</strong></li>
+</ul>
+<p>Bu komut ise çıktıdaki vereceğimiz komutun alakalı olduğu satırları verecektir. Burada bir kalıp olarak arama yapar.</p>
+<p>Örneğin:</p>
+<pre tabindex="0"><code>root# show | display set | find interface 
+set system services web-management http interface ge-0/0/0.0
+set system syslog user * any emergency
+set system syslog file messages any any
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands any
+set system license autoupdate url https://ae1.juniper.net/junos/key_retrieval
+set interfaces ge-0/0/0 unit 0 family inet address 192.168.1.1/24
+set security screen ids-option untrust-screen icmp ping-death
+set security screen ids-option untrust-screen ip source-route-option
+set security screen ids-option untrust-screen ip tear-drop
+set security screen ids-option untrust-screen tcp syn-flood alarm-threshold 1024
+set security screen ids-option untrust-screen tcp syn-flood attack-threshold 200
+set security screen ids-option untrust-screen tcp syn-flood source-threshold 1024
+set security screen ids-option untrust-screen tcp syn-flood destination-threshold 2048
+set security screen ids-option untrust-screen tcp syn-flood queue-size 2000
+set security screen ids-option untrust-screen tcp syn-flood timeout 20
+set security screen ids-option untrust-screen tcp land
+set security policies from-zone trust to-zone trust policy default-permit match source-address any
+set security policies from-zone trust to-zone trust policy default-permit match destination-address any
+set security policies from-zone trust to-zone trust policy default-permit match application any
+set security policies from-zone trust to-zone trust policy default-permit then permit
+set security policies from-zone trust to-zone untrust policy default-permit match source-address any
+set security policies from-zone trust to-zone untrust policy default-permit match destination-address any
+set security policies from-zone trust to-zone untrust policy default-permit match application any
+set security policies from-zone trust to-zone untrust policy default-permit then permit
+set security policies from-zone untrust to-zone trust policy default-deny match source-address any
+set security policies from-zone untrust to-zone trust policy default-deny match destination-address any
+set security policies from-zone untrust to-zone trust policy default-deny match application any
+set security policies from-zone untrust to-zone trust policy default-deny then deny
+set security zones security-zone trust tcp-rst
+set security zones security-zone untrust screen untrust-screen
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services http
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services https
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services ssh
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services telnet
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services dhcp
+
+[edit]
+</code></pre><ul>
+<li><strong>| match:</strong></li>
+</ul>
+<p>Çıktıda belirli bir kelimenin geçtiği satırı getirir.</p>
+<p>Örneğin:</p>
+<pre tabindex="0"><code>root# show | display set | match interface 
+set system services web-management http interface ge-0/0/0.0
+set interfaces ge-0/0/0 unit 0 family inet address 192.168.1.1/24
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services http
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services https
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services ssh
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services telnet
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services dhcp
+
+[edit]
+</code></pre><ul>
+<li><strong>| last 10:</strong></li>
+</ul>
+<p>Bu komut çıktının son 10 satırını getirir. Tabi bu artırılıp azaltılabilir.</p>
+<p>Örneğin:</p>
+<pre tabindex="0"><code>root# show | display set | last 5    
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services ssh
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services telnet
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services dhcp
+                                        
+[edit]
+</code></pre><ul>
+<li><strong>| no-more:</strong></li>
+</ul>
+<p>Çıktı uzun oladuğu zaman ekranda çıktının tamamı gösterilmez, sayfa sayfa veya satır satır ilerleyebilirsiniz.</p>
+<p>Bu komutla tüm çıktıyı direkt ekranda görebilirsiniz.</p>
+<p>Örneğin:</p>
+<pre tabindex="0"><code>root# show | display set 
+set version 12.1X47-D20.7
+set system services ssh
+set system services web-management http interface ge-0/0/0.0
+set system syslog user * any emergency
+set system syslog file messages any any
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands any
+set system license autoupdate url https://ae1.juniper.net/junos/key_retrieval
+set interfaces ge-0/0/0 unit 0 family inet address 192.168.1.1/24
+set security screen ids-option untrust-screen icmp ping-death
+set security screen ids-option untrust-screen ip source-route-option
+set security screen ids-option untrust-screen ip tear-drop
+set security screen ids-option untrust-screen tcp syn-flood alarm-threshold 1024
+set security screen ids-option untrust-screen tcp syn-flood attack-threshold 200
+set security screen ids-option untrust-screen tcp syn-flood source-threshold 1024
+set security screen ids-option untrust-screen tcp syn-flood destination-threshold 2048
+set security screen ids-option untrust-screen tcp syn-flood queue-size 2000
+set security screen ids-option untrust-screen tcp syn-flood timeout 20
+set security screen ids-option untrust-screen tcp land
+set security policies from-zone trust to-zone trust policy default-permit match source-address any
+---(more)---
+</code></pre><pre tabindex="0"><code>root# show | display set | no-more 
+set version 12.1X47-D20.7
+set system services ssh
+set system services web-management http interface ge-0/0/0.0
+set system syslog user * any emergency
+set system syslog file messages any any
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands any
+set system license autoupdate url https://ae1.juniper.net/junos/key_retrieval
+set interfaces ge-0/0/0 unit 0 family inet address 192.168.1.1/24
+set security screen ids-option untrust-screen icmp ping-death
+set security screen ids-option untrust-screen ip source-route-option
+set security screen ids-option untrust-screen ip tear-drop
+set security screen ids-option untrust-screen tcp syn-flood alarm-threshold 1024
+set security screen ids-option untrust-screen tcp syn-flood attack-threshold 200
+set security screen ids-option untrust-screen tcp syn-flood source-threshold 1024
+set security screen ids-option untrust-screen tcp syn-flood destination-threshold 2048
+set security screen ids-option untrust-screen tcp syn-flood queue-size 2000
+set security screen ids-option untrust-screen tcp syn-flood timeout 20
+set security screen ids-option untrust-screen tcp land
+set security policies from-zone trust to-zone trust policy default-permit match source-address any
+set security policies from-zone trust to-zone trust policy default-permit match destination-address any
+set security policies from-zone trust to-zone trust policy default-permit match application any
+set security policies from-zone trust to-zone trust policy default-permit then permit
+set security policies from-zone trust to-zone untrust policy default-permit match source-address any
+set security policies from-zone trust to-zone untrust policy default-permit match destination-address any
+set security policies from-zone trust to-zone untrust policy default-permit match application any
+set security policies from-zone trust to-zone untrust policy default-permit then permit
+set security policies from-zone untrust to-zone trust policy default-deny match source-address any
+set security policies from-zone untrust to-zone trust policy default-deny match destination-address any
+set security policies from-zone untrust to-zone trust policy default-deny match application any
+set security policies from-zone untrust to-zone trust policy default-deny then deny
+set security zones security-zone trust tcp-rst
+set security zones security-zone untrust screen untrust-screen
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services http
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services https
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services ssh
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services telnet
+set security zones security-zone untrust interfaces ge-0/0/0.0 host-inbound-traffic system-services dhcp
+
+[edit]
+</code></pre><p>Bu komutları yukarıdaki örneklerde gördüğünüz gibi kombine edip de kullanabilirsiniz.</p>
+<p>Teşekkürler,</p>
+<p>İyi Çalışmalar.</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Posts</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fjunosfilteringoutput%2fjunos-filtering-output%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fjunosfilteringoutput%2fjunos-filtering-output%2f&text=Juniper%20%c3%87%c4%b1kt%c4%b1%20Filtreleme" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fjunosfilteringoutput%2fjunos-filtering-output%2f&title=Juniper%20%c3%87%c4%b1kt%c4%b1%20Filtreleme" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fjunosfilteringoutput%2fjunos-filtering-output%2f&is_video=false&description=Juniper%20%c3%87%c4%b1kt%c4%b1%20Filtreleme" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Juniper%20%c3%87%c4%b1kt%c4%b1%20Filtreleme&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fjunosfilteringoutput%2fjunos-filtering-output%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fjunosfilteringoutput%2fjunos-filtering-output%2f&title=Juniper%20%c3%87%c4%b1kt%c4%b1%20Filtreleme" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fjunosfilteringoutput%2fjunos-filtering-output%2f&title=Juniper%20%c3%87%c4%b1kt%c4%b1%20Filtreleme" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fjunosfilteringoutput%2fjunos-filtering-output%2f&name=Juniper%20%c3%87%c4%b1kt%c4%b1%20Filtreleme&description=%3cp%3eJunOS%20i%c5%9fletim%20sisteminde%20%c3%a7%c4%b1kt%c4%b1lar%c4%b1%20filtrelemek%20%c3%a7o%c4%9fu%20zaman%20hayat%20kurtar%c4%b1r.%20JunOS%26rsquo%3bda%20baz%c4%b1%20%c3%a7%c4%b1kt%c4%b1lar%20%c3%a7ok%20uzun%20olabiliyor%2c%20bu%20%c3%a7%c4%b1kt%c4%b1lar%c4%b1%20filtrelemek%20amac%c4%b1m%c4%b1za%20ula%c5%9fmak%20i%c3%a7in%20zamandan%20tasarruf%20sa%c4%9fl%c4%b1yor.%3c%2fp%3e%0a%3cp%3eJunOS%20FreeBSD%20tabanl%c4%b1%20oldu%c4%9fu%20i%c3%a7in%20Linux%20i%c5%9fletim%20sistemi%20bilenler%20i%c3%a7in%20komutlara%20a%c5%9fa%c4%9f%c4%b1%20yukar%c4%b1%20a%c5%9final%c4%b1k%20g%c3%b6sterir.%3c%2fp%3e%0a%3cp%3eLinux%20bilen%20JunOS%26rsquo%3bda%20ve%20benzeri%20sistemlerde%20bir%20%c5%9fekilde%20yolunu%20bulur.%3c%2fp%3e%0a%3cp%3e%c3%87%c4%b1kt%c4%b1lar%c4%b1%20filtrelemek%20JunOS%26rsquo%3bda%20olduk%c3%a7a%20kolayd%c4%b1r.%20A%c5%9fa%c4%9f%c4%b1daki%20filtreleme%20komutlar%c4%b1n%c4%b1%20ve%20a%c3%a7%c4%b1klamalar%c4%b1n%c4%b1%20g%c3%b6rebilirsiniz.%3c%2fp%3e%0a%3cp%3e%c3%87%c4%b1kt%c4%b1lar%c4%b1%20filtrelemek%20i%c3%a7in%20temel%20olarak%20pipe%20%26ldquo%3b%7c%26rdquo%3b%20komutu%20ve%20devam%c4%b1nda%20amaca%20uygun%20komutu%20kullanmak%20i%c5%9fi%20%c3%a7%c3%b6zecektir.%3c%2fp%3e" aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fjunosfilteringoutput%2fjunos-filtering-output%2f&t=Juniper%20%c3%87%c4%b1kt%c4%b1%20Filtreleme" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2024  ittechnetworkk 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>
