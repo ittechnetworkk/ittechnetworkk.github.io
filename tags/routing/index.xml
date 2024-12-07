@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Routing on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/routing/</link>
+    <link>http://localhost:1313/tags/routing/</link>
     <description>Recent content in Routing on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Mon, 18 Mar 2024 17:53:48 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/routing/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/routing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Static Routing</title>
-      <link>https://ittechnetworkk.github.io/posts/statikrouting/static-routing/</link>
+      <link>http://localhost:1313/posts/statikrouting/static-routing/</link>
       <pubDate>Mon, 18 Mar 2024 17:53:48 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/statikrouting/static-routing/</guid>
-      <description>&lt;p&gt;Static Routing, yönlendirme tablosuna manuel olarak route eklenmesidir.&#xA;Topoloji değişikliklerinde networklerin de yine güncellenmesi manuel olarak yapılmalıdır.&#xA;Administrative Distance değeri 1&amp;rsquo;dir&lt;/p&gt;&#xA;&lt;p&gt;Aşağıdaki topolojiyi uygulayacağız.&#xA;&lt;img src=&#34;https://ittechnetworkk.github.io/1.png&#34; alt=&#34;static&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Bu topolojide tüm cihazların birbirleriyle iletişim kurmasını istiyoruz. Başlayalım&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;1-&lt;/strong&gt; Router interfacelerine ve VPC&amp;rsquo;lere IP&amp;rsquo;lerini verelim.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;R1:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;R1#enable &#xA;R1#conf t     &#xA;R1(config)#int e0/0&#xA;R1(config-if)#ip add 192.168.1.1 255.255.255.0&#xA;R1(config-if)#no sh&#xA;R1(config-if)#int s1/0&#xA;R1(config-if)#ip address 2.2.2.2 255.255.255.0&#xA;R1(config-if)#no sh&#xA;R1(config-if)#int s1/1&#xA;R1(config-if)#ip addr 3.3.3.2 255.255.255.0&#xA;R1(config-if)#no sh&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R2:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;R2#enable&#xA;R2#conf t&#xA;R2(config)#int e0/0&#xA;R2(config-if)#ip add 192.168.2.1 255.255.255.0&#xA;R2(config-if)#no sh&#xA;R2(config-if)#int s1/0&#xA;R2(config-if)#ip add 2.2.2.1 255.255.255.0&#xA;R2(config-if)#no sh&#xA;R2(config-if)#int s1/1&#xA;R2(config-if)#ip add 1.1.1.1 255.255.255.0&#xA;R2(config-if)#no sh&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R3:&lt;/strong&gt;&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/statikrouting/static-routing/</guid>
+      <description>&lt;p&gt;Static Routing, yönlendirme tablosuna manuel olarak route eklenmesidir.&#xA;Topoloji değişikliklerinde networklerin de yine güncellenmesi manuel olarak yapılmalıdır.&#xA;Administrative Distance değeri 1&amp;rsquo;dir&lt;/p&gt;&#xA;&lt;p&gt;Aşağıdaki topolojiyi uygulayacağız.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/1.png&#34; alt=&#34;1&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Bu topolojide tüm cihazların birbirleriyle iletişim kurmasını istiyoruz. Başlayalım&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;1-&lt;/strong&gt; Router interfacelerine ve VPC&amp;rsquo;lere IP&amp;rsquo;lerini verelim.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;R1:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;R1#enable &#xA;R1#conf t     &#xA;R1(config)#int e0/0&#xA;R1(config-if)#ip add 192.168.1.1 255.255.255.0&#xA;R1(config-if)#no sh&#xA;R1(config-if)#int s1/0&#xA;R1(config-if)#ip address 2.2.2.2 255.255.255.0&#xA;R1(config-if)#no sh&#xA;R1(config-if)#int s1/1&#xA;R1(config-if)#ip addr 3.3.3.2 255.255.255.0&#xA;R1(config-if)#no sh&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R2:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;R2#enable&#xA;R2#conf t&#xA;R2(config)#int e0/0&#xA;R2(config-if)#ip add 192.168.2.1 255.255.255.0&#xA;R2(config-if)#no sh&#xA;R2(config-if)#int s1/0&#xA;R2(config-if)#ip add 2.2.2.1 255.255.255.0&#xA;R2(config-if)#no sh&#xA;R2(config-if)#int s1/1&#xA;R2(config-if)#ip add 1.1.1.1 255.255.255.0&#xA;R2(config-if)#no sh&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R3:&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
