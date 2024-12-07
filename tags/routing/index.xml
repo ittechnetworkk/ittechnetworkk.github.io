@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cisco on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/cisco/</link>
-    <description>Recent content in Cisco on ittechnetworkk</description>
+    <title>Routing on ittechnetworkk</title>
+    <link>https://ittechnetworkk.github.io/tags/routing/</link>
+    <description>Recent content in Routing on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Mon, 18 Mar 2024 17:53:48 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/cisco/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ittechnetworkk.github.io/tags/routing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Static Routing</title>
       <link>https://ittechnetworkk.github.io/posts/statikrouting/static-routing/</link>
