@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gre on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/gre/</link>
+    <link>https://ittechnetworkk.github.io/tags/gre/</link>
     <description>Recent content in Gre on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Thu, 05 Dec 2024 23:41:12 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/gre/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 07 Jun 2024 17:53:48 +0100</lastBuildDate>
+    <atom:link href="https://ittechnetworkk.github.io/tags/gre/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>GREoverIPsec LAB</title>
-      <link>http://localhost:1313/posts/greoveripsec-lab/greoveripsec-lab/</link>
-      <pubDate>Thu, 05 Dec 2024 23:41:12 +0100</pubDate>
-      <guid>http://localhost:1313/posts/greoveripsec-lab/greoveripsec-lab/</guid>
-      <description>&lt;p&gt;Aşağıdaki topologiye göre ilerleyeceğim. Topolojideki cihazların interfacelerine IP adresleri verilmiştir.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/greoveripsec.jpeg&#34; alt=&#34;GREoverIPSEC.png&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;GRE Config:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;R1:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;R1#conf t&#xA;R1(config)#int tunnel 1&#xA;R1(config-if)#ip addr 192.168.1.1 255.255.255.0&#xA;R1(config-if)#tunnel source e0/0&#xA;R1(config-if)#tunnel destination 200.59.25.2&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R2:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;R1#conf t&#xA;R2(config)#int tunnel 1&#xA;R2(config-if)#ip addr 192.168.1.2 255.255.255.0&#xA;R2(config-if)#tunnel source e0/0&#xA;R2(config-if)#tunnel destination 197.53.15.2 &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;IPsec:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;R1:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;R1(config)#crypto isakmp policy 10&#xA;R1(config-isakmp)#authentication pre-share               (define it later on)&#xA;R1(config-isakmp)#encryption aes&#xA;R1(config-isakmp)#group 14                        (above from 14)&#xA;R1(config-isakmp)#hash sha&#xA;R1(config-isakmp)#exit&#xA;R1(config)#crypto isakmp key BENIMCICIPAROLAM address 200.59.25.2   (pre-share key and next point IP)&#xA;R1(config)#crypto ipsec transform-set AABBCC esp-aes esp-sha-hmac &#xA;R1(cfg-crypto-trans)#mode transport &#xA;R1(cfg-crypto-trans)#exit&#xA;R1(config)#ip access-list extended GRE-IPSEC&#xA;R1(config-ext-nacl)#permit gre host 197.53.15.2 host 200.59.25.2     (src &amp;gt; dst)&#xA;R1(config-ext-nacl)#exit&#xA;R1(config)#crypto map IPSEC-MAP 10 ipsec-isakmp &#xA;R1(config-crypto-map)#match address GRE-IPSEC&#xA;R1(config-crypto-map)#set peer 200.59.25.2&#xA;R1(config-crypto-map)#set transform-set AABBCC&#xA;R1(config-crypto-map)#exit&#xA;R1(config)#int e0/0&#xA;R1(config-if)#crypto map IPSEC-MAP&#xA;R1(config-if)#end&#xA;R1#wr&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R2:&lt;/strong&gt;&lt;/p&gt;</description>
+      <title>GRE Tunnel</title>
+      <link>https://ittechnetworkk.github.io/posts/gretunnel/gre-tunnel/</link>
+      <pubDate>Fri, 07 Jun 2024 17:53:48 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/gretunnel/gre-tunnel/</guid>
+      <description>&lt;p&gt;GRE(Generic Routing Encapsulation) Protokolü, paketin kaynaktan hedefe, oluşturulan tünel sayesinde iletilmesini sağlayan protokoldür.&#xA;GRE, Cisco tarafından geliştirilmiştir.&#xA;GRE kullanarak birden fazla şubesi olan networkler birleştirilebilir.&#xA;Fakat oluşturulan tünelden iletilen paketler okunabilir şekilde iletilir. Yani araya girip trafik dinlenirse, paketler okunabilir. Bu tünel daha sonra güvenli hale de getirilebilir.&#xA;GRE, IP paketini kapsüle ederek yönlendirme yapar.&#xA;Enkapsülasyon yapılırken IP başlığına(20), 4 Byte GRE başlık bilgisi eklenir.&lt;/p&gt;&#xA;&lt;p&gt;Aşağıdaki GRE Lab Topolojisini uygulayacağım.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

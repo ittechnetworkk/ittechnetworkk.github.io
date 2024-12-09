@@ -1,27 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cisco on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/cisco/</link>
-    <description>Recent content in Cisco on ittechnetworkk</description>
+    <title>Switch on ittechnetworkk</title>
+    <link>https://ittechnetworkk.github.io/tags/switch/</link>
+    <description>Recent content in Switch on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Wed, 26 Jun 2024 17:53:48 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/cisco/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ittechnetworkk.github.io/tags/switch/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Temel Switch Konfigürasyonu</title>
       <link>https://ittechnetworkk.github.io/posts/switchconfiguration/switch-conf/</link>
       <pubDate>Wed, 26 Jun 2024 17:53:48 +0100</pubDate>
       <guid>https://ittechnetworkk.github.io/posts/switchconfiguration/switch-conf/</guid>
       <description>&lt;p&gt;Merhaba, bu yazıda Cisco bir Switch&amp;rsquo;in temel bir konfigürasyonunu göstereceğim.&lt;/p&gt;&#xA;&lt;p&gt;Tabi bu konfigürasyonları temel düzelde uygulayacağım, daha kapsamlı konfigürasyon network yapılarına göre, kullanılan teknolojilere göre değişiklik gösterecektir.&lt;/p&gt;&#xA;&lt;p&gt;Uygulayacağım konfigürasyonları sırasıyla aşağıdaki gibi olacaktır:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Hostname,&lt;/li&gt;&#xA;&lt;li&gt;Zaman Konfigürasyonu,&lt;/li&gt;&#xA;&lt;li&gt;Yanlış Girilen Parola Politikası,&lt;/li&gt;&#xA;&lt;li&gt;Enable Password,&lt;/li&gt;&#xA;&lt;li&gt;Banner motd,&lt;/li&gt;&#xA;&lt;li&gt;Kullanıcı Oluşturma,&lt;/li&gt;&#xA;&lt;li&gt;Console Erişimi,&lt;/li&gt;&#xA;&lt;li&gt;SSH Konfigürasyonu,&lt;/li&gt;&#xA;&lt;li&gt;Default Gateway,&lt;/li&gt;&#xA;&lt;li&gt;Disable Ports,&lt;/li&gt;&#xA;&lt;li&gt;Konfigürasyonları Kaydetme,&lt;/li&gt;&#xA;&lt;li&gt;Kontrol.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Başlayalım.&lt;/p&gt;&#xA;&lt;p&gt;Ben konfigürasyonları, Cisco Catalyst 2960 Serisi bir Switch üzerinde uygulayacağım.&lt;/p&gt;&#xA;&lt;p&gt;Console Kablosu  ve Switch görüntü itibariyle aşağıdaki gibidir.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>GRE Tunnel</title>
-      <link>https://ittechnetworkk.github.io/posts/gretunnel/gre-tunnel/</link>
-      <pubDate>Fri, 07 Jun 2024 17:53:48 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/gretunnel/gre-tunnel/</guid>
-      <description>&lt;p&gt;GRE(Generic Routing Encapsulation) Protokolü, paketin kaynaktan hedefe, oluşturulan tünel sayesinde iletilmesini sağlayan protokoldür.&#xA;GRE, Cisco tarafından geliştirilmiştir.&#xA;GRE kullanarak birden fazla şubesi olan networkler birleştirilebilir.&#xA;Fakat oluşturulan tünelden iletilen paketler okunabilir şekilde iletilir. Yani araya girip trafik dinlenirse, paketler okunabilir. Bu tünel daha sonra güvenli hale de getirilebilir.&#xA;GRE, IP paketini kapsüle ederek yönlendirme yapar.&#xA;Enkapsülasyon yapılırken IP başlığına(20), 4 Byte GRE başlık bilgisi eklenir.&lt;/p&gt;&#xA;&lt;p&gt;Aşağıdaki GRE Lab Topolojisini uygulayacağım.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
