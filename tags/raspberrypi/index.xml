@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Raspberrypi on ittechnetworkk</title>
+    <link>https://ittechnetworkk.github.io/tags/raspberrypi/</link>
+    <description>Recent content in Raspberrypi on ittechnetworkk</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>ittechnetworkk</copyright>
+    <lastBuildDate>Tue, 25 Jun 2024 22:57:40 +0100</lastBuildDate>
+    <atom:link href="https://ittechnetworkk.github.io/tags/raspberrypi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Raspberry Pi e-Paper Projesi</title>
+      <link>https://ittechnetworkk.github.io/posts/epaper/raspberry-pi-epaper/</link>
+      <pubDate>Tue, 25 Jun 2024 22:57:40 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/epaper/raspberry-pi-epaper/</guid>
+      <description>&lt;p&gt;Merhabalar, bu yazıda Raspbery Pi Zero kullanarak anlık olarak Saati, Tarihi, IP bilgisini, Hostname&amp;rsquo;i ve Download/Upload değerlerini gösteren bir proje yapacağım.&lt;/p&gt;&#xA;&lt;p&gt;Bu proje için Raspberry Pi Zero&amp;rsquo;ya uygun 2.13Inch bir e-Paper Display kullanacağım.&lt;/p&gt;&#xA;&lt;p&gt;Kullanacağım donanım ve yazılımlar aşağıdaki gibidir.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Raspberry Pi Zero,&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://de.aliexpress.com/item/33005909532.html?spm=a2g0o.order_list.order_list_main.148.42cd5c5fmmGynP&amp;amp;gatewayAdapt=glo2deu&#34;&gt;2.13 Inch E-Paper Display&lt;/a&gt;,&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.amazon.com/-/de/dp/B09JZH16WH/ref=sr_1_3?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&amp;amp;sr=8-3&#34;&gt;3.7V 1000mah UPS&lt;/a&gt;,&lt;/li&gt;&#xA;&lt;li&gt;SD Card,&lt;/li&gt;&#xA;&lt;li&gt;Card Reader,&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.raspberrypi.com/software/&#34;&gt;Raspberry Pi Imager&lt;/a&gt;,&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://de.aliexpress.com/item/1005005924842887.html?spm=a2g0o.order_list.order_list_main.183.42cd5c5fmmGynP&amp;amp;gatewayAdapt=glo2deu&#34;&gt;Ve birkaç vida&lt;/a&gt;.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Donanımlar görüntü itibariyle aşağıdaki gibidir:&#xA;&lt;img src=&#34;https://ittechnetworkk.github.io/images/EPaper/hardware.jpg&#34; alt=&#34;raspberrypi&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;İlk olarak Raspberry Pi Imager kullanarak işletim sistemini SD Kart&amp;rsquo;a yazdıracağım&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
