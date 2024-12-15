@@ -20,11 +20,7 @@
   <meta property="og:description" content="Bu yöntem, IPv4’den IPv6’ya geçiş yöntemlerinden biri olan tünelleme tekniğidir. Bu yöntemde, IPv6 networkleri IPv4 üzerinden tünellenerek birbirleriyle haberleşirler. IPv4-IPv6 geçiş aşamalarında kullanılabilecek bu yöntemin yanı sıra Dual Stack, Translation yöntemleri de vardır.
 IPv4-IPv6 Tünelleme tekniği için aşağıdaki topolojiyi uygulayacağım.
 Yapılacaklar:
-Interfacelere IP ver.
-Sırasıyla tunnel oluştur.
-Statik route yazarak networkleri haberleştir.
-Test
-Interfacelere IP ver. R1:
+Interfacelere IP ver. Sırasıyla tunnel oluştur. Statik route yazarak networkleri haberleştir. Test 1. Interfacelere IP ver. R1:
 R1#configure terminal R1(config)#int e0/0 R1(config-if)#ip addr 192.168.3.2 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e0/1 R1(config-if)#ip addr 192.168.1.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int loopback 0 R1(config-if)#ipv6 addr 2001:1::1/64 R1(config-if)#no sh R1(config-if)#exit R2:">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
@@ -40,11 +36,7 @@ R1#configure terminal R1(config)#int e0/0 R1(config-if)#ip addr 192.168.3.2 255.
   <meta name="twitter:description" content="Bu yöntem, IPv4’den IPv6’ya geçiş yöntemlerinden biri olan tünelleme tekniğidir. Bu yöntemde, IPv6 networkleri IPv4 üzerinden tünellenerek birbirleriyle haberleşirler. IPv4-IPv6 geçiş aşamalarında kullanılabilecek bu yöntemin yanı sıra Dual Stack, Translation yöntemleri de vardır.
 IPv4-IPv6 Tünelleme tekniği için aşağıdaki topolojiyi uygulayacağım.
 Yapılacaklar:
-Interfacelere IP ver.
-Sırasıyla tunnel oluştur.
-Statik route yazarak networkleri haberleştir.
-Test
-Interfacelere IP ver. R1:
+Interfacelere IP ver. Sırasıyla tunnel oluştur. Statik route yazarak networkleri haberleştir. Test 1. Interfacelere IP ver. R1:
 R1#configure terminal R1(config)#int e0/0 R1(config-if)#ip addr 192.168.3.2 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e0/1 R1(config-if)#ip addr 192.168.1.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int loopback 0 R1(config-if)#ipv6 addr 2001:1::1/64 R1(config-if)#no sh R1(config-if)#exit R2:">
 
   
@@ -168,7 +160,7 @@ R1#configure terminal R1(config)#int e0/0 R1(config-if)#ip addr 192.168.3.2 255.
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv4ipv6tunelleme%2fipv4-ipv6-tunelleme%2f&name=IPv4%20IPv6%20T%c3%bcnelleme&description=%3cp%3eBu%20y%c3%b6ntem%2c%20IPv4%26rsquo%3bden%20IPv6%26rsquo%3bya%20ge%c3%a7i%c5%9f%20y%c3%b6ntemlerinden%20biri%20olan%20t%c3%bcnelleme%20tekni%c4%9fidir.%20Bu%20y%c3%b6ntemde%2c%20IPv6%20networkleri%20IPv4%20%c3%bczerinden%20t%c3%bcnellenerek%20birbirleriyle%20haberle%c5%9firler.%20IPv4-IPv6%20ge%c3%a7i%c5%9f%20a%c5%9famalar%c4%b1nda%20kullan%c4%b1labilecek%20bu%20y%c3%b6ntemin%20yan%c4%b1%20s%c4%b1ra%20Dual%20Stack%2c%20Translation%20y%c3%b6ntemleri%20de%20vard%c4%b1r.%3c%2fp%3e%0a%3cp%3eIPv4-IPv6%20T%c3%bcnelleme%20tekni%c4%9fi%20i%c3%a7in%20a%c5%9fa%c4%9f%c4%b1daki%20topolojiyi%20uygulayaca%c4%9f%c4%b1m.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fIpv4Ipv6Tunelleme%2f1.png%22%20alt%3d%22ipv6%22%3e%3c%2fp%3e%0a%3cp%3eYap%c4%b1lacaklar%3a%3c%2fp%3e%0a%3col%3e%0a%3cli%3e%0a%3cp%3eInterfacelere%20IP%20ver.%3c%2fp%3e%0a%3c%2fli%3e%0a%3cli%3e%0a%3cp%3eS%c4%b1ras%c4%b1yla%20tunnel%20olu%c5%9ftur.%3c%2fp%3e%0a%3c%2fli%3e%0a%3cli%3e%0a%3cp%3eStatik%20route%20yazarak%20networkleri%20haberle%c5%9ftir.%3c%2fp%3e%0a%3c%2fli%3e%0a%3cli%3e%0a%3cp%3eTest%3c%2fp%3e%0a%3c%2fli%3e%0a%3cli%3e%0a%3cp%3e%3cstrong%3eInterfacelere%20IP%20ver.%3c%2fstrong%3e%0a%3cstrong%3eR1%3a%3c%2fstrong%3e%3c%2fp%3e%0a%3c%2fli%3e%0a%3c%2fol%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eR1%23configure%20terminal%20%0aR1%28config%29%23int%20e0%2f0%0aR1%28config-if%29%23ip%20addr%20192.168.3.2%20255.255.255.0%0aR1%28config-if%29%23no%20sh%0aR1%28config-if%29%23int%20e0%2f1%0aR1%28config-if%29%23ip%20addr%20192.168.1.1%20255.255.255.0%0aR1%28config-if%29%23no%20sh%0aR1%28config-if%29%23int%20loopback%200%0aR1%28config-if%29%23ipv6%20addr%202001%3a1%3a%3a1%2f64%0aR1%28config-if%29%23no%20sh%0aR1%28config-if%29%23exit%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3e%3cstrong%3eR2%3a%3c%2fstrong%3e%3c%2fp%3e" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv4ipv6tunelleme%2fipv4-ipv6-tunelleme%2f&name=IPv4%20IPv6%20T%c3%bcnelleme&description=%3cp%3eBu%20y%c3%b6ntem%2c%20IPv4%26rsquo%3bden%20IPv6%26rsquo%3bya%20ge%c3%a7i%c5%9f%20y%c3%b6ntemlerinden%20biri%20olan%20t%c3%bcnelleme%20tekni%c4%9fidir.%20Bu%20y%c3%b6ntemde%2c%20IPv6%20networkleri%20IPv4%20%c3%bczerinden%20t%c3%bcnellenerek%20birbirleriyle%20haberle%c5%9firler.%20IPv4-IPv6%20ge%c3%a7i%c5%9f%20a%c5%9famalar%c4%b1nda%20kullan%c4%b1labilecek%20bu%20y%c3%b6ntemin%20yan%c4%b1%20s%c4%b1ra%20Dual%20Stack%2c%20Translation%20y%c3%b6ntemleri%20de%20vard%c4%b1r.%3c%2fp%3e%0a%3cp%3eIPv4-IPv6%20T%c3%bcnelleme%20tekni%c4%9fi%20i%c3%a7in%20a%c5%9fa%c4%9f%c4%b1daki%20topolojiyi%20uygulayaca%c4%9f%c4%b1m.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fIpv4Ipv6Tunelleme%2f1.png%22%20alt%3d%22ipv6%22%3e%3c%2fp%3e%0a%3cp%3eYap%c4%b1lacaklar%3a%3c%2fp%3e%0a%3col%3e%0a%3cli%3eInterfacelere%20IP%20ver.%3c%2fli%3e%0a%3cli%3eS%c4%b1ras%c4%b1yla%20tunnel%20olu%c5%9ftur.%3c%2fli%3e%0a%3cli%3eStatik%20route%20yazarak%20networkleri%20haberle%c5%9ftir.%3c%2fli%3e%0a%3cli%3eTest%3c%2fli%3e%0a%3c%2fol%3e%0a%3cp%3e%3cstrong%3e1.%20Interfacelere%20IP%20ver.%3c%2fstrong%3e%0a%3cstrong%3eR1%3a%3c%2fstrong%3e%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eR1%23configure%20terminal%20%0aR1%28config%29%23int%20e0%2f0%0aR1%28config-if%29%23ip%20addr%20192.168.3.2%20255.255.255.0%0aR1%28config-if%29%23no%20sh%0aR1%28config-if%29%23int%20e0%2f1%0aR1%28config-if%29%23ip%20addr%20192.168.1.1%20255.255.255.0%0aR1%28config-if%29%23no%20sh%0aR1%28config-if%29%23int%20loopback%200%0aR1%28config-if%29%23ipv6%20addr%202001%3a1%3a%3a1%2f64%0aR1%28config-if%29%23no%20sh%0aR1%28config-if%29%23exit%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3e%3cstrong%3eR2%3a%3c%2fstrong%3e%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -233,23 +225,13 @@ R1#configure terminal R1(config)#int e0/0 R1(config-if)#ip addr 192.168.3.2 255.
 <p><img src="/images/Ipv4Ipv6Tunelleme/1.png" alt="ipv6"></p>
 <p>Yapılacaklar:</p>
 <ol>
-<li>
-<p>Interfacelere IP ver.</p>
-</li>
-<li>
-<p>Sırasıyla tunnel oluştur.</p>
-</li>
-<li>
-<p>Statik route yazarak networkleri haberleştir.</p>
-</li>
-<li>
-<p>Test</p>
-</li>
-<li>
-<p><strong>Interfacelere IP ver.</strong>
-<strong>R1:</strong></p>
-</li>
+<li>Interfacelere IP ver.</li>
+<li>Sırasıyla tunnel oluştur.</li>
+<li>Statik route yazarak networkleri haberleştir.</li>
+<li>Test</li>
 </ol>
+<p><strong>1. Interfacelere IP ver.</strong>
+<strong>R1:</strong></p>
 <pre tabindex="0"><code>R1#configure terminal 
 R1(config)#int e0/0
 R1(config-if)#ip addr 192.168.3.2 255.255.255.0
@@ -472,7 +454,7 @@ Success rate is 100 percent (5/5), round-trip min/avg/max = 1/1/2 ms
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv4ipv6tunelleme%2fipv4-ipv6-tunelleme%2f&name=IPv4%20IPv6%20T%c3%bcnelleme&description=%3cp%3eBu%20y%c3%b6ntem%2c%20IPv4%26rsquo%3bden%20IPv6%26rsquo%3bya%20ge%c3%a7i%c5%9f%20y%c3%b6ntemlerinden%20biri%20olan%20t%c3%bcnelleme%20tekni%c4%9fidir.%20Bu%20y%c3%b6ntemde%2c%20IPv6%20networkleri%20IPv4%20%c3%bczerinden%20t%c3%bcnellenerek%20birbirleriyle%20haberle%c5%9firler.%20IPv4-IPv6%20ge%c3%a7i%c5%9f%20a%c5%9famalar%c4%b1nda%20kullan%c4%b1labilecek%20bu%20y%c3%b6ntemin%20yan%c4%b1%20s%c4%b1ra%20Dual%20Stack%2c%20Translation%20y%c3%b6ntemleri%20de%20vard%c4%b1r.%3c%2fp%3e%0a%3cp%3eIPv4-IPv6%20T%c3%bcnelleme%20tekni%c4%9fi%20i%c3%a7in%20a%c5%9fa%c4%9f%c4%b1daki%20topolojiyi%20uygulayaca%c4%9f%c4%b1m.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fIpv4Ipv6Tunelleme%2f1.png%22%20alt%3d%22ipv6%22%3e%3c%2fp%3e%0a%3cp%3eYap%c4%b1lacaklar%3a%3c%2fp%3e%0a%3col%3e%0a%3cli%3e%0a%3cp%3eInterfacelere%20IP%20ver.%3c%2fp%3e%0a%3c%2fli%3e%0a%3cli%3e%0a%3cp%3eS%c4%b1ras%c4%b1yla%20tunnel%20olu%c5%9ftur.%3c%2fp%3e%0a%3c%2fli%3e%0a%3cli%3e%0a%3cp%3eStatik%20route%20yazarak%20networkleri%20haberle%c5%9ftir.%3c%2fp%3e%0a%3c%2fli%3e%0a%3cli%3e%0a%3cp%3eTest%3c%2fp%3e%0a%3c%2fli%3e%0a%3cli%3e%0a%3cp%3e%3cstrong%3eInterfacelere%20IP%20ver.%3c%2fstrong%3e%0a%3cstrong%3eR1%3a%3c%2fstrong%3e%3c%2fp%3e%0a%3c%2fli%3e%0a%3c%2fol%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eR1%23configure%20terminal%20%0aR1%28config%29%23int%20e0%2f0%0aR1%28config-if%29%23ip%20addr%20192.168.3.2%20255.255.255.0%0aR1%28config-if%29%23no%20sh%0aR1%28config-if%29%23int%20e0%2f1%0aR1%28config-if%29%23ip%20addr%20192.168.1.1%20255.255.255.0%0aR1%28config-if%29%23no%20sh%0aR1%28config-if%29%23int%20loopback%200%0aR1%28config-if%29%23ipv6%20addr%202001%3a1%3a%3a1%2f64%0aR1%28config-if%29%23no%20sh%0aR1%28config-if%29%23exit%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3e%3cstrong%3eR2%3a%3c%2fstrong%3e%3c%2fp%3e" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv4ipv6tunelleme%2fipv4-ipv6-tunelleme%2f&name=IPv4%20IPv6%20T%c3%bcnelleme&description=%3cp%3eBu%20y%c3%b6ntem%2c%20IPv4%26rsquo%3bden%20IPv6%26rsquo%3bya%20ge%c3%a7i%c5%9f%20y%c3%b6ntemlerinden%20biri%20olan%20t%c3%bcnelleme%20tekni%c4%9fidir.%20Bu%20y%c3%b6ntemde%2c%20IPv6%20networkleri%20IPv4%20%c3%bczerinden%20t%c3%bcnellenerek%20birbirleriyle%20haberle%c5%9firler.%20IPv4-IPv6%20ge%c3%a7i%c5%9f%20a%c5%9famalar%c4%b1nda%20kullan%c4%b1labilecek%20bu%20y%c3%b6ntemin%20yan%c4%b1%20s%c4%b1ra%20Dual%20Stack%2c%20Translation%20y%c3%b6ntemleri%20de%20vard%c4%b1r.%3c%2fp%3e%0a%3cp%3eIPv4-IPv6%20T%c3%bcnelleme%20tekni%c4%9fi%20i%c3%a7in%20a%c5%9fa%c4%9f%c4%b1daki%20topolojiyi%20uygulayaca%c4%9f%c4%b1m.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fIpv4Ipv6Tunelleme%2f1.png%22%20alt%3d%22ipv6%22%3e%3c%2fp%3e%0a%3cp%3eYap%c4%b1lacaklar%3a%3c%2fp%3e%0a%3col%3e%0a%3cli%3eInterfacelere%20IP%20ver.%3c%2fli%3e%0a%3cli%3eS%c4%b1ras%c4%b1yla%20tunnel%20olu%c5%9ftur.%3c%2fli%3e%0a%3cli%3eStatik%20route%20yazarak%20networkleri%20haberle%c5%9ftir.%3c%2fli%3e%0a%3cli%3eTest%3c%2fli%3e%0a%3c%2fol%3e%0a%3cp%3e%3cstrong%3e1.%20Interfacelere%20IP%20ver.%3c%2fstrong%3e%0a%3cstrong%3eR1%3a%3c%2fstrong%3e%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eR1%23configure%20terminal%20%0aR1%28config%29%23int%20e0%2f0%0aR1%28config-if%29%23ip%20addr%20192.168.3.2%20255.255.255.0%0aR1%28config-if%29%23no%20sh%0aR1%28config-if%29%23int%20e0%2f1%0aR1%28config-if%29%23ip%20addr%20192.168.1.1%20255.255.255.0%0aR1%28config-if%29%23no%20sh%0aR1%28config-if%29%23int%20loopback%200%0aR1%28config-if%29%23ipv6%20addr%202001%3a1%3a%3a1%2f64%0aR1%28config-if%29%23no%20sh%0aR1%28config-if%29%23exit%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3e%3cstrong%3eR2%3a%3c%2fstrong%3e%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

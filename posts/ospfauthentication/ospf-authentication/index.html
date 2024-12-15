@@ -18,7 +18,9 @@
   <meta property="og:site_name" content="ittechnetworkk">
   <meta property="og:title" content="OSPF Authentication">
   <meta property="og:description" content="OSPF Authentication, OSPF network trafiğinin güvenliğini artırmak amacıyla kullanılır. 3 Çeşit doğrulama yöntemi vardır;
-1- Plain Text Authentication, 2- MD5 Authentication, 3- SHA-HMAC Authentication (IOS 15.4 ve sonrası versiyonlar için)
+1- Plain Text Authentication,
+2- MD5 Authentication,
+3- SHA-HMAC Authentication (IOS 15.4 ve sonrası versiyonlar için)
 Aşağıdaki topolojiyi uygulayacağız.
 Bu topolojide 3 Authentication metodunu da uygulayacağız.
 R1 ve R3 arasında Plain Text Authentication (Area 1),
@@ -37,7 +39,9 @@ R2 ve R4 arasında SHA-HMAC Authentication yapacağız. (Area 2)
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="OSPF Authentication">
   <meta name="twitter:description" content="OSPF Authentication, OSPF network trafiğinin güvenliğini artırmak amacıyla kullanılır. 3 Çeşit doğrulama yöntemi vardır;
-1- Plain Text Authentication, 2- MD5 Authentication, 3- SHA-HMAC Authentication (IOS 15.4 ve sonrası versiyonlar için)
+1- Plain Text Authentication,
+2- MD5 Authentication,
+3- SHA-HMAC Authentication (IOS 15.4 ve sonrası versiyonlar için)
 Aşağıdaki topolojiyi uygulayacağız.
 Bu topolojide 3 Authentication metodunu da uygulayacağız.
 R1 ve R3 arasında Plain Text Authentication (Area 1),
@@ -166,7 +170,7 @@ R2 ve R4 arasında SHA-HMAC Authentication yapacağız. (Area 2)
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfauthentication%2fospf-authentication%2f&name=OSPF%20Authentication&description=%3cp%3eOSPF%20Authentication%2c%20OSPF%20network%20trafi%c4%9finin%20g%c3%bcvenli%c4%9fini%20art%c4%b1rmak%20amac%c4%b1yla%20kullan%c4%b1l%c4%b1r.%0a3%20%c3%87e%c5%9fit%20do%c4%9frulama%20y%c3%b6ntemi%20vard%c4%b1r%3b%3c%2fp%3e%0a%3cp%3e%3cstrong%3e1-%20Plain%20Text%20Authentication%2c%3c%2fstrong%3e%0a%3cstrong%3e2-%20MD5%20Authentication%2c%3c%2fstrong%3e%0a%3cstrong%3e3-%20SHA-HMAC%20Authentication%20%28IOS%2015.4%20ve%20sonras%c4%b1%20versiyonlar%20i%c3%a7in%29%3c%2fstrong%3e%3c%2fp%3e%0a%3cp%3eA%c5%9fa%c4%9f%c4%b1daki%20topolojiyi%20uygulayaca%c4%9f%c4%b1z.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fospf-authentication%2f1.png%22%20alt%3d%22ospf%22%3e%3c%2fp%3e%0a%3cp%3eBu%20topolojide%203%20Authentication%20metodunu%20da%20uygulayaca%c4%9f%c4%b1z.%3c%2fp%3e%0a%3cp%3eR1%20ve%20R3%20aras%c4%b1nda%20Plain%20Text%20Authentication%20%28Area%201%29%2c%3c%2fp%3e%0a%3cp%3eR1%20ve%20R2%20aras%c4%b1nda%20MD5%20Authentication%20%28Area%200%29%2c%3c%2fp%3e%0a%3cp%3eR2%20ve%20R4%20aras%c4%b1nda%20SHA-HMAC%20Authentication%20yapaca%c4%9f%c4%b1z.%20%28Area%202%29%3c%2fp%3e%0a%3cp%3e%3cstrong%3e1-%20Interfacelere%20IP%20vererek%20ba%c5%9flayal%c4%b1m%3a%3c%2fstrong%3e%3c%2fp%3e" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfauthentication%2fospf-authentication%2f&name=OSPF%20Authentication&description=%3cp%3eOSPF%20Authentication%2c%20OSPF%20network%20trafi%c4%9finin%20g%c3%bcvenli%c4%9fini%20art%c4%b1rmak%20amac%c4%b1yla%20kullan%c4%b1l%c4%b1r.%0a3%20%c3%87e%c5%9fit%20do%c4%9frulama%20y%c3%b6ntemi%20vard%c4%b1r%3b%3c%2fp%3e%0a%3cp%3e1-%20Plain%20Text%20Authentication%2c%3c%2fp%3e%0a%3cp%3e2-%20MD5%20Authentication%2c%3c%2fp%3e%0a%3cp%3e3-%20SHA-HMAC%20Authentication%20%28IOS%2015.4%20ve%20sonras%c4%b1%20versiyonlar%20i%c3%a7in%29%3c%2fp%3e%0a%3cp%3eA%c5%9fa%c4%9f%c4%b1daki%20topolojiyi%20uygulayaca%c4%9f%c4%b1z.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fospf-authentication%2f1.png%22%20alt%3d%22ospf%22%3e%3c%2fp%3e%0a%3cp%3eBu%20topolojide%203%20Authentication%20metodunu%20da%20uygulayaca%c4%9f%c4%b1z.%3c%2fp%3e%0a%3cp%3eR1%20ve%20R3%20aras%c4%b1nda%20Plain%20Text%20Authentication%20%28Area%201%29%2c%3c%2fp%3e%0a%3cp%3eR1%20ve%20R2%20aras%c4%b1nda%20MD5%20Authentication%20%28Area%200%29%2c%3c%2fp%3e%0a%3cp%3eR2%20ve%20R4%20aras%c4%b1nda%20SHA-HMAC%20Authentication%20yapaca%c4%9f%c4%b1z.%20%28Area%202%29%3c%2fp%3e%0a%3cp%3e%3cstrong%3e1-%20Interfacelere%20IP%20vererek%20ba%c5%9flayal%c4%b1m%3a%3c%2fstrong%3e%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -228,9 +232,9 @@ R2 ve R4 arasında SHA-HMAC Authentication yapacağız. (Area 2)
     <div class="content" itemprop="articleBody">
       <p>OSPF Authentication, OSPF network trafiğinin güvenliğini artırmak amacıyla kullanılır.
 3 Çeşit doğrulama yöntemi vardır;</p>
-<p><strong>1- Plain Text Authentication,</strong>
-<strong>2- MD5 Authentication,</strong>
-<strong>3- SHA-HMAC Authentication (IOS 15.4 ve sonrası versiyonlar için)</strong></p>
+<p>1- Plain Text Authentication,</p>
+<p>2- MD5 Authentication,</p>
+<p>3- SHA-HMAC Authentication (IOS 15.4 ve sonrası versiyonlar için)</p>
 <p>Aşağıdaki topolojiyi uygulayacağız.</p>
 <p><img src="/images/ospf-authentication/1.png" alt="ospf"></p>
 <p>Bu topolojide 3 Authentication metodunu da uygulayacağız.</p>
@@ -411,7 +415,7 @@ R4(config-if)#ip ospf authentication key-chain R4
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfauthentication%2fospf-authentication%2f&name=OSPF%20Authentication&description=%3cp%3eOSPF%20Authentication%2c%20OSPF%20network%20trafi%c4%9finin%20g%c3%bcvenli%c4%9fini%20art%c4%b1rmak%20amac%c4%b1yla%20kullan%c4%b1l%c4%b1r.%0a3%20%c3%87e%c5%9fit%20do%c4%9frulama%20y%c3%b6ntemi%20vard%c4%b1r%3b%3c%2fp%3e%0a%3cp%3e%3cstrong%3e1-%20Plain%20Text%20Authentication%2c%3c%2fstrong%3e%0a%3cstrong%3e2-%20MD5%20Authentication%2c%3c%2fstrong%3e%0a%3cstrong%3e3-%20SHA-HMAC%20Authentication%20%28IOS%2015.4%20ve%20sonras%c4%b1%20versiyonlar%20i%c3%a7in%29%3c%2fstrong%3e%3c%2fp%3e%0a%3cp%3eA%c5%9fa%c4%9f%c4%b1daki%20topolojiyi%20uygulayaca%c4%9f%c4%b1z.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fospf-authentication%2f1.png%22%20alt%3d%22ospf%22%3e%3c%2fp%3e%0a%3cp%3eBu%20topolojide%203%20Authentication%20metodunu%20da%20uygulayaca%c4%9f%c4%b1z.%3c%2fp%3e%0a%3cp%3eR1%20ve%20R3%20aras%c4%b1nda%20Plain%20Text%20Authentication%20%28Area%201%29%2c%3c%2fp%3e%0a%3cp%3eR1%20ve%20R2%20aras%c4%b1nda%20MD5%20Authentication%20%28Area%200%29%2c%3c%2fp%3e%0a%3cp%3eR2%20ve%20R4%20aras%c4%b1nda%20SHA-HMAC%20Authentication%20yapaca%c4%9f%c4%b1z.%20%28Area%202%29%3c%2fp%3e%0a%3cp%3e%3cstrong%3e1-%20Interfacelere%20IP%20vererek%20ba%c5%9flayal%c4%b1m%3a%3c%2fstrong%3e%3c%2fp%3e" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfauthentication%2fospf-authentication%2f&name=OSPF%20Authentication&description=%3cp%3eOSPF%20Authentication%2c%20OSPF%20network%20trafi%c4%9finin%20g%c3%bcvenli%c4%9fini%20art%c4%b1rmak%20amac%c4%b1yla%20kullan%c4%b1l%c4%b1r.%0a3%20%c3%87e%c5%9fit%20do%c4%9frulama%20y%c3%b6ntemi%20vard%c4%b1r%3b%3c%2fp%3e%0a%3cp%3e1-%20Plain%20Text%20Authentication%2c%3c%2fp%3e%0a%3cp%3e2-%20MD5%20Authentication%2c%3c%2fp%3e%0a%3cp%3e3-%20SHA-HMAC%20Authentication%20%28IOS%2015.4%20ve%20sonras%c4%b1%20versiyonlar%20i%c3%a7in%29%3c%2fp%3e%0a%3cp%3eA%c5%9fa%c4%9f%c4%b1daki%20topolojiyi%20uygulayaca%c4%9f%c4%b1z.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fospf-authentication%2f1.png%22%20alt%3d%22ospf%22%3e%3c%2fp%3e%0a%3cp%3eBu%20topolojide%203%20Authentication%20metodunu%20da%20uygulayaca%c4%9f%c4%b1z.%3c%2fp%3e%0a%3cp%3eR1%20ve%20R3%20aras%c4%b1nda%20Plain%20Text%20Authentication%20%28Area%201%29%2c%3c%2fp%3e%0a%3cp%3eR1%20ve%20R2%20aras%c4%b1nda%20MD5%20Authentication%20%28Area%200%29%2c%3c%2fp%3e%0a%3cp%3eR2%20ve%20R4%20aras%c4%b1nda%20SHA-HMAC%20Authentication%20yapaca%c4%9f%c4%b1z.%20%28Area%202%29%3c%2fp%3e%0a%3cp%3e%3cstrong%3e1-%20Interfacelere%20IP%20vererek%20ba%c5%9flayal%c4%b1m%3a%3c%2fstrong%3e%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
