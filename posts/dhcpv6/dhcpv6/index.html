@@ -232,25 +232,13 @@ DHCPv6, DHCPv4&rsquo;den bazı özellikleriyle ayrılıyor. DHCPv6 2 şekilde ya
 <p><img src="/images/dhcpv6/1.png" alt="dhcpv6"></p>
 <p>Yapılacaklar:</p>
 <ol>
-<li>
-<p>Router&rsquo;ın Interfacelerine ilgili IPv6 adreslerini ver,</p>
-</li>
-<li>
-<p>Network A için Stateless (SLAAC) konfigürasyonu yap,</p>
-</li>
-<li>
-<p>Network B için Stateful DHCPv6 konfigürasyonu yap,</p>
-</li>
-<li>
-<p>Network C için SLAAC + DHCPv6 konfigürasyonu yap,</p>
-</li>
-<li>
-<p>Kontrol et.</p>
-</li>
-<li>
-<p>Router&rsquo;ın Interfacelerine ilgili IPv6 adreslerini ver:</p>
-</li>
+<li>Router&rsquo;ın Interfacelerine ilgili IPv6 adreslerini ver,</li>
+<li>Network A için Stateless (SLAAC) konfigürasyonu yap,</li>
+<li>Network B için Stateful DHCPv6 konfigürasyonu yap,</li>
+<li>Network C için SLAAC + DHCPv6 konfigürasyonu yap,</li>
+<li>Kontrol et.</li>
 </ol>
+<p><strong>1. Router&rsquo;ın Interfacelerine ilgili IPv6 adreslerini ver:</strong></p>
 <p><strong>R1:</strong></p>
 <pre tabindex="0"><code>R1#configure terminal
 R1(config)#ipv6 unicast-routing 
@@ -264,9 +252,7 @@ R1(config-if)#int e0/2
 R1(config-if)#ipv6 addr 2001:30::1/64
 R1(config-if)#no sh
 R1(config-if)#exit
-</code></pre><ol start="2">
-<li>Network A için Stateless (SLAAC) konfigürasyonu yap,</li>
-</ol>
+</code></pre><p><strong>2. Network A için Stateless (SLAAC) konfigürasyonu yap</strong></p>
 <p>Bunun için VPC1 cihazının IP ayarlarını &ldquo;auto&rdquo; ya çektiğim zaman R1&rsquo;den ilgili parametreleri otomatik alacaktır.</p>
 <p><strong>VPC1:</strong></p>
 <pre tabindex="0"><code>VPCS&gt; ip auto
@@ -300,9 +286,7 @@ VPCS&gt; ping 2001:30::1
 </code></pre><p>Görüldüğü gibi IPv6 adresini R1 üzerinden almış oldu. ve diğer networklere ping atabiliyor.
 IPv6 adresi alma süreci de aşağıdaki gibidir.</p>
 <p><img src="/images/dhcpv6/2.png" alt="dhcpv6"></p>
-<ol start="3">
-<li>Network B için Stateful DHCPv6 konfigürasyonu yap.</li>
-</ol>
+<p><strong>3. Network B için Stateful DHCPv6 konfigürasyonu yap.</strong></p>
 <p>Şimdi ise normal bir şekilde DHCPv6 Server konfigürasyonu yapıp IP, DNS parametrelerini dağıtacağız.</p>
 <p><strong>R1:</strong></p>
 <pre tabindex="0"><code>R1#configure terminal  
@@ -319,9 +303,7 @@ R1(config-if)#exit
 <p><img src="/images/dhcpv6/3.png" alt="dhcpv6"></p>
 <p>Görüldüğü gibi hem IP hem DNS parametrelerini almış.
 Şimdi DNS parametresini almadığı duruma bakalım.</p>
-<ol start="4">
-<li>Network C için SLAAC + DHCPv6 konfigürasyonu yap.</li>
-</ol>
+<p><strong>4. Network C için SLAAC + DHCPv6 konfigürasyonu yap.</strong></p>
 <p>Şimdi ise SLAAC yönteminde alamadığımız DNS bilgilerini DHCPv6 server üzerinden alacağız.
 Bunun için ise, 0 Flag&rsquo;ini 1 olarak ayarlayacağız.
 Öncelikle Network C&rsquo;de bulunan cihazının IPv6 ayarını &ldquo;auto&rdquo; yapalım ve DNS bilgisi alıp almadığına bakalım.</p>
