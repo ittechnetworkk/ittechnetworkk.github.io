@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Multilink on ittechnetworkk</title>
+    <link>https://ittechnetworkk.github.io/tags/multilink/</link>
+    <description>Recent content in Multilink on ittechnetworkk</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>ittechnetworkk</copyright>
+    <lastBuildDate>Sun, 14 Apr 2024 22:57:40 +0100</lastBuildDate>
+    <atom:link href="https://ittechnetworkk.github.io/tags/multilink/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PPP Multilink Konfigürasyonu</title>
+      <link>https://ittechnetworkk.github.io/posts/pppmultilink/ppp-multilink/</link>
+      <pubDate>Sun, 14 Apr 2024 22:57:40 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/pppmultilink/ppp-multilink/</guid>
+      <description>&lt;p&gt;PPP Multilink, routerlar arasındaki birden fazla fiziksel bağlantıyı tek bir mantıksal bağlantı yapmak amacıyla kullanılır.&#xA;Bazı özellikleri:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Yük Dengeleme,&lt;/li&gt;&#xA;&lt;li&gt;Bant Genişliğinin Artırılması,&lt;/li&gt;&#xA;&lt;li&gt;Verimlilik,&lt;/li&gt;&#xA;&lt;li&gt;Yedeklilik.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Multilink PPP LAB:&lt;/strong&gt;&#xA;Aşağıdaki basit yapıyı konfigüre edeceğim.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/ppp-multilink/1.png&#34; alt=&#34;ppp&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Bu yapıda serial 4 kablo ile bağlanmış iki router var. R1 ile başlayalım.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;R1:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;R1#conf t&#xA;R1(config)#interface multilink 1&#xA;R1(config-if)#ip addr 10.0.0.1 255.255.255.0&#xA;R1(config-if)#no sh&#xA;R1(config-if)#ppp multilink&#xA;R1(config-if)#ppp multilink group 1&#xA;R1(config-if)#exit&#xA;&#xA;R1(config)#int ser0/0&#xA;R1(config-if)#encapsulation ppp&#xA;R1(config-if)#ppp multilink &#xA;R1(config-if)#ppp multilink group 1  &#xA;R1(config-if)#no sh&#xA;&#xA;R1(config-if)#int ser0/1&#xA;R1(config-if)#encapsulation ppp&#xA;R1(config-if)#ppp multilink&#xA;R1(config-if)#ppp multilink group 1&#xA;R1(config-if)#no sh&#xA;&#xA;R1(config-if)#int ser0/2&#xA;R1(config-if)#encapsulation ppp&#xA;R1(config-if)#ppp multilink&#xA;R1(config-if)#ppp multilink group 1&#xA;R1(config-if)#no sh&#xA;&#xA;R1(config-if)#int ser0/3&#xA;R1(config-if)#encapsulation ppp&#xA;R1(config-if)#ppp multilink&#xA;R1(config-if)#ppp multilink group 1&#xA;R1(config-if)#no sh&#xA;R1(config-if)#exit&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R2:&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

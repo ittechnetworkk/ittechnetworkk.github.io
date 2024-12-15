@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> IPv6 Static Routing | ittechnetworkk</title>
+  <link rel = 'canonical' href = 'https://ittechnetworkk.github.io/posts/ipv6staticrouting/ipv6-static-routing/'>
+  <meta name="description" content="Hello, I’m Soner from Turkey. I prefer working with the CLI rather than GUI. On this site, I share my expertise in various technologies, insights into newly learned tools, as well as details of the projects I have completed and those I plan to undertake. I run this blog with the motivation to learn, have fun, and help others along the way.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:url" content="https://ittechnetworkk.github.io/posts/ipv6staticrouting/ipv6-static-routing/">
+  <meta property="og:site_name" content="ittechnetworkk">
+  <meta property="og:title" content="IPv6 Static Routing">
+  <meta property="og:description" content="Static Route hedefe gitmek için manuel olarak yazılan rotadır. Static Route küçük networkler için kullanılabilir. Fakat orta ve büyük networklerde iş yükünü fazlaca artırabilir.
+Bu da diğer Dynamic Routing protokollerinden ayıran bir özelliğidir. Bu demektir ki bir networkte Dynamic Routing Protokolü çalışsa bile öncelik statik olarak yazılan rotadadır.
+Static Route Yazımı: Statik rota yazmak oldukça kolaydır. Aşağıda 2 farklı yazımı görebilirsiniz. İkisi de kullanılabilir.
+Router(config)#ipv6 route 2001:3::/64 2001:2::2 Router(config)#ipv6 route 2001:3::/64 gi0/1 Bunun anlamı; 2001:3::/64 networküne gitmek için 2001:2::2 yolunu kullan. veya yine 2001:3::/64 networküne gitmek için gi0/1 interfacesini kullan.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-06-25T22:57:40+01:00">
+    <meta property="article:modified_time" content="2024-06-25T22:57:40+01:00">
+    <meta property="article:tag" content="Ipv6">
+    <meta property="article:tag" content="Routing">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="IPv6 Static Routing">
+  <meta name="twitter:description" content="Static Route hedefe gitmek için manuel olarak yazılan rotadır. Static Route küçük networkler için kullanılabilir. Fakat orta ve büyük networklerde iş yükünü fazlaca artırabilir.
+Bu da diğer Dynamic Routing protokollerinden ayıran bir özelliğidir. Bu demektir ki bir networkte Dynamic Routing Protokolü çalışsa bile öncelik statik olarak yazılan rotadadır.
+Static Route Yazımı: Statik rota yazmak oldukça kolaydır. Aşağıda 2 farklı yazımı görebilirsiniz. İkisi de kullanılabilir.
+Router(config)#ipv6 route 2001:3::/64 2001:2::2 Router(config)#ipv6 route 2001:3::/64 gi0/1 Bunun anlamı; 2001:3::/64 networküne gitmek için 2001:2::2 yolunu kullan. veya yine 2001:3::/64 networküne gitmek için gi0/1 interfacesini kullan.">
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://ittechnetworkk.github.io/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://ittechnetworkk.github.io/images/favicon.ico" />
+
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://ittechnetworkk.github.io/posts/ciscorouterpasswordrocovery/cisco-router-parola-sifirlama/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://ittechnetworkk.github.io/posts/switchconfiguration/switch-conf/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv6staticrouting%2fipv6-static-routing%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv6staticrouting%2fipv6-static-routing%2f&text=IPv6%20Static%20Routing" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv6staticrouting%2fipv6-static-routing%2f&title=IPv6%20Static%20Routing" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv6staticrouting%2fipv6-static-routing%2f&is_video=false&description=IPv6%20Static%20Routing" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=IPv6%20Static%20Routing&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv6staticrouting%2fipv6-static-routing%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv6staticrouting%2fipv6-static-routing%2f&title=IPv6%20Static%20Routing" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv6staticrouting%2fipv6-static-routing%2f&title=IPv6%20Static%20Routing" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv6staticrouting%2fipv6-static-routing%2f&name=IPv6%20Static%20Routing&description=%3cp%3eStatic%20Route%20hedefe%20gitmek%20i%c3%a7in%20manuel%20olarak%20yaz%c4%b1lan%20rotad%c4%b1r.%20Static%20Route%20k%c3%bc%c3%a7%c3%bck%20networkler%20i%c3%a7in%20kullan%c4%b1labilir.%20Fakat%20orta%20ve%20b%c3%bcy%c3%bck%20networklerde%20i%c5%9f%20y%c3%bck%c3%bcn%c3%bc%20fazlaca%20art%c4%b1rabilir.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fipv6-static-routing%2f1.png%22%20alt%3d%22routing%22%3e%3c%2fp%3e%0a%3cp%3eBu%20da%20di%c4%9fer%20Dynamic%20Routing%20protokollerinden%20ay%c4%b1ran%20bir%20%c3%b6zelli%c4%9fidir.%20Bu%20demektir%20ki%20bir%20networkte%20Dynamic%20Routing%20Protokol%c3%bc%20%c3%a7al%c4%b1%c5%9fsa%20bile%20%c3%b6ncelik%20statik%20olarak%20yaz%c4%b1lan%20rotadad%c4%b1r.%3c%2fp%3e%0a%3cp%3e%3cstrong%3eStatic%20Route%20Yaz%c4%b1m%c4%b1%3a%3c%2fstrong%3e%0aStatik%20rota%20yazmak%20olduk%c3%a7a%20kolayd%c4%b1r.%20A%c5%9fa%c4%9f%c4%b1da%202%20farkl%c4%b1%20yaz%c4%b1m%c4%b1%20g%c3%b6rebilirsiniz.%20%c4%b0kisi%20de%20kullan%c4%b1labilir.%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eRouter%28config%29%23ipv6%20route%202001%3a3%3a%3a%2f64%202001%3a2%3a%3a2%0aRouter%28config%29%23ipv6%20route%202001%3a3%3a%3a%2f64%20gi0%2f1%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eBunun%20anlam%c4%b1%3b%20%3cem%3e%3cstrong%3e2001%3a3%3a%3a%2f64%3c%2fstrong%3e%3c%2fem%3e%20network%c3%bcne%20gitmek%20i%c3%a7in%20%3cem%3e%3cstrong%3e2001%3a2%3a%3a2%3c%2fstrong%3e%3c%2fem%3e%20yolunu%20kullan.%0aveya%20yine%20%3cem%3e%3cstrong%3e2001%3a3%3a%3a%2f64%3c%2fstrong%3e%3c%2fem%3e%20network%c3%bcne%20gitmek%20i%c3%a7in%20%3cem%3e%3cstrong%3egi0%2f1%3c%2fstrong%3e%3c%2fem%3e%20interfacesini%20kullan.%3c%2fp%3e" aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv6staticrouting%2fipv6-static-routing%2f&t=IPv6%20Static%20Routing" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        IPv6 Static Routing
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2024-06-25 22:57:40 &#43;0100 &#43;0100" itemprop="datePublished">2024-06-25</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          4 minute read
+        </div>
+        
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/ipv6" rel="tag">ipv6</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/routing" rel="tag">routing</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <p>Static Route hedefe gitmek için manuel olarak yazılan rotadır. Static Route küçük networkler için kullanılabilir. Fakat orta ve büyük networklerde iş yükünü fazlaca artırabilir.</p>
+<p><img src="/images/ipv6-static-routing/1.png" alt="routing"></p>
+<p>Bu da diğer Dynamic Routing protokollerinden ayıran bir özelliğidir. Bu demektir ki bir networkte Dynamic Routing Protokolü çalışsa bile öncelik statik olarak yazılan rotadadır.</p>
+<p><strong>Static Route Yazımı:</strong>
+Statik rota yazmak oldukça kolaydır. Aşağıda 2 farklı yazımı görebilirsiniz. İkisi de kullanılabilir.</p>
+<pre tabindex="0"><code>Router(config)#ipv6 route 2001:3::/64 2001:2::2
+Router(config)#ipv6 route 2001:3::/64 gi0/1
+</code></pre><p>Bunun anlamı; <em><strong>2001:3::/64</strong></em> networküne gitmek için <em><strong>2001:2::2</strong></em> yolunu kullan.
+veya yine <em><strong>2001:3::/64</strong></em> networküne gitmek için <em><strong>gi0/1</strong></em> interfacesini kullan.</p>
+<p><strong>Default Rota:</strong>
+Default rota, bilmediğin her şeyi ona sor demek.
+Yani ben routerda bir default rota yazarsam, router bilmediği her networkü ona soracaktır.
+IPv6&rsquo;da Default Route yazımı şöyledir:</p>
+<pre tabindex="0"><code>Router#conf t
+Router(config)#ipv6 route ::0/0 2001:0::1
+</code></pre><p><strong>::0/0</strong>
+değeri bütün networkleri ifade eder. Yani interneti.</p>
+<p><strong>2001:0::1</strong>
+Değeri ise çıkışın nereden yapılacağını ifade eder.
+Yani bütün networklere gitmek için <em><strong>2001:0::1</strong></em> bu yolu kullan.</p>
+<p><strong>IPv6 Floating Static Route:</strong>
+IPv6 Floating Static Route, bir hedefe birden fazla rotanın bulunmasına denir. Yani hedefe bir ana rota bir veya birden fazla backup rota olmasına denir. Bunu Administrative Distance değerine göre yapılır.
+Defaultta Static Route&rsquo;un AD değeri 1&rsquo;dir. Biz aynı hedefe farklı bir yoldan bir statik rota daha yazarsak ve bu rotanın AD değerini 2 yaparsak Floating Static Route yapmış oluruz. Veya aynı hedefe farklı bir rotamız daha varsa onu da yazıp AD değerini 3 yaparsak yine Floating Static Route yapmış oluruz.
+Bu AD değerlerini 1-255 arasında verebiliriz.</p>
+<p><strong>IPv6 Static Route LAB:</strong>
+Aşağıdaki topolojiyi uygulayacağız.</p>
+<p><img src="/images/ipv6-static-routing/2.png" alt="routing"></p>
+<p>Yapılacaklar:</p>
+<ol>
+<li>Cihazlara hostname ve IP&rsquo;lerini tanımla,</li>
+<li>Ana rota ve backup rotaları belirle,</li>
+<li>Ping ve traceroute testlerini yap.</li>
+</ol>
+<p>Başlayalım.</p>
+<ol>
+<li><strong>Cihazlara hostname ve IP&rsquo;lerini tanımla,</strong></li>
+</ol>
+<p><strong>R1:</strong></p>
+<pre tabindex="0"><code>Router&gt;enable
+Router#conf t
+Router(config)#hostname R1
+R1(config)#ipv6 unicast-routing 
+
+R1(config)#int e0/2
+R1(config-if)#ipv6 addr 2001:10::1/64
+R1(config-if)#no sh
+
+R1(config-if)#int e0/1
+R1(config-if)#ipv6 addr 2001:2::1/64
+R1(config-if)#no sh
+
+R1(config-if)#int e0/0
+R1(config-if)#ipv6 addr 2001:1::1/64
+R1(config-if)#no sh
+R1(config-if)#exit
+</code></pre><p><strong>R2:</strong></p>
+<pre tabindex="0"><code>Router&gt;enable
+Router#conf t
+Router(config)#hostname R2
+R2(config)#ipv6 unicast-routing 
+
+R2(config)#int e0/0
+R2(config-if)#ipv6 addr 2001:2::2/64
+R2(config-if)#no sh
+
+R2(config-if)#int e0/2
+R2(config-if)#ipv6 addr 2001:20::2/64
+R2(config-if)#no sh
+R2(config-if)#exit
+</code></pre><p><strong>R3:</strong></p>
+<pre tabindex="0"><code>Router&gt;enable
+Router#conf t
+Router(config)#hostname R3
+R3(config)#ipv6 unicast-routing 
+
+R3(config)#int e0/1
+R3(config-if)#ipv6 addr 2001:20::1/64
+R3(config-if)#no sh
+
+R3(config-if)#int e0/0
+R3(config-if)#ipv6 addr 2001:1::1/64
+R3(config-if)#no sh
+R3(config-if)#exit
+</code></pre><p><strong>VPC1:</strong></p>
+<pre tabindex="0"><code>VPCS&gt; ip 2001:10::10/64     
+PC1 : 2001:10::10/64 
+</code></pre><p><strong>VPC2:</strong></p>
+<pre tabindex="0"><code>VPCS&gt; ip 2001:20::10/64     
+PC1 : 2001:20::10/64 
+</code></pre><p>Rotaları Belirleyelim:</p>
+<p>Network A&rsquo;dan B&rsquo;ye giderken;
+R3&rsquo;ü ana rota, R2&rsquo;yi yedek rota yapalım.</p>
+<p><strong>R1:</strong></p>
+<pre tabindex="0"><code>R1(config)#ipv6 route 2001:20::/64 2001:1::2 1
+R1(config)#ipv6 route 2001:20::/64 2001:2::2 2
+</code></pre><p><strong>R2:</strong></p>
+<pre tabindex="0"><code>R2(config)#ipv6 route 2001:10::/64 2001:2::1
+</code></pre><p><strong>R3:</strong></p>
+<pre tabindex="0"><code>R3(config)#ipv6 route 2001:10::/64 2001:1::1
+</code></pre><p><strong>Test:</strong>
+VPC1&rsquo;den VPC3&rsquo;e</p>
+<pre tabindex="0"><code>VPCS&gt; ping 2001:20::10
+
+2001:20::10 icmp6_seq=1 ttl=60 time=27.449 ms
+2001:20::10 icmp6_seq=2 ttl=60 time=5.465 ms
+2001:20::10 icmp6_seq=3 ttl=60 time=1.093 ms
+2001:20::10 icmp6_seq=4 ttl=60 time=5.050 ms
+2001:20::10 icmp6_seq=5 ttl=60 time=1.112 ms
+
+
+VPCS&gt; trace 2001:20::10
+
+trace to 2001:20::10, 64 hops max
+ 1 2001:10::1   2.522 ms  2.265 ms  2.301 ms
+ 2 2001:1::2   3.118 ms  3.460 ms  2.884 ms
+ 3 2001:20::10   4.398 ms  4.472 ms  4.314 ms
+</code></pre><p><strong>R1&rsquo;in Routing Tablosu:</strong></p>
+<pre tabindex="0"><code>R1#sh ipv6 route
+IPv6 Routing Table - default - 8 entries
+Codes: C - Connected, L - Local, S - Static, U - Per-user Static route
+       B - BGP, HA - Home Agent, MR - Mobile Router, R - RIP
+       H - NHRP, I1 - ISIS L1, I2 - ISIS L2, IA - ISIS interarea
+       IS - ISIS summary, D - EIGRP, EX - EIGRP external, NM - NEMO
+       ND - ND Default, NDp - ND Prefix, DCE - Destination, NDr - Redirect
+       O - OSPF Intra, OI - OSPF Inter, OE1 - OSPF ext 1, OE2 - OSPF ext 2
+       ON1 - OSPF NSSA ext 1, ON2 - OSPF NSSA ext 2, la - LISP alt
+       lr - LISP site-registrations, ld - LISP dyn-eid, a - Application
+C   2001:1::/64 [0/0]
+     via Ethernet0/0, directly connected
+L   2001:1::1/128 [0/0]
+     via Ethernet0/0, receive
+C   2001:2::/64 [0/0]
+     via Ethernet0/1, directly connected
+L   2001:2::1/128 [0/0]
+     via Ethernet0/1, receive
+C   2001:10::/64 [0/0]
+     via Ethernet0/2, directly connected
+L   2001:10::1/128 [0/0]
+     via Ethernet0/2, receive
+S   2001:20::/64 [1/0]
+     via 2001:1::2
+L   FF00::/8 [0/0]
+     via Null0, receive
+</code></pre><p>Şimdi ana rotanın portunu kapatıp yedek rotadan gidip gitmeyeceğine bakacağım.</p>
+<pre tabindex="0"><code>VPCS&gt; trace 2001:20::10
+
+trace to 2001:20::10, 64 hops max
+ 1 2001:10::1   13.759 ms  2.201 ms  2.264 ms
+ 2 2001:2::2   3.072 ms  3.146 ms  2.824 ms
+ 3 2001:20::10   16.644 ms  4.822 ms  4.810 ms
+</code></pre><p>Portu kapattığımda ise yedek rotadan gittiğini görmüş olduk.</p>
+<p>Görüldüğü üzere tek bir statik rota görünüyor. Bunun nedeni ise yazdığımız iki rotadan birinin AD değeri 1 diğerininki 2&rsquo;ydi.</p>
+<p>Eğer ikisi de aynı değere sahip olsaydı ikiside görünecekti.</p>
+<p>Ana rotanın portunu kapattığımda ise R1&rsquo;in Routing Tablosu aşağıdaki gibi oldu.</p>
+<pre tabindex="0"><code>R1#sh ipv6 rout
+IPv6 Routing Table - default - 6 entries
+Codes: C - Connected, L - Local, S - Static, U - Per-user Static route
+       B - BGP, HA - Home Agent, MR - Mobile Router, R - RIP
+       H - NHRP, I1 - ISIS L1, I2 - ISIS L2, IA - ISIS interarea
+       IS - ISIS summary, D - EIGRP, EX - EIGRP external, NM - NEMO
+       ND - ND Default, NDp - ND Prefix, DCE - Destination, NDr - Redirect
+       O - OSPF Intra, OI - OSPF Inter, OE1 - OSPF ext 1, OE2 - OSPF ext 2
+       ON1 - OSPF NSSA ext 1, ON2 - OSPF NSSA ext 2, la - LISP alt
+       lr - LISP site-registrations, ld - LISP dyn-eid, a - Application
+C   2001:2::/64 [0/0]
+     via Ethernet0/1, directly connected
+L   2001:2::1/128 [0/0]
+     via Ethernet0/1, receive
+C   2001:10::/64 [0/0]
+     via Ethernet0/2, directly connected
+L   2001:10::1/128 [0/0]
+     via Ethernet0/2, receive
+S   2001:20::/64 [2/0]
+     via 2001:2::2
+L   FF00::/8 [0/0]
+     via Null0, receive
+</code></pre><p>Ana rota olmadığı için yedek rotanın kuralını gösterdi.</p>
+<p>Teşekkürler,</p>
+<p>İyi Çalışmalar.</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Posts</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv6staticrouting%2fipv6-static-routing%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv6staticrouting%2fipv6-static-routing%2f&text=IPv6%20Static%20Routing" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv6staticrouting%2fipv6-static-routing%2f&title=IPv6%20Static%20Routing" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv6staticrouting%2fipv6-static-routing%2f&is_video=false&description=IPv6%20Static%20Routing" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=IPv6%20Static%20Routing&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv6staticrouting%2fipv6-static-routing%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv6staticrouting%2fipv6-static-routing%2f&title=IPv6%20Static%20Routing" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv6staticrouting%2fipv6-static-routing%2f&title=IPv6%20Static%20Routing" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv6staticrouting%2fipv6-static-routing%2f&name=IPv6%20Static%20Routing&description=%3cp%3eStatic%20Route%20hedefe%20gitmek%20i%c3%a7in%20manuel%20olarak%20yaz%c4%b1lan%20rotad%c4%b1r.%20Static%20Route%20k%c3%bc%c3%a7%c3%bck%20networkler%20i%c3%a7in%20kullan%c4%b1labilir.%20Fakat%20orta%20ve%20b%c3%bcy%c3%bck%20networklerde%20i%c5%9f%20y%c3%bck%c3%bcn%c3%bc%20fazlaca%20art%c4%b1rabilir.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fipv6-static-routing%2f1.png%22%20alt%3d%22routing%22%3e%3c%2fp%3e%0a%3cp%3eBu%20da%20di%c4%9fer%20Dynamic%20Routing%20protokollerinden%20ay%c4%b1ran%20bir%20%c3%b6zelli%c4%9fidir.%20Bu%20demektir%20ki%20bir%20networkte%20Dynamic%20Routing%20Protokol%c3%bc%20%c3%a7al%c4%b1%c5%9fsa%20bile%20%c3%b6ncelik%20statik%20olarak%20yaz%c4%b1lan%20rotadad%c4%b1r.%3c%2fp%3e%0a%3cp%3e%3cstrong%3eStatic%20Route%20Yaz%c4%b1m%c4%b1%3a%3c%2fstrong%3e%0aStatik%20rota%20yazmak%20olduk%c3%a7a%20kolayd%c4%b1r.%20A%c5%9fa%c4%9f%c4%b1da%202%20farkl%c4%b1%20yaz%c4%b1m%c4%b1%20g%c3%b6rebilirsiniz.%20%c4%b0kisi%20de%20kullan%c4%b1labilir.%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eRouter%28config%29%23ipv6%20route%202001%3a3%3a%3a%2f64%202001%3a2%3a%3a2%0aRouter%28config%29%23ipv6%20route%202001%3a3%3a%3a%2f64%20gi0%2f1%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eBunun%20anlam%c4%b1%3b%20%3cem%3e%3cstrong%3e2001%3a3%3a%3a%2f64%3c%2fstrong%3e%3c%2fem%3e%20network%c3%bcne%20gitmek%20i%c3%a7in%20%3cem%3e%3cstrong%3e2001%3a2%3a%3a2%3c%2fstrong%3e%3c%2fem%3e%20yolunu%20kullan.%0aveya%20yine%20%3cem%3e%3cstrong%3e2001%3a3%3a%3a%2f64%3c%2fstrong%3e%3c%2fem%3e%20network%c3%bcne%20gitmek%20i%c3%a7in%20%3cem%3e%3cstrong%3egi0%2f1%3c%2fstrong%3e%3c%2fem%3e%20interfacesini%20kullan.%3c%2fp%3e" aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv6staticrouting%2fipv6-static-routing%2f&t=IPv6%20Static%20Routing" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2024  ittechnetworkk 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

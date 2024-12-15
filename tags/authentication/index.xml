@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authentication on ittechnetworkk</title>
+    <link>https://ittechnetworkk.github.io/tags/authentication/</link>
+    <description>Recent content in Authentication on ittechnetworkk</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>ittechnetworkk</copyright>
+    <lastBuildDate>Sun, 31 Mar 2024 22:57:40 +0100</lastBuildDate>
+    <atom:link href="https://ittechnetworkk.github.io/tags/authentication/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OSPF Authentication</title>
+      <link>https://ittechnetworkk.github.io/posts/ospfauthentication/ospf-authentication/</link>
+      <pubDate>Sun, 31 Mar 2024 22:57:40 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/ospfauthentication/ospf-authentication/</guid>
+      <description>&lt;p&gt;OSPF Authentication, OSPF network trafiğinin güvenliğini artırmak amacıyla kullanılır.&#xA;3 Çeşit doğrulama yöntemi vardır;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;1-&lt;/strong&gt; Plain Text Authentication,&#xA;&lt;strong&gt;2-&lt;/strong&gt; MD5 Authentication,&#xA;&lt;strong&gt;3-&lt;/strong&gt; SHA-HMAC Authentication (IOS 15.4 ve sonrası versiyonlar için)&lt;/p&gt;&#xA;&lt;p&gt;Aşağıdaki topolojiyi uygulayacağız.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/ospf-authentication/1.png&#34; alt=&#34;ospf&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Bu topolojide 3 Authentication metodunu da uygulayacağız.&lt;/p&gt;&#xA;&lt;p&gt;R1 ve R3 arasında Plain Text Authentication (Area 1)&#xA;R1 ve R2 arasında MD5 Authentication (Area 0)&#xA;R2 ve R4 arasında SHA-HMAC Authentication yapacağız. (Area 2)&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;A-&lt;/strong&gt; Interfacelere IP vererek başlayalım:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

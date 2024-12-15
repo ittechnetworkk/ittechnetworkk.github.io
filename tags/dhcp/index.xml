@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DHCP on ittechnetworkk</title>
+    <link>https://ittechnetworkk.github.io/tags/dhcp/</link>
+    <description>Recent content in DHCP on ittechnetworkk</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>ittechnetworkk</copyright>
+    <lastBuildDate>Fri, 31 May 2024 22:57:40 +0100</lastBuildDate>
+    <atom:link href="https://ittechnetworkk.github.io/tags/dhcp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DHCPv6</title>
+      <link>https://ittechnetworkk.github.io/posts/dhcpv6/dhcpv6/</link>
+      <pubDate>Fri, 31 May 2024 22:57:40 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/dhcpv6/dhcpv6/</guid>
+      <description>&lt;p&gt;DHCP(Dynamic Host Configuration Protocol), bir networkteki bir cihaza IP, DNS, Default Gateway parametrelerini dağıtan servistir. Yani networkteki bir cihazın başka bir cihaz ile konuşmasını sağlayacak parametlereleri dağıtan servistir.&#xA;DHCPv6, DHCPv4&amp;rsquo;den bazı özellikleriyle ayrılıyor. DHCPv6 2 şekilde yapılandırılabilir.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Stateful(Durumlu) DHCPv6,&lt;/li&gt;&#xA;&lt;li&gt;Stateless SLAAC (Durumsuz) DHCPv6&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Stateful DHCPv6 tıpkı DHCPv4 gibi, bir DHCP server üzerinden parametreleri dağıtmaktır.&lt;/p&gt;&#xA;&lt;p&gt;Stateless SLAAC DHCPv6 da ise herhangi bir DHCP server olmaksızın cihazların Router üzerinden IPv6 parametrelerini alıp otomatik olarak kendini yapılandırmasıdır.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

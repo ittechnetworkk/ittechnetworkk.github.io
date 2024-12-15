@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dual-Stack on ittechnetworkk</title>
+    <link>https://ittechnetworkk.github.io/tags/dual-stack/</link>
+    <description>Recent content in Dual-Stack on ittechnetworkk</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>ittechnetworkk</copyright>
+    <lastBuildDate>Thu, 06 Jun 2024 22:57:40 +0100</lastBuildDate>
+    <atom:link href="https://ittechnetworkk.github.io/tags/dual-stack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>İkili Yığın Yöntemi</title>
+      <link>https://ittechnetworkk.github.io/posts/ikiliyiginyontemi/ikili-yigin-yontemi/</link>
+      <pubDate>Thu, 06 Jun 2024 22:57:40 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/ikiliyiginyontemi/ikili-yigin-yontemi/</guid>
+      <description>&lt;p&gt;Bu yöntem, IPv4&amp;rsquo;den IPv6&amp;rsquo;ya geçiş yöntemlerinden biri olan tünelleme tekniğidir. Bu yöntemde, cihazların hem IPv4 hem de IPv6 adreslerini birlikte kullanması yöntemidir.&#xA;Yani IPv4 ile gelen cihaz IPv4, IPv6 ile gelen cihaz IPv6 ile haberleşir.&lt;/p&gt;&#xA;&lt;p&gt;Uygulamada daha net anlaşılacaktır.&lt;/p&gt;&#xA;&lt;p&gt;Aşağıdaki topolojiyi uygulayacağım.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/IkiliYiginYontemi/1.png&#34; alt=&#34;ipv6&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Yapılacaklar:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Router ve VPC&amp;rsquo;lerin Interface&amp;rsquo;lerine IPv4 ve IPv6 adreslerini tanımla,&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Networklerin birbirleriyle haberleşmesi için statik rotalar yaz,&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Test et.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;strong&gt;Router ve VPC&amp;rsquo;lerin Interface&amp;rsquo;lerine IPv4 ve IPv6 adreslerini tanımla,&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
