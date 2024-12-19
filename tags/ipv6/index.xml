@@ -17,7 +17,7 @@
       <description>&lt;p&gt;Static Route hedefe gitmek için manuel olarak yazılan rotadır. Static Route küçük networkler için kullanılabilir. Fakat orta ve büyük networklerde iş yükünü fazlaca artırabilir.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/ipv6-static-routing/1.png&#34; alt=&#34;routing&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Bu da diğer Dynamic Routing protokollerinden ayıran bir özelliğidir. Bu demektir ki bir networkte Dynamic Routing Protokolü çalışsa bile öncelik statik olarak yazılan rotadadır.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Static Route Yazımı:&lt;/strong&gt;&#xA;Statik rota yazmak oldukça kolaydır. Aşağıda 2 farklı yazımı görebilirsiniz. İkisi de kullanılabilir.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Router(config)#ipv6 route 2001:3::/64 2001:2::2&#xA;Router(config)#ipv6 route 2001:3::/64 gi0/1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Bunun anlamı; &lt;em&gt;&lt;strong&gt;2001:3::/64&lt;/strong&gt;&lt;/em&gt; networküne gitmek için &lt;em&gt;&lt;strong&gt;2001:2::2&lt;/strong&gt;&lt;/em&gt; yolunu kullan.&#xA;veya yine &lt;em&gt;&lt;strong&gt;2001:3::/64&lt;/strong&gt;&lt;/em&gt; networküne gitmek için &lt;em&gt;&lt;strong&gt;gi0/1&lt;/strong&gt;&lt;/em&gt; interfacesini kullan.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>İkili Yığın Yöntemi</title>
+      <title>IPv6 Geçiş Çalışmaları İkili Yığın Yöntemi</title>
       <link>https://ittechnetworkk.github.io/posts/ikiliyiginyontemi/ikili-yigin-yontemi/</link>
       <pubDate>Thu, 06 Jun 2024 22:57:40 +0100</pubDate>
       <guid>https://ittechnetworkk.github.io/posts/ikiliyiginyontemi/ikili-yigin-yontemi/</guid>

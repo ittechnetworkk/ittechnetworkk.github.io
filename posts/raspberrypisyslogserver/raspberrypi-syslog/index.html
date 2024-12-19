@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Raspberry Pi Syslog Server | ittechnetworkk</title>
+  <link rel = 'canonical' href = 'https://ittechnetworkk.github.io/posts/raspberrypisyslogserver/raspberrypi-syslog/'>
+  <meta name="description" content="Hello, I’m Soner from Turkey. I prefer working with the CLI rather than GUI. On this site, I share my expertise in various technologies, insights into newly learned tools, as well as details of the projects I have completed and those I plan to undertake. I run this blog with the motivation to learn, have fun, and help others along the way.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:url" content="https://ittechnetworkk.github.io/posts/raspberrypisyslogserver/raspberrypi-syslog/">
+  <meta property="og:site_name" content="ittechnetworkk">
+  <meta property="og:title" content="Raspberry Pi Syslog Server">
+  <meta property="og:description" content="Merhaba, bu yazımda bi Raspberry Pi Zero’ya Syslog server rolü verip, bir Cisco Switch’e bu Syslog server konfigürasyonunu yapacağım.
+Bu Lab için kullanacağım donanım ve yazılımlar:
+Raspberry Pi Zero 2W, Cisco 2960 Switch, SD Cart, Kart Reader, Ethernet Kablosu, MicroUSB Power Cable, Switch Power Cable, ImagerPi. İlk olarak ImagerPi kullanarak SD Kart’a Ubuntu işletim sistemini kuruyorum.
+SD Kart’ı Raspberry Pi’a takıp, modemin yakınında güç kablosunu takıp cihazı açıyorum.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-07-15T22:57:40+01:00">
+    <meta property="article:modified_time" content="2024-07-15T22:57:40+01:00">
+    <meta property="article:tag" content="Syslog">
+    <meta property="article:tag" content="Raspberrypi">
+    <meta property="article:tag" content="Logging">
+    <meta property="article:tag" content="Cisco">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Raspberry Pi Syslog Server">
+  <meta name="twitter:description" content="Merhaba, bu yazımda bi Raspberry Pi Zero’ya Syslog server rolü verip, bir Cisco Switch’e bu Syslog server konfigürasyonunu yapacağım.
+Bu Lab için kullanacağım donanım ve yazılımlar:
+Raspberry Pi Zero 2W, Cisco 2960 Switch, SD Cart, Kart Reader, Ethernet Kablosu, MicroUSB Power Cable, Switch Power Cable, ImagerPi. İlk olarak ImagerPi kullanarak SD Kart’a Ubuntu işletim sistemini kuruyorum.
+SD Kart’ı Raspberry Pi’a takıp, modemin yakınında güç kablosunu takıp cihazı açıyorum.">
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://ittechnetworkk.github.io/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://ittechnetworkk.github.io/images/favicon.ico" />
+
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://ittechnetworkk.github.io/posts/utpkabloyapimi/utp-kablo-yapimi/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://ittechnetworkk.github.io/posts/gpgnedir/gpg-nedir/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypisyslogserver%2fraspberrypi-syslog%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypisyslogserver%2fraspberrypi-syslog%2f&text=Raspberry%20Pi%20Syslog%20Server" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypisyslogserver%2fraspberrypi-syslog%2f&title=Raspberry%20Pi%20Syslog%20Server" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypisyslogserver%2fraspberrypi-syslog%2f&is_video=false&description=Raspberry%20Pi%20Syslog%20Server" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Raspberry%20Pi%20Syslog%20Server&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypisyslogserver%2fraspberrypi-syslog%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypisyslogserver%2fraspberrypi-syslog%2f&title=Raspberry%20Pi%20Syslog%20Server" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypisyslogserver%2fraspberrypi-syslog%2f&title=Raspberry%20Pi%20Syslog%20Server" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypisyslogserver%2fraspberrypi-syslog%2f&name=Raspberry%20Pi%20Syslog%20Server&description=%3cp%3eMerhaba%2c%20bu%20yaz%c4%b1mda%20bi%20Raspberry%20Pi%20Zero%26rsquo%3bya%20Syslog%20server%20rol%c3%bc%20verip%2c%20bir%20Cisco%20Switch%26rsquo%3be%20bu%20Syslog%20server%20konfig%c3%bcrasyonunu%20yapaca%c4%9f%c4%b1m.%3c%2fp%3e%0a%3cp%3eBu%20Lab%20i%c3%a7in%20kullanaca%c4%9f%c4%b1m%20donan%c4%b1m%20ve%20yaz%c4%b1l%c4%b1mlar%3a%3c%2fp%3e%0a%3cul%3e%0a%3cli%3eRaspberry%20Pi%20Zero%202W%2c%3c%2fli%3e%0a%3cli%3eCisco%202960%20Switch%2c%3c%2fli%3e%0a%3cli%3eSD%20Cart%2c%3c%2fli%3e%0a%3cli%3eKart%20Reader%2c%3c%2fli%3e%0a%3cli%3eEthernet%20Kablosu%2c%3c%2fli%3e%0a%3cli%3eMicroUSB%20Power%20Cable%2c%3c%2fli%3e%0a%3cli%3eSwitch%20Power%20Cable%2c%3c%2fli%3e%0a%3cli%3eImagerPi.%3c%2fli%3e%0a%3c%2ful%3e%0a%3cp%3e%c4%b0lk%20olarak%20ImagerPi%20kullanarak%20SD%20Kart%26rsquo%3ba%20Ubuntu%20i%c5%9fletim%20sistemini%20kuruyorum.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fRaspberryPiSyslogServer%2f1.png%22%20alt%3d%22syslog%22%3e%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fRaspberryPiSyslogServer%2f2.png%22%20alt%3d%22syslog%22%3e%3c%2fp%3e%0a%3cp%3eSD%20Kart%26rsquo%3b%c4%b1%20Raspberry%20Pi%26rsquo%3ba%20tak%c4%b1p%2c%20modemin%20yak%c4%b1n%c4%b1nda%20g%c3%bc%c3%a7%20kablosunu%20tak%c4%b1p%20cihaz%c4%b1%20a%c3%a7%c4%b1yorum.%3c%2fp%3e" aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypisyslogserver%2fraspberrypi-syslog%2f&t=Raspberry%20Pi%20Syslog%20Server" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Raspberry Pi Syslog Server
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2024-07-15 22:57:40 &#43;0100 &#43;0100" itemprop="datePublished">2024-07-15</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          2 minute read
+        </div>
+        
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/syslog" rel="tag">syslog</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/raspberrypi" rel="tag">raspberrypi</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/logging" rel="tag">logging</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/cisco" rel="tag">cisco</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <p>Merhaba, bu yazımda bi Raspberry Pi Zero&rsquo;ya Syslog server rolü verip, bir Cisco Switch&rsquo;e bu Syslog server konfigürasyonunu yapacağım.</p>
+<p>Bu Lab için kullanacağım donanım ve yazılımlar:</p>
+<ul>
+<li>Raspberry Pi Zero 2W,</li>
+<li>Cisco 2960 Switch,</li>
+<li>SD Cart,</li>
+<li>Kart Reader,</li>
+<li>Ethernet Kablosu,</li>
+<li>MicroUSB Power Cable,</li>
+<li>Switch Power Cable,</li>
+<li>ImagerPi.</li>
+</ul>
+<p>İlk olarak ImagerPi kullanarak SD Kart&rsquo;a Ubuntu işletim sistemini kuruyorum.</p>
+<p><img src="/images/RaspberryPiSyslogServer/1.png" alt="syslog"></p>
+<p><img src="/images/RaspberryPiSyslogServer/2.png" alt="syslog"></p>
+<p>SD Kart&rsquo;ı Raspberry Pi&rsquo;a takıp, modemin yakınında güç kablosunu takıp cihazı açıyorum.</p>
+<p>Raspberry Pi&rsquo;nin hangi IP adresini aldığını öğrenmek için:</p>
+<pre tabindex="0"><code>nmap -sn 192.168.1.1/24
+</code></pre><p>Benim cihazım 192.168.1.122 IP&rsquo;sine sahip.</p>
+<p>Bu IP adresine SSH ile bağlanıyorum.</p>
+<pre tabindex="0"><code>ssh pi@192.168.1.122
+</code></pre><p>Cihaza ilk olarak güncellemelerini yapıyorum. Cihazın modemin yakınında olması avantaj sağlayacaktır.</p>
+<pre tabindex="0"><code>sudo apt update -y &amp;&amp; sudo apt upgrade -y
+</code></pre><p>Syslog kurulumu:</p>
+<pre tabindex="0"><code>sudo apt install rsyslog -y
+</code></pre><p>Syslog Konfigürasyonu:</p>
+<pre tabindex="0"><code>sudo nano /etc/rsyslog.conf
+</code></pre><p>Aşağıdaki &ldquo;module ve input&rdquo; ile başlayan kısımların başındaki &ldquo;#&rdquo; işaretini aşağıda olduğu gibi kadırıyorum ve kaydediyorum.</p>
+<pre tabindex="0"><code># provides UDP syslog reception
+module(load=&#34;imudp&#34;)
+input(type=&#34;imudp&#34; port=&#34;514&#34;)
+
+# provides TCP syslog reception
+module(load=&#34;imtcp&#34;)
+input(type=&#34;imtcp&#34; port=&#34;514&#34;)
+</code></pre><p>Servisi restart ediyorum.</p>
+<pre tabindex="0"><code>sudo systemctl restart rsyslog
+</code></pre><p>Server kısmı bitti.</p>
+<p>Şimdi de Cisco Switch&rsquo;de Syslog konfigürasyonu yapalım.</p>
+<p>Switch&rsquo;de ethernet kablosunu ve güç kablosunu takıp açıyorum.</p>
+<p>Console Kablosu ile cihaza bağlanıyorum.</p>
+<p>Switch&rsquo;in Management IP adresi de 192.168.1.226&rsquo;dır.</p>
+<p>Syslog konfigürasyonu:</p>
+<pre tabindex="0"><code>SW1&gt;enable
+SW1#configure terminal
+SW1(config)#logging on                   #logging enable etme
+SW1(config)#logging host 192.168.1.122   #syslog server IP
+SW1(config)#logging trap 7               #debugging ve altındaki tüm loglar
+SW1(config)#end
+SW1#sh logging                           #kontrol
+</code></pre><ul>
+<li>emergencies = 0</li>
+<li>alerts = 1</li>
+<li>critical = 2</li>
+<li>errors = 3</li>
+<li>warnings = 4</li>
+<li>notifications = 5</li>
+<li>informational <strong>(default level)</strong> = 6</li>
+<li>debugging = 7</li>
+</ul>
+<p>Şimdi Switch üzerinde log üretecek birkaç değişiklik yapıyorum.</p>
+<p>Syslog Server&rsquo;dan logların düştüğünü kontrol ediyorum.</p>
+<pre tabindex="0"><code>pi@pi:~$ cat /var/log/syslog | grep 192.168.1.226
+2024-09-15T20:01:22.134205+02:00 192.168.1.226 16: *Mar  1 00:21:27.273: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan1, changed state to up
+2024-09-15T20:01:46.624393+02:00 192.168.1.226 17: *Mar  1 00:21:52.288: %SYS-5-CONFIG_I: Configured from console by console
+2024-09-15T20:06:38.458775+02:00 192.168.1.226 18: *Mar  1 00:26:44.572: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan13, changed state to down
+2024-09-15T20:06:54.744851+02:00 192.168.1.226 19: *Mar  1 00:27:00.788: %LINEPROTO-5-UPDOWN: Line protocol on Interface Vlan12, changed state to down
+2024-09-15T20:09:31.819562+02:00 192.168.1.226 20: *Mar  1 00:29:37.722: %SYS-5-CONFIG_I: Configured from console by console
+</code></pre><p>Loglar da sağlıklı çalışıyor.</p>
+<p>Teşekkürler,</p>
+<p>İyi Çalışmalar.</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Posts</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypisyslogserver%2fraspberrypi-syslog%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypisyslogserver%2fraspberrypi-syslog%2f&text=Raspberry%20Pi%20Syslog%20Server" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypisyslogserver%2fraspberrypi-syslog%2f&title=Raspberry%20Pi%20Syslog%20Server" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypisyslogserver%2fraspberrypi-syslog%2f&is_video=false&description=Raspberry%20Pi%20Syslog%20Server" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Raspberry%20Pi%20Syslog%20Server&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypisyslogserver%2fraspberrypi-syslog%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypisyslogserver%2fraspberrypi-syslog%2f&title=Raspberry%20Pi%20Syslog%20Server" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypisyslogserver%2fraspberrypi-syslog%2f&title=Raspberry%20Pi%20Syslog%20Server" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypisyslogserver%2fraspberrypi-syslog%2f&name=Raspberry%20Pi%20Syslog%20Server&description=%3cp%3eMerhaba%2c%20bu%20yaz%c4%b1mda%20bi%20Raspberry%20Pi%20Zero%26rsquo%3bya%20Syslog%20server%20rol%c3%bc%20verip%2c%20bir%20Cisco%20Switch%26rsquo%3be%20bu%20Syslog%20server%20konfig%c3%bcrasyonunu%20yapaca%c4%9f%c4%b1m.%3c%2fp%3e%0a%3cp%3eBu%20Lab%20i%c3%a7in%20kullanaca%c4%9f%c4%b1m%20donan%c4%b1m%20ve%20yaz%c4%b1l%c4%b1mlar%3a%3c%2fp%3e%0a%3cul%3e%0a%3cli%3eRaspberry%20Pi%20Zero%202W%2c%3c%2fli%3e%0a%3cli%3eCisco%202960%20Switch%2c%3c%2fli%3e%0a%3cli%3eSD%20Cart%2c%3c%2fli%3e%0a%3cli%3eKart%20Reader%2c%3c%2fli%3e%0a%3cli%3eEthernet%20Kablosu%2c%3c%2fli%3e%0a%3cli%3eMicroUSB%20Power%20Cable%2c%3c%2fli%3e%0a%3cli%3eSwitch%20Power%20Cable%2c%3c%2fli%3e%0a%3cli%3eImagerPi.%3c%2fli%3e%0a%3c%2ful%3e%0a%3cp%3e%c4%b0lk%20olarak%20ImagerPi%20kullanarak%20SD%20Kart%26rsquo%3ba%20Ubuntu%20i%c5%9fletim%20sistemini%20kuruyorum.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fRaspberryPiSyslogServer%2f1.png%22%20alt%3d%22syslog%22%3e%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fRaspberryPiSyslogServer%2f2.png%22%20alt%3d%22syslog%22%3e%3c%2fp%3e%0a%3cp%3eSD%20Kart%26rsquo%3b%c4%b1%20Raspberry%20Pi%26rsquo%3ba%20tak%c4%b1p%2c%20modemin%20yak%c4%b1n%c4%b1nda%20g%c3%bc%c3%a7%20kablosunu%20tak%c4%b1p%20cihaz%c4%b1%20a%c3%a7%c4%b1yorum.%3c%2fp%3e" aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypisyslogserver%2fraspberrypi-syslog%2f&t=Raspberry%20Pi%20Syslog%20Server" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2024  ittechnetworkk 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

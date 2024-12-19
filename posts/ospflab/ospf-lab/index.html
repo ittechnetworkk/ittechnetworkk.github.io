@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> OSPF LAB | ittechnetworkk</title>
+  <link rel = 'canonical' href = 'https://ittechnetworkk.github.io/posts/ospflab/ospf-lab/'>
+  <meta name="description" content="Hello, I’m Soner from Turkey. I prefer working with the CLI rather than GUI. On this site, I share my expertise in various technologies, insights into newly learned tools, as well as details of the projects I have completed and those I plan to undertake. I run this blog with the motivation to learn, have fun, and help others along the way.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:url" content="https://ittechnetworkk.github.io/posts/ospflab/ospf-lab/">
+  <meta property="og:site_name" content="ittechnetworkk">
+  <meta property="og:title" content="OSPF LAB">
+  <meta property="og:description" content="Bu Lab’daki amacım OSPF’in genel bir tekrarını yapmak olacak. Komutları uzun uzun yazıyor olacağım.
+Aşağıdaki topolojiyi uygulayacağım.
+Bu Lab’da istenilenler topolojinin sol üst köşesinde yazıyor.
+Buna göre;
+1- İlk olarak router interfacelerine ve VPC’lere sırasıyla IP’lerini vererek başlıyorum.
+R1:
+R1#configure terminal R1(config)#int e0/0 R1(config-if)#ip addr 10.0.1.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e0/1 R1(config-if)#ip address 10.0.3.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e0/2 R1(config-if)#ip addr 10.0.4.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e0/3 R1(config-if)#ip addr 10.0.2.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e1/0 R1(config-if)#ip addr 10.0.0.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#exit R2:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-04-07T22:57:40+01:00">
+    <meta property="article:modified_time" content="2024-04-07T22:57:40+01:00">
+    <meta property="article:tag" content="IPv4">
+    <meta property="article:tag" content="Routing">
+    <meta property="article:tag" content="Ospf">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="OSPF LAB">
+  <meta name="twitter:description" content="Bu Lab’daki amacım OSPF’in genel bir tekrarını yapmak olacak. Komutları uzun uzun yazıyor olacağım.
+Aşağıdaki topolojiyi uygulayacağım.
+Bu Lab’da istenilenler topolojinin sol üst köşesinde yazıyor.
+Buna göre;
+1- İlk olarak router interfacelerine ve VPC’lere sırasıyla IP’lerini vererek başlıyorum.
+R1:
+R1#configure terminal R1(config)#int e0/0 R1(config-if)#ip addr 10.0.1.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e0/1 R1(config-if)#ip address 10.0.3.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e0/2 R1(config-if)#ip addr 10.0.4.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e0/3 R1(config-if)#ip addr 10.0.2.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e1/0 R1(config-if)#ip addr 10.0.0.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#exit R2:">
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://ittechnetworkk.github.io/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://ittechnetworkk.github.io/images/favicon.ico" />
+
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://ittechnetworkk.github.io/posts/ospfauthentication/ospf-authentication/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://ittechnetworkk.github.io/posts/pppmultilink/ppp-multilink/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospflab%2fospf-lab%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospflab%2fospf-lab%2f&text=OSPF%20LAB" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospflab%2fospf-lab%2f&title=OSPF%20LAB" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospflab%2fospf-lab%2f&is_video=false&description=OSPF%20LAB" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=OSPF%20LAB&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospflab%2fospf-lab%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospflab%2fospf-lab%2f&title=OSPF%20LAB" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospflab%2fospf-lab%2f&title=OSPF%20LAB" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospflab%2fospf-lab%2f&name=OSPF%20LAB&description=%3cp%3eBu%20Lab%e2%80%99daki%20amac%c4%b1m%20OSPF%e2%80%99in%20genel%20bir%20tekrar%c4%b1n%c4%b1%20yapmak%20olacak.%20Komutlar%c4%b1%20uzun%20uzun%20yaz%c4%b1yor%20olaca%c4%9f%c4%b1m.%3c%2fp%3e%0a%3cp%3eA%c5%9fa%c4%9f%c4%b1daki%20topolojiyi%20uygulayaca%c4%9f%c4%b1m.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fOSPFLAB%2f1.png%22%20alt%3d%22ospf%22%3e%3c%2fp%3e%0a%3cp%3eBu%20Lab%26rsquo%3bda%20istenilenler%20topolojinin%20sol%20%c3%bcst%20k%c3%b6%c5%9fesinde%20yaz%c4%b1yor.%3c%2fp%3e%0a%3cp%3eBuna%20g%c3%b6re%3b%3c%2fp%3e%0a%3cp%3e%3cstrong%3e1-%20%c4%b0lk%20olarak%20router%20interfacelerine%20ve%20VPC%26rsquo%3blere%20s%c4%b1ras%c4%b1yla%20IP%26rsquo%3blerini%20vererek%20ba%c5%9fl%c4%b1yorum.%3c%2fstrong%3e%3c%2fp%3e%0a%3cp%3e%3cstrong%3eR1%3a%3c%2fstrong%3e%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eR1%23configure%20terminal%20%0aR1%28config%29%23int%20e0%2f0%0aR1%28config-if%29%23ip%20addr%2010.0.1.1%20255.255.255.0%0aR1%28config-if%29%23no%20sh%0aR1%28config-if%29%23int%20e0%2f1%0aR1%28config-if%29%23ip%20address%2010.0.3.1%20255.255.255.0%0aR1%28config-if%29%23no%20sh%0aR1%28config-if%29%23int%20e0%2f2%0aR1%28config-if%29%23ip%20addr%2010.0.4.1%20255.255.255.0%0aR1%28config-if%29%23no%20sh%0aR1%28config-if%29%23int%20e0%2f3%0aR1%28config-if%29%23ip%20addr%2010.0.2.1%20255.255.255.0%0aR1%28config-if%29%23no%20sh%0aR1%28config-if%29%23int%20e1%2f0%0aR1%28config-if%29%23ip%20addr%2010.0.0.1%20255.255.255.0%0aR1%28config-if%29%23no%20sh%0aR1%28config-if%29%23exit%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3e%3cstrong%3eR2%3a%3c%2fstrong%3e%3c%2fp%3e" aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospflab%2fospf-lab%2f&t=OSPF%20LAB" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        OSPF LAB
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2024-04-07 22:57:40 &#43;0100 &#43;0100" itemprop="datePublished">2024-04-07</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          9 minute read
+        </div>
+        
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/ipv4" rel="tag">IPv4</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/routing" rel="tag">routing</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/ospf" rel="tag">ospf</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <p>Bu Lab’daki amacım OSPF’in genel bir tekrarını yapmak olacak. Komutları uzun uzun yazıyor olacağım.</p>
+<p>Aşağıdaki topolojiyi uygulayacağım.</p>
+<p><img src="/images/OSPFLAB/1.png" alt="ospf"></p>
+<p>Bu Lab&rsquo;da istenilenler topolojinin sol üst köşesinde yazıyor.</p>
+<p>Buna göre;</p>
+<p><strong>1- İlk olarak router interfacelerine ve VPC&rsquo;lere sırasıyla IP&rsquo;lerini vererek başlıyorum.</strong></p>
+<p><strong>R1:</strong></p>
+<pre tabindex="0"><code>R1#configure terminal 
+R1(config)#int e0/0
+R1(config-if)#ip addr 10.0.1.1 255.255.255.0
+R1(config-if)#no sh
+R1(config-if)#int e0/1
+R1(config-if)#ip address 10.0.3.1 255.255.255.0
+R1(config-if)#no sh
+R1(config-if)#int e0/2
+R1(config-if)#ip addr 10.0.4.1 255.255.255.0
+R1(config-if)#no sh
+R1(config-if)#int e0/3
+R1(config-if)#ip addr 10.0.2.1 255.255.255.0
+R1(config-if)#no sh
+R1(config-if)#int e1/0
+R1(config-if)#ip addr 10.0.0.1 255.255.255.0
+R1(config-if)#no sh
+R1(config-if)#exit
+</code></pre><p><strong>R2:</strong></p>
+<pre tabindex="0"><code>R2#configure terminal 
+R2(config)#int e0/0
+R2(config-if)#ip addr 10.0.2.2 255.255.255.0
+R2(config-if)#no sh
+R2(config-if)#int e0/1
+R2(config-if)#ip addr 10.0.20.1 255.255.255.0
+R2(config-if)#no sh
+R2(config-if)#int e0/2
+R2(config-if)#ip addr 10.0.60.1 255.255.255.0
+R2(config-if)#no sh
+R2(config-if)#exit 
+</code></pre><p><strong>R3:</strong></p>
+<pre tabindex="0"><code>R3#configure terminal 
+R3(config)#int e0/1
+R3(config-if)#ip addr 10.0.1.2 255.255.255.0
+R3(config-if)#no sh
+R3(config-if)#int e0/0
+R3(config-if)#ip addr 10.0.10.1 255.255.255.0
+R3(config-if)#no sh
+R3(config-if)#int e0/2
+R3(config-if)#ip addr 10.0.50.1 255.255.255.0
+R3(config-if)#no sh
+R3(config-if)#exit
+</code></pre><p><strong>R4:</strong></p>
+<pre tabindex="0"><code>R4#configure terminal 
+R4(config)#int e0/0
+R4(config-if)#ip addr 10.0.4.2 255.255.255.0
+R4(config-if)#no sh
+R4(config-if)#int e0/1
+R4(config-if)#ip addr 10.0.40.1 255.255.255.0
+R4(config-if)#no sh
+R4(config-if)#int e0/2
+R4(config-if)#ip addr 10.0.61.1 255.255.255.0
+R4(config-if)#no sh
+R4(config-if)#exit
+</code></pre><p><strong>R5:</strong></p>
+<pre tabindex="0"><code>R5#configure terminal 
+R5(config)#int e0/0
+R5(config-if)#ip addr 10.0.3.2 255.255.255.0
+R5(config-if)#no sh
+R5(config-if)#int e0/1
+R5(config-if)#ip addr 10.0.30.1 255.255.255.0
+R5(config-if)#no sh
+R5(config-if)#int e0/2
+R5(config-if)#ip addr 10.0.51.1 255.255.255.0
+R5(config-if)#no sh
+R5(config-if)#exit
+</code></pre><p><strong>R6:</strong></p>
+<pre tabindex="0"><code>R6#configure terminal 
+R6(config)#int e0/0
+R6(config-if)#ip addr 10.0.0.2 255.255.255.0
+R6(config-if)#no sh
+R6(config-if)#int e0/1
+R6(config-if)#ip addr 172.16.1.1 255.255.255.0
+R6(config-if)#no sh
+R6(config-if)#exit
+</code></pre><p><strong>R7:</strong></p>
+<pre tabindex="0"><code>R7#configure terminal 
+R7(config)#int e0/0
+R7(config-if)#ip addr 172.16.1.2 255.255.255.0
+R7(config-if)#no sh
+R7(config-if)#int loopback 0
+R7(config-if)#ip address 192.168.1.1 255.255.255.0
+R7(config-if)#no sh
+R7(config-if)#exit
+</code></pre><p><strong>R16:</strong></p>
+<pre tabindex="0"><code>R16#configure terminal 
+R16(config)#int e0/0
+R16(config-if)#ip addr 10.0.51.2 255.255.255.0
+R16(config-if)#no sh
+R16(config-if)#int e0/1
+R16(config-if)#ip addr 10.0.71.1 255.255.255.0
+R16(config-if)#no sh
+R16(config-if)#exit
+</code></pre><p><strong>R17:</strong></p>
+<pre tabindex="0"><code>R17#configure terminal 
+R17(config)#int e0/1
+R17(config-if)#ip addr 10.0.50.2 255.255.255.0
+R17(config-if)#no sh
+R17(config-if)#int e0/0
+R17(config-if)#ip addr 10.0.70.1 255.255.255.0
+R17(config-if)#no sh
+R17(config-if)#exit
+</code></pre><p><strong>R18:</strong></p>
+<pre tabindex="0"><code>R18#configure terminal 
+R18(config)#int e0/0
+R18(config-if)#ip addr 10.0.71.2 255.255.255.0
+R18(config-if)#no sh
+R18(config-if)#int e0/1
+R18(config-if)#ip addr 10.0.70.2 255.255.255.0
+R18(config-if)#no sh
+R18(config-if)#int loopback 0                      
+R18(config-if)#ip address 10.0.100.1 255.255.255.0    
+R18(config-if)#no sh
+R18(config-if)#exit
+</code></pre><p><strong>R19:</strong></p>
+<pre tabindex="0"><code>R19#configure terminal 
+R19(config)#int e0/0
+R19(config-if)#ip addr 10.0.60.2 255.255.255.0
+R19(config-if)#no sh
+R19(config-if)#int e0/1
+R19(config-if)#ip addr 10.0.80.1 255.255.255.0
+R19(config-if)#no sh
+R19(config-if)#exit
+</code></pre><p><strong>R20:</strong></p>
+<pre tabindex="0"><code>R20#configure terminal 
+R20(config)#int e0/0
+R20(config-if)#ip addr 10.0.61.2 255.255.255.0
+R20(config-if)#no sh
+R20(config-if)#int e0/1
+R20(config-if)#ip addr 10.0.81.1 255.255.255.0
+R20(config-if)#no sh
+R20(config-if)#exit
+</code></pre><p><strong>R21:</strong></p>
+<pre tabindex="0"><code>R21#configure terminal 
+R21(config)#int e0/0
+R21(config-if)#ip addr 10.0.80.2 255.255.255.0
+R21(config-if)#no sh
+R21(config-if)#int e0/1
+R21(config-if)#ip addr 10.0.81.2 255.255.255.0
+R21(config-if)#no sh
+R21(config-if)#int loopback 0
+R21(config-if)#ip addr
+R21(config-if)#ip addr 10.0.110.1 255.255.255.0
+R21(config-if)#no sh
+R21(config-if)#exit
+</code></pre><p><strong>VPC1:</strong></p>
+<pre tabindex="0"><code>VPCS&gt; ip 10.0.10.10 255.255.255.0 gateway 10.0.10.1 
+Checking for duplicate address...
+VPCS : 10.0.10.10 255.255.255.0 gateway 10.0.10.1
+</code></pre><p><strong>VPC2:</strong></p>
+<pre tabindex="0"><code>VPCS&gt; ip 10.0.20.10 255.255.255.0 gateway 10.0.20.1
+Checking for duplicate address...
+VPCS : 10.0.20.10 255.255.255.0 gateway 10.0.20.1
+</code></pre><p><strong>VPC3:</strong></p>
+<pre tabindex="0"><code>VPCS&gt; ip 10.0.30.10 255.255.255.0 gateway 10.0.30.1
+Checking for duplicate address...
+VPCS : 10.0.30.10 255.255.255.0 gateway 10.0.30.1
+</code></pre><p><strong>VPC4:</strong></p>
+<pre tabindex="0"><code>VPCS&gt; ip 10.0.40.10 255.255.255.0 gateway 10.0.40.1
+Checking for duplicate address...
+VPCS : 10.0.40.10 255.255.255.0 gateway 10.0.40.1
+</code></pre><p><strong>2- OSPF çalıştır ve networkleri duyur.</strong></p>
+<p><strong>R1:</strong></p>
+<pre tabindex="0"><code>R1(config)#router ospf 1
+R1(config-router)#router-id 1.1.1.1
+R1(config-router)#network 10.0.0.1 0.0.0.0 area 0
+R1(config-router)#network 10.0.1.1 0.0.0.0 area 0
+R1(config-router)#network 10.0.2.1 0.0.0.0 area 0
+R1(config-router)#network 10.0.3.1 0.0.0.0 area 0
+R1(config-router)#network 10.0.4.1 0.0.0.0 area 0
+R1(config-router)#exit
+</code></pre><p><strong>R2:</strong></p>
+<pre tabindex="0"><code>R2(config)#router ospf 1
+R2(config-router)#router-id 2.2.2.2
+R2(config-router)#network 10.0.2.2 0.0.0.0 area 0
+R2(config-router)#network 10.0.20.1 0.0.0.0 area 2
+R2(config-router)#network 10.0.60.1 0.0.0.0 area 6
+R2(config-router)#exit
+</code></pre><p><strong>R3:</strong></p>
+<pre tabindex="0"><code>R3(config)#router ospf 1
+R3(config-router)#router-id 3.3.3.3
+R3(config-router)#network 10.0.1.2 0.0.0.0 area 0
+R3(config-router)#network 10.0.10.1 0.0.0.0 area 1
+R3(config-router)#network 10.0.50.1 0.0.0.0 area 5
+R3(config-router)#exit
+</code></pre><p><strong>R4:</strong></p>
+<pre tabindex="0"><code>R4(config)#router ospf 1
+R4(config-router)#router-id 4.4.4.4
+R4(config-router)#network 10.0.4.2 0.0.0.0 area 0
+R4(config-router)#network 10.0.40.1 0.0.0.0 area 4
+R4(config-router)#network 10.0.61.1 0.0.0.0 area 6
+R4(config-router)#exit
+</code></pre><p><strong>R5:</strong></p>
+<pre tabindex="0"><code>R5(config)#router ospf 1
+R5(config-router)#router-id 5.5.5.5
+R5(config-router)#network 10.0.3.2 0.0.0.0 area 0
+R5(config-router)#network 10.0.30.1 0.0.0.0 area 3
+R5(config-router)#network 10.0.51.1 0.0.0.0 area 5
+R5(config-router)#exit
+</code></pre><p><strong>R6:</strong></p>
+<pre tabindex="0"><code>R6(config)#router ospf 1
+R6(config-router)#router-id 6.6.6.6
+R6(config-router)#network 10.0.0.2 0.0.0.0 area 0
+R6(config-router)#exit
+</code></pre><p><strong>R16:</strong></p>
+<pre tabindex="0"><code>R16(config)#router ospf 1
+R16(config-router)#router-id 16.16.16.16
+R16(config-router)#network 10.0.51.2 0.0.0.0 area 5
+R16(config-router)#network 10.0.71.1 0.0.0.0 area 7
+R16(config-router)#exit
+</code></pre><p><strong>R17:</strong></p>
+<pre tabindex="0"><code>R17(config)#router ospf 1
+R17(config-router)#router-id 17.17.17.17
+R17(config-router)#network 10.0.50.2 0.0.0.0 area 5
+R17(config-router)#network 10.0.70.1 0.0.0.0 area 7
+R17(config-router)#exit
+</code></pre><p><strong>R18:</strong></p>
+<pre tabindex="0"><code>R18(config)#router ospf 1
+R18(config-router)#router-id 18.18.18.18
+R18(config-router)#network 10.0.70.2 0.0.0.0 area 7
+R18(config-router)#network 10.0.71.2 0.0.0.0 area 7
+R18(config-router)#network 10.0.100.1 0.0.0.0 area 7
+R18(config-router)#exit
+</code></pre><p><strong>R19:</strong></p>
+<pre tabindex="0"><code>R19(config)#router ospf 1
+R19(config-router)#router-id 19.19.19.19
+R19(config-router)#network 10.0.60.2 0.0.0.0 area 6
+R19(config-router)#network 10.0.80.1 0.0.0.0 area 8
+R19(config-router)#exit
+</code></pre><p><strong>R20:</strong></p>
+<pre tabindex="0"><code>R20(config)#router ospf 1
+R20(config-router)#router-id 20.20.20.20
+R20(config-router)#network 10.0.61.2 0.0.0.0 area 6
+R20(config-router)#network 10.0.81.1 0.0.0.0 area 8
+R20(config-router)#exit
+</code></pre><p><strong>R21:</strong></p>
+<pre tabindex="0"><code>R21(config)#router ospf 1
+R21(config-router)#router-id 21.21.21.21
+R21(config-router)#network 10.0.80.2 0.0.0.0 area 8
+R21(config-router)#network 10.0.81.2 0.0.0.0 area 8
+R21(config-router)#network 10.0.110.1 0.0.0.0 area 8
+R21(config-router)#exit
+</code></pre><p><strong>3- Default değeri 100 Mbps olan bant genişliğini 1 Gbps olarak ayarla.</strong></p>
+<p><strong>R1:</strong></p>
+<pre tabindex="0"><code>R1(config)#router ospf 1
+R1(config-router)#auto-cost reference-bandwidth 1000
+R1(config-router)#exit
+</code></pre><p><strong>R2:</strong></p>
+<pre tabindex="0"><code>R2(config)#router ospf 1
+R2(config-router)#auto-cost reference-bandwidth 1000
+R2(config-router)#exit
+</code></pre><p><strong>R3:</strong></p>
+<pre tabindex="0"><code>R3(config)#router ospf 1
+R3(config-router)#auto-cost reference-bandwidth 1000
+R3(config-router)#exit
+</code></pre><p><strong>R4:</strong></p>
+<pre tabindex="0"><code>R4(config)#router ospf 1
+R4(config-router)#auto-cost reference-bandwidth 1000
+R4(config-router)#exit
+</code></pre><p><strong>R5:</strong></p>
+<pre tabindex="0"><code>R5(config)#router ospf 1
+R5(config-router)#auto-cost reference-bandwidth 1000
+R5(config-router)#exit
+</code></pre><p><strong>R6:</strong></p>
+<pre tabindex="0"><code>R6(config)#router ospf 1
+R6(config-router)#auto-cost reference-bandwidth 1000
+R6(config-router)#exit
+</code></pre><p><strong>R16:</strong></p>
+<pre tabindex="0"><code>R16(config)#router ospf 1
+R16(config-router)#auto-cost reference-bandwidth 1000
+R16(config-router)#exit
+</code></pre><p><strong>R17:</strong></p>
+<pre tabindex="0"><code>R17(config)#router ospf 1
+R17(config-router)#auto-cost reference-bandwidth 1000
+R17(config-router)#exit
+</code></pre><p><strong>R18:</strong></p>
+<pre tabindex="0"><code>R18(config)#router ospf 1
+R18(config-router)#auto-cost reference-bandwidth 1000
+R18(config-router)#exit
+</code></pre><p><strong>R19:</strong></p>
+<pre tabindex="0"><code>R19(config)#router ospf 1
+R19(config-router)#auto-cost reference-bandwidth 1000
+R19(config-router)#exit
+</code></pre><p><strong>R20:</strong></p>
+<pre tabindex="0"><code>R20(config)#router ospf 1
+R20(config-router)#auto-cost reference-bandwidth 1000
+R20(config-router)#exit
+</code></pre><p><strong>R21:</strong></p>
+<pre tabindex="0"><code>R21(config)#router ospf 1
+R21(config-router)#auto-cost reference-bandwidth 1000
+R21(config-router)#exit
+</code></pre><p><strong>4- Passive Interfaceleri ayarla.</strong>
+Routerlarda çok fazla interface var, bundan dolayı sadece birer tane olacak şekilde kısa kısa göstereceğim. Burada &ldquo;Hello&rdquo; paketlerinin gitmesini istemediğimiz interfaceleri pasif konuma getiriyoruz.</p>
+<p><strong>R1:</strong></p>
+<pre tabindex="0"><code>R1(config)#router ospf 1
+R1(config-router)#passive-interface e1/1  
+R1(config-router)#exit
+</code></pre><p><strong>R2:</strong></p>
+<pre tabindex="0"><code>R2(config)#router ospf 1
+R2(config-router)#passive-interface e1/1
+</code></pre><p><strong>R3:</strong></p>
+<pre tabindex="0"><code>R3(config)#router ospf 1
+R3(config-router)#passive-interface e1/1
+R3(config-router)#exit
+</code></pre><p><strong>R4:</strong></p>
+<pre tabindex="0"><code>R4(config)#router ospf 1
+R4(config-router)#passive-interface e1/1
+R4(config-router)#exit
+</code></pre><p><strong>R5:</strong></p>
+<pre tabindex="0"><code>R5(config)#router ospf 1
+R5(config-router)#passive-interface e1/1
+R5(config-router)#exit
+</code></pre><p><strong>R6:</strong></p>
+<pre tabindex="0"><code>R6(config)#router ospf 1
+R6(config-router)#passive-interface e1/1
+R6(config-router)#exit
+</code></pre><p><strong>R16:</strong></p>
+<pre tabindex="0"><code>R16(config)#router ospf 1
+R16(config-router)#passive-interface e1/1
+R16(config-router)#exit
+</code></pre><p><strong>R17:</strong></p>
+<pre tabindex="0"><code>R17(config)#router ospf 1
+R17(config-router)#passive-interface e1/1
+R17(config-router)#exit
+</code></pre><p><strong>R18:</strong></p>
+<pre tabindex="0"><code>R18(config)#router ospf 1
+R18(config-router)#passive-interface e1/1
+R18(config-router)#exit
+</code></pre><p><strong>R19:</strong></p>
+<pre tabindex="0"><code>R19(config)#router ospf 1
+R19(config-router)#passive-interface e1/1
+R19(config-router)#exit
+</code></pre><p><strong>R20:</strong></p>
+<pre tabindex="0"><code>R20(config)#router ospf 1
+R20(config-router)#passive-interface e1/1
+R20(config-router)#exit
+</code></pre><p><strong>R21:</strong></p>
+<pre tabindex="0"><code>R21(config)#router ospf 1
+R21(config-router)#passive-interface e1/1
+R21(config-router)#exit
+</code></pre><p><strong>5- R6 Router&rsquo;ı üzerinde Default Route yaz.</strong>
+Bunun anlamı; bilmediğin her rotayı ona sor. Yani Default Gateway&rsquo;e sor. Ben burada örnek olması için farklı Autonomous System olan R7&rsquo;nin Interfacesini yazacağım</p>
+<p><strong>R6:</strong></p>
+<pre tabindex="0"><code>R6(config)#ip route 0.0.0.0 0.0.0.0 172.16.1.2
+</code></pre><p><strong>6- Default Route&rsquo;u yayınla.</strong></p>
+<p><strong>R6:</strong></p>
+<pre tabindex="0"><code>R6(config)#router ospf 1
+R6(config-router)#default-information originate 
+R6(config-router)#exit
+</code></pre><p><strong>7- SHA512 Authentication yapılandır.</strong></p>
+<p><strong>R1:</strong></p>
+<pre tabindex="0"><code>R1(config)#key chain R1
+R1(config-keychain)#key 1
+R1(config-keychain-key)#cryptographic-algorithm hmac-sha-512 
+R1(config-keychain-key)#key-string besiktas
+R1(config-keychain-key)#exit
+R1(config-keychain)#exit
+---------------------------------------------------------------------------
+#Buraya Kadar Anahtar Oluşturduk, Şimdi de Interface Altında Uygulayacağız.
+---------------------------------------------------------------------------
+R1(config)#interface e0/0
+R1(config-if)#ip ospf authentication key-chain R1
+R1(config-if)#int e0/1
+R1(config-if)#ip ospf authentication key-chain R1
+R1(config-if)#int e0/2
+R1(config-if)#ip ospf authentication key-chain R1
+R1(config-if)#int e0/3
+R1(config-if)#ip ospf authentication key-chain R1
+R1(config-if)#int e1/0
+R1(config-if)#ip ospf authentication key-chain R1
+R1(config-if)#exit
+</code></pre><p><strong>R2:</strong></p>
+<pre tabindex="0"><code>R2(config)#key chain R2
+R2(config-keychain)#key 1
+R2(config-keychain-key)#cryptographic-algorithm hmac-sha-512 
+R2(config-keychain-key)#key-string besiktas
+R2(config-keychain-key)#exit
+R2(config-keychain)#exit
+R2(config)#interface e0/0
+R2(config-if)#ip ospf authentication key-chain R2
+R2(config-if)#int e0/2
+R2(config-if)#ip ospf authentication key-chain R2
+R2(config-if)#exit
+</code></pre><p><strong>R3:</strong></p>
+<pre tabindex="0"><code>R3(config)#key chain R3
+R3(config-keychain)#key 1
+R3(config-keychain-key)#cryptographic-algorithm hmac-sha-512
+R3(config-keychain-key)#key-string besiktas
+R3(config-keychain-key)#exit
+R3(config-keychain)#exit 
+R3(config)#interface e0/1
+R3(config-if)#ip ospf authentication key-chain R3
+R3(config-if)#int e0/2
+R3(config-if)#ip ospf authentication key-chain R3
+R3(config-if)#exit
+</code></pre><p><strong>R4:</strong></p>
+<pre tabindex="0"><code>R4(config)#key chain R4
+R4(config-keychain)#key 1
+R4(config-keychain-key)#cryptographic-algorithm hmac-sha-512 
+R4(config-keychain-key)#key-string besiktas
+R4(config-keychain-key)#exit
+R4(config-keychain)#exit
+R4(config)#interface e0/0
+R4(config-if)#ip ospf authentication key-chain R4
+R4(config-if)#int e0/2
+R4(config-if)#ip ospf authentication key-chain R4
+R4(config-if)#exit
+</code></pre><p><strong>R5:</strong></p>
+<pre tabindex="0"><code>R5(config)#key chain R5
+R5(config-keychain)#key 1
+R5(config-keychain-key)#cryptographic-algorithm hmac-sha-512 
+R5(config-keychain-key)#key-string besiktas
+R5(config-keychain-key)#exit
+R5(config-keychain)#exit
+R5(config)#interface e0/0
+R5(config-if)#ip ospf authentication key-chain R5
+R5(config-if)#int e0/2
+R5(config-if)#ip ospf authentication key-chain R5
+R5(config-if)#exit
+</code></pre><p><strong>R6:</strong></p>
+<pre tabindex="0"><code>R6(config)#key chain R6
+R6(config-keychain)#key 1
+R6(config-keychain-key)#cryptographic-algorithm hmac-sha-512 
+R6(config-keychain-key)#key-string besiktas
+R6(config-keychain-key)#exit
+R6(config-keychain)#exit
+R6(config)#interface e0/0
+R6(config-if)#ip ospf authentication key-chain R6
+R6(config-if)#exit
+</code></pre><p><strong>R16:</strong></p>
+<pre tabindex="0"><code>R16(config)#key chain R16
+R16(config-keychain)#key 1
+R16(config-keychain-key)#cryptographic-algorithm hmac-sha-512 
+R16(config-keychain-key)#key-string besiktas
+R16(config-keychain-key)#exit
+R16(config-keychain)#exit
+R16(config)#int e0/0
+R16(config-if)#ip ospf authentication key-chain R16
+R16(config-if)#int e0/1
+R16(config-if)#ip ospf authentication key-chain R16
+R16(config-if)#exit
+</code></pre><p><strong>R17:</strong></p>
+<pre tabindex="0"><code>R17(config)#key chain R17
+R17(config-keychain)#key 1
+R17(config-keychain-key)#cryptographic-algorithm hmac-sha-512 
+R17(config-keychain-key)#key-string besiktas
+R17(config-keychain-key)#exit
+R17(config-keychain)#exit
+R17(config)#int e0/1
+R17(config-if)#ip ospf authentication key-chain R17
+R17(config-if)#int e0/0
+R17(config-if)#ip ospf authentication key-chain R17
+R17(config-if)#exit
+</code></pre><p><strong>R18:</strong></p>
+<pre tabindex="0"><code>R18(config)#key chain R18
+R18(config-keychain)#key 1 
+R18(config-keychain-key)#cryptographic-algorithm hmac-sha-512 
+R18(config-keychain-key)#key-string besiktas
+R18(config-keychain-key)#exit
+R18(config-keychain)#exit
+R18(config)#int e0/0
+R18(config-if)#ip ospf authentication key-chain R18
+R18(config-if)#int e0/1
+R18(config-if)#ip ospf authentication key-chain R18
+R18(config-if)#exit
+</code></pre><p><strong>R19:</strong></p>
+<pre tabindex="0"><code>R19(config)#key chain R19
+R19(config-keychain)#key 1
+R19(config-keychain-key)#cryptographic-algorithm hmac-sha-512 
+R19(config-keychain-key)#key-string besiktas
+R19(config-keychain-key)#exit
+R19(config-keychain)#exit
+R19(config)#int e0/0 
+R19(config-if)#ip ospf authentication key-chain R19
+R19(config-if)#int e0/1
+R19(config-if)#ip ospf authentication key-chain R19
+R19(config-if)#exit
+</code></pre><p><strong>R20:</strong></p>
+<pre tabindex="0"><code>R20(config)#key chain R20
+R20(config-keychain)#key 1
+R20(config-keychain-key)#cryptographic-algorithm hmac-sha-512
+R20(config-keychain-key)#key-string besiktas
+R20(config-keychain-key)#exit
+R20(config-keychain)#exit
+R20(config)#int e0/0
+R20(config-if)#ip ospf authentication key-chain R20
+R20(config-if)#int e0/1
+R20(config-if)#ip ospf authentication key-chain R20
+R20(config-if)#exit
+</code></pre><p><strong>R21:</strong></p>
+<pre tabindex="0"><code>R21(config)#key chain R21
+R21(config-keychain)#key 1
+R21(config-keychain-key)#cryptographic-algorithm hmac-sha-512
+R21(config-keychain-key)#key-string besiktas
+R21(config-keychain-key)#exit
+R21(config-keychain)#exit
+R21(config)#int e0/0
+R21(config-if)#ip ospf authentication key-chain R21
+R21(config-if)#int e0/1
+R21(config-if)#ip ospf authentication key-chain R21
+R21(config-if)#exit
+</code></pre><p><strong>8- Virtual Link Yapılandır (R16-R5) (R3-R17) (R2-R19) (R4-R20)</strong>
+Virtual link yapmamızın amacı Area 0&rsquo;a doğrudan bağlantısı olmayan areaların sanal bir link ile bağlanmasını sağlamak. Peki Area 0&rsquo;a doğrudan bağlı olmayan arealara ne olur? Örneğin Virtual Link olmadan R21 Router&rsquo;ının routing tablosuna bakalım:</p>
+<p><img src="/images/OSPFLAB/2.png" alt="ospf"></p>
+<p>Hiçbir şey yok. Yani bu router diğer networklere gidemez. Bir de yaptıktan sonra tekrar bakalım.</p>
+<p><em>Virtual Link 1</em>
+<strong>R16:</strong></p>
+<pre tabindex="0"><code>R16(config)#router ospf 1
+R16(config-router)#area 5 virtual-link 5.5.5.5
+R16(config-router)#exit
+</code></pre><p><strong>R5:</strong></p>
+<pre tabindex="0"><code>R5(config)#router ospf 1
+R5(config-router)#area 5 virtual-link 16.16.16.16
+R5(config-router)#exit
+</code></pre><p><em>Virtual Link 2</em>
+<strong>R17:</strong></p>
+<pre tabindex="0"><code>R17(config)#router ospf 1
+R17(config-router)#area 5 virtual-link 3.3.3.3
+R17(config-router)#exit
+</code></pre><p><strong>R3:</strong></p>
+<pre tabindex="0"><code>R3(config)#router ospf 1
+R3(config-router)#area 5 virtual-link 17.17.17.17
+R3(config-router)#exit
+</code></pre><p><em>Virtual Link 3</em>
+<strong>R2:</strong></p>
+<pre tabindex="0"><code>R2(config)#router ospf 1
+R2(config-router)#area 6 virtual-link 19.19.19.19
+R2(config-router)#exit
+</code></pre><p><strong>R19:</strong></p>
+<pre tabindex="0"><code>R19(config)#router ospf 1
+R19(config-router)#area 6 virtual-link 2.2.2.2
+R19(config-router)#exit
+</code></pre><p><em>Virtual Link 4</em>
+<strong>R4:</strong></p>
+<pre tabindex="0"><code>R4(config)#router ospf 1
+R4(config-router)#area 6 virtual-link 20.20.20.20
+R4(config-router)#exit
+</code></pre><p><strong>R20:</strong></p>
+<pre tabindex="0"><code>R20(config)#router ospf 1
+R20(config-router)#area 6 virtual-link 4.4.4.4
+R20(config-router)#exit
+</code></pre><p>Şimdi de yine örnekten devam ederek R21 Router&rsquo;ının routing tablosuna bakalım.</p>
+<p><img src="/images/OSPFLAB/3.png" alt="ospf"></p>
+<p>Görüldüğü gibi artık bir hayli route birden eklenmiş oldu. Artık diğer networklere erişebilir hale geldi.
+Virtual-Link yapmanın amacı budur.</p>
+<p>R21&rsquo;de bazı networklere gitmek için 2 rota görünüyor bir tanesi 81.1&rsquo;den diğeri ise 80.1&rsquo;den. Bu durumda OSPF yük dengeleme yapacaktır. Eğer istersem bu rotalardan birini önceliklendirebilirim. Eğer ki illa R19&rsquo;dan değil de R20&rsquo;den gitsin istersem R21&rsquo;in interfacesi altında cost değeriyle oynayarak bunu yapabilirim.
+Örnek olarak yapalım. Yukarda görüldüğü üzre 10.0.0.0/24 networküne giden iki rotanın da Cost değeri 400. OSPF en düşük Cost değerindeki interfaceden paketi gönderir. Bundan dolayı e0/0 interfacesine Cost değeri olarak 2, e0/1 interfacesine de 1 Cost değeri verirsem olay tatlıya bağlanır. Unutulmamalıdır ki bu değişiklik, ilgili interfacelerden gidilen diğer rotaları da etkileyecektir.
+Başlayalım,</p>
+<p><strong>R21:</strong></p>
+<pre tabindex="0"><code>R21(config)#interface e0/1
+R21(config-if)#ip ospf cost 1
+R21(config-if)#int e0/0
+R21(config-if)#ip ospf cost 2
+R21(config-if)#exit
+</code></pre><p>Şimdi route tablosuna tekrar bakalım.</p>
+<p><img src="/images/OSPFLAB/4.png" alt="ospf"></p>
+<p>Dediğim gibi tabloda da bir hayli değişiklik olmuş oldu.</p>
+<p>Devam edelim.</p>
+<p><strong>9- R6 ve R7 Router&rsquo;ları üzerinde EIGRP yapılandır.</strong></p>
+<p>Başka Dynamic Routing protokolü kullanan networklerle iletişim kurmak için Redistribution yapmamız gerek. Örnek olarak ben bu topolojide R7 adında bir Router oluşturdum ve burada da EIGRP koşturacağım. Daha sonra da OSPF-EIGRP Redistribution yapılandıracağım.
+Bunun için R7&rsquo;de basit bir şekilde EIGRP konfigürasyonu yapıyorum.</p>
+<p><strong>R7:</strong></p>
+<pre tabindex="0"><code>R7(config)#router eigrp 100
+R7(config-router)#network 192.168.1.1 0.0.0.0
+R7(config-router)#network 172.16.1.2 0.0.0.0
+R7(config-router)#exit
+</code></pre><p>Şimdi R6&rsquo;da da yine aynı şekilde bir de EIGRP protokolü çalıştıracağım. Bu sayede Redistribution yapabiliyor olacağım. EIGRP çalıştırırken AS numarasının aynı olması gerekmektedir. Aksi halde komşuluk kurulmaz. R7&rsquo;de 100 olarak yapılandırdım. Aynı şekilde R6&rsquo;da da 100 olarak yapılandırıyorum.</p>
+<p><strong>R6:</strong></p>
+<pre tabindex="0"><code>R6(config)#router eigrp 100
+R6(config-router)#net
+R6(config-router)#network 172.16.1.1 0.0.0.0
+R6(config-router)#exit
+</code></pre><p><strong>10- Redistribution yap (EIGRP).</strong>
+Şimdi sıra tabloları aktarıp döndermekte.</p>
+<p><strong>R6:</strong></p>
+<pre tabindex="0"><code>R6(config)#router eigrp 100
+R6(config-router)#redistribute ospf 1 metric 10000 1000 255 1 1500
+R6(config-router)#exit
+R6(config)#router ospf 1
+R6(config-router)#redistribute eigrp 100 metric 66 metric-type 1 subnet tag 555
+</code></pre><p><strong>11- Test et.</strong>
+Son olarak en uç cihazlardan birkaç ping testi yapalım.</p>
+<p>VPC3&rsquo;den R21 Loopback IP&rsquo;sine (10.0.110.1)
+<strong>VPC3:</strong></p>
+<pre tabindex="0"><code>VPCS&gt; ping 10.0.110.1
+84 bytes from 10.0.110.1 icmp_seq=1 ttl=251 time=5.771 ms
+84 bytes from 10.0.110.1 icmp_seq=2 ttl=251 time=1.833 ms
+84 bytes from 10.0.110.1 icmp_seq=3 ttl=251 time=1.449 ms
+84 bytes from 10.0.110.1 icmp_seq=4 ttl=251 time=6.742 ms
+84 bytes from 10.0.110.1 icmp_seq=5 ttl=251 time=1.507 ms
+</code></pre><p>VPC1&rsquo;den VPC4&rsquo;e
+<strong>VPC1:</strong></p>
+<pre tabindex="0"><code>VPCS&gt; ping 10.0.40.10
+84 bytes from 10.0.40.10 icmp_seq=1 ttl=61 time=8.473 ms
+84 bytes from 10.0.40.10 icmp_seq=2 ttl=61 time=1.220 ms
+84 bytes from 10.0.40.10 icmp_seq=3 ttl=61 time=1.260 ms
+84 bytes from 10.0.40.10 icmp_seq=4 ttl=61 time=1.142 ms
+84 bytes from 10.0.40.10 icmp_seq=5 ttl=61 time=1.180 ms
+</code></pre><p>VPC2&rsquo;den R7&rsquo;nin Loopback IP&rsquo;sine (192.168.1.1)
+<strong>VPC2:</strong></p>
+<pre tabindex="0"><code>VPCS&gt; ping 192.168.1.1
+84 bytes from 192.168.1.1 icmp_seq=1 ttl=252 time=4.994 ms
+84 bytes from 192.168.1.1 icmp_seq=2 ttl=252 time=4.879 ms
+84 bytes from 192.168.1.1 icmp_seq=3 ttl=252 time=4.704 ms
+84 bytes from 192.168.1.1 icmp_seq=4 ttl=252 time=1.288 ms
+84 bytes from 192.168.1.1 icmp_seq=5 ttl=252 time=5.089 ms
+</code></pre><p>Artık bütün networkler birbirlerine gidebildiğine göre Lab başarıyla tamamlanmıştır.</p>
+<p>Teşekkürler,</p>
+<p>İyi Çalışmalar.</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Posts</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospflab%2fospf-lab%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospflab%2fospf-lab%2f&text=OSPF%20LAB" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospflab%2fospf-lab%2f&title=OSPF%20LAB" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospflab%2fospf-lab%2f&is_video=false&description=OSPF%20LAB" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=OSPF%20LAB&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospflab%2fospf-lab%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospflab%2fospf-lab%2f&title=OSPF%20LAB" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospflab%2fospf-lab%2f&title=OSPF%20LAB" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospflab%2fospf-lab%2f&name=OSPF%20LAB&description=%3cp%3eBu%20Lab%e2%80%99daki%20amac%c4%b1m%20OSPF%e2%80%99in%20genel%20bir%20tekrar%c4%b1n%c4%b1%20yapmak%20olacak.%20Komutlar%c4%b1%20uzun%20uzun%20yaz%c4%b1yor%20olaca%c4%9f%c4%b1m.%3c%2fp%3e%0a%3cp%3eA%c5%9fa%c4%9f%c4%b1daki%20topolojiyi%20uygulayaca%c4%9f%c4%b1m.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fOSPFLAB%2f1.png%22%20alt%3d%22ospf%22%3e%3c%2fp%3e%0a%3cp%3eBu%20Lab%26rsquo%3bda%20istenilenler%20topolojinin%20sol%20%c3%bcst%20k%c3%b6%c5%9fesinde%20yaz%c4%b1yor.%3c%2fp%3e%0a%3cp%3eBuna%20g%c3%b6re%3b%3c%2fp%3e%0a%3cp%3e%3cstrong%3e1-%20%c4%b0lk%20olarak%20router%20interfacelerine%20ve%20VPC%26rsquo%3blere%20s%c4%b1ras%c4%b1yla%20IP%26rsquo%3blerini%20vererek%20ba%c5%9fl%c4%b1yorum.%3c%2fstrong%3e%3c%2fp%3e%0a%3cp%3e%3cstrong%3eR1%3a%3c%2fstrong%3e%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eR1%23configure%20terminal%20%0aR1%28config%29%23int%20e0%2f0%0aR1%28config-if%29%23ip%20addr%2010.0.1.1%20255.255.255.0%0aR1%28config-if%29%23no%20sh%0aR1%28config-if%29%23int%20e0%2f1%0aR1%28config-if%29%23ip%20address%2010.0.3.1%20255.255.255.0%0aR1%28config-if%29%23no%20sh%0aR1%28config-if%29%23int%20e0%2f2%0aR1%28config-if%29%23ip%20addr%2010.0.4.1%20255.255.255.0%0aR1%28config-if%29%23no%20sh%0aR1%28config-if%29%23int%20e0%2f3%0aR1%28config-if%29%23ip%20addr%2010.0.2.1%20255.255.255.0%0aR1%28config-if%29%23no%20sh%0aR1%28config-if%29%23int%20e1%2f0%0aR1%28config-if%29%23ip%20addr%2010.0.0.1%20255.255.255.0%0aR1%28config-if%29%23no%20sh%0aR1%28config-if%29%23exit%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3e%3cstrong%3eR2%3a%3c%2fstrong%3e%3c%2fp%3e" aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospflab%2fospf-lab%2f&t=OSPF%20LAB" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2024  ittechnetworkk 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

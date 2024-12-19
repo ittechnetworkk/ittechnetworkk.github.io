@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> GPG Nedir? | ittechnetworkk</title>
+  <link rel = 'canonical' href = 'https://ittechnetworkk.github.io/posts/gpgnedir/gpg-nedir/'>
+  <meta name="description" content="Hello, I’m Soner from Turkey. I prefer working with the CLI rather than GUI. On this site, I share my expertise in various technologies, insights into newly learned tools, as well as details of the projects I have completed and those I plan to undertake. I run this blog with the motivation to learn, have fun, and help others along the way.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:url" content="https://ittechnetworkk.github.io/posts/gpgnedir/gpg-nedir/">
+  <meta property="og:site_name" content="ittechnetworkk">
+  <meta property="og:title" content="GPG Nedir?">
+  <meta property="og:description" content="GPG (GNU Privacy Guard )RFC4880 , GPL Lisanslı bir şifreleme ve imzalama aracıdır. Linux’da defaultta gelir, Windows için Web Sitesi’nden indirilebilir.
+GPG asimetrik şifreleme algoritması kullanır. Yani Public ve Prive anahtarlar vasıtasıyla dataları şifreler veya çözer.
+Nedir bu Public ve Prive anahtarlar?
+2 kişi düşünelim birbirleriyle haberleşmek istesin. Her kişinin 2 anahtarı olur. Biri “Public Key” yani paylaşılan anahtar. Diğeri ise “Private key” yani gizli kalması gereken anahtar.
+X kişisi Y kişisine gizli bir mesaj göndermek isterse bu mesajı Y kişisinin “Public Key&#34;i ile şifrelemesi gerekir.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-07-23T22:57:40+01:00">
+    <meta property="article:modified_time" content="2024-07-23T22:57:40+01:00">
+    <meta property="article:tag" content="Gpg">
+    <meta property="article:tag" content="Linux">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="GPG Nedir?">
+  <meta name="twitter:description" content="GPG (GNU Privacy Guard )RFC4880 , GPL Lisanslı bir şifreleme ve imzalama aracıdır. Linux’da defaultta gelir, Windows için Web Sitesi’nden indirilebilir.
+GPG asimetrik şifreleme algoritması kullanır. Yani Public ve Prive anahtarlar vasıtasıyla dataları şifreler veya çözer.
+Nedir bu Public ve Prive anahtarlar?
+2 kişi düşünelim birbirleriyle haberleşmek istesin. Her kişinin 2 anahtarı olur. Biri “Public Key” yani paylaşılan anahtar. Diğeri ise “Private key” yani gizli kalması gereken anahtar.
+X kişisi Y kişisine gizli bir mesaj göndermek isterse bu mesajı Y kişisinin “Public Key&#34;i ile şifrelemesi gerekir.">
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://ittechnetworkk.github.io/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://ittechnetworkk.github.io/images/favicon.ico" />
+
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://ittechnetworkk.github.io/posts/raspberrypisyslogserver/raspberrypi-syslog/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://ittechnetworkk.github.io/posts/networktroubleshooting/network-troubleshooting/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgpgnedir%2fgpg-nedir%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgpgnedir%2fgpg-nedir%2f&text=GPG%20Nedir%3f" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgpgnedir%2fgpg-nedir%2f&title=GPG%20Nedir%3f" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgpgnedir%2fgpg-nedir%2f&is_video=false&description=GPG%20Nedir%3f" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=GPG%20Nedir%3f&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgpgnedir%2fgpg-nedir%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgpgnedir%2fgpg-nedir%2f&title=GPG%20Nedir%3f" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgpgnedir%2fgpg-nedir%2f&title=GPG%20Nedir%3f" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgpgnedir%2fgpg-nedir%2f&name=GPG%20Nedir%3f&description=%3cp%3eGPG%20%28GNU%20Privacy%20Guard%20%29%3ca%20href%3d%22https%3a%2f%2fdatatracker.ietf.org%2fdoc%2fhtml%2frfc4880%22%3eRFC4880%3c%2fa%3e%20%2c%20GPL%20Lisansl%c4%b1%20bir%20%c5%9fifreleme%20ve%20imzalama%20arac%c4%b1d%c4%b1r.%20Linux%26rsquo%3bda%20defaultta%20gelir%2c%20Windows%20i%c3%a7in%20%3ca%20href%3d%22https%3a%2f%2fwww.gnupg.org%2fdownload%2f%22%3eWeb%20Sitesi%3c%2fa%3e%26rsquo%3bnden%20indirilebilir.%3c%2fp%3e%0a%3cp%3eGPG%20asimetrik%20%c5%9fifreleme%20algoritmas%c4%b1%20kullan%c4%b1r.%20Yani%20Public%20ve%20Prive%20anahtarlar%20vas%c4%b1tas%c4%b1yla%20datalar%c4%b1%20%c5%9fifreler%20veya%20%c3%a7%c3%b6zer.%3c%2fp%3e%0a%3cp%3eNedir%20bu%20Public%20ve%20Prive%20anahtarlar%3f%3c%2fp%3e%0a%3cp%3e2%20ki%c5%9fi%20d%c3%bc%c5%9f%c3%bcnelim%20birbirleriyle%20haberle%c5%9fmek%20istesin.%20Her%20ki%c5%9finin%202%20anahtar%c4%b1%20olur.%20Biri%20%26ldquo%3bPublic%20Key%26rdquo%3b%20yani%20payla%c5%9f%c4%b1lan%20anahtar.%20Di%c4%9feri%20ise%20%26ldquo%3bPrivate%20key%26rdquo%3b%20yani%20gizli%20kalmas%c4%b1%20gereken%20anahtar.%3c%2fp%3e%0a%3cp%3eX%20ki%c5%9fisi%20Y%20ki%c5%9fisine%20gizli%20bir%20mesaj%20g%c3%b6ndermek%20isterse%20bu%20mesaj%c4%b1%20Y%20ki%c5%9fisinin%20%26ldquo%3bPublic%20Key%26quot%3bi%20ile%20%c5%9fifrelemesi%20gerekir.%3c%2fp%3e" aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgpgnedir%2fgpg-nedir%2f&t=GPG%20Nedir%3f" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        GPG Nedir?
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2024-07-23 22:57:40 &#43;0100 &#43;0100" itemprop="datePublished">2024-07-23</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          2 minute read
+        </div>
+        
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/gpg" rel="tag">gpg</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/linux" rel="tag">linux</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <p>GPG (GNU Privacy Guard )<a href="https://datatracker.ietf.org/doc/html/rfc4880">RFC4880</a> , GPL Lisanslı bir şifreleme ve imzalama aracıdır. Linux&rsquo;da defaultta gelir, Windows için <a href="https://www.gnupg.org/download/">Web Sitesi</a>&rsquo;nden indirilebilir.</p>
+<p>GPG asimetrik şifreleme algoritması kullanır. Yani Public ve Prive anahtarlar vasıtasıyla dataları şifreler veya çözer.</p>
+<p>Nedir bu Public ve Prive anahtarlar?</p>
+<p>2 kişi düşünelim birbirleriyle haberleşmek istesin. Her kişinin 2 anahtarı olur. Biri &ldquo;Public Key&rdquo; yani paylaşılan anahtar. Diğeri ise &ldquo;Private key&rdquo; yani gizli kalması gereken anahtar.</p>
+<p>X kişisi Y kişisine gizli bir mesaj göndermek isterse bu mesajı Y kişisinin &ldquo;Public Key&quot;i ile şifrelemesi gerekir.</p>
+<p>Bunu açmak için ise Y kişisi private anahtarını kullanır. Bu sayede mesaj içeriğine kimse erişemez.</p>
+<p>Şekilde görüldüğü gibi &ldquo;Ali Haydar&rdquo; adlı kişi &ldquo;Elida Deniz&rdquo; adlı arkadaşa gizli bir bir mesaj gönderiyor.</p>
+<p><img src="/images/GPGNedir/1.png" alt="gpg"></p>
+<p>Bunu yapmak için Ali Haydar mesajı Elida Deniz&rsquo;in Public Key&rsquo;i ile şifreliyor ve gönderiyor.</p>
+<p>Elida Deniz ise mesajı açmak için Private Key&rsquo;ini kullanarak açabiliyor.</p>
+<p>Elida Deniz de bir mesaj göndermek isterse bu sefer Ali Haydar&rsquo;ın Public Key&rsquo;i ile şifreleyecek ve gönderecektir.</p>
+<p>Şimdi gelelim işin nasıl yapıldığına;</p>
+<p>Linux sistemlerde defaultta gelir, eğer yüklü değilse aşağıdaki komutla yükleyebilirsiniz.</p>
+<pre tabindex="0"><code>sudo apt install gpg
+</code></pre><p>Artık kullanmaya başlayabiliriz.</p>
+<p>İlk olarak bir anahtar çifti oluşturma:</p>
+<pre tabindex="0"><code>gpg --gen-key
+</code></pre><p>Anahtar çifti oluştururken adınızı, mail adresinizi ve güçlü bir şifre girmenizi isteyecektir. Bu şifreyi unutmamanız gerekir.</p>
+<p>Anahtarları listeleme:</p>
+<pre tabindex="0"><code>gpg --list-keys
+gpg --list-secret-keys
+</code></pre><p>Anahtar silme:</p>
+<pre tabindex="0"><code>gpg --delete-keys ID                     ID&#39;si belirtilen public anahtarı siler.
+gpg --delete-secret-keys ID              ID&#39;si belirtilen private anahtarı siler.
+gpg --delete-secret-and-public-keys ID   ID&#39;si belirtilen secret ve private anahtarı siler.
+</code></pre><p>Parmak izlerini görmek için:</p>
+<pre tabindex="0"><code>gpg --fingerprint
+</code></pre><p>Anahtarı düzenlemek için:</p>
+<pre tabindex="0"><code>gpg --edit-key ID
+passwd        #parolayı değiştirir
+save          #değişiklikleri kaydeder
+enable        #enable eder
+disable       #disable eder
+addphoto      #bir fotograf ekler
+quit          #edit modundan çıkmayı sağlar
+</code></pre><p>Private Key&rsquo;i dışarıya aktarma:</p>
+<pre tabindex="0"><code>gpg -ao private.txt --export-secret-keys ID    #ID&#39;si belirtilen Private Key&#39;yi dışarı aktarır.
+</code></pre><p>Private anahtarı dışarı aktarmak, farklı cihazlarda gpg kullanmanızı sağlar.</p>
+<p>Private Key&rsquo;i import etme:</p>
+<pre tabindex="0"><code>gpg --allow-secret-key-import --import private.txt
+</code></pre><p>Public Key oluşturma:</p>
+<pre tabindex="0"><code>gpg -ao public.txt --export ID            #Key&#39;i public.txt dosyasına kaydeder.
+</code></pre><p>Public Key import etme:</p>
+<pre tabindex="0"><code>gpg --import public.txt
+</code></pre><p>Başkasına ait Public Key&rsquo;i anahtarlığa ekler.</p>
+<p>Bu komut size aşağıdaki gibi bir Key üretecektir.</p>
+<pre tabindex="0"><code>-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mQGNBGadVywBDACu6iDTxhNeQMwEz//fbGO6kVrXu15KggDLahYl65W/6ha0gvnR
+gdOFE+ae5kWzAt8DnrbZWAqLJCvu5SS59RQXo03PhLDOg+/eunqq6WaqV1Rb67sj
+3eT8lbd+LF2V42dPq/v2evpBnC2EDxDyppD76OCJ4X/5MZNlhXUnC+dZ3qw4I5SI
+mbRm6rsRy+98OuTxL2F8fWfpUqp5vGwh/6sLhtJl9dshcCD4YcHyDaUt+gAuaMlN
+ghC+E5MK7qDwlj2wa3U9No50ahfTj1f6E9tdVzATnbl3DvzBLv+faAhz/6LQpoYL
+fe0Y8kTfgb+hP1hhX/U2W5PsTI1ZjkTcrfH5byT2LEi5wOBl1ikrRwlYG01ZWbMq
+gdOFE+ae5kWzAt8DnrbZWAqLJCvu5SS59RQXo03PhLDOg+/eunqq6WaqV1Rb67sj
+3eT8lbd+LF2V42dPq/v2evpBnC2EDxDyppD76OCJ4X/5MZNlhXUnC+dZ3qw4I5SI
+mbRm6rsRy+98OuTxL2F8fWfpUqp5vGwh/6sLhtJl9dshcCD4YcHyDaUt+gAuaMlN
+ghC+E5MK7qDwlj2wa3U9No50ahfTj1f6E9tdVzATnbl3DvzBLv+faAhz/6LQpoYL
+fe0Y8kTfgb+hP1hhX/U2W5PsTI1ZjkTcrfH5byT2LEi5wOBl1ikrRwlYG01ZWbMq
+WAEZjXCFJ+/gA63qdq6b3NNonVt+iiwUDkf1c92jnqM3OMJ1HuRT4eufRe8PKnWd
+zy+nJMf+VivABw6qK0VNGWIywLliiK6onUjWEx/TijWu2Pd9pc/67OsIzVnU2Vpo
+mQGNBGadVywBDACu6iDTxhNeQMwEz//fbGO6kVrXu15KggDLahYl65W/6ha0gvnR
+gdOFE+ae5kWzAt8DnrbZWAqLJCvu5SS59RQXo03PhLDOg+/eunqq6WaqV1Rb67sj
+3eT8lbd+LF2V42dPq/v2evpBnC2EDxDyppD76OCJ4X/5MZNlhXUnC+dZ3qw4I5SI
+mbRm6rsRy+98OuTxL2F8fWfpUqp5vGwh/6sLhtJl9dshcCD4YcHyDaUt+gAuaMlN
+ghC+E5MK7qDwlj2wa3U9No50ahfTj1f6E9tdVzATnbl3DvzBLv+faAhz/6LQpoYL
+fe0Y8kTfgb+hP1hhX/U2W5PsTI1ZjkTcrfH5byT2LEi5wOBl1ikrRwlYG01ZWbMq
+WAEZjXCFJ+/gA63qdq6b3NNonVt+iiwUDkf1c92jnqM3OMJ1HuRT4eufRe8PKnWd
+zy+nJMf+VivABw6qK0VNGWIywLliiK6onUjWEx/TijWu2Pd9pc/67OsIzVnU2Vpo
+9mffy8VesxgkvBMAEQEAAbQgc29uZXJzYWhpbiA8c29uZXJhMTcxQGdtYWlsLmNv
+bT6JAdQEEwEKAD4WIQShE5AUmCeOS+K8HdjOstk45/606QUCZp1XLAIbAwUJA8Jn
+AAULCQgHAgYVCgkICwIEFgIDAQIeAQIXgAAKCRDOstk45/606a/ODACfyLQJvMRN
+rzU1ioLdoH3i92eHOTo54HVUoD7yoyUZmt5WQh0h7/tUfsZRwa/lBV3TE6sTQtUd
+Rk4PrHZdq00bz6mKjY7UTGi6AIEJXSjWCL1k56YB44NrJFtRTDez3QYuapa3E7vn
+nBRVQwARAQABiQG8BBgBCgAmFiEEoROQFJgnjkvivB3YzrLZOOf+tOkFAmadVywC
+
+-----END PGP PUBLIC KEY BLOCK-----
+</code></pre><p>Bu Public Key&rsquo;dir. Bunu artık Key Server&rsquo;lara koyarak başkalarının size mesaj gönderirken kullanmasını sağlayabilirsiniz. Veya bir txt dosyasına kaydedip güvenli iletişim kurmak istediğiniz kişilere gönderebilirsiniz.</p>
+<p>Public Key&rsquo;i anahtar sunuculara gönderme:</p>
+<pre tabindex="0"><code>gpg --keyserver «SunucuURL» --sends-keys ID
+</code></pre><p>Örnek Key Serverlar:
+<a href="https://keyserver.ubuntu.com/">https://keyserver.ubuntu.com/</a>
+<a href="https://keys.openpgp.org/">https://keys.openpgp.org/</a></p>
+<p>Aynı zamanda ilgili Key Server&rsquo;dan anahtar da çekebiliriz:</p>
+<pre tabindex="0"><code>gpg --keyserver «SunucuURL» --recv-keys ID
+</code></pre><p>Key Server&rsquo;da arama yapma:</p>
+<pre tabindex="0"><code>gpg --keyserver «SunucuURL» --search-keys «KullanıcıAdı»
+</code></pre><p>Şimdi dosya şifreleme komutlarına bakalım.</p>
+<p>Elimde bir adet Akın&rsquo;a ait Public Key var. Bu Public Key ile elimdeki &ldquo;abc.txt&rdquo; dosyasını şifreleyeceğim.</p>
+<pre tabindex="0"><code>gpg -r Akın -e abc.txt
+gpg -r ID -e abc.txt                    #ID olarak da verebiliriz.
+</code></pre><p>Bu komuttan sonra &ldquo;Akın&rdquo; için oluşturulmuş bir abc.txt.gpg dosyası oluşacaktır.</p>
+<p>Bizim için şifrelenmiş bir dosyayı açmak için:</p>
+<pre tabindex="0"><code>gpg -d abc.txt.gpg                       #çıktıyı terminalde gösterir
+gpg -d abc.txt.gpg -o sonuc.txt          #çıktıyı sonuc.txt dosyasına yazar
+</code></pre><p>Komutlar ilk başta zor geliyorsa GUI&rsquo;si olan programlarla da aynı işlemler yapılabilir.</p>
+<p>Umarım faydalı olmuştur.</p>
+<p>Teşekkürler,</p>
+<p>İyi Çalışmalar.</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Posts</a></li>
+         
+          <li><a href="/tags">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgpgnedir%2fgpg-nedir%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgpgnedir%2fgpg-nedir%2f&text=GPG%20Nedir%3f" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgpgnedir%2fgpg-nedir%2f&title=GPG%20Nedir%3f" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgpgnedir%2fgpg-nedir%2f&is_video=false&description=GPG%20Nedir%3f" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=GPG%20Nedir%3f&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgpgnedir%2fgpg-nedir%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgpgnedir%2fgpg-nedir%2f&title=GPG%20Nedir%3f" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgpgnedir%2fgpg-nedir%2f&title=GPG%20Nedir%3f" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgpgnedir%2fgpg-nedir%2f&name=GPG%20Nedir%3f&description=%3cp%3eGPG%20%28GNU%20Privacy%20Guard%20%29%3ca%20href%3d%22https%3a%2f%2fdatatracker.ietf.org%2fdoc%2fhtml%2frfc4880%22%3eRFC4880%3c%2fa%3e%20%2c%20GPL%20Lisansl%c4%b1%20bir%20%c5%9fifreleme%20ve%20imzalama%20arac%c4%b1d%c4%b1r.%20Linux%26rsquo%3bda%20defaultta%20gelir%2c%20Windows%20i%c3%a7in%20%3ca%20href%3d%22https%3a%2f%2fwww.gnupg.org%2fdownload%2f%22%3eWeb%20Sitesi%3c%2fa%3e%26rsquo%3bnden%20indirilebilir.%3c%2fp%3e%0a%3cp%3eGPG%20asimetrik%20%c5%9fifreleme%20algoritmas%c4%b1%20kullan%c4%b1r.%20Yani%20Public%20ve%20Prive%20anahtarlar%20vas%c4%b1tas%c4%b1yla%20datalar%c4%b1%20%c5%9fifreler%20veya%20%c3%a7%c3%b6zer.%3c%2fp%3e%0a%3cp%3eNedir%20bu%20Public%20ve%20Prive%20anahtarlar%3f%3c%2fp%3e%0a%3cp%3e2%20ki%c5%9fi%20d%c3%bc%c5%9f%c3%bcnelim%20birbirleriyle%20haberle%c5%9fmek%20istesin.%20Her%20ki%c5%9finin%202%20anahtar%c4%b1%20olur.%20Biri%20%26ldquo%3bPublic%20Key%26rdquo%3b%20yani%20payla%c5%9f%c4%b1lan%20anahtar.%20Di%c4%9feri%20ise%20%26ldquo%3bPrivate%20key%26rdquo%3b%20yani%20gizli%20kalmas%c4%b1%20gereken%20anahtar.%3c%2fp%3e%0a%3cp%3eX%20ki%c5%9fisi%20Y%20ki%c5%9fisine%20gizli%20bir%20mesaj%20g%c3%b6ndermek%20isterse%20bu%20mesaj%c4%b1%20Y%20ki%c5%9fisinin%20%26ldquo%3bPublic%20Key%26quot%3bi%20ile%20%c5%9fifrelemesi%20gerekir.%3c%2fp%3e" aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgpgnedir%2fgpg-nedir%2f&t=GPG%20Nedir%3f" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2024  ittechnetworkk 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/tags">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>
