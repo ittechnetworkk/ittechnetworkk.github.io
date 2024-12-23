@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cisco on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/cisco/</link>
+    <link>http://localhost:1313/tags/cisco/</link>
     <description>Recent content in Cisco on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Mon, 15 Jul 2024 22:57:40 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/cisco/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/cisco/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Raspberry Pi Syslog Server</title>
-      <link>https://ittechnetworkk.github.io/posts/raspberrypisyslogserver/raspberrypi-syslog/</link>
+      <link>http://localhost:1313/posts/raspberrypisyslogserver/raspberrypi-syslog/</link>
       <pubDate>Mon, 15 Jul 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/raspberrypisyslogserver/raspberrypi-syslog/</guid>
-      <description>&lt;p&gt;Merhaba, bu yazımda bi Raspberry Pi Zero&amp;rsquo;ya Syslog server rolü verip, bir Cisco Switch&amp;rsquo;e bu Syslog server konfigürasyonunu yapacağım.&lt;/p&gt;&#xA;&lt;p&gt;Bu Lab için kullanacağım donanım ve yazılımlar:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Raspberry Pi Zero 2W,&lt;/li&gt;&#xA;&lt;li&gt;Cisco 2960 Switch,&lt;/li&gt;&#xA;&lt;li&gt;SD Cart,&lt;/li&gt;&#xA;&lt;li&gt;Kart Reader,&lt;/li&gt;&#xA;&lt;li&gt;Ethernet Kablosu,&lt;/li&gt;&#xA;&lt;li&gt;MicroUSB Power Cable,&lt;/li&gt;&#xA;&lt;li&gt;Switch Power Cable,&lt;/li&gt;&#xA;&lt;li&gt;ImagerPi.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;İlk olarak ImagerPi kullanarak SD Kart&amp;rsquo;a Ubuntu işletim sistemini kuruyorum.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/RaspberryPiSyslogServer/1.png&#34; alt=&#34;syslog&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/RaspberryPiSyslogServer/2.png&#34; alt=&#34;syslog&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;SD Kart&amp;rsquo;ı Raspberry Pi&amp;rsquo;a takıp, modemin yakınında güç kablosunu takıp cihazı açıyorum.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/raspberrypisyslogserver/raspberrypi-syslog/</guid>
+      <description>&lt;p&gt;Merhaba, bu yazımda bi Raspberry Pi Zero&amp;rsquo;ya Syslog server rolü verip, bir Cisco Switch&amp;rsquo;e bu Syslog server konfigürasyonunu yapacağım.&lt;/p&gt;&#xA;&lt;p&gt;Bu Lab için kullanacağım donanım ve yazılımlar:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Raspberry Pi Zero 2W,&lt;/li&gt;&#xA;&lt;li&gt;Cisco 2960 Switch,&lt;/li&gt;&#xA;&lt;li&gt;SD Cart,&lt;/li&gt;&#xA;&lt;li&gt;Kart Reader,&lt;/li&gt;&#xA;&lt;li&gt;Ethernet Kablosu,&lt;/li&gt;&#xA;&lt;li&gt;MicroUSB Power Cable,&lt;/li&gt;&#xA;&lt;li&gt;Switch Power Cable,&lt;/li&gt;&#xA;&lt;li&gt;ImagerPi.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;İlk olarak ImagerPi kullanarak SD Kart&amp;rsquo;a Ubuntu işletim sistemini kuruyorum.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/RaspberryPiSyslogServer/1.png&#34; alt=&#34;syslog&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/RaspberryPiSyslogServer/2.png&#34; alt=&#34;syslog&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;SD Kart&amp;rsquo;ı Raspberry Pi&amp;rsquo;a takıp, modemin yakınında güç kablosunu takıp cihazı açıyorum.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Temel Switch Konfigürasyonu</title>
-      <link>https://ittechnetworkk.github.io/posts/switchconfiguration/switch-conf/</link>
+      <link>http://localhost:1313/posts/switchconfiguration/switch-conf/</link>
       <pubDate>Wed, 26 Jun 2024 17:53:48 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/switchconfiguration/switch-conf/</guid>
+      <guid>http://localhost:1313/posts/switchconfiguration/switch-conf/</guid>
       <description>&lt;p&gt;Merhaba, bu yazıda Cisco bir Switch&amp;rsquo;in temel bir konfigürasyonunu göstereceğim.&lt;/p&gt;&#xA;&lt;p&gt;Tabi bu konfigürasyonları temel düzelde uygulayacağım, daha kapsamlı konfigürasyon network yapılarına göre, kullanılan teknolojilere göre değişiklik gösterecektir.&lt;/p&gt;&#xA;&lt;p&gt;Uygulayacağım konfigürasyonları sırasıyla aşağıdaki gibi olacaktır:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Hostname,&lt;/li&gt;&#xA;&lt;li&gt;Zaman Konfigürasyonu,&lt;/li&gt;&#xA;&lt;li&gt;Yanlış Girilen Parola Politikası,&lt;/li&gt;&#xA;&lt;li&gt;Enable Password,&lt;/li&gt;&#xA;&lt;li&gt;Banner motd,&lt;/li&gt;&#xA;&lt;li&gt;Kullanıcı Oluşturma,&lt;/li&gt;&#xA;&lt;li&gt;Console Erişimi,&lt;/li&gt;&#xA;&lt;li&gt;SSH Konfigürasyonu,&lt;/li&gt;&#xA;&lt;li&gt;Default Gateway,&lt;/li&gt;&#xA;&lt;li&gt;Disable Ports,&lt;/li&gt;&#xA;&lt;li&gt;Konfigürasyonları Kaydetme,&lt;/li&gt;&#xA;&lt;li&gt;Kontrol.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Başlayalım.&lt;/p&gt;&#xA;&lt;p&gt;Ben konfigürasyonları, Cisco Catalyst 2960 Serisi bir Switch üzerinde uygulayacağım.&lt;/p&gt;&#xA;&lt;p&gt;Console Kablosu  ve Switch görüntü itibariyle aşağıdaki gibidir.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Cisco Router Parola Sıfırlama</title>
-      <link>https://ittechnetworkk.github.io/posts/ciscorouterpasswordrocovery/cisco-router-parola-sifirlama/</link>
+      <link>http://localhost:1313/posts/ciscorouterpasswordrocovery/cisco-router-parola-sifirlama/</link>
       <pubDate>Sun, 09 Jun 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ciscorouterpasswordrocovery/cisco-router-parola-sifirlama/</guid>
-      <description>&lt;p&gt;Cisco Router ve Switch&amp;rsquo;lerde unutulan parolayı cihazı fabrika ayarlarına döndürmeden nasıl sıfırlayabiliriz?&#xA;Cisco cihazlarda unutulan parolayı, konfigürasyonu bozmadan sıfırlamak mümkün. Bu işlem birkaç adımda yapılır.&#xA;Ben bu uygulamayı elimde bulunan Cisco 800 Serisi bir Router&amp;rsquo;da adım adım uygulayacağım.&#xA;Cihaz şekilde görüldüğü gibidir.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/CiscoRouterPasswordRocovery/1.jpg&#34; alt=&#34;router&#34;&gt;&#xA;CiscoRouterPasswordRocovery&lt;/p&gt;&#xA;&lt;p&gt;İlk olarak Console Portundan cihaza bağlanıyorum.&lt;/p&gt;&#xA;&lt;p&gt;Cihaz&amp;rsquo;a güç verdikten hemen sonra, cihaz açılış aşamasındayken &amp;ldquo;&lt;code&gt;CTRL+BREAK&lt;/code&gt;&amp;rdquo; tuşlarına basarak &amp;ldquo;&lt;code&gt;Rommon&lt;/code&gt;&amp;rdquo; moduna geçiyorum.&lt;/p&gt;&#xA;&lt;p&gt;Her terminal programında farklılık gösterebilir. Örneğin ben minicom kullanıyorum ve açılırken &amp;ldquo;&lt;code&gt;CTRL + A + F&lt;/code&gt;&amp;rdquo; tuş kombinasyonlarını kullanarak &amp;ldquo;&lt;code&gt;BREAK&lt;/code&gt;&amp;rdquo; sinyali gönderebiliyorum.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/ciscorouterpasswordrocovery/cisco-router-parola-sifirlama/</guid>
+      <description>&lt;p&gt;Cisco Router ve Switch&amp;rsquo;lerde unutulan parolayı cihazı fabrika ayarlarına döndürmeden nasıl sıfırlayabiliriz?&#xA;Cisco cihazlarda unutulan parolayı, konfigürasyonu bozmadan sıfırlamak mümkün. Bu işlem birkaç adımda yapılır.&#xA;Ben bu uygulamayı elimde bulunan Cisco 800 Serisi bir Router&amp;rsquo;da adım adım uygulayacağım.&#xA;Cihaz şekilde görüldüğü gibidir.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/CiscoRouterPasswordRocovery/1.jpg&#34; alt=&#34;router&#34;&gt;&#xA;CiscoRouterPasswordRocovery&lt;/p&gt;&#xA;&lt;p&gt;İlk olarak Console Portundan cihaza bağlanıyorum.&lt;/p&gt;&#xA;&lt;p&gt;Cihaz&amp;rsquo;a güç verdikten hemen sonra, cihaz açılış aşamasındayken &amp;ldquo;&lt;code&gt;CTRL+BREAK&lt;/code&gt;&amp;rdquo; tuşlarına basarak &amp;ldquo;&lt;code&gt;Rommon&lt;/code&gt;&amp;rdquo; moduna geçiyorum.&lt;/p&gt;&#xA;&lt;p&gt;Her terminal programında farklılık gösterebilir. Örneğin ben minicom kullanıyorum ve açılırken &amp;ldquo;&lt;code&gt;CTRL + A + F&lt;/code&gt;&amp;rdquo; tuş kombinasyonlarını kullanarak &amp;ldquo;&lt;code&gt;BREAK&lt;/code&gt;&amp;rdquo; sinyali gönderebiliyorum.&lt;/p&gt;</description>
     </item>
     <item>
       <title>GRE Tunnel</title>
-      <link>https://ittechnetworkk.github.io/posts/gretunnel/gre-tunnel/</link>
+      <link>http://localhost:1313/posts/gretunnel/gre-tunnel/</link>
       <pubDate>Fri, 07 Jun 2024 17:53:48 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/gretunnel/gre-tunnel/</guid>
+      <guid>http://localhost:1313/posts/gretunnel/gre-tunnel/</guid>
       <description>&lt;p&gt;GRE(Generic Routing Encapsulation) Protokolü, paketin kaynaktan hedefe, oluşturulan tünel sayesinde iletilmesini sağlayan protokoldür.&#xA;GRE, Cisco tarafından geliştirilmiştir.&#xA;GRE kullanarak birden fazla şubesi olan networkler birleştirilebilir.&#xA;Fakat oluşturulan tünelden iletilen paketler okunabilir şekilde iletilir. Yani araya girip trafik dinlenirse, paketler okunabilir. Bu tünel daha sonra güvenli hale de getirilebilir.&#xA;GRE, IP paketini kapsüle ederek yönlendirme yapar.&#xA;Enkapsülasyon yapılırken IP başlığına(20), 4 Byte GRE başlık bilgisi eklenir.&lt;/p&gt;&#xA;&lt;p&gt;Aşağıdaki GRE Lab Topolojisini uygulayacağım.&lt;/p&gt;</description>
     </item>
   </channel>

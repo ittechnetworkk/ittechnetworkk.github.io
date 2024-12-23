@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Router on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/router/</link>
+    <link>http://localhost:1313/tags/router/</link>
     <description>Recent content in Router on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Sun, 09 Jun 2024 22:57:40 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/router/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/router/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cisco Router Parola Sıfırlama</title>
-      <link>https://ittechnetworkk.github.io/posts/ciscorouterpasswordrocovery/cisco-router-parola-sifirlama/</link>
+      <link>http://localhost:1313/posts/ciscorouterpasswordrocovery/cisco-router-parola-sifirlama/</link>
       <pubDate>Sun, 09 Jun 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ciscorouterpasswordrocovery/cisco-router-parola-sifirlama/</guid>
-      <description>&lt;p&gt;Cisco Router ve Switch&amp;rsquo;lerde unutulan parolayı cihazı fabrika ayarlarına döndürmeden nasıl sıfırlayabiliriz?&#xA;Cisco cihazlarda unutulan parolayı, konfigürasyonu bozmadan sıfırlamak mümkün. Bu işlem birkaç adımda yapılır.&#xA;Ben bu uygulamayı elimde bulunan Cisco 800 Serisi bir Router&amp;rsquo;da adım adım uygulayacağım.&#xA;Cihaz şekilde görüldüğü gibidir.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/CiscoRouterPasswordRocovery/1.jpg&#34; alt=&#34;router&#34;&gt;&#xA;CiscoRouterPasswordRocovery&lt;/p&gt;&#xA;&lt;p&gt;İlk olarak Console Portundan cihaza bağlanıyorum.&lt;/p&gt;&#xA;&lt;p&gt;Cihaz&amp;rsquo;a güç verdikten hemen sonra, cihaz açılış aşamasındayken &amp;ldquo;&lt;code&gt;CTRL+BREAK&lt;/code&gt;&amp;rdquo; tuşlarına basarak &amp;ldquo;&lt;code&gt;Rommon&lt;/code&gt;&amp;rdquo; moduna geçiyorum.&lt;/p&gt;&#xA;&lt;p&gt;Her terminal programında farklılık gösterebilir. Örneğin ben minicom kullanıyorum ve açılırken &amp;ldquo;&lt;code&gt;CTRL + A + F&lt;/code&gt;&amp;rdquo; tuş kombinasyonlarını kullanarak &amp;ldquo;&lt;code&gt;BREAK&lt;/code&gt;&amp;rdquo; sinyali gönderebiliyorum.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/ciscorouterpasswordrocovery/cisco-router-parola-sifirlama/</guid>
+      <description>&lt;p&gt;Cisco Router ve Switch&amp;rsquo;lerde unutulan parolayı cihazı fabrika ayarlarına döndürmeden nasıl sıfırlayabiliriz?&#xA;Cisco cihazlarda unutulan parolayı, konfigürasyonu bozmadan sıfırlamak mümkün. Bu işlem birkaç adımda yapılır.&#xA;Ben bu uygulamayı elimde bulunan Cisco 800 Serisi bir Router&amp;rsquo;da adım adım uygulayacağım.&#xA;Cihaz şekilde görüldüğü gibidir.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/CiscoRouterPasswordRocovery/1.jpg&#34; alt=&#34;router&#34;&gt;&#xA;CiscoRouterPasswordRocovery&lt;/p&gt;&#xA;&lt;p&gt;İlk olarak Console Portundan cihaza bağlanıyorum.&lt;/p&gt;&#xA;&lt;p&gt;Cihaz&amp;rsquo;a güç verdikten hemen sonra, cihaz açılış aşamasındayken &amp;ldquo;&lt;code&gt;CTRL+BREAK&lt;/code&gt;&amp;rdquo; tuşlarına basarak &amp;ldquo;&lt;code&gt;Rommon&lt;/code&gt;&amp;rdquo; moduna geçiyorum.&lt;/p&gt;&#xA;&lt;p&gt;Her terminal programında farklılık gösterebilir. Örneğin ben minicom kullanıyorum ve açılırken &amp;ldquo;&lt;code&gt;CTRL + A + F&lt;/code&gt;&amp;rdquo; tuş kombinasyonlarını kullanarak &amp;ldquo;&lt;code&gt;BREAK&lt;/code&gt;&amp;rdquo; sinyali gönderebiliyorum.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
