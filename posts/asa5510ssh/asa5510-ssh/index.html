@@ -8,7 +8,7 @@
   
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Asa5510 Ssh | ittechnetworkk</title>
+  <title> Cisco ASA SSH Konfigürasyonu | ittechnetworkk</title>
   <link rel = 'canonical' href = 'http://localhost:1313/posts/asa5510ssh/asa5510-ssh/'>
   <meta name="description" content="Hello, I’m Soner from Turkey. I prefer working with the CLI rather than GUI. On this site, I share my expertise in various technologies, insights into newly learned tools, as well as details of the projects I have completed and those I plan to undertake. I run this blog with the motivation to learn, have fun, and help others along the way.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,18 +16,32 @@
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:url" content="http://localhost:1313/posts/asa5510ssh/asa5510-ssh/">
   <meta property="og:site_name" content="ittechnetworkk">
-  <meta property="og:title" content="Asa5510 Ssh">
-  <meta property="og:description" content="Hello, I’m Soner from Turkey. I prefer working with the CLI rather than GUI. On this site, I share my expertise in various technologies, insights into newly learned tools, as well as details of the projects I have completed and those I plan to undertake. I run this blog with the motivation to learn, have fun, and help others along the way.">
+  <meta property="og:title" content="Cisco ASA SSH Konfigürasyonu">
+  <meta property="og:description" content="Merhabalar, bu yazımda Cisco ASA 5510’a SSH konfigürasyonu yapmayı göstereceğim.
+İlk olarak bir kullanıcı oluşturuyorum:
+ASA# conf t ASA(config)# username &lt;User&gt; password &lt;Password&gt; privilege 15 Kimlik doğrulama modunu ayarlıyorum:
+ASA(config)# aaa authentication ssh console LOCAL SSH versiyonunu 2 yapıyorum ve timeout değerini ayarlıyorum:
+ASA(config)# ssh version 2 ASA(config)# ssh timeout 30 Bir domain adı ve anahtar çifti yaratıyorum:
+ASA(config)# domain-name sonersahin.local ASA(config)# crypto key generate rsa modulus 1024 Cihaza SSH yapacak network aralığı belirliyorum, isterseniz sadece belli bir IP adresini de yapabilirsiniz:">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-12-19T17:25:48+01:00">
-    <meta property="article:modified_time" content="2024-12-19T17:25:48+01:00">
+    <meta property="article:published_time" content="2024-12-01T22:57:40+01:00">
+    <meta property="article:modified_time" content="2024-12-01T22:57:40+01:00">
+    <meta property="article:tag" content="Asa">
+    <meta property="article:tag" content="Cisco">
+    <meta property="article:tag" content="Firewall">
+    <meta property="article:tag" content="Ssh">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Asa5510 Ssh">
-  <meta name="twitter:description" content="Hello, I’m Soner from Turkey. I prefer working with the CLI rather than GUI. On this site, I share my expertise in various technologies, insights into newly learned tools, as well as details of the projects I have completed and those I plan to undertake. I run this blog with the motivation to learn, have fun, and help others along the way.">
+  <meta name="twitter:title" content="Cisco ASA SSH Konfigürasyonu">
+  <meta name="twitter:description" content="Merhabalar, bu yazımda Cisco ASA 5510’a SSH konfigürasyonu yapmayı göstereceğim.
+İlk olarak bir kullanıcı oluşturuyorum:
+ASA# conf t ASA(config)# username &lt;User&gt; password &lt;Password&gt; privilege 15 Kimlik doğrulama modunu ayarlıyorum:
+ASA(config)# aaa authentication ssh console LOCAL SSH versiyonunu 2 yapıyorum ve timeout değerini ayarlıyorum:
+ASA(config)# ssh version 2 ASA(config)# ssh timeout 30 Bir domain adı ve anahtar çifti yaratıyorum:
+ASA(config)# domain-name sonersahin.local ASA(config)# crypto key generate rsa modulus 1024 Cihaza SSH yapacak network aralığı belirliyorum, isterseniz sadece belli bir IP adresini de yapabilirsiniz:">
 
   
   
@@ -77,14 +91,14 @@
       <ul>
         
         <li>
-          <a class="icon" href=" http://localhost:1313/posts/asa5510passwordrecovery/asa5510-password-recovery/" aria-label="Previous">
+          <a class="icon" href=" http://localhost:1313/posts/greoveripsec/greoveripsec/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="http://localhost:1313/posts/nanopirsadguard/nanopirs-adguard/" aria-label="Next">
+          <a class="icon" href="http://localhost:1313/posts/asa5510passwordrecovery/asa5510-password-recovery/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -120,42 +134,42 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&text=Asa5510%20Ssh" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&text=Cisco%20ASA%20SSH%20Konfig%c3%bcrasyonu" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&title=Asa5510%20Ssh" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&title=Cisco%20ASA%20SSH%20Konfig%c3%bcrasyonu" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&is_video=false&description=Asa5510%20Ssh" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&is_video=false&description=Cisco%20ASA%20SSH%20Konfig%c3%bcrasyonu" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Asa5510%20Ssh&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Cisco%20ASA%20SSH%20Konfig%c3%bcrasyonu&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&title=Asa5510%20Ssh" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&title=Cisco%20ASA%20SSH%20Konfig%c3%bcrasyonu" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&title=Asa5510%20Ssh" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&title=Cisco%20ASA%20SSH%20Konfig%c3%bcrasyonu" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&name=Asa5510%20Ssh&description=" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&name=Cisco%20ASA%20SSH%20Konfig%c3%bcrasyonu&description=%3cp%3eMerhabalar%2c%20bu%20yaz%c4%b1mda%20Cisco%20ASA%205510%26rsquo%3ba%20SSH%20konfig%c3%bcrasyonu%20yapmay%c4%b1%20g%c3%b6sterece%c4%9fim.%3c%2fp%3e%0a%3cp%3e%c4%b0lk%20olarak%20bir%20kullan%c4%b1c%c4%b1%20olu%c5%9fturuyorum%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eASA%23%20conf%20t%0aASA%28config%29%23%20username%20%26lt%3bUser%26gt%3b%20password%20%26lt%3bPassword%26gt%3b%20privilege%2015%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eKimlik%20do%c4%9frulama%20modunu%20ayarl%c4%b1yorum%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eASA%28config%29%23%20aaa%20authentication%20ssh%20console%20LOCAL%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eSSH%20versiyonunu%202%20yap%c4%b1yorum%20ve%20timeout%20de%c4%9ferini%20ayarl%c4%b1yorum%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eASA%28config%29%23%20ssh%20version%202%0aASA%28config%29%23%20ssh%20timeout%2030%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eBir%20domain%20ad%c4%b1%20ve%20anahtar%20%c3%a7ifti%20yarat%c4%b1yorum%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eASA%28config%29%23%20domain-name%20sonersahin.local%0aASA%28config%29%23%20crypto%20key%20generate%20rsa%20modulus%201024%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eCihaza%20SSH%20yapacak%20network%20aral%c4%b1%c4%9f%c4%b1%20belirliyorum%2c%20isterseniz%20sadece%20belli%20bir%20IP%20adresini%20de%20yapabilirsiniz%3a%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&t=Asa5510%20Ssh" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&t=Cisco%20ASA%20SSH%20Konfig%c3%bcrasyonu" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -174,13 +188,13 @@
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        Asa5510 Ssh
+        Cisco ASA SSH Konfigürasyonu
       </h1>
       <div class="meta">
         
         <div class="postdate">
           
-          <time datetime="2024-12-19 17:25:48 &#43;0100 CET" itemprop="datePublished">2024-12-19</time>
+          <time datetime="2024-12-01 22:57:40 &#43;0100 CET" itemprop="datePublished">2024-12-01</time>
           
         </div>
         
@@ -188,10 +202,27 @@
         <div class="article-read-time">
           <i class="far fa-clock"></i>
           
-          0 minute read
+          1 minute read
         </div>
         
         
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/asa" rel="tag">asa</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/cisco" rel="tag">cisco</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/firewall" rel="tag">firewall</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/ssh" rel="tag">ssh</a>
+            
+        </div>
         
       </div>
     </header>
@@ -199,7 +230,29 @@
   
     
     <div class="content" itemprop="articleBody">
-      
+      <p>Merhabalar, bu yazımda Cisco ASA 5510&rsquo;a SSH konfigürasyonu yapmayı göstereceğim.</p>
+<p>İlk olarak bir kullanıcı oluşturuyorum:</p>
+<pre tabindex="0"><code>ASA# conf t
+ASA(config)# username &lt;User&gt; password &lt;Password&gt; privilege 15
+</code></pre><p>Kimlik doğrulama modunu ayarlıyorum:</p>
+<pre tabindex="0"><code>ASA(config)# aaa authentication ssh console LOCAL
+</code></pre><p>SSH versiyonunu 2 yapıyorum ve timeout değerini ayarlıyorum:</p>
+<pre tabindex="0"><code>ASA(config)# ssh version 2
+ASA(config)# ssh timeout 30
+</code></pre><p>Bir domain adı ve anahtar çifti yaratıyorum:</p>
+<pre tabindex="0"><code>ASA(config)# domain-name sonersahin.local
+ASA(config)# crypto key generate rsa modulus 1024
+</code></pre><p>Cihaza SSH yapacak network aralığı belirliyorum, isterseniz sadece belli bir IP adresini de yapabilirsiniz:</p>
+<pre tabindex="0"><code>ASA(config)# ssh 192.168.1.0 255.255.255.0 management
+</code></pre><p>Management arayüzüne IP veriyorum:</p>
+<pre tabindex="0"><code>ASA(config)# interface Management0/0
+ASA(config)# ip addr 192.168.1.204 255.255.255.0
+ASA(config)# no sh
+</code></pre><p>Kontrol komutları:</p>
+<pre tabindex="0"><code>ASA# show ssh
+ASA# show ssh sessions
+ASA# show running-config
+</code></pre>
     </div>
   </article>
 
@@ -248,42 +301,42 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&text=Asa5510%20Ssh" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&text=Cisco%20ASA%20SSH%20Konfig%c3%bcrasyonu" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&title=Asa5510%20Ssh" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&title=Cisco%20ASA%20SSH%20Konfig%c3%bcrasyonu" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&is_video=false&description=Asa5510%20Ssh" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&is_video=false&description=Cisco%20ASA%20SSH%20Konfig%c3%bcrasyonu" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Asa5510%20Ssh&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Cisco%20ASA%20SSH%20Konfig%c3%bcrasyonu&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&title=Asa5510%20Ssh" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&title=Cisco%20ASA%20SSH%20Konfig%c3%bcrasyonu" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&title=Asa5510%20Ssh" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&title=Cisco%20ASA%20SSH%20Konfig%c3%bcrasyonu" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&name=Asa5510%20Ssh&description=" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&name=Cisco%20ASA%20SSH%20Konfig%c3%bcrasyonu&description=%3cp%3eMerhabalar%2c%20bu%20yaz%c4%b1mda%20Cisco%20ASA%205510%26rsquo%3ba%20SSH%20konfig%c3%bcrasyonu%20yapmay%c4%b1%20g%c3%b6sterece%c4%9fim.%3c%2fp%3e%0a%3cp%3e%c4%b0lk%20olarak%20bir%20kullan%c4%b1c%c4%b1%20olu%c5%9fturuyorum%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eASA%23%20conf%20t%0aASA%28config%29%23%20username%20%26lt%3bUser%26gt%3b%20password%20%26lt%3bPassword%26gt%3b%20privilege%2015%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eKimlik%20do%c4%9frulama%20modunu%20ayarl%c4%b1yorum%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eASA%28config%29%23%20aaa%20authentication%20ssh%20console%20LOCAL%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eSSH%20versiyonunu%202%20yap%c4%b1yorum%20ve%20timeout%20de%c4%9ferini%20ayarl%c4%b1yorum%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eASA%28config%29%23%20ssh%20version%202%0aASA%28config%29%23%20ssh%20timeout%2030%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eBir%20domain%20ad%c4%b1%20ve%20anahtar%20%c3%a7ifti%20yarat%c4%b1yorum%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eASA%28config%29%23%20domain-name%20sonersahin.local%0aASA%28config%29%23%20crypto%20key%20generate%20rsa%20modulus%201024%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eCihaza%20SSH%20yapacak%20network%20aral%c4%b1%c4%9f%c4%b1%20belirliyorum%2c%20isterseniz%20sadece%20belli%20bir%20IP%20adresini%20de%20yapabilirsiniz%3a%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&t=Asa5510%20Ssh" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510ssh%2fasa5510-ssh%2f&t=Cisco%20ASA%20SSH%20Konfig%c3%bcrasyonu" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

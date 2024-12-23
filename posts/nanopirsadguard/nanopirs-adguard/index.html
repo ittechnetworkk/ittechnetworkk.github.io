@@ -8,7 +8,7 @@
   
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Nanopirs Adguard | ittechnetworkk</title>
+  <title> Adguard Kurulumu (NanoPi R2S) | ittechnetworkk</title>
   <link rel = 'canonical' href = 'http://localhost:1313/posts/nanopirsadguard/nanopirs-adguard/'>
   <meta name="description" content="Hello, I’m Soner from Turkey. I prefer working with the CLI rather than GUI. On this site, I share my expertise in various technologies, insights into newly learned tools, as well as details of the projects I have completed and those I plan to undertake. I run this blog with the motivation to learn, have fun, and help others along the way.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,18 +16,26 @@
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:url" content="http://localhost:1313/posts/nanopirsadguard/nanopirs-adguard/">
   <meta property="og:site_name" content="ittechnetworkk">
-  <meta property="og:title" content="Nanopirs Adguard">
-  <meta property="og:description" content="Hello, I’m Soner from Turkey. I prefer working with the CLI rather than GUI. On this site, I share my expertise in various technologies, insights into newly learned tools, as well as details of the projects I have completed and those I plan to undertake. I run this blog with the motivation to learn, have fun, and help others along the way.">
+  <meta property="og:title" content="Adguard Kurulumu (NanoPi R2S)">
+  <meta property="og:description" content="Merhaba, bu yazımda önceden aldığım fakat değerlendiremediğim NanoPi R2S cihazına Adguard Home kurmayı anlatacağım.
+NanoPi R2S görüntü itibariyle aşağıdaki gibidir:
+Bazı özellikleri şöyledir:
+Rockchip RK3328, 1GB DDR4 RAM, MicroSD x1 for external storage up to 128GB, 2x Gigabit Ethernet, USB 2.0 Host x1: USB Type A, USB-C x1: SYS LED(Red) x1, WAN LED(Green) x1, LAN LED(Green) x1, Reset buton Metal kasa içerisine konmuş küçük ama merak uyandırıcı bir cihaz.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-12-19T17:27:57+01:00">
-    <meta property="article:modified_time" content="2024-12-19T17:27:57+01:00">
+    <meta property="article:published_time" content="2024-05-12T22:57:40+01:00">
+    <meta property="article:modified_time" content="2024-05-12T22:57:40+01:00">
+    <meta property="article:tag" content="Dietpi">
+    <meta property="article:tag" content="Nanopi">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Nanopirs Adguard">
-  <meta name="twitter:description" content="Hello, I’m Soner from Turkey. I prefer working with the CLI rather than GUI. On this site, I share my expertise in various technologies, insights into newly learned tools, as well as details of the projects I have completed and those I plan to undertake. I run this blog with the motivation to learn, have fun, and help others along the way.">
+  <meta name="twitter:title" content="Adguard Kurulumu (NanoPi R2S)">
+  <meta name="twitter:description" content="Merhaba, bu yazımda önceden aldığım fakat değerlendiremediğim NanoPi R2S cihazına Adguard Home kurmayı anlatacağım.
+NanoPi R2S görüntü itibariyle aşağıdaki gibidir:
+Bazı özellikleri şöyledir:
+Rockchip RK3328, 1GB DDR4 RAM, MicroSD x1 for external storage up to 128GB, 2x Gigabit Ethernet, USB 2.0 Host x1: USB Type A, USB-C x1: SYS LED(Red) x1, WAN LED(Green) x1, LAN LED(Green) x1, Reset buton Metal kasa içerisine konmuş küçük ama merak uyandırıcı bir cihaz.">
 
   
   
@@ -77,14 +85,14 @@
       <ul>
         
         <li>
-          <a class="icon" href=" http://localhost:1313/posts/asa5510ssh/asa5510-ssh/" aria-label="Previous">
+          <a class="icon" href=" http://localhost:1313/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="http://localhost:1313/posts/nanopirsipfire/nanopirs-ipfire/" aria-label="Next">
+          <a class="icon" href="http://localhost:1313/posts/ipv4ipv6tunelleme/ipv4-ipv6-tunelleme/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -120,42 +128,42 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&text=Nanopirs%20Adguard" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&text=Adguard%20Kurulumu%20%28NanoPi%20R2S%29" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&title=Nanopirs%20Adguard" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&title=Adguard%20Kurulumu%20%28NanoPi%20R2S%29" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&is_video=false&description=Nanopirs%20Adguard" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&is_video=false&description=Adguard%20Kurulumu%20%28NanoPi%20R2S%29" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Nanopirs%20Adguard&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Adguard%20Kurulumu%20%28NanoPi%20R2S%29&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&title=Nanopirs%20Adguard" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&title=Adguard%20Kurulumu%20%28NanoPi%20R2S%29" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&title=Nanopirs%20Adguard" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&title=Adguard%20Kurulumu%20%28NanoPi%20R2S%29" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&name=Nanopirs%20Adguard&description=" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&name=Adguard%20Kurulumu%20%28NanoPi%20R2S%29&description=%3cp%3eMerhaba%2c%20bu%20yaz%c4%b1mda%20%c3%b6nceden%20ald%c4%b1%c4%9f%c4%b1m%20fakat%20de%c4%9ferlendiremedi%c4%9fim%20NanoPi%20R2S%20cihaz%c4%b1na%20Adguard%20Home%20kurmay%c4%b1%20anlataca%c4%9f%c4%b1m.%3c%2fp%3e%0a%3cp%3eNanoPi%20R2S%20g%c3%b6r%c3%bcnt%c3%bc%20itibariyle%20a%c5%9fa%c4%9f%c4%b1daki%20gibidir%3a%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fAdguardKurulumu%2f1.png%22%20alt%3d%22adguard%22%3e%3c%2fp%3e%0a%3cp%3eBaz%c4%b1%20%c3%b6zellikleri%20%c5%9f%c3%b6yledir%3a%3c%2fp%3e%0a%3cul%3e%0a%3cli%3eRockchip%20RK3328%2c%3c%2fli%3e%0a%3cli%3e1GB%20DDR4%20RAM%2c%3c%2fli%3e%0a%3cli%3eMicroSD%20x1%20for%20external%20storage%20up%20to%20128GB%2c%3c%2fli%3e%0a%3cli%3e2x%20Gigabit%20Ethernet%2c%3c%2fli%3e%0a%3cli%3eUSB%202.0%20Host%20x1%3a%20USB%20Type%20A%2c%3c%2fli%3e%0a%3cli%3eUSB-C%20x1%3a%3c%2fli%3e%0a%3cli%3eSYS%20LED%28Red%29%20x1%2c%20%20WAN%20LED%28Green%29%20x1%2c%20%20LAN%20LED%28Green%29%20x1%2c%3c%2fli%3e%0a%3cli%3eReset%20buton%3c%2fli%3e%0a%3c%2ful%3e%0a%3cp%3eMetal%20kasa%20i%c3%a7erisine%20konmu%c5%9f%20k%c3%bc%c3%a7%c3%bck%20ama%20merak%20uyand%c4%b1r%c4%b1c%c4%b1%20bir%20cihaz.%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&t=Nanopirs%20Adguard" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&t=Adguard%20Kurulumu%20%28NanoPi%20R2S%29" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -174,13 +182,13 @@
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        Nanopirs Adguard
+        Adguard Kurulumu (NanoPi R2S)
       </h1>
       <div class="meta">
         
         <div class="postdate">
           
-          <time datetime="2024-12-19 17:27:57 &#43;0100 CET" itemprop="datePublished">2024-12-19</time>
+          <time datetime="2024-05-12 22:57:40 &#43;0100 &#43;0100" itemprop="datePublished">2024-05-12</time>
           
         </div>
         
@@ -188,10 +196,21 @@
         <div class="article-read-time">
           <i class="far fa-clock"></i>
           
-          0 minute read
+          3 minute read
         </div>
         
         
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/dietpi" rel="tag">dietpi</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/nanopi" rel="tag">nanopi</a>
+            
+        </div>
         
       </div>
     </header>
@@ -199,7 +218,190 @@
   
     
     <div class="content" itemprop="articleBody">
-      
+      <p>Merhaba, bu yazımda önceden aldığım fakat değerlendiremediğim NanoPi R2S cihazına Adguard Home kurmayı anlatacağım.</p>
+<p>NanoPi R2S görüntü itibariyle aşağıdaki gibidir:</p>
+<p><img src="/images/AdguardKurulumu/1.png" alt="adguard"></p>
+<p>Bazı özellikleri şöyledir:</p>
+<ul>
+<li>Rockchip RK3328,</li>
+<li>1GB DDR4 RAM,</li>
+<li>MicroSD x1 for external storage up to 128GB,</li>
+<li>2x Gigabit Ethernet,</li>
+<li>USB 2.0 Host x1: USB Type A,</li>
+<li>USB-C x1:</li>
+<li>SYS LED(Red) x1,  WAN LED(Green) x1,  LAN LED(Green) x1,</li>
+<li>Reset buton</li>
+</ul>
+<p>Metal kasa içerisine konmuş küçük ama merak uyandırıcı bir cihaz.</p>
+<p>Peki Adguard Home nedir?
+<a href="https://adguard.com/tr/adguard-home/overview.html">Adguard Home</a> bilenler için Pi-Hole benzeri fakat daha gelişmiş özellikleri olan bir yazılımdır.
+Bazı özellikleri aşağıdaki gibidir:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th>AdGuard Home</th>
+          <th>Pi-Hole</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Blocking ads and trackers</td>
+          <td>✅</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>Customizing blocklists</td>
+          <td>✅</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>Built-in DHCP server</td>
+          <td>✅</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>HTTPS for the Admin interface</td>
+          <td>✅</td>
+          <td>Kind of, but you&rsquo;ll need to manually configure lighttpd</td>
+      </tr>
+      <tr>
+          <td>Encrypted DNS upstream servers (DNS-over-HTTPS, DNS-over-TLS, DNSCrypt)</td>
+          <td>✅</td>
+          <td>❌ (requires additional software)</td>
+      </tr>
+      <tr>
+          <td>Cross-platform</td>
+          <td>✅</td>
+          <td>❌ (not natively, only via Docker)</td>
+      </tr>
+      <tr>
+          <td>Running as a DNS-over-HTTPS or DNS-over-TLS server</td>
+          <td>✅</td>
+          <td>❌ (requires additional software)</td>
+      </tr>
+      <tr>
+          <td>Blocking phishing and malware domains</td>
+          <td>✅</td>
+          <td>❌ (requires non-default blocklists)</td>
+      </tr>
+      <tr>
+          <td>Parental control (blocking adult domains)</td>
+          <td>✅</td>
+          <td>❌ (requires non-default blocklists)</td>
+      </tr>
+      <tr>
+          <td>Force Safe search on search engines</td>
+          <td>✅</td>
+          <td>❌</td>
+      </tr>
+      <tr>
+          <td>Per-client (device) configuration</td>
+          <td>✅</td>
+          <td>✅</td>
+      </tr>
+      <tr>
+          <td>Access settings (choose who can use AGH DNS)</td>
+          <td>✅</td>
+          <td>❌</td>
+      </tr>
+      <tr>
+          <td>Running without root privileges</td>
+          <td>✅</td>
+          <td>❌</td>
+      </tr>
+      <tr>
+          <td>Adguard Home&rsquo;u herhangi bir işletim sisteminden de ayağa kaldırabilir veya aynı zamanda <a href="https://hub.docker.com/r/adguard/adguardhome">Docker container</a> olarak da kurup kullanabilirsiniz.</td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<p>Öncelikle cihaza bir işletim sistemi kurmamız gerekiyor. NanoPi R2S için isterseniz FrindlyWRT veya DietPi işletim sistemlerinden birini kurabilirsiniz.</p>
+<p>Ben DietPi işletim sistemi üzerine kuracağım. DietPi birçok teknolojiyi destekleyen hafif bir Linux dağıtımıdır.</p>
+<p>İhtiyacımız olan donanım ve yazılımlar:</p>
+<ul>
+<li>NanoPi R2S,</li>
+<li>Kart Okuyucu,</li>
+<li>SD Kart,</li>
+<li>USB to Type C Güç Kablosu,</li>
+<li>Ethernet Kablosu,</li>
+<li><a href="https://dietpi.com/downloads/images/DietPi_NanoPiR2S-ARMv8-Bookworm.img.xz">DietPi Kurulum Dosyası</a>,</li>
+<li>Balena Etcher,</li>
+<li>Putty.</li>
+</ul>
+<p><img src="/images/AdguardKurulumu/donan%C4%B1mlar.jpg" alt="adguard"></p>
+<p>Öncelikle DietPi kurulum dosyasını <a href="https://dietpi.com/">Web Sitesi</a>&rsquo;nden indiriyoruz.</p>
+<p>İndirilen kurulum dosyası .xz uzantılı gelecektir. Bu dosyayı ilk olarak açmamız gerekecektir. Bunun için Linux&rsquo;da xz aracını Windows&rsquo;da ise 7zip aracını kullanabilirsiniz.
+Ben Ubuntu kullanıyorum bu yüzden xz aracı ile indirilen dosyayı aşağıdaki komutla çıkarıyorum.</p>
+<p><img src="/images/AdguardKurulumu/4.png" alt="adguard"></p>
+<p>Artık .img uzantılı bir imaj dosyamız oldu.</p>
+<p><img src="/images/AdguardKurulumu/5.png" alt="adguard"></p>
+<p>Sırada bunu SD Kart&rsquo;a yazdırmamız gerekiyor.</p>
+<p>İmajı SD Kart&rsquo;a Balena Etcher yazılımını kullanarak yazdırıyorum.</p>
+<p><img src="/images/AdguardKurulumu/2.png" alt="adguard"></p>
+<p><img src="/images/AdguardKurulumu/3.png" alt="adguard"></p>
+<p>Kurulum bittikten sonra cihazın IP almasını sağlamak için boot etmeden önce birinci yol olarak wifi bilgilerimizi ilgili dosyada belirtmemiz gerekecek.</p>
+<p>İlk olarak;
+/boot/dietpi.txt
+dosyasında,
+<code>AUTO_SETUP_NET_WIFI_ENABLED=0</code> değerini 1 olarak değiştiriyoruz.
+<img src="/images/AdguardKurulumu/6.png" alt="adguard"></p>
+<p>ikinci olarak;
+/boot/dietpi-wifi.txt
+dosyasında,
+<code>aWIFI_SSID[0]</code> kısmına Wifi adınızı,
+<code>aWIFI_KEY[0]</code> kısmına Wifi parolanızı giriniz.</p>
+<p><img src="/images/AdguardKurulumu/7.png" alt="adguard"></p>
+<p>Daha sonra kaydedip SD Kart&rsquo;ı cihaza takıp boot edebilirsiniz. Daha fazla teknik bilgi için kendi <a href="https://dietpi.com/docs/install/">dökümanına</a> göz atabilirsiniz.</p>
+<p>Ben daha kolay olan ikinci yolu kullanacağım.
+Wifi ayarlarıyla oynamadan direk modemden bir ethernet kablosu çekip cihazın LAN portuna takıyorum ve cihaza güç veriyorum.</p>
+<p><img src="/images/AdguardKurulumu/8.jpg" alt="adguard"></p>
+<p>DietPi&rsquo;a default olarak <a href="https://dietpi.com/docs/software/ssh/#dropbear">Dropbear SSH</a> sunucusu kurulu gelir ve bu sayede cihaza erişilebilir.</p>
+<p>Cihaza bağlanmak için <a href="https://www.putty.org/">Putty</a> aracını kullanacağım. Ama daha öncesinde cihazın hangi IP adresini aldığını öğrenmeliyim. bunun için modemin arayüzüne erişip hangi IP&rsquo;yi aldığına bakabilirsiniz. Bunun yanında Linux kullananlar için &ldquo;nmap&rdquo; veya &ldquo;netdiscover&rdquo; araçlarını kullanarak da bulabilirsiniz.</p>
+<p>nmap:</p>
+<pre tabindex="0"><code>nmap -sn 192.168.0.0/24   (Kendi network adres aralığınıza göre)
+</code></pre><p>netdiscover:</p>
+<pre tabindex="0"><code>netdiscover -r 192.168.0.0/24
+</code></pre><p>Benim cihazım  192.168.0.119 IP adresine sahip.</p>
+<p><img src="/images/AdguardKurulumu/9.png" alt="adguard"></p>
+<p>Şimdi Putty aracı ile bağlanıyorum.</p>
+<p><img src="/images/AdguardKurulumu/10.png" alt="adguard"></p>
+<p>Gelen ekranda default username (root) ve password&rsquo;ü(dietpi) giriyorum. Yazdığımız password ekranda görünmeyecektir, doğru yazdığımızdan emin olup giriş yapabiliriz.</p>
+<p><img src="/images/AdguardKurulumu/11.png" alt="adguard"></p>
+<p>Ve cihaz açılmış oldu.</p>
+<p><img src="/images/AdguardKurulumu/12.png" alt="adguard"></p>
+<p>Cihaz açıldığında default parolasını değiştirmenizi vs isteyecektir. Bu adımlar kolay olduğu için geçeceğim. Cihaza bir statik IP verip, Adguard kurulumuna geçeceğim.</p>
+<p>DietPi-Config » Network Options: Adapters » Ethernet</p>
+<p>Kısmından kendime uygun bir statik IP adresi tanımlayıp Apply diyerek konfigürasyonu uyguluyorum.</p>
+<p>Daha sonra Adguard Home paketini kurmak için,</p>
+<p>Search Software:</p>
+<p><img src="/images/AdguardKurulumu/13.png" alt="adguard"></p>
+<p><img src="/images/AdguardKurulumu/14.png" alt="adguard"></p>
+<p><img src="/images/AdguardKurulumu/15.png" alt="adguard"></p>
+<p>paketini seçip, anasayfada bulunan install sekmesine tıklıyoruz.</p>
+<p><img src="/images/AdguardKurulumu/16.png" alt="adguard"></p>
+<p>Sonrasında gelen seçeneği de OK diyerek geçiyorum.</p>
+<p><img src="/images/AdguardKurulumu/17.png" alt="adguard"></p>
+<p>Ve kurulum başlıyor. Kurulum bittikten sonra bir anket ekranı geliyor. Cancel diyerek kapatabiliriz.</p>
+<p><img src="/images/AdguardKurulumu/18.png" alt="adguard"></p>
+<p>Ve artık Adguard Home kurulmuş oldu.
+Ek olarak aynı zamanda desteklenen diğer paketleri de <a href="https://dietpi.com/docs/software/">Web Sitesi</a>&rsquo;nden veya &ldquo;Browse Software&rdquo; kısmından görebilirsiniz.</p>
+<p>Geri dönelim.
+Tarayıcımızdan,
+NanoPi IP adresinin 8083 portuna gidersek Adguard arayüzüne erişebiliriz.
+Benim için;</p>
+<pre tabindex="0"><code>192.168.0.105:8083
+</code></pre><p><img src="/images/AdguardKurulumu/19.png" alt="adguard"></p>
+<p>Username: admin
+Password: &ldquo;NanoPi için belirlediğimiz password&rdquo;</p>
+<p><img src="/images/AdguardKurulumu/20.png" alt="adguard"></p>
+<p>Veee Adguard Home arayüzü de karşımızda:</p>
+<p><img src="/images/AdguardKurulumu/21.png" alt="adguard"></p>
+<p>Artık istediğiniz gibi özelleştirebilirsiniz.</p>
+<p>Teşekkürler,</p>
+<p>İyi Çalışmalar.</p>
+
     </div>
   </article>
 
@@ -248,42 +450,42 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&text=Nanopirs%20Adguard" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&text=Adguard%20Kurulumu%20%28NanoPi%20R2S%29" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&title=Nanopirs%20Adguard" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&title=Adguard%20Kurulumu%20%28NanoPi%20R2S%29" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&is_video=false&description=Nanopirs%20Adguard" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&is_video=false&description=Adguard%20Kurulumu%20%28NanoPi%20R2S%29" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Nanopirs%20Adguard&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Adguard%20Kurulumu%20%28NanoPi%20R2S%29&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&title=Nanopirs%20Adguard" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&title=Adguard%20Kurulumu%20%28NanoPi%20R2S%29" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&title=Nanopirs%20Adguard" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&title=Adguard%20Kurulumu%20%28NanoPi%20R2S%29" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&name=Nanopirs%20Adguard&description=" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&name=Adguard%20Kurulumu%20%28NanoPi%20R2S%29&description=%3cp%3eMerhaba%2c%20bu%20yaz%c4%b1mda%20%c3%b6nceden%20ald%c4%b1%c4%9f%c4%b1m%20fakat%20de%c4%9ferlendiremedi%c4%9fim%20NanoPi%20R2S%20cihaz%c4%b1na%20Adguard%20Home%20kurmay%c4%b1%20anlataca%c4%9f%c4%b1m.%3c%2fp%3e%0a%3cp%3eNanoPi%20R2S%20g%c3%b6r%c3%bcnt%c3%bc%20itibariyle%20a%c5%9fa%c4%9f%c4%b1daki%20gibidir%3a%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fAdguardKurulumu%2f1.png%22%20alt%3d%22adguard%22%3e%3c%2fp%3e%0a%3cp%3eBaz%c4%b1%20%c3%b6zellikleri%20%c5%9f%c3%b6yledir%3a%3c%2fp%3e%0a%3cul%3e%0a%3cli%3eRockchip%20RK3328%2c%3c%2fli%3e%0a%3cli%3e1GB%20DDR4%20RAM%2c%3c%2fli%3e%0a%3cli%3eMicroSD%20x1%20for%20external%20storage%20up%20to%20128GB%2c%3c%2fli%3e%0a%3cli%3e2x%20Gigabit%20Ethernet%2c%3c%2fli%3e%0a%3cli%3eUSB%202.0%20Host%20x1%3a%20USB%20Type%20A%2c%3c%2fli%3e%0a%3cli%3eUSB-C%20x1%3a%3c%2fli%3e%0a%3cli%3eSYS%20LED%28Red%29%20x1%2c%20%20WAN%20LED%28Green%29%20x1%2c%20%20LAN%20LED%28Green%29%20x1%2c%3c%2fli%3e%0a%3cli%3eReset%20buton%3c%2fli%3e%0a%3c%2ful%3e%0a%3cp%3eMetal%20kasa%20i%c3%a7erisine%20konmu%c5%9f%20k%c3%bc%c3%a7%c3%bck%20ama%20merak%20uyand%c4%b1r%c4%b1c%c4%b1%20bir%20cihaz.%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&t=Nanopirs%20Adguard" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fnanopirsadguard%2fnanopirs-adguard%2f&t=Adguard%20Kurulumu%20%28NanoPi%20R2S%29" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

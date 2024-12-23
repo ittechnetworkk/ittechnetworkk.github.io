@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dietpi on ittechnetworkk</title>
+    <link>http://localhost:1313/tags/dietpi/</link>
+    <description>Recent content in Dietpi on ittechnetworkk</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>ittechnetworkk</copyright>
+    <lastBuildDate>Sun, 12 May 2024 22:57:40 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/dietpi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Adguard Kurulumu (NanoPi R2S)</title>
+      <link>http://localhost:1313/posts/nanopirsadguard/nanopirs-adguard/</link>
+      <pubDate>Sun, 12 May 2024 22:57:40 +0100</pubDate>
+      <guid>http://localhost:1313/posts/nanopirsadguard/nanopirs-adguard/</guid>
+      <description>&lt;p&gt;Merhaba, bu yazımda önceden aldığım fakat değerlendiremediğim NanoPi R2S cihazına Adguard Home kurmayı anlatacağım.&lt;/p&gt;&#xA;&lt;p&gt;NanoPi R2S görüntü itibariyle aşağıdaki gibidir:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/AdguardKurulumu/1.png&#34; alt=&#34;adguard&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Bazı özellikleri şöyledir:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Rockchip RK3328,&lt;/li&gt;&#xA;&lt;li&gt;1GB DDR4 RAM,&lt;/li&gt;&#xA;&lt;li&gt;MicroSD x1 for external storage up to 128GB,&lt;/li&gt;&#xA;&lt;li&gt;2x Gigabit Ethernet,&lt;/li&gt;&#xA;&lt;li&gt;USB 2.0 Host x1: USB Type A,&lt;/li&gt;&#xA;&lt;li&gt;USB-C x1:&lt;/li&gt;&#xA;&lt;li&gt;SYS LED(Red) x1,  WAN LED(Green) x1,  LAN LED(Green) x1,&lt;/li&gt;&#xA;&lt;li&gt;Reset buton&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Metal kasa içerisine konmuş küçük ama merak uyandırıcı bir cihaz.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

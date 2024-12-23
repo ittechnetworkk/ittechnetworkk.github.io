@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Asa on ittechnetworkk</title>
+    <link>http://localhost:1313/tags/asa/</link>
+    <description>Recent content in Asa on ittechnetworkk</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>ittechnetworkk</copyright>
+    <lastBuildDate>Mon, 02 Dec 2024 22:57:40 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/asa/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cisco ASA ASDM Enable</title>
+      <link>http://localhost:1313/posts/asa5510asdm/asa5510-asdm/</link>
+      <pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate>
+      <guid>http://localhost:1313/posts/asa5510asdm/asa5510-asdm/</guid>
+      <description>&lt;p&gt;Merhaba, bu yazımda Cisco ASA 5510 cihazını web arayüzünden yönetebilmek için gerekli konfigürasyonları göstereceğim.&lt;/p&gt;&#xA;&lt;p&gt;İlk olarak asdm imajını çekiyorum:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ASA(config)# show disk0:&#xA;ASA(config)# asdm image flash:/asdm-649.bin          &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;HTTP servisini enable ediyorum:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ASA# conf t&#xA;ASA(config)# http server enable&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;GUI&amp;rsquo;e erişebilecek network aralığını belirliyorum:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ASA(config)# http 192.168.1.0 255.255.255.0 management&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Username ve Password belirliyorum:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ASA(config)# username &amp;lt;User&amp;gt; password &amp;lt;Password&amp;gt; privilege 15&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Management Interface&amp;rsquo;ye IP veriyorum:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ASA(config)# interface Management0/0&#xA;ASA(config)# ip addr 192.168.1.2 255.255.255.0&#xA;ASA(config)# no sh&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Tarayıcımızdan cihazın IP adresine gidecek olursak web arayüzü bizi karşılayacaktır.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cisco ASA Password Recovery</title>
+      <link>http://localhost:1313/posts/asa5510passwordrecovery/asa5510-password-recovery/</link>
+      <pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate>
+      <guid>http://localhost:1313/posts/asa5510passwordrecovery/asa5510-password-recovery/</guid>
+      <description>&lt;p&gt;Merhabalar bu yazımda Cisco ASA 5500 serisi cihazın password recovery işlemini göstereceğim.&lt;/p&gt;&#xA;&lt;p&gt;İlk olarak cihaza console kablosu ile bağlanıyorum cihazı başlatıyorum.&lt;/p&gt;&#xA;&lt;p&gt;Cihaz başlarken aşağıdaki gibi bir ekran geldiğinde &amp;ldquo;ESC&amp;rdquo; tuşuna basıp &amp;ldquo;rommon&amp;rdquo; moduna geçiyorum.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ASAPasswordRecovery/1.png&#34; alt=&#34;asa&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Bu kısımda &amp;ldquo;ESC&amp;rdquo; tuşuna basar basmaz aşağıdaki &amp;ldquo;rommon&amp;rdquo; modu karşımıza çıkacaktır.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ASAPasswordRecovery/2.png&#34; alt=&#34;asa&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Password recovery için aşağıdaki komutları sırasıyla yazıyorum:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;rommon #0&amp;gt; confreg 0x41&#xA;rommon #0&amp;gt; confreg&#xA;rommon #0&amp;gt; boot&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&amp;ldquo;confreg&amp;rdquo; komutundan sonra çıkan soruları aşağıdaki gibi seçiyorum.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Cisco ASA SSH Konfigürasyonu</title>
+      <link>http://localhost:1313/posts/asa5510ssh/asa5510-ssh/</link>
+      <pubDate>Sun, 01 Dec 2024 22:57:40 +0100</pubDate>
+      <guid>http://localhost:1313/posts/asa5510ssh/asa5510-ssh/</guid>
+      <description>&lt;p&gt;Merhabalar, bu yazımda Cisco ASA 5510&amp;rsquo;a SSH konfigürasyonu yapmayı göstereceğim.&lt;/p&gt;&#xA;&lt;p&gt;İlk olarak bir kullanıcı oluşturuyorum:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ASA# conf t&#xA;ASA(config)# username &amp;lt;User&amp;gt; password &amp;lt;Password&amp;gt; privilege 15&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Kimlik doğrulama modunu ayarlıyorum:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ASA(config)# aaa authentication ssh console LOCAL&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;SSH versiyonunu 2 yapıyorum ve timeout değerini ayarlıyorum:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ASA(config)# ssh version 2&#xA;ASA(config)# ssh timeout 30&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Bir domain adı ve anahtar çifti yaratıyorum:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ASA(config)# domain-name sonersahin.local&#xA;ASA(config)# crypto key generate rsa modulus 1024&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Cihaza SSH yapacak network aralığı belirliyorum, isterseniz sadece belli bir IP adresini de yapabilirsiniz:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

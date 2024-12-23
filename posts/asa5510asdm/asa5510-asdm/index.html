@@ -8,7 +8,7 @@
   
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Asa5510 Asdm | ittechnetworkk</title>
+  <title> Cisco ASA ASDM Enable | ittechnetworkk</title>
   <link rel = 'canonical' href = 'http://localhost:1313/posts/asa5510asdm/asa5510-asdm/'>
   <meta name="description" content="Hello, I’m Soner from Turkey. I prefer working with the CLI rather than GUI. On this site, I share my expertise in various technologies, insights into newly learned tools, as well as details of the projects I have completed and those I plan to undertake. I run this blog with the motivation to learn, have fun, and help others along the way.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,18 +16,33 @@
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:url" content="http://localhost:1313/posts/asa5510asdm/asa5510-asdm/">
   <meta property="og:site_name" content="ittechnetworkk">
-  <meta property="og:title" content="Asa5510 Asdm">
-  <meta property="og:description" content="Hello, I’m Soner from Turkey. I prefer working with the CLI rather than GUI. On this site, I share my expertise in various technologies, insights into newly learned tools, as well as details of the projects I have completed and those I plan to undertake. I run this blog with the motivation to learn, have fun, and help others along the way.">
+  <meta property="og:title" content="Cisco ASA ASDM Enable">
+  <meta property="og:description" content="Merhaba, bu yazımda Cisco ASA 5510 cihazını web arayüzünden yönetebilmek için gerekli konfigürasyonları göstereceğim.
+İlk olarak asdm imajını çekiyorum:
+ASA(config)# show disk0: ASA(config)# asdm image flash:/asdm-649.bin HTTP servisini enable ediyorum:
+ASA# conf t ASA(config)# http server enable GUI’e erişebilecek network aralığını belirliyorum:
+ASA(config)# http 192.168.1.0 255.255.255.0 management Username ve Password belirliyorum:
+ASA(config)# username &lt;User&gt; password &lt;Password&gt; privilege 15 Management Interface’ye IP veriyorum:
+ASA(config)# interface Management0/0 ASA(config)# ip addr 192.168.1.2 255.255.255.0 ASA(config)# no sh Tarayıcımızdan cihazın IP adresine gidecek olursak web arayüzü bizi karşılayacaktır.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-12-19T17:24:50+01:00">
-    <meta property="article:modified_time" content="2024-12-19T17:24:50+01:00">
+    <meta property="article:published_time" content="2024-12-02T22:57:40+01:00">
+    <meta property="article:modified_time" content="2024-12-02T22:57:40+01:00">
+    <meta property="article:tag" content="Asa">
+    <meta property="article:tag" content="Cisco">
+    <meta property="article:tag" content="Firewall">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Asa5510 Asdm">
-  <meta name="twitter:description" content="Hello, I’m Soner from Turkey. I prefer working with the CLI rather than GUI. On this site, I share my expertise in various technologies, insights into newly learned tools, as well as details of the projects I have completed and those I plan to undertake. I run this blog with the motivation to learn, have fun, and help others along the way.">
+  <meta name="twitter:title" content="Cisco ASA ASDM Enable">
+  <meta name="twitter:description" content="Merhaba, bu yazımda Cisco ASA 5510 cihazını web arayüzünden yönetebilmek için gerekli konfigürasyonları göstereceğim.
+İlk olarak asdm imajını çekiyorum:
+ASA(config)# show disk0: ASA(config)# asdm image flash:/asdm-649.bin HTTP servisini enable ediyorum:
+ASA# conf t ASA(config)# http server enable GUI’e erişebilecek network aralığını belirliyorum:
+ASA(config)# http 192.168.1.0 255.255.255.0 management Username ve Password belirliyorum:
+ASA(config)# username &lt;User&gt; password &lt;Password&gt; privilege 15 Management Interface’ye IP veriyorum:
+ASA(config)# interface Management0/0 ASA(config)# ip addr 192.168.1.2 255.255.255.0 ASA(config)# no sh Tarayıcımızdan cihazın IP adresine gidecek olursak web arayüzü bizi karşılayacaktır.">
 
   
   
@@ -77,14 +92,14 @@
       <ul>
         
         <li>
-          <a class="icon" href=" http://localhost:1313/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/" aria-label="Previous">
+          <a class="icon" href=" http://localhost:1313/posts/asa5510passwordrecovery/asa5510-password-recovery/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="http://localhost:1313/posts/asa5510passwordrecovery/asa5510-password-recovery/" aria-label="Next">
+          <a class="icon" href="http://localhost:1313/about/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -120,42 +135,42 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&text=Asa5510%20Asdm" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&text=Cisco%20ASA%20ASDM%20Enable" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&title=Asa5510%20Asdm" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&title=Cisco%20ASA%20ASDM%20Enable" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&is_video=false&description=Asa5510%20Asdm" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&is_video=false&description=Cisco%20ASA%20ASDM%20Enable" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Asa5510%20Asdm&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Cisco%20ASA%20ASDM%20Enable&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&title=Asa5510%20Asdm" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&title=Cisco%20ASA%20ASDM%20Enable" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&title=Asa5510%20Asdm" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&title=Cisco%20ASA%20ASDM%20Enable" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&name=Asa5510%20Asdm&description=" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&name=Cisco%20ASA%20ASDM%20Enable&description=%3cp%3eMerhaba%2c%20bu%20yaz%c4%b1mda%20Cisco%20ASA%205510%20cihaz%c4%b1n%c4%b1%20web%20aray%c3%bcz%c3%bcnden%20y%c3%b6netebilmek%20i%c3%a7in%20gerekli%20konfig%c3%bcrasyonlar%c4%b1%20g%c3%b6sterece%c4%9fim.%3c%2fp%3e%0a%3cp%3e%c4%b0lk%20olarak%20asdm%20imaj%c4%b1n%c4%b1%20%c3%a7ekiyorum%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eASA%28config%29%23%20show%20disk0%3a%0aASA%28config%29%23%20asdm%20image%20flash%3a%2fasdm-649.bin%20%20%20%20%20%20%20%20%20%20%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eHTTP%20servisini%20enable%20ediyorum%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eASA%23%20conf%20t%0aASA%28config%29%23%20http%20server%20enable%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eGUI%26rsquo%3be%20eri%c5%9febilecek%20network%20aral%c4%b1%c4%9f%c4%b1n%c4%b1%20belirliyorum%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eASA%28config%29%23%20http%20192.168.1.0%20255.255.255.0%20management%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eUsername%20ve%20Password%20belirliyorum%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eASA%28config%29%23%20username%20%26lt%3bUser%26gt%3b%20password%20%26lt%3bPassword%26gt%3b%20privilege%2015%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eManagement%20Interface%26rsquo%3bye%20IP%20veriyorum%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eASA%28config%29%23%20interface%20Management0%2f0%0aASA%28config%29%23%20ip%20addr%20192.168.1.2%20255.255.255.0%0aASA%28config%29%23%20no%20sh%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eTaray%c4%b1c%c4%b1m%c4%b1zdan%20cihaz%c4%b1n%20IP%20adresine%20gidecek%20olursak%20web%20aray%c3%bcz%c3%bc%20bizi%20kar%c5%9f%c4%b1layacakt%c4%b1r.%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&t=Asa5510%20Asdm" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&t=Cisco%20ASA%20ASDM%20Enable" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -174,13 +189,13 @@
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        Asa5510 Asdm
+        Cisco ASA ASDM Enable
       </h1>
       <div class="meta">
         
         <div class="postdate">
           
-          <time datetime="2024-12-19 17:24:50 &#43;0100 CET" itemprop="datePublished">2024-12-19</time>
+          <time datetime="2024-12-02 22:57:40 &#43;0100 CET" itemprop="datePublished">2024-12-02</time>
           
         </div>
         
@@ -193,13 +208,45 @@
         
         
         
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/asa" rel="tag">asa</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/cisco" rel="tag">cisco</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/firewall" rel="tag">firewall</a>
+            
+        </div>
+        
       </div>
     </header>
 
   
     
     <div class="content" itemprop="articleBody">
-      
+      <p>Merhaba, bu yazımda Cisco ASA 5510 cihazını web arayüzünden yönetebilmek için gerekli konfigürasyonları göstereceğim.</p>
+<p>İlk olarak asdm imajını çekiyorum:</p>
+<pre tabindex="0"><code>ASA(config)# show disk0:
+ASA(config)# asdm image flash:/asdm-649.bin          
+</code></pre><p>HTTP servisini enable ediyorum:</p>
+<pre tabindex="0"><code>ASA# conf t
+ASA(config)# http server enable
+</code></pre><p>GUI&rsquo;e erişebilecek network aralığını belirliyorum:</p>
+<pre tabindex="0"><code>ASA(config)# http 192.168.1.0 255.255.255.0 management
+</code></pre><p>Username ve Password belirliyorum:</p>
+<pre tabindex="0"><code>ASA(config)# username &lt;User&gt; password &lt;Password&gt; privilege 15
+</code></pre><p>Management Interface&rsquo;ye IP veriyorum:</p>
+<pre tabindex="0"><code>ASA(config)# interface Management0/0
+ASA(config)# ip addr 192.168.1.2 255.255.255.0
+ASA(config)# no sh
+</code></pre><p>Tarayıcımızdan cihazın IP adresine gidecek olursak web arayüzü bizi karşılayacaktır.</p>
+<p>Teşekkürler,</p>
+<p>İyi Çalışmalar.</p>
+
     </div>
   </article>
 
@@ -248,42 +295,42 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&text=Asa5510%20Asdm" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&text=Cisco%20ASA%20ASDM%20Enable" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&title=Asa5510%20Asdm" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&title=Cisco%20ASA%20ASDM%20Enable" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&is_video=false&description=Asa5510%20Asdm" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&is_video=false&description=Cisco%20ASA%20ASDM%20Enable" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Asa5510%20Asdm&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Cisco%20ASA%20ASDM%20Enable&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&title=Asa5510%20Asdm" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&title=Cisco%20ASA%20ASDM%20Enable" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&title=Asa5510%20Asdm" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&title=Cisco%20ASA%20ASDM%20Enable" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&name=Asa5510%20Asdm&description=" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&name=Cisco%20ASA%20ASDM%20Enable&description=%3cp%3eMerhaba%2c%20bu%20yaz%c4%b1mda%20Cisco%20ASA%205510%20cihaz%c4%b1n%c4%b1%20web%20aray%c3%bcz%c3%bcnden%20y%c3%b6netebilmek%20i%c3%a7in%20gerekli%20konfig%c3%bcrasyonlar%c4%b1%20g%c3%b6sterece%c4%9fim.%3c%2fp%3e%0a%3cp%3e%c4%b0lk%20olarak%20asdm%20imaj%c4%b1n%c4%b1%20%c3%a7ekiyorum%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eASA%28config%29%23%20show%20disk0%3a%0aASA%28config%29%23%20asdm%20image%20flash%3a%2fasdm-649.bin%20%20%20%20%20%20%20%20%20%20%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eHTTP%20servisini%20enable%20ediyorum%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eASA%23%20conf%20t%0aASA%28config%29%23%20http%20server%20enable%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eGUI%26rsquo%3be%20eri%c5%9febilecek%20network%20aral%c4%b1%c4%9f%c4%b1n%c4%b1%20belirliyorum%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eASA%28config%29%23%20http%20192.168.1.0%20255.255.255.0%20management%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eUsername%20ve%20Password%20belirliyorum%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eASA%28config%29%23%20username%20%26lt%3bUser%26gt%3b%20password%20%26lt%3bPassword%26gt%3b%20privilege%2015%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eManagement%20Interface%26rsquo%3bye%20IP%20veriyorum%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eASA%28config%29%23%20interface%20Management0%2f0%0aASA%28config%29%23%20ip%20addr%20192.168.1.2%20255.255.255.0%0aASA%28config%29%23%20no%20sh%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eTaray%c4%b1c%c4%b1m%c4%b1zdan%20cihaz%c4%b1n%20IP%20adresine%20gidecek%20olursak%20web%20aray%c3%bcz%c3%bc%20bizi%20kar%c5%9f%c4%b1layacakt%c4%b1r.%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&t=Asa5510%20Asdm" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fasa5510asdm%2fasa5510-asdm%2f&t=Cisco%20ASA%20ASDM%20Enable" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

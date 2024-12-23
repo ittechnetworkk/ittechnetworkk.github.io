@@ -8,7 +8,7 @@
   
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Ubuntu Dhcp Server | ittechnetworkk</title>
+  <title> Ubuntu 22.04 DHCP Server Konfigürasyonu | ittechnetworkk</title>
   <link rel = 'canonical' href = 'http://localhost:1313/posts/ubuntudhcpserver/ubuntu-dhcp-server/'>
   <meta name="description" content="Hello, I’m Soner from Turkey. I prefer working with the CLI rather than GUI. On this site, I share my expertise in various technologies, insights into newly learned tools, as well as details of the projects I have completed and those I plan to undertake. I run this blog with the motivation to learn, have fun, and help others along the way.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,18 +16,33 @@
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:url" content="http://localhost:1313/posts/ubuntudhcpserver/ubuntu-dhcp-server/">
   <meta property="og:site_name" content="ittechnetworkk">
-  <meta property="og:title" content="Ubuntu Dhcp Server">
-  <meta property="og:description" content="Hello, I’m Soner from Turkey. I prefer working with the CLI rather than GUI. On this site, I share my expertise in various technologies, insights into newly learned tools, as well as details of the projects I have completed and those I plan to undertake. I run this blog with the motivation to learn, have fun, and help others along the way.">
+  <meta property="og:title" content="Ubuntu 22.04 DHCP Server Konfigürasyonu">
+  <meta property="og:description" content="Merhabalar bu yazımda, Ubuntu-22.04 Server’a DHCP rolü kurup konfigürasyonunu yapacağım.
+Ubuntu’ya DHCP rolü vermeden önce, Server’ın IP adresini statik olarak ayarlıyorum.
+Statik IP adresi tanımlamak için “/etc/netplan/00-installer-config.yaml” dosyasını düzenliyorum.
+network: version: 2 renderer: networkd ethernets: ens33: addresses: - 192.168.1.50/24 nameservers: addresses: [1.1.1.1, 8.8.8.8] routes: - to: default via: 192.168.1.1 Değişiklikleri geçerli kılmak için:
+sudo netplan apply Grafik arayüzü ile yapılandırmak için “nmtui” aracını kullanabilirsiniz.
+DHCP Server Rolü Kurulumu:
+sudo apt install isc-dhcp-server DHCP rolü yüklendikten sonra, konfigürasyon dosyası “/etc/dhcp/dhcpd.conf&#34;dur.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-12-19T17:21:05+01:00">
-    <meta property="article:modified_time" content="2024-12-19T17:21:05+01:00">
+    <meta property="article:published_time" content="2024-11-07T22:57:40+01:00">
+    <meta property="article:modified_time" content="2024-11-07T22:57:40+01:00">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="Ubuntu">
+    <meta property="article:tag" content="Dhcp">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Ubuntu Dhcp Server">
-  <meta name="twitter:description" content="Hello, I’m Soner from Turkey. I prefer working with the CLI rather than GUI. On this site, I share my expertise in various technologies, insights into newly learned tools, as well as details of the projects I have completed and those I plan to undertake. I run this blog with the motivation to learn, have fun, and help others along the way.">
+  <meta name="twitter:title" content="Ubuntu 22.04 DHCP Server Konfigürasyonu">
+  <meta name="twitter:description" content="Merhabalar bu yazımda, Ubuntu-22.04 Server’a DHCP rolü kurup konfigürasyonunu yapacağım.
+Ubuntu’ya DHCP rolü vermeden önce, Server’ın IP adresini statik olarak ayarlıyorum.
+Statik IP adresi tanımlamak için “/etc/netplan/00-installer-config.yaml” dosyasını düzenliyorum.
+network: version: 2 renderer: networkd ethernets: ens33: addresses: - 192.168.1.50/24 nameservers: addresses: [1.1.1.1, 8.8.8.8] routes: - to: default via: 192.168.1.1 Değişiklikleri geçerli kılmak için:
+sudo netplan apply Grafik arayüzü ile yapılandırmak için “nmtui” aracını kullanabilirsiniz.
+DHCP Server Rolü Kurulumu:
+sudo apt install isc-dhcp-server DHCP rolü yüklendikten sonra, konfigürasyon dosyası “/etc/dhcp/dhcpd.conf&#34;dur.">
 
   
   
@@ -84,7 +99,7 @@
         
         
         <li>
-          <a class="icon" href="http://localhost:1313/posts/raspberrypintpserver/raspberrypi-ntp-server/" aria-label="Next">
+          <a class="icon" href="http://localhost:1313/posts/junosshortcuts/junos-shortcuts/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -120,42 +135,42 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&text=Ubuntu%20Dhcp%20Server" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&text=Ubuntu%2022.04%20DHCP%20Server%20Konfig%c3%bcrasyonu" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&title=Ubuntu%20Dhcp%20Server" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&title=Ubuntu%2022.04%20DHCP%20Server%20Konfig%c3%bcrasyonu" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&is_video=false&description=Ubuntu%20Dhcp%20Server" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&is_video=false&description=Ubuntu%2022.04%20DHCP%20Server%20Konfig%c3%bcrasyonu" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Ubuntu%20Dhcp%20Server&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Ubuntu%2022.04%20DHCP%20Server%20Konfig%c3%bcrasyonu&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&title=Ubuntu%20Dhcp%20Server" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&title=Ubuntu%2022.04%20DHCP%20Server%20Konfig%c3%bcrasyonu" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&title=Ubuntu%20Dhcp%20Server" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&title=Ubuntu%2022.04%20DHCP%20Server%20Konfig%c3%bcrasyonu" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&name=Ubuntu%20Dhcp%20Server&description=" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&name=Ubuntu%2022.04%20DHCP%20Server%20Konfig%c3%bcrasyonu&description=%3cp%3eMerhabalar%20bu%20yaz%c4%b1mda%2c%20Ubuntu-22.04%20Server%26rsquo%3ba%20DHCP%20rol%c3%bc%20kurup%20konfig%c3%bcrasyonunu%20yapaca%c4%9f%c4%b1m.%3c%2fp%3e%0a%3cp%3eUbuntu%26rsquo%3bya%20DHCP%20rol%c3%bc%20vermeden%20%c3%b6nce%2c%20Server%26rsquo%3b%c4%b1n%20IP%20adresini%20statik%20olarak%20ayarl%c4%b1yorum.%3c%2fp%3e%0a%3cp%3eStatik%20IP%20adresi%20tan%c4%b1mlamak%20i%c3%a7in%20%26ldquo%3b%2fetc%2fnetplan%2f00-installer-config.yaml%26rdquo%3b%20dosyas%c4%b1n%c4%b1%20d%c3%bczenliyorum.%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3enetwork%3a%0a%c2%a0%20version%3a%202%0a%c2%a0%20renderer%3a%20networkd%0a%c2%a0%20ethernets%3a%0a%c2%a0%c2%a0%c2%a0%20ens33%3a%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20addresses%3a%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20-%20192.168.1.50%2f24%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20nameservers%3a%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20addresses%3a%20%5b1.1.1.1%2c%208.8.8.8%5d%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20routes%3a%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20-%20to%3a%20default%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20via%3a%20192.168.1.1%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eDe%c4%9fi%c5%9fiklikleri%20ge%c3%a7erli%20k%c4%b1lmak%20i%c3%a7in%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3esudo%20netplan%20apply%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eGrafik%20aray%c3%bcz%c3%bc%20ile%20yap%c4%b1land%c4%b1rmak%20i%c3%a7in%20%26ldquo%3bnmtui%26rdquo%3b%20arac%c4%b1n%c4%b1%20kullanabilirsiniz.%3c%2fp%3e%0a%3cp%3eDHCP%20Server%20Rol%c3%bc%20Kurulumu%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3esudo%20apt%20install%20isc-dhcp-server%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eDHCP%20rol%c3%bc%20y%c3%bcklendikten%20sonra%2c%20konfig%c3%bcrasyon%20dosyas%c4%b1%20%26ldquo%3b%2fetc%2fdhcp%2fdhcpd.conf%26quot%3bdur.%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&t=Ubuntu%20Dhcp%20Server" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&t=Ubuntu%2022.04%20DHCP%20Server%20Konfig%c3%bcrasyonu" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -174,13 +189,13 @@
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        Ubuntu Dhcp Server
+        Ubuntu 22.04 DHCP Server Konfigürasyonu
       </h1>
       <div class="meta">
         
         <div class="postdate">
           
-          <time datetime="2024-12-19 17:21:05 &#43;0100 CET" itemprop="datePublished">2024-12-19</time>
+          <time datetime="2024-11-07 22:57:40 &#43;0100 CET" itemprop="datePublished">2024-11-07</time>
           
         </div>
         
@@ -188,10 +203,24 @@
         <div class="article-read-time">
           <i class="far fa-clock"></i>
           
-          0 minute read
+          1 minute read
         </div>
         
         
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/linux" rel="tag">linux</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/ubuntu" rel="tag">ubuntu</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/dhcp" rel="tag">dhcp</a>
+            
+        </div>
         
       </div>
     </header>
@@ -199,7 +228,57 @@
   
     
     <div class="content" itemprop="articleBody">
-      
+      <p>Merhabalar bu yazımda, Ubuntu-22.04 Server&rsquo;a DHCP rolü kurup konfigürasyonunu yapacağım.</p>
+<p>Ubuntu&rsquo;ya DHCP rolü vermeden önce, Server&rsquo;ın IP adresini statik olarak ayarlıyorum.</p>
+<p>Statik IP adresi tanımlamak için &ldquo;/etc/netplan/00-installer-config.yaml&rdquo; dosyasını düzenliyorum.</p>
+<pre tabindex="0"><code>network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    ens33:
+      addresses:
+        - 192.168.1.50/24
+      nameservers:
+        addresses: [1.1.1.1, 8.8.8.8]
+      routes:
+        - to: default
+          via: 192.168.1.1
+</code></pre><p>Değişiklikleri geçerli kılmak için:</p>
+<pre tabindex="0"><code>sudo netplan apply
+</code></pre><p>Grafik arayüzü ile yapılandırmak için &ldquo;nmtui&rdquo; aracını kullanabilirsiniz.</p>
+<p>DHCP Server Rolü Kurulumu:</p>
+<pre tabindex="0"><code>sudo apt install isc-dhcp-server
+</code></pre><p>DHCP rolü yüklendikten sonra, konfigürasyon dosyası &ldquo;/etc/dhcp/dhcpd.conf&quot;dur.</p>
+<p>Şimdi bunu kendi ağımıza göre konfigüre edelim.</p>
+<pre tabindex="0"><code>sudo nano /etc/dhcp/dhcpd.conf
+</code></pre><p>Bu dosya yorum satırlarıyla birlikte biraz uzun olabilir, fakat neyin nasıl yapılandırılması gerektiğini güzelce açıklar.</p>
+<p>Ben dosyanın içindekileri tamamen silip tekrardan sade bir şekilde yazacağım.</p>
+<pre tabindex="0"><code>authoritative;                                          #Yetkili dhcp olduğunu bildirir.
+
+default-lease-time 600;                                 #10 dk
+max-lease-time 7200;                                    #120 df
+
+subnet 192.168.1.0 netmask 255.255.255.0 {              #subnetimiz
+ range 192.168.1.150 192.168.1.200;                     #dağıtılacak IP aralığı
+ option routers 192.168.1.1;                            #default router
+ option domain-name-servers 192.168.1.1, 1.1.1.1;       #DNS
+}
+</code></pre><p>DHCP Server&rsquo;ın hizmet vereceği interfaceyi belirtme:</p>
+<pre tabindex="0"><code>sudo nano /etc/default/isc-dhcp-server
+
+INTERFACESv4=&#34;ens33&#34;
+INTERFACESv6=&#34;&#34;
+</code></pre><p>Servisi başlatma ve enable etme:</p>
+<pre tabindex="0"><code>sudo systemctl start isc-dhcp-server
+sudo systemctl enable isc-dhcp-server
+</code></pre><p>Kontrol:</p>
+<pre tabindex="0"><code>sudo systemctl status isc-dhcp-server
+</code></pre><p>Firewall varsa ilgili portlara izin verilir:</p>
+<pre tabindex="0"><code>sudo ufw allow 67/udp 
+sudo ufw allow 68/udp
+</code></pre><p>Logları görmek için:</p>
+<pre tabindex="0"><code>journalctl -u isc-dhcp-server
+</code></pre>
     </div>
   </article>
 
@@ -248,42 +327,42 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&text=Ubuntu%20Dhcp%20Server" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&text=Ubuntu%2022.04%20DHCP%20Server%20Konfig%c3%bcrasyonu" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&title=Ubuntu%20Dhcp%20Server" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&title=Ubuntu%2022.04%20DHCP%20Server%20Konfig%c3%bcrasyonu" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&is_video=false&description=Ubuntu%20Dhcp%20Server" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&is_video=false&description=Ubuntu%2022.04%20DHCP%20Server%20Konfig%c3%bcrasyonu" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Ubuntu%20Dhcp%20Server&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Ubuntu%2022.04%20DHCP%20Server%20Konfig%c3%bcrasyonu&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&title=Ubuntu%20Dhcp%20Server" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&title=Ubuntu%2022.04%20DHCP%20Server%20Konfig%c3%bcrasyonu" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&title=Ubuntu%20Dhcp%20Server" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&title=Ubuntu%2022.04%20DHCP%20Server%20Konfig%c3%bcrasyonu" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&name=Ubuntu%20Dhcp%20Server&description=" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&name=Ubuntu%2022.04%20DHCP%20Server%20Konfig%c3%bcrasyonu&description=%3cp%3eMerhabalar%20bu%20yaz%c4%b1mda%2c%20Ubuntu-22.04%20Server%26rsquo%3ba%20DHCP%20rol%c3%bc%20kurup%20konfig%c3%bcrasyonunu%20yapaca%c4%9f%c4%b1m.%3c%2fp%3e%0a%3cp%3eUbuntu%26rsquo%3bya%20DHCP%20rol%c3%bc%20vermeden%20%c3%b6nce%2c%20Server%26rsquo%3b%c4%b1n%20IP%20adresini%20statik%20olarak%20ayarl%c4%b1yorum.%3c%2fp%3e%0a%3cp%3eStatik%20IP%20adresi%20tan%c4%b1mlamak%20i%c3%a7in%20%26ldquo%3b%2fetc%2fnetplan%2f00-installer-config.yaml%26rdquo%3b%20dosyas%c4%b1n%c4%b1%20d%c3%bczenliyorum.%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3enetwork%3a%0a%c2%a0%20version%3a%202%0a%c2%a0%20renderer%3a%20networkd%0a%c2%a0%20ethernets%3a%0a%c2%a0%c2%a0%c2%a0%20ens33%3a%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20addresses%3a%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20-%20192.168.1.50%2f24%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20nameservers%3a%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20addresses%3a%20%5b1.1.1.1%2c%208.8.8.8%5d%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20routes%3a%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20-%20to%3a%20default%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20via%3a%20192.168.1.1%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eDe%c4%9fi%c5%9fiklikleri%20ge%c3%a7erli%20k%c4%b1lmak%20i%c3%a7in%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3esudo%20netplan%20apply%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eGrafik%20aray%c3%bcz%c3%bc%20ile%20yap%c4%b1land%c4%b1rmak%20i%c3%a7in%20%26ldquo%3bnmtui%26rdquo%3b%20arac%c4%b1n%c4%b1%20kullanabilirsiniz.%3c%2fp%3e%0a%3cp%3eDHCP%20Server%20Rol%c3%bc%20Kurulumu%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3esudo%20apt%20install%20isc-dhcp-server%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eDHCP%20rol%c3%bc%20y%c3%bcklendikten%20sonra%2c%20konfig%c3%bcrasyon%20dosyas%c4%b1%20%26ldquo%3b%2fetc%2fdhcp%2fdhcpd.conf%26quot%3bdur.%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&t=Ubuntu%20Dhcp%20Server" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&t=Ubuntu%2022.04%20DHCP%20Server%20Konfig%c3%bcrasyonu" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

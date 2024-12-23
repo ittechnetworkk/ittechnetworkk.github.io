@@ -8,7 +8,7 @@
   
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Dell Poweredge R640 Proxmox | ittechnetworkk</title>
+  <title> Proxmox Kurulumu (Dell Poweredge R640) | ittechnetworkk</title>
   <link rel = 'canonical' href = 'http://localhost:1313/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/'>
   <meta name="description" content="Hello, I’m Soner from Turkey. I prefer working with the CLI rather than GUI. On this site, I share my expertise in various technologies, insights into newly learned tools, as well as details of the projects I have completed and those I plan to undertake. I run this blog with the motivation to learn, have fun, and help others along the way.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,18 +16,27 @@
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:url" content="http://localhost:1313/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/">
   <meta property="og:site_name" content="ittechnetworkk">
-  <meta property="og:title" content="Dell Poweredge R640 Proxmox">
-  <meta property="og:description" content="Hello, I’m Soner from Turkey. I prefer working with the CLI rather than GUI. On this site, I share my expertise in various technologies, insights into newly learned tools, as well as details of the projects I have completed and those I plan to undertake. I run this blog with the motivation to learn, have fun, and help others along the way.">
+  <meta property="og:title" content="Proxmox Kurulumu (Dell Poweredge R640)">
+  <meta property="og:description" content="Bu yazımda, Dell Poweredge R640 Server’a Proxmox kurulumunu anlatacağım.
+Sahip olduğum donanım ve yazılımlar şu şekilde:
+Dell PowerEdge R640 2x Xeon Gold 6132 14C 2.6GHz 128GB DDR4 RAM 8SFF H730 RAID, 2 x 1TB SSD Monitor, Klavye, Mause, USB Bellek, Ethernet Kablosu, Balena Etcher. Kablo bağlantılarının doğru yapıldığından emin olduktan sonra, ilk olarak web sitesinden Proxmox ISO’sunu indiriyorum.
+Bu ISO dosyasını USB belleğe yazdırmak için Balena Etcher yazılımını kullanıyorum. İsteğe bağlı başka yazılımlar da kullanılabilir.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-12-19T17:23:52+01:00">
-    <meta property="article:modified_time" content="2024-12-19T17:23:52+01:00">
+    <meta property="article:published_time" content="2024-05-11T22:57:40+01:00">
+    <meta property="article:modified_time" content="2024-05-11T22:57:40+01:00">
+    <meta property="article:tag" content="Server">
+    <meta property="article:tag" content="Virtualization">
+    <meta property="article:tag" content="Proxmox">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Dell Poweredge R640 Proxmox">
-  <meta name="twitter:description" content="Hello, I’m Soner from Turkey. I prefer working with the CLI rather than GUI. On this site, I share my expertise in various technologies, insights into newly learned tools, as well as details of the projects I have completed and those I plan to undertake. I run this blog with the motivation to learn, have fun, and help others along the way.">
+  <meta name="twitter:title" content="Proxmox Kurulumu (Dell Poweredge R640)">
+  <meta name="twitter:description" content="Bu yazımda, Dell Poweredge R640 Server’a Proxmox kurulumunu anlatacağım.
+Sahip olduğum donanım ve yazılımlar şu şekilde:
+Dell PowerEdge R640 2x Xeon Gold 6132 14C 2.6GHz 128GB DDR4 RAM 8SFF H730 RAID, 2 x 1TB SSD Monitor, Klavye, Mause, USB Bellek, Ethernet Kablosu, Balena Etcher. Kablo bağlantılarının doğru yapıldığından emin olduktan sonra, ilk olarak web sitesinden Proxmox ISO’sunu indiriyorum.
+Bu ISO dosyasını USB belleğe yazdırmak için Balena Etcher yazılımını kullanıyorum. İsteğe bağlı başka yazılımlar da kullanılabilir.">
 
   
   
@@ -77,14 +86,14 @@
       <ul>
         
         <li>
-          <a class="icon" href=" http://localhost:1313/posts/windowsservernicteaming/windows-server-nic-teaming/" aria-label="Previous">
+          <a class="icon" href=" http://localhost:1313/posts/portsecurity/port-security/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="http://localhost:1313/posts/asa5510asdm/asa5510-asdm/" aria-label="Next">
+          <a class="icon" href="http://localhost:1313/posts/nanopirsadguard/nanopirs-adguard/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -120,42 +129,42 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&text=Dell%20Poweredge%20R640%20Proxmox" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&text=Proxmox%20Kurulumu%20%28Dell%20Poweredge%20R640%29" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&title=Dell%20Poweredge%20R640%20Proxmox" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&title=Proxmox%20Kurulumu%20%28Dell%20Poweredge%20R640%29" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&is_video=false&description=Dell%20Poweredge%20R640%20Proxmox" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&is_video=false&description=Proxmox%20Kurulumu%20%28Dell%20Poweredge%20R640%29" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Dell%20Poweredge%20R640%20Proxmox&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Proxmox%20Kurulumu%20%28Dell%20Poweredge%20R640%29&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&title=Dell%20Poweredge%20R640%20Proxmox" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&title=Proxmox%20Kurulumu%20%28Dell%20Poweredge%20R640%29" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&title=Dell%20Poweredge%20R640%20Proxmox" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&title=Proxmox%20Kurulumu%20%28Dell%20Poweredge%20R640%29" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&name=Dell%20Poweredge%20R640%20Proxmox&description=" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&name=Proxmox%20Kurulumu%20%28Dell%20Poweredge%20R640%29&description=%3cp%3eBu%20yaz%c4%b1mda%2c%20Dell%20Poweredge%20R640%20Server%26rsquo%3ba%20Proxmox%20kurulumunu%20anlataca%c4%9f%c4%b1m.%3c%2fp%3e%0a%3cp%3eSahip%20oldu%c4%9fum%20donan%c4%b1m%20ve%20yaz%c4%b1l%c4%b1mlar%20%c5%9fu%20%c5%9fekilde%3a%3c%2fp%3e%0a%3cul%3e%0a%3cli%3eDell%20PowerEdge%20R640%202x%20Xeon%20Gold%206132%2014C%202.6GHz%20128GB%20DDR4%20RAM%208SFF%20H730%20RAID%2c%3c%2fli%3e%0a%3cli%3e2%20x%201TB%20SSD%3c%2fli%3e%0a%3cli%3eMonitor%2c%3c%2fli%3e%0a%3cli%3eKlavye%2c%3c%2fli%3e%0a%3cli%3eMause%2c%3c%2fli%3e%0a%3cli%3eUSB%20Bellek%2c%3c%2fli%3e%0a%3cli%3eEthernet%20Kablosu%2c%3c%2fli%3e%0a%3cli%3eBalena%20Etcher.%3c%2fli%3e%0a%3c%2ful%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fProxmoxKurulumu%2f1.png%22%20alt%3d%22proxmox%22%3e%3c%2fp%3e%0a%3cp%3eKablo%20ba%c4%9flant%c4%b1lar%c4%b1n%c4%b1n%20do%c4%9fru%20yap%c4%b1ld%c4%b1%c4%9f%c4%b1ndan%20emin%20olduktan%20sonra%2c%20ilk%20olarak%20%3ca%20href%3d%22https%3a%2f%2fwww.proxmox.com%2fen%2fdownloads%2fproxmox-virtual-environment%2fiso%2fproxmox-ve-8-2-iso-installer%22%3eweb%20sitesinden%3c%2fa%3e%20Proxmox%20ISO%26rsquo%3bsunu%20indiriyorum.%3c%2fp%3e%0a%3cp%3eBu%20ISO%20dosyas%c4%b1n%c4%b1%20USB%20belle%c4%9fe%20yazd%c4%b1rmak%20i%c3%a7in%20%3ca%20href%3d%22https%3a%2f%2fetcher.balena.io%2f%22%3eBalena%20Etcher%3c%2fa%3e%20%20yaz%c4%b1l%c4%b1m%c4%b1n%c4%b1%20kullan%c4%b1yorum.%20%c4%b0ste%c4%9fe%20ba%c4%9fl%c4%b1%20ba%c5%9fka%20yaz%c4%b1l%c4%b1mlar%20da%20kullan%c4%b1labilir.%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&t=Dell%20Poweredge%20R640%20Proxmox" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&t=Proxmox%20Kurulumu%20%28Dell%20Poweredge%20R640%29" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -174,13 +183,13 @@
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        Dell Poweredge R640 Proxmox
+        Proxmox Kurulumu (Dell Poweredge R640)
       </h1>
       <div class="meta">
         
         <div class="postdate">
           
-          <time datetime="2024-12-19 17:23:52 &#43;0100 CET" itemprop="datePublished">2024-12-19</time>
+          <time datetime="2024-05-11 22:57:40 &#43;0100 &#43;0100" itemprop="datePublished">2024-05-11</time>
           
         </div>
         
@@ -188,10 +197,24 @@
         <div class="article-read-time">
           <i class="far fa-clock"></i>
           
-          0 minute read
+          1 minute read
         </div>
         
         
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/server" rel="tag">server</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/virtualization" rel="tag">virtualization</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/proxmox" rel="tag">proxmox</a>
+            
+        </div>
         
       </div>
     </header>
@@ -199,7 +222,73 @@
   
     
     <div class="content" itemprop="articleBody">
-      
+      <p>Bu yazımda, Dell Poweredge R640 Server&rsquo;a Proxmox kurulumunu anlatacağım.</p>
+<p>Sahip olduğum donanım ve yazılımlar şu şekilde:</p>
+<ul>
+<li>Dell PowerEdge R640 2x Xeon Gold 6132 14C 2.6GHz 128GB DDR4 RAM 8SFF H730 RAID,</li>
+<li>2 x 1TB SSD</li>
+<li>Monitor,</li>
+<li>Klavye,</li>
+<li>Mause,</li>
+<li>USB Bellek,</li>
+<li>Ethernet Kablosu,</li>
+<li>Balena Etcher.</li>
+</ul>
+<p><img src="/images/ProxmoxKurulumu/1.png" alt="proxmox"></p>
+<p>Kablo bağlantılarının doğru yapıldığından emin olduktan sonra, ilk olarak <a href="https://www.proxmox.com/en/downloads/proxmox-virtual-environment/iso/proxmox-ve-8-2-iso-installer">web sitesinden</a> Proxmox ISO&rsquo;sunu indiriyorum.</p>
+<p>Bu ISO dosyasını USB belleğe yazdırmak için <a href="https://etcher.balena.io/">Balena Etcher</a>  yazılımını kullanıyorum. İsteğe bağlı başka yazılımlar da kullanılabilir.</p>
+<p>ISO yazdırma işlemi bittikten sonra USB belleği sunucumun ön kısmında bulunan porta takıyorum ve cihaza güç veriyorum.</p>
+<p>Cihazı USB bellekten boot etmek için açılırken F11 tuşuna basıyorum.</p>
+<p><img src="/images/ProxmoxKurulumu/3.png" alt="proxmox"></p>
+<p>Gelen menüden &ldquo;One-shot UEFI Boot Menu&rdquo; seçeneğiyle devam ediyorum.</p>
+<p><img src="/images/ProxmoxKurulumu/4.png" alt="proxmox"></p>
+<p>Bir sonraki menüden USB Bellekten boot etmesi gereken seçeneği seçerek ilerliyorum.</p>
+<p><img src="/images/ProxmoxKurulumu/5.png" alt="proxmox"></p>
+<p>Proxmox kurulum ekranı gelmiş oldu. En üstteki seçeği seçiyorum.</p>
+<p><img src="/images/ProxmoxKurulumu/6.png" alt="proxmox"></p>
+<p>Lisans Sözleşmesine &ldquo;I agree&rdquo; diyerek devam ediyorum.</p>
+<p><img src="/images/ProxmoxKurulumu/7.png" alt="proxmox"></p>
+<p>&ldquo;Proxmox Virtual Environment (PVE)&rdquo; kısmında Proxmox&rsquo;un kurulacağı diski seçmemi istiyor. Uygun olan diski seçip devam ediyorum.</p>
+<p><img src="/images/ProxmoxKurulumu/8.png" alt="proxmox"></p>
+<p>&ldquo;Location and Time Zone selection&rdquo;  kısmında konum, zaman ve klavye seçeneklerini doldurduktan sonra devam ediyorum.</p>
+<p><img src="/images/ProxmoxKurulumu/9.png" alt="proxmox"></p>
+<p>&ldquo;Administration Password and Email Address&rdquo; kısmında bir parola(Proxmox arayüzüne erişmek için kullanılacak) ve Email adresi belirledikten sonra devam ediyorum.</p>
+<p><img src="/images/ProxmoxKurulumu/10.png" alt="proxmox"></p>
+<p>&ldquo;Management Network Configuration&rdquo; kısmında</p>
+<ul>
+<li>Yönetim Arayüzü</li>
+<li>Hostname</li>
+<li>IP Adresi</li>
+<li>Gateway</li>
+<li>DNS Sunucusu</li>
+</ul>
+<p>Ayarlarını yaptıktan sonra devam ediyorum.</p>
+<p><img src="/images/ProxmoxKurulumu/11.png" alt="proxmox"></p>
+<p>Son olarak &ldquo;Summary&rdquo; kısmında bir özet olarak konfigürasyonu kontrol ettikten sonra &ldquo;Install&rdquo; diyerek kurulumu başlatıyorum.</p>
+<p><img src="/images/ProxmoxKurulumu/12.png" alt="proxmox"></p>
+<p><img src="/images/ProxmoxKurulumu/13.png" alt="proxmox"></p>
+<p>Kurulum işlemi bittikten sonra cihaz otomatik olarak yeniden başlatılacaktır. Reboot edilirken USB Belleği çıkarıyorum.</p>
+<p><img src="/images/ProxmoxKurulumu/14.png" alt="proxmox"></p>
+<p>Ve artık Proxmox kurulmuş oldu.</p>
+<p><img src="/images/ProxmoxKurulumu/19.png" alt="proxmox"></p>
+<p>Kendi bilgisayarımın tarayıcısından &ldquo;192.168.0.17:8006&rdquo; adresine gidiyorum.</p>
+<p>&ldquo;Advanced&rdquo; diyerek devam ediyorum.</p>
+<p><img src="/images/ProxmoxKurulumu/20.png" alt="proxmox"></p>
+<p>&ldquo;Proceed to 192.168.0.170(unsafe)&rdquo; yazan seçenekle devam ediyorum</p>
+<p><img src="/images/ProxmoxKurulumu/21.png" alt="proxmox"></p>
+<p>Gelen giriş ekranından da</p>
+<ul>
+<li>User name: root</li>
+<li>Password: <em>Belirlediğimiz password</em>
+ile giriş yapıyorum.</li>
+</ul>
+<p><img src="/images/ProxmoxKurulumu/22.png" alt="proxmox"></p>
+<p>Gelen uyarı ekranına da &ldquo;OK&rdquo; diyerek işlemi bitiriyorum.</p>
+<p><img src="/images/ProxmoxKurulumu/23.png" alt="proxmox"></p>
+<p>Proxmox kurulumu bu kadardı.</p>
+<p>Teşekkürler,</p>
+<p>İyi Çalışmalar.</p>
+
     </div>
   </article>
 
@@ -248,42 +337,42 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&text=Dell%20Poweredge%20R640%20Proxmox" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&text=Proxmox%20Kurulumu%20%28Dell%20Poweredge%20R640%29" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&title=Dell%20Poweredge%20R640%20Proxmox" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&title=Proxmox%20Kurulumu%20%28Dell%20Poweredge%20R640%29" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&is_video=false&description=Dell%20Poweredge%20R640%20Proxmox" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&is_video=false&description=Proxmox%20Kurulumu%20%28Dell%20Poweredge%20R640%29" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=Dell%20Poweredge%20R640%20Proxmox&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=Proxmox%20Kurulumu%20%28Dell%20Poweredge%20R640%29&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&title=Dell%20Poweredge%20R640%20Proxmox" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&title=Proxmox%20Kurulumu%20%28Dell%20Poweredge%20R640%29" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&title=Dell%20Poweredge%20R640%20Proxmox" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&title=Proxmox%20Kurulumu%20%28Dell%20Poweredge%20R640%29" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&name=Dell%20Poweredge%20R640%20Proxmox&description=" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&name=Proxmox%20Kurulumu%20%28Dell%20Poweredge%20R640%29&description=%3cp%3eBu%20yaz%c4%b1mda%2c%20Dell%20Poweredge%20R640%20Server%26rsquo%3ba%20Proxmox%20kurulumunu%20anlataca%c4%9f%c4%b1m.%3c%2fp%3e%0a%3cp%3eSahip%20oldu%c4%9fum%20donan%c4%b1m%20ve%20yaz%c4%b1l%c4%b1mlar%20%c5%9fu%20%c5%9fekilde%3a%3c%2fp%3e%0a%3cul%3e%0a%3cli%3eDell%20PowerEdge%20R640%202x%20Xeon%20Gold%206132%2014C%202.6GHz%20128GB%20DDR4%20RAM%208SFF%20H730%20RAID%2c%3c%2fli%3e%0a%3cli%3e2%20x%201TB%20SSD%3c%2fli%3e%0a%3cli%3eMonitor%2c%3c%2fli%3e%0a%3cli%3eKlavye%2c%3c%2fli%3e%0a%3cli%3eMause%2c%3c%2fli%3e%0a%3cli%3eUSB%20Bellek%2c%3c%2fli%3e%0a%3cli%3eEthernet%20Kablosu%2c%3c%2fli%3e%0a%3cli%3eBalena%20Etcher.%3c%2fli%3e%0a%3c%2ful%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fProxmoxKurulumu%2f1.png%22%20alt%3d%22proxmox%22%3e%3c%2fp%3e%0a%3cp%3eKablo%20ba%c4%9flant%c4%b1lar%c4%b1n%c4%b1n%20do%c4%9fru%20yap%c4%b1ld%c4%b1%c4%9f%c4%b1ndan%20emin%20olduktan%20sonra%2c%20ilk%20olarak%20%3ca%20href%3d%22https%3a%2f%2fwww.proxmox.com%2fen%2fdownloads%2fproxmox-virtual-environment%2fiso%2fproxmox-ve-8-2-iso-installer%22%3eweb%20sitesinden%3c%2fa%3e%20Proxmox%20ISO%26rsquo%3bsunu%20indiriyorum.%3c%2fp%3e%0a%3cp%3eBu%20ISO%20dosyas%c4%b1n%c4%b1%20USB%20belle%c4%9fe%20yazd%c4%b1rmak%20i%c3%a7in%20%3ca%20href%3d%22https%3a%2f%2fetcher.balena.io%2f%22%3eBalena%20Etcher%3c%2fa%3e%20%20yaz%c4%b1l%c4%b1m%c4%b1n%c4%b1%20kullan%c4%b1yorum.%20%c4%b0ste%c4%9fe%20ba%c4%9fl%c4%b1%20ba%c5%9fka%20yaz%c4%b1l%c4%b1mlar%20da%20kullan%c4%b1labilir.%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&t=Dell%20Poweredge%20R640%20Proxmox" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fdellpoweredger640proxmox%2fdell-poweredge-r640-proxmox%2f&t=Proxmox%20Kurulumu%20%28Dell%20Poweredge%20R640%29" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>
