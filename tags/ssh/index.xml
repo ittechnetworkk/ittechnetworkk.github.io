@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ssh on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/ssh/</link>
+    <link>https://ittechnetworkk.github.io/tags/ssh/</link>
     <description>Recent content in Ssh on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Sun, 01 Dec 2024 22:57:40 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ittechnetworkk.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cisco ASA SSH Konfigürasyonu</title>
-      <link>http://localhost:1313/posts/asa5510ssh/asa5510-ssh/</link>
+      <link>https://ittechnetworkk.github.io/posts/asa5510ssh/asa5510-ssh/</link>
       <pubDate>Sun, 01 Dec 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/asa5510ssh/asa5510-ssh/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/asa5510ssh/asa5510-ssh/</guid>
       <description>&lt;p&gt;Merhabalar, bu yazımda Cisco ASA 5510&amp;rsquo;a SSH konfigürasyonu yapmayı göstereceğim.&lt;/p&gt;&#xA;&lt;p&gt;İlk olarak bir kullanıcı oluşturuyorum:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ASA# conf t&#xA;ASA(config)# username &amp;lt;User&amp;gt; password &amp;lt;Password&amp;gt; privilege 15&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Kimlik doğrulama modunu ayarlıyorum:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ASA(config)# aaa authentication ssh console LOCAL&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;SSH versiyonunu 2 yapıyorum ve timeout değerini ayarlıyorum:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ASA(config)# ssh version 2&#xA;ASA(config)# ssh timeout 30&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Bir domain adı ve anahtar çifti yaratıyorum:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ASA(config)# domain-name sonersahin.local&#xA;ASA(config)# crypto key generate rsa modulus 1024&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Cihaza SSH yapacak network aralığı belirliyorum, isterseniz sadece belli bir IP adresini de yapabilirsiniz:&lt;/p&gt;</description>
     </item>
   </channel>
