@@ -317,5 +317,12 @@
       <guid>https://ittechnetworkk.github.io/posts/staticrouting/static-routing/</guid>
       <description>&lt;p&gt;Static Routing, yönlendirme tablosuna manuel olarak route eklenmesidir.&#xA;Topoloji değişikliklerinde networklerin de yine güncellenmesi manuel olarak yapılmalıdır.&#xA;Administrative Distance değeri 1&amp;rsquo;dir&lt;/p&gt;&#xA;&lt;p&gt;Aşağıdaki topolojiyi uygulayacağız.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/StaticRouting/2.png&#34; alt=&#34;UTP&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Bu topolojide tüm cihazların birbirleriyle iletişim kurmasını istiyoruz. Başlayalım&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;1-&lt;/strong&gt; Router interfacelerine ve VPC&amp;rsquo;lere IP&amp;rsquo;lerini verelim.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;R1:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;R1#enable &#xA;R1#conf t     &#xA;R1(config)#int e0/0&#xA;R1(config-if)#ip add 192.168.1.1 255.255.255.0&#xA;R1(config-if)#no sh&#xA;R1(config-if)#int s1/0&#xA;R1(config-if)#ip address 2.2.2.2 255.255.255.0&#xA;R1(config-if)#no sh&#xA;R1(config-if)#int s1/1&#xA;R1(config-if)#ip addr 3.3.3.2 255.255.255.0&#xA;R1(config-if)#no sh&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R2:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;R2#enable&#xA;R2#conf t&#xA;R2(config)#int e0/0&#xA;R2(config-if)#ip add 192.168.2.1 255.255.255.0&#xA;R2(config-if)#no sh&#xA;R2(config-if)#int s1/0&#xA;R2(config-if)#ip add 2.2.2.1 255.255.255.0&#xA;R2(config-if)#no sh&#xA;R2(config-if)#int s1/1&#xA;R2(config-if)#ip add 1.1.1.1 255.255.255.0&#xA;R2(config-if)#no sh&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R3:&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Projects</title>
+      <link>https://ittechnetworkk.github.io/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/projects/</guid>
+      <description>&lt;h3 id=&#34;raspberry-pi-e-paper-projesihttpsittechnetworkkgithubiopostsepaperraspberry-pi-epaper&#34;&gt;&lt;a href=&#34;https://ittechnetworkk.github.io/posts/epaper/raspberry-pi-epaper/&#34;&gt;Raspberry Pi e-Paper Projesi&lt;/a&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Raspberry Pi Zero ve E-Paper Ekran İle Saat Uygulaması.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://ittechnetworkk.github.io/posts/epaper/raspberry-pi-epaper/&#34;&gt;View Project Details →&lt;/a&gt;&lt;/p&gt;&#xA;&lt;hr&gt;</description>
+    </item>
   </channel>
 </rss>
