@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Server on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/server/</link>
+    <link>https://ittechnetworkk.github.io/tags/server/</link>
     <description>Recent content in Server on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Mon, 02 Dec 2024 22:57:40 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/server/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ittechnetworkk.github.io/tags/server/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dell PowerEdge R640 Proxmox</title>
-      <link>http://localhost:1313/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</link>
+      <link>https://ittechnetworkk.github.io/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</link>
       <pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</guid>
-      <description>&lt;p&gt;Bu yazımda, Dell Poweredge R640 Server&amp;rsquo;a Proxmox kurulumunu anlatacağım.&lt;/p&gt;&#xA;&lt;p&gt;Sahip olduğum donanım ve yazılımlar şu şekilde:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Dell PowerEdge R640 2x Xeon Gold 6132 14C 2.6GHz 128GB DDR4 RAM 8SFF H730 RAID,&lt;/li&gt;&#xA;&lt;li&gt;2 x 1TB SSD&lt;/li&gt;&#xA;&lt;li&gt;Monitor,&lt;/li&gt;&#xA;&lt;li&gt;Klavye,&lt;/li&gt;&#xA;&lt;li&gt;Mause,&lt;/li&gt;&#xA;&lt;li&gt;USB Bellek,&lt;/li&gt;&#xA;&lt;li&gt;Ethernet Kablosu,&lt;/li&gt;&#xA;&lt;li&gt;Balena Etcher.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ProxmoxKurulumu/1.jpg&#34; alt=&#34;proxmox&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Kablo bağlantılarının doğru yapıldığından emin olduktan sonra, ilk olarak &lt;a href=&#34;https://www.proxmox.com/en/downloads/proxmox-virtual-environment/iso/proxmox-ve-8-2-iso-installer&#34;&gt;web sitesinden&lt;/a&gt; Proxmox ISO&amp;rsquo;sunu indiriyorum.&lt;/p&gt;&#xA;&lt;p&gt;Bu ISO dosyasını USB belleğe yazdırmak için &lt;a href=&#34;https://etcher.balena.io/&#34;&gt;Balena Etcher&lt;/a&gt;  yazılımını kullanıyorum. İsteğe bağlı başka yazılımlar da kullanılabilir.&lt;/p&gt;</description>
+      <guid>https://ittechnetworkk.github.io/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</guid>
+      <description>&lt;p&gt;Bu yazımda, Dell Poweredge R640 Server&amp;rsquo;a Proxmox kurulumunu anlatacağım.&lt;/p&gt;&#xA;&lt;p&gt;Sahip olduğum donanım ve yazılımlar şu şekilde:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Dell PowerEdge R640 2x Xeon Gold 6132 14C 2.6GHz 128GB DDR4 RAM 8SFF H730 RAID,&lt;/li&gt;&#xA;&lt;li&gt;2 x 1TB SSD&lt;/li&gt;&#xA;&lt;li&gt;Monitor,&lt;/li&gt;&#xA;&lt;li&gt;Klavye,&lt;/li&gt;&#xA;&lt;li&gt;Mause,&lt;/li&gt;&#xA;&lt;li&gt;USB Bellek,&lt;/li&gt;&#xA;&lt;li&gt;Ethernet Kablosu,&lt;/li&gt;&#xA;&lt;li&gt;Balena Etcher.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/ProxmoxKurulumu/1.jpg&#34; alt=&#34;proxmox&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Kablo bağlantılarının doğru yapıldığından emin olduktan sonra, ilk olarak &lt;a href=&#34;https://www.proxmox.com/en/downloads/proxmox-virtual-environment/iso/proxmox-ve-8-2-iso-installer&#34;&gt;web sitesinden&lt;/a&gt; Proxmox ISO&amp;rsquo;sunu indiriyorum.&lt;/p&gt;&#xA;&lt;p&gt;Bu ISO dosyasını USB belleğe yazdırmak için &lt;a href=&#34;https://etcher.balena.io/&#34;&gt;Balena Etcher&lt;/a&gt;  yazılımını kullanıyorum. İsteğe bağlı başka yazılımlar da kullanılabilir.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Windows Server NIC Teaming</title>
-      <link>http://localhost:1313/posts/windowsservernicteaming/windows-server-nic-teaming/</link>
+      <link>https://ittechnetworkk.github.io/posts/windowsservernicteaming/windows-server-nic-teaming/</link>
       <pubDate>Thu, 10 Oct 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/windowsservernicteaming/windows-server-nic-teaming/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/windowsservernicteaming/windows-server-nic-teaming/</guid>
       <description>&lt;p&gt;Windows Server&amp;rsquo;da NIC Teaming, birden fazla ethernet kartının tek bir kart gibi kullanılmasına denir. Örneğin 4 x 1Gb kartlarımız var, bunları NIC Teaming yaparsak 4Gb olarak çalışan bir kart haline gelecektir.&lt;/p&gt;&#xA;&lt;p&gt;NIC Teaming&amp;rsquo;in bazı avantajları aşağıdaki gibidir.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Bant Genişliği,&lt;/li&gt;&#xA;&lt;li&gt;Yedeklilik,&lt;/li&gt;&#xA;&lt;li&gt;Verimlilik.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;NIC Teaming yaparken mutlaka karşılığının olması gerekir yoksa çalışmaz. Yani Windows Server&amp;rsquo;ın karşısındaki Switch&amp;rsquo;den de LACP yapılması gerekir.&lt;/p&gt;&#xA;&lt;p&gt;NIC Teaming yapma adımları aşağıdaki gibidir.&lt;/p&gt;&#xA;&lt;p&gt;Aşağıdaki görseldeki &amp;ldquo;NIC Teaming    Disabled&amp;rdquo; yazan seçeneğe geliyorum.&lt;/p&gt;</description>
     </item>
   </channel>

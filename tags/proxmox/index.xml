@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Proxmox on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/proxmox/</link>
+    <link>https://ittechnetworkk.github.io/tags/proxmox/</link>
     <description>Recent content in Proxmox on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Mon, 02 Dec 2024 22:57:40 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/proxmox/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ittechnetworkk.github.io/tags/proxmox/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dell PowerEdge R640 Proxmox</title>
-      <link>http://localhost:1313/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</link>
+      <link>https://ittechnetworkk.github.io/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</link>
       <pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</guid>
-      <description>&lt;p&gt;Bu yazımda, Dell Poweredge R640 Server&amp;rsquo;a Proxmox kurulumunu anlatacağım.&lt;/p&gt;&#xA;&lt;p&gt;Sahip olduğum donanım ve yazılımlar şu şekilde:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Dell PowerEdge R640 2x Xeon Gold 6132 14C 2.6GHz 128GB DDR4 RAM 8SFF H730 RAID,&lt;/li&gt;&#xA;&lt;li&gt;2 x 1TB SSD&lt;/li&gt;&#xA;&lt;li&gt;Monitor,&lt;/li&gt;&#xA;&lt;li&gt;Klavye,&lt;/li&gt;&#xA;&lt;li&gt;Mause,&lt;/li&gt;&#xA;&lt;li&gt;USB Bellek,&lt;/li&gt;&#xA;&lt;li&gt;Ethernet Kablosu,&lt;/li&gt;&#xA;&lt;li&gt;Balena Etcher.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ProxmoxKurulumu/1.jpg&#34; alt=&#34;proxmox&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Kablo bağlantılarının doğru yapıldığından emin olduktan sonra, ilk olarak &lt;a href=&#34;https://www.proxmox.com/en/downloads/proxmox-virtual-environment/iso/proxmox-ve-8-2-iso-installer&#34;&gt;web sitesinden&lt;/a&gt; Proxmox ISO&amp;rsquo;sunu indiriyorum.&lt;/p&gt;&#xA;&lt;p&gt;Bu ISO dosyasını USB belleğe yazdırmak için &lt;a href=&#34;https://etcher.balena.io/&#34;&gt;Balena Etcher&lt;/a&gt;  yazılımını kullanıyorum. İsteğe bağlı başka yazılımlar da kullanılabilir.&lt;/p&gt;</description>
+      <guid>https://ittechnetworkk.github.io/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</guid>
+      <description>&lt;p&gt;Bu yazımda, Dell Poweredge R640 Server&amp;rsquo;a Proxmox kurulumunu anlatacağım.&lt;/p&gt;&#xA;&lt;p&gt;Sahip olduğum donanım ve yazılımlar şu şekilde:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Dell PowerEdge R640 2x Xeon Gold 6132 14C 2.6GHz 128GB DDR4 RAM 8SFF H730 RAID,&lt;/li&gt;&#xA;&lt;li&gt;2 x 1TB SSD&lt;/li&gt;&#xA;&lt;li&gt;Monitor,&lt;/li&gt;&#xA;&lt;li&gt;Klavye,&lt;/li&gt;&#xA;&lt;li&gt;Mause,&lt;/li&gt;&#xA;&lt;li&gt;USB Bellek,&lt;/li&gt;&#xA;&lt;li&gt;Ethernet Kablosu,&lt;/li&gt;&#xA;&lt;li&gt;Balena Etcher.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/ProxmoxKurulumu/1.jpg&#34; alt=&#34;proxmox&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Kablo bağlantılarının doğru yapıldığından emin olduktan sonra, ilk olarak &lt;a href=&#34;https://www.proxmox.com/en/downloads/proxmox-virtual-environment/iso/proxmox-ve-8-2-iso-installer&#34;&gt;web sitesinden&lt;/a&gt; Proxmox ISO&amp;rsquo;sunu indiriyorum.&lt;/p&gt;&#xA;&lt;p&gt;Bu ISO dosyasını USB belleğe yazdırmak için &lt;a href=&#34;https://etcher.balena.io/&#34;&gt;Balena Etcher&lt;/a&gt;  yazılımını kullanıyorum. İsteğe bağlı başka yazılımlar da kullanılabilir.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Proxmox&#39;a PNET Lab Kurulumu</title>
-      <link>http://localhost:1313/posts/proxmoxpnetlab/proxmox-pnet/</link>
+      <link>https://ittechnetworkk.github.io/posts/proxmoxpnetlab/proxmox-pnet/</link>
       <pubDate>Thu, 29 Aug 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/proxmoxpnetlab/proxmox-pnet/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/proxmoxpnetlab/proxmox-pnet/</guid>
       <description>&lt;p&gt;Proxmox&amp;rsquo;a normal bir ISO dosyası yükleyerek sanal makine oluşturulabilir. Fakat .ova uzantılı bir dosya için farklı bir yöntemle yüklemek gerek.&lt;/p&gt;&#xA;&lt;p&gt;Başlayalım.&lt;/p&gt;&#xA;&lt;p&gt;Öncelikle PNET Lab ova dosyasını &lt;a href=&#34;https://pnetlab.com/pages/download&#34;&gt;web sitesinden&lt;/a&gt; indiriyorum.&lt;/p&gt;&#xA;&lt;p&gt;Bu .ova uzantılı dosyayı Proxmox Server&amp;rsquo;ımıza atmamız gerekiyor. Bunun için FileZilla veya benzeri FTP uygulamalarıyla atabilirsiniz.&lt;/p&gt;&#xA;&lt;p&gt;Daha pratik bir yöntem ise scp aracıyla atmak olacak.&lt;/p&gt;&#xA;&lt;p&gt;Aşağıdaki komutla kendi bilgisayarımdan Proxmox Server&amp;rsquo;a dosyayı şutluyorum.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;scp PNET_4.2.10.ova root@192.168.0.170:/root&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Dosya Server&amp;rsquo;a başarıyla geldi.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;root@sonersahin:~# ls&#xA;PNET_4.2.10.ova&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Daha sonra dosyayı atomlarına ayırıyorum.&lt;/p&gt;</description>
     </item>
   </channel>
