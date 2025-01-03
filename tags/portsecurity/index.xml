@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Portsecurity on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/portsecurity/</link>
+    <link>http://localhost:1313/tags/portsecurity/</link>
     <description>Recent content in Portsecurity on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Sun, 21 Apr 2024 22:57:40 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/portsecurity/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/portsecurity/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Port Security</title>
-      <link>https://ittechnetworkk.github.io/posts/portsecurity/port-security/</link>
+      <link>http://localhost:1313/posts/portsecurity/port-security/</link>
       <pubDate>Sun, 21 Apr 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/portsecurity/port-security/</guid>
+      <guid>http://localhost:1313/posts/portsecurity/port-security/</guid>
       <description>&lt;p&gt;Port Security, yetkisiz cihazların networke erişimini engellemek için kullanılır. Layer 2 seviyesinde uygulanır. Switch portlarına bağlanabilecek cihazların MAC adresleri bazında güvenliği sağlanır. Port Security uygulanacak switch portu ya access ya da trunk olamalıdır. Cihaz&amp;rsquo;a default olarak geldiği gibi Port Security yapılmaz, hata verir.&#xA;Konfigürasyon interface altında yapılır.&lt;/p&gt;&#xA;&lt;p&gt;Switch&amp;rsquo;de boşta bulunan portları kapatmak güvenliğin ilk adımıdır.&lt;/p&gt;&#xA;&lt;p&gt;3 Yöntem vardır;&#xA;&lt;strong&gt;1- MAC Adresi Manuel Belirlenebilir.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;switchport port-security mac-address 0000.1111.2222.3333&#xA;switchport port-security maximum 2       (Max. 2 MAC Adresine izin verir.)&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;2- MAC Adresi Dinamik Olarak Öğrenilebiliyor.&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Virtualization on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/virtualization/</link>
+    <link>http://localhost:1313/tags/virtualization/</link>
     <description>Recent content in Virtualization on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Mon, 02 Dec 2024 22:57:40 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/virtualization/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/virtualization/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dell PowerEdge R640 Proxmox</title>
-      <link>https://ittechnetworkk.github.io/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</link>
+      <link>http://localhost:1313/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</link>
       <pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</guid>
-      <description>&lt;p&gt;Bu yazımda, Dell Poweredge R640 Server&amp;rsquo;a Proxmox kurulumunu anlatacağım.&lt;/p&gt;&#xA;&lt;p&gt;Sahip olduğum donanım ve yazılımlar şu şekilde:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Dell PowerEdge R640 2x Xeon Gold 6132 14C 2.6GHz 128GB DDR4 RAM 8SFF H730 RAID,&lt;/li&gt;&#xA;&lt;li&gt;2 x 1TB SSD&lt;/li&gt;&#xA;&lt;li&gt;Monitor,&lt;/li&gt;&#xA;&lt;li&gt;Klavye,&lt;/li&gt;&#xA;&lt;li&gt;Mause,&lt;/li&gt;&#xA;&lt;li&gt;USB Bellek,&lt;/li&gt;&#xA;&lt;li&gt;Ethernet Kablosu,&lt;/li&gt;&#xA;&lt;li&gt;Balena Etcher.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/ProxmoxKurulumu/1.jpg&#34; alt=&#34;proxmox&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Kablo bağlantılarının doğru yapıldığından emin olduktan sonra, ilk olarak &lt;a href=&#34;https://www.proxmox.com/en/downloads/proxmox-virtual-environment/iso/proxmox-ve-8-2-iso-installer&#34;&gt;web sitesinden&lt;/a&gt; Proxmox ISO&amp;rsquo;sunu indiriyorum.&lt;/p&gt;&#xA;&lt;p&gt;Bu ISO dosyasını USB belleğe yazdırmak için &lt;a href=&#34;https://etcher.balena.io/&#34;&gt;Balena Etcher&lt;/a&gt;  yazılımını kullanıyorum. İsteğe bağlı başka yazılımlar da kullanılabilir.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</guid>
+      <description>&lt;p&gt;Bu yazımda, Dell Poweredge R640 Server&amp;rsquo;a Proxmox kurulumunu anlatacağım.&lt;/p&gt;&#xA;&lt;p&gt;Sahip olduğum donanım ve yazılımlar şu şekilde:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Dell PowerEdge R640 2x Xeon Gold 6132 14C 2.6GHz 128GB DDR4 RAM 8SFF H730 RAID,&lt;/li&gt;&#xA;&lt;li&gt;2 x 1TB SSD&lt;/li&gt;&#xA;&lt;li&gt;Monitor,&lt;/li&gt;&#xA;&lt;li&gt;Klavye,&lt;/li&gt;&#xA;&lt;li&gt;Mause,&lt;/li&gt;&#xA;&lt;li&gt;USB Bellek,&lt;/li&gt;&#xA;&lt;li&gt;Ethernet Kablosu,&lt;/li&gt;&#xA;&lt;li&gt;Balena Etcher.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ProxmoxKurulumu/1.jpg&#34; alt=&#34;proxmox&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Kablo bağlantılarının doğru yapıldığından emin olduktan sonra, ilk olarak &lt;a href=&#34;https://www.proxmox.com/en/downloads/proxmox-virtual-environment/iso/proxmox-ve-8-2-iso-installer&#34;&gt;web sitesinden&lt;/a&gt; Proxmox ISO&amp;rsquo;sunu indiriyorum.&lt;/p&gt;&#xA;&lt;p&gt;Bu ISO dosyasını USB belleğe yazdırmak için &lt;a href=&#34;https://etcher.balena.io/&#34;&gt;Balena Etcher&lt;/a&gt;  yazılımını kullanıyorum. İsteğe bağlı başka yazılımlar da kullanılabilir.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

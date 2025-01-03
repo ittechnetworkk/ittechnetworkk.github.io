@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security on ittechnetworkk</title>
+    <link>http://localhost:1313/tags/security/</link>
+    <description>Recent content in Security on ittechnetworkk</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>ittechnetworkk</copyright>
+    <lastBuildDate>Sun, 01 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cisco ASA SSH Konfigürasyonu</title>
+      <link>http://localhost:1313/posts/asa5510ssh/asa5510-ssh/</link>
+      <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/asa5510ssh/asa5510-ssh/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;&#xA;&lt;h2 id=&#34;configuration-steps&#34;&gt;Configuration Steps&lt;/h2&gt;&#xA;&lt;h3 id=&#34;step-1&#34;&gt;Step 1:&lt;/h3&gt;&#xA;&lt;h3 id=&#34;step-2&#34;&gt;Step 2:&lt;/h3&gt;&#xA;&lt;h3 id=&#34;step-3&#34;&gt;Step 3:&lt;/h3&gt;&#xA;&lt;h2 id=&#34;verification&#34;&gt;Verification&lt;/h2&gt;&#xA;&lt;h2 id=&#34;troubleshooting&#34;&gt;Troubleshooting&lt;/h2&gt;&#xA;&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;&#xA;&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;</description>
+    </item>
+  </channel>
+</rss>

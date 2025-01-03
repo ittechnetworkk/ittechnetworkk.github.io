@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Http on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/http/</link>
+    <link>http://localhost:1313/tags/http/</link>
     <description>Recent content in Http on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Fri, 11 Oct 2024 22:57:40 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/http/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/http/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Updog</title>
-      <link>https://ittechnetworkk.github.io/posts/updog/updog/</link>
+      <link>http://localhost:1313/posts/updog/updog/</link>
       <pubDate>Fri, 11 Oct 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/updog/updog/</guid>
+      <guid>http://localhost:1313/posts/updog/updog/</guid>
       <description>&lt;p&gt;Updog, SimpleHTTPServer alternatifi bir araçtır. Çok hızlı ve kolay bir şekilde localinizde bir HTTP Server ayağa kaldırmanızı sağlayan Python ile yazılmış &lt;a href=&#34;https://github.com/sc0tfree/updog&#34;&gt;açık kaynak kodlu&lt;/a&gt; bir araçtır.&lt;/p&gt;&#xA;&lt;p&gt;Encryption ve Authentication destekler. Kendinden imzalı bir SSL sertifikası ve parola ile de bir Authentication sağlar.&lt;/p&gt;&#xA;&lt;p&gt;Updog Yükleme:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;pip3 install updog&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Updog kullanımı oldukça kolaydır aşağıda updog ile kullanılan tüm parametrelerini görebilirsiniz.&lt;/p&gt;&#xA;&lt;p&gt;-d                                           &lt;br&gt;&#xA;-p&#xA;&amp;ndash;password       &lt;br&gt;&#xA;&amp;ndash;ssl                                         &lt;br&gt;&#xA;&amp;ndash;version                                    &lt;br&gt;&#xA;-h&lt;/p&gt;&#xA;&lt;p&gt;Bir örnek:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;┌─[ssnrshnn@MARVEL]─[~/test]&#xA;└──╼ $ls&#xA;test1.txt&#xA;&#xA;&#xA;┌─[ssnrshnn@MARVEL]─[~/test]&#xA;└──╼ $updog -d /home/ssnrshnn/test/ -p 6654 --password Pass123! --ssl&#xA;[+] Serving /home/ssnrshnn/test...&#xA;WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.&#xA; * Running on all addresses (0.0.0.0)&#xA; * Running on https://127.0.0.1:6654&#xA; * Running on https://192.168.1.121:6654&#xA;Press CTRL+C to quit&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;İlgili IP adresine gidecek olursak aşağıdaki gibi bir ekran karşılayacak bizi. Burada Username kısmı boş, Password kısmına ise belirlediğimiz parolayı yazıyoruz.&lt;/p&gt;</description>
     </item>
   </channel>
