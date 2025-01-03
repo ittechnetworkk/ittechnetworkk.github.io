@@ -14,6 +14,9 @@
     <loc>https://ittechnetworkk.github.io/tags/asa/</loc>
     <lastmod>2024-12-02T22:57:40+01:00</lastmod>
   </url><url>
+    <loc>https://ittechnetworkk.github.io/categories/</loc>
+    <lastmod>2024-12-02T22:57:40+01:00</lastmod>
+  </url><url>
     <loc>https://ittechnetworkk.github.io/tags/cisco/</loc>
     <lastmod>2024-12-02T22:57:40+01:00</lastmod>
   </url><url>
@@ -23,10 +26,28 @@
     <loc>https://ittechnetworkk.github.io/posts/asa5510passwordrecovery/asa5510-password-recovery/</loc>
     <lastmod>2024-12-02T22:57:40+01:00</lastmod>
   </url><url>
+    <loc>https://ittechnetworkk.github.io/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</loc>
+    <lastmod>2024-12-02T22:57:40+01:00</lastmod>
+  </url><url>
     <loc>https://ittechnetworkk.github.io/tags/firewall/</loc>
     <lastmod>2024-12-02T22:57:40+01:00</lastmod>
   </url><url>
+    <loc>https://ittechnetworkk.github.io/categories/firewall/</loc>
+    <lastmod>2024-12-02T22:57:40+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/proxmox/</loc>
+    <lastmod>2024-12-02T22:57:40+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/server/</loc>
+    <lastmod>2024-12-02T22:57:40+01:00</lastmod>
+  </url><url>
     <loc>https://ittechnetworkk.github.io/tags/</loc>
+    <lastmod>2024-12-02T22:57:40+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/virtualization/</loc>
+    <lastmod>2024-12-02T22:57:40+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/categories/virtualization/</loc>
     <lastmod>2024-12-02T22:57:40+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/asa5510ssh/asa5510-ssh/</loc>
@@ -53,6 +74,9 @@
     <loc>https://ittechnetworkk.github.io/tags/junos/</loc>
     <lastmod>2024-11-22T22:57:40+01:00</lastmod>
   </url><url>
+    <loc>https://ittechnetworkk.github.io/categories/network/</loc>
+    <lastmod>2024-11-22T22:57:40+01:00</lastmod>
+  </url><url>
     <loc>https://ittechnetworkk.github.io/tags/tunnelling/</loc>
     <lastmod>2024-11-22T22:57:40+01:00</lastmod>
   </url><url>
@@ -74,6 +98,9 @@
     <loc>https://ittechnetworkk.github.io/tags/linux/</loc>
     <lastmod>2024-11-07T22:57:40+01:00</lastmod>
   </url><url>
+    <loc>https://ittechnetworkk.github.io/categories/linux/</loc>
+    <lastmod>2024-11-07T22:57:40+01:00</lastmod>
+  </url><url>
     <loc>https://ittechnetworkk.github.io/tags/ubuntu/</loc>
     <lastmod>2024-11-07T22:57:40+01:00</lastmod>
   </url><url>
@@ -89,10 +116,10 @@
     <loc>https://ittechnetworkk.github.io/posts/updog/updog/</loc>
     <lastmod>2024-10-11T22:57:40+01:00</lastmod>
   </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/server/</loc>
+    <loc>https://ittechnetworkk.github.io/tags/windows/</loc>
     <lastmod>2024-10-10T22:57:40+01:00</lastmod>
   </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/windows/</loc>
+    <loc>https://ittechnetworkk.github.io/categories/windows/</loc>
     <lastmod>2024-10-10T22:57:40+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/windowsservernicteaming/windows-server-nic-teaming/</loc>
@@ -143,9 +170,6 @@
     <loc>https://ittechnetworkk.github.io/tags/pnetlab/</loc>
     <lastmod>2024-08-29T22:57:40+01:00</lastmod>
   </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/proxmox/</loc>
-    <lastmod>2024-08-29T22:57:40+01:00</lastmod>
-  </url><url>
     <loc>https://ittechnetworkk.github.io/posts/proxmoxpnetlab/proxmox-pnet/</loc>
     <lastmod>2024-08-29T22:57:40+01:00</lastmod>
   </url><url>
@@ -160,6 +184,9 @@
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/gpgnedir/gpg-nedir/</loc>
     <lastmod>2024-07-23T22:57:40+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/categories/iot/</loc>
+    <lastmod>2024-07-15T22:57:40+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/logging/</loc>
     <lastmod>2024-07-15T22:57:40+01:00</lastmod>
@@ -185,19 +212,10 @@
     <loc>https://ittechnetworkk.github.io/posts/switchconfiguration/switch-conf/</loc>
     <lastmod>2024-06-26T17:53:48+01:00</lastmod>
   </url><url>
-    <loc>https://ittechnetworkk.github.io/categories/automation/</loc>
-    <lastmod>2024-06-25T22:57:40+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/categories/</loc>
-    <lastmod>2024-06-25T22:57:40+01:00</lastmod>
-  </url><url>
     <loc>https://ittechnetworkk.github.io/tags/ipv6/</loc>
     <lastmod>2024-06-25T22:57:40+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/ipv6staticrouting/ipv6-static-routing/</loc>
-    <lastmod>2024-06-25T22:57:40+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/categories/linux/</loc>
     <lastmod>2024-06-25T22:57:40+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/epaper/raspberry-pi-epaper/</loc>
@@ -236,12 +254,6 @@
     <loc>https://ittechnetworkk.github.io/tags/nanopi/</loc>
     <lastmod>2024-05-12T22:57:40+01:00</lastmod>
   </url><url>
-    <loc>https://ittechnetworkk.github.io/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</loc>
-    <lastmod>2024-05-11T22:57:40+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/virtualization/</loc>
-    <lastmod>2024-05-11T22:57:40+01:00</lastmod>
-  </url><url>
     <loc>https://ittechnetworkk.github.io/posts/portsecurity/port-security/</loc>
     <lastmod>2024-04-21T22:57:40+01:00</lastmod>
   </url><url>
@@ -258,9 +270,6 @@
     <lastmod>2024-04-14T22:57:40+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/ipv4/</loc>
-    <lastmod>2024-04-07T22:57:40+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/categories/network/</loc>
     <lastmod>2024-04-07T22:57:40+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/ospflab/ospf-lab/</loc>
