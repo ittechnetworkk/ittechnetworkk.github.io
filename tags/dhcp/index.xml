@@ -23,5 +23,19 @@
       <guid>https://ittechnetworkk.github.io/posts/dhcpv6/dhcpv6/</guid>
       <description>&lt;p&gt;DHCP(Dynamic Host Configuration Protocol), bir networkteki bir cihaza IP, DNS, Default Gateway parametrelerini dağıtan servistir. Yani networkteki bir cihazın başka bir cihaz ile konuşmasını sağlayacak parametlereleri dağıtan servistir.&#xA;DHCPv6, DHCPv4&amp;rsquo;den bazı özellikleriyle ayrılıyor. DHCPv6 2 şekilde yapılandırılabilir.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Stateful(Durumlu) DHCPv6,&lt;/li&gt;&#xA;&lt;li&gt;Stateless SLAAC (Durumsuz) DHCPv6&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Stateful DHCPv6 tıpkı DHCPv4 gibi, bir DHCP server üzerinden parametreleri dağıtmaktır.&lt;/p&gt;&#xA;&lt;p&gt;Stateless SLAAC DHCPv6 da ise herhangi bir DHCP server olmaksızın cihazların Router üzerinden IPv6 parametrelerini alıp otomatik olarak kendini yapılandırmasıdır.&lt;/p&gt;</description>
     </item>
+    <item>
+      <title>Dhcp Relay Agent</title>
+      <link>https://ittechnetworkk.github.io/posts/dhcprelayagent/dhcp-relay-agent/</link>
+      <pubDate>Sun, 14 Jan 2024 23:43:35 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/dhcprelayagent/dhcp-relay-agent/</guid>
+      <description>&lt;p&gt;DHCP, cihazlara IP, DNS, Default Gateway dağıtan protokoldür. Bu protokol client-server mantığıyla çalışır. İstemci talep eder ve server hizmet verir. UDP çalışır ve 4 aşamada işlem tamamlanır.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/DHCPRelayAgent/8.png&#34; alt=&#34;dhcp&#34;&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Client, DHCP Discover paketini networke gönderir. Bunun anlamı &amp;ldquo;Bana IP verecek bir DHCP Server var mı?&amp;rdquo;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Server, DHCP Offer paketiyle karşılık verir ve der ki &amp;ldquo;Evet ben verebilirim&amp;rdquo;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Client, DHCP Request paketiyle IP adresi talep eder.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Server, DHCP Ack paketiyle ile cihaza IP adresi ataması yapar.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DHCP Snooping</title>
+      <link>https://ittechnetworkk.github.io/posts/dhcpsnooping/dhcp-snooping/</link>
+      <pubDate>Sun, 31 Dec 2023 23:44:03 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/dhcpsnooping/dhcp-snooping/</guid>
+      <description>&lt;p&gt;DHCP(Dynamic Host Configuration Protocol), ağdaki cihazlarımıza otomatik olarak IP, DNS, Default Gateway bilgilerini dağıtan servistir. Ağa yeni bir cihaz katıldığında, kablo takılır takılmaz IP almak için Broadcast yayın yapar. Eğer ortamda DHCP servisi varsa o da karşılık verir. Toplam 4 aşamada IP alma işlemi tamamlanır.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/DHCPSnooping/8.png&#34; alt=&#34;dhcp&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Bu paketler Broadcast paketler olduğu için ağdaki herkese ulaşır bu da her zaman için iyi olmayabilir. Örneğin bir network yapısında iki DHCP server aynı anda çalışabilir. Biri istenmeyen, kötü niyetli de olabilir ve cihaza istediği IP, DNS, Default Gateway bilgisi dağıtarak, trafiği istenmeyen şekilde etkileyebilir. DHCP Snooping&amp;rsquo;i aktif hale getirmek gerekir.&#xA;DHCP Server&amp;rsquo;ın kim ve switch&amp;rsquo;in hangi portundan bağlı olduğunu bildiğimiz için, switch&amp;rsquo;e bunu öğretebiliriz ve bu sayede bu kötü senaryonun önüne geçmiş oluruz.&#xA;DHCP Snooping&amp;rsquo;in yaptığı ise belirli bir port veya portlar üzerinden DHCP trafiğine izin verir geri kalanını engeller.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

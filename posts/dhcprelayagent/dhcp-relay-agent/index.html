@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Dhcp Relay Agent | ittechnetworkk</title>
+  <link rel = 'canonical' href = 'https://ittechnetworkk.github.io/posts/dhcprelayagent/dhcp-relay-agent/'>
+  <meta name="description" content="Hello, I&#39;m Soner from Turkey. I prefer working with the CLI rather than GUI. On this site, I share my expertise in various technologies, insights into newly learned tools, as well as details of the projects I have completed and those I plan to undertake. I run this blog with the motivation to learn, have fun, and help others along the way.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:url" content="https://ittechnetworkk.github.io/posts/dhcprelayagent/dhcp-relay-agent/">
+  <meta property="og:site_name" content="ittechnetworkk">
+  <meta property="og:title" content="Dhcp Relay Agent">
+  <meta property="og:description" content="DHCP, cihazlara IP, DNS, Default Gateway dağıtan protokoldür. Bu protokol client-server mantığıyla çalışır. İstemci talep eder ve server hizmet verir. UDP çalışır ve 4 aşamada işlem tamamlanır.
+Client, DHCP Discover paketini networke gönderir. Bunun anlamı “Bana IP verecek bir DHCP Server var mı?”.
+Server, DHCP Offer paketiyle karşılık verir ve der ki “Evet ben verebilirim”.
+Client, DHCP Request paketiyle IP adresi talep eder.
+Server, DHCP Ack paketiyle ile cihaza IP adresi ataması yapar.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-01-14T23:43:35+01:00">
+    <meta property="article:modified_time" content="2024-01-14T23:43:35+01:00">
+    <meta property="article:tag" content="Cisco">
+    <meta property="article:tag" content="Dhcp">
+    <meta property="article:tag" content="Relay">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Dhcp Relay Agent">
+  <meta name="twitter:description" content="DHCP, cihazlara IP, DNS, Default Gateway dağıtan protokoldür. Bu protokol client-server mantığıyla çalışır. İstemci talep eder ve server hizmet verir. UDP çalışır ve 4 aşamada işlem tamamlanır.
+Client, DHCP Discover paketini networke gönderir. Bunun anlamı “Bana IP verecek bir DHCP Server var mı?”.
+Server, DHCP Offer paketiyle karşılık verir ve der ki “Evet ben verebilirim”.
+Client, DHCP Request paketiyle IP adresi talep eder.
+Server, DHCP Ack paketiyle ile cihaza IP adresi ataması yapar.">
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://ittechnetworkk.github.io/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://ittechnetworkk.github.io/images/favicon.ico" />
+
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/projects">Projects</a></li>
+         
+        <li><a href="/categories/">Categories</a></li>
+         
+        <li><a href="/tags/">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://ittechnetworkk.github.io/posts/hsrp/hsrp/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://ittechnetworkk.github.io/posts/eigrp/eigrp/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcprelayagent%2fdhcp-relay-agent%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcprelayagent%2fdhcp-relay-agent%2f&text=Dhcp%20Relay%20Agent" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcprelayagent%2fdhcp-relay-agent%2f&title=Dhcp%20Relay%20Agent" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcprelayagent%2fdhcp-relay-agent%2f&is_video=false&description=Dhcp%20Relay%20Agent" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Dhcp%20Relay%20Agent&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcprelayagent%2fdhcp-relay-agent%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcprelayagent%2fdhcp-relay-agent%2f&title=Dhcp%20Relay%20Agent" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcprelayagent%2fdhcp-relay-agent%2f&title=Dhcp%20Relay%20Agent" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcprelayagent%2fdhcp-relay-agent%2f&name=Dhcp%20Relay%20Agent&description=%3cp%3eDHCP%2c%20cihazlara%20IP%2c%20DNS%2c%20Default%20Gateway%20da%c4%9f%c4%b1tan%20protokold%c3%bcr.%20Bu%20protokol%20client-server%20mant%c4%b1%c4%9f%c4%b1yla%20%c3%a7al%c4%b1%c5%9f%c4%b1r.%20%c4%b0stemci%20talep%20eder%20ve%20server%20hizmet%20verir.%20UDP%20%c3%a7al%c4%b1%c5%9f%c4%b1r%20ve%204%20a%c5%9famada%20i%c5%9flem%20tamamlan%c4%b1r.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fDHCPRelayAgent%2f8.png%22%20alt%3d%22dhcp%22%3e%3c%2fp%3e%0a%3cul%3e%0a%3cli%3e%0a%3cp%3eClient%2c%20DHCP%20Discover%20paketini%20networke%20g%c3%b6nderir.%20Bunun%20anlam%c4%b1%20%26ldquo%3bBana%20IP%20verecek%20bir%20DHCP%20Server%20var%20m%c4%b1%3f%26rdquo%3b.%3c%2fp%3e%0a%3c%2fli%3e%0a%3cli%3e%0a%3cp%3eServer%2c%20DHCP%20Offer%20paketiyle%20kar%c5%9f%c4%b1l%c4%b1k%20verir%20ve%20der%20ki%20%26ldquo%3bEvet%20ben%20verebilirim%26rdquo%3b.%3c%2fp%3e%0a%3c%2fli%3e%0a%3cli%3e%0a%3cp%3eClient%2c%20DHCP%20Request%20paketiyle%20IP%20adresi%20talep%20eder.%3c%2fp%3e%0a%3c%2fli%3e%0a%3cli%3e%0a%3cp%3eServer%2c%20DHCP%20Ack%20paketiyle%20ile%20cihaza%20IP%20adresi%20atamas%c4%b1%20yapar.%3c%2fp%3e" aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcprelayagent%2fdhcp-relay-agent%2f&t=Dhcp%20Relay%20Agent" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Dhcp Relay Agent
+      </h1>
+      <div class="meta">
+        
+        <div class="author-info" style="font-size: 1.1em; margin-bottom: 10px;">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <strong>Author:</strong> <span itemprop="name">Soner Sahin</span>
+          </span>
+        </div>
+        
+        <div class="postdate">
+          
+          <time datetime="2024-01-14 23:43:35 &#43;0100 CET" itemprop="datePublished">2024-01-14</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          2 minute read
+        </div>
+        
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/network">Network</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/cisco" rel="tag">Cisco</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/dhcp" rel="tag">DHCP</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/relay" rel="tag">Relay</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <p>DHCP, cihazlara IP, DNS, Default Gateway dağıtan protokoldür. Bu protokol client-server mantığıyla çalışır. İstemci talep eder ve server hizmet verir. UDP çalışır ve 4 aşamada işlem tamamlanır.</p>
+<p><img src="/images/DHCPRelayAgent/8.png" alt="dhcp"></p>
+<ul>
+<li>
+<p>Client, DHCP Discover paketini networke gönderir. Bunun anlamı &ldquo;Bana IP verecek bir DHCP Server var mı?&rdquo;.</p>
+</li>
+<li>
+<p>Server, DHCP Offer paketiyle karşılık verir ve der ki &ldquo;Evet ben verebilirim&rdquo;.</p>
+</li>
+<li>
+<p>Client, DHCP Request paketiyle IP adresi talep eder.</p>
+</li>
+<li>
+<p>Server, DHCP Ack paketiyle ile cihaza IP adresi ataması yapar.</p>
+</li>
+</ul>
+<p>Paketlere kısaltması olan DORA&rsquo;da denilir.</p>
+<p>Bu paketler Broadcast gider. Bu yüzden sadece network içinde kalır, başka bir networke gidemez. Peki bizim DHCP Server&rsquo;ımız network dışında ise ne olur. Bunu da DHCP Relay Agent ile çözüyoruz.
+DHCP Relay Agent, IP almak isteyen farklı networkteki cihazların IP almalarını sağlayan uygulamadır.
+Router üzerinde &ldquo;ip helper address (DHCP SERVER IP)&rdquo; komutu girilerek oluşturulur. Bu komut sayesinde Client cihaz DHCP Discover paketi yayınladığında bu paket Router&rsquo;ın LAN interfacesine kadar gidecek ve Router bu paketi başka networkte bulunan DHCP Server&rsquo;a iletecek. Bu sayede iletişim gerçekleşecektir.</p>
+<p><strong>UYGULAMA:</strong>
+Aşağıdaki Topolojiyi uygulayacağız.</p>
+<p><img src="/images/DHCPRelayAgent/1.png" alt="dhcp"></p>
+<p>Bu topolojide DHCP Server&rsquo;da A ve B Networkleri için IP havuzu oluşturuldu ve IP almak isteyen cihazları avını bekleyen sırtlan gibi bekliyor.</p>
+<p>Öncelikle cihazların IP almadıklarından emin olalım. A ve B Networklerinden birer cihaza bakalım.</p>
+<p><strong>VPC1:</strong>
+<img src="/images/DHCPRelayAgent/2.png" alt="dhcp"></p>
+<p><strong>VPC3:</strong>
+<img src="/images/DHCPRelayAgent/3.png" alt="dhcp"></p>
+<p>IP&rsquo;yi statik vermediğimiz için ve DHCP Server&rsquo;a ulaşamadıkları için henüz alamadılar.</p>
+<p>Routerlar&rsquo;ın konfigürasyonlarıyla başlayalım.</p>
+<p><strong>R5:</strong></p>
+<pre tabindex="0"><code>R5&gt;en
+R5#conf t
+R5(config)#int e0/2
+R5(config-if)#ip addr 10.10.10.1 255.255.255.0
+R5(config-if)#no sh
+R5(config-if)#exit
+
+R5(config)#int e0/0
+R5(config-if)#ip addr 1.1.1.1 255.255.255.0
+R5(config-if)#no sh
+
+R5(config)#int e0/1
+R5(config-if)#ip addr 2.2.2.1 255.255.255.0
+R5(config-if)#no sh
+R5(config-if)#exit
+
+R5(config)#ip route 192.168.1.0 255.255.255.0 1.1.1.2     #A Networkü için route
+R5(config)#ip route 172.16.1.0 255.255.255.0 2.2.2.2      #B Networkü için route
+</code></pre><p><strong>R9:</strong></p>
+<pre tabindex="0"><code>R9&gt;en
+R9#conf t
+R9(config)#int e0/2
+R9(config-if)#ip addr 1.1.1.2 255.255.255.0
+R9(config-if)#no sh
+R9(config-if)#exit
+
+R9(config)#int e0/1
+R9(config-if)#ip addr 192.168.1.1 255.255.255.0
+R9(config-if)#no sh
+R9(config-if)#exit
+
+R9(config)#ip route 10.10.10.0 255.255.255.0 1.1.1.1  #Server&#39;ın bulunduğu networke gidilen route
+
+R9(config)#int e0/1
+R9(config-if)#ip help
+R9(config-if)#ip helper-address 10.10.10.10     #DHCP Server IP
+</code></pre><p>Burada &ldquo;ip helper-address (DHCP Server IP)&rdquo; parametresini Router&rsquo;ın LAN interfacesine yazıyoruz. Örneğin A Network&rsquo;ünün IP almasını istiyorsak R9&rsquo;un e0/1 interfacesine yazıyoruz.  B Network&rsquo;ü için R10&rsquo;un e0/1 interfacesine.</p>
+<p><strong>R10:</strong></p>
+<pre tabindex="0"><code>R10(config)#int e0/2
+R10(config-if)#ip addr 2.2.2.2 255.255.255.0
+R10(config-if)#no sh 
+R10(config-if)#exit
+
+R10(config)#int e0/1
+R10(config-if)#ip addr 172.16.1.1 255.255.255.0
+R10(config-if)#no sh
+R10(config-if)#exit
+
+R10(config)#ip route 10.10.10.0 255.255.255.0 2.2.2.1  Server&#39;ın bulunduğu networke gidilen route
+
+R10(config)#int e0/1
+R10(config-if)#ip helper-address 10.10.10.10    #DHCP Server IP
+</code></pre><p>Konfigürasyonlar yapıldı. Şimdi cihazları DHCP&rsquo;den IP alacak şekilde ayarlayalım.</p>
+<p><strong>VPC1:</strong>
+<img src="/images/DHCPRelayAgent/4.png" alt="dhcp"></p>
+<p>Görüldüğü gibi DHCP paketleri gidip geldi &ldquo;DDORA&rdquo; ve sonunda IP, DNS ve Default Gateway almayı başardı.</p>
+<p><strong>VPC2:</strong>
+<img src="/images/DHCPRelayAgent/5.png" alt="dhcp"></p>
+<p>B Networkü için de bakalım.</p>
+<p><strong>VPC3:</strong>
+<img src="/images/DHCPRelayAgent/6.png" alt="dhcp"></p>
+<p><strong>VPC4:</strong>
+<img src="/images/DHCPRelayAgent/7.png" alt="dhcp"></p>
+<p>Bu sayede farklı bir networkte bulunan DHCP Server&rsquo;dan IP almayı başardık.</p>
+<p>Teşekkürler,</p>
+<p>İyi Çalışmalar.</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Posts</a></li>
+         
+          <li><a href="/projects">Projects</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcprelayagent%2fdhcp-relay-agent%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcprelayagent%2fdhcp-relay-agent%2f&text=Dhcp%20Relay%20Agent" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcprelayagent%2fdhcp-relay-agent%2f&title=Dhcp%20Relay%20Agent" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcprelayagent%2fdhcp-relay-agent%2f&is_video=false&description=Dhcp%20Relay%20Agent" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Dhcp%20Relay%20Agent&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcprelayagent%2fdhcp-relay-agent%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcprelayagent%2fdhcp-relay-agent%2f&title=Dhcp%20Relay%20Agent" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcprelayagent%2fdhcp-relay-agent%2f&title=Dhcp%20Relay%20Agent" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcprelayagent%2fdhcp-relay-agent%2f&name=Dhcp%20Relay%20Agent&description=%3cp%3eDHCP%2c%20cihazlara%20IP%2c%20DNS%2c%20Default%20Gateway%20da%c4%9f%c4%b1tan%20protokold%c3%bcr.%20Bu%20protokol%20client-server%20mant%c4%b1%c4%9f%c4%b1yla%20%c3%a7al%c4%b1%c5%9f%c4%b1r.%20%c4%b0stemci%20talep%20eder%20ve%20server%20hizmet%20verir.%20UDP%20%c3%a7al%c4%b1%c5%9f%c4%b1r%20ve%204%20a%c5%9famada%20i%c5%9flem%20tamamlan%c4%b1r.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fDHCPRelayAgent%2f8.png%22%20alt%3d%22dhcp%22%3e%3c%2fp%3e%0a%3cul%3e%0a%3cli%3e%0a%3cp%3eClient%2c%20DHCP%20Discover%20paketini%20networke%20g%c3%b6nderir.%20Bunun%20anlam%c4%b1%20%26ldquo%3bBana%20IP%20verecek%20bir%20DHCP%20Server%20var%20m%c4%b1%3f%26rdquo%3b.%3c%2fp%3e%0a%3c%2fli%3e%0a%3cli%3e%0a%3cp%3eServer%2c%20DHCP%20Offer%20paketiyle%20kar%c5%9f%c4%b1l%c4%b1k%20verir%20ve%20der%20ki%20%26ldquo%3bEvet%20ben%20verebilirim%26rdquo%3b.%3c%2fp%3e%0a%3c%2fli%3e%0a%3cli%3e%0a%3cp%3eClient%2c%20DHCP%20Request%20paketiyle%20IP%20adresi%20talep%20eder.%3c%2fp%3e%0a%3c%2fli%3e%0a%3cli%3e%0a%3cp%3eServer%2c%20DHCP%20Ack%20paketiyle%20ile%20cihaza%20IP%20adresi%20atamas%c4%b1%20yapar.%3c%2fp%3e" aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcprelayagent%2fdhcp-relay-agent%2f&t=Dhcp%20Relay%20Agent" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2025  ittechnetworkk 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/projects">Projects</a></li>
+         
+        <li><a href="/categories/">Categories</a></li>
+         
+        <li><a href="/tags/">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

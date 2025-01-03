@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ipfire on ittechnetworkk</title>
+    <link>https://ittechnetworkk.github.io/tags/ipfire/</link>
+    <description>Recent content in Ipfire on ittechnetworkk</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>ittechnetworkk</copyright>
+    <lastBuildDate>Fri, 03 Jan 2025 23:00:44 +0100</lastBuildDate>
+    <atom:link href="https://ittechnetworkk.github.io/tags/ipfire/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nanopi R2S Ipfire Kurulumu</title>
+      <link>https://ittechnetworkk.github.io/posts/nanopir2sipfirekurulumu/nanopir2s-ipfire/</link>
+      <pubDate>Fri, 03 Jan 2025 23:00:44 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/nanopir2sipfirekurulumu/nanopir2s-ipfire/</guid>
+      <description>&lt;p&gt;Merhaba, bu yazıda, NanoPi R2S cihazıma IPFire kurulumunu anlatacağım.&lt;/p&gt;&#xA;&lt;p&gt;Kullandığım ekipmanlar:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;NanoPi R2S,&lt;/li&gt;&#xA;&lt;li&gt;MicroSD Kart,&lt;/li&gt;&#xA;&lt;li&gt;Kart Okuyucu,&lt;/li&gt;&#xA;&lt;li&gt;Type C Güç Kablosu,&lt;/li&gt;&#xA;&lt;li&gt;USB to Serial Kablo,&lt;/li&gt;&#xA;&lt;li&gt;Ethernet Kablosu,&lt;/li&gt;&#xA;&lt;li&gt;Terminal yazılımı (Putty or minicom),&lt;/li&gt;&#xA;&lt;li&gt;Balena Etcher.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;İlk olarak &lt;a href=&#34;https://cdimage.debian.org/mirror/ipfire.org/releases/ipfire-2.x/2.27-core167/ipfire-2.27.2gb-ext4.aarch64-full-core167.img.xz&#34;&gt;IPFire imaj dosyasını&lt;/a&gt; indiriyorum ve Balena Etcher aracıyla SD Kart&amp;rsquo;a yazdırıyorum.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/NanoPiR2SIPFireKurulumu/1.png&#34; alt=&#34;ipfire&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Bu işlem bittikten sonra SD Kart&amp;rsquo;ı cihaza takıyorum.&lt;/p&gt;&#xA;&lt;p&gt;Serial Kablo&amp;rsquo;yu da aşağıdaki şekilde cihaza bağlıyorum.&#xA;Siyah Kablo » G&#xA;Beyaz Kablo » TX&#xA;Turkuaz Kablo » RX&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>RaspberryPi Ipfire Kurulumu</title>
+      <link>https://ittechnetworkk.github.io/posts/raspberrypiipfire/raspberrypi-ipfire/</link>
+      <pubDate>Sun, 19 May 2024 23:00:44 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/raspberrypiipfire/raspberrypi-ipfire/</guid>
+      <description>&lt;p&gt;Bu yazımda yeni aldığım Raspberry Pi 4 B modeline IPFire kurulumunu anlatacağım.&#xA;&lt;a href=&#34;https://www.ipfire.org/&#34;&gt;IPFire&lt;/a&gt;, açık kaynak kodlu Linux tabanlı bir firewall yazılımıdır. IPFire&amp;rsquo;ı ISO olarak indirip bir sanal makine olarak da kurup inceleyebilirsiniz. Az kaynak tüketir ve işlevseldir.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.ipfire.org/about&#34;&gt;IPFire&amp;rsquo;ın bazı özellikleri:&lt;/a&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Network Security,&lt;/li&gt;&#xA;&lt;li&gt;VLAN,&lt;/li&gt;&#xA;&lt;li&gt;DHCP,&lt;/li&gt;&#xA;&lt;li&gt;NTP,&lt;/li&gt;&#xA;&lt;li&gt;Captive Portal,&lt;/li&gt;&#xA;&lt;li&gt;Web Proxy,&lt;/li&gt;&#xA;&lt;li&gt;VPN,&lt;/li&gt;&#xA;&lt;li&gt;DNS,&lt;/li&gt;&#xA;&lt;li&gt;IPS,&lt;/li&gt;&#xA;&lt;li&gt;QoS,&#xA;Ve çok daha fazlası.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Kullandığım Donanım ve Yazılımlar:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Raspberry Pi 4 B,&lt;/li&gt;&#xA;&lt;li&gt;Kart Okuyucu,&lt;/li&gt;&#xA;&lt;li&gt;Harici Ethernet Kartı,&lt;/li&gt;&#xA;&lt;li&gt;USB to TypeC Güç Kablosu,&lt;/li&gt;&#xA;&lt;li&gt;Mouse,&lt;/li&gt;&#xA;&lt;li&gt;SD Kart,&lt;/li&gt;&#xA;&lt;li&gt;HDMI to Micro HDMI Dönüştürücü,&lt;/li&gt;&#xA;&lt;li&gt;Klavye,&lt;/li&gt;&#xA;&lt;li&gt;Monitor,&lt;/li&gt;&#xA;&lt;li&gt;HDMI to HDMI,&lt;/li&gt;&#xA;&lt;li&gt;2 Ethernet kablosu,&lt;/li&gt;&#xA;&lt;li&gt;BalenaEtcher.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/RaspberryPiIPFire/17.jpg&#34; alt=&#34;ipfire&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -7,27 +7,55 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Mon, 02 Dec 2024 22:57:40 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jan 2025 23:31:39 +0100</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Asa</title>
-      <link>https://ittechnetworkk.github.io/tags/asa/</link>
-      <pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/tags/asa/</guid>
-      <description></description>
-    </item>
     <item>
       <title>Cisco</title>
       <link>https://ittechnetworkk.github.io/tags/cisco/</link>
-      <pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate>
+      <pubDate>Fri, 03 Jan 2025 23:31:39 +0100</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/cisco/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CML</title>
+      <link>https://ittechnetworkk.github.io/tags/cml/</link>
+      <pubDate>Fri, 03 Jan 2025 23:31:39 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/cml/</guid>
       <description></description>
     </item>
     <item>
       <title>Firewall</title>
       <link>https://ittechnetworkk.github.io/tags/firewall/</link>
-      <pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate>
+      <pubDate>Fri, 03 Jan 2025 23:00:44 +0100</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/firewall/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Iot</title>
+      <link>https://ittechnetworkk.github.io/tags/iot/</link>
+      <pubDate>Fri, 03 Jan 2025 23:00:44 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/iot/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ipfire</title>
+      <link>https://ittechnetworkk.github.io/tags/ipfire/</link>
+      <pubDate>Fri, 03 Jan 2025 23:00:44 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/ipfire/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Nanopi</title>
+      <link>https://ittechnetworkk.github.io/tags/nanopi/</link>
+      <pubDate>Fri, 03 Jan 2025 23:00:44 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/nanopi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Asa</title>
+      <link>https://ittechnetworkk.github.io/tags/asa/</link>
+      <pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/asa/</guid>
       <description></description>
     </item>
     <item>
@@ -52,7 +80,7 @@
       <description></description>
     </item>
     <item>
-      <title>Ssh</title>
+      <title>SSH</title>
       <link>https://ittechnetworkk.github.io/tags/ssh/</link>
       <pubDate>Sun, 01 Dec 2024 22:57:40 +0100</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/ssh/</guid>
@@ -143,7 +171,7 @@
       <description></description>
     </item>
     <item>
-      <title>Eigrp</title>
+      <title>EIGRP</title>
       <link>https://ittechnetworkk.github.io/tags/eigrp/</link>
       <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/eigrp/</guid>
@@ -262,13 +290,6 @@
       <description></description>
     </item>
     <item>
-      <title>Nanopi</title>
-      <link>https://ittechnetworkk.github.io/tags/nanopi/</link>
-      <pubDate>Sun, 12 May 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/tags/nanopi/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Portsecurity</title>
       <link>https://ittechnetworkk.github.io/tags/portsecurity/</link>
       <pubDate>Sun, 21 Apr 2024 22:57:40 +0100</pubDate>
@@ -322,6 +343,55 @@
       <link>https://ittechnetworkk.github.io/tags/pagp/</link>
       <pubDate>Fri, 22 Mar 2024 22:57:40 +0100</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/pagp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CDP</title>
+      <link>https://ittechnetworkk.github.io/tags/cdp/</link>
+      <pubDate>Thu, 08 Feb 2024 23:39:19 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/cdp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LLDP</title>
+      <link>https://ittechnetworkk.github.io/tags/lldp/</link>
+      <pubDate>Thu, 08 Feb 2024 23:39:19 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/lldp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Relay</title>
+      <link>https://ittechnetworkk.github.io/tags/relay/</link>
+      <pubDate>Sun, 14 Jan 2024 23:43:35 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/relay/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>HSRP</title>
+      <link>https://ittechnetworkk.github.io/tags/hsrp/</link>
+      <pubDate>Sun, 07 Jan 2024 23:45:22 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/hsrp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Snooping</title>
+      <link>https://ittechnetworkk.github.io/tags/snooping/</link>
+      <pubDate>Sun, 31 Dec 2023 23:44:03 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/snooping/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Network</title>
+      <link>https://ittechnetworkk.github.io/tags/network/</link>
+      <pubDate>Sun, 24 Dec 2023 23:46:15 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/network/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>VTP</title>
+      <link>https://ittechnetworkk.github.io/tags/vtp/</link>
+      <pubDate>Sun, 24 Dec 2023 23:46:15 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/vtp/</guid>
       <description></description>
     </item>
   </channel>

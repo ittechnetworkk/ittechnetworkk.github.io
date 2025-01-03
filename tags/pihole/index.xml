@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pihole on ittechnetworkk</title>
+    <link>http://localhost:1313/tags/pihole/</link>
+    <description>Recent content in Pihole on ittechnetworkk</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>ittechnetworkk</copyright>
+    <lastBuildDate>Fri, 03 Jan 2025 23:22:24 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/pihole/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RaspberryPi Zero&#39;ya Pihole Kurulumu</title>
+      <link>http://localhost:1313/posts/raspberrypipihole/raspberrypi-pihole/</link>
+      <pubDate>Fri, 03 Jan 2025 23:22:24 +0100</pubDate>
+      <guid>http://localhost:1313/posts/raspberrypipihole/raspberrypi-pihole/</guid>
+      <description>&lt;p&gt;Selamlar, bu yazımda Raspberry Pi Zero 2W cihazına &lt;a href=&#34;https://pi-hole.net/&#34;&gt;Pi-Hole&lt;/a&gt; kurulumunu anlatmaya çalışacağım.&#xA;Pi-hole, dns server, reklam engelleyici, dhcp server olarak çalışabilen &lt;a href=&#34;https://github.com/pi-hole/pi-hole&#34;&gt;açık kaynak kodlu&lt;/a&gt; bir yazılımdır. Bu yazılımı networkümüzde bir dhcp sunucu, reklam engelleyici olarak kullanabiliriz.&#xA;Pi-hole birçok işletim sistemini destekler, aynı zamanda &lt;a href=&#34;https://hub.docker.com/r/pihole/pihole&#34;&gt;Docker container&lt;/a&gt; olarak da kurup kullanabilirsiniz.&lt;/p&gt;&#xA;&lt;p&gt;Peki nedir bu Raspberry Pi Zero 2W?&#xA;Raspberry Pi Zero 2W, temel olarak küçük bir bilgisayardır. Bu bilgisayar ile birçok &lt;a href=&#34;https://hackaday.io/projects?tag=raspberry%20pi%20zero&#34;&gt;proje&lt;/a&gt; yapabilirsiniz.&#xA;Raspberry Pi Zero 2W&amp;rsquo;nun bazı özellikleri şöyledir:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

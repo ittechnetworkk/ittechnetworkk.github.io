@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> VTP Protokolü | ittechnetworkk</title>
+  <link rel = 'canonical' href = 'https://ittechnetworkk.github.io/posts/vtp/vtp/'>
+  <meta name="description" content="Hello, I&#39;m Soner from Turkey. I prefer working with the CLI rather than GUI. On this site, I share my expertise in various technologies, insights into newly learned tools, as well as details of the projects I have completed and those I plan to undertake. I run this blog with the motivation to learn, have fun, and help others along the way.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:url" content="https://ittechnetworkk.github.io/posts/vtp/vtp/">
+  <meta property="og:site_name" content="ittechnetworkk">
+  <meta property="og:title" content="VTP Protokolü">
+  <meta property="og:description" content="VTP (Vlan Trunking Protokol), çok sayıda switch bulunan networklerde yönetimi kolaylaştırmak için kullanılan bir protokoldür. Server-Client mantığıyla çalışır ve Cisco tarafından geliştirilmiştir. Bu protokolün amacı çok fazla switch bulunan networklerde tek tek vlanları ilgili switchlere tanımlamaktansa merkezi bir yerden vlanları dağıtmayı sağlar. Bu vlanlar trunk portlar üzerinden dağıtılır. Senkron çalışır yani merkezde bir vlan oluşturulduğunda veya silindiğinde bu değişiklik ilgili switchlere de dağıtılır. Vlanları dağıtılması işlemi için cihazların VTP etki alanında olması gerekir. Bunun için bir Domain ve Password’e ihtiyaç duyulur.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-12-24T23:46:15+01:00">
+    <meta property="article:modified_time" content="2023-12-24T23:46:15+01:00">
+    <meta property="article:tag" content="Network">
+    <meta property="article:tag" content="VTP">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="VTP Protokolü">
+  <meta name="twitter:description" content="VTP (Vlan Trunking Protokol), çok sayıda switch bulunan networklerde yönetimi kolaylaştırmak için kullanılan bir protokoldür. Server-Client mantığıyla çalışır ve Cisco tarafından geliştirilmiştir. Bu protokolün amacı çok fazla switch bulunan networklerde tek tek vlanları ilgili switchlere tanımlamaktansa merkezi bir yerden vlanları dağıtmayı sağlar. Bu vlanlar trunk portlar üzerinden dağıtılır. Senkron çalışır yani merkezde bir vlan oluşturulduğunda veya silindiğinde bu değişiklik ilgili switchlere de dağıtılır. Vlanları dağıtılması işlemi için cihazların VTP etki alanında olması gerekir. Bunun için bir Domain ve Password’e ihtiyaç duyulur.">
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://ittechnetworkk.github.io/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://ittechnetworkk.github.io/images/favicon.ico" />
+
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/projects">Projects</a></li>
+         
+        <li><a href="/categories/">Categories</a></li>
+         
+        <li><a href="/tags/">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://ittechnetworkk.github.io/posts/rip/rip/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="https://ittechnetworkk.github.io/posts/dhcpsnooping/dhcp-snooping/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvtp%2fvtp%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvtp%2fvtp%2f&text=VTP%20Protokol%c3%bc" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvtp%2fvtp%2f&title=VTP%20Protokol%c3%bc" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvtp%2fvtp%2f&is_video=false&description=VTP%20Protokol%c3%bc" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=VTP%20Protokol%c3%bc&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvtp%2fvtp%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvtp%2fvtp%2f&title=VTP%20Protokol%c3%bc" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvtp%2fvtp%2f&title=VTP%20Protokol%c3%bc" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvtp%2fvtp%2f&name=VTP%20Protokol%c3%bc&description=%3cp%3eVTP%20%28Vlan%20Trunking%20Protokol%29%2c%20%c3%a7ok%20say%c4%b1da%20switch%20bulunan%20networklerde%20y%c3%b6netimi%20kolayla%c5%9ft%c4%b1rmak%20i%c3%a7in%20kullan%c4%b1lan%20bir%20protokold%c3%bcr.%20Server-Client%20mant%c4%b1%c4%9f%c4%b1yla%20%c3%a7al%c4%b1%c5%9f%c4%b1r%20ve%20Cisco%20taraf%c4%b1ndan%20geli%c5%9ftirilmi%c5%9ftir.%20Bu%20protokol%c3%bcn%20amac%c4%b1%20%c3%a7ok%20fazla%20switch%20bulunan%20networklerde%20tek%20tek%20vlanlar%c4%b1%20ilgili%20switchlere%20tan%c4%b1mlamaktansa%20merkezi%20bir%20yerden%20vlanlar%c4%b1%20da%c4%9f%c4%b1tmay%c4%b1%20sa%c4%9flar.%20Bu%20vlanlar%20trunk%20portlar%20%c3%bczerinden%20da%c4%9f%c4%b1t%c4%b1l%c4%b1r.%20Senkron%20%c3%a7al%c4%b1%c5%9f%c4%b1r%20yani%20merkezde%20bir%20vlan%20olu%c5%9fturuldu%c4%9funda%20veya%20silindi%c4%9finde%20bu%20de%c4%9fi%c5%9fiklik%20ilgili%20switchlere%20de%20da%c4%9f%c4%b1t%c4%b1l%c4%b1r.%20Vlanlar%c4%b1%20da%c4%9f%c4%b1t%c4%b1lmas%c4%b1%20i%c5%9flemi%20i%c3%a7in%20cihazlar%c4%b1n%20VTP%20etki%20alan%c4%b1nda%20olmas%c4%b1%20gerekir.%20Bunun%20i%c3%a7in%20bir%20Domain%20ve%20Password%26rsquo%3be%20ihtiya%c3%a7%20duyulur.%3c%2fp%3e" aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvtp%2fvtp%2f&t=VTP%20Protokol%c3%bc" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        VTP Protokolü
+      </h1>
+      <div class="meta">
+        
+        <div class="author-info" style="font-size: 1.1em; margin-bottom: 10px;">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <strong>Author:</strong> <span itemprop="name">Soner Sahin</span>
+          </span>
+        </div>
+        
+        <div class="postdate">
+          
+          <time datetime="2023-12-24 23:46:15 &#43;0100 CET" itemprop="datePublished">2023-12-24</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          3 minute read
+        </div>
+        
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/network">Network</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/network" rel="tag">Network</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/vtp" rel="tag">VTP</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <p>VTP (Vlan Trunking Protokol), çok sayıda switch bulunan networklerde yönetimi kolaylaştırmak için kullanılan bir protokoldür. Server-Client mantığıyla çalışır ve Cisco tarafından geliştirilmiştir. Bu protokolün amacı çok fazla switch bulunan networklerde tek tek vlanları ilgili switchlere tanımlamaktansa merkezi bir yerden vlanları dağıtmayı sağlar. Bu vlanlar trunk portlar üzerinden dağıtılır. Senkron çalışır yani merkezde bir vlan oluşturulduğunda veya silindiğinde bu değişiklik ilgili switchlere de dağıtılır. Vlanları dağıtılması işlemi için cihazların VTP etki alanında olması gerekir. Bunun için bir Domain ve Password&rsquo;e ihtiyaç duyulur.</p>
+<p>VTP Protokolünün 3 farklı modu vardır:</p>
+<ul>
+<li><strong>Server (Sunucu) Mode:</strong> Vlanları oluşturma, silme ve dağıtma yetkisi olan mode. Her Cisco switch defaultta server modda gelir.</li>
+<li><strong>Client (İstemci) Mode:</strong> Server modda bulunan switch&rsquo;den vlan bilgisi alan moddur. Vlan ekleme veya silme yetkisi yoktur.</li>
+<li><strong>Transparent (Şeffaf) Mode:</strong> Bağımsızdır yani server moddan vlan bilgilerini alır iletir ama saklamaz. Fakat kendi başına vlan oluşturabilir veya silebilir. Bu modda yapılan işlemler VTP etki alanını etkilemez.</li>
+</ul>
+<p><em><strong>Uyarı:</strong></em></p>
+<p>Eğer server olarak kullanılacak switch&rsquo;in trunk portuna bir başka switch takılırsa ve bu takılan switch&rsquo;in Revision numarası server modda olanınkinden büyükse, bu durumda sonradan takılan switch&rsquo;in vlan bilgileri geçerli olacaktır. Yani server olarak kullanılan switch&rsquo;in vlan tablosu nanay olacaktır.</p>
+<p><strong>VTP Konfigürasyonu:</strong>
+Aşağıdaki örnek topolojiyi uygulayacağız.</p>
+<p><img src="/images/VTP/1.png" alt="vtp"></p>
+<p><strong>1 - Öncelikle cihazları teker teker VTP etki alanına alalım ve karşılıklı portları trunk yapalım,</strong></p>
+<p><strong>SW1-SERVER:</strong></p>
+<pre tabindex="0"><code>SW1&gt;enable
+SW1#configure terminal
+SW1(config)#vtp mode server                   #VTP modunu değiştiriyoruz.
+SW1(config)#vtp domain cisco.com              #VTP domain adını giriyoruz.
+SW1(config)#vtp password 123qqq!              #VTP password veriyoruz.
+SW1(config)#vtp version 2                     #VTP versiyonu belirtiyoruz.
+SW1(config)#interface range fa0/1-3           #Portların interfaceleri seçilir.
+SW1(config-if-range)#switchport mode trunk    #İlgili interfaceler trunk yapılır.
+SW1(config-if-range)#end
+</code></pre><p><strong>SW2-CLIENT:</strong></p>
+<pre tabindex="0"><code>SW2&gt;enable
+SW2#configure terminal
+SW2(config)#vtp mode client
+SW2(config)#vtp domain cisco.com
+SW2(config)#vtp password 123qqq!
+SW2(config)#vtp version 2
+SW2)config)#interface range fa0/1-2
+SW2(config-if-range)#switchport mode trunk
+Switch(config-if-range)#end```
+</code></pre><p><strong>SW3-CLIENT:</strong></p>
+<pre tabindex="0"><code>SW3&gt;enable
+SW3#configure terminal
+SW3(config)#vtp mode client
+SW3(config)#vtp domain cisco.com
+SW3(config)#vtp password 123qqq!
+SW3(config)#vtp version 2
+SW3(config)#interface fa0/1
+SW3(config-if)#switchport mode trunk
+SW3(config-if)#end
+</code></pre><p><strong>SW4-TRANSPARENT:</strong></p>
+<pre tabindex="0"><code>SW4&gt;enable
+SW4#configure terminal
+SW4(config)#vtp mode trasparent
+SW4(config)#vtp version 2
+SW4(config)#interface range fa0/1-2
+SW4(config-if-range)#switchport mode trunk
+SW4(config-if-range)#end
+</code></pre><p><strong>SW5-CLIENT:</strong></p>
+<pre tabindex="0"><code>SW5&gt;enable
+SW5#configure terminal
+SW5(config)#vtp mode client
+SW5(config)#vtp domain cisco.com
+SW5(config)#vtp password 123qqq!
+SW5(config)#vtp version 2
+SW5(config)#interface fa0/1
+SW5(config-if)#switchport mode trunk
+SW5(config-if)#end
+</code></pre><p><strong>SW6-SERVER:</strong></p>
+<pre tabindex="0"><code>SW6&gt;enable
+SW6#configure terminal
+SW6(config)#vtp mode server
+SW6(config)#vtp domain cisco.com
+SW6(config)#vtp password 123qqq!
+SW6(config)#vtp version 2
+SW6(config)#interface range fa0/1-2
+SW6(config-if-range)#switchport mode trunk
+SW6(config-if-range)#end
+</code></pre><p><strong>SW7-CLIENT:</strong></p>
+<pre tabindex="0"><code>SW7&gt;enable
+SW7#configure terminal
+SW7(config)#vtp mode client
+SW7(config)#vtp domain cisco.com
+SW7(config)#vtp password 123qqq!
+SW7(config)#vtp version 2
+SW7(config)#interface fa0/1
+SW7(config-if)#switchport mode trunk
+SW7(config-if)#end
+</code></pre><p>Buraya kadar herşey doğru yapılandırıldıysa etki alanı oluşturulmuş oldu. Artık server modda olan switch&rsquo;den vlanlar oluşturulabilir.
+Öncelikle server moddaki switch&rsquo;in vlan tablosuna bakalım, boş olduğunu görelim. Daha sonra oluşturmaya başlayalım.</p>
+<p><img src="/images/VTP/2.png" alt="vtp"></p>
+<p><strong>2 - Vlanları oluşturalım,</strong></p>
+<p><strong>SW1-SERVER:</strong></p>
+<pre tabindex="0"><code>SW1#en
+SW1#conf t
+SW1(config)#vlan 10
+SW1(config-vlan)#name PAZARLAMA
+SW1(config-vlan)#vlan 20
+SW1(config-vlan)#name SATIS
+SW1(config-vlan)#vlan 30
+SW1(config-vlan)#name AR-GE
+SW1config-vlan)#vlan 40
+SW1(config-vlan)#name MISAFIR
+SW1(config-vlan)#end
+</code></pre><p>Tekrar vlan tablosuna bakalım;</p>
+<p><strong>SW1-SERVER:</strong></p>
+<p><img src="/images/VTP/3.png" alt="vtp"></p>
+<p>Vlanlar oluşturuldu, şimdi teker teker kontrol edelim;</p>
+<p><strong>SW2-CLIENT:</strong>
+<img src="/images/VTP/4.png" alt="vtp"></p>
+<p><strong>SW3-CLIENT:</strong>
+<img src="/images/VTP/5.png" alt="vtp"></p>
+<p><strong>SW4-TRANSPARENT:</strong>
+<img src="/images/VTP/6.png" alt="vtp"></p>
+<p>Transparent modda çalışan switch&rsquo;in VTP etki alanındaki vlanları tutmadığını görüyoruz. Fakat SW5&rsquo;e bakacak olursak vlanların olduğu görüyoruz. Bundan dolayı transparent modda çalışan bir switch&rsquo;in vlan tutmadığını fakat vlanları ilettiğini söyleyebiliriz.</p>
+<p><strong>SW5-CLIENT:</strong>
+<img src="/images/VTP/7.png" alt="vtp"></p>
+<p><strong>SW6-SERVER:</strong>
+<img src="/images/VTP/8.png" alt="vtp"></p>
+<p><strong>SW7-CLIENT:</strong>
+<img src="/images/VTP/9.png" alt="vtp"></p>
+<p><em><strong>DENEME-1</strong></em>
+Bir örnek yapalım ve Client modda olan bir cihazda vlan oluşturmayı ve silmeyi deneyelim. Bunun için SW3 cihazını kullanacağım.</p>
+<p><img src="/images/VTP/10.png" alt="vtp"></p>
+<p>Görüldüğü gibi cihaz Client modda olduğu için vlan oluşturma veya silme işlemi yapamıyoruz.</p>
+<p><em><strong>DENEME-2</strong></em>
+Şimdi aynı uygulamayı Transparent modda çalışan SW4&rsquo;de yapmaya çalışacağım.</p>
+<p><img src="/images/VTP/11.png" alt="vtp"></p>
+<p>Transparent modda vlan oluşturabiliyoruz evet, fakat bu vlanlar diğer cihazları etkilemeyecektir. Bunu görmek için SW5&rsquo;in vlan tablosuna bakalım.</p>
+<p><img src="/images/VTP/12.png" alt="vtp"></p>
+<p>Transparent moddaki cihazdan oluşturulan vlanlar gelmedi.</p>
+<p><em><strong>DENEME-3</strong></em>
+Şimdi bir de SW6 yine server modda çalışan cihazdan vlanlar oluşturmayı ve silmeyi deneyelim.</p>
+<p><img src="/images/VTP/13.png" alt="vtp"></p>
+<p>Burada da yine vlanları oluşturabildiğimizi ve silebildiğimizi görüyoruz. Peki diğer cihazlara da bu değişiklik iletiliyor mu bunu öğrenmek için yine SW5&rsquo;in vlan tablosuna bakalım.</p>
+<p><img src="/images/VTP/14.png" alt="vtp"></p>
+<p>Evet değişiklikler diğer cihazlara da iletiliyor.</p>
+<p><strong>Revizyon Numarası Nedir?</strong></p>
+<p>Revizyon numarası Vlanlarda yapılan her bir değişikliği ifade eder. Örneğin bir vlan oluşturduğumuzda bu numara 1 artar, bu vlan&rsquo;a bir isim verirsek 1 artar, silersek 1 artar gibi.
+Revizyon numarasını görmek için aşağıdaki komut kullanılır:</p>
+<pre tabindex="0"><code>show vtp status
+</code></pre><p>Bizim topolojideki SW1&rsquo;in revizyon numarası 19&rsquo;dur.</p>
+<p><img src="/images/VTP/15.png" alt="vtp"></p>
+<p><em><strong>DENEME-4</strong></em>
+Örnek olarak bir switch daha ekleyelim fakat networkle bağlantısı olmasın. Bu switch&rsquo;de vlanlar oluşturalım ve revizyon numarasını yükseltelim.</p>
+<p><img src="/images/VTP/16.png" alt="vtp"></p>
+<p>Artık elimde Revizyon numarası networkümdeki VTP etki alanımda bulunan cihazımınkinden yüksek bir cihaz var. Peki bunu çaaat diye networke dahil edersek neler olur görelim.</p>
+<p><img src="/images/VTP/17.png" alt="vtp"></p>
+<p>Görseldeki gibi networke dahil edilen switch yapılandırdığımız vlanları uçurdu ve yerine kendi vlan tablosu geldi. Bunu görmek için SW1 cihazının vlan tablosuna bakalım.</p>
+<p><img src="/images/VTP/18.png" alt="vtp"></p>
+<p>VTP Etki alanının passwrod&rsquo;ünü öğrenmek istersek;</p>
+<pre tabindex="0"><code>SW1#sh vtp password
+VTP Password: 123qqq!
+</code></pre><p>VTP hakkında detaylı bilgi almak istersek;</p>
+<pre tabindex="0"><code>SW1#show vtp status
+</code></pre><p>Komutları kullanılır.</p>
+<p>Teşekkürler,</p>
+<p>İyi Çalışmalar.</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Posts</a></li>
+         
+          <li><a href="/projects">Projects</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvtp%2fvtp%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvtp%2fvtp%2f&text=VTP%20Protokol%c3%bc" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvtp%2fvtp%2f&title=VTP%20Protokol%c3%bc" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvtp%2fvtp%2f&is_video=false&description=VTP%20Protokol%c3%bc" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=VTP%20Protokol%c3%bc&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvtp%2fvtp%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvtp%2fvtp%2f&title=VTP%20Protokol%c3%bc" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvtp%2fvtp%2f&title=VTP%20Protokol%c3%bc" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvtp%2fvtp%2f&name=VTP%20Protokol%c3%bc&description=%3cp%3eVTP%20%28Vlan%20Trunking%20Protokol%29%2c%20%c3%a7ok%20say%c4%b1da%20switch%20bulunan%20networklerde%20y%c3%b6netimi%20kolayla%c5%9ft%c4%b1rmak%20i%c3%a7in%20kullan%c4%b1lan%20bir%20protokold%c3%bcr.%20Server-Client%20mant%c4%b1%c4%9f%c4%b1yla%20%c3%a7al%c4%b1%c5%9f%c4%b1r%20ve%20Cisco%20taraf%c4%b1ndan%20geli%c5%9ftirilmi%c5%9ftir.%20Bu%20protokol%c3%bcn%20amac%c4%b1%20%c3%a7ok%20fazla%20switch%20bulunan%20networklerde%20tek%20tek%20vlanlar%c4%b1%20ilgili%20switchlere%20tan%c4%b1mlamaktansa%20merkezi%20bir%20yerden%20vlanlar%c4%b1%20da%c4%9f%c4%b1tmay%c4%b1%20sa%c4%9flar.%20Bu%20vlanlar%20trunk%20portlar%20%c3%bczerinden%20da%c4%9f%c4%b1t%c4%b1l%c4%b1r.%20Senkron%20%c3%a7al%c4%b1%c5%9f%c4%b1r%20yani%20merkezde%20bir%20vlan%20olu%c5%9fturuldu%c4%9funda%20veya%20silindi%c4%9finde%20bu%20de%c4%9fi%c5%9fiklik%20ilgili%20switchlere%20de%20da%c4%9f%c4%b1t%c4%b1l%c4%b1r.%20Vlanlar%c4%b1%20da%c4%9f%c4%b1t%c4%b1lmas%c4%b1%20i%c5%9flemi%20i%c3%a7in%20cihazlar%c4%b1n%20VTP%20etki%20alan%c4%b1nda%20olmas%c4%b1%20gerekir.%20Bunun%20i%c3%a7in%20bir%20Domain%20ve%20Password%26rsquo%3be%20ihtiya%c3%a7%20duyulur.%3c%2fp%3e" aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvtp%2fvtp%2f&t=VTP%20Protokol%c3%bc" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2025  ittechnetworkk 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/projects">Projects</a></li>
+         
+        <li><a href="/categories/">Categories</a></li>
+         
+        <li><a href="/tags/">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>
