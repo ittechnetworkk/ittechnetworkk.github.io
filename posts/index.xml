@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Fri, 10 Jan 2025 11:43:33 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jan 2025 05:03:17 +0100</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[EN] Linux Process Prioritization</title>
+      <link>https://ittechnetworkk.github.io/posts/linuxprocessprioritization/linux-process-prioritization/</link>
+      <pubDate>Sat, 11 Jan 2025 05:03:17 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/linuxprocessprioritization/linux-process-prioritization/</guid>
+      <description>&lt;p&gt;In this article I am going to talk about Linux process Prioritization.&lt;/p&gt;&#xA;&lt;p&gt;Sometimes we may want to prioritize our more important processes in Linux.&lt;/p&gt;&#xA;&lt;p&gt;We prioritize process or processes that are more important for us with &amp;ldquo;NICE&amp;rdquo; parameters.&lt;/p&gt;&#xA;&lt;p&gt;Each process has a &amp;ldquo;NICE&amp;rdquo; value. This value prioritizes processes.&lt;/p&gt;&#xA;&lt;p&gt;The lower we set this value, the higher the priority of the process. However, this value can only be set between &amp;ldquo;+20&amp;rdquo; and &amp;ldquo;-20&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Vlan Routing L3 Switch (SVI)</title>
       <link>https://ittechnetworkk.github.io/posts/vlanroutingsvi/vlan-routing-svi/</link>
@@ -52,7 +59,7 @@
       <description>&lt;p&gt;Merhabalar bu yazımda Cisco ASA 5500 serisi cihazın password recovery işlemini göstereceğim.&lt;/p&gt;&#xA;&lt;p&gt;İlk olarak cihaza console kablosu ile bağlanıyorum cihazı başlatıyorum.&lt;/p&gt;&#xA;&lt;p&gt;Cihaz başlarken aşağıdaki gibi bir ekran geldiğinde &amp;ldquo;ESC&amp;rdquo; tuşuna basıp &amp;ldquo;rommon&amp;rdquo; moduna geçiyorum.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/ASAPasswordRecovery/1.png&#34; alt=&#34;asa&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Bu kısımda &amp;ldquo;ESC&amp;rdquo; tuşuna basar basmaz aşağıdaki &amp;ldquo;rommon&amp;rdquo; modu karşımıza çıkacaktır.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/ASAPasswordRecovery/2.png&#34; alt=&#34;asa&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Password recovery için aşağıdaki komutları sırasıyla yazıyorum:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;rommon #0&amp;gt; confreg 0x41&#xA;rommon #0&amp;gt; confreg&#xA;rommon #0&amp;gt; boot&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&amp;ldquo;confreg&amp;rdquo; komutundan sonra çıkan soruları aşağıdaki gibi seçiyorum.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Dell PowerEdge R640 Proxmox</title>
+      <title>Dell PowerEdge R640 Proxmox Kurulum</title>
       <link>https://ittechnetworkk.github.io/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</link>
       <pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate>
       <guid>https://ittechnetworkk.github.io/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</guid>

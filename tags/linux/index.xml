@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Thu, 07 Nov 2024 22:57:40 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jan 2025 05:03:17 +0100</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[EN] Linux Process Prioritization</title>
+      <link>https://ittechnetworkk.github.io/posts/linuxprocessprioritization/linux-process-prioritization/</link>
+      <pubDate>Sat, 11 Jan 2025 05:03:17 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/linuxprocessprioritization/linux-process-prioritization/</guid>
+      <description>&lt;p&gt;In this article I am going to talk about Linux process Prioritization.&lt;/p&gt;&#xA;&lt;p&gt;Sometimes we may want to prioritize our more important processes in Linux.&lt;/p&gt;&#xA;&lt;p&gt;We prioritize process or processes that are more important for us with &amp;ldquo;NICE&amp;rdquo; parameters.&lt;/p&gt;&#xA;&lt;p&gt;Each process has a &amp;ldquo;NICE&amp;rdquo; value. This value prioritizes processes.&lt;/p&gt;&#xA;&lt;p&gt;The lower we set this value, the higher the priority of the process. However, this value can only be set between &amp;ldquo;+20&amp;rdquo; and &amp;ldquo;-20&amp;rdquo;.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Ubuntu 22.04 DHCP Server Konfigürasyonu</title>
       <link>https://ittechnetworkk.github.io/posts/ubuntudhcpserver/ubuntu-dhcp-server/</link>
