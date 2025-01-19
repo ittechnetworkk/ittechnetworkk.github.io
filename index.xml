@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Sun, 19 Jan 2025 22:51:26 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jan 2025 23:56:33 +0100</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Debian Server IP Konfigürasyonu</title>
+      <link>https://ittechnetworkk.github.io/posts/debianip/debian-ip/</link>
+      <pubDate>Sun, 19 Jan 2025 23:56:33 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/debianip/debian-ip/</guid>
+      <description>Selamlar, bu yazımda Debian Server&amp;rsquo;a nasıl statik veya dinamik IP tanımlanacağını göstereceğim.&#xA;Her Linux dağıtımında statik IP&amp;rsquo;ler aynı şekilde tanımlanmayabilir.&#xA;Linux sistemlerde her şey bir dosyadan okunduğu için bunun için de bir ilgili bir dosya vardır.&#xA;Debian&amp;rsquo;da bu dosya şuradadır:&#xA;/etc/network/interfaces Şimdi bu dosyayı editleyelim.&#xA;Dosyanın ilk hali şu şekildedir:&#xA;# This file describes the network interfaces available on your system # and how to activate them. For more information, see interfaces(5).</description>
+    </item>
     <item>
       <title>Fedora Server IP Konfigürasyonu</title>
       <link>https://ittechnetworkk.github.io/posts/fedoraip/fedora-ip/</link>

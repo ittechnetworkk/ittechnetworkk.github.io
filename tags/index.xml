@@ -7,13 +7,13 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Sun, 19 Jan 2025 22:51:26 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jan 2025 23:56:33 +0100</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Fedora</title>
-      <link>https://ittechnetworkk.github.io/tags/fedora/</link>
+      <title>Debian</title>
+      <link>https://ittechnetworkk.github.io/tags/debian/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ittechnetworkk.github.io/tags/fedora/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/debian/</guid>
       <description></description>
     </item>
     <item>
@@ -28,6 +28,13 @@
       <link>https://ittechnetworkk.github.io/tags/linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fedora</title>
+      <link>https://ittechnetworkk.github.io/tags/fedora/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/fedora/</guid>
       <description></description>
     </item>
     <item>
