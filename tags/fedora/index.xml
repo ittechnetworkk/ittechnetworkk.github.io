@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fedora on ittechnetworkk</title>
+    <link>https://ittechnetworkk.github.io/tags/fedora/</link>
+    <description>Recent content in Fedora on ittechnetworkk</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>ittechnetworkk</copyright>
+    <lastBuildDate>Sun, 19 Jan 2025 22:51:26 +0100</lastBuildDate>
+    <atom:link href="https://ittechnetworkk.github.io/tags/fedora/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fedora Server IP Konfigürasyonu</title>
+      <link>https://ittechnetworkk.github.io/posts/fedoraip/fedora-ip/</link>
+      <pubDate>Sun, 19 Jan 2025 22:51:26 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/fedoraip/fedora-ip/</guid>
+      <description>Selamlar, bu yazımda Fedora Server&amp;rsquo;a nasıl statik veya dinamik IP tanımlanacağını göstereceğim.&#xA;Her Linux dağıtımında statik IP&amp;rsquo;ler aynı şekilde tanımlanmayabilir. Fakat mantığını bilmek bir adım önde başlamak demektir.&#xA;Linux sistemlerde her şey bir dosyadan okunduğu için bunun için de bir ilgili bir dosya vardır.&#xA;Fedora&amp;rsquo;da bu dosya şuradadır:&#xA;NetworkManager kullanılmadığında;&#xA;/etc/sysconfig/network-scripts/ifcfg-ens33 NetworkManager kullanıldığında;&#xA;/etc/NetworkManager/system-connections/ens33.nmconnection Şimdi bu dosyayı editleyelim.&#xA;Dosyanın ilk hali şu şekildedir:&#xA;[connection] id=ens160 uuid=36903561-eb7f-38c2-986b-b098913248de type=ethernet autoconnect-priority=-999 interface-name=ens160 timestamp=1737213877 [ethernet] [ipv4] [ipv6] addr-gen-mode=eui64 method=auto [proxy] Bazı parametreler sisteminize bağlı olarak değişiklik gösterebilir, fakat bizim ilgilendiğimiz kısım şimdilik [ipv4] kısmı.</description>
+    </item>
+  </channel>
+</rss>
