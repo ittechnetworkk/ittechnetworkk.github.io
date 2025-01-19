@@ -23,7 +23,7 @@ Statik IP adresi tanımlamak için “/etc/netplan/00-installer-config.yaml” d
 network: version: 2 renderer: networkd ethernets: ens33: addresses: - 192.168.1.50/24 nameservers: addresses: [1.1.1.1, 8.8.8.8] routes: - to: default via: 192.168.1.1 Değişiklikleri geçerli kılmak için:
 sudo netplan apply Grafik arayüzü ile yapılandırmak için “nmtui” aracını kullanabilirsiniz.
 DHCP Server Rolü Kurulumu:
-sudo apt install isc-dhcp-server DHCP rolü yüklendikten sonra, konfigürasyon dosyası “/etc/dhcp/dhcpd.conf&#34;dur.">
+sudo apt install isc-dhcp-server DHCP rolü yüklendikten sonra, konfigürasyon dosyası “/etc/dhcp/dhcpd.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -42,14 +42,19 @@ Statik IP adresi tanımlamak için “/etc/netplan/00-installer-config.yaml” d
 network: version: 2 renderer: networkd ethernets: ens33: addresses: - 192.168.1.50/24 nameservers: addresses: [1.1.1.1, 8.8.8.8] routes: - to: default via: 192.168.1.1 Değişiklikleri geçerli kılmak için:
 sudo netplan apply Grafik arayüzü ile yapılandırmak için “nmtui” aracını kullanabilirsiniz.
 DHCP Server Rolü Kurulumu:
-sudo apt install isc-dhcp-server DHCP rolü yüklendikten sonra, konfigürasyon dosyası “/etc/dhcp/dhcpd.conf&#34;dur.">
+sudo apt install isc-dhcp-server DHCP rolü yüklendikten sonra, konfigürasyon dosyası “/etc/dhcp/dhcpd.">
 
   
   
     
   
   
-  <link rel="stylesheet" href="https://ittechnetworkk.github.io/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+  
+  
+  <link rel="stylesheet" href="https://ittechnetworkk.github.io/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg==">
+  
 
   
   
@@ -169,7 +174,7 @@ sudo apt install isc-dhcp-server DHCP rolü yüklendikten sonra, konfigürasyon 
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&name=Ubuntu%2022.04%20DHCP%20Server%20Konfig%c3%bcrasyonu&description=%3cp%3eMerhabalar%20bu%20yaz%c4%b1mda%2c%20Ubuntu-22.04%20Server%26rsquo%3ba%20DHCP%20rol%c3%bc%20kurup%20konfig%c3%bcrasyonunu%20yapaca%c4%9f%c4%b1m.%3c%2fp%3e%0a%3cp%3eUbuntu%26rsquo%3bya%20DHCP%20rol%c3%bc%20vermeden%20%c3%b6nce%2c%20Server%26rsquo%3b%c4%b1n%20IP%20adresini%20statik%20olarak%20ayarl%c4%b1yorum.%3c%2fp%3e%0a%3cp%3eStatik%20IP%20adresi%20tan%c4%b1mlamak%20i%c3%a7in%20%26ldquo%3b%2fetc%2fnetplan%2f00-installer-config.yaml%26rdquo%3b%20dosyas%c4%b1n%c4%b1%20d%c3%bczenliyorum.%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3enetwork%3a%0a%c2%a0%20version%3a%202%0a%c2%a0%20renderer%3a%20networkd%0a%c2%a0%20ethernets%3a%0a%c2%a0%c2%a0%c2%a0%20ens33%3a%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20addresses%3a%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20-%20192.168.1.50%2f24%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20nameservers%3a%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20addresses%3a%20%5b1.1.1.1%2c%208.8.8.8%5d%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20routes%3a%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20-%20to%3a%20default%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20via%3a%20192.168.1.1%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eDe%c4%9fi%c5%9fiklikleri%20ge%c3%a7erli%20k%c4%b1lmak%20i%c3%a7in%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3esudo%20netplan%20apply%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eGrafik%20aray%c3%bcz%c3%bc%20ile%20yap%c4%b1land%c4%b1rmak%20i%c3%a7in%20%26ldquo%3bnmtui%26rdquo%3b%20arac%c4%b1n%c4%b1%20kullanabilirsiniz.%3c%2fp%3e%0a%3cp%3eDHCP%20Server%20Rol%c3%bc%20Kurulumu%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3esudo%20apt%20install%20isc-dhcp-server%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eDHCP%20rol%c3%bc%20y%c3%bcklendikten%20sonra%2c%20konfig%c3%bcrasyon%20dosyas%c4%b1%20%26ldquo%3b%2fetc%2fdhcp%2fdhcpd.conf%26quot%3bdur.%3c%2fp%3e" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&name=Ubuntu%2022.04%20DHCP%20Server%20Konfig%c3%bcrasyonu&description=Merhabalar%20bu%20yaz%c4%b1mda%2c%20Ubuntu-22.04%20Server%26rsquo%3ba%20DHCP%20rol%c3%bc%20kurup%20konfig%c3%bcrasyonunu%20yapaca%c4%9f%c4%b1m.%0aUbuntu%26rsquo%3bya%20DHCP%20rol%c3%bc%20vermeden%20%c3%b6nce%2c%20Server%26rsquo%3b%c4%b1n%20IP%20adresini%20statik%20olarak%20ayarl%c4%b1yorum.%0aStatik%20IP%20adresi%20tan%c4%b1mlamak%20i%c3%a7in%20%26ldquo%3b%2fetc%2fnetplan%2f00-installer-config.yaml%26rdquo%3b%20dosyas%c4%b1n%c4%b1%20d%c3%bczenliyorum.%0anetwork%3a%20version%3a%202%20renderer%3a%20networkd%20ethernets%3a%20ens33%3a%20addresses%3a%20-%20192.168.1.50%2f24%20nameservers%3a%20addresses%3a%20%5b1.1.1.1%2c%208.8.8.8%5d%20routes%3a%20-%20to%3a%20default%20via%3a%20192.168.1.1%20De%c4%9fi%c5%9fiklikleri%20ge%c3%a7erli%20k%c4%b1lmak%20i%c3%a7in%3a%0asudo%20netplan%20apply%20Grafik%20aray%c3%bcz%c3%bc%20ile%20yap%c4%b1land%c4%b1rmak%20i%c3%a7in%20%26ldquo%3bnmtui%26rdquo%3b%20arac%c4%b1n%c4%b1%20kullanabilirsiniz.%0aDHCP%20Server%20Rol%c3%bc%20Kurulumu%3a%0asudo%20apt%20install%20isc-dhcp-server%20DHCP%20rol%c3%bc%20y%c3%bcklendikten%20sonra%2c%20konfig%c3%bcrasyon%20dosyas%c4%b1%20%26ldquo%3b%2fetc%2fdhcp%2fdhcpd." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -379,7 +384,7 @@ sudo ufw allow 68/udp
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&name=Ubuntu%2022.04%20DHCP%20Server%20Konfig%c3%bcrasyonu&description=%3cp%3eMerhabalar%20bu%20yaz%c4%b1mda%2c%20Ubuntu-22.04%20Server%26rsquo%3ba%20DHCP%20rol%c3%bc%20kurup%20konfig%c3%bcrasyonunu%20yapaca%c4%9f%c4%b1m.%3c%2fp%3e%0a%3cp%3eUbuntu%26rsquo%3bya%20DHCP%20rol%c3%bc%20vermeden%20%c3%b6nce%2c%20Server%26rsquo%3b%c4%b1n%20IP%20adresini%20statik%20olarak%20ayarl%c4%b1yorum.%3c%2fp%3e%0a%3cp%3eStatik%20IP%20adresi%20tan%c4%b1mlamak%20i%c3%a7in%20%26ldquo%3b%2fetc%2fnetplan%2f00-installer-config.yaml%26rdquo%3b%20dosyas%c4%b1n%c4%b1%20d%c3%bczenliyorum.%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3enetwork%3a%0a%c2%a0%20version%3a%202%0a%c2%a0%20renderer%3a%20networkd%0a%c2%a0%20ethernets%3a%0a%c2%a0%c2%a0%c2%a0%20ens33%3a%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20addresses%3a%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20-%20192.168.1.50%2f24%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20nameservers%3a%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20addresses%3a%20%5b1.1.1.1%2c%208.8.8.8%5d%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20routes%3a%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20-%20to%3a%20default%0a%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%c2%a0%20via%3a%20192.168.1.1%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eDe%c4%9fi%c5%9fiklikleri%20ge%c3%a7erli%20k%c4%b1lmak%20i%c3%a7in%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3esudo%20netplan%20apply%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eGrafik%20aray%c3%bcz%c3%bc%20ile%20yap%c4%b1land%c4%b1rmak%20i%c3%a7in%20%26ldquo%3bnmtui%26rdquo%3b%20arac%c4%b1n%c4%b1%20kullanabilirsiniz.%3c%2fp%3e%0a%3cp%3eDHCP%20Server%20Rol%c3%bc%20Kurulumu%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3esudo%20apt%20install%20isc-dhcp-server%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eDHCP%20rol%c3%bc%20y%c3%bcklendikten%20sonra%2c%20konfig%c3%bcrasyon%20dosyas%c4%b1%20%26ldquo%3b%2fetc%2fdhcp%2fdhcpd.conf%26quot%3bdur.%3c%2fp%3e" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fubuntudhcpserver%2fubuntu-dhcp-server%2f&name=Ubuntu%2022.04%20DHCP%20Server%20Konfig%c3%bcrasyonu&description=Merhabalar%20bu%20yaz%c4%b1mda%2c%20Ubuntu-22.04%20Server%26rsquo%3ba%20DHCP%20rol%c3%bc%20kurup%20konfig%c3%bcrasyonunu%20yapaca%c4%9f%c4%b1m.%0aUbuntu%26rsquo%3bya%20DHCP%20rol%c3%bc%20vermeden%20%c3%b6nce%2c%20Server%26rsquo%3b%c4%b1n%20IP%20adresini%20statik%20olarak%20ayarl%c4%b1yorum.%0aStatik%20IP%20adresi%20tan%c4%b1mlamak%20i%c3%a7in%20%26ldquo%3b%2fetc%2fnetplan%2f00-installer-config.yaml%26rdquo%3b%20dosyas%c4%b1n%c4%b1%20d%c3%bczenliyorum.%0anetwork%3a%20version%3a%202%20renderer%3a%20networkd%20ethernets%3a%20ens33%3a%20addresses%3a%20-%20192.168.1.50%2f24%20nameservers%3a%20addresses%3a%20%5b1.1.1.1%2c%208.8.8.8%5d%20routes%3a%20-%20to%3a%20default%20via%3a%20192.168.1.1%20De%c4%9fi%c5%9fiklikleri%20ge%c3%a7erli%20k%c4%b1lmak%20i%c3%a7in%3a%0asudo%20netplan%20apply%20Grafik%20aray%c3%bcz%c3%bc%20ile%20yap%c4%b1land%c4%b1rmak%20i%c3%a7in%20%26ldquo%3bnmtui%26rdquo%3b%20arac%c4%b1n%c4%b1%20kullanabilirsiniz.%0aDHCP%20Server%20Rol%c3%bc%20Kurulumu%3a%0asudo%20apt%20install%20isc-dhcp-server%20DHCP%20rol%c3%bc%20y%c3%bcklendikten%20sonra%2c%20konfig%c3%bcrasyon%20dosyas%c4%b1%20%26ldquo%3b%2fetc%2fdhcp%2fdhcpd." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

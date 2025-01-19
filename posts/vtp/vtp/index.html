@@ -17,7 +17,7 @@
   <meta property="og:url" content="https://ittechnetworkk.github.io/posts/vtp/vtp/">
   <meta property="og:site_name" content="ittechnetworkk">
   <meta property="og:title" content="VTP Protokolü">
-  <meta property="og:description" content="VTP (Vlan Trunking Protokol), çok sayıda switch bulunan networklerde yönetimi kolaylaştırmak için kullanılan bir protokoldür. Server-Client mantığıyla çalışır ve Cisco tarafından geliştirilmiştir. Bu protokolün amacı çok fazla switch bulunan networklerde tek tek vlanları ilgili switchlere tanımlamaktansa merkezi bir yerden vlanları dağıtmayı sağlar. Bu vlanlar trunk portlar üzerinden dağıtılır. Senkron çalışır yani merkezde bir vlan oluşturulduğunda veya silindiğinde bu değişiklik ilgili switchlere de dağıtılır. Vlanları dağıtılması işlemi için cihazların VTP etki alanında olması gerekir. Bunun için bir Domain ve Password’e ihtiyaç duyulur.">
+  <meta property="og:description" content="VTP (Vlan Trunking Protokol), çok sayıda switch bulunan networklerde yönetimi kolaylaştırmak için kullanılan bir protokoldür. Server-Client mantığıyla çalışır ve Cisco tarafından geliştirilmiştir. Bu protokolün amacı çok fazla switch bulunan networklerde tek tek vlanları ilgili switchlere tanımlamaktansa merkezi bir yerden vlanları dağıtmayı sağlar. Bu vlanlar trunk portlar üzerinden dağıtılır. Senkron çalışır yani merkezde bir vlan oluşturulduğunda veya silindiğinde bu değişiklik ilgili switchlere de dağıtılır. Vlanları dağıtılması işlemi için cihazların VTP etki alanında olması gerekir.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -29,14 +29,19 @@
   
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="VTP Protokolü">
-  <meta name="twitter:description" content="VTP (Vlan Trunking Protokol), çok sayıda switch bulunan networklerde yönetimi kolaylaştırmak için kullanılan bir protokoldür. Server-Client mantığıyla çalışır ve Cisco tarafından geliştirilmiştir. Bu protokolün amacı çok fazla switch bulunan networklerde tek tek vlanları ilgili switchlere tanımlamaktansa merkezi bir yerden vlanları dağıtmayı sağlar. Bu vlanlar trunk portlar üzerinden dağıtılır. Senkron çalışır yani merkezde bir vlan oluşturulduğunda veya silindiğinde bu değişiklik ilgili switchlere de dağıtılır. Vlanları dağıtılması işlemi için cihazların VTP etki alanında olması gerekir. Bunun için bir Domain ve Password’e ihtiyaç duyulur.">
+  <meta name="twitter:description" content="VTP (Vlan Trunking Protokol), çok sayıda switch bulunan networklerde yönetimi kolaylaştırmak için kullanılan bir protokoldür. Server-Client mantığıyla çalışır ve Cisco tarafından geliştirilmiştir. Bu protokolün amacı çok fazla switch bulunan networklerde tek tek vlanları ilgili switchlere tanımlamaktansa merkezi bir yerden vlanları dağıtmayı sağlar. Bu vlanlar trunk portlar üzerinden dağıtılır. Senkron çalışır yani merkezde bir vlan oluşturulduğunda veya silindiğinde bu değişiklik ilgili switchlere de dağıtılır. Vlanları dağıtılması işlemi için cihazların VTP etki alanında olması gerekir.">
 
   
   
     
   
   
-  <link rel="stylesheet" href="https://ittechnetworkk.github.io/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+  
+  
+  <link rel="stylesheet" href="https://ittechnetworkk.github.io/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg==">
+  
 
   
   
@@ -156,7 +161,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvtp%2fvtp%2f&name=VTP%20Protokol%c3%bc&description=%3cp%3eVTP%20%28Vlan%20Trunking%20Protokol%29%2c%20%c3%a7ok%20say%c4%b1da%20switch%20bulunan%20networklerde%20y%c3%b6netimi%20kolayla%c5%9ft%c4%b1rmak%20i%c3%a7in%20kullan%c4%b1lan%20bir%20protokold%c3%bcr.%20Server-Client%20mant%c4%b1%c4%9f%c4%b1yla%20%c3%a7al%c4%b1%c5%9f%c4%b1r%20ve%20Cisco%20taraf%c4%b1ndan%20geli%c5%9ftirilmi%c5%9ftir.%20Bu%20protokol%c3%bcn%20amac%c4%b1%20%c3%a7ok%20fazla%20switch%20bulunan%20networklerde%20tek%20tek%20vlanlar%c4%b1%20ilgili%20switchlere%20tan%c4%b1mlamaktansa%20merkezi%20bir%20yerden%20vlanlar%c4%b1%20da%c4%9f%c4%b1tmay%c4%b1%20sa%c4%9flar.%20Bu%20vlanlar%20trunk%20portlar%20%c3%bczerinden%20da%c4%9f%c4%b1t%c4%b1l%c4%b1r.%20Senkron%20%c3%a7al%c4%b1%c5%9f%c4%b1r%20yani%20merkezde%20bir%20vlan%20olu%c5%9fturuldu%c4%9funda%20veya%20silindi%c4%9finde%20bu%20de%c4%9fi%c5%9fiklik%20ilgili%20switchlere%20de%20da%c4%9f%c4%b1t%c4%b1l%c4%b1r.%20Vlanlar%c4%b1%20da%c4%9f%c4%b1t%c4%b1lmas%c4%b1%20i%c5%9flemi%20i%c3%a7in%20cihazlar%c4%b1n%20VTP%20etki%20alan%c4%b1nda%20olmas%c4%b1%20gerekir.%20Bunun%20i%c3%a7in%20bir%20Domain%20ve%20Password%26rsquo%3be%20ihtiya%c3%a7%20duyulur.%3c%2fp%3e" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvtp%2fvtp%2f&name=VTP%20Protokol%c3%bc&description=VTP%20%28Vlan%20Trunking%20Protokol%29%2c%20%c3%a7ok%20say%c4%b1da%20switch%20bulunan%20networklerde%20y%c3%b6netimi%20kolayla%c5%9ft%c4%b1rmak%20i%c3%a7in%20kullan%c4%b1lan%20bir%20protokold%c3%bcr.%20Server-Client%20mant%c4%b1%c4%9f%c4%b1yla%20%c3%a7al%c4%b1%c5%9f%c4%b1r%20ve%20Cisco%20taraf%c4%b1ndan%20geli%c5%9ftirilmi%c5%9ftir.%20Bu%20protokol%c3%bcn%20amac%c4%b1%20%c3%a7ok%20fazla%20switch%20bulunan%20networklerde%20tek%20tek%20vlanlar%c4%b1%20ilgili%20switchlere%20tan%c4%b1mlamaktansa%20merkezi%20bir%20yerden%20vlanlar%c4%b1%20da%c4%9f%c4%b1tmay%c4%b1%20sa%c4%9flar.%20Bu%20vlanlar%20trunk%20portlar%20%c3%bczerinden%20da%c4%9f%c4%b1t%c4%b1l%c4%b1r.%20Senkron%20%c3%a7al%c4%b1%c5%9f%c4%b1r%20yani%20merkezde%20bir%20vlan%20olu%c5%9fturuldu%c4%9funda%20veya%20silindi%c4%9finde%20bu%20de%c4%9fi%c5%9fiklik%20ilgili%20switchlere%20de%20da%c4%9f%c4%b1t%c4%b1l%c4%b1r.%20Vlanlar%c4%b1%20da%c4%9f%c4%b1t%c4%b1lmas%c4%b1%20i%c5%9flemi%20i%c3%a7in%20cihazlar%c4%b1n%20VTP%20etki%20alan%c4%b1nda%20olmas%c4%b1%20gerekir." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -464,7 +469,7 @@ VTP Password: 123qqq!
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvtp%2fvtp%2f&name=VTP%20Protokol%c3%bc&description=%3cp%3eVTP%20%28Vlan%20Trunking%20Protokol%29%2c%20%c3%a7ok%20say%c4%b1da%20switch%20bulunan%20networklerde%20y%c3%b6netimi%20kolayla%c5%9ft%c4%b1rmak%20i%c3%a7in%20kullan%c4%b1lan%20bir%20protokold%c3%bcr.%20Server-Client%20mant%c4%b1%c4%9f%c4%b1yla%20%c3%a7al%c4%b1%c5%9f%c4%b1r%20ve%20Cisco%20taraf%c4%b1ndan%20geli%c5%9ftirilmi%c5%9ftir.%20Bu%20protokol%c3%bcn%20amac%c4%b1%20%c3%a7ok%20fazla%20switch%20bulunan%20networklerde%20tek%20tek%20vlanlar%c4%b1%20ilgili%20switchlere%20tan%c4%b1mlamaktansa%20merkezi%20bir%20yerden%20vlanlar%c4%b1%20da%c4%9f%c4%b1tmay%c4%b1%20sa%c4%9flar.%20Bu%20vlanlar%20trunk%20portlar%20%c3%bczerinden%20da%c4%9f%c4%b1t%c4%b1l%c4%b1r.%20Senkron%20%c3%a7al%c4%b1%c5%9f%c4%b1r%20yani%20merkezde%20bir%20vlan%20olu%c5%9fturuldu%c4%9funda%20veya%20silindi%c4%9finde%20bu%20de%c4%9fi%c5%9fiklik%20ilgili%20switchlere%20de%20da%c4%9f%c4%b1t%c4%b1l%c4%b1r.%20Vlanlar%c4%b1%20da%c4%9f%c4%b1t%c4%b1lmas%c4%b1%20i%c5%9flemi%20i%c3%a7in%20cihazlar%c4%b1n%20VTP%20etki%20alan%c4%b1nda%20olmas%c4%b1%20gerekir.%20Bunun%20i%c3%a7in%20bir%20Domain%20ve%20Password%26rsquo%3be%20ihtiya%c3%a7%20duyulur.%3c%2fp%3e" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvtp%2fvtp%2f&name=VTP%20Protokol%c3%bc&description=VTP%20%28Vlan%20Trunking%20Protokol%29%2c%20%c3%a7ok%20say%c4%b1da%20switch%20bulunan%20networklerde%20y%c3%b6netimi%20kolayla%c5%9ft%c4%b1rmak%20i%c3%a7in%20kullan%c4%b1lan%20bir%20protokold%c3%bcr.%20Server-Client%20mant%c4%b1%c4%9f%c4%b1yla%20%c3%a7al%c4%b1%c5%9f%c4%b1r%20ve%20Cisco%20taraf%c4%b1ndan%20geli%c5%9ftirilmi%c5%9ftir.%20Bu%20protokol%c3%bcn%20amac%c4%b1%20%c3%a7ok%20fazla%20switch%20bulunan%20networklerde%20tek%20tek%20vlanlar%c4%b1%20ilgili%20switchlere%20tan%c4%b1mlamaktansa%20merkezi%20bir%20yerden%20vlanlar%c4%b1%20da%c4%9f%c4%b1tmay%c4%b1%20sa%c4%9flar.%20Bu%20vlanlar%20trunk%20portlar%20%c3%bczerinden%20da%c4%9f%c4%b1t%c4%b1l%c4%b1r.%20Senkron%20%c3%a7al%c4%b1%c5%9f%c4%b1r%20yani%20merkezde%20bir%20vlan%20olu%c5%9fturuldu%c4%9funda%20veya%20silindi%c4%9finde%20bu%20de%c4%9fi%c5%9fiklik%20ilgili%20switchlere%20de%20da%c4%9f%c4%b1t%c4%b1l%c4%b1r.%20Vlanlar%c4%b1%20da%c4%9f%c4%b1t%c4%b1lmas%c4%b1%20i%c5%9flemi%20i%c3%a7in%20cihazlar%c4%b1n%20VTP%20etki%20alan%c4%b1nda%20olmas%c4%b1%20gerekir." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

@@ -18,7 +18,7 @@
   <meta property="og:site_name" content="ittechnetworkk">
   <meta property="og:title" content="OSPF Konfigürasyonu">
   <meta property="og:description" content="OSPF (Open Short Path First), dinamik bir yönlendirme protokolüdür. OSPF bir Link State Routing protokolüdür. Bundan dolayı network haritasının tamamına hakimdir Bazı özellikleri şöyledir:
-Açık kaynaklıdır, SPF(Shortest Path First) algoritmasını kullanır, Classless (Sınıfsız) bir protokoldür, CIDR (Classless Inter-Domain Routing), VLSM(Veriable Length Subnet Masking) destekler, Load balancing destekler, Güncelleme süresi hızlıdır, Administrative Distance değeri 110’dur, Area yapısı ile ölçeklenebilir, Kimlik doğrulamayı destekler (MD5) Metrik değeri olarak Cost kullanır. Multicast 224.0.0.5 ve 224.0.0.6 adreslerinden yayın yapar. 89 portunu kullanır. OSPF Paket Tipleri:">
+Açık kaynaklıdır, SPF(Shortest Path First) algoritmasını kullanır, Classless (Sınıfsız) bir protokoldür, CIDR (Classless Inter-Domain Routing), VLSM(Veriable Length Subnet Masking) destekler, Load balancing destekler, Güncelleme süresi hızlıdır, Administrative Distance değeri 110’dur, Area yapısı ile ölçeklenebilir, Kimlik doğrulamayı destekler (MD5) Metrik değeri olarak Cost kullanır. Multicast 224.0.0.5 ve 224.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -32,14 +32,19 @@ Açık kaynaklıdır, SPF(Shortest Path First) algoritmasını kullanır, Classl
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="OSPF Konfigürasyonu">
   <meta name="twitter:description" content="OSPF (Open Short Path First), dinamik bir yönlendirme protokolüdür. OSPF bir Link State Routing protokolüdür. Bundan dolayı network haritasının tamamına hakimdir Bazı özellikleri şöyledir:
-Açık kaynaklıdır, SPF(Shortest Path First) algoritmasını kullanır, Classless (Sınıfsız) bir protokoldür, CIDR (Classless Inter-Domain Routing), VLSM(Veriable Length Subnet Masking) destekler, Load balancing destekler, Güncelleme süresi hızlıdır, Administrative Distance değeri 110’dur, Area yapısı ile ölçeklenebilir, Kimlik doğrulamayı destekler (MD5) Metrik değeri olarak Cost kullanır. Multicast 224.0.0.5 ve 224.0.0.6 adreslerinden yayın yapar. 89 portunu kullanır. OSPF Paket Tipleri:">
+Açık kaynaklıdır, SPF(Shortest Path First) algoritmasını kullanır, Classless (Sınıfsız) bir protokoldür, CIDR (Classless Inter-Domain Routing), VLSM(Veriable Length Subnet Masking) destekler, Load balancing destekler, Güncelleme süresi hızlıdır, Administrative Distance değeri 110’dur, Area yapısı ile ölçeklenebilir, Kimlik doğrulamayı destekler (MD5) Metrik değeri olarak Cost kullanır. Multicast 224.0.0.5 ve 224.">
 
   
   
     
   
   
-  <link rel="stylesheet" href="https://ittechnetworkk.github.io/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+  
+  
+  <link rel="stylesheet" href="https://ittechnetworkk.github.io/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg==">
+  
 
   
   
@@ -159,7 +164,7 @@ Açık kaynaklıdır, SPF(Shortest Path First) algoritmasını kullanır, Classl
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfconfiguration%2fospf-configuration%2f&name=OSPF%20Konfig%c3%bcrasyonu&description=%3cp%3eOSPF%20%28Open%20Short%20Path%20First%29%2c%20dinamik%20bir%20y%c3%b6nlendirme%20protokol%c3%bcd%c3%bcr.%20OSPF%20bir%20Link%20State%20Routing%20protokol%c3%bcd%c3%bcr.%20Bundan%20dolay%c4%b1%20network%20haritas%c4%b1n%c4%b1n%20tamam%c4%b1na%20hakimdir%20Baz%c4%b1%20%c3%b6zellikleri%20%c5%9f%c3%b6yledir%3a%3c%2fp%3e%0a%3cul%3e%0a%3cli%3eA%c3%a7%c4%b1k%20kaynakl%c4%b1d%c4%b1r%2c%3c%2fli%3e%0a%3cli%3eSPF%28Shortest%20Path%20First%29%20algoritmas%c4%b1n%c4%b1%20kullan%c4%b1r%2c%3c%2fli%3e%0a%3cli%3eClassless%20%28S%c4%b1n%c4%b1fs%c4%b1z%29%20bir%20protokold%c3%bcr%2c%3c%2fli%3e%0a%3cli%3eCIDR%20%28Classless%20Inter-Domain%20Routing%29%2c%20VLSM%28Veriable%20Length%20Subnet%20Masking%29%20destekler%2c%3c%2fli%3e%0a%3cli%3eLoad%20balancing%20destekler%2c%3c%2fli%3e%0a%3cli%3eG%c3%bcncelleme%20s%c3%bcresi%20h%c4%b1zl%c4%b1d%c4%b1r%2c%3c%2fli%3e%0a%3cli%3eAdministrative%20Distance%20de%c4%9feri%20110%26rsquo%3bdur%2c%3c%2fli%3e%0a%3cli%3eArea%20yap%c4%b1s%c4%b1%20ile%20%c3%b6l%c3%a7eklenebilir%2c%3c%2fli%3e%0a%3cli%3eKimlik%20do%c4%9frulamay%c4%b1%20destekler%20%28MD5%29%3c%2fli%3e%0a%3cli%3eMetrik%20de%c4%9feri%20olarak%20Cost%20kullan%c4%b1r.%3c%2fli%3e%0a%3cli%3eMulticast%20224.0.0.5%20ve%20224.0.0.6%20adreslerinden%20yay%c4%b1n%20yapar.%3c%2fli%3e%0a%3cli%3e89%20portunu%20kullan%c4%b1r.%3c%2fli%3e%0a%3c%2ful%3e%0a%3cp%3e%3cstrong%3eOSPF%20Paket%20Tipleri%3a%3c%2fstrong%3e%3c%2fp%3e" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfconfiguration%2fospf-configuration%2f&name=OSPF%20Konfig%c3%bcrasyonu&description=OSPF%20%28Open%20Short%20Path%20First%29%2c%20dinamik%20bir%20y%c3%b6nlendirme%20protokol%c3%bcd%c3%bcr.%20OSPF%20bir%20Link%20State%20Routing%20protokol%c3%bcd%c3%bcr.%20Bundan%20dolay%c4%b1%20network%20haritas%c4%b1n%c4%b1n%20tamam%c4%b1na%20hakimdir%20Baz%c4%b1%20%c3%b6zellikleri%20%c5%9f%c3%b6yledir%3a%0aA%c3%a7%c4%b1k%20kaynakl%c4%b1d%c4%b1r%2c%20SPF%28Shortest%20Path%20First%29%20algoritmas%c4%b1n%c4%b1%20kullan%c4%b1r%2c%20Classless%20%28S%c4%b1n%c4%b1fs%c4%b1z%29%20bir%20protokold%c3%bcr%2c%20CIDR%20%28Classless%20Inter-Domain%20Routing%29%2c%20VLSM%28Veriable%20Length%20Subnet%20Masking%29%20destekler%2c%20Load%20balancing%20destekler%2c%20G%c3%bcncelleme%20s%c3%bcresi%20h%c4%b1zl%c4%b1d%c4%b1r%2c%20Administrative%20Distance%20de%c4%9feri%20110%26rsquo%3bdur%2c%20Area%20yap%c4%b1s%c4%b1%20ile%20%c3%b6l%c3%a7eklenebilir%2c%20Kimlik%20do%c4%9frulamay%c4%b1%20destekler%20%28MD5%29%20Metrik%20de%c4%9feri%20olarak%20Cost%20kullan%c4%b1r.%20Multicast%20224.0.0.5%20ve%20224." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -538,7 +543,7 @@ Default Route&rsquo;u duyurmak için aşağıdaki komut kullanılır:
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfconfiguration%2fospf-configuration%2f&name=OSPF%20Konfig%c3%bcrasyonu&description=%3cp%3eOSPF%20%28Open%20Short%20Path%20First%29%2c%20dinamik%20bir%20y%c3%b6nlendirme%20protokol%c3%bcd%c3%bcr.%20OSPF%20bir%20Link%20State%20Routing%20protokol%c3%bcd%c3%bcr.%20Bundan%20dolay%c4%b1%20network%20haritas%c4%b1n%c4%b1n%20tamam%c4%b1na%20hakimdir%20Baz%c4%b1%20%c3%b6zellikleri%20%c5%9f%c3%b6yledir%3a%3c%2fp%3e%0a%3cul%3e%0a%3cli%3eA%c3%a7%c4%b1k%20kaynakl%c4%b1d%c4%b1r%2c%3c%2fli%3e%0a%3cli%3eSPF%28Shortest%20Path%20First%29%20algoritmas%c4%b1n%c4%b1%20kullan%c4%b1r%2c%3c%2fli%3e%0a%3cli%3eClassless%20%28S%c4%b1n%c4%b1fs%c4%b1z%29%20bir%20protokold%c3%bcr%2c%3c%2fli%3e%0a%3cli%3eCIDR%20%28Classless%20Inter-Domain%20Routing%29%2c%20VLSM%28Veriable%20Length%20Subnet%20Masking%29%20destekler%2c%3c%2fli%3e%0a%3cli%3eLoad%20balancing%20destekler%2c%3c%2fli%3e%0a%3cli%3eG%c3%bcncelleme%20s%c3%bcresi%20h%c4%b1zl%c4%b1d%c4%b1r%2c%3c%2fli%3e%0a%3cli%3eAdministrative%20Distance%20de%c4%9feri%20110%26rsquo%3bdur%2c%3c%2fli%3e%0a%3cli%3eArea%20yap%c4%b1s%c4%b1%20ile%20%c3%b6l%c3%a7eklenebilir%2c%3c%2fli%3e%0a%3cli%3eKimlik%20do%c4%9frulamay%c4%b1%20destekler%20%28MD5%29%3c%2fli%3e%0a%3cli%3eMetrik%20de%c4%9feri%20olarak%20Cost%20kullan%c4%b1r.%3c%2fli%3e%0a%3cli%3eMulticast%20224.0.0.5%20ve%20224.0.0.6%20adreslerinden%20yay%c4%b1n%20yapar.%3c%2fli%3e%0a%3cli%3e89%20portunu%20kullan%c4%b1r.%3c%2fli%3e%0a%3c%2ful%3e%0a%3cp%3e%3cstrong%3eOSPF%20Paket%20Tipleri%3a%3c%2fstrong%3e%3c%2fp%3e" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfconfiguration%2fospf-configuration%2f&name=OSPF%20Konfig%c3%bcrasyonu&description=OSPF%20%28Open%20Short%20Path%20First%29%2c%20dinamik%20bir%20y%c3%b6nlendirme%20protokol%c3%bcd%c3%bcr.%20OSPF%20bir%20Link%20State%20Routing%20protokol%c3%bcd%c3%bcr.%20Bundan%20dolay%c4%b1%20network%20haritas%c4%b1n%c4%b1n%20tamam%c4%b1na%20hakimdir%20Baz%c4%b1%20%c3%b6zellikleri%20%c5%9f%c3%b6yledir%3a%0aA%c3%a7%c4%b1k%20kaynakl%c4%b1d%c4%b1r%2c%20SPF%28Shortest%20Path%20First%29%20algoritmas%c4%b1n%c4%b1%20kullan%c4%b1r%2c%20Classless%20%28S%c4%b1n%c4%b1fs%c4%b1z%29%20bir%20protokold%c3%bcr%2c%20CIDR%20%28Classless%20Inter-Domain%20Routing%29%2c%20VLSM%28Veriable%20Length%20Subnet%20Masking%29%20destekler%2c%20Load%20balancing%20destekler%2c%20G%c3%bcncelleme%20s%c3%bcresi%20h%c4%b1zl%c4%b1d%c4%b1r%2c%20Administrative%20Distance%20de%c4%9feri%20110%26rsquo%3bdur%2c%20Area%20yap%c4%b1s%c4%b1%20ile%20%c3%b6l%c3%a7eklenebilir%2c%20Kimlik%20do%c4%9frulamay%c4%b1%20destekler%20%28MD5%29%20Metrik%20de%c4%9feri%20olarak%20Cost%20kullan%c4%b1r.%20Multicast%20224.0.0.5%20ve%20224." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

@@ -7,397 +7,397 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Fri, 10 Jan 2025 11:43:33 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jan 2025 05:03:17 +0100</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>https://ittechnetworkk.github.io/tags/linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Network</title>
       <link>https://ittechnetworkk.github.io/tags/network/</link>
-      <pubDate>Fri, 10 Jan 2025 11:43:33 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/network/</guid>
       <description></description>
     </item>
     <item>
       <title>Routing</title>
       <link>https://ittechnetworkk.github.io/tags/routing/</link>
-      <pubDate>Fri, 10 Jan 2025 11:43:33 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/routing/</guid>
       <description></description>
     </item>
     <item>
       <title>Vlan</title>
       <link>https://ittechnetworkk.github.io/tags/vlan/</link>
-      <pubDate>Fri, 10 Jan 2025 11:43:33 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/vlan/</guid>
       <description></description>
     </item>
     <item>
       <title>Cisco</title>
       <link>https://ittechnetworkk.github.io/tags/cisco/</link>
-      <pubDate>Fri, 03 Jan 2025 23:31:39 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/cisco/</guid>
       <description></description>
     </item>
     <item>
       <title>CML</title>
       <link>https://ittechnetworkk.github.io/tags/cml/</link>
-      <pubDate>Fri, 03 Jan 2025 23:31:39 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/cml/</guid>
       <description></description>
     </item>
     <item>
       <title>Firewall</title>
       <link>https://ittechnetworkk.github.io/tags/firewall/</link>
-      <pubDate>Fri, 03 Jan 2025 23:00:44 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/firewall/</guid>
       <description></description>
     </item>
     <item>
       <title>Iot</title>
       <link>https://ittechnetworkk.github.io/tags/iot/</link>
-      <pubDate>Fri, 03 Jan 2025 23:00:44 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/iot/</guid>
       <description></description>
     </item>
     <item>
       <title>Ipfire</title>
       <link>https://ittechnetworkk.github.io/tags/ipfire/</link>
-      <pubDate>Fri, 03 Jan 2025 23:00:44 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/ipfire/</guid>
       <description></description>
     </item>
     <item>
       <title>Nanopi</title>
       <link>https://ittechnetworkk.github.io/tags/nanopi/</link>
-      <pubDate>Fri, 03 Jan 2025 23:00:44 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/nanopi/</guid>
       <description></description>
     </item>
     <item>
       <title>Asa</title>
       <link>https://ittechnetworkk.github.io/tags/asa/</link>
-      <pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/asa/</guid>
       <description></description>
     </item>
     <item>
       <title>Proxmox</title>
       <link>https://ittechnetworkk.github.io/tags/proxmox/</link>
-      <pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/proxmox/</guid>
       <description></description>
     </item>
     <item>
       <title>Server</title>
       <link>https://ittechnetworkk.github.io/tags/server/</link>
-      <pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/server/</guid>
       <description></description>
     </item>
     <item>
       <title>Virtualization</title>
       <link>https://ittechnetworkk.github.io/tags/virtualization/</link>
-      <pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/virtualization/</guid>
       <description></description>
     </item>
     <item>
       <title>SSH</title>
       <link>https://ittechnetworkk.github.io/tags/ssh/</link>
-      <pubDate>Sun, 01 Dec 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/ssh/</guid>
       <description></description>
     </item>
     <item>
       <title>Gre</title>
       <link>https://ittechnetworkk.github.io/tags/gre/</link>
-      <pubDate>Fri, 22 Nov 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/gre/</guid>
       <description></description>
     </item>
     <item>
       <title>Ipsec</title>
       <link>https://ittechnetworkk.github.io/tags/ipsec/</link>
-      <pubDate>Fri, 22 Nov 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/ipsec/</guid>
       <description></description>
     </item>
     <item>
       <title>Juniper</title>
       <link>https://ittechnetworkk.github.io/tags/juniper/</link>
-      <pubDate>Fri, 22 Nov 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/juniper/</guid>
       <description></description>
     </item>
     <item>
       <title>Junos</title>
       <link>https://ittechnetworkk.github.io/tags/junos/</link>
-      <pubDate>Fri, 22 Nov 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/junos/</guid>
       <description></description>
     </item>
     <item>
       <title>Tunnelling</title>
       <link>https://ittechnetworkk.github.io/tags/tunnelling/</link>
-      <pubDate>Fri, 22 Nov 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/tunnelling/</guid>
       <description></description>
     </item>
     <item>
       <title>Dhcp</title>
       <link>https://ittechnetworkk.github.io/tags/dhcp/</link>
-      <pubDate>Thu, 07 Nov 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/dhcp/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Linux</title>
-      <link>https://ittechnetworkk.github.io/tags/linux/</link>
-      <pubDate>Thu, 07 Nov 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/tags/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Ubuntu</title>
       <link>https://ittechnetworkk.github.io/tags/ubuntu/</link>
-      <pubDate>Thu, 07 Nov 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/ubuntu/</guid>
       <description></description>
     </item>
     <item>
       <title>Http</title>
       <link>https://ittechnetworkk.github.io/tags/http/</link>
-      <pubDate>Fri, 11 Oct 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/http/</guid>
       <description></description>
     </item>
     <item>
       <title>Updog</title>
       <link>https://ittechnetworkk.github.io/tags/updog/</link>
-      <pubDate>Fri, 11 Oct 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/updog/</guid>
       <description></description>
     </item>
     <item>
       <title>Windows</title>
       <link>https://ittechnetworkk.github.io/tags/windows/</link>
-      <pubDate>Thu, 10 Oct 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/windows/</guid>
       <description></description>
     </item>
     <item>
       <title>DMVPN</title>
       <link>https://ittechnetworkk.github.io/tags/dmvpn/</link>
-      <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/dmvpn/</guid>
       <description></description>
     </item>
     <item>
       <title>EIGRP</title>
       <link>https://ittechnetworkk.github.io/tags/eigrp/</link>
-      <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/eigrp/</guid>
       <description></description>
     </item>
     <item>
       <title>Ospf</title>
       <link>https://ittechnetworkk.github.io/tags/ospf/</link>
-      <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/ospf/</guid>
       <description></description>
     </item>
     <item>
       <title>Rip</title>
       <link>https://ittechnetworkk.github.io/tags/rip/</link>
-      <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/rip/</guid>
       <description></description>
     </item>
     <item>
       <title>Vpn</title>
       <link>https://ittechnetworkk.github.io/tags/vpn/</link>
-      <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/vpn/</guid>
       <description></description>
     </item>
     <item>
       <title>Pnetlab</title>
       <link>https://ittechnetworkk.github.io/tags/pnetlab/</link>
-      <pubDate>Thu, 29 Aug 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/pnetlab/</guid>
       <description></description>
     </item>
     <item>
       <title>Troubleshooting</title>
       <link>https://ittechnetworkk.github.io/tags/troubleshooting/</link>
-      <pubDate>Sun, 28 Jul 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/troubleshooting/</guid>
       <description></description>
     </item>
     <item>
       <title>Gpg</title>
       <link>https://ittechnetworkk.github.io/tags/gpg/</link>
-      <pubDate>Tue, 23 Jul 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/gpg/</guid>
       <description></description>
     </item>
     <item>
       <title>Logging</title>
       <link>https://ittechnetworkk.github.io/tags/logging/</link>
-      <pubDate>Mon, 15 Jul 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/logging/</guid>
       <description></description>
     </item>
     <item>
       <title>Raspberrypi</title>
       <link>https://ittechnetworkk.github.io/tags/raspberrypi/</link>
-      <pubDate>Mon, 15 Jul 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/raspberrypi/</guid>
       <description></description>
     </item>
     <item>
       <title>Syslog</title>
       <link>https://ittechnetworkk.github.io/tags/syslog/</link>
-      <pubDate>Mon, 15 Jul 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/syslog/</guid>
       <description></description>
     </item>
     <item>
       <title>Cable</title>
       <link>https://ittechnetworkk.github.io/tags/cable/</link>
-      <pubDate>Sun, 07 Jul 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/cable/</guid>
       <description></description>
     </item>
     <item>
       <title>Switch</title>
       <link>https://ittechnetworkk.github.io/tags/switch/</link>
-      <pubDate>Wed, 26 Jun 2024 17:53:48 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/switch/</guid>
       <description></description>
     </item>
     <item>
       <title>Ipv6</title>
       <link>https://ittechnetworkk.github.io/tags/ipv6/</link>
-      <pubDate>Tue, 25 Jun 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/ipv6/</guid>
       <description></description>
     </item>
     <item>
       <title>Router</title>
       <link>https://ittechnetworkk.github.io/tags/router/</link>
-      <pubDate>Sun, 09 Jun 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/router/</guid>
       <description></description>
     </item>
     <item>
       <title>Dual-Stack</title>
       <link>https://ittechnetworkk.github.io/tags/dual-stack/</link>
-      <pubDate>Thu, 06 Jun 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/dual-stack/</guid>
       <description></description>
     </item>
     <item>
       <title>Dietpi</title>
       <link>https://ittechnetworkk.github.io/tags/dietpi/</link>
-      <pubDate>Sun, 12 May 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/dietpi/</guid>
       <description></description>
     </item>
     <item>
       <title>Portsecurity</title>
       <link>https://ittechnetworkk.github.io/tags/portsecurity/</link>
-      <pubDate>Sun, 21 Apr 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/portsecurity/</guid>
       <description></description>
     </item>
     <item>
       <title>Multilink</title>
       <link>https://ittechnetworkk.github.io/tags/multilink/</link>
-      <pubDate>Sun, 14 Apr 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/multilink/</guid>
       <description></description>
     </item>
     <item>
       <title>Ppp</title>
       <link>https://ittechnetworkk.github.io/tags/ppp/</link>
-      <pubDate>Sun, 14 Apr 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/ppp/</guid>
       <description></description>
     </item>
     <item>
       <title>IPv4</title>
       <link>https://ittechnetworkk.github.io/tags/ipv4/</link>
-      <pubDate>Sun, 07 Apr 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/ipv4/</guid>
       <description></description>
     </item>
     <item>
       <title>Authentication</title>
       <link>https://ittechnetworkk.github.io/tags/authentication/</link>
-      <pubDate>Sun, 31 Mar 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/authentication/</guid>
       <description></description>
     </item>
     <item>
       <title>Etherchannel</title>
       <link>https://ittechnetworkk.github.io/tags/etherchannel/</link>
-      <pubDate>Fri, 22 Mar 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/etherchannel/</guid>
       <description></description>
     </item>
     <item>
       <title>LACP</title>
       <link>https://ittechnetworkk.github.io/tags/lacp/</link>
-      <pubDate>Fri, 22 Mar 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/lacp/</guid>
       <description></description>
     </item>
     <item>
       <title>PaGP</title>
       <link>https://ittechnetworkk.github.io/tags/pagp/</link>
-      <pubDate>Fri, 22 Mar 2024 22:57:40 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/pagp/</guid>
       <description></description>
     </item>
     <item>
       <title>CDP</title>
       <link>https://ittechnetworkk.github.io/tags/cdp/</link>
-      <pubDate>Thu, 08 Feb 2024 23:39:19 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/cdp/</guid>
       <description></description>
     </item>
     <item>
       <title>LLDP</title>
       <link>https://ittechnetworkk.github.io/tags/lldp/</link>
-      <pubDate>Thu, 08 Feb 2024 23:39:19 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/lldp/</guid>
       <description></description>
     </item>
     <item>
       <title>Relay</title>
       <link>https://ittechnetworkk.github.io/tags/relay/</link>
-      <pubDate>Sun, 14 Jan 2024 23:43:35 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/relay/</guid>
       <description></description>
     </item>
     <item>
       <title>HSRP</title>
       <link>https://ittechnetworkk.github.io/tags/hsrp/</link>
-      <pubDate>Sun, 07 Jan 2024 23:45:22 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/hsrp/</guid>
       <description></description>
     </item>
     <item>
       <title>Snooping</title>
       <link>https://ittechnetworkk.github.io/tags/snooping/</link>
-      <pubDate>Sun, 31 Dec 2023 23:44:03 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/snooping/</guid>
       <description></description>
     </item>
     <item>
       <title>VTP</title>
       <link>https://ittechnetworkk.github.io/tags/vtp/</link>
-      <pubDate>Sun, 24 Dec 2023 23:46:15 +0100</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/vtp/</guid>
       <description></description>
     </item>

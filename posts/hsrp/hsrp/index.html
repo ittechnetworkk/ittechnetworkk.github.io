@@ -18,7 +18,7 @@
   <meta property="og:site_name" content="ittechnetworkk">
   <meta property="og:title" content="HSRP Protokolü">
   <meta property="og:description" content="HSRP (Hot Standby Router Protocol), router yedekliliğini sağlamak amacıyla Cisco tarafından geliştirilmiş bir protokoldür. Birden fazla Router bulunan networklerde aktif olarak belirtilen Router’ın çalışmaması durumunda yedek olarak bekleyen Router’ın devreye girmesi prensibiyle çalışır. Bunun için sanal bir ortak IP adresi oluşturulur ve PC’lere Gateway olarak bu IP adresi verilir. Bu IP adresine giden paketler de aktif olan Router’a yönlendirilir. Bu sayede iletişim sağlanır.
-Router’lar birbirlerine 3 saniyede bir aktif olup olmadıklarını öğrendikleri Hello paketi yollarlar. Eğer aktif Router’dan 10 saniye cevap gelmezse yedek Router devreye girer, paketler o Router üzerinden iletilir. Bu değerler isteğe bağlı değiştirilebilir.">
+Router’lar birbirlerine 3 saniyede bir aktif olup olmadıklarını öğrendikleri Hello paketi yollarlar.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -31,14 +31,19 @@ Router’lar birbirlerine 3 saniyede bir aktif olup olmadıklarını öğrendikl
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="HSRP Protokolü">
   <meta name="twitter:description" content="HSRP (Hot Standby Router Protocol), router yedekliliğini sağlamak amacıyla Cisco tarafından geliştirilmiş bir protokoldür. Birden fazla Router bulunan networklerde aktif olarak belirtilen Router’ın çalışmaması durumunda yedek olarak bekleyen Router’ın devreye girmesi prensibiyle çalışır. Bunun için sanal bir ortak IP adresi oluşturulur ve PC’lere Gateway olarak bu IP adresi verilir. Bu IP adresine giden paketler de aktif olan Router’a yönlendirilir. Bu sayede iletişim sağlanır.
-Router’lar birbirlerine 3 saniyede bir aktif olup olmadıklarını öğrendikleri Hello paketi yollarlar. Eğer aktif Router’dan 10 saniye cevap gelmezse yedek Router devreye girer, paketler o Router üzerinden iletilir. Bu değerler isteğe bağlı değiştirilebilir.">
+Router’lar birbirlerine 3 saniyede bir aktif olup olmadıklarını öğrendikleri Hello paketi yollarlar.">
 
   
   
     
   
   
-  <link rel="stylesheet" href="https://ittechnetworkk.github.io/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+  
+  
+  <link rel="stylesheet" href="https://ittechnetworkk.github.io/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg==">
+  
 
   
   
@@ -158,7 +163,7 @@ Router’lar birbirlerine 3 saniyede bir aktif olup olmadıklarını öğrendikl
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fhsrp%2fhsrp%2f&name=HSRP%20Protokol%c3%bc&description=%3cp%3eHSRP%20%28Hot%20Standby%20Router%20Protocol%29%2c%20router%20yedeklili%c4%9fini%20sa%c4%9flamak%20amac%c4%b1yla%20Cisco%20taraf%c4%b1ndan%20geli%c5%9ftirilmi%c5%9f%20bir%20protokold%c3%bcr.%20Birden%20fazla%20Router%20bulunan%20networklerde%20aktif%20olarak%20belirtilen%20Router%26rsquo%3b%c4%b1n%20%c3%a7al%c4%b1%c5%9fmamas%c4%b1%20durumunda%20yedek%20olarak%20bekleyen%20Router%26rsquo%3b%c4%b1n%20devreye%20girmesi%20prensibiyle%20%c3%a7al%c4%b1%c5%9f%c4%b1r.%20Bunun%20i%c3%a7in%20sanal%20bir%20ortak%20IP%20adresi%20olu%c5%9fturulur%20ve%20PC%26rsquo%3blere%20Gateway%20olarak%20bu%20IP%20adresi%20verilir.%20Bu%20IP%20adresine%20giden%20paketler%20de%20aktif%20olan%20Router%26rsquo%3ba%20y%c3%b6nlendirilir.%20Bu%20sayede%20ileti%c5%9fim%20sa%c4%9flan%c4%b1r.%3c%2fp%3e%0a%3cp%3eRouter%26rsquo%3blar%20birbirlerine%203%20saniyede%20bir%20aktif%20olup%20olmad%c4%b1klar%c4%b1n%c4%b1%20%c3%b6%c4%9frendikleri%20Hello%20paketi%20yollarlar.%20E%c4%9fer%20aktif%20Router%26rsquo%3bdan%2010%20saniye%20cevap%20gelmezse%20yedek%20Router%20devreye%20girer%2c%20paketler%20o%20Router%20%c3%bczerinden%20iletilir.%20Bu%20de%c4%9ferler%20iste%c4%9fe%20ba%c4%9fl%c4%b1%20de%c4%9fi%c5%9ftirilebilir.%3c%2fp%3e" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fhsrp%2fhsrp%2f&name=HSRP%20Protokol%c3%bc&description=HSRP%20%28Hot%20Standby%20Router%20Protocol%29%2c%20router%20yedeklili%c4%9fini%20sa%c4%9flamak%20amac%c4%b1yla%20Cisco%20taraf%c4%b1ndan%20geli%c5%9ftirilmi%c5%9f%20bir%20protokold%c3%bcr.%20Birden%20fazla%20Router%20bulunan%20networklerde%20aktif%20olarak%20belirtilen%20Router%26rsquo%3b%c4%b1n%20%c3%a7al%c4%b1%c5%9fmamas%c4%b1%20durumunda%20yedek%20olarak%20bekleyen%20Router%26rsquo%3b%c4%b1n%20devreye%20girmesi%20prensibiyle%20%c3%a7al%c4%b1%c5%9f%c4%b1r.%20Bunun%20i%c3%a7in%20sanal%20bir%20ortak%20IP%20adresi%20olu%c5%9fturulur%20ve%20PC%26rsquo%3blere%20Gateway%20olarak%20bu%20IP%20adresi%20verilir.%20Bu%20IP%20adresine%20giden%20paketler%20de%20aktif%20olan%20Router%26rsquo%3ba%20y%c3%b6nlendirilir.%20Bu%20sayede%20ileti%c5%9fim%20sa%c4%9flan%c4%b1r.%0aRouter%26rsquo%3blar%20birbirlerine%203%20saniyede%20bir%20aktif%20olup%20olmad%c4%b1klar%c4%b1n%c4%b1%20%c3%b6%c4%9frendikleri%20Hello%20paketi%20yollarlar." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -414,7 +419,7 @@ Yapmak istediğimiz R1&rsquo;di.</p>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fhsrp%2fhsrp%2f&name=HSRP%20Protokol%c3%bc&description=%3cp%3eHSRP%20%28Hot%20Standby%20Router%20Protocol%29%2c%20router%20yedeklili%c4%9fini%20sa%c4%9flamak%20amac%c4%b1yla%20Cisco%20taraf%c4%b1ndan%20geli%c5%9ftirilmi%c5%9f%20bir%20protokold%c3%bcr.%20Birden%20fazla%20Router%20bulunan%20networklerde%20aktif%20olarak%20belirtilen%20Router%26rsquo%3b%c4%b1n%20%c3%a7al%c4%b1%c5%9fmamas%c4%b1%20durumunda%20yedek%20olarak%20bekleyen%20Router%26rsquo%3b%c4%b1n%20devreye%20girmesi%20prensibiyle%20%c3%a7al%c4%b1%c5%9f%c4%b1r.%20Bunun%20i%c3%a7in%20sanal%20bir%20ortak%20IP%20adresi%20olu%c5%9fturulur%20ve%20PC%26rsquo%3blere%20Gateway%20olarak%20bu%20IP%20adresi%20verilir.%20Bu%20IP%20adresine%20giden%20paketler%20de%20aktif%20olan%20Router%26rsquo%3ba%20y%c3%b6nlendirilir.%20Bu%20sayede%20ileti%c5%9fim%20sa%c4%9flan%c4%b1r.%3c%2fp%3e%0a%3cp%3eRouter%26rsquo%3blar%20birbirlerine%203%20saniyede%20bir%20aktif%20olup%20olmad%c4%b1klar%c4%b1n%c4%b1%20%c3%b6%c4%9frendikleri%20Hello%20paketi%20yollarlar.%20E%c4%9fer%20aktif%20Router%26rsquo%3bdan%2010%20saniye%20cevap%20gelmezse%20yedek%20Router%20devreye%20girer%2c%20paketler%20o%20Router%20%c3%bczerinden%20iletilir.%20Bu%20de%c4%9ferler%20iste%c4%9fe%20ba%c4%9fl%c4%b1%20de%c4%9fi%c5%9ftirilebilir.%3c%2fp%3e" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fhsrp%2fhsrp%2f&name=HSRP%20Protokol%c3%bc&description=HSRP%20%28Hot%20Standby%20Router%20Protocol%29%2c%20router%20yedeklili%c4%9fini%20sa%c4%9flamak%20amac%c4%b1yla%20Cisco%20taraf%c4%b1ndan%20geli%c5%9ftirilmi%c5%9f%20bir%20protokold%c3%bcr.%20Birden%20fazla%20Router%20bulunan%20networklerde%20aktif%20olarak%20belirtilen%20Router%26rsquo%3b%c4%b1n%20%c3%a7al%c4%b1%c5%9fmamas%c4%b1%20durumunda%20yedek%20olarak%20bekleyen%20Router%26rsquo%3b%c4%b1n%20devreye%20girmesi%20prensibiyle%20%c3%a7al%c4%b1%c5%9f%c4%b1r.%20Bunun%20i%c3%a7in%20sanal%20bir%20ortak%20IP%20adresi%20olu%c5%9fturulur%20ve%20PC%26rsquo%3blere%20Gateway%20olarak%20bu%20IP%20adresi%20verilir.%20Bu%20IP%20adresine%20giden%20paketler%20de%20aktif%20olan%20Router%26rsquo%3ba%20y%c3%b6nlendirilir.%20Bu%20sayede%20ileti%c5%9fim%20sa%c4%9flan%c4%b1r.%0aRouter%26rsquo%3blar%20birbirlerine%203%20saniyede%20bir%20aktif%20olup%20olmad%c4%b1klar%c4%b1n%c4%b1%20%c3%b6%c4%9frendikleri%20Hello%20paketi%20yollarlar." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

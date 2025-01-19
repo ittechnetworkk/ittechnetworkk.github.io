@@ -20,7 +20,7 @@
   <meta property="og:description" content="Static Route hedefe gitmek için manuel olarak yazılan rotadır. Static Route küçük networkler için kullanılabilir. Fakat orta ve büyük networklerde iş yükünü fazlaca artırabilir.
 Bu da diğer Dynamic Routing protokollerinden ayıran bir özelliğidir. Bu demektir ki bir networkte Dynamic Routing Protokolü çalışsa bile öncelik statik olarak yazılan rotadadır.
 Static Route Yazımı: Statik rota yazmak oldukça kolaydır. Aşağıda 2 farklı yazımı görebilirsiniz. İkisi de kullanılabilir.
-Router(config)#ipv6 route 2001:3::/64 2001:2::2 Router(config)#ipv6 route 2001:3::/64 gi0/1 Bunun anlamı; 2001:3::/64 networküne gitmek için 2001:2::2 yolunu kullan. veya yine 2001:3::/64 networküne gitmek için gi0/1 interfacesini kullan.">
+Router(config)#ipv6 route 2001:3::/64 2001:2::2 Router(config)#ipv6 route 2001:3::/64 gi0/1 Bunun anlamı; 2001:3::/64 networküne gitmek için 2001:2::2 yolunu kullan.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -35,14 +35,19 @@ Router(config)#ipv6 route 2001:3::/64 2001:2::2 Router(config)#ipv6 route 2001:3
   <meta name="twitter:description" content="Static Route hedefe gitmek için manuel olarak yazılan rotadır. Static Route küçük networkler için kullanılabilir. Fakat orta ve büyük networklerde iş yükünü fazlaca artırabilir.
 Bu da diğer Dynamic Routing protokollerinden ayıran bir özelliğidir. Bu demektir ki bir networkte Dynamic Routing Protokolü çalışsa bile öncelik statik olarak yazılan rotadadır.
 Static Route Yazımı: Statik rota yazmak oldukça kolaydır. Aşağıda 2 farklı yazımı görebilirsiniz. İkisi de kullanılabilir.
-Router(config)#ipv6 route 2001:3::/64 2001:2::2 Router(config)#ipv6 route 2001:3::/64 gi0/1 Bunun anlamı; 2001:3::/64 networküne gitmek için 2001:2::2 yolunu kullan. veya yine 2001:3::/64 networküne gitmek için gi0/1 interfacesini kullan.">
+Router(config)#ipv6 route 2001:3::/64 2001:2::2 Router(config)#ipv6 route 2001:3::/64 gi0/1 Bunun anlamı; 2001:3::/64 networküne gitmek için 2001:2::2 yolunu kullan.">
 
   
   
     
   
   
-  <link rel="stylesheet" href="https://ittechnetworkk.github.io/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg=="> 
+
+  
+  
+  
+  <link rel="stylesheet" href="https://ittechnetworkk.github.io/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg==">
+  
 
   
   
@@ -162,7 +167,7 @@ Router(config)#ipv6 route 2001:3::/64 2001:2::2 Router(config)#ipv6 route 2001:3
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv6staticrouting%2fipv6-static-routing%2f&name=IPv6%20Static%20Routing&description=%3cp%3eStatic%20Route%20hedefe%20gitmek%20i%c3%a7in%20manuel%20olarak%20yaz%c4%b1lan%20rotad%c4%b1r.%20Static%20Route%20k%c3%bc%c3%a7%c3%bck%20networkler%20i%c3%a7in%20kullan%c4%b1labilir.%20Fakat%20orta%20ve%20b%c3%bcy%c3%bck%20networklerde%20i%c5%9f%20y%c3%bck%c3%bcn%c3%bc%20fazlaca%20art%c4%b1rabilir.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fipv6-static-routing%2f1.png%22%20alt%3d%22routing%22%3e%3c%2fp%3e%0a%3cp%3eBu%20da%20di%c4%9fer%20Dynamic%20Routing%20protokollerinden%20ay%c4%b1ran%20bir%20%c3%b6zelli%c4%9fidir.%20Bu%20demektir%20ki%20bir%20networkte%20Dynamic%20Routing%20Protokol%c3%bc%20%c3%a7al%c4%b1%c5%9fsa%20bile%20%c3%b6ncelik%20statik%20olarak%20yaz%c4%b1lan%20rotadad%c4%b1r.%3c%2fp%3e%0a%3cp%3e%3cstrong%3eStatic%20Route%20Yaz%c4%b1m%c4%b1%3a%3c%2fstrong%3e%0aStatik%20rota%20yazmak%20olduk%c3%a7a%20kolayd%c4%b1r.%20A%c5%9fa%c4%9f%c4%b1da%202%20farkl%c4%b1%20yaz%c4%b1m%c4%b1%20g%c3%b6rebilirsiniz.%20%c4%b0kisi%20de%20kullan%c4%b1labilir.%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eRouter%28config%29%23ipv6%20route%202001%3a3%3a%3a%2f64%202001%3a2%3a%3a2%0aRouter%28config%29%23ipv6%20route%202001%3a3%3a%3a%2f64%20gi0%2f1%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eBunun%20anlam%c4%b1%3b%20%3cem%3e%3cstrong%3e2001%3a3%3a%3a%2f64%3c%2fstrong%3e%3c%2fem%3e%20network%c3%bcne%20gitmek%20i%c3%a7in%20%3cem%3e%3cstrong%3e2001%3a2%3a%3a2%3c%2fstrong%3e%3c%2fem%3e%20yolunu%20kullan.%0aveya%20yine%20%3cem%3e%3cstrong%3e2001%3a3%3a%3a%2f64%3c%2fstrong%3e%3c%2fem%3e%20network%c3%bcne%20gitmek%20i%c3%a7in%20%3cem%3e%3cstrong%3egi0%2f1%3c%2fstrong%3e%3c%2fem%3e%20interfacesini%20kullan.%3c%2fp%3e" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv6staticrouting%2fipv6-static-routing%2f&name=IPv6%20Static%20Routing&description=Static%20Route%20hedefe%20gitmek%20i%c3%a7in%20manuel%20olarak%20yaz%c4%b1lan%20rotad%c4%b1r.%20Static%20Route%20k%c3%bc%c3%a7%c3%bck%20networkler%20i%c3%a7in%20kullan%c4%b1labilir.%20Fakat%20orta%20ve%20b%c3%bcy%c3%bck%20networklerde%20i%c5%9f%20y%c3%bck%c3%bcn%c3%bc%20fazlaca%20art%c4%b1rabilir.%0aBu%20da%20di%c4%9fer%20Dynamic%20Routing%20protokollerinden%20ay%c4%b1ran%20bir%20%c3%b6zelli%c4%9fidir.%20Bu%20demektir%20ki%20bir%20networkte%20Dynamic%20Routing%20Protokol%c3%bc%20%c3%a7al%c4%b1%c5%9fsa%20bile%20%c3%b6ncelik%20statik%20olarak%20yaz%c4%b1lan%20rotadad%c4%b1r.%0aStatic%20Route%20Yaz%c4%b1m%c4%b1%3a%20Statik%20rota%20yazmak%20olduk%c3%a7a%20kolayd%c4%b1r.%20A%c5%9fa%c4%9f%c4%b1da%202%20farkl%c4%b1%20yaz%c4%b1m%c4%b1%20g%c3%b6rebilirsiniz.%20%c4%b0kisi%20de%20kullan%c4%b1labilir.%0aRouter%28config%29%23ipv6%20route%202001%3a3%3a%3a%2f64%202001%3a2%3a%3a2%20Router%28config%29%23ipv6%20route%202001%3a3%3a%3a%2f64%20gi0%2f1%20Bunun%20anlam%c4%b1%3b%202001%3a3%3a%3a%2f64%20network%c3%bcne%20gitmek%20i%c3%a7in%202001%3a2%3a%3a2%20yolunu%20kullan." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -498,7 +503,7 @@ L   FF00::/8 [0/0]
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv6staticrouting%2fipv6-static-routing%2f&name=IPv6%20Static%20Routing&description=%3cp%3eStatic%20Route%20hedefe%20gitmek%20i%c3%a7in%20manuel%20olarak%20yaz%c4%b1lan%20rotad%c4%b1r.%20Static%20Route%20k%c3%bc%c3%a7%c3%bck%20networkler%20i%c3%a7in%20kullan%c4%b1labilir.%20Fakat%20orta%20ve%20b%c3%bcy%c3%bck%20networklerde%20i%c5%9f%20y%c3%bck%c3%bcn%c3%bc%20fazlaca%20art%c4%b1rabilir.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fipv6-static-routing%2f1.png%22%20alt%3d%22routing%22%3e%3c%2fp%3e%0a%3cp%3eBu%20da%20di%c4%9fer%20Dynamic%20Routing%20protokollerinden%20ay%c4%b1ran%20bir%20%c3%b6zelli%c4%9fidir.%20Bu%20demektir%20ki%20bir%20networkte%20Dynamic%20Routing%20Protokol%c3%bc%20%c3%a7al%c4%b1%c5%9fsa%20bile%20%c3%b6ncelik%20statik%20olarak%20yaz%c4%b1lan%20rotadad%c4%b1r.%3c%2fp%3e%0a%3cp%3e%3cstrong%3eStatic%20Route%20Yaz%c4%b1m%c4%b1%3a%3c%2fstrong%3e%0aStatik%20rota%20yazmak%20olduk%c3%a7a%20kolayd%c4%b1r.%20A%c5%9fa%c4%9f%c4%b1da%202%20farkl%c4%b1%20yaz%c4%b1m%c4%b1%20g%c3%b6rebilirsiniz.%20%c4%b0kisi%20de%20kullan%c4%b1labilir.%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eRouter%28config%29%23ipv6%20route%202001%3a3%3a%3a%2f64%202001%3a2%3a%3a2%0aRouter%28config%29%23ipv6%20route%202001%3a3%3a%3a%2f64%20gi0%2f1%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eBunun%20anlam%c4%b1%3b%20%3cem%3e%3cstrong%3e2001%3a3%3a%3a%2f64%3c%2fstrong%3e%3c%2fem%3e%20network%c3%bcne%20gitmek%20i%c3%a7in%20%3cem%3e%3cstrong%3e2001%3a2%3a%3a2%3c%2fstrong%3e%3c%2fem%3e%20yolunu%20kullan.%0aveya%20yine%20%3cem%3e%3cstrong%3e2001%3a3%3a%3a%2f64%3c%2fstrong%3e%3c%2fem%3e%20network%c3%bcne%20gitmek%20i%c3%a7in%20%3cem%3e%3cstrong%3egi0%2f1%3c%2fstrong%3e%3c%2fem%3e%20interfacesini%20kullan.%3c%2fp%3e" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fipv6staticrouting%2fipv6-static-routing%2f&name=IPv6%20Static%20Routing&description=Static%20Route%20hedefe%20gitmek%20i%c3%a7in%20manuel%20olarak%20yaz%c4%b1lan%20rotad%c4%b1r.%20Static%20Route%20k%c3%bc%c3%a7%c3%bck%20networkler%20i%c3%a7in%20kullan%c4%b1labilir.%20Fakat%20orta%20ve%20b%c3%bcy%c3%bck%20networklerde%20i%c5%9f%20y%c3%bck%c3%bcn%c3%bc%20fazlaca%20art%c4%b1rabilir.%0aBu%20da%20di%c4%9fer%20Dynamic%20Routing%20protokollerinden%20ay%c4%b1ran%20bir%20%c3%b6zelli%c4%9fidir.%20Bu%20demektir%20ki%20bir%20networkte%20Dynamic%20Routing%20Protokol%c3%bc%20%c3%a7al%c4%b1%c5%9fsa%20bile%20%c3%b6ncelik%20statik%20olarak%20yaz%c4%b1lan%20rotadad%c4%b1r.%0aStatic%20Route%20Yaz%c4%b1m%c4%b1%3a%20Statik%20rota%20yazmak%20olduk%c3%a7a%20kolayd%c4%b1r.%20A%c5%9fa%c4%9f%c4%b1da%202%20farkl%c4%b1%20yaz%c4%b1m%c4%b1%20g%c3%b6rebilirsiniz.%20%c4%b0kisi%20de%20kullan%c4%b1labilir.%0aRouter%28config%29%23ipv6%20route%202001%3a3%3a%3a%2f64%202001%3a2%3a%3a2%20Router%28config%29%23ipv6%20route%202001%3a3%3a%3a%2f64%20gi0%2f1%20Bunun%20anlam%c4%b1%3b%202001%3a3%3a%3a%2f64%20network%c3%bcne%20gitmek%20i%c3%a7in%202001%3a2%3a%3a2%20yolunu%20kullan." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
