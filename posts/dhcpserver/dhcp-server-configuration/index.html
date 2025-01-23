@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> [EN] DHCP Server Configuration | ittechnetworkk</title>
+  <link rel = 'canonical' href = 'https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/'>
+  <meta name="description" content="Hello, I&#39;m Soner from Turkey. I prefer working with the CLI rather than GUI. On this site, I share my expertise in various technologies, insights into newly learned tools, as well as details of the projects I have completed and those I plan to undertake. I run this blog with the motivation to learn, have fun, and help others along the way.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:url" content="https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/">
+  <meta property="og:site_name" content="ittechnetworkk">
+  <meta property="og:title" content="[EN] DHCP Server Configuration">
+  <meta property="og:description" content="Hello there!
+In this article, I’m going to show you how to install and configure a DHCP server.
+I’m going to install the DHCP server role on an Ubuntu server. However, the process is almost the same for all distributions.
+We need to install the isc-dhcp-server package for DHCP role.
+Let’s get started.
+ubuntu@ubuntu:~$ sudo apt install isc-dhcp-server After the package is installed, let’s check the service called isc-dhcp-server.
+ubuntu@ubuntu:~$ systemctl status isc-dhcp-server × isc-dhcp-server.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-01-23T01:06:35+01:00">
+    <meta property="article:modified_time" content="2025-01-23T01:06:35+01:00">
+    <meta property="article:tag" content="Dhcp">
+    <meta property="article:tag" content="Server">
+    <meta property="article:tag" content="Ubuntu">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="[EN] DHCP Server Configuration">
+  <meta name="twitter:description" content="Hello there!
+In this article, I’m going to show you how to install and configure a DHCP server.
+I’m going to install the DHCP server role on an Ubuntu server. However, the process is almost the same for all distributions.
+We need to install the isc-dhcp-server package for DHCP role.
+Let’s get started.
+ubuntu@ubuntu:~$ sudo apt install isc-dhcp-server After the package is installed, let’s check the service called isc-dhcp-server.
+ubuntu@ubuntu:~$ systemctl status isc-dhcp-server × isc-dhcp-server.">
+
+  
+  
+    
+  
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://ittechnetworkk.github.io/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg==">
+  
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://ittechnetworkk.github.io/images/favicon.ico" />
+
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/projects">Projects</a></li>
+         
+        <li><a href="/categories/">Categories</a></li>
+         
+        <li><a href="/tags/">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://ittechnetworkk.github.io/posts/debianip/debian-ip/" aria-label="Previous">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#" aria-label="Share">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpserver%2fdhcp-server-configuration%2f" aria-label="Facebook">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpserver%2fdhcp-server-configuration%2f&text=%5bEN%5d%20DHCP%20Server%20Configuration" aria-label="Twitter">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpserver%2fdhcp-server-configuration%2f&title=%5bEN%5d%20DHCP%20Server%20Configuration" aria-label="Linkedin">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpserver%2fdhcp-server-configuration%2f&is_video=false&description=%5bEN%5d%20DHCP%20Server%20Configuration" aria-label="Pinterest">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%5bEN%5d%20DHCP%20Server%20Configuration&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpserver%2fdhcp-server-configuration%2f" aria-label="Email">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpserver%2fdhcp-server-configuration%2f&title=%5bEN%5d%20DHCP%20Server%20Configuration" aria-label="Pocket">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpserver%2fdhcp-server-configuration%2f&title=%5bEN%5d%20DHCP%20Server%20Configuration" aria-label="reddit">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpserver%2fdhcp-server-configuration%2f&name=%5bEN%5d%20DHCP%20Server%20Configuration&description=Hello%20there%21%0aIn%20this%20article%2c%20I%e2%80%99m%20going%20to%20show%20you%20how%20to%20install%20and%20configure%20a%20DHCP%20server.%0aI%e2%80%99m%20going%20to%20install%20the%20DHCP%20server%20role%20on%20an%20Ubuntu%20server.%20However%2c%20the%20process%20is%20almost%20the%20same%20for%20all%20distributions.%0aWe%20need%20to%20install%20the%20isc-dhcp-server%20package%20for%20DHCP%20role.%0aLet%26rsquo%3bs%20get%20started.%0aubuntu%40ubuntu%3a~%24%20sudo%20apt%20install%20isc-dhcp-server%20After%20the%20package%20is%20installed%2c%20let%e2%80%99s%20check%20the%20service%20called%20isc-dhcp-server.%0aubuntu%40ubuntu%3a~%24%20systemctl%20status%20isc-dhcp-server%20%c3%97%20isc-dhcp-server." aria-label="Tumblr">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpserver%2fdhcp-server-configuration%2f&t=%5bEN%5d%20DHCP%20Server%20Configuration" aria-label="Hacker News">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    
+    <div id="toc">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        [EN] DHCP Server Configuration
+      </h1>
+      <div class="meta">
+        
+        <div class="author-info" style="font-size: 1.1em; margin-bottom: 10px;">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <strong>Author:</strong> <span itemprop="name">Soner Sahin</span>
+          </span>
+        </div>
+        
+        <div class="postdate">
+          
+          <time datetime="2025-01-23 01:06:35 &#43;0100 CET" itemprop="datePublished">2025-01-23</time>
+          
+        </div>
+        
+        
+        <div class="article-read-time">
+          <i class="far fa-clock"></i>
+          
+          4 minute read
+        </div>
+        
+        
+        <div class="article-category">
+            <i class="fas fa-archive"></i>
+            
+            
+            <a class="category-link" href="/categories/linux">linux</a>
+            
+        </div>
+        
+        
+        <div class="article-tag">
+            <i class="fas fa-tag"></i>
+            
+            
+            <a class="tag-link" href="/tags/dhcp" rel="tag">dhcp</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/server" rel="tag">server</a>
+            
+             ,  
+            <a class="tag-link" href="/tags/ubuntu" rel="tag">ubuntu</a>
+            
+        </div>
+        
+      </div>
+    </header>
+
+  
+    
+    <div class="content" itemprop="articleBody">
+      <p>Hello there!</p>
+<p>In this article, I’m going to show you how to install and configure a DHCP server.</p>
+<p>I’m going to install the DHCP server role on an Ubuntu server. However, the process is almost the same for all distributions.</p>
+<p>We need to install the <code>isc-dhcp-server</code> package for DHCP role.</p>
+<p>Let&rsquo;s get started.</p>
+<pre tabindex="0"><code>ubuntu@ubuntu:~$ sudo apt install isc-dhcp-server
+</code></pre><p>After the package is installed, let’s check the service called <code>isc-dhcp-server</code>.</p>
+<pre tabindex="0"><code>ubuntu@ubuntu:~$ systemctl status isc-dhcp-server
+× isc-dhcp-server.service - ISC DHCP IPv4 server
+     Loaded: loaded (/lib/systemd/system/isc-dhcp-server.service; enabled; vendor preset: enabled)
+     Active: failed (Result: exit-code) since Wed 2025-01-22 22:22:49 UTC; 1min 46s ago
+       Docs: man:dhcpd(8)
+    Process: 1553 ExecStart=/bin/sh -ec      CONFIG_FILE=/etc/dhcp/dhcpd.conf;      if [ -f /etc/ltsp/dhcpd.conf ]; then CONFIG_F&gt;
+   Main PID: 1553 (code=exited, status=1/FAILURE)
+        CPU: 7ms
+</code></pre><p>As you can see, the service is currently not working. We will configure it and then start the service.</p>
+<p>Now, let’s configure the related file <code>/etc/dhcp/dhcpd.conf</code>.</p>
+<p>I want it to distribute IP addresses within the range <code>10.0.1.55 - 10.0.1.60</code>.</p>
+<pre tabindex="0"><code># Authoritative
+authoritative;
+
+# Lease Time
+default-lease-time 600;
+max-lease-time  7200;
+
+# Network
+subnet 10.0.1.0 netmask 255.255.255.0 {
+        range 10.0.1.55 10.0.1.60;
+        option routers  10.0.1.2;
+        option domain-name-servers      8.8.8.8, 1.1.1.1;
+}
+</code></pre><p>After configuration, we have to start the server and check its status</p>
+<pre tabindex="0"><code>ubuntu@ubuntu:~$ sudo systemctl start isc-dhcp-server
+ubuntu@ubuntu:~$ sudo systemctl status isc-dhcp-server
+● isc-dhcp-server.service - ISC DHCP IPv4 server
+     Loaded: loaded (/lib/systemd/system/isc-dhcp-server.service; enabled; vendor preset: enabled)
+     Active: active (running) since Wed 2025-01-22 22:39:56 UTC; 5s ago
+       Docs: man:dhcpd(8)
+   Main PID: 2320 (dhcpd)
+      Tasks: 4 (limit: 2182)
+     Memory: 4.8M
+        CPU: 9ms
+     CGroup: /system.slice/isc-dhcp-server.service
+             └─2320 dhcpd -user dhcpd -group dhcpd -f -4 -pf /run/dhcp-server/dhcpd.pid -cf /etc/dhcp/dhcpd.conf
+</code></pre><p>As you can see all look great.</p>
+<p>Now, I have a client machine on the same network. I&rsquo;m going to let it get an IP address from the DHCP server.</p>
+<p>The client machine has a different IP address which is <code>10.0.1.129</code> as follows.</p>
+<pre tabindex="0"><code>debian@debian:~$ ip a |grep ens33
+2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    inet 10.0.1.129/24 brd 10.0.1.255 scope global dynamic ens33
+</code></pre><p>Let’s force it to leave its current IP address and then get a new one from the DHCP server.</p>
+<pre tabindex="0"><code>debian@debian:~$ dhclient -r
+debian@debian:~$ dhclient
+debian@debian:~$ ip a |grep ens33
+2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    inet 10.0.1.55/24 brd 10.0.1.255 scope global dynamic ens33
+</code></pre><p>The client now has an IP address of <code>10.0.1.55</code>.</p>
+<p>However, there are additional parameters we need to configure.</p>
+<p>First, I want to specify the log file for the DHCP server. I have to add a line to the same file, which is <code>/etc/dhcp/dhcpd.conf</code>.</p>
+<pre tabindex="0"><code># Log
+log-facility local7;
+</code></pre><p>After that, we have to add another line to the <code>/etc/rsyslog.conf</code> file.</p>
+<p>At the end of that file, I will add the following line.</p>
+<pre tabindex="0"><code># DHCP
+local7.*                                                /var/log/dhcpd.log
+</code></pre><p>Now, let&rsquo;s restart two services.</p>
+<pre tabindex="0"><code>ubuntu@ubuntu:~$ sudo systemctl restart isc-dhcp-server
+ubuntu@ubuntu:~$ sudo systemctl restart rsyslog
+</code></pre><p>To make sure, I will make the client leave its IP and then get one again in order to see the changes in the log file.</p>
+<p>You can see the logs live with the following command.</p>
+<pre tabindex="0"><code>debian@debian:~$ dhclient -r
+debian@debian:~$ dhclient
+</code></pre><p>Logs:</p>
+<pre tabindex="0"><code>ubuntu@ubuntu:~$ tail -f /var/log/dhcpd.log 
+
+Jan 22 23:15:18 ubuntu dhcpd[2601]: DHCPDISCOVER from 00:0c:29:13:c7:1d via ens33
+Jan 22 23:15:19 ubuntu dhcpd[2601]: DHCPOFFER on 10.0.1.55 to 00:0c:29:13:c7:1d (debian) via ens33
+Jan 22 23:15:19 ubuntu dhcpd[2601]: DHCPREQUEST for 10.0.1.55 (10.0.1.128) from 00:0c:29:13:c7:1d (debian) via ens33
+Jan 22 23:15:19 ubuntu dhcpd[2601]: DHCPACK on 10.0.1.55 to 00:0c:29:13:c7:1d (debian) via ens33
+</code></pre><p>As you can see, the IP address retrieval process was successful.</p>
+<p>We can also reserve an IP address to a device. So that IP address will always be assigned to that device.</p>
+<p>Let&rsquo;s do it.</p>
+<p>We have to add some commands as follows in order to reserve an IP address to a host on <code>/etc/dhcp/dhcpd.conf</code>.</p>
+<p>It’s possible to reserve an IP address even if it isn’t within the specified range.</p>
+<p>For example let&rsquo;s dedicate <code>10.0.1.80</code> IP address to our client machine.</p>
+<pre tabindex="0"><code># Reservation
+host debian { 
+        hardware ethernet       00:0c:29:13:c7:1d;
+        fixed-address           10.0.1.80;
+}
+</code></pre><p>Restart the service to apply changes.</p>
+<pre tabindex="0"><code>ubuntu@ubuntu:~$ sudo systemctl restart isc-dhcp-server
+</code></pre><p>Now, I’m going to release the IP on the client machine and request a new one.</p>
+<pre tabindex="0"><code>debian@debian:~$ sudo dhclient -r
+debian@debian:~$ sudo dhclient
+debian@debian:~$ ip a |grep ens33
+2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    inet 10.0.1.80/24 brd 10.0.1.255 scope global dynamic ens33
+</code></pre><p>Logs:</p>
+<pre tabindex="0"><code>ubuntu@ubuntu:~$ tail -f /var/log/dhcpd.log
+
+Jan 22 23:32:17 ubuntu dhcpd[2648]: DHCPDISCOVER from 00:0c:29:13:c7:1d via ens33
+Jan 22 23:32:17 ubuntu dhcpd[2648]: DHCPOFFER on 10.0.1.80 to 00:0c:29:13:c7:1d via ens33
+Jan 22 23:32:17 ubuntu dhcpd[2648]: DHCPREQUEST for 10.0.1.80 (10.0.1.128) from 00:0c:29:13:c7:1d via ens33
+Jan 22 23:32:17 ubuntu dhcpd[2648]: DHCPACK on 10.0.1.80 to 00:0c:29:13:c7:1d via ens33
+</code></pre><p>We made the client machine get an IP address outside our range.</p>
+<p>In the following file, you can see the leased machines and their details: <code>/var/lib/dhcp/dhcpd.leases</code>.</p>
+<pre tabindex="0"><code>ubuntu@ubuntu:~$ cat /var/lib/dhcp/dhcpd.leases
+
+# The format of this file is documented in the dhcpd.leases(5) manual page.
+# This lease file was written by isc-dhcp-4.4.1
+
+# authoring-byte-order entry is generated, DO NOT DELETE
+authoring-byte-order little-endian;
+
+lease 10.0.1.55 {
+  starts 3 2025/01/22 23:28:40;
+  ends 3 2025/01/22 23:38:40;
+  tstp 3 2025/01/22 23:38:40;
+  cltt 3 2025/01/22 23:28:40;
+  binding state active;
+  next binding state free;
+  rewind binding state free;
+  hardware ethernet 00:0c:29:13:c7:1d;
+  client-hostname &#34;debian&#34;;
+}
+server-duid &#34;\000\001\000\001/$0&lt;\000\014)&gt;+B&#34;;
+
+lease 10.0.1.55 {
+  starts 3 2025/01/22 23:28:40;
+  ends 3 2025/01/22 23:31:55;
+  tstp 3 2025/01/22 23:31:55;
+  cltt 3 2025/01/22 23:28:40;
+  binding state free;
+  hardware ethernet 00:0c:29:13:c7:1d;
+}
+</code></pre><p>I want to show you all the parameters in the file, as follows.</p>
+<p><code>/etc/dhcp/dhcpd.conf</code></p>
+<pre tabindex="0"><code># Authoritative
+authoritative;
+
+# Lease Time
+default-lease-time 600;
+max-lease-time  7200;
+
+# Network
+subnet 10.0.1.0 netmask 255.255.255.0 {
+        range 10.0.1.55 10.0.1.60;
+        option routers  10.0.1.2;
+        option domain-name-servers      8.8.8.8, 1.1.1.1;
+}
+
+# Log
+log-facility local7;
+
+# Reservation
+host debian {
+        hardware ethernet       00:0c:29:13:c7:1d;
+        fixed-address   10.0.1.80;
+}
+</code></pre><p><code>/etc/rsyslog.conf</code></p>
+<pre tabindex="0"><code># DHCP
+local7.*						/var/log/dhcpd.log
+</code></pre><p>Thank you for taking the time to read this article!</p>
+<p>Keep up the good work!</p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/posts">Posts</a></li>
+         
+          <li><a href="/projects">Projects</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a href="/about">About</a></li>
+        
+      </ul>
+    </div>
+
+    
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpserver%2fdhcp-server-configuration%2f" aria-label="Facebook">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpserver%2fdhcp-server-configuration%2f&text=%5bEN%5d%20DHCP%20Server%20Configuration" aria-label="Twitter">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpserver%2fdhcp-server-configuration%2f&title=%5bEN%5d%20DHCP%20Server%20Configuration" aria-label="Linkedin">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpserver%2fdhcp-server-configuration%2f&is_video=false&description=%5bEN%5d%20DHCP%20Server%20Configuration" aria-label="Pinterest">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=%5bEN%5d%20DHCP%20Server%20Configuration&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpserver%2fdhcp-server-configuration%2f" aria-label="Email">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpserver%2fdhcp-server-configuration%2f&title=%5bEN%5d%20DHCP%20Server%20Configuration" aria-label="Pocket">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpserver%2fdhcp-server-configuration%2f&title=%5bEN%5d%20DHCP%20Server%20Configuration" aria-label="reddit">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpserver%2fdhcp-server-configuration%2f&name=%5bEN%5d%20DHCP%20Server%20Configuration&description=Hello%20there%21%0aIn%20this%20article%2c%20I%e2%80%99m%20going%20to%20show%20you%20how%20to%20install%20and%20configure%20a%20DHCP%20server.%0aI%e2%80%99m%20going%20to%20install%20the%20DHCP%20server%20role%20on%20an%20Ubuntu%20server.%20However%2c%20the%20process%20is%20almost%20the%20same%20for%20all%20distributions.%0aWe%20need%20to%20install%20the%20isc-dhcp-server%20package%20for%20DHCP%20role.%0aLet%26rsquo%3bs%20get%20started.%0aubuntu%40ubuntu%3a~%24%20sudo%20apt%20install%20isc-dhcp-server%20After%20the%20package%20is%20installed%2c%20let%e2%80%99s%20check%20the%20service%20called%20isc-dhcp-server.%0aubuntu%40ubuntu%3a~%24%20systemctl%20status%20isc-dhcp-server%20%c3%97%20isc-dhcp-server." aria-label="Tumblr">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpserver%2fdhcp-server-configuration%2f&t=%5bEN%5d%20DHCP%20Server%20Configuration" aria-label="Hacker News">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2025  ittechnetworkk 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/projects">Projects</a></li>
+         
+        <li><a href="/categories/">Categories</a></li>
+         
+        <li><a href="/tags/">Tags</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+<script src=/js/code-copy.js></script>
+
+
+
+
+</html>

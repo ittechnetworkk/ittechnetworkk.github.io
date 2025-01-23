@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Sun, 19 Jan 2025 23:56:33 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jan 2025 01:06:35 +0100</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[EN] DHCP Server Configuration</title>
+      <link>https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/</link>
+      <pubDate>Thu, 23 Jan 2025 01:06:35 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/</guid>
+      <description>Hello there!&#xA;In this article, I’m going to show you how to install and configure a DHCP server.&#xA;I’m going to install the DHCP server role on an Ubuntu server. However, the process is almost the same for all distributions.&#xA;We need to install the isc-dhcp-server package for DHCP role.&#xA;Let&amp;rsquo;s get started.&#xA;ubuntu@ubuntu:~$ sudo apt install isc-dhcp-server After the package is installed, let’s check the service called isc-dhcp-server.&#xA;ubuntu@ubuntu:~$ systemctl status isc-dhcp-server × isc-dhcp-server.</description>
+    </item>
     <item>
       <title>Debian Server IP Konfigürasyonu</title>
       <link>https://ittechnetworkk.github.io/posts/debianip/debian-ip/</link>

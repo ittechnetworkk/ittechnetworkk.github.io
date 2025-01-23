@@ -8,8 +8,26 @@
     <loc>https://ittechnetworkk.github.io/posts/</loc>
     <lastmod>2025-05-13T12:22:24+01:00</lastmod>
   </url><url>
+    <loc>https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/</loc>
+    <lastmod>2025-01-23T01:06:35+01:00</lastmod>
+  </url><url>
     <loc>https://ittechnetworkk.github.io/categories/</loc>
-    <lastmod>2025-01-19T23:56:33+01:00</lastmod>
+    <lastmod>2025-01-23T01:06:35+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/dhcp/</loc>
+    <lastmod>2025-01-23T01:06:35+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/categories/linux/</loc>
+    <lastmod>2025-01-23T01:06:35+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/server/</loc>
+    <lastmod>2025-01-23T01:06:35+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/</loc>
+    <lastmod>2025-01-23T01:06:35+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/ubuntu/</loc>
+    <lastmod>2025-01-23T01:06:35+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/debian/</loc>
     <lastmod>2025-01-19T23:56:33+01:00</lastmod>
@@ -21,12 +39,6 @@
     <lastmod>2025-01-19T23:56:33+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/linux/</loc>
-    <lastmod>2025-01-19T23:56:33+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/categories/linux/</loc>
-    <lastmod>2025-01-19T23:56:33+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/</loc>
     <lastmod>2025-01-19T23:56:33+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/fedora/</loc>
@@ -104,9 +116,6 @@
     <loc>https://ittechnetworkk.github.io/tags/proxmox/</loc>
     <lastmod>2024-12-02T22:57:40+01:00</lastmod>
   </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/server/</loc>
-    <lastmod>2024-12-02T22:57:40+01:00</lastmod>
-  </url><url>
     <loc>https://ittechnetworkk.github.io/tags/virtualization/</loc>
     <lastmod>2024-12-02T22:57:40+01:00</lastmod>
   </url><url>
@@ -151,12 +160,6 @@
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/junosshortcuts/junos-shortcuts/</loc>
     <lastmod>2024-11-16T17:53:48+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/dhcp/</loc>
-    <lastmod>2024-11-07T22:57:40+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/ubuntu/</loc>
-    <lastmod>2024-11-07T22:57:40+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/ubuntudhcpserver/ubuntu-dhcp-server/</loc>
     <lastmod>2024-11-07T22:57:40+01:00</lastmod>
