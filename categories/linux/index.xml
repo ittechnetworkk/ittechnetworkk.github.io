@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Fri, 24 Jan 2025 21:46:46 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jan 2025 22:16:16 +0100</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cockpit Kurulumu</title>
+      <link>https://ittechnetworkk.github.io/posts/cockpitinstallation/cockpit/</link>
+      <pubDate>Fri, 24 Jan 2025 22:16:16 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/cockpitinstallation/cockpit/</guid>
+      <description>Selamlar, bu yazımda Linux sunucularda Cockpit kurulumuna değineceğim.&#xA;Cockpit, Linux sunucuları yönetebilmeyi sağlayan bir araçtır.&#xA;Cockpit&amp;rsquo;i kurduktan sonra sunucuyu web tarayıcısı üzerinden yönetebilmeyi sağlar.&#xA;Alternatif olarak, Webmin, cPanel, Plesk, DirectAdmin gibi araçlar da bulunur.&#xA;Kurulumu oldukça kolaydır. Ben Fedora Server üzerine kurulumunu göstereceğim.&#xA;Ayrıca Web Sitesini&amp;rsquo;de ziyaret edebilirsiniz.&#xA;fedora@fedora:~$ sudo dnf check-update fedora@fedora:~$ sudo dnf install cockpit Kurulum bittikten sonra servisi başlatıp daha sonra enable ediyorum. Cockpit servisinin adı cockpit.socket tir.</description>
+    </item>
     <item>
       <title>[EN] NetworkManager Installation</title>
       <link>https://ittechnetworkk.github.io/posts/networkmanagerinstallation/network-manager-installation/</link>
