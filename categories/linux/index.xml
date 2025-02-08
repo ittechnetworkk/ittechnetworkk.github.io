@@ -2,102 +2,102 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/categories/linux/</link>
+    <link>http://localhost:1313/categories/linux/</link>
     <description>Recent content in Linux on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Sat, 08 Feb 2025 15:23:57 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[EN] SSH Server Configuration</title>
-      <link>https://ittechnetworkk.github.io/posts/sshserverconfiguration/ssh-server-configuration/</link>
+      <link>http://localhost:1313/posts/sshserverconfiguration/ssh-server-configuration/</link>
       <pubDate>Sat, 08 Feb 2025 15:23:57 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/sshserverconfiguration/ssh-server-configuration/</guid>
+      <guid>http://localhost:1313/posts/sshserverconfiguration/ssh-server-configuration/</guid>
       <description>Hi everyone, in this article, I will show you how to configure an SSH server in detail.&#xA;SSH (Secure Shell Protocol) is a widely-used protocol that securely connects and manages remote servers. In this tutorial, you will learn how to set up and configure an SSH server from scratch.&#xA;To set up an SSH server, you need to install the openssh-server package on the server and the openssh-client package on the client.</description>
     </item>
     <item>
       <title>Cockpit Kurulumu</title>
-      <link>https://ittechnetworkk.github.io/posts/cockpitinstallation/cockpit/</link>
+      <link>http://localhost:1313/posts/cockpitinstallation/cockpit/</link>
       <pubDate>Fri, 24 Jan 2025 22:16:16 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/cockpitinstallation/cockpit/</guid>
+      <guid>http://localhost:1313/posts/cockpitinstallation/cockpit/</guid>
       <description>Selamlar, bu yazımda Linux sunucularda Cockpit kurulumuna değineceğim.&#xA;Cockpit, Linux sunucuları yönetebilmeyi sağlayan bir araçtır.&#xA;Cockpit&amp;rsquo;i kurduktan sonra sunucuyu web tarayıcısı üzerinden yönetebilmeyi sağlar.&#xA;Alternatif olarak, Webmin, cPanel, Plesk, DirectAdmin gibi araçlar da bulunur.&#xA;Kurulumu oldukça kolaydır. Ben Fedora Server üzerine kurulumunu göstereceğim.&#xA;Ayrıca Web Sitesini&amp;rsquo;de ziyaret edebilirsiniz.&#xA;fedora@fedora:~$ sudo dnf check-update fedora@fedora:~$ sudo dnf install cockpit Kurulum bittikten sonra servisi başlatıp daha sonra enable ediyorum. Cockpit servisinin adı cockpit.socket tir.</description>
     </item>
     <item>
       <title>[EN] NetworkManager Installation</title>
-      <link>https://ittechnetworkk.github.io/posts/networkmanagerinstallation/network-manager-installation/</link>
+      <link>http://localhost:1313/posts/networkmanagerinstallation/network-manager-installation/</link>
       <pubDate>Fri, 24 Jan 2025 21:46:46 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/networkmanagerinstallation/network-manager-installation/</guid>
+      <guid>http://localhost:1313/posts/networkmanagerinstallation/network-manager-installation/</guid>
       <description>Hi there, in this article, I will show you how to switch netplan to NetworkManager to manage network interfaces on Ubuntu.&#xA;As you know, Ubuntu uses netplan as the default tool for network management. However NetworkManager is often a better choice due to its advanced features and ease of use.&#xA;In this guide, I’ll walk you through the steps to install and configure NetworkManager on an Ubuntu Server.&#xA;Step 1: Install NetworkManager</description>
     </item>
     <item>
       <title>[EN] DHCP Server Configuration</title>
-      <link>https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/</link>
+      <link>http://localhost:1313/posts/dhcpserver/dhcp-server-configuration/</link>
       <pubDate>Thu, 23 Jan 2025 01:06:35 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/</guid>
+      <guid>http://localhost:1313/posts/dhcpserver/dhcp-server-configuration/</guid>
       <description>Hello there!&#xA;In this article, I’m going to show you how to install and configure a DHCP server.&#xA;I’m going to install the DHCP server role on an Ubuntu server. However, the process is almost the same for all distributions.&#xA;We need to install the isc-dhcp-server package for DHCP role.&#xA;Let&amp;rsquo;s get started.&#xA;ubuntu@ubuntu:~$ sudo apt install isc-dhcp-server After the package is installed, let’s check the service called isc-dhcp-server.&#xA;ubuntu@ubuntu:~$ systemctl status isc-dhcp-server × isc-dhcp-server.</description>
     </item>
     <item>
       <title>Debian Server IP Konfigürasyonu</title>
-      <link>https://ittechnetworkk.github.io/posts/debianip/debian-ip/</link>
+      <link>http://localhost:1313/posts/debianip/debian-ip/</link>
       <pubDate>Sun, 19 Jan 2025 23:56:33 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/debianip/debian-ip/</guid>
+      <guid>http://localhost:1313/posts/debianip/debian-ip/</guid>
       <description>Selamlar, bu yazımda Debian Server&amp;rsquo;a nasıl statik veya dinamik IP tanımlanacağını göstereceğim.&#xA;Her Linux dağıtımında statik IP&amp;rsquo;ler aynı şekilde tanımlanmayabilir.&#xA;Linux sistemlerde her şey bir dosyadan okunduğu için bunun için de bir ilgili bir dosya vardır.&#xA;Debian&amp;rsquo;da bu dosya şuradadır:&#xA;/etc/network/interfaces Şimdi bu dosyayı editleyelim.&#xA;Dosyanın ilk hali şu şekildedir:&#xA;# This file describes the network interfaces available on your system # and how to activate them. For more information, see interfaces(5).</description>
     </item>
     <item>
       <title>Fedora Server IP Konfigürasyonu</title>
-      <link>https://ittechnetworkk.github.io/posts/fedoraip/fedora-ip/</link>
+      <link>http://localhost:1313/posts/fedoraip/fedora-ip/</link>
       <pubDate>Sun, 19 Jan 2025 22:51:26 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/fedoraip/fedora-ip/</guid>
+      <guid>http://localhost:1313/posts/fedoraip/fedora-ip/</guid>
       <description>Selamlar, bu yazımda Fedora Server&amp;rsquo;a nasıl statik veya dinamik IP tanımlanacağını göstereceğim.&#xA;Her Linux dağıtımında statik IP&amp;rsquo;ler aynı şekilde tanımlanmayabilir. Fakat mantığını bilmek bir adım önde başlamak demektir.&#xA;Linux sistemlerde her şey bir dosyadan okunduğu için bunun için de bir ilgili bir dosya vardır.&#xA;Fedora&amp;rsquo;da bu dosya şuradadır:&#xA;NetworkManager kullanılmadığında;&#xA;/etc/sysconfig/network-scripts/ifcfg-ens33 NetworkManager kullanıldığında;&#xA;/etc/NetworkManager/system-connections/ens33.nmconnection Şimdi bu dosyayı editleyelim.&#xA;Dosyanın ilk hali şu şekildedir:&#xA;[connection] id=ens160 uuid=36903561-eb7f-38c2-986b-b098913248de type=ethernet autoconnect-priority=-999 interface-name=ens160 timestamp=1737213877 [ethernet] [ipv4] [ipv6] addr-gen-mode=eui64 method=auto [proxy] Bazı parametreler sisteminize bağlı olarak değişiklik gösterebilir, fakat bizim ilgilendiğimiz kısım şimdilik [ipv4] kısmı.</description>
     </item>
     <item>
       <title>[EN] Linux Process Prioritization</title>
-      <link>https://ittechnetworkk.github.io/posts/linuxprocessprioritization/linux-process-prioritization/</link>
+      <link>http://localhost:1313/posts/linuxprocessprioritization/linux-process-prioritization/</link>
       <pubDate>Sat, 11 Jan 2025 05:03:17 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/linuxprocessprioritization/linux-process-prioritization/</guid>
+      <guid>http://localhost:1313/posts/linuxprocessprioritization/linux-process-prioritization/</guid>
       <description>In this article I am going to talk about Linux process Prioritization.&#xA;Sometimes we may want to prioritize our more important processes in Linux.&#xA;We prioritize process or processes that are more important for us with &amp;ldquo;NICE&amp;rdquo; parameters.&#xA;Each process has a &amp;ldquo;NICE&amp;rdquo; value. This value prioritizes processes.&#xA;The lower we set this value, the higher the priority of the process. However, this value can only be set between &amp;ldquo;+20&amp;rdquo; and &amp;ldquo;-20&amp;rdquo;.</description>
     </item>
     <item>
       <title>Ubuntu 22.04 DHCP Server Konfigürasyonu</title>
-      <link>https://ittechnetworkk.github.io/posts/ubuntudhcpserver/ubuntu-dhcp-server/</link>
+      <link>http://localhost:1313/posts/ubuntudhcpserver/ubuntu-dhcp-server/</link>
       <pubDate>Thu, 07 Nov 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ubuntudhcpserver/ubuntu-dhcp-server/</guid>
+      <guid>http://localhost:1313/posts/ubuntudhcpserver/ubuntu-dhcp-server/</guid>
       <description>Merhabalar bu yazımda, Ubuntu-22.04 Server&amp;rsquo;a DHCP rolü kurup konfigürasyonunu yapacağım.&#xA;Ubuntu&amp;rsquo;ya DHCP rolü vermeden önce, Server&amp;rsquo;ın IP adresini statik olarak ayarlıyorum.&#xA;Statik IP adresi tanımlamak için &amp;ldquo;/etc/netplan/00-installer-config.yaml&amp;rdquo; dosyasını düzenliyorum.&#xA;network: version: 2 renderer: networkd ethernets: ens33: addresses: - 192.168.1.50/24 nameservers: addresses: [1.1.1.1, 8.8.8.8] routes: - to: default via: 192.168.1.1 Değişiklikleri geçerli kılmak için:&#xA;sudo netplan apply Grafik arayüzü ile yapılandırmak için &amp;ldquo;nmtui&amp;rdquo; aracını kullanabilirsiniz.&#xA;DHCP Server Rolü Kurulumu:&#xA;sudo apt install isc-dhcp-server DHCP rolü yüklendikten sonra, konfigürasyon dosyası &amp;ldquo;/etc/dhcp/dhcpd.</description>
     </item>
     <item>
       <title>Updog</title>
-      <link>https://ittechnetworkk.github.io/posts/updog/updog/</link>
+      <link>http://localhost:1313/posts/updog/updog/</link>
       <pubDate>Fri, 11 Oct 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/updog/updog/</guid>
+      <guid>http://localhost:1313/posts/updog/updog/</guid>
       <description>Updog, SimpleHTTPServer alternatifi bir araçtır. Çok hızlı ve kolay bir şekilde localinizde bir HTTP Server ayağa kaldırmanızı sağlayan Python ile yazılmış açık kaynak kodlu bir araçtır.&#xA;Encryption ve Authentication destekler. Kendinden imzalı bir SSL sertifikası ve parola ile de bir Authentication sağlar.&#xA;Updog Yükleme:&#xA;pip3 install updog Updog kullanımı oldukça kolaydır aşağıda updog ile kullanılan tüm parametrelerini görebilirsiniz.&#xA;-d -p &amp;ndash;password &amp;ndash;ssl &amp;ndash;version -h&#xA;Bir örnek:&#xA;┌─[ssnrshnn@MARVEL]─[~/test] └──╼ $ls test1.txt ┌─[ssnrshnn@MARVEL]─[~/test] └──╼ $updog -d /home/ssnrshnn/test/ -p 6654 --password Pass123!</description>
     </item>
     <item>
       <title>GPG Nedir?</title>
-      <link>https://ittechnetworkk.github.io/posts/gpgnedir/gpg-nedir/</link>
+      <link>http://localhost:1313/posts/gpgnedir/gpg-nedir/</link>
       <pubDate>Tue, 23 Jul 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/gpgnedir/gpg-nedir/</guid>
+      <guid>http://localhost:1313/posts/gpgnedir/gpg-nedir/</guid>
       <description>GPG (GNU Privacy Guard )RFC4880 , GPL Lisanslı bir şifreleme ve imzalama aracıdır. Linux&amp;rsquo;da defaultta gelir, Windows için Web Sitesi&amp;rsquo;nden indirilebilir.&#xA;GPG asimetrik şifreleme algoritması kullanır. Yani Public ve Prive anahtarlar vasıtasıyla dataları şifreler veya çözer.&#xA;Nedir bu Public ve Prive anahtarlar?&#xA;2 kişi düşünelim birbirleriyle haberleşmek istesin. Her kişinin 2 anahtarı olur. Biri &amp;ldquo;Public Key&amp;rdquo; yani paylaşılan anahtar. Diğeri ise &amp;ldquo;Private key&amp;rdquo; yani gizli kalması gereken anahtar.&#xA;X kişisi Y kişisine gizli bir mesaj göndermek isterse bu mesajı Y kişisinin &amp;ldquo;Public Key&amp;quot;i ile şifrelemesi gerekir.</description>
     </item>
     <item>
       <title>Raspberry Pi Syslog Server</title>
-      <link>https://ittechnetworkk.github.io/posts/raspberrypisyslogserver/raspberrypi-syslog/</link>
+      <link>http://localhost:1313/posts/raspberrypisyslogserver/raspberrypi-syslog/</link>
       <pubDate>Mon, 15 Jul 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/raspberrypisyslogserver/raspberrypi-syslog/</guid>
+      <guid>http://localhost:1313/posts/raspberrypisyslogserver/raspberrypi-syslog/</guid>
       <description>Merhaba, bu yazımda bi Raspberry Pi Zero&amp;rsquo;ya Syslog server rolü verip, bir Cisco Switch&amp;rsquo;e bu Syslog server konfigürasyonunu yapacağım.&#xA;Bu Lab için kullanacağım donanım ve yazılımlar:&#xA;Raspberry Pi Zero 2W, Cisco 2960 Switch, SD Cart, Kart Reader, Ethernet Kablosu, MicroUSB Power Cable, Switch Power Cable, ImagerPi. İlk olarak ImagerPi kullanarak SD Kart&amp;rsquo;a Ubuntu işletim sistemini kuruyorum.&#xA;SD Kart&amp;rsquo;ı Raspberry Pi&amp;rsquo;a takıp, modemin yakınında güç kablosunu takıp cihazı açıyorum.&#xA;Raspberry Pi&amp;rsquo;nin hangi IP adresini aldığını öğrenmek için:</description>
     </item>
     <item>
       <title>Raspberry Pi e-Paper Projesi</title>
-      <link>https://ittechnetworkk.github.io/posts/epaper/raspberry-pi-epaper/</link>
+      <link>http://localhost:1313/posts/epaper/raspberry-pi-epaper/</link>
       <pubDate>Tue, 25 Jun 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/epaper/raspberry-pi-epaper/</guid>
+      <guid>http://localhost:1313/posts/epaper/raspberry-pi-epaper/</guid>
       <description>Merhabalar, bu yazıda Raspbery Pi Zero kullanarak anlık olarak Saati, Tarihi, IP bilgisini, Hostname&amp;rsquo;i ve Download/Upload değerlerini gösteren bir proje yapacağım.&#xA;Bu proje için Raspberry Pi Zero&amp;rsquo;ya uygun 2.13Inch bir e-Paper Display kullanacağım.&#xA;Kullanacağım donanım ve yazılımlar aşağıdaki gibidir.&#xA;Raspberry Pi Zero, 2.13 Inch E-Paper Display, 3.7V 1000mah UPS, SD Card, Card Reader, Raspberry Pi Imager, Ve birkaç vida. Donanımlar görüntü itibariyle aşağıdaki gibidir: İlk olarak Raspberry Pi Imager kullanarak işletim sistemini SD Kart&amp;rsquo;a yazdıracağım</description>
     </item>
     <item>
       <title>Adguard Kurulumu (NanoPi R2S)</title>
-      <link>https://ittechnetworkk.github.io/posts/nanopirsadguard/nanopirs-adguard/</link>
+      <link>http://localhost:1313/posts/nanopirsadguard/nanopirs-adguard/</link>
       <pubDate>Sun, 12 May 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/nanopirsadguard/nanopirs-adguard/</guid>
+      <guid>http://localhost:1313/posts/nanopirsadguard/nanopirs-adguard/</guid>
       <description>Merhaba, bu yazımda önceden aldığım fakat değerlendiremediğim NanoPi R2S cihazına Adguard Home kurmayı anlatacağım.&#xA;Bazı özellikleri şöyledir:&#xA;Rockchip RK3328, 1GB DDR4 RAM, MicroSD x1 for external storage up to 128GB, 2x Gigabit Ethernet, USB 2.0 Host x1: USB Type A, USB-C x1: SYS LED(Red) x1, WAN LED(Green) x1, LAN LED(Green) x1, Reset buton Metal kasa içerisine konmuş küçük ama merak uyandırıcı bir cihaz.&#xA;Peki Adguard Home nedir? Adguard Home bilenler için Pi-Hole benzeri fakat daha gelişmiş özellikleri olan bir yazılımdır.</description>
     </item>
   </channel>

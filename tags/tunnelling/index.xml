@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tunnelling on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/tunnelling/</link>
+    <link>http://localhost:1313/tags/tunnelling/</link>
     <description>Recent content in Tunnelling on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Fri, 22 Nov 2024 22:57:40 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/tunnelling/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/tunnelling/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GRE Over Ipsec</title>
-      <link>https://ittechnetworkk.github.io/posts/greoveripsec/greoveripsec/</link>
+      <link>http://localhost:1313/posts/greoveripsec/greoveripsec/</link>
       <pubDate>Fri, 22 Nov 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/greoveripsec/greoveripsec/</guid>
+      <guid>http://localhost:1313/posts/greoveripsec/greoveripsec/</guid>
       <description>Aşağıdaki topologiye göre ilerleyeceğim. Topolojideki cihazların interfacelerine IP adresleri verilmiştir.&#xA;GRE Config:&#xA;R1:&#xA;R1#conf t R1(config)#int tunnel 1 R1(config-if)#ip addr 192.168.1.1 255.255.255.0 R1(config-if)#tunnel source e0/0 R1(config-if)#tunnel destination 200.59.25.2 R2:&#xA;R1#conf t R2(config)#int tunnel 1 R2(config-if)#ip addr 192.168.1.2 255.255.255.0 R2(config-if)#tunnel source e0/0 R2(config-if)#tunnel destination 197.53.15.2 IPsec:&#xA;R1:&#xA;R1(config)#crypto isakmp policy 10 R1(config-isakmp)#authentication pre-share (define it later on) R1(config-isakmp)#encryption aes R1(config-isakmp)#group 14 (must be over 14) R1(config-isakmp)#hash sha R1(config-isakmp)#exit R1(config)#crypto isakmp key BENIMCICIPAROLAM address 200.</description>
     </item>
     <item>
       <title>GRE Tunnel</title>
-      <link>https://ittechnetworkk.github.io/posts/gretunnel/gre-tunnel/</link>
+      <link>http://localhost:1313/posts/gretunnel/gre-tunnel/</link>
       <pubDate>Fri, 07 Jun 2024 17:53:48 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/gretunnel/gre-tunnel/</guid>
+      <guid>http://localhost:1313/posts/gretunnel/gre-tunnel/</guid>
       <description>GRE(Generic Routing Encapsulation) Protokolü, paketin kaynaktan hedefe, oluşturulan tünel sayesinde iletilmesini sağlayan protokoldür. GRE, Cisco tarafından geliştirilmiştir. GRE kullanarak birden fazla şubesi olan networkler birleştirilebilir. Fakat oluşturulan tünelden iletilen paketler okunabilir şekilde iletilir. Yani araya girip trafik dinlenirse, paketler okunabilir. Bu tünel daha sonra güvenli hale de getirilebilir. GRE, IP paketini kapsüle ederek yönlendirme yapar. Enkapsülasyon yapılırken IP başlığına(20), 4 Byte GRE başlık bilgisi eklenir.&#xA;Aşağıdaki GRE Lab Topolojisini uygulayacağım.</description>
     </item>
     <item>
       <title>IPv4 IPv6 Tünelleme</title>
-      <link>https://ittechnetworkk.github.io/posts/ipv4ipv6tunelleme/ipv4-ipv6-tunelleme/</link>
+      <link>http://localhost:1313/posts/ipv4ipv6tunelleme/ipv4-ipv6-tunelleme/</link>
       <pubDate>Fri, 31 May 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ipv4ipv6tunelleme/ipv4-ipv6-tunelleme/</guid>
+      <guid>http://localhost:1313/posts/ipv4ipv6tunelleme/ipv4-ipv6-tunelleme/</guid>
       <description>Bu yöntem, IPv4&amp;rsquo;den IPv6&amp;rsquo;ya geçiş yöntemlerinden biri olan tünelleme tekniğidir. Bu yöntemde, IPv6 networkleri IPv4 üzerinden tünellenerek birbirleriyle haberleşirler. IPv4-IPv6 geçiş aşamalarında kullanılabilecek bu yöntemin yanı sıra Dual Stack, Translation yöntemleri de vardır.&#xA;IPv4-IPv6 Tünelleme tekniği için aşağıdaki topolojiyi uygulayacağım.&#xA;Yapılacaklar:&#xA;Interfacelere IP ver. Sırasıyla tunnel oluştur. Statik route yazarak networkleri haberleştir. Test 1. Interfacelere IP ver. R1:&#xA;R1#configure terminal R1(config)#int e0/0 R1(config-if)#ip addr 192.168.3.2 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e0/1 R1(config-if)#ip addr 192.</description>
     </item>
   </channel>

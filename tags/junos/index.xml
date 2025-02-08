@@ -2,46 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Junos on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/junos/</link>
+    <link>http://localhost:1313/tags/junos/</link>
     <description>Recent content in Junos on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Fri, 22 Nov 2024 22:57:40 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/junos/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/junos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Juniper Rollback</title>
-      <link>https://ittechnetworkk.github.io/posts/junosrollback/junos-rollback/</link>
+      <link>http://localhost:1313/posts/junosrollback/junos-rollback/</link>
       <pubDate>Fri, 22 Nov 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/junosrollback/junos-rollback/</guid>
+      <guid>http://localhost:1313/posts/junosrollback/junos-rollback/</guid>
       <description>Rollback, cihazda yapılan önceki konfigürasyonlara dönebilmeyi sağlayan komuttur. Örneğin cihazda bir konfigürasyon yaptık ve commit ettik. Fakat yapılan konfigürasyon hatalıydı veya başka bir sebepten dolayı eski konfigürasyonu bir şekilde geri almamız gerekiyor. Bu durumda Rollback kullanılır.&#xA;Rollback dosyalar 50 adettir, 0&amp;rsquo;dan başlar ve sıfırıncı dosya cihazda hali hazırda çalışan konfigürasyon dosyasıdır.&#xA;Cihaz&amp;rsquo;da 49 Rollback dosyası olması halinde her commit işleminde 49. Rollback dosyasını uçurur.&#xA;Rollback dosyalarını görmek için;&#xA;{master:0}[edit] root@vqfx-re# rollback ?</description>
     </item>
     <item>
       <title>Juniper Commit Usage</title>
-      <link>https://ittechnetworkk.github.io/posts/junos-commit-usage/junos-commit-usage/</link>
+      <link>http://localhost:1313/posts/junos-commit-usage/junos-commit-usage/</link>
       <pubDate>Fri, 22 Nov 2024 17:53:48 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/junos-commit-usage/junos-commit-usage/</guid>
+      <guid>http://localhost:1313/posts/junos-commit-usage/junos-commit-usage/</guid>
       <description>JunOS sistemlerde bir diğer önemli konu ise Commit kullanımıdır.&#xA;JunOS&amp;rsquo;da commit işlemi, yapılan konfigürasyonu etkinleştirmek için kullanılır. Yani yapılan konfigürasyonu commit etmezsek yaptığımız konfigürasyon geçerli olmaz.&#xA;Bundan dolayı mutlaka konfigürasyon sonrası commit etmemiz gerekiyor.&#xA;Commit işlemi yaparken bazı parametreler var ki işleri kolaylaştırır.&#xA;Commit tipleri:&#xA;&amp;ldquo;commit&amp;rdquo; : Bu komut, direkt olarak yapılan konfigürasyonu etkileştirir.&#xA;&amp;ldquo;commit check&amp;rdquo; : Bu komut, yapılan konfigürasyondan emin olmadığımız durumlarda, yapılan konfigürasyonun doğruluğunu kontrol eder. Eğer bir konfigürasyon hatası varsa bize ilgili kısmın hatasını gösterir.</description>
     </item>
     <item>
       <title>Juniper CLI Help Komutları</title>
-      <link>https://ittechnetworkk.github.io/posts/junosclihelpcommands/junos-cli-help-commands/</link>
+      <link>http://localhost:1313/posts/junosclihelpcommands/junos-cli-help-commands/</link>
       <pubDate>Sat, 16 Nov 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/junosclihelpcommands/junos-cli-help-commands/</guid>
+      <guid>http://localhost:1313/posts/junosclihelpcommands/junos-cli-help-commands/</guid>
       <description>JunOS&amp;rsquo;da Cli yardım alma komutları oldukça detaylı ve kullanışlıdır. Junos sadece bir işletim sistemi değil aynı zamanda içinde bir kütüphanedir.&#xA;JunOS&amp;rsquo;da birden fazla yardım alma komutu vardır ve her biri birbirinden kulanıcı dostudur.&#xA;Cli Help Komutları:&#xA;root&amp;gt; help ? Possible completions: &amp;lt;[Enter]&amp;gt; Execute this command apropos Find help information about a topic reference Reference material syslog System log error messages tip Tip for the day topic Help for high level topics | Pipe through a command Help komutlarıyla birlikte ne kullanılacağını &amp;ldquo;help ?</description>
     </item>
     <item>
       <title>Juniper Filtering Output</title>
-      <link>https://ittechnetworkk.github.io/posts/junosfilteringoutput/junos-filtering-output/</link>
+      <link>http://localhost:1313/posts/junosfilteringoutput/junos-filtering-output/</link>
       <pubDate>Sat, 16 Nov 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/junosfilteringoutput/junos-filtering-output/</guid>
+      <guid>http://localhost:1313/posts/junosfilteringoutput/junos-filtering-output/</guid>
       <description>JunOS işletim sisteminde çıktıları filtrelemek çoğu zaman hayat kurtarır. JunOS&amp;rsquo;da bazı çıktılar çok uzun olabiliyor, bu çıktıları filtrelemek amacımıza ulaşmak için zamandan tasarruf sağlıyor.&#xA;JunOS FreeBSD tabanlı olduğu için Linux işletim sistemi bilenler için komutlara aşağı yukarı aşinalık gösterir.&#xA;Linux bilen JunOS&amp;rsquo;da ve benzeri sistemlerde bir şekilde yolunu bulur.&#xA;Çıktıları filtrelemek JunOS&amp;rsquo;da oldukça kolaydır. Aşağıdaki filtreleme komutlarını ve açıklamalarını görebilirsiniz.&#xA;Çıktıları filtrelemek için temel olarak pipe &amp;ldquo;|&amp;rdquo; komutu ve devamında amaca uygun komutu kullanmak işi çözecektir.</description>
     </item>
     <item>
       <title>Juniper Shortcuts</title>
-      <link>https://ittechnetworkk.github.io/posts/junosshortcuts/junos-shortcuts/</link>
+      <link>http://localhost:1313/posts/junosshortcuts/junos-shortcuts/</link>
       <pubDate>Sat, 16 Nov 2024 17:53:48 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/junosshortcuts/junos-shortcuts/</guid>
+      <guid>http://localhost:1313/posts/junosshortcuts/junos-shortcuts/</guid>
       <description>Junos Shortcuts, JunOS CLI ekranında bize pratiklik sağlayan kısayollardır. Başlıcaları aşağıdaki gibidir.&#xA;CTRL + b: İmleci bir karakter sola kaydırır.&#xA;CTRL + f: İmleci bir karakter sağa kaydırır.&#xA;CTRL + a: İmleci satır en başına getirir.&#xA;CTRL + e: İmleci satırın en sonuna getirir.&#xA;CTRL + d: İmlecin sağından bir karakter siler.&#xA;CTRL + k: İmlecin sağındaki her şeyi siler.&#xA;CTRL + u: Tüm satırı siler.&#xA;CTRL + w: İmlecin solundan bir kelime/komut siler.</description>
     </item>
   </channel>

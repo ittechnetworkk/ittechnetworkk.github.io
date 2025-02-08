@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Server on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/server/</link>
+    <link>http://localhost:1313/tags/server/</link>
     <description>Recent content in Server on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Sat, 08 Feb 2025 15:23:57 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/server/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/server/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[EN] SSH Server Configuration</title>
-      <link>https://ittechnetworkk.github.io/posts/sshserverconfiguration/ssh-server-configuration/</link>
+      <link>http://localhost:1313/posts/sshserverconfiguration/ssh-server-configuration/</link>
       <pubDate>Sat, 08 Feb 2025 15:23:57 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/sshserverconfiguration/ssh-server-configuration/</guid>
+      <guid>http://localhost:1313/posts/sshserverconfiguration/ssh-server-configuration/</guid>
       <description>Hi everyone, in this article, I will show you how to configure an SSH server in detail.&#xA;SSH (Secure Shell Protocol) is a widely-used protocol that securely connects and manages remote servers. In this tutorial, you will learn how to set up and configure an SSH server from scratch.&#xA;To set up an SSH server, you need to install the openssh-server package on the server and the openssh-client package on the client.</description>
     </item>
     <item>
       <title>[EN] DHCP Server Configuration</title>
-      <link>https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/</link>
+      <link>http://localhost:1313/posts/dhcpserver/dhcp-server-configuration/</link>
       <pubDate>Thu, 23 Jan 2025 01:06:35 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/</guid>
+      <guid>http://localhost:1313/posts/dhcpserver/dhcp-server-configuration/</guid>
       <description>Hello there!&#xA;In this article, I’m going to show you how to install and configure a DHCP server.&#xA;I’m going to install the DHCP server role on an Ubuntu server. However, the process is almost the same for all distributions.&#xA;We need to install the isc-dhcp-server package for DHCP role.&#xA;Let&amp;rsquo;s get started.&#xA;ubuntu@ubuntu:~$ sudo apt install isc-dhcp-server After the package is installed, let’s check the service called isc-dhcp-server.&#xA;ubuntu@ubuntu:~$ systemctl status isc-dhcp-server × isc-dhcp-server.</description>
     </item>
     <item>
       <title>Dell PowerEdge R640 Proxmox</title>
-      <link>https://ittechnetworkk.github.io/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</link>
+      <link>http://localhost:1313/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</link>
       <pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</guid>
+      <guid>http://localhost:1313/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</guid>
       <description>Bu yazımda, Dell Poweredge R640 Server&amp;rsquo;a Proxmox kurulumunu anlatacağım.&#xA;Sahip olduğum donanım ve yazılımlar şu şekilde:&#xA;Dell PowerEdge R640 2x Xeon Gold 6132 14C 2.6GHz 128GB DDR4 RAM 8SFF H730 RAID, 2 x 1TB SSD Monitor, Klavye, Mause, USB Bellek, Ethernet Kablosu, Balena Etcher. Kablo bağlantılarının doğru yapıldığından emin olduktan sonra, ilk olarak web sitesinden Proxmox ISO&amp;rsquo;sunu indiriyorum.&#xA;Bu ISO dosyasını USB belleğe yazdırmak için Balena Etcher yazılımını kullanıyorum. İsteğe bağlı başka yazılımlar da kullanılabilir.</description>
     </item>
     <item>
       <title>Windows Server NIC Teaming</title>
-      <link>https://ittechnetworkk.github.io/posts/windowsservernicteaming/windows-server-nic-teaming/</link>
+      <link>http://localhost:1313/posts/windowsservernicteaming/windows-server-nic-teaming/</link>
       <pubDate>Thu, 10 Oct 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/windowsservernicteaming/windows-server-nic-teaming/</guid>
+      <guid>http://localhost:1313/posts/windowsservernicteaming/windows-server-nic-teaming/</guid>
       <description>Windows Server&amp;rsquo;da NIC Teaming, birden fazla ethernet kartının tek bir kart gibi kullanılmasına denir. Örneğin 4 x 1Gb kartlarımız var, bunları NIC Teaming yaparsak 4Gb olarak çalışan bir kart haline gelecektir.&#xA;NIC Teaming&amp;rsquo;in bazı avantajları aşağıdaki gibidir.&#xA;Bant Genişliği, Yedeklilik, Verimlilik. NIC Teaming yaparken mutlaka karşılığının olması gerekir yoksa çalışmaz. Yani Windows Server&amp;rsquo;ın karşısındaki Switch&amp;rsquo;den de LACP yapılması gerekir.&#xA;NIC Teaming yapma adımları aşağıdaki gibidir.&#xA;Aşağıdaki görseldeki &amp;ldquo;NIC Teaming Disabled&amp;rdquo; yazan seçeneğe geliyorum.</description>
     </item>
   </channel>

@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>IPv4 on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/ipv4/</link>
+    <link>http://localhost:1313/tags/ipv4/</link>
     <description>Recent content in IPv4 on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Sun, 07 Apr 2024 22:57:40 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/ipv4/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/ipv4/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OSPF LAB</title>
-      <link>https://ittechnetworkk.github.io/posts/ospflab/ospf-lab/</link>
+      <link>http://localhost:1313/posts/ospflab/ospf-lab/</link>
       <pubDate>Sun, 07 Apr 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ospflab/ospf-lab/</guid>
+      <guid>http://localhost:1313/posts/ospflab/ospf-lab/</guid>
       <description>Bu Lab’daki amacım OSPF’in genel bir tekrarını yapmak olacak. Komutları uzun uzun yazıyor olacağım.&#xA;Aşağıdaki topolojiyi uygulayacağım.&#xA;Bu Lab&amp;rsquo;da istenilenler topolojinin sol üst köşesinde yazıyor.&#xA;Buna göre;&#xA;1- İlk olarak router interfacelerine ve VPC&amp;rsquo;lere sırasıyla IP&amp;rsquo;lerini vererek başlıyorum.&#xA;R1:&#xA;R1#configure terminal R1(config)#int e0/0 R1(config-if)#ip addr 10.0.1.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e0/1 R1(config-if)#ip address 10.0.3.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e0/2 R1(config-if)#ip addr 10.0.4.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e0/3 R1(config-if)#ip addr 10.0.2.1 255.</description>
     </item>
     <item>
       <title>OSPF Konfigürasyonu</title>
-      <link>https://ittechnetworkk.github.io/posts/ospfconfiguration/ospf-configuration/</link>
+      <link>http://localhost:1313/posts/ospfconfiguration/ospf-configuration/</link>
       <pubDate>Sun, 31 Mar 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ospfconfiguration/ospf-configuration/</guid>
+      <guid>http://localhost:1313/posts/ospfconfiguration/ospf-configuration/</guid>
       <description>OSPF (Open Short Path First), dinamik bir yönlendirme protokolüdür. OSPF bir Link State Routing protokolüdür. Bundan dolayı network haritasının tamamına hakimdir Bazı özellikleri şöyledir:&#xA;Açık kaynaklıdır, SPF(Shortest Path First) algoritmasını kullanır, Classless (Sınıfsız) bir protokoldür, CIDR (Classless Inter-Domain Routing), VLSM(Veriable Length Subnet Masking) destekler, Load balancing destekler, Güncelleme süresi hızlıdır, Administrative Distance değeri 110&amp;rsquo;dur, Area yapısı ile ölçeklenebilir, Kimlik doğrulamayı destekler (MD5) Metrik değeri olarak Cost kullanır. Multicast 224.0.0.5 ve 224.</description>
     </item>
     <item>
       <title>Static Routing</title>
-      <link>https://ittechnetworkk.github.io/posts/staticrouting/static-routing/</link>
+      <link>http://localhost:1313/posts/staticrouting/static-routing/</link>
       <pubDate>Mon, 18 Mar 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/staticrouting/static-routing/</guid>
+      <guid>http://localhost:1313/posts/staticrouting/static-routing/</guid>
       <description>Static Routing, yönlendirme tablosuna manuel olarak route eklenmesidir. Topoloji değişikliklerinde networklerin de yine güncellenmesi manuel olarak yapılmalıdır. Administrative Distance değeri 1&amp;rsquo;dir&#xA;Aşağıdaki topolojiyi uygulayacağız.&#xA;Bu topolojide tüm cihazların birbirleriyle iletişim kurmasını istiyoruz. Başlayalım&#xA;1- Router interfacelerine ve VPC&amp;rsquo;lere IP&amp;rsquo;lerini verelim.&#xA;R1:&#xA;R1#enable R1#conf t R1(config)#int e0/0 R1(config-if)#ip add 192.168.1.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int s1/0 R1(config-if)#ip address 2.2.2.2 255.255.255.0 R1(config-if)#no sh R1(config-if)#int s1/1 R1(config-if)#ip addr 3.3.3.2 255.255.255.0 R1(config-if)#no sh R2:&#xA;R2#enable R2#conf t R2(config)#int e0/0 R2(config-if)#ip add 192.</description>
     </item>
   </channel>

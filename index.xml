@@ -2,480 +2,480 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Sat, 08 Feb 2025 15:35:41 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Skyforge</title>
-      <link>https://ittechnetworkk.github.io/posts/skyforgeproject/skyforge/</link>
+      <link>http://localhost:1313/posts/skyforgeproject/skyforge/</link>
       <pubDate>Sat, 08 Feb 2025 15:35:41 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/skyforgeproject/skyforge/</guid>
+      <guid>http://localhost:1313/posts/skyforgeproject/skyforge/</guid>
       <description>Details coming soon.&#xA;Photos:</description>
     </item>
     <item>
       <title>[EN] SSH Server Configuration</title>
-      <link>https://ittechnetworkk.github.io/posts/sshserverconfiguration/ssh-server-configuration/</link>
+      <link>http://localhost:1313/posts/sshserverconfiguration/ssh-server-configuration/</link>
       <pubDate>Sat, 08 Feb 2025 15:23:57 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/sshserverconfiguration/ssh-server-configuration/</guid>
+      <guid>http://localhost:1313/posts/sshserverconfiguration/ssh-server-configuration/</guid>
       <description>Hi everyone, in this article, I will show you how to configure an SSH server in detail.&#xA;SSH (Secure Shell Protocol) is a widely-used protocol that securely connects and manages remote servers. In this tutorial, you will learn how to set up and configure an SSH server from scratch.&#xA;To set up an SSH server, you need to install the openssh-server package on the server and the openssh-client package on the client.</description>
     </item>
     <item>
       <title>Cockpit Kurulumu</title>
-      <link>https://ittechnetworkk.github.io/posts/cockpitinstallation/cockpit/</link>
+      <link>http://localhost:1313/posts/cockpitinstallation/cockpit/</link>
       <pubDate>Fri, 24 Jan 2025 22:16:16 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/cockpitinstallation/cockpit/</guid>
+      <guid>http://localhost:1313/posts/cockpitinstallation/cockpit/</guid>
       <description>Selamlar, bu yazımda Linux sunucularda Cockpit kurulumuna değineceğim.&#xA;Cockpit, Linux sunucuları yönetebilmeyi sağlayan bir araçtır.&#xA;Cockpit&amp;rsquo;i kurduktan sonra sunucuyu web tarayıcısı üzerinden yönetebilmeyi sağlar.&#xA;Alternatif olarak, Webmin, cPanel, Plesk, DirectAdmin gibi araçlar da bulunur.&#xA;Kurulumu oldukça kolaydır. Ben Fedora Server üzerine kurulumunu göstereceğim.&#xA;Ayrıca Web Sitesini&amp;rsquo;de ziyaret edebilirsiniz.&#xA;fedora@fedora:~$ sudo dnf check-update fedora@fedora:~$ sudo dnf install cockpit Kurulum bittikten sonra servisi başlatıp daha sonra enable ediyorum. Cockpit servisinin adı cockpit.socket tir.</description>
     </item>
     <item>
       <title>[EN] NetworkManager Installation</title>
-      <link>https://ittechnetworkk.github.io/posts/networkmanagerinstallation/network-manager-installation/</link>
+      <link>http://localhost:1313/posts/networkmanagerinstallation/network-manager-installation/</link>
       <pubDate>Fri, 24 Jan 2025 21:46:46 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/networkmanagerinstallation/network-manager-installation/</guid>
+      <guid>http://localhost:1313/posts/networkmanagerinstallation/network-manager-installation/</guid>
       <description>Hi there, in this article, I will show you how to switch netplan to NetworkManager to manage network interfaces on Ubuntu.&#xA;As you know, Ubuntu uses netplan as the default tool for network management. However NetworkManager is often a better choice due to its advanced features and ease of use.&#xA;In this guide, I’ll walk you through the steps to install and configure NetworkManager on an Ubuntu Server.&#xA;Step 1: Install NetworkManager</description>
     </item>
     <item>
       <title>[EN] DHCP Server Configuration</title>
-      <link>https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/</link>
+      <link>http://localhost:1313/posts/dhcpserver/dhcp-server-configuration/</link>
       <pubDate>Thu, 23 Jan 2025 01:06:35 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/</guid>
+      <guid>http://localhost:1313/posts/dhcpserver/dhcp-server-configuration/</guid>
       <description>Hello there!&#xA;In this article, I’m going to show you how to install and configure a DHCP server.&#xA;I’m going to install the DHCP server role on an Ubuntu server. However, the process is almost the same for all distributions.&#xA;We need to install the isc-dhcp-server package for DHCP role.&#xA;Let&amp;rsquo;s get started.&#xA;ubuntu@ubuntu:~$ sudo apt install isc-dhcp-server After the package is installed, let’s check the service called isc-dhcp-server.&#xA;ubuntu@ubuntu:~$ systemctl status isc-dhcp-server × isc-dhcp-server.</description>
     </item>
     <item>
       <title>Debian Server IP Konfigürasyonu</title>
-      <link>https://ittechnetworkk.github.io/posts/debianip/debian-ip/</link>
+      <link>http://localhost:1313/posts/debianip/debian-ip/</link>
       <pubDate>Sun, 19 Jan 2025 23:56:33 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/debianip/debian-ip/</guid>
+      <guid>http://localhost:1313/posts/debianip/debian-ip/</guid>
       <description>Selamlar, bu yazımda Debian Server&amp;rsquo;a nasıl statik veya dinamik IP tanımlanacağını göstereceğim.&#xA;Her Linux dağıtımında statik IP&amp;rsquo;ler aynı şekilde tanımlanmayabilir.&#xA;Linux sistemlerde her şey bir dosyadan okunduğu için bunun için de bir ilgili bir dosya vardır.&#xA;Debian&amp;rsquo;da bu dosya şuradadır:&#xA;/etc/network/interfaces Şimdi bu dosyayı editleyelim.&#xA;Dosyanın ilk hali şu şekildedir:&#xA;# This file describes the network interfaces available on your system # and how to activate them. For more information, see interfaces(5).</description>
     </item>
     <item>
       <title>Fedora Server IP Konfigürasyonu</title>
-      <link>https://ittechnetworkk.github.io/posts/fedoraip/fedora-ip/</link>
+      <link>http://localhost:1313/posts/fedoraip/fedora-ip/</link>
       <pubDate>Sun, 19 Jan 2025 22:51:26 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/fedoraip/fedora-ip/</guid>
+      <guid>http://localhost:1313/posts/fedoraip/fedora-ip/</guid>
       <description>Selamlar, bu yazımda Fedora Server&amp;rsquo;a nasıl statik veya dinamik IP tanımlanacağını göstereceğim.&#xA;Her Linux dağıtımında statik IP&amp;rsquo;ler aynı şekilde tanımlanmayabilir. Fakat mantığını bilmek bir adım önde başlamak demektir.&#xA;Linux sistemlerde her şey bir dosyadan okunduğu için bunun için de bir ilgili bir dosya vardır.&#xA;Fedora&amp;rsquo;da bu dosya şuradadır:&#xA;NetworkManager kullanılmadığında;&#xA;/etc/sysconfig/network-scripts/ifcfg-ens33 NetworkManager kullanıldığında;&#xA;/etc/NetworkManager/system-connections/ens33.nmconnection Şimdi bu dosyayı editleyelim.&#xA;Dosyanın ilk hali şu şekildedir:&#xA;[connection] id=ens160 uuid=36903561-eb7f-38c2-986b-b098913248de type=ethernet autoconnect-priority=-999 interface-name=ens160 timestamp=1737213877 [ethernet] [ipv4] [ipv6] addr-gen-mode=eui64 method=auto [proxy] Bazı parametreler sisteminize bağlı olarak değişiklik gösterebilir, fakat bizim ilgilendiğimiz kısım şimdilik [ipv4] kısmı.</description>
     </item>
     <item>
       <title>[EN] Linux Process Prioritization</title>
-      <link>https://ittechnetworkk.github.io/posts/linuxprocessprioritization/linux-process-prioritization/</link>
+      <link>http://localhost:1313/posts/linuxprocessprioritization/linux-process-prioritization/</link>
       <pubDate>Sat, 11 Jan 2025 05:03:17 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/linuxprocessprioritization/linux-process-prioritization/</guid>
+      <guid>http://localhost:1313/posts/linuxprocessprioritization/linux-process-prioritization/</guid>
       <description>In this article I am going to talk about Linux process Prioritization.&#xA;Sometimes we may want to prioritize our more important processes in Linux.&#xA;We prioritize process or processes that are more important for us with &amp;ldquo;NICE&amp;rdquo; parameters.&#xA;Each process has a &amp;ldquo;NICE&amp;rdquo; value. This value prioritizes processes.&#xA;The lower we set this value, the higher the priority of the process. However, this value can only be set between &amp;ldquo;+20&amp;rdquo; and &amp;ldquo;-20&amp;rdquo;.</description>
     </item>
     <item>
       <title>Vlan Routing L3 Switch (SVI)</title>
-      <link>https://ittechnetworkk.github.io/posts/vlanroutingsvi/vlan-routing-svi/</link>
+      <link>http://localhost:1313/posts/vlanroutingsvi/vlan-routing-svi/</link>
       <pubDate>Fri, 10 Jan 2025 11:43:33 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/vlanroutingsvi/vlan-routing-svi/</guid>
+      <guid>http://localhost:1313/posts/vlanroutingsvi/vlan-routing-svi/</guid>
       <description>Selamlar, bu yazımda VLAN Routing&amp;rsquo;in L3 bir Switch ile nasıl yapılacağını bir LAB senaryosu üzerinde yapacağım..&#xA;LAB&amp;rsquo;ı aşağıdaki topoloji üzerinde uygulayacağım.&#xA;Başlayalım.&#xA;İlk olarak cihazlara IP verelim.&#xA;VPC4:&#xA;VPCS&amp;gt; ip 10.10.10.10 255.255.255.0 gateway 10.10.10.1 VPC5:&#xA;VPCS&amp;gt; ip 10.10.20.10 255.255.255.0 gateway 10.10.20.1 VPC6:&#xA;VPCS&amp;gt; ip 10.10.10.11 255.255.255.0 gateway 10.10.10.1 VPC7:&#xA;VPCS&amp;gt; ip 10.10.20.11 255.255.255.0 gateway 10.10.20.1 Şimdi Switch&amp;rsquo;lerde VLAN&amp;rsquo;ları oluşturalım ve portlara atayalım.&#xA;SW2:&#xA;Switch&amp;gt;en Switch#conf t Switch(config)#vlan 10 Switch(config-vlan)#vlan 20 Switch(config-vlan)#exit Switch(config)#int e0/1 Switch(config-if)#switchport mode access Switch(config-if)#switchport access vlan 10 Switch(config-if)#exit Switch(config)#int e0/2 Switch(config-if)#switchport mode access Switch(config-if)#switchport access vlan 20 Switch(config-if)#exit #Vlan&amp;#39;ların geçeceği port trunk olmalı Switch(config)#int e0/0 Switch(config-if)#switchport trunk encapsulation dot1q Switch(config-if)#switchport mode trunk SW3:</description>
     </item>
     <item>
       <title>Vlan Routing (Router on a Stick)</title>
-      <link>https://ittechnetworkk.github.io/posts/vlanroutingroas/vlan-routing-roas/</link>
+      <link>http://localhost:1313/posts/vlanroutingroas/vlan-routing-roas/</link>
       <pubDate>Fri, 10 Jan 2025 11:43:17 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/vlanroutingroas/vlan-routing-roas/</guid>
+      <guid>http://localhost:1313/posts/vlanroutingroas/vlan-routing-roas/</guid>
       <description>Selamlar, bu yazımda VLAN Routing&amp;rsquo;in bir Router ile nasıl yapılacağını bir LAB senaryosu üzerinde yapacağım..&#xA;LAB&amp;rsquo;ı aşağıdaki topoloji üzerinde uygulayacağım.&#xA;Başlayalım.&#xA;İlk olarak cihazlara IP verelim.&#xA;VPC4:&#xA;VPCS&amp;gt; ip 10.10.10.10 255.255.255.0 gateway 10.10.10.1 VPC5:&#xA;VPCS&amp;gt; ip 10.10.20.10 255.255.255.0 gateway 10.10.20.1 VPC6:&#xA;VPCS&amp;gt; ip 10.10.10.11 255.255.255.0 gateway 10.10.10.1 VPC7:&#xA;VPCS&amp;gt; ip 10.10.20.11 255.255.255.0 gateway 10.10.20.1 Şimdi Switch&amp;rsquo;lerde VLAN&amp;rsquo;ları oluşturalım ve portlara atayalım.&#xA;SW2:&#xA;Switch&amp;gt;en Switch#conf t Switch(config)#vlan 10 Switch(config-vlan)#vlan 20 Switch(config-vlan)#exit Switch(config)#int e0/1 Switch(config-if)#switchport mode access Switch(config-if)#switchport access vlan 10 Switch(config-if)#exit Switch(config)#int e0/2 Switch(config-if)#switchport mode access Switch(config-if)#switchport access vlan 20 Switch(config-if)#exit #Vlan&amp;#39;ların geçeceği port trunk olmalı Switch(config)#int e0/0 Switch(config-if)#switchport trunk encapsulation dot1q Switch(config-if)#switchport mode trunk SW3:</description>
     </item>
     <item>
       <title>Cml Freetrial</title>
-      <link>https://ittechnetworkk.github.io/posts/ciscocmlfreetrial/cml-freetrial/</link>
+      <link>http://localhost:1313/posts/ciscocmlfreetrial/cml-freetrial/</link>
       <pubDate>Fri, 03 Jan 2025 23:31:39 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ciscocmlfreetrial/cml-freetrial/</guid>
+      <guid>http://localhost:1313/posts/ciscocmlfreetrial/cml-freetrial/</guid>
       <description>CiscoCMLFreeTrial Merhabalar, bu yazımda Cml Freetrial konusunu anlatacağım.&#xA;Ben Vmware Workstation Pro&amp;rsquo;ya kuracağım, aşağıdaki linkten ilgili kurulum dosyalarını indiriyorum.&#xA;https://software.cisco.com/download/home/286193282/type/286326381/release/2.8.0%20Free%20Tier&#xA;Görseldeki en alt iki dosyayı indiriyorum&#xA;cml2_f_2.8.0-6_amd64-32.ova refplat-20241016-freetier-iso Kurulum adımları sırasıyla aşağıdaki gibi olacaktır.&#xA;VMWare:&#xA;File &amp;gt; Open &amp;gt; cml2_f_2.8.0-6_amd64-32.ova&#xA;.ova uzantılı dosya import edildikten sonra bunu editliyoruz.&#xA;Burada .iso uzantılı dosyanın yolunu belirtiyoruz.&#xA;Aşağıdaki kutucuğun işaretli olması gerekiyor.&#xA;Aşağıdaki gibi bir ekranla karşılaşırsanız, belirttiğimiz &amp;ldquo;refplat-20241016-freetier-iso&amp;rdquo; dosyası takılı değildir demektir. Ekranın sağ alt kısmındaki üzerinde çarpı olan CD icon&amp;rsquo;una tıklayıp connect dersek iso takılmış olacaktır.</description>
     </item>
     <item>
       <title>Nanopi R2S Ipfire Kurulumu</title>
-      <link>https://ittechnetworkk.github.io/posts/nanopir2sipfirekurulumu/nanopir2s-ipfire/</link>
+      <link>http://localhost:1313/posts/nanopir2sipfirekurulumu/nanopir2s-ipfire/</link>
       <pubDate>Fri, 03 Jan 2025 23:00:44 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/nanopir2sipfirekurulumu/nanopir2s-ipfire/</guid>
+      <guid>http://localhost:1313/posts/nanopir2sipfirekurulumu/nanopir2s-ipfire/</guid>
       <description>Merhaba, bu yazıda, NanoPi R2S cihazıma IPFire kurulumunu anlatacağım.&#xA;Kullandığım ekipmanlar:&#xA;NanoPi R2S, MicroSD Kart, Kart Okuyucu, Type C Güç Kablosu, USB to Serial Kablo, Ethernet Kablosu, Terminal yazılımı (Putty or minicom), Balena Etcher. İlk olarak IPFire imaj dosyasını indiriyorum ve Balena Etcher aracıyla SD Kart&amp;rsquo;a yazdırıyorum.&#xA;Bu işlem bittikten sonra SD Kart&amp;rsquo;ı cihaza takıyorum.&#xA;Serial Kablo&amp;rsquo;yu da aşağıdaki şekilde cihaza bağlıyorum. Siyah Kablo » G Beyaz Kablo » TX Turkuaz Kablo » RX</description>
     </item>
     <item>
       <title>About</title>
-      <link>https://ittechnetworkk.github.io/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Thu, 05 Dec 2024 22:55:21 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>COMING SOON</description>
     </item>
     <item>
       <title>Cisco ASA ASDM Enable</title>
-      <link>https://ittechnetworkk.github.io/posts/asa5510asdm/asa5510-asdm/</link>
+      <link>http://localhost:1313/posts/asa5510asdm/asa5510-asdm/</link>
       <pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/asa5510asdm/asa5510-asdm/</guid>
+      <guid>http://localhost:1313/posts/asa5510asdm/asa5510-asdm/</guid>
       <description>Merhaba, bu yazımda Cisco ASA 5510 cihazını web arayüzünden yönetebilmek için gerekli konfigürasyonları göstereceğim.&#xA;İlk olarak asdm imajını çekiyorum:&#xA;ASA(config)# show disk0: ASA(config)# asdm image flash:/asdm-649.bin HTTP servisini enable ediyorum:&#xA;ASA# conf t ASA(config)# http server enable GUI&amp;rsquo;e erişebilecek network aralığını belirliyorum:&#xA;ASA(config)# http 192.168.1.0 255.255.255.0 management Username ve Password belirliyorum:&#xA;ASA(config)# username &amp;lt;User&amp;gt; password &amp;lt;Password&amp;gt; privilege 15 Management Interface&amp;rsquo;ye IP veriyorum:&#xA;ASA(config)# interface Management0/0 ASA(config)# ip addr 192.168.1.2 255.255.255.0 ASA(config)# no sh Tarayıcımızdan cihazın IP adresine gidecek olursak web arayüzü bizi karşılayacaktır.</description>
     </item>
     <item>
       <title>Cisco ASA Password Recovery</title>
-      <link>https://ittechnetworkk.github.io/posts/asa5510passwordrecovery/asa5510-password-recovery/</link>
+      <link>http://localhost:1313/posts/asa5510passwordrecovery/asa5510-password-recovery/</link>
       <pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/asa5510passwordrecovery/asa5510-password-recovery/</guid>
+      <guid>http://localhost:1313/posts/asa5510passwordrecovery/asa5510-password-recovery/</guid>
       <description>Merhabalar bu yazımda Cisco ASA 5500 serisi cihazın password recovery işlemini göstereceğim.&#xA;İlk olarak cihaza console kablosu ile bağlanıyorum cihazı başlatıyorum.&#xA;Cihaz başlarken aşağıdaki gibi bir ekran geldiğinde &amp;ldquo;ESC&amp;rdquo; tuşuna basıp &amp;ldquo;rommon&amp;rdquo; moduna geçiyorum.&#xA;Bu kısımda &amp;ldquo;ESC&amp;rdquo; tuşuna basar basmaz aşağıdaki &amp;ldquo;rommon&amp;rdquo; modu karşımıza çıkacaktır.&#xA;Password recovery için aşağıdaki komutları sırasıyla yazıyorum:&#xA;rommon #0&amp;gt; confreg 0x41 rommon #0&amp;gt; confreg rommon #0&amp;gt; boot &amp;ldquo;confreg&amp;rdquo; komutundan sonra çıkan soruları aşağıdaki gibi seçiyorum.</description>
     </item>
     <item>
       <title>Dell PowerEdge R640 Proxmox</title>
-      <link>https://ittechnetworkk.github.io/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</link>
+      <link>http://localhost:1313/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</link>
       <pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</guid>
+      <guid>http://localhost:1313/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</guid>
       <description>Bu yazımda, Dell Poweredge R640 Server&amp;rsquo;a Proxmox kurulumunu anlatacağım.&#xA;Sahip olduğum donanım ve yazılımlar şu şekilde:&#xA;Dell PowerEdge R640 2x Xeon Gold 6132 14C 2.6GHz 128GB DDR4 RAM 8SFF H730 RAID, 2 x 1TB SSD Monitor, Klavye, Mause, USB Bellek, Ethernet Kablosu, Balena Etcher. Kablo bağlantılarının doğru yapıldığından emin olduktan sonra, ilk olarak web sitesinden Proxmox ISO&amp;rsquo;sunu indiriyorum.&#xA;Bu ISO dosyasını USB belleğe yazdırmak için Balena Etcher yazılımını kullanıyorum. İsteğe bağlı başka yazılımlar da kullanılabilir.</description>
     </item>
     <item>
       <title>Cisco ASA SSH Konfigürasyonu</title>
-      <link>https://ittechnetworkk.github.io/posts/asa5510ssh/asa5510-ssh/</link>
+      <link>http://localhost:1313/posts/asa5510ssh/asa5510-ssh/</link>
       <pubDate>Sun, 01 Dec 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/asa5510ssh/asa5510-ssh/</guid>
+      <guid>http://localhost:1313/posts/asa5510ssh/asa5510-ssh/</guid>
       <description>Merhabalar, bu yazımda Cisco ASA 5510&amp;rsquo;a SSH konfigürasyonu yapmayı göstereceğim.&#xA;İlk olarak bir kullanıcı oluşturuyorum:&#xA;ASA# conf t ASA(config)# username &amp;lt;User&amp;gt; password &amp;lt;Password&amp;gt; privilege 15 Kimlik doğrulama modunu ayarlıyorum:&#xA;ASA(config)# aaa authentication ssh console LOCAL SSH versiyonunu 2 yapıyorum ve timeout değerini ayarlıyorum:&#xA;ASA(config)# ssh version 2 ASA(config)# ssh timeout 30 Bir domain adı ve anahtar çifti yaratıyorum:&#xA;ASA(config)# domain-name sonersahin.local ASA(config)# crypto key generate rsa modulus 1024 Cihaza SSH yapacak network aralığı belirliyorum, isterseniz sadece belli bir IP adresini de yapabilirsiniz:</description>
     </item>
     <item>
       <title>GRE Over Ipsec</title>
-      <link>https://ittechnetworkk.github.io/posts/greoveripsec/greoveripsec/</link>
+      <link>http://localhost:1313/posts/greoveripsec/greoveripsec/</link>
       <pubDate>Fri, 22 Nov 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/greoveripsec/greoveripsec/</guid>
+      <guid>http://localhost:1313/posts/greoveripsec/greoveripsec/</guid>
       <description>Aşağıdaki topologiye göre ilerleyeceğim. Topolojideki cihazların interfacelerine IP adresleri verilmiştir.&#xA;GRE Config:&#xA;R1:&#xA;R1#conf t R1(config)#int tunnel 1 R1(config-if)#ip addr 192.168.1.1 255.255.255.0 R1(config-if)#tunnel source e0/0 R1(config-if)#tunnel destination 200.59.25.2 R2:&#xA;R1#conf t R2(config)#int tunnel 1 R2(config-if)#ip addr 192.168.1.2 255.255.255.0 R2(config-if)#tunnel source e0/0 R2(config-if)#tunnel destination 197.53.15.2 IPsec:&#xA;R1:&#xA;R1(config)#crypto isakmp policy 10 R1(config-isakmp)#authentication pre-share (define it later on) R1(config-isakmp)#encryption aes R1(config-isakmp)#group 14 (must be over 14) R1(config-isakmp)#hash sha R1(config-isakmp)#exit R1(config)#crypto isakmp key BENIMCICIPAROLAM address 200.</description>
     </item>
     <item>
       <title>Juniper Rollback</title>
-      <link>https://ittechnetworkk.github.io/posts/junosrollback/junos-rollback/</link>
+      <link>http://localhost:1313/posts/junosrollback/junos-rollback/</link>
       <pubDate>Fri, 22 Nov 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/junosrollback/junos-rollback/</guid>
+      <guid>http://localhost:1313/posts/junosrollback/junos-rollback/</guid>
       <description>Rollback, cihazda yapılan önceki konfigürasyonlara dönebilmeyi sağlayan komuttur. Örneğin cihazda bir konfigürasyon yaptık ve commit ettik. Fakat yapılan konfigürasyon hatalıydı veya başka bir sebepten dolayı eski konfigürasyonu bir şekilde geri almamız gerekiyor. Bu durumda Rollback kullanılır.&#xA;Rollback dosyalar 50 adettir, 0&amp;rsquo;dan başlar ve sıfırıncı dosya cihazda hali hazırda çalışan konfigürasyon dosyasıdır.&#xA;Cihaz&amp;rsquo;da 49 Rollback dosyası olması halinde her commit işleminde 49. Rollback dosyasını uçurur.&#xA;Rollback dosyalarını görmek için;&#xA;{master:0}[edit] root@vqfx-re# rollback ?</description>
     </item>
     <item>
       <title>Juniper Commit Usage</title>
-      <link>https://ittechnetworkk.github.io/posts/junos-commit-usage/junos-commit-usage/</link>
+      <link>http://localhost:1313/posts/junos-commit-usage/junos-commit-usage/</link>
       <pubDate>Fri, 22 Nov 2024 17:53:48 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/junos-commit-usage/junos-commit-usage/</guid>
+      <guid>http://localhost:1313/posts/junos-commit-usage/junos-commit-usage/</guid>
       <description>JunOS sistemlerde bir diğer önemli konu ise Commit kullanımıdır.&#xA;JunOS&amp;rsquo;da commit işlemi, yapılan konfigürasyonu etkinleştirmek için kullanılır. Yani yapılan konfigürasyonu commit etmezsek yaptığımız konfigürasyon geçerli olmaz.&#xA;Bundan dolayı mutlaka konfigürasyon sonrası commit etmemiz gerekiyor.&#xA;Commit işlemi yaparken bazı parametreler var ki işleri kolaylaştırır.&#xA;Commit tipleri:&#xA;&amp;ldquo;commit&amp;rdquo; : Bu komut, direkt olarak yapılan konfigürasyonu etkileştirir.&#xA;&amp;ldquo;commit check&amp;rdquo; : Bu komut, yapılan konfigürasyondan emin olmadığımız durumlarda, yapılan konfigürasyonun doğruluğunu kontrol eder. Eğer bir konfigürasyon hatası varsa bize ilgili kısmın hatasını gösterir.</description>
     </item>
     <item>
       <title>Juniper CLI Help Komutları</title>
-      <link>https://ittechnetworkk.github.io/posts/junosclihelpcommands/junos-cli-help-commands/</link>
+      <link>http://localhost:1313/posts/junosclihelpcommands/junos-cli-help-commands/</link>
       <pubDate>Sat, 16 Nov 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/junosclihelpcommands/junos-cli-help-commands/</guid>
+      <guid>http://localhost:1313/posts/junosclihelpcommands/junos-cli-help-commands/</guid>
       <description>JunOS&amp;rsquo;da Cli yardım alma komutları oldukça detaylı ve kullanışlıdır. Junos sadece bir işletim sistemi değil aynı zamanda içinde bir kütüphanedir.&#xA;JunOS&amp;rsquo;da birden fazla yardım alma komutu vardır ve her biri birbirinden kulanıcı dostudur.&#xA;Cli Help Komutları:&#xA;root&amp;gt; help ? Possible completions: &amp;lt;[Enter]&amp;gt; Execute this command apropos Find help information about a topic reference Reference material syslog System log error messages tip Tip for the day topic Help for high level topics | Pipe through a command Help komutlarıyla birlikte ne kullanılacağını &amp;ldquo;help ?</description>
     </item>
     <item>
       <title>Juniper Filtering Output</title>
-      <link>https://ittechnetworkk.github.io/posts/junosfilteringoutput/junos-filtering-output/</link>
+      <link>http://localhost:1313/posts/junosfilteringoutput/junos-filtering-output/</link>
       <pubDate>Sat, 16 Nov 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/junosfilteringoutput/junos-filtering-output/</guid>
+      <guid>http://localhost:1313/posts/junosfilteringoutput/junos-filtering-output/</guid>
       <description>JunOS işletim sisteminde çıktıları filtrelemek çoğu zaman hayat kurtarır. JunOS&amp;rsquo;da bazı çıktılar çok uzun olabiliyor, bu çıktıları filtrelemek amacımıza ulaşmak için zamandan tasarruf sağlıyor.&#xA;JunOS FreeBSD tabanlı olduğu için Linux işletim sistemi bilenler için komutlara aşağı yukarı aşinalık gösterir.&#xA;Linux bilen JunOS&amp;rsquo;da ve benzeri sistemlerde bir şekilde yolunu bulur.&#xA;Çıktıları filtrelemek JunOS&amp;rsquo;da oldukça kolaydır. Aşağıdaki filtreleme komutlarını ve açıklamalarını görebilirsiniz.&#xA;Çıktıları filtrelemek için temel olarak pipe &amp;ldquo;|&amp;rdquo; komutu ve devamında amaca uygun komutu kullanmak işi çözecektir.</description>
     </item>
     <item>
       <title>Juniper Shortcuts</title>
-      <link>https://ittechnetworkk.github.io/posts/junosshortcuts/junos-shortcuts/</link>
+      <link>http://localhost:1313/posts/junosshortcuts/junos-shortcuts/</link>
       <pubDate>Sat, 16 Nov 2024 17:53:48 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/junosshortcuts/junos-shortcuts/</guid>
+      <guid>http://localhost:1313/posts/junosshortcuts/junos-shortcuts/</guid>
       <description>Junos Shortcuts, JunOS CLI ekranında bize pratiklik sağlayan kısayollardır. Başlıcaları aşağıdaki gibidir.&#xA;CTRL + b: İmleci bir karakter sola kaydırır.&#xA;CTRL + f: İmleci bir karakter sağa kaydırır.&#xA;CTRL + a: İmleci satır en başına getirir.&#xA;CTRL + e: İmleci satırın en sonuna getirir.&#xA;CTRL + d: İmlecin sağından bir karakter siler.&#xA;CTRL + k: İmlecin sağındaki her şeyi siler.&#xA;CTRL + u: Tüm satırı siler.&#xA;CTRL + w: İmlecin solundan bir kelime/komut siler.</description>
     </item>
     <item>
       <title>Ubuntu 22.04 DHCP Server Konfigürasyonu</title>
-      <link>https://ittechnetworkk.github.io/posts/ubuntudhcpserver/ubuntu-dhcp-server/</link>
+      <link>http://localhost:1313/posts/ubuntudhcpserver/ubuntu-dhcp-server/</link>
       <pubDate>Thu, 07 Nov 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ubuntudhcpserver/ubuntu-dhcp-server/</guid>
+      <guid>http://localhost:1313/posts/ubuntudhcpserver/ubuntu-dhcp-server/</guid>
       <description>Merhabalar bu yazımda, Ubuntu-22.04 Server&amp;rsquo;a DHCP rolü kurup konfigürasyonunu yapacağım.&#xA;Ubuntu&amp;rsquo;ya DHCP rolü vermeden önce, Server&amp;rsquo;ın IP adresini statik olarak ayarlıyorum.&#xA;Statik IP adresi tanımlamak için &amp;ldquo;/etc/netplan/00-installer-config.yaml&amp;rdquo; dosyasını düzenliyorum.&#xA;network: version: 2 renderer: networkd ethernets: ens33: addresses: - 192.168.1.50/24 nameservers: addresses: [1.1.1.1, 8.8.8.8] routes: - to: default via: 192.168.1.1 Değişiklikleri geçerli kılmak için:&#xA;sudo netplan apply Grafik arayüzü ile yapılandırmak için &amp;ldquo;nmtui&amp;rdquo; aracını kullanabilirsiniz.&#xA;DHCP Server Rolü Kurulumu:&#xA;sudo apt install isc-dhcp-server DHCP rolü yüklendikten sonra, konfigürasyon dosyası &amp;ldquo;/etc/dhcp/dhcpd.</description>
     </item>
     <item>
       <title>Updog</title>
-      <link>https://ittechnetworkk.github.io/posts/updog/updog/</link>
+      <link>http://localhost:1313/posts/updog/updog/</link>
       <pubDate>Fri, 11 Oct 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/updog/updog/</guid>
+      <guid>http://localhost:1313/posts/updog/updog/</guid>
       <description>Updog, SimpleHTTPServer alternatifi bir araçtır. Çok hızlı ve kolay bir şekilde localinizde bir HTTP Server ayağa kaldırmanızı sağlayan Python ile yazılmış açık kaynak kodlu bir araçtır.&#xA;Encryption ve Authentication destekler. Kendinden imzalı bir SSL sertifikası ve parola ile de bir Authentication sağlar.&#xA;Updog Yükleme:&#xA;pip3 install updog Updog kullanımı oldukça kolaydır aşağıda updog ile kullanılan tüm parametrelerini görebilirsiniz.&#xA;-d -p &amp;ndash;password &amp;ndash;ssl &amp;ndash;version -h&#xA;Bir örnek:&#xA;┌─[ssnrshnn@MARVEL]─[~/test] └──╼ $ls test1.txt ┌─[ssnrshnn@MARVEL]─[~/test] └──╼ $updog -d /home/ssnrshnn/test/ -p 6654 --password Pass123!</description>
     </item>
     <item>
       <title>Windows Server NIC Teaming</title>
-      <link>https://ittechnetworkk.github.io/posts/windowsservernicteaming/windows-server-nic-teaming/</link>
+      <link>http://localhost:1313/posts/windowsservernicteaming/windows-server-nic-teaming/</link>
       <pubDate>Thu, 10 Oct 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/windowsservernicteaming/windows-server-nic-teaming/</guid>
+      <guid>http://localhost:1313/posts/windowsservernicteaming/windows-server-nic-teaming/</guid>
       <description>Windows Server&amp;rsquo;da NIC Teaming, birden fazla ethernet kartının tek bir kart gibi kullanılmasına denir. Örneğin 4 x 1Gb kartlarımız var, bunları NIC Teaming yaparsak 4Gb olarak çalışan bir kart haline gelecektir.&#xA;NIC Teaming&amp;rsquo;in bazı avantajları aşağıdaki gibidir.&#xA;Bant Genişliği, Yedeklilik, Verimlilik. NIC Teaming yaparken mutlaka karşılığının olması gerekir yoksa çalışmaz. Yani Windows Server&amp;rsquo;ın karşısındaki Switch&amp;rsquo;den de LACP yapılması gerekir.&#xA;NIC Teaming yapma adımları aşağıdaki gibidir.&#xA;Aşağıdaki görseldeki &amp;ldquo;NIC Teaming Disabled&amp;rdquo; yazan seçeneğe geliyorum.</description>
     </item>
     <item>
       <title>DMVPN Phase 1 EIGRP</title>
-      <link>https://ittechnetworkk.github.io/posts/dmvpnphase1eigrp/dmvpn-phase1-eigrp/</link>
+      <link>http://localhost:1313/posts/dmvpnphase1eigrp/dmvpn-phase1-eigrp/</link>
       <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dmvpnphase1eigrp/dmvpn-phase1-eigrp/</guid>
+      <guid>http://localhost:1313/posts/dmvpnphase1eigrp/dmvpn-phase1-eigrp/</guid>
       <description>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&#xA;Aşağıda oluşturduğum topoloji ile devam edeceğim.&#xA;Başlayalım.&#xA;HUB:&#xA;HUB#conf t HUB(config)#int tun0 HUB(config-if)#no sh HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 HUB(config-if)#tunnel source f0/0 HUB(config-if)#tunnel mode gre multipoint HUB(config-if)#ip mtu 1400 HUB(config-if)#ip tcp adjust-mss 1360 HUB(config-if)#ip nhrp network-id 1 HUB(config-if)#ip nhrp authentication Marvel1 HUB(config-if)#ip nhrp map multicast dynamic HUB(config-if)#end HUB#wr SPOKE-1:*&#xA;SPOKE-1#conf t SPOKE-1(config)#int tun0 SPOKE-1(config-if)#no sh SPOKE-1(config-if)#ip addr 10.</description>
     </item>
     <item>
       <title>DMVPN Phase 1 OSPF</title>
-      <link>https://ittechnetworkk.github.io/posts/dmvpnphase1ospf/dmvpn-phase1-ospf/</link>
+      <link>http://localhost:1313/posts/dmvpnphase1ospf/dmvpn-phase1-ospf/</link>
       <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dmvpnphase1ospf/dmvpn-phase1-ospf/</guid>
+      <guid>http://localhost:1313/posts/dmvpnphase1ospf/dmvpn-phase1-ospf/</guid>
       <description>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&#xA;Aşağıda oluşturduğum topoloji ile devam edeceğim.&#xA;Başlayalım.&#xA;HUB:&#xA;HUB#conf t HUB(config)#int tun0 HUB(config-if)#no sh HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 HUB(config-if)#tunnel source f0/0 HUB(config-if)#tunnel mode gre multipoint HUB(config-if)#ip mtu 1400 HUB(config-if)#ip tcp adjust-mss 1360 HUB(config-if)#ip nhrp network-id 1 HUB(config-if)#ip nhrp authentication Marvel1 HUB(config-if)#ip nhrp map multicast dynamic HUB(config-if)#end HUB#wr SPOKE-1:*&#xA;SPOKE-1#conf t SPOKE-1(config)#int tun0 SPOKE-1(config-if)#no sh SPOKE-1(config-if)#ip addr 10.</description>
     </item>
     <item>
       <title>DMVPN Phase 1 RIP</title>
-      <link>https://ittechnetworkk.github.io/posts/dmvpnphase1rip/dmvpn-phase1-rip/</link>
+      <link>http://localhost:1313/posts/dmvpnphase1rip/dmvpn-phase1-rip/</link>
       <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dmvpnphase1rip/dmvpn-phase1-rip/</guid>
+      <guid>http://localhost:1313/posts/dmvpnphase1rip/dmvpn-phase1-rip/</guid>
       <description>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&#xA;Aşağıda oluşturduğum topoloji ile devam edeceğim.&#xA;Başlayalım.&#xA;HUB:&#xA;HUB#conf t HUB(config)#int tun0 HUB(config-if)#no sh HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 HUB(config-if)#tunnel source f0/0 HUB(config-if)#tunnel mode gre multipoint HUB(config-if)#ip mtu 1400 HUB(config-if)#ip tcp adjust-mss 1360 HUB(config-if)#ip nhrp network-id 1 HUB(config-if)#ip nhrp authentication Marvel1 HUB(config-if)#ip nhrp map multicast dynamic HUB(config-if)#end HUB#wr SPOKE-1:*&#xA;SPOKE-1#conf t SPOKE-1(config)#int tun0 SPOKE-1(config-if)#no sh SPOKE-1(config-if)#ip addr 10.</description>
     </item>
     <item>
       <title>DMVPN Phase 2 EIGRP</title>
-      <link>https://ittechnetworkk.github.io/posts/dmvpnphase2eigrp/dmvpn-phase2-eigrp/</link>
+      <link>http://localhost:1313/posts/dmvpnphase2eigrp/dmvpn-phase2-eigrp/</link>
       <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dmvpnphase2eigrp/dmvpn-phase2-eigrp/</guid>
+      <guid>http://localhost:1313/posts/dmvpnphase2eigrp/dmvpn-phase2-eigrp/</guid>
       <description>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&#xA;Aşağıda oluşturduğum topoloji ile devam edeceğim.&#xA;Başlayalım.&#xA;HUB:&#xA;HUB#conf t HUB(config)#int tun0 HUB(config-if)#no sh HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 HUB(config-if)#tunnel source f0/0 HUB(config-if)#tunnel mode gre multipoint HUB(config-if)#ip mtu 1400 HUB(config-if)#ip tcp adjust-mss 1360 HUB(config-if)#ip nhrp network-id 1 HUB(config-if)#ip nhrp authentication Marvel1 HUB(config-if)#ip nhrp map multicast dynamic HUB(config-if)#end HUB#wr SPOKE-1:*&#xA;SPOKE-1#conf t SPOKE-1(config)#int tun0 SPOKE-1(config-if)#no sh SPOKE-1(config-if)#ip addr 10.</description>
     </item>
     <item>
       <title>DMVPN Phase 2 OSPF</title>
-      <link>https://ittechnetworkk.github.io/posts/dmvpnphase2ospf/dmvpn-phase2-ospf/</link>
+      <link>http://localhost:1313/posts/dmvpnphase2ospf/dmvpn-phase2-ospf/</link>
       <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dmvpnphase2ospf/dmvpn-phase2-ospf/</guid>
+      <guid>http://localhost:1313/posts/dmvpnphase2ospf/dmvpn-phase2-ospf/</guid>
       <description>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&#xA;Aşağıda oluşturduğum topoloji ile devam edeceğim.&#xA;Başlayalım.&#xA;HUB:&#xA;HUB#conf t HUB(config)#int tun0 HUB(config-if)#no sh HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 HUB(config-if)#tunnel source f0/0 HUB(config-if)#tunnel mode gre multipoint HUB(config-if)#ip mtu 1400 HUB(config-if)#ip tcp adjust-mss 1360 HUB(config-if)#ip nhrp network-id 1 HUB(config-if)#ip nhrp authentication Marvel1 HUB(config-if)#ip nhrp map multicast dynamic HUB(config-if)#end HUB#wr SPOKE-1:*&#xA;SPOKE-1#conf t SPOKE-1(config)#int tun0 SPOKE-1(config-if)#no sh SPOKE-1(config-if)#ip addr 10.</description>
     </item>
     <item>
       <title>DMVPN Phase 2 RIP</title>
-      <link>https://ittechnetworkk.github.io/posts/dmvpnphase2rip/dmvpn-phase2-rip/</link>
+      <link>http://localhost:1313/posts/dmvpnphase2rip/dmvpn-phase2-rip/</link>
       <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dmvpnphase2rip/dmvpn-phase2-rip/</guid>
+      <guid>http://localhost:1313/posts/dmvpnphase2rip/dmvpn-phase2-rip/</guid>
       <description>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&#xA;Aşağıda oluşturduğum topoloji ile devam edeceğim.&#xA;Başlayalım.&#xA;HUB:&#xA;HUB#conf t HUB(config)#int tun0 HUB(config-if)#no sh HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 HUB(config-if)#tunnel source f0/0 HUB(config-if)#tunnel mode gre multipoint HUB(config-if)#ip mtu 1400 HUB(config-if)#ip tcp adjust-mss 1360 HUB(config-if)#ip nhrp network-id 1 HUB(config-if)#ip nhrp authentication Marvel1 HUB(config-if)#ip nhrp map multicast dynamic HUB(config-if)#end HUB#wr SPOKE-1:*&#xA;SPOKE-1#conf t SPOKE-1(config)#int tun0 SPOKE-1(config-if)#no sh SPOKE-1(config-if)#ip addr 10.</description>
     </item>
     <item>
       <title>DMVPN Phase 3 EIGRP</title>
-      <link>https://ittechnetworkk.github.io/posts/dmvpnphase3eigrp/dmvpn-phase3-eigrp/</link>
+      <link>http://localhost:1313/posts/dmvpnphase3eigrp/dmvpn-phase3-eigrp/</link>
       <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dmvpnphase3eigrp/dmvpn-phase3-eigrp/</guid>
+      <guid>http://localhost:1313/posts/dmvpnphase3eigrp/dmvpn-phase3-eigrp/</guid>
       <description>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&#xA;Aşağıda oluşturduğum topoloji ile devam edeceğim.&#xA;Başlayalım.&#xA;HUB:&#xA;HUB#conf t HUB(config)#int tun0 HUB(config-if)#no sh HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 HUB(config-if)#tunnel source f0/0 HUB(config-if)#tunnel mode gre multipoint HUB(config-if)#ip mtu 1400 HUB(config-if)#ip tcp adjust-mss 1360 HUB(config-if)#ip nhrp network-id 1 HUB(config-if)#ip nhrp authentication Marvel1 HUB(config-if)#ip nhrp map multicast dynamic HUB(config-if)#end HUB#wr SPOKE-1:*&#xA;SPOKE-1#conf t SPOKE-1(config)#int tun0 SPOKE-1(config-if)#no sh SPOKE-1(config-if)#ip addr 10.</description>
     </item>
     <item>
       <title>DMVPN Phase 3 OSPF</title>
-      <link>https://ittechnetworkk.github.io/posts/dmvpnphase3ospf/dmvpn-phase3-ospf/</link>
+      <link>http://localhost:1313/posts/dmvpnphase3ospf/dmvpn-phase3-ospf/</link>
       <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dmvpnphase3ospf/dmvpn-phase3-ospf/</guid>
+      <guid>http://localhost:1313/posts/dmvpnphase3ospf/dmvpn-phase3-ospf/</guid>
       <description>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&#xA;Aşağıda oluşturduğum topoloji ile devam edeceğim.&#xA;Başlayalım.&#xA;HUB:&#xA;HUB#conf t HUB(config)#int tun0 HUB(config-if)#no sh HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 HUB(config-if)#tunnel source f0/0 HUB(config-if)#tunnel mode gre multipoint HUB(config-if)#ip mtu 1400 HUB(config-if)#ip tcp adjust-mss 1360 HUB(config-if)#ip nhrp network-id 1 HUB(config-if)#ip nhrp authentication Marvel1 HUB(config-if)#ip nhrp map multicast dynamic HUB(config-if)#end HUB#wr SPOKE-1:*&#xA;SPOKE-1#conf t SPOKE-1(config)#int tun0 SPOKE-1(config-if)#no sh SPOKE-1(config-if)#ip addr 10.</description>
     </item>
     <item>
       <title>DMVPN Phase 3 RIP</title>
-      <link>https://ittechnetworkk.github.io/posts/dmvpnphase3rip/dmvpn-phase3-rip/</link>
+      <link>http://localhost:1313/posts/dmvpnphase3rip/dmvpn-phase3-rip/</link>
       <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dmvpnphase3rip/dmvpn-phase3-rip/</guid>
+      <guid>http://localhost:1313/posts/dmvpnphase3rip/dmvpn-phase3-rip/</guid>
       <description>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&#xA;Aşağıda oluşturduğum topoloji ile devam edeceğim.&#xA;Başlayalım.&#xA;HUB:&#xA;HUB#conf t HUB(config)#int tun0 HUB(config-if)#no sh HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 HUB(config-if)#tunnel source f0/0 HUB(config-if)#tunnel mode gre multipoint HUB(config-if)#ip mtu 1400 HUB(config-if)#ip tcp adjust-mss 1360 HUB(config-if)#ip nhrp network-id 1 HUB(config-if)#ip nhrp authentication Marvel1 HUB(config-if)#ip nhrp map multicast dynamic HUB(config-if)#end HUB#wr SPOKE-1:*&#xA;SPOKE-1#conf t SPOKE-1(config)#int tun0 SPOKE-1(config-if)#no sh SPOKE-1(config-if)#ip addr 10.</description>
     </item>
     <item>
       <title>Proxmox&#39;a PNET Lab Kurulumu</title>
-      <link>https://ittechnetworkk.github.io/posts/proxmoxpnetlab/proxmox-pnet/</link>
+      <link>http://localhost:1313/posts/proxmoxpnetlab/proxmox-pnet/</link>
       <pubDate>Thu, 29 Aug 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/proxmoxpnetlab/proxmox-pnet/</guid>
+      <guid>http://localhost:1313/posts/proxmoxpnetlab/proxmox-pnet/</guid>
       <description>Proxmox&amp;rsquo;a normal bir ISO dosyası yükleyerek sanal makine oluşturulabilir. Fakat .ova uzantılı bir dosya için farklı bir yöntemle yüklemek gerek.&#xA;Başlayalım.&#xA;Öncelikle PNET Lab ova dosyasını web sitesinden indiriyorum.&#xA;Bu .ova uzantılı dosyayı Proxmox Server&amp;rsquo;ımıza atmamız gerekiyor. Bunun için FileZilla veya benzeri FTP uygulamalarıyla atabilirsiniz.&#xA;Daha pratik bir yöntem ise scp aracıyla atmak olacak.&#xA;Aşağıdaki komutla kendi bilgisayarımdan Proxmox Server&amp;rsquo;a dosyayı şutluyorum.&#xA;scp PNET_4.2.10.ova root@192.168.0.170:/root Dosya Server&amp;rsquo;a başarıyla geldi.&#xA;root@sonersahin:~# ls PNET_4.</description>
     </item>
     <item>
       <title>Network Troubleshooting</title>
-      <link>https://ittechnetworkk.github.io/posts/networktroubleshooting/network-troubleshooting/</link>
+      <link>http://localhost:1313/posts/networktroubleshooting/network-troubleshooting/</link>
       <pubDate>Sun, 28 Jul 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/networktroubleshooting/network-troubleshooting/</guid>
+      <guid>http://localhost:1313/posts/networktroubleshooting/network-troubleshooting/</guid>
       <description>İlk olarak eğer hatanın nereden kaynaklandığını az çok tahmin edebiliyorsak ilk o noktaya yoğunlaşmakta fayda olacağını düşünüyorum diyerek başlamak istiyorum.&#xA;Network&amp;rsquo;te bir sorunu çözerken yaklaşımımızın adım adım olacak şekilde ilk olarak en yakınımızdaki cihaz veya uygulama veya katman olmalıdır.&#xA;Peki ne demek istiyorum?&#xA;Aşağıda örnek bir senaryom var. Bu senaryoda PC1 İnternete erişemediğini varsayalım.&#xA;Buradaki senaryomda, PC&amp;rsquo;nin bütün ayarlarını gözden geçirdikten sonra yani PC&amp;rsquo;nin Ethernet kablosu, IP Adres, Default Gateway, DNS gibi.</description>
     </item>
     <item>
       <title>GPG Nedir?</title>
-      <link>https://ittechnetworkk.github.io/posts/gpgnedir/gpg-nedir/</link>
+      <link>http://localhost:1313/posts/gpgnedir/gpg-nedir/</link>
       <pubDate>Tue, 23 Jul 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/gpgnedir/gpg-nedir/</guid>
+      <guid>http://localhost:1313/posts/gpgnedir/gpg-nedir/</guid>
       <description>GPG (GNU Privacy Guard )RFC4880 , GPL Lisanslı bir şifreleme ve imzalama aracıdır. Linux&amp;rsquo;da defaultta gelir, Windows için Web Sitesi&amp;rsquo;nden indirilebilir.&#xA;GPG asimetrik şifreleme algoritması kullanır. Yani Public ve Prive anahtarlar vasıtasıyla dataları şifreler veya çözer.&#xA;Nedir bu Public ve Prive anahtarlar?&#xA;2 kişi düşünelim birbirleriyle haberleşmek istesin. Her kişinin 2 anahtarı olur. Biri &amp;ldquo;Public Key&amp;rdquo; yani paylaşılan anahtar. Diğeri ise &amp;ldquo;Private key&amp;rdquo; yani gizli kalması gereken anahtar.&#xA;X kişisi Y kişisine gizli bir mesaj göndermek isterse bu mesajı Y kişisinin &amp;ldquo;Public Key&amp;quot;i ile şifrelemesi gerekir.</description>
     </item>
     <item>
       <title>Raspberry Pi Syslog Server</title>
-      <link>https://ittechnetworkk.github.io/posts/raspberrypisyslogserver/raspberrypi-syslog/</link>
+      <link>http://localhost:1313/posts/raspberrypisyslogserver/raspberrypi-syslog/</link>
       <pubDate>Mon, 15 Jul 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/raspberrypisyslogserver/raspberrypi-syslog/</guid>
+      <guid>http://localhost:1313/posts/raspberrypisyslogserver/raspberrypi-syslog/</guid>
       <description>Merhaba, bu yazımda bi Raspberry Pi Zero&amp;rsquo;ya Syslog server rolü verip, bir Cisco Switch&amp;rsquo;e bu Syslog server konfigürasyonunu yapacağım.&#xA;Bu Lab için kullanacağım donanım ve yazılımlar:&#xA;Raspberry Pi Zero 2W, Cisco 2960 Switch, SD Cart, Kart Reader, Ethernet Kablosu, MicroUSB Power Cable, Switch Power Cable, ImagerPi. İlk olarak ImagerPi kullanarak SD Kart&amp;rsquo;a Ubuntu işletim sistemini kuruyorum.&#xA;SD Kart&amp;rsquo;ı Raspberry Pi&amp;rsquo;a takıp, modemin yakınında güç kablosunu takıp cihazı açıyorum.&#xA;Raspberry Pi&amp;rsquo;nin hangi IP adresini aldığını öğrenmek için:</description>
     </item>
     <item>
       <title>UTP Kablo Yapımı</title>
-      <link>https://ittechnetworkk.github.io/posts/utpkabloyapimi/utp-kablo-yapimi/</link>
+      <link>http://localhost:1313/posts/utpkabloyapimi/utp-kablo-yapimi/</link>
       <pubDate>Sun, 07 Jul 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/utpkabloyapimi/utp-kablo-yapimi/</guid>
+      <guid>http://localhost:1313/posts/utpkabloyapimi/utp-kablo-yapimi/</guid>
       <description>UTP Kablo yani ağ kabloları, internet iletişiminde cihazların birbirleriyle iletişim kurması için kullanılan kablolardır.&#xA;Birden fazla çeşidi vardır ve iletim hızlarına göre kategorilere ayrılmışlardır.&#xA;UTP kablolar 100 metreye kadar sinyal iletebilirler. Aşılması durumunda sinyal kayıpları, performans sorunları ile karşılaşılır.&#xA;UTP Kablolarının her iki ucu da RJ45 ile çakılır.&#xA;Kablolar koruyucu malzeme ile kablı olması veya olmaması gibi özelliklere göre 2&amp;rsquo;ye ayrılır.&#xA;Sheilded Twisted Pair (STP) kablonun içinde bir kuruyucu vardır, Unshielded Twisted Pair (UTP) koruyucu yoktur.</description>
     </item>
     <item>
       <title>Temel Switch Konfigürasyonu</title>
-      <link>https://ittechnetworkk.github.io/posts/switchconfiguration/switch-conf/</link>
+      <link>http://localhost:1313/posts/switchconfiguration/switch-conf/</link>
       <pubDate>Wed, 26 Jun 2024 17:53:48 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/switchconfiguration/switch-conf/</guid>
+      <guid>http://localhost:1313/posts/switchconfiguration/switch-conf/</guid>
       <description>Merhaba, bu yazıda Cisco bir Switch&amp;rsquo;in temel bir konfigürasyonunu göstereceğim.&#xA;Tabi bu konfigürasyonları temel düzelde uygulayacağım, daha kapsamlı konfigürasyon network yapılarına göre, kullanılan teknolojilere göre değişiklik gösterecektir.&#xA;Uygulayacağım konfigürasyonları sırasıyla aşağıdaki gibi olacaktır:&#xA;Hostname, Zaman Konfigürasyonu, Yanlış Girilen Parola Politikası, Enable Password, Banner motd, Kullanıcı Oluşturma, Console Erişimi, SSH Konfigürasyonu, Default Gateway, Disable Ports, Konfigürasyonları Kaydetme, Kontrol. Başlayalım.&#xA;Ben konfigürasyonları, Cisco Catalyst 2960 Serisi bir Switch üzerinde uygulayacağım.&#xA;Console Kablosu ve Switch görüntü itibariyle aşağıdaki gibidir.</description>
     </item>
     <item>
       <title>IPv6 Static Routing</title>
-      <link>https://ittechnetworkk.github.io/posts/ipv6staticrouting/ipv6-static-routing/</link>
+      <link>http://localhost:1313/posts/ipv6staticrouting/ipv6-static-routing/</link>
       <pubDate>Tue, 25 Jun 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ipv6staticrouting/ipv6-static-routing/</guid>
+      <guid>http://localhost:1313/posts/ipv6staticrouting/ipv6-static-routing/</guid>
       <description>Static Route hedefe gitmek için manuel olarak yazılan rotadır. Static Route küçük networkler için kullanılabilir. Fakat orta ve büyük networklerde iş yükünü fazlaca artırabilir.&#xA;Bu da diğer Dynamic Routing protokollerinden ayıran bir özelliğidir. Bu demektir ki bir networkte Dynamic Routing Protokolü çalışsa bile öncelik statik olarak yazılan rotadadır.&#xA;Static Route Yazımı: Statik rota yazmak oldukça kolaydır. Aşağıda 2 farklı yazımı görebilirsiniz. İkisi de kullanılabilir.&#xA;Router(config)#ipv6 route 2001:3::/64 2001:2::2 Router(config)#ipv6 route 2001:3::/64 gi0/1 Bunun anlamı; 2001:3::/64 networküne gitmek için 2001:2::2 yolunu kullan.</description>
     </item>
     <item>
       <title>Raspberry Pi e-Paper Projesi</title>
-      <link>https://ittechnetworkk.github.io/posts/epaper/raspberry-pi-epaper/</link>
+      <link>http://localhost:1313/posts/epaper/raspberry-pi-epaper/</link>
       <pubDate>Tue, 25 Jun 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/epaper/raspberry-pi-epaper/</guid>
+      <guid>http://localhost:1313/posts/epaper/raspberry-pi-epaper/</guid>
       <description>Merhabalar, bu yazıda Raspbery Pi Zero kullanarak anlık olarak Saati, Tarihi, IP bilgisini, Hostname&amp;rsquo;i ve Download/Upload değerlerini gösteren bir proje yapacağım.&#xA;Bu proje için Raspberry Pi Zero&amp;rsquo;ya uygun 2.13Inch bir e-Paper Display kullanacağım.&#xA;Kullanacağım donanım ve yazılımlar aşağıdaki gibidir.&#xA;Raspberry Pi Zero, 2.13 Inch E-Paper Display, 3.7V 1000mah UPS, SD Card, Card Reader, Raspberry Pi Imager, Ve birkaç vida. Donanımlar görüntü itibariyle aşağıdaki gibidir: İlk olarak Raspberry Pi Imager kullanarak işletim sistemini SD Kart&amp;rsquo;a yazdıracağım</description>
     </item>
     <item>
       <title>Cisco Router Parola Sıfırlama</title>
-      <link>https://ittechnetworkk.github.io/posts/ciscorouterpasswordrocovery/cisco-router-parola-sifirlama/</link>
+      <link>http://localhost:1313/posts/ciscorouterpasswordrocovery/cisco-router-parola-sifirlama/</link>
       <pubDate>Sun, 09 Jun 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ciscorouterpasswordrocovery/cisco-router-parola-sifirlama/</guid>
+      <guid>http://localhost:1313/posts/ciscorouterpasswordrocovery/cisco-router-parola-sifirlama/</guid>
       <description>Cisco Router ve Switch&amp;rsquo;lerde unutulan parolayı cihazı fabrika ayarlarına döndürmeden nasıl sıfırlayabiliriz? Cisco cihazlarda unutulan parolayı, konfigürasyonu bozmadan sıfırlamak mümkün. Bu işlem birkaç adımda yapılır. Ben bu uygulamayı elimde bulunan Cisco 800 Serisi bir Router&amp;rsquo;da adım adım uygulayacağım. Cihaz şekilde görüldüğü gibidir.&#xA;CiscoRouterPasswordRocovery&#xA;İlk olarak Console Portundan cihaza bağlanıyorum.&#xA;Cihaz&amp;rsquo;a güç verdikten hemen sonra, cihaz açılış aşamasındayken &amp;ldquo;CTRL+BREAK&amp;rdquo; tuşlarına basarak &amp;ldquo;Rommon&amp;rdquo; moduna geçiyorum.&#xA;Her terminal programında farklılık gösterebilir. Örneğin ben minicom kullanıyorum ve açılırken &amp;ldquo;CTRL + A + F&amp;rdquo; tuş kombinasyonlarını kullanarak &amp;ldquo;BREAK&amp;rdquo; sinyali gönderebiliyorum.</description>
     </item>
     <item>
       <title>GRE Tunnel</title>
-      <link>https://ittechnetworkk.github.io/posts/gretunnel/gre-tunnel/</link>
+      <link>http://localhost:1313/posts/gretunnel/gre-tunnel/</link>
       <pubDate>Fri, 07 Jun 2024 17:53:48 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/gretunnel/gre-tunnel/</guid>
+      <guid>http://localhost:1313/posts/gretunnel/gre-tunnel/</guid>
       <description>GRE(Generic Routing Encapsulation) Protokolü, paketin kaynaktan hedefe, oluşturulan tünel sayesinde iletilmesini sağlayan protokoldür. GRE, Cisco tarafından geliştirilmiştir. GRE kullanarak birden fazla şubesi olan networkler birleştirilebilir. Fakat oluşturulan tünelden iletilen paketler okunabilir şekilde iletilir. Yani araya girip trafik dinlenirse, paketler okunabilir. Bu tünel daha sonra güvenli hale de getirilebilir. GRE, IP paketini kapsüle ederek yönlendirme yapar. Enkapsülasyon yapılırken IP başlığına(20), 4 Byte GRE başlık bilgisi eklenir.&#xA;Aşağıdaki GRE Lab Topolojisini uygulayacağım.</description>
     </item>
     <item>
       <title>IPv6 Geçiş Çalışmaları İkili Yığın Yöntemi</title>
-      <link>https://ittechnetworkk.github.io/posts/ikiliyiginyontemi/ikili-yigin-yontemi/</link>
+      <link>http://localhost:1313/posts/ikiliyiginyontemi/ikili-yigin-yontemi/</link>
       <pubDate>Thu, 06 Jun 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ikiliyiginyontemi/ikili-yigin-yontemi/</guid>
+      <guid>http://localhost:1313/posts/ikiliyiginyontemi/ikili-yigin-yontemi/</guid>
       <description>Bu yöntem, IPv4&amp;rsquo;den IPv6&amp;rsquo;ya geçiş yöntemlerinden biri olan tünelleme tekniğidir. Bu yöntemde, cihazların hem IPv4 hem de IPv6 adreslerini birlikte kullanması yöntemidir. Yani IPv4 ile gelen cihaz IPv4, IPv6 ile gelen cihaz IPv6 ile haberleşir.&#xA;Uygulamada daha net anlaşılacaktır.&#xA;Aşağıdaki topolojiyi uygulayacağım.&#xA;Yapılacaklar:&#xA;Router ve VPC&amp;rsquo;lerin Interface&amp;rsquo;lerine IPv4 ve IPv6 adreslerini tanımla, Networklerin birbirleriyle haberleşmesi için statik rotalar yaz, Test et. 1. Router ve VPC&amp;rsquo;lerin Interface&amp;rsquo;lerine IPv4 ve IPv6 adreslerini tanımla,</description>
     </item>
     <item>
       <title>DHCPv6</title>
-      <link>https://ittechnetworkk.github.io/posts/dhcpv6/dhcpv6/</link>
+      <link>http://localhost:1313/posts/dhcpv6/dhcpv6/</link>
       <pubDate>Fri, 31 May 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dhcpv6/dhcpv6/</guid>
+      <guid>http://localhost:1313/posts/dhcpv6/dhcpv6/</guid>
       <description>DHCP(Dynamic Host Configuration Protocol), bir networkteki bir cihaza IP, DNS, Default Gateway parametrelerini dağıtan servistir. Yani networkteki bir cihazın başka bir cihaz ile konuşmasını sağlayacak parametlereleri dağıtan servistir. DHCPv6, DHCPv4&amp;rsquo;den bazı özellikleriyle ayrılıyor. DHCPv6 2 şekilde yapılandırılabilir.&#xA;Stateful(Durumlu) DHCPv6, Stateless SLAAC (Durumsuz) DHCPv6 Stateful DHCPv6 tıpkı DHCPv4 gibi, bir DHCP server üzerinden parametreleri dağıtmaktır.&#xA;Stateless SLAAC DHCPv6 da ise herhangi bir DHCP server olmaksızın cihazların Router üzerinden IPv6 parametrelerini alıp otomatik olarak kendini yapılandırmasıdır.</description>
     </item>
     <item>
       <title>IPv4 IPv6 Tünelleme</title>
-      <link>https://ittechnetworkk.github.io/posts/ipv4ipv6tunelleme/ipv4-ipv6-tunelleme/</link>
+      <link>http://localhost:1313/posts/ipv4ipv6tunelleme/ipv4-ipv6-tunelleme/</link>
       <pubDate>Fri, 31 May 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ipv4ipv6tunelleme/ipv4-ipv6-tunelleme/</guid>
+      <guid>http://localhost:1313/posts/ipv4ipv6tunelleme/ipv4-ipv6-tunelleme/</guid>
       <description>Bu yöntem, IPv4&amp;rsquo;den IPv6&amp;rsquo;ya geçiş yöntemlerinden biri olan tünelleme tekniğidir. Bu yöntemde, IPv6 networkleri IPv4 üzerinden tünellenerek birbirleriyle haberleşirler. IPv4-IPv6 geçiş aşamalarında kullanılabilecek bu yöntemin yanı sıra Dual Stack, Translation yöntemleri de vardır.&#xA;IPv4-IPv6 Tünelleme tekniği için aşağıdaki topolojiyi uygulayacağım.&#xA;Yapılacaklar:&#xA;Interfacelere IP ver. Sırasıyla tunnel oluştur. Statik route yazarak networkleri haberleştir. Test 1. Interfacelere IP ver. R1:&#xA;R1#configure terminal R1(config)#int e0/0 R1(config-if)#ip addr 192.168.3.2 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e0/1 R1(config-if)#ip addr 192.</description>
     </item>
     <item>
       <title>RaspberryPi Ipfire Kurulumu</title>
-      <link>https://ittechnetworkk.github.io/posts/raspberrypiipfire/raspberrypi-ipfire/</link>
+      <link>http://localhost:1313/posts/raspberrypiipfire/raspberrypi-ipfire/</link>
       <pubDate>Sun, 19 May 2024 23:00:44 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/raspberrypiipfire/raspberrypi-ipfire/</guid>
+      <guid>http://localhost:1313/posts/raspberrypiipfire/raspberrypi-ipfire/</guid>
       <description>Bu yazımda yeni aldığım Raspberry Pi 4 B modeline IPFire kurulumunu anlatacağım. IPFire, açık kaynak kodlu Linux tabanlı bir firewall yazılımıdır. IPFire&amp;rsquo;ı ISO olarak indirip bir sanal makine olarak da kurup inceleyebilirsiniz. Az kaynak tüketir ve işlevseldir.&#xA;IPFire&amp;rsquo;ın bazı özellikleri:&#xA;Network Security, VLAN, DHCP, NTP, Captive Portal, Web Proxy, VPN, DNS, IPS, QoS, Ve çok daha fazlası. Kullandığım Donanım ve Yazılımlar:&#xA;Raspberry Pi 4 B, Kart Okuyucu, Harici Ethernet Kartı, USB to TypeC Güç Kablosu, Mouse, SD Kart, HDMI to Micro HDMI Dönüştürücü, Klavye, Monitor, HDMI to HDMI, 2 Ethernet kablosu, BalenaEtcher.</description>
     </item>
     <item>
       <title>Adguard Kurulumu (NanoPi R2S)</title>
-      <link>https://ittechnetworkk.github.io/posts/nanopirsadguard/nanopirs-adguard/</link>
+      <link>http://localhost:1313/posts/nanopirsadguard/nanopirs-adguard/</link>
       <pubDate>Sun, 12 May 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/nanopirsadguard/nanopirs-adguard/</guid>
+      <guid>http://localhost:1313/posts/nanopirsadguard/nanopirs-adguard/</guid>
       <description>Merhaba, bu yazımda önceden aldığım fakat değerlendiremediğim NanoPi R2S cihazına Adguard Home kurmayı anlatacağım.&#xA;Bazı özellikleri şöyledir:&#xA;Rockchip RK3328, 1GB DDR4 RAM, MicroSD x1 for external storage up to 128GB, 2x Gigabit Ethernet, USB 2.0 Host x1: USB Type A, USB-C x1: SYS LED(Red) x1, WAN LED(Green) x1, LAN LED(Green) x1, Reset buton Metal kasa içerisine konmuş küçük ama merak uyandırıcı bir cihaz.&#xA;Peki Adguard Home nedir? Adguard Home bilenler için Pi-Hole benzeri fakat daha gelişmiş özellikleri olan bir yazılımdır.</description>
     </item>
     <item>
       <title>Port Security</title>
-      <link>https://ittechnetworkk.github.io/posts/portsecurity/port-security/</link>
+      <link>http://localhost:1313/posts/portsecurity/port-security/</link>
       <pubDate>Sun, 21 Apr 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/portsecurity/port-security/</guid>
+      <guid>http://localhost:1313/posts/portsecurity/port-security/</guid>
       <description>Port Security, yetkisiz cihazların networke erişimini engellemek için kullanılır. Layer 2 seviyesinde uygulanır. Switch portlarına bağlanabilecek cihazların MAC adresleri bazında güvenliği sağlanır. Port Security uygulanacak switch portu ya access ya da trunk olamalıdır. Cihaz&amp;rsquo;a default olarak geldiği gibi Port Security yapılmaz, hata verir. Konfigürasyon interface altında yapılır.&#xA;Switch&amp;rsquo;de boşta bulunan portları kapatmak güvenliğin ilk adımıdır.&#xA;3 Yöntem vardır; 1- MAC Adresi Manuel Belirlenebilir.&#xA;switchport port-security mac-address 0000.1111.2222.3333 switchport port-security maximum 2 (Max.</description>
     </item>
     <item>
       <title>PPP Multilink Konfigürasyonu</title>
-      <link>https://ittechnetworkk.github.io/posts/pppmultilink/ppp-multilink/</link>
+      <link>http://localhost:1313/posts/pppmultilink/ppp-multilink/</link>
       <pubDate>Sun, 14 Apr 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/pppmultilink/ppp-multilink/</guid>
+      <guid>http://localhost:1313/posts/pppmultilink/ppp-multilink/</guid>
       <description>PPP Multilink, routerlar arasındaki birden fazla fiziksel bağlantıyı tek bir mantıksal bağlantı yapmak amacıyla kullanılır. Bazı özellikleri:&#xA;Yük Dengeleme, Bant Genişliğinin Artırılması, Verimlilik, Yedeklilik. Multilink PPP LAB: Aşağıdaki basit yapıyı konfigüre edeceğim.&#xA;Bu yapıda serial 4 kablo ile bağlanmış iki router var. R1 ile başlayalım.&#xA;R1:&#xA;R1#conf t R1(config)#interface multilink 1 R1(config-if)#ip addr 10.0.0.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#ppp multilink R1(config-if)#ppp multilink group 1 R1(config-if)#exit R1(config)#int ser0/0 R1(config-if)#encapsulation ppp R1(config-if)#ppp multilink R1(config-if)#ppp multilink group 1 R1(config-if)#no sh R1(config-if)#int ser0/1 R1(config-if)#encapsulation ppp R1(config-if)#ppp multilink R1(config-if)#ppp multilink group 1 R1(config-if)#no sh R1(config-if)#int ser0/2 R1(config-if)#encapsulation ppp R1(config-if)#ppp multilink R1(config-if)#ppp multilink group 1 R1(config-if)#no sh R1(config-if)#int ser0/3 R1(config-if)#encapsulation ppp R1(config-if)#ppp multilink R1(config-if)#ppp multilink group 1 R1(config-if)#no sh R1(config-if)#exit R2:</description>
     </item>
     <item>
       <title>OSPF LAB</title>
-      <link>https://ittechnetworkk.github.io/posts/ospflab/ospf-lab/</link>
+      <link>http://localhost:1313/posts/ospflab/ospf-lab/</link>
       <pubDate>Sun, 07 Apr 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ospflab/ospf-lab/</guid>
+      <guid>http://localhost:1313/posts/ospflab/ospf-lab/</guid>
       <description>Bu Lab’daki amacım OSPF’in genel bir tekrarını yapmak olacak. Komutları uzun uzun yazıyor olacağım.&#xA;Aşağıdaki topolojiyi uygulayacağım.&#xA;Bu Lab&amp;rsquo;da istenilenler topolojinin sol üst köşesinde yazıyor.&#xA;Buna göre;&#xA;1- İlk olarak router interfacelerine ve VPC&amp;rsquo;lere sırasıyla IP&amp;rsquo;lerini vererek başlıyorum.&#xA;R1:&#xA;R1#configure terminal R1(config)#int e0/0 R1(config-if)#ip addr 10.0.1.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e0/1 R1(config-if)#ip address 10.0.3.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e0/2 R1(config-if)#ip addr 10.0.4.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e0/3 R1(config-if)#ip addr 10.0.2.1 255.</description>
     </item>
     <item>
       <title>OSPF Authentication</title>
-      <link>https://ittechnetworkk.github.io/posts/ospfauthentication/ospf-authentication/</link>
+      <link>http://localhost:1313/posts/ospfauthentication/ospf-authentication/</link>
       <pubDate>Sun, 31 Mar 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ospfauthentication/ospf-authentication/</guid>
+      <guid>http://localhost:1313/posts/ospfauthentication/ospf-authentication/</guid>
       <description>OSPF Authentication, OSPF network trafiğinin güvenliğini artırmak amacıyla kullanılır. 3 Çeşit doğrulama yöntemi vardır;&#xA;1- Plain Text Authentication,&#xA;2- MD5 Authentication,&#xA;3- SHA-HMAC Authentication (IOS 15.4 ve sonrası versiyonlar için)&#xA;Aşağıdaki topolojiyi uygulayacağız.&#xA;Bu topolojide 3 Authentication metodunu da uygulayacağız.&#xA;R1 ve R3 arasında Plain Text Authentication (Area 1),&#xA;R1 ve R2 arasında MD5 Authentication (Area 0),&#xA;R2 ve R4 arasında SHA-HMAC Authentication yapacağız. (Area 2)&#xA;1- Interfacelere IP vererek başlayalım:</description>
     </item>
     <item>
       <title>OSPF Konfigürasyonu</title>
-      <link>https://ittechnetworkk.github.io/posts/ospfconfiguration/ospf-configuration/</link>
+      <link>http://localhost:1313/posts/ospfconfiguration/ospf-configuration/</link>
       <pubDate>Sun, 31 Mar 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ospfconfiguration/ospf-configuration/</guid>
+      <guid>http://localhost:1313/posts/ospfconfiguration/ospf-configuration/</guid>
       <description>OSPF (Open Short Path First), dinamik bir yönlendirme protokolüdür. OSPF bir Link State Routing protokolüdür. Bundan dolayı network haritasının tamamına hakimdir Bazı özellikleri şöyledir:&#xA;Açık kaynaklıdır, SPF(Shortest Path First) algoritmasını kullanır, Classless (Sınıfsız) bir protokoldür, CIDR (Classless Inter-Domain Routing), VLSM(Veriable Length Subnet Masking) destekler, Load balancing destekler, Güncelleme süresi hızlıdır, Administrative Distance değeri 110&amp;rsquo;dur, Area yapısı ile ölçeklenebilir, Kimlik doğrulamayı destekler (MD5) Metrik değeri olarak Cost kullanır. Multicast 224.0.0.5 ve 224.</description>
     </item>
     <item>
       <title>EtherChannel</title>
-      <link>https://ittechnetworkk.github.io/posts/etherchannel/etherchannel/</link>
+      <link>http://localhost:1313/posts/etherchannel/etherchannel/</link>
       <pubDate>Fri, 22 Mar 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/etherchannel/etherchannel/</guid>
+      <guid>http://localhost:1313/posts/etherchannel/etherchannel/</guid>
       <description>EtherChannel Protokolü switchlerin birden fazla fiziksel portunu tek bir mantıksal port yapan protokoldür. Yapılmasının amacı şudur örneğin iki switch arasına 4 kablo çekip bırakırsak Stp (Spanning Tree Protocol) devreye girecek ve bu portlardan bazılarını kapatacaktır loop&amp;rsquo;u engellemek için. Eğer EtherChannel yaparsak bu portlar tek bir mantıksal port gibi görünecektir ve STP&amp;rsquo;ye gerek kalmayacaktır. Konfigüre etmek için karşılıklı portların yapısı aynı olmalıdır. Örneğin bir taraf GigabitEthernet diğeri FastEthernet olamaz. 3 EtherChannel Protokolü vardır:</description>
     </item>
     <item>
       <title>Static Routing</title>
-      <link>https://ittechnetworkk.github.io/posts/staticrouting/static-routing/</link>
+      <link>http://localhost:1313/posts/staticrouting/static-routing/</link>
       <pubDate>Mon, 18 Mar 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/staticrouting/static-routing/</guid>
+      <guid>http://localhost:1313/posts/staticrouting/static-routing/</guid>
       <description>Static Routing, yönlendirme tablosuna manuel olarak route eklenmesidir. Topoloji değişikliklerinde networklerin de yine güncellenmesi manuel olarak yapılmalıdır. Administrative Distance değeri 1&amp;rsquo;dir&#xA;Aşağıdaki topolojiyi uygulayacağız.&#xA;Bu topolojide tüm cihazların birbirleriyle iletişim kurmasını istiyoruz. Başlayalım&#xA;1- Router interfacelerine ve VPC&amp;rsquo;lere IP&amp;rsquo;lerini verelim.&#xA;R1:&#xA;R1#enable R1#conf t R1(config)#int e0/0 R1(config-if)#ip add 192.168.1.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int s1/0 R1(config-if)#ip address 2.2.2.2 255.255.255.0 R1(config-if)#no sh R1(config-if)#int s1/1 R1(config-if)#ip addr 3.3.3.2 255.255.255.0 R1(config-if)#no sh R2:&#xA;R2#enable R2#conf t R2(config)#int e0/0 R2(config-if)#ip add 192.</description>
     </item>
     <item>
       <title>CDP LLDP Protokolleri</title>
-      <link>https://ittechnetworkk.github.io/posts/cdp-lldp/cdp-lldp/</link>
+      <link>http://localhost:1313/posts/cdp-lldp/cdp-lldp/</link>
       <pubDate>Thu, 08 Feb 2024 23:39:19 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/cdp-lldp/cdp-lldp/</guid>
+      <guid>http://localhost:1313/posts/cdp-lldp/cdp-lldp/</guid>
       <description>A-CDP Protokolü:&#xA;CDP (Cisco Discovery Protocol), Cisco cihazlara özel cihaz keşif protokolüdür. Layer 2 seviyesinde çalışır. Cihaz türü, IP adresi, yazılım sürümü, işletim sistemi gibi bilgileri elde etmemizi sağlar. Varsayılan olarak açık gelir. İstenirse port bazında açabilir veya kapatabiliriz. Networkü tanımak için kullanılır fakat her zaman için iyi olmayabilir. 60 saniyede bir CDP mesajı yollanır, 180 saniye tabloda tutulur. Multicast yayın yapar. CDP Cihaz keşfi komutları:&#xA;R1#show cdp neighbors R1#show cdp neighbors detail CDP Kapatmak için:</description>
     </item>
     <item>
       <title>EIGRP Authentication</title>
-      <link>https://ittechnetworkk.github.io/posts/eigrpauthentication/eigrp-authentication/</link>
+      <link>http://localhost:1313/posts/eigrpauthentication/eigrp-authentication/</link>
       <pubDate>Wed, 07 Feb 2024 23:44:36 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/eigrpauthentication/eigrp-authentication/</guid>
+      <guid>http://localhost:1313/posts/eigrpauthentication/eigrp-authentication/</guid>
       <description>EIGRP Cisco tarafından geliştirilen, daha sonra kaynak kodları açılan bir dinamik yönlendirme protokolüdür. Kimlik doğrulama yapılmasının amacı networkte bir şekilde bulunan yetkisiz routerların, yetkili olan routerların routing tablosunu bozmasını engellemektir. Trafiği şifrelemez. Sadece kimlik doğrulama yapar. Authentication 2 aşamada yapılır.&#xA;Aşağıdaki topolojiyi uygulayacağız.&#xA;Burada 3 Router&amp;rsquo;ımız var, hali hazırda EIGRP konfigürasyonu yapılmış, networkler birbirlerini tanıyorlar. Bu topolojide, kötü niyetli biri routerlardan birine bir kablo takarsa rahatlıkla network duyuruları yapabilir, routing tablolarını şişirebilir, networkü kullanılmaz hale getirebilir.</description>
     </item>
     <item>
       <title>Cisco Ssh</title>
-      <link>https://ittechnetworkk.github.io/posts/ciscossh/cisco-ssh/</link>
+      <link>http://localhost:1313/posts/ciscossh/cisco-ssh/</link>
       <pubDate>Wed, 07 Feb 2024 23:41:02 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ciscossh/cisco-ssh/</guid>
+      <guid>http://localhost:1313/posts/ciscossh/cisco-ssh/</guid>
       <description>SSH uzak bir cihaza bağlanmak için kullanılan kriptolu ve güvenli bir protokoldür. Defaultta 22 TCP portunu kullanır. Şimdi bir Cisco Router&amp;rsquo;a nasıl SSH konfigürasyonu yapılır bakalım. SSH konfigürasyonu birkaç adımdan oluşur.&#xA;A-ROUTER:&#xA;1: Hostname ver,&#xA;vIOS-01&amp;gt;enable vIOS-01#configure terminal vIOS-01(config)#hostname R1 2:* Bir domain-name tanımla,&#xA;R1(config)#ip domain-name ssnrshnn.local 3: Bir kullanıcı ve parola tanımla,&#xA;R1(config)#username suleyman privilege 15 secret seba 4: Bir key oluştur,&#xA;R1(config)#crypto key generate rsa general-keys modules 1024 5: vty moda geçiş yapıyoruz,</description>
     </item>
     <item>
       <title>EIGRP Protokolü</title>
-      <link>https://ittechnetworkk.github.io/posts/eigrp/eigrp/</link>
+      <link>http://localhost:1313/posts/eigrp/eigrp/</link>
       <pubDate>Sun, 21 Jan 2024 23:44:58 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/eigrp/eigrp/</guid>
+      <guid>http://localhost:1313/posts/eigrp/eigrp/</guid>
       <description>EIGRP (Enchanced Interior Gateway Routing Protocol), Cisco tarafından geliştirilen bir dinamik yönlendirme protokolüdür. Daha sonradan diğer firmaların kullanımına sunulmuştur. RFC7868de tanımlanmıştır. Hem Distance Vector hem de Link State protokol özelliklerini aldığı için Hybrid Protokol olarak da geçer. Bazı özellikleri şöyledir:&#xA;Max 224 hop destekler, VLSM destekler, yani subnetting destekler, Hem Unicast hem de Multicast çalışır 224.0.0.10, Bir ana rota (Succesor), bir de yedek rota (Feasible Succesor) belirlenir, Hızlı yakınsama sağlar, alternatif rotalar arasında geçiş hızlıdır, Administrative Distance değeri 90&amp;rsquo;dır, Yönlendirme tablosunda değişiklik olduğunda tüm tabloyu değil sadece değişiklik olan kısmı diğer Router&amp;rsquo;lara gönderir, 5 Saniyede bir &amp;ldquo;Hello&amp;rdquo; paketi gönderir, 15 saniye &amp;ldquo;Acknowledgement&amp;rdquo; paketiyle cevap gelmezse komşuluk düşer, EIGRP Paketleri: Hello: Routerlar kendi aralarında 5 saniyede bir ayakta olduklarını duyurmak için kullandıkları pakettir.</description>
     </item>
     <item>
       <title>Dhcp Relay Agent</title>
-      <link>https://ittechnetworkk.github.io/posts/dhcprelayagent/dhcp-relay-agent/</link>
+      <link>http://localhost:1313/posts/dhcprelayagent/dhcp-relay-agent/</link>
       <pubDate>Sun, 14 Jan 2024 23:43:35 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dhcprelayagent/dhcp-relay-agent/</guid>
+      <guid>http://localhost:1313/posts/dhcprelayagent/dhcp-relay-agent/</guid>
       <description>DHCP, cihazlara IP, DNS, Default Gateway dağıtan protokoldür. Bu protokol client-server mantığıyla çalışır. İstemci talep eder ve server hizmet verir. UDP çalışır ve 4 aşamada işlem tamamlanır.&#xA;Client, DHCP Discover paketini networke gönderir. Bunun anlamı &amp;ldquo;Bana IP verecek bir DHCP Server var mı?&amp;rdquo;.&#xA;Server, DHCP Offer paketiyle karşılık verir ve der ki &amp;ldquo;Evet ben verebilirim&amp;rdquo;.&#xA;Client, DHCP Request paketiyle IP adresi talep eder.&#xA;Server, DHCP Ack paketiyle ile cihaza IP adresi ataması yapar.</description>
     </item>
     <item>
       <title>HSRP Protokolü</title>
-      <link>https://ittechnetworkk.github.io/posts/hsrp/hsrp/</link>
+      <link>http://localhost:1313/posts/hsrp/hsrp/</link>
       <pubDate>Sun, 07 Jan 2024 23:45:22 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/hsrp/hsrp/</guid>
+      <guid>http://localhost:1313/posts/hsrp/hsrp/</guid>
       <description>HSRP (Hot Standby Router Protocol), router yedekliliğini sağlamak amacıyla Cisco tarafından geliştirilmiş bir protokoldür. Birden fazla Router bulunan networklerde aktif olarak belirtilen Router&amp;rsquo;ın çalışmaması durumunda yedek olarak bekleyen Router&amp;rsquo;ın devreye girmesi prensibiyle çalışır. Bunun için sanal bir ortak IP adresi oluşturulur ve PC&amp;rsquo;lere Gateway olarak bu IP adresi verilir. Bu IP adresine giden paketler de aktif olan Router&amp;rsquo;a yönlendirilir. Bu sayede iletişim sağlanır.&#xA;Router&amp;rsquo;lar birbirlerine 3 saniyede bir aktif olup olmadıklarını öğrendikleri Hello paketi yollarlar.</description>
     </item>
     <item>
       <title>DHCP Snooping</title>
-      <link>https://ittechnetworkk.github.io/posts/dhcpsnooping/dhcp-snooping/</link>
+      <link>http://localhost:1313/posts/dhcpsnooping/dhcp-snooping/</link>
       <pubDate>Sun, 31 Dec 2023 23:44:03 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dhcpsnooping/dhcp-snooping/</guid>
+      <guid>http://localhost:1313/posts/dhcpsnooping/dhcp-snooping/</guid>
       <description>DHCP(Dynamic Host Configuration Protocol), ağdaki cihazlarımıza otomatik olarak IP, DNS, Default Gateway bilgilerini dağıtan servistir. Ağa yeni bir cihaz katıldığında, kablo takılır takılmaz IP almak için Broadcast yayın yapar. Eğer ortamda DHCP servisi varsa o da karşılık verir. Toplam 4 aşamada IP alma işlemi tamamlanır.&#xA;Bu paketler Broadcast paketler olduğu için ağdaki herkese ulaşır bu da her zaman için iyi olmayabilir. Örneğin bir network yapısında iki DHCP server aynı anda çalışabilir.</description>
     </item>
     <item>
       <title>VTP Protokolü</title>
-      <link>https://ittechnetworkk.github.io/posts/vtp/vtp/</link>
+      <link>http://localhost:1313/posts/vtp/vtp/</link>
       <pubDate>Sun, 24 Dec 2023 23:46:15 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/vtp/vtp/</guid>
+      <guid>http://localhost:1313/posts/vtp/vtp/</guid>
       <description>VTP (Vlan Trunking Protokol), çok sayıda switch bulunan networklerde yönetimi kolaylaştırmak için kullanılan bir protokoldür. Server-Client mantığıyla çalışır ve Cisco tarafından geliştirilmiştir. Bu protokolün amacı çok fazla switch bulunan networklerde tek tek vlanları ilgili switchlere tanımlamaktansa merkezi bir yerden vlanları dağıtmayı sağlar. Bu vlanlar trunk portlar üzerinden dağıtılır. Senkron çalışır yani merkezde bir vlan oluşturulduğunda veya silindiğinde bu değişiklik ilgili switchlere de dağıtılır. Vlanları dağıtılması işlemi için cihazların VTP etki alanında olması gerekir.</description>
     </item>
     <item>
       <title>RIP Protokolü</title>
-      <link>https://ittechnetworkk.github.io/posts/rip/rip/</link>
+      <link>http://localhost:1313/posts/rip/rip/</link>
       <pubDate>Sun, 17 Dec 2023 23:45:55 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/rip/rip/</guid>
+      <guid>http://localhost:1313/posts/rip/rip/</guid>
       <description>RIP(Router Information Protokol), bir dinamik yönlendirme protokolüdür. Basit ve kolay öğrenilebilen bir protokoldür. RIPv1 ve RIPv2 versiyonları vardır. RFC1058&amp;rsquo;de tanımlanmıştır. RIP Protokolü, yönlendirme tablosunu 30 saniyede bir günceller daha sonra üzerindeki aktif arayüzlere iletir. Administrative Distance değeri 120&amp;rsquo;dir. RIP protokolü en fazla 15 Hop Count&amp;rsquo;a izin verir. En iyi rotanın bulunmasında hop sayısına bakılarak paket iletilir. RIPv1 broadcast yayın yapar, subnet bilgisini routing tablosunu güncellediğinde göndermez, kimlik doğrulama yapmaz. RIPv2 Multicast(224.</description>
     </item>
     <item>
       <title>Projects</title>
-      <link>https://ittechnetworkk.github.io/projects/</link>
+      <link>http://localhost:1313/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ittechnetworkk.github.io/projects/</guid>
+      <guid>http://localhost:1313/projects/</guid>
       <description>Raspberry Pi e-Paper Projesi Raspberry Pi Zero ve E-Paper Ekran İle Saat Uygulaması.&#xA;View Project Details →&#xA;SkyForge Project SkyForge Project is a project that based on Raspberry Pi Zero that shows the weather, time, location and other information.&#xA;View Project Details →</description>
     </item>
   </channel>

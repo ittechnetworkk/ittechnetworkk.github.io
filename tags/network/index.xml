@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Network on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/network/</link>
+    <link>http://localhost:1313/tags/network/</link>
     <description>Recent content in Network on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Fri, 10 Jan 2025 11:43:33 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/network/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vlan Routing L3 Switch (SVI)</title>
-      <link>https://ittechnetworkk.github.io/posts/vlanroutingsvi/vlan-routing-svi/</link>
+      <link>http://localhost:1313/posts/vlanroutingsvi/vlan-routing-svi/</link>
       <pubDate>Fri, 10 Jan 2025 11:43:33 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/vlanroutingsvi/vlan-routing-svi/</guid>
+      <guid>http://localhost:1313/posts/vlanroutingsvi/vlan-routing-svi/</guid>
       <description>Selamlar, bu yazımda VLAN Routing&amp;rsquo;in L3 bir Switch ile nasıl yapılacağını bir LAB senaryosu üzerinde yapacağım..&#xA;LAB&amp;rsquo;ı aşağıdaki topoloji üzerinde uygulayacağım.&#xA;Başlayalım.&#xA;İlk olarak cihazlara IP verelim.&#xA;VPC4:&#xA;VPCS&amp;gt; ip 10.10.10.10 255.255.255.0 gateway 10.10.10.1 VPC5:&#xA;VPCS&amp;gt; ip 10.10.20.10 255.255.255.0 gateway 10.10.20.1 VPC6:&#xA;VPCS&amp;gt; ip 10.10.10.11 255.255.255.0 gateway 10.10.10.1 VPC7:&#xA;VPCS&amp;gt; ip 10.10.20.11 255.255.255.0 gateway 10.10.20.1 Şimdi Switch&amp;rsquo;lerde VLAN&amp;rsquo;ları oluşturalım ve portlara atayalım.&#xA;SW2:&#xA;Switch&amp;gt;en Switch#conf t Switch(config)#vlan 10 Switch(config-vlan)#vlan 20 Switch(config-vlan)#exit Switch(config)#int e0/1 Switch(config-if)#switchport mode access Switch(config-if)#switchport access vlan 10 Switch(config-if)#exit Switch(config)#int e0/2 Switch(config-if)#switchport mode access Switch(config-if)#switchport access vlan 20 Switch(config-if)#exit #Vlan&amp;#39;ların geçeceği port trunk olmalı Switch(config)#int e0/0 Switch(config-if)#switchport trunk encapsulation dot1q Switch(config-if)#switchport mode trunk SW3:</description>
     </item>
     <item>
       <title>Vlan Routing (Router on a Stick)</title>
-      <link>https://ittechnetworkk.github.io/posts/vlanroutingroas/vlan-routing-roas/</link>
+      <link>http://localhost:1313/posts/vlanroutingroas/vlan-routing-roas/</link>
       <pubDate>Fri, 10 Jan 2025 11:43:17 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/vlanroutingroas/vlan-routing-roas/</guid>
+      <guid>http://localhost:1313/posts/vlanroutingroas/vlan-routing-roas/</guid>
       <description>Selamlar, bu yazımda VLAN Routing&amp;rsquo;in bir Router ile nasıl yapılacağını bir LAB senaryosu üzerinde yapacağım..&#xA;LAB&amp;rsquo;ı aşağıdaki topoloji üzerinde uygulayacağım.&#xA;Başlayalım.&#xA;İlk olarak cihazlara IP verelim.&#xA;VPC4:&#xA;VPCS&amp;gt; ip 10.10.10.10 255.255.255.0 gateway 10.10.10.1 VPC5:&#xA;VPCS&amp;gt; ip 10.10.20.10 255.255.255.0 gateway 10.10.20.1 VPC6:&#xA;VPCS&amp;gt; ip 10.10.10.11 255.255.255.0 gateway 10.10.10.1 VPC7:&#xA;VPCS&amp;gt; ip 10.10.20.11 255.255.255.0 gateway 10.10.20.1 Şimdi Switch&amp;rsquo;lerde VLAN&amp;rsquo;ları oluşturalım ve portlara atayalım.&#xA;SW2:&#xA;Switch&amp;gt;en Switch#conf t Switch(config)#vlan 10 Switch(config-vlan)#vlan 20 Switch(config-vlan)#exit Switch(config)#int e0/1 Switch(config-if)#switchport mode access Switch(config-if)#switchport access vlan 10 Switch(config-if)#exit Switch(config)#int e0/2 Switch(config-if)#switchport mode access Switch(config-if)#switchport access vlan 20 Switch(config-if)#exit #Vlan&amp;#39;ların geçeceği port trunk olmalı Switch(config)#int e0/0 Switch(config-if)#switchport trunk encapsulation dot1q Switch(config-if)#switchport mode trunk SW3:</description>
     </item>
     <item>
       <title>VTP Protokolü</title>
-      <link>https://ittechnetworkk.github.io/posts/vtp/vtp/</link>
+      <link>http://localhost:1313/posts/vtp/vtp/</link>
       <pubDate>Sun, 24 Dec 2023 23:46:15 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/vtp/vtp/</guid>
+      <guid>http://localhost:1313/posts/vtp/vtp/</guid>
       <description>VTP (Vlan Trunking Protokol), çok sayıda switch bulunan networklerde yönetimi kolaylaştırmak için kullanılan bir protokoldür. Server-Client mantığıyla çalışır ve Cisco tarafından geliştirilmiştir. Bu protokolün amacı çok fazla switch bulunan networklerde tek tek vlanları ilgili switchlere tanımlamaktansa merkezi bir yerden vlanları dağıtmayı sağlar. Bu vlanlar trunk portlar üzerinden dağıtılır. Senkron çalışır yani merkezde bir vlan oluşturulduğunda veya silindiğinde bu değişiklik ilgili switchlere de dağıtılır. Vlanları dağıtılması işlemi için cihazların VTP etki alanında olması gerekir.</description>
     </item>
   </channel>

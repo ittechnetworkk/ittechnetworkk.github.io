@@ -2,46 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Firewall on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/firewall/</link>
+    <link>http://localhost:1313/tags/firewall/</link>
     <description>Recent content in Firewall on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Fri, 03 Jan 2025 23:00:44 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/firewall/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/firewall/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nanopi R2S Ipfire Kurulumu</title>
-      <link>https://ittechnetworkk.github.io/posts/nanopir2sipfirekurulumu/nanopir2s-ipfire/</link>
+      <link>http://localhost:1313/posts/nanopir2sipfirekurulumu/nanopir2s-ipfire/</link>
       <pubDate>Fri, 03 Jan 2025 23:00:44 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/nanopir2sipfirekurulumu/nanopir2s-ipfire/</guid>
+      <guid>http://localhost:1313/posts/nanopir2sipfirekurulumu/nanopir2s-ipfire/</guid>
       <description>Merhaba, bu yazıda, NanoPi R2S cihazıma IPFire kurulumunu anlatacağım.&#xA;Kullandığım ekipmanlar:&#xA;NanoPi R2S, MicroSD Kart, Kart Okuyucu, Type C Güç Kablosu, USB to Serial Kablo, Ethernet Kablosu, Terminal yazılımı (Putty or minicom), Balena Etcher. İlk olarak IPFire imaj dosyasını indiriyorum ve Balena Etcher aracıyla SD Kart&amp;rsquo;a yazdırıyorum.&#xA;Bu işlem bittikten sonra SD Kart&amp;rsquo;ı cihaza takıyorum.&#xA;Serial Kablo&amp;rsquo;yu da aşağıdaki şekilde cihaza bağlıyorum. Siyah Kablo » G Beyaz Kablo » TX Turkuaz Kablo » RX</description>
     </item>
     <item>
       <title>Cisco ASA ASDM Enable</title>
-      <link>https://ittechnetworkk.github.io/posts/asa5510asdm/asa5510-asdm/</link>
+      <link>http://localhost:1313/posts/asa5510asdm/asa5510-asdm/</link>
       <pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/asa5510asdm/asa5510-asdm/</guid>
+      <guid>http://localhost:1313/posts/asa5510asdm/asa5510-asdm/</guid>
       <description>Merhaba, bu yazımda Cisco ASA 5510 cihazını web arayüzünden yönetebilmek için gerekli konfigürasyonları göstereceğim.&#xA;İlk olarak asdm imajını çekiyorum:&#xA;ASA(config)# show disk0: ASA(config)# asdm image flash:/asdm-649.bin HTTP servisini enable ediyorum:&#xA;ASA# conf t ASA(config)# http server enable GUI&amp;rsquo;e erişebilecek network aralığını belirliyorum:&#xA;ASA(config)# http 192.168.1.0 255.255.255.0 management Username ve Password belirliyorum:&#xA;ASA(config)# username &amp;lt;User&amp;gt; password &amp;lt;Password&amp;gt; privilege 15 Management Interface&amp;rsquo;ye IP veriyorum:&#xA;ASA(config)# interface Management0/0 ASA(config)# ip addr 192.168.1.2 255.255.255.0 ASA(config)# no sh Tarayıcımızdan cihazın IP adresine gidecek olursak web arayüzü bizi karşılayacaktır.</description>
     </item>
     <item>
       <title>Cisco ASA Password Recovery</title>
-      <link>https://ittechnetworkk.github.io/posts/asa5510passwordrecovery/asa5510-password-recovery/</link>
+      <link>http://localhost:1313/posts/asa5510passwordrecovery/asa5510-password-recovery/</link>
       <pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/asa5510passwordrecovery/asa5510-password-recovery/</guid>
+      <guid>http://localhost:1313/posts/asa5510passwordrecovery/asa5510-password-recovery/</guid>
       <description>Merhabalar bu yazımda Cisco ASA 5500 serisi cihazın password recovery işlemini göstereceğim.&#xA;İlk olarak cihaza console kablosu ile bağlanıyorum cihazı başlatıyorum.&#xA;Cihaz başlarken aşağıdaki gibi bir ekran geldiğinde &amp;ldquo;ESC&amp;rdquo; tuşuna basıp &amp;ldquo;rommon&amp;rdquo; moduna geçiyorum.&#xA;Bu kısımda &amp;ldquo;ESC&amp;rdquo; tuşuna basar basmaz aşağıdaki &amp;ldquo;rommon&amp;rdquo; modu karşımıza çıkacaktır.&#xA;Password recovery için aşağıdaki komutları sırasıyla yazıyorum:&#xA;rommon #0&amp;gt; confreg 0x41 rommon #0&amp;gt; confreg rommon #0&amp;gt; boot &amp;ldquo;confreg&amp;rdquo; komutundan sonra çıkan soruları aşağıdaki gibi seçiyorum.</description>
     </item>
     <item>
       <title>Cisco ASA SSH Konfigürasyonu</title>
-      <link>https://ittechnetworkk.github.io/posts/asa5510ssh/asa5510-ssh/</link>
+      <link>http://localhost:1313/posts/asa5510ssh/asa5510-ssh/</link>
       <pubDate>Sun, 01 Dec 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/asa5510ssh/asa5510-ssh/</guid>
+      <guid>http://localhost:1313/posts/asa5510ssh/asa5510-ssh/</guid>
       <description>Merhabalar, bu yazımda Cisco ASA 5510&amp;rsquo;a SSH konfigürasyonu yapmayı göstereceğim.&#xA;İlk olarak bir kullanıcı oluşturuyorum:&#xA;ASA# conf t ASA(config)# username &amp;lt;User&amp;gt; password &amp;lt;Password&amp;gt; privilege 15 Kimlik doğrulama modunu ayarlıyorum:&#xA;ASA(config)# aaa authentication ssh console LOCAL SSH versiyonunu 2 yapıyorum ve timeout değerini ayarlıyorum:&#xA;ASA(config)# ssh version 2 ASA(config)# ssh timeout 30 Bir domain adı ve anahtar çifti yaratıyorum:&#xA;ASA(config)# domain-name sonersahin.local ASA(config)# crypto key generate rsa modulus 1024 Cihaza SSH yapacak network aralığı belirliyorum, isterseniz sadece belli bir IP adresini de yapabilirsiniz:</description>
     </item>
     <item>
       <title>RaspberryPi Ipfire Kurulumu</title>
-      <link>https://ittechnetworkk.github.io/posts/raspberrypiipfire/raspberrypi-ipfire/</link>
+      <link>http://localhost:1313/posts/raspberrypiipfire/raspberrypi-ipfire/</link>
       <pubDate>Sun, 19 May 2024 23:00:44 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/raspberrypiipfire/raspberrypi-ipfire/</guid>
+      <guid>http://localhost:1313/posts/raspberrypiipfire/raspberrypi-ipfire/</guid>
       <description>Bu yazımda yeni aldığım Raspberry Pi 4 B modeline IPFire kurulumunu anlatacağım. IPFire, açık kaynak kodlu Linux tabanlı bir firewall yazılımıdır. IPFire&amp;rsquo;ı ISO olarak indirip bir sanal makine olarak da kurup inceleyebilirsiniz. Az kaynak tüketir ve işlevseldir.&#xA;IPFire&amp;rsquo;ın bazı özellikleri:&#xA;Network Security, VLAN, DHCP, NTP, Captive Portal, Web Proxy, VPN, DNS, IPS, QoS, Ve çok daha fazlası. Kullandığım Donanım ve Yazılımlar:&#xA;Raspberry Pi 4 B, Kart Okuyucu, Harici Ethernet Kartı, USB to TypeC Güç Kablosu, Mouse, SD Kart, HDMI to Micro HDMI Dönüştürücü, Klavye, Monitor, HDMI to HDMI, 2 Ethernet kablosu, BalenaEtcher.</description>
     </item>
   </channel>

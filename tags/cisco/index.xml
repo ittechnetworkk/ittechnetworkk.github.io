@@ -2,179 +2,179 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cisco on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/cisco/</link>
+    <link>http://localhost:1313/tags/cisco/</link>
     <description>Recent content in Cisco on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Fri, 03 Jan 2025 23:31:39 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/cisco/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/cisco/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cml Freetrial</title>
-      <link>https://ittechnetworkk.github.io/posts/ciscocmlfreetrial/cml-freetrial/</link>
+      <link>http://localhost:1313/posts/ciscocmlfreetrial/cml-freetrial/</link>
       <pubDate>Fri, 03 Jan 2025 23:31:39 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ciscocmlfreetrial/cml-freetrial/</guid>
+      <guid>http://localhost:1313/posts/ciscocmlfreetrial/cml-freetrial/</guid>
       <description>CiscoCMLFreeTrial Merhabalar, bu yazımda Cml Freetrial konusunu anlatacağım.&#xA;Ben Vmware Workstation Pro&amp;rsquo;ya kuracağım, aşağıdaki linkten ilgili kurulum dosyalarını indiriyorum.&#xA;https://software.cisco.com/download/home/286193282/type/286326381/release/2.8.0%20Free%20Tier&#xA;Görseldeki en alt iki dosyayı indiriyorum&#xA;cml2_f_2.8.0-6_amd64-32.ova refplat-20241016-freetier-iso Kurulum adımları sırasıyla aşağıdaki gibi olacaktır.&#xA;VMWare:&#xA;File &amp;gt; Open &amp;gt; cml2_f_2.8.0-6_amd64-32.ova&#xA;.ova uzantılı dosya import edildikten sonra bunu editliyoruz.&#xA;Burada .iso uzantılı dosyanın yolunu belirtiyoruz.&#xA;Aşağıdaki kutucuğun işaretli olması gerekiyor.&#xA;Aşağıdaki gibi bir ekranla karşılaşırsanız, belirttiğimiz &amp;ldquo;refplat-20241016-freetier-iso&amp;rdquo; dosyası takılı değildir demektir. Ekranın sağ alt kısmındaki üzerinde çarpı olan CD icon&amp;rsquo;una tıklayıp connect dersek iso takılmış olacaktır.</description>
     </item>
     <item>
       <title>Cisco ASA ASDM Enable</title>
-      <link>https://ittechnetworkk.github.io/posts/asa5510asdm/asa5510-asdm/</link>
+      <link>http://localhost:1313/posts/asa5510asdm/asa5510-asdm/</link>
       <pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/asa5510asdm/asa5510-asdm/</guid>
+      <guid>http://localhost:1313/posts/asa5510asdm/asa5510-asdm/</guid>
       <description>Merhaba, bu yazımda Cisco ASA 5510 cihazını web arayüzünden yönetebilmek için gerekli konfigürasyonları göstereceğim.&#xA;İlk olarak asdm imajını çekiyorum:&#xA;ASA(config)# show disk0: ASA(config)# asdm image flash:/asdm-649.bin HTTP servisini enable ediyorum:&#xA;ASA# conf t ASA(config)# http server enable GUI&amp;rsquo;e erişebilecek network aralığını belirliyorum:&#xA;ASA(config)# http 192.168.1.0 255.255.255.0 management Username ve Password belirliyorum:&#xA;ASA(config)# username &amp;lt;User&amp;gt; password &amp;lt;Password&amp;gt; privilege 15 Management Interface&amp;rsquo;ye IP veriyorum:&#xA;ASA(config)# interface Management0/0 ASA(config)# ip addr 192.168.1.2 255.255.255.0 ASA(config)# no sh Tarayıcımızdan cihazın IP adresine gidecek olursak web arayüzü bizi karşılayacaktır.</description>
     </item>
     <item>
       <title>Cisco ASA Password Recovery</title>
-      <link>https://ittechnetworkk.github.io/posts/asa5510passwordrecovery/asa5510-password-recovery/</link>
+      <link>http://localhost:1313/posts/asa5510passwordrecovery/asa5510-password-recovery/</link>
       <pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/asa5510passwordrecovery/asa5510-password-recovery/</guid>
+      <guid>http://localhost:1313/posts/asa5510passwordrecovery/asa5510-password-recovery/</guid>
       <description>Merhabalar bu yazımda Cisco ASA 5500 serisi cihazın password recovery işlemini göstereceğim.&#xA;İlk olarak cihaza console kablosu ile bağlanıyorum cihazı başlatıyorum.&#xA;Cihaz başlarken aşağıdaki gibi bir ekran geldiğinde &amp;ldquo;ESC&amp;rdquo; tuşuna basıp &amp;ldquo;rommon&amp;rdquo; moduna geçiyorum.&#xA;Bu kısımda &amp;ldquo;ESC&amp;rdquo; tuşuna basar basmaz aşağıdaki &amp;ldquo;rommon&amp;rdquo; modu karşımıza çıkacaktır.&#xA;Password recovery için aşağıdaki komutları sırasıyla yazıyorum:&#xA;rommon #0&amp;gt; confreg 0x41 rommon #0&amp;gt; confreg rommon #0&amp;gt; boot &amp;ldquo;confreg&amp;rdquo; komutundan sonra çıkan soruları aşağıdaki gibi seçiyorum.</description>
     </item>
     <item>
       <title>Cisco ASA SSH Konfigürasyonu</title>
-      <link>https://ittechnetworkk.github.io/posts/asa5510ssh/asa5510-ssh/</link>
+      <link>http://localhost:1313/posts/asa5510ssh/asa5510-ssh/</link>
       <pubDate>Sun, 01 Dec 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/asa5510ssh/asa5510-ssh/</guid>
+      <guid>http://localhost:1313/posts/asa5510ssh/asa5510-ssh/</guid>
       <description>Merhabalar, bu yazımda Cisco ASA 5510&amp;rsquo;a SSH konfigürasyonu yapmayı göstereceğim.&#xA;İlk olarak bir kullanıcı oluşturuyorum:&#xA;ASA# conf t ASA(config)# username &amp;lt;User&amp;gt; password &amp;lt;Password&amp;gt; privilege 15 Kimlik doğrulama modunu ayarlıyorum:&#xA;ASA(config)# aaa authentication ssh console LOCAL SSH versiyonunu 2 yapıyorum ve timeout değerini ayarlıyorum:&#xA;ASA(config)# ssh version 2 ASA(config)# ssh timeout 30 Bir domain adı ve anahtar çifti yaratıyorum:&#xA;ASA(config)# domain-name sonersahin.local ASA(config)# crypto key generate rsa modulus 1024 Cihaza SSH yapacak network aralığı belirliyorum, isterseniz sadece belli bir IP adresini de yapabilirsiniz:</description>
     </item>
     <item>
       <title>DMVPN Phase 1 EIGRP</title>
-      <link>https://ittechnetworkk.github.io/posts/dmvpnphase1eigrp/dmvpn-phase1-eigrp/</link>
+      <link>http://localhost:1313/posts/dmvpnphase1eigrp/dmvpn-phase1-eigrp/</link>
       <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dmvpnphase1eigrp/dmvpn-phase1-eigrp/</guid>
+      <guid>http://localhost:1313/posts/dmvpnphase1eigrp/dmvpn-phase1-eigrp/</guid>
       <description>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&#xA;Aşağıda oluşturduğum topoloji ile devam edeceğim.&#xA;Başlayalım.&#xA;HUB:&#xA;HUB#conf t HUB(config)#int tun0 HUB(config-if)#no sh HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 HUB(config-if)#tunnel source f0/0 HUB(config-if)#tunnel mode gre multipoint HUB(config-if)#ip mtu 1400 HUB(config-if)#ip tcp adjust-mss 1360 HUB(config-if)#ip nhrp network-id 1 HUB(config-if)#ip nhrp authentication Marvel1 HUB(config-if)#ip nhrp map multicast dynamic HUB(config-if)#end HUB#wr SPOKE-1:*&#xA;SPOKE-1#conf t SPOKE-1(config)#int tun0 SPOKE-1(config-if)#no sh SPOKE-1(config-if)#ip addr 10.</description>
     </item>
     <item>
       <title>DMVPN Phase 1 OSPF</title>
-      <link>https://ittechnetworkk.github.io/posts/dmvpnphase1ospf/dmvpn-phase1-ospf/</link>
+      <link>http://localhost:1313/posts/dmvpnphase1ospf/dmvpn-phase1-ospf/</link>
       <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dmvpnphase1ospf/dmvpn-phase1-ospf/</guid>
+      <guid>http://localhost:1313/posts/dmvpnphase1ospf/dmvpn-phase1-ospf/</guid>
       <description>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&#xA;Aşağıda oluşturduğum topoloji ile devam edeceğim.&#xA;Başlayalım.&#xA;HUB:&#xA;HUB#conf t HUB(config)#int tun0 HUB(config-if)#no sh HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 HUB(config-if)#tunnel source f0/0 HUB(config-if)#tunnel mode gre multipoint HUB(config-if)#ip mtu 1400 HUB(config-if)#ip tcp adjust-mss 1360 HUB(config-if)#ip nhrp network-id 1 HUB(config-if)#ip nhrp authentication Marvel1 HUB(config-if)#ip nhrp map multicast dynamic HUB(config-if)#end HUB#wr SPOKE-1:*&#xA;SPOKE-1#conf t SPOKE-1(config)#int tun0 SPOKE-1(config-if)#no sh SPOKE-1(config-if)#ip addr 10.</description>
     </item>
     <item>
       <title>DMVPN Phase 1 RIP</title>
-      <link>https://ittechnetworkk.github.io/posts/dmvpnphase1rip/dmvpn-phase1-rip/</link>
+      <link>http://localhost:1313/posts/dmvpnphase1rip/dmvpn-phase1-rip/</link>
       <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dmvpnphase1rip/dmvpn-phase1-rip/</guid>
+      <guid>http://localhost:1313/posts/dmvpnphase1rip/dmvpn-phase1-rip/</guid>
       <description>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&#xA;Aşağıda oluşturduğum topoloji ile devam edeceğim.&#xA;Başlayalım.&#xA;HUB:&#xA;HUB#conf t HUB(config)#int tun0 HUB(config-if)#no sh HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 HUB(config-if)#tunnel source f0/0 HUB(config-if)#tunnel mode gre multipoint HUB(config-if)#ip mtu 1400 HUB(config-if)#ip tcp adjust-mss 1360 HUB(config-if)#ip nhrp network-id 1 HUB(config-if)#ip nhrp authentication Marvel1 HUB(config-if)#ip nhrp map multicast dynamic HUB(config-if)#end HUB#wr SPOKE-1:*&#xA;SPOKE-1#conf t SPOKE-1(config)#int tun0 SPOKE-1(config-if)#no sh SPOKE-1(config-if)#ip addr 10.</description>
     </item>
     <item>
       <title>DMVPN Phase 2 EIGRP</title>
-      <link>https://ittechnetworkk.github.io/posts/dmvpnphase2eigrp/dmvpn-phase2-eigrp/</link>
+      <link>http://localhost:1313/posts/dmvpnphase2eigrp/dmvpn-phase2-eigrp/</link>
       <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dmvpnphase2eigrp/dmvpn-phase2-eigrp/</guid>
+      <guid>http://localhost:1313/posts/dmvpnphase2eigrp/dmvpn-phase2-eigrp/</guid>
       <description>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&#xA;Aşağıda oluşturduğum topoloji ile devam edeceğim.&#xA;Başlayalım.&#xA;HUB:&#xA;HUB#conf t HUB(config)#int tun0 HUB(config-if)#no sh HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 HUB(config-if)#tunnel source f0/0 HUB(config-if)#tunnel mode gre multipoint HUB(config-if)#ip mtu 1400 HUB(config-if)#ip tcp adjust-mss 1360 HUB(config-if)#ip nhrp network-id 1 HUB(config-if)#ip nhrp authentication Marvel1 HUB(config-if)#ip nhrp map multicast dynamic HUB(config-if)#end HUB#wr SPOKE-1:*&#xA;SPOKE-1#conf t SPOKE-1(config)#int tun0 SPOKE-1(config-if)#no sh SPOKE-1(config-if)#ip addr 10.</description>
     </item>
     <item>
       <title>DMVPN Phase 2 OSPF</title>
-      <link>https://ittechnetworkk.github.io/posts/dmvpnphase2ospf/dmvpn-phase2-ospf/</link>
+      <link>http://localhost:1313/posts/dmvpnphase2ospf/dmvpn-phase2-ospf/</link>
       <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dmvpnphase2ospf/dmvpn-phase2-ospf/</guid>
+      <guid>http://localhost:1313/posts/dmvpnphase2ospf/dmvpn-phase2-ospf/</guid>
       <description>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&#xA;Aşağıda oluşturduğum topoloji ile devam edeceğim.&#xA;Başlayalım.&#xA;HUB:&#xA;HUB#conf t HUB(config)#int tun0 HUB(config-if)#no sh HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 HUB(config-if)#tunnel source f0/0 HUB(config-if)#tunnel mode gre multipoint HUB(config-if)#ip mtu 1400 HUB(config-if)#ip tcp adjust-mss 1360 HUB(config-if)#ip nhrp network-id 1 HUB(config-if)#ip nhrp authentication Marvel1 HUB(config-if)#ip nhrp map multicast dynamic HUB(config-if)#end HUB#wr SPOKE-1:*&#xA;SPOKE-1#conf t SPOKE-1(config)#int tun0 SPOKE-1(config-if)#no sh SPOKE-1(config-if)#ip addr 10.</description>
     </item>
     <item>
       <title>DMVPN Phase 2 RIP</title>
-      <link>https://ittechnetworkk.github.io/posts/dmvpnphase2rip/dmvpn-phase2-rip/</link>
+      <link>http://localhost:1313/posts/dmvpnphase2rip/dmvpn-phase2-rip/</link>
       <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dmvpnphase2rip/dmvpn-phase2-rip/</guid>
+      <guid>http://localhost:1313/posts/dmvpnphase2rip/dmvpn-phase2-rip/</guid>
       <description>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&#xA;Aşağıda oluşturduğum topoloji ile devam edeceğim.&#xA;Başlayalım.&#xA;HUB:&#xA;HUB#conf t HUB(config)#int tun0 HUB(config-if)#no sh HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 HUB(config-if)#tunnel source f0/0 HUB(config-if)#tunnel mode gre multipoint HUB(config-if)#ip mtu 1400 HUB(config-if)#ip tcp adjust-mss 1360 HUB(config-if)#ip nhrp network-id 1 HUB(config-if)#ip nhrp authentication Marvel1 HUB(config-if)#ip nhrp map multicast dynamic HUB(config-if)#end HUB#wr SPOKE-1:*&#xA;SPOKE-1#conf t SPOKE-1(config)#int tun0 SPOKE-1(config-if)#no sh SPOKE-1(config-if)#ip addr 10.</description>
     </item>
     <item>
       <title>DMVPN Phase 3 EIGRP</title>
-      <link>https://ittechnetworkk.github.io/posts/dmvpnphase3eigrp/dmvpn-phase3-eigrp/</link>
+      <link>http://localhost:1313/posts/dmvpnphase3eigrp/dmvpn-phase3-eigrp/</link>
       <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dmvpnphase3eigrp/dmvpn-phase3-eigrp/</guid>
+      <guid>http://localhost:1313/posts/dmvpnphase3eigrp/dmvpn-phase3-eigrp/</guid>
       <description>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&#xA;Aşağıda oluşturduğum topoloji ile devam edeceğim.&#xA;Başlayalım.&#xA;HUB:&#xA;HUB#conf t HUB(config)#int tun0 HUB(config-if)#no sh HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 HUB(config-if)#tunnel source f0/0 HUB(config-if)#tunnel mode gre multipoint HUB(config-if)#ip mtu 1400 HUB(config-if)#ip tcp adjust-mss 1360 HUB(config-if)#ip nhrp network-id 1 HUB(config-if)#ip nhrp authentication Marvel1 HUB(config-if)#ip nhrp map multicast dynamic HUB(config-if)#end HUB#wr SPOKE-1:*&#xA;SPOKE-1#conf t SPOKE-1(config)#int tun0 SPOKE-1(config-if)#no sh SPOKE-1(config-if)#ip addr 10.</description>
     </item>
     <item>
       <title>DMVPN Phase 3 OSPF</title>
-      <link>https://ittechnetworkk.github.io/posts/dmvpnphase3ospf/dmvpn-phase3-ospf/</link>
+      <link>http://localhost:1313/posts/dmvpnphase3ospf/dmvpn-phase3-ospf/</link>
       <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dmvpnphase3ospf/dmvpn-phase3-ospf/</guid>
+      <guid>http://localhost:1313/posts/dmvpnphase3ospf/dmvpn-phase3-ospf/</guid>
       <description>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&#xA;Aşağıda oluşturduğum topoloji ile devam edeceğim.&#xA;Başlayalım.&#xA;HUB:&#xA;HUB#conf t HUB(config)#int tun0 HUB(config-if)#no sh HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 HUB(config-if)#tunnel source f0/0 HUB(config-if)#tunnel mode gre multipoint HUB(config-if)#ip mtu 1400 HUB(config-if)#ip tcp adjust-mss 1360 HUB(config-if)#ip nhrp network-id 1 HUB(config-if)#ip nhrp authentication Marvel1 HUB(config-if)#ip nhrp map multicast dynamic HUB(config-if)#end HUB#wr SPOKE-1:*&#xA;SPOKE-1#conf t SPOKE-1(config)#int tun0 SPOKE-1(config-if)#no sh SPOKE-1(config-if)#ip addr 10.</description>
     </item>
     <item>
       <title>DMVPN Phase 3 RIP</title>
-      <link>https://ittechnetworkk.github.io/posts/dmvpnphase3rip/dmvpn-phase3-rip/</link>
+      <link>http://localhost:1313/posts/dmvpnphase3rip/dmvpn-phase3-rip/</link>
       <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dmvpnphase3rip/dmvpn-phase3-rip/</guid>
+      <guid>http://localhost:1313/posts/dmvpnphase3rip/dmvpn-phase3-rip/</guid>
       <description>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&#xA;Aşağıda oluşturduğum topoloji ile devam edeceğim.&#xA;Başlayalım.&#xA;HUB:&#xA;HUB#conf t HUB(config)#int tun0 HUB(config-if)#no sh HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 HUB(config-if)#tunnel source f0/0 HUB(config-if)#tunnel mode gre multipoint HUB(config-if)#ip mtu 1400 HUB(config-if)#ip tcp adjust-mss 1360 HUB(config-if)#ip nhrp network-id 1 HUB(config-if)#ip nhrp authentication Marvel1 HUB(config-if)#ip nhrp map multicast dynamic HUB(config-if)#end HUB#wr SPOKE-1:*&#xA;SPOKE-1#conf t SPOKE-1(config)#int tun0 SPOKE-1(config-if)#no sh SPOKE-1(config-if)#ip addr 10.</description>
     </item>
     <item>
       <title>Raspberry Pi Syslog Server</title>
-      <link>https://ittechnetworkk.github.io/posts/raspberrypisyslogserver/raspberrypi-syslog/</link>
+      <link>http://localhost:1313/posts/raspberrypisyslogserver/raspberrypi-syslog/</link>
       <pubDate>Mon, 15 Jul 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/raspberrypisyslogserver/raspberrypi-syslog/</guid>
+      <guid>http://localhost:1313/posts/raspberrypisyslogserver/raspberrypi-syslog/</guid>
       <description>Merhaba, bu yazımda bi Raspberry Pi Zero&amp;rsquo;ya Syslog server rolü verip, bir Cisco Switch&amp;rsquo;e bu Syslog server konfigürasyonunu yapacağım.&#xA;Bu Lab için kullanacağım donanım ve yazılımlar:&#xA;Raspberry Pi Zero 2W, Cisco 2960 Switch, SD Cart, Kart Reader, Ethernet Kablosu, MicroUSB Power Cable, Switch Power Cable, ImagerPi. İlk olarak ImagerPi kullanarak SD Kart&amp;rsquo;a Ubuntu işletim sistemini kuruyorum.&#xA;SD Kart&amp;rsquo;ı Raspberry Pi&amp;rsquo;a takıp, modemin yakınında güç kablosunu takıp cihazı açıyorum.&#xA;Raspberry Pi&amp;rsquo;nin hangi IP adresini aldığını öğrenmek için:</description>
     </item>
     <item>
       <title>Temel Switch Konfigürasyonu</title>
-      <link>https://ittechnetworkk.github.io/posts/switchconfiguration/switch-conf/</link>
+      <link>http://localhost:1313/posts/switchconfiguration/switch-conf/</link>
       <pubDate>Wed, 26 Jun 2024 17:53:48 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/switchconfiguration/switch-conf/</guid>
+      <guid>http://localhost:1313/posts/switchconfiguration/switch-conf/</guid>
       <description>Merhaba, bu yazıda Cisco bir Switch&amp;rsquo;in temel bir konfigürasyonunu göstereceğim.&#xA;Tabi bu konfigürasyonları temel düzelde uygulayacağım, daha kapsamlı konfigürasyon network yapılarına göre, kullanılan teknolojilere göre değişiklik gösterecektir.&#xA;Uygulayacağım konfigürasyonları sırasıyla aşağıdaki gibi olacaktır:&#xA;Hostname, Zaman Konfigürasyonu, Yanlış Girilen Parola Politikası, Enable Password, Banner motd, Kullanıcı Oluşturma, Console Erişimi, SSH Konfigürasyonu, Default Gateway, Disable Ports, Konfigürasyonları Kaydetme, Kontrol. Başlayalım.&#xA;Ben konfigürasyonları, Cisco Catalyst 2960 Serisi bir Switch üzerinde uygulayacağım.&#xA;Console Kablosu ve Switch görüntü itibariyle aşağıdaki gibidir.</description>
     </item>
     <item>
       <title>Cisco Router Parola Sıfırlama</title>
-      <link>https://ittechnetworkk.github.io/posts/ciscorouterpasswordrocovery/cisco-router-parola-sifirlama/</link>
+      <link>http://localhost:1313/posts/ciscorouterpasswordrocovery/cisco-router-parola-sifirlama/</link>
       <pubDate>Sun, 09 Jun 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ciscorouterpasswordrocovery/cisco-router-parola-sifirlama/</guid>
+      <guid>http://localhost:1313/posts/ciscorouterpasswordrocovery/cisco-router-parola-sifirlama/</guid>
       <description>Cisco Router ve Switch&amp;rsquo;lerde unutulan parolayı cihazı fabrika ayarlarına döndürmeden nasıl sıfırlayabiliriz? Cisco cihazlarda unutulan parolayı, konfigürasyonu bozmadan sıfırlamak mümkün. Bu işlem birkaç adımda yapılır. Ben bu uygulamayı elimde bulunan Cisco 800 Serisi bir Router&amp;rsquo;da adım adım uygulayacağım. Cihaz şekilde görüldüğü gibidir.&#xA;CiscoRouterPasswordRocovery&#xA;İlk olarak Console Portundan cihaza bağlanıyorum.&#xA;Cihaz&amp;rsquo;a güç verdikten hemen sonra, cihaz açılış aşamasındayken &amp;ldquo;CTRL+BREAK&amp;rdquo; tuşlarına basarak &amp;ldquo;Rommon&amp;rdquo; moduna geçiyorum.&#xA;Her terminal programında farklılık gösterebilir. Örneğin ben minicom kullanıyorum ve açılırken &amp;ldquo;CTRL + A + F&amp;rdquo; tuş kombinasyonlarını kullanarak &amp;ldquo;BREAK&amp;rdquo; sinyali gönderebiliyorum.</description>
     </item>
     <item>
       <title>GRE Tunnel</title>
-      <link>https://ittechnetworkk.github.io/posts/gretunnel/gre-tunnel/</link>
+      <link>http://localhost:1313/posts/gretunnel/gre-tunnel/</link>
       <pubDate>Fri, 07 Jun 2024 17:53:48 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/gretunnel/gre-tunnel/</guid>
+      <guid>http://localhost:1313/posts/gretunnel/gre-tunnel/</guid>
       <description>GRE(Generic Routing Encapsulation) Protokolü, paketin kaynaktan hedefe, oluşturulan tünel sayesinde iletilmesini sağlayan protokoldür. GRE, Cisco tarafından geliştirilmiştir. GRE kullanarak birden fazla şubesi olan networkler birleştirilebilir. Fakat oluşturulan tünelden iletilen paketler okunabilir şekilde iletilir. Yani araya girip trafik dinlenirse, paketler okunabilir. Bu tünel daha sonra güvenli hale de getirilebilir. GRE, IP paketini kapsüle ederek yönlendirme yapar. Enkapsülasyon yapılırken IP başlığına(20), 4 Byte GRE başlık bilgisi eklenir.&#xA;Aşağıdaki GRE Lab Topolojisini uygulayacağım.</description>
     </item>
     <item>
       <title>CDP LLDP Protokolleri</title>
-      <link>https://ittechnetworkk.github.io/posts/cdp-lldp/cdp-lldp/</link>
+      <link>http://localhost:1313/posts/cdp-lldp/cdp-lldp/</link>
       <pubDate>Thu, 08 Feb 2024 23:39:19 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/cdp-lldp/cdp-lldp/</guid>
+      <guid>http://localhost:1313/posts/cdp-lldp/cdp-lldp/</guid>
       <description>A-CDP Protokolü:&#xA;CDP (Cisco Discovery Protocol), Cisco cihazlara özel cihaz keşif protokolüdür. Layer 2 seviyesinde çalışır. Cihaz türü, IP adresi, yazılım sürümü, işletim sistemi gibi bilgileri elde etmemizi sağlar. Varsayılan olarak açık gelir. İstenirse port bazında açabilir veya kapatabiliriz. Networkü tanımak için kullanılır fakat her zaman için iyi olmayabilir. 60 saniyede bir CDP mesajı yollanır, 180 saniye tabloda tutulur. Multicast yayın yapar. CDP Cihaz keşfi komutları:&#xA;R1#show cdp neighbors R1#show cdp neighbors detail CDP Kapatmak için:</description>
     </item>
     <item>
       <title>EIGRP Authentication</title>
-      <link>https://ittechnetworkk.github.io/posts/eigrpauthentication/eigrp-authentication/</link>
+      <link>http://localhost:1313/posts/eigrpauthentication/eigrp-authentication/</link>
       <pubDate>Wed, 07 Feb 2024 23:44:36 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/eigrpauthentication/eigrp-authentication/</guid>
+      <guid>http://localhost:1313/posts/eigrpauthentication/eigrp-authentication/</guid>
       <description>EIGRP Cisco tarafından geliştirilen, daha sonra kaynak kodları açılan bir dinamik yönlendirme protokolüdür. Kimlik doğrulama yapılmasının amacı networkte bir şekilde bulunan yetkisiz routerların, yetkili olan routerların routing tablosunu bozmasını engellemektir. Trafiği şifrelemez. Sadece kimlik doğrulama yapar. Authentication 2 aşamada yapılır.&#xA;Aşağıdaki topolojiyi uygulayacağız.&#xA;Burada 3 Router&amp;rsquo;ımız var, hali hazırda EIGRP konfigürasyonu yapılmış, networkler birbirlerini tanıyorlar. Bu topolojide, kötü niyetli biri routerlardan birine bir kablo takarsa rahatlıkla network duyuruları yapabilir, routing tablolarını şişirebilir, networkü kullanılmaz hale getirebilir.</description>
     </item>
     <item>
       <title>Cisco Ssh</title>
-      <link>https://ittechnetworkk.github.io/posts/ciscossh/cisco-ssh/</link>
+      <link>http://localhost:1313/posts/ciscossh/cisco-ssh/</link>
       <pubDate>Wed, 07 Feb 2024 23:41:02 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ciscossh/cisco-ssh/</guid>
+      <guid>http://localhost:1313/posts/ciscossh/cisco-ssh/</guid>
       <description>SSH uzak bir cihaza bağlanmak için kullanılan kriptolu ve güvenli bir protokoldür. Defaultta 22 TCP portunu kullanır. Şimdi bir Cisco Router&amp;rsquo;a nasıl SSH konfigürasyonu yapılır bakalım. SSH konfigürasyonu birkaç adımdan oluşur.&#xA;A-ROUTER:&#xA;1: Hostname ver,&#xA;vIOS-01&amp;gt;enable vIOS-01#configure terminal vIOS-01(config)#hostname R1 2:* Bir domain-name tanımla,&#xA;R1(config)#ip domain-name ssnrshnn.local 3: Bir kullanıcı ve parola tanımla,&#xA;R1(config)#username suleyman privilege 15 secret seba 4: Bir key oluştur,&#xA;R1(config)#crypto key generate rsa general-keys modules 1024 5: vty moda geçiş yapıyoruz,</description>
     </item>
     <item>
       <title>EIGRP Protokolü</title>
-      <link>https://ittechnetworkk.github.io/posts/eigrp/eigrp/</link>
+      <link>http://localhost:1313/posts/eigrp/eigrp/</link>
       <pubDate>Sun, 21 Jan 2024 23:44:58 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/eigrp/eigrp/</guid>
+      <guid>http://localhost:1313/posts/eigrp/eigrp/</guid>
       <description>EIGRP (Enchanced Interior Gateway Routing Protocol), Cisco tarafından geliştirilen bir dinamik yönlendirme protokolüdür. Daha sonradan diğer firmaların kullanımına sunulmuştur. RFC7868de tanımlanmıştır. Hem Distance Vector hem de Link State protokol özelliklerini aldığı için Hybrid Protokol olarak da geçer. Bazı özellikleri şöyledir:&#xA;Max 224 hop destekler, VLSM destekler, yani subnetting destekler, Hem Unicast hem de Multicast çalışır 224.0.0.10, Bir ana rota (Succesor), bir de yedek rota (Feasible Succesor) belirlenir, Hızlı yakınsama sağlar, alternatif rotalar arasında geçiş hızlıdır, Administrative Distance değeri 90&amp;rsquo;dır, Yönlendirme tablosunda değişiklik olduğunda tüm tabloyu değil sadece değişiklik olan kısmı diğer Router&amp;rsquo;lara gönderir, 5 Saniyede bir &amp;ldquo;Hello&amp;rdquo; paketi gönderir, 15 saniye &amp;ldquo;Acknowledgement&amp;rdquo; paketiyle cevap gelmezse komşuluk düşer, EIGRP Paketleri: Hello: Routerlar kendi aralarında 5 saniyede bir ayakta olduklarını duyurmak için kullandıkları pakettir.</description>
     </item>
     <item>
       <title>Dhcp Relay Agent</title>
-      <link>https://ittechnetworkk.github.io/posts/dhcprelayagent/dhcp-relay-agent/</link>
+      <link>http://localhost:1313/posts/dhcprelayagent/dhcp-relay-agent/</link>
       <pubDate>Sun, 14 Jan 2024 23:43:35 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dhcprelayagent/dhcp-relay-agent/</guid>
+      <guid>http://localhost:1313/posts/dhcprelayagent/dhcp-relay-agent/</guid>
       <description>DHCP, cihazlara IP, DNS, Default Gateway dağıtan protokoldür. Bu protokol client-server mantığıyla çalışır. İstemci talep eder ve server hizmet verir. UDP çalışır ve 4 aşamada işlem tamamlanır.&#xA;Client, DHCP Discover paketini networke gönderir. Bunun anlamı &amp;ldquo;Bana IP verecek bir DHCP Server var mı?&amp;rdquo;.&#xA;Server, DHCP Offer paketiyle karşılık verir ve der ki &amp;ldquo;Evet ben verebilirim&amp;rdquo;.&#xA;Client, DHCP Request paketiyle IP adresi talep eder.&#xA;Server, DHCP Ack paketiyle ile cihaza IP adresi ataması yapar.</description>
     </item>
     <item>
       <title>HSRP Protokolü</title>
-      <link>https://ittechnetworkk.github.io/posts/hsrp/hsrp/</link>
+      <link>http://localhost:1313/posts/hsrp/hsrp/</link>
       <pubDate>Sun, 07 Jan 2024 23:45:22 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/hsrp/hsrp/</guid>
+      <guid>http://localhost:1313/posts/hsrp/hsrp/</guid>
       <description>HSRP (Hot Standby Router Protocol), router yedekliliğini sağlamak amacıyla Cisco tarafından geliştirilmiş bir protokoldür. Birden fazla Router bulunan networklerde aktif olarak belirtilen Router&amp;rsquo;ın çalışmaması durumunda yedek olarak bekleyen Router&amp;rsquo;ın devreye girmesi prensibiyle çalışır. Bunun için sanal bir ortak IP adresi oluşturulur ve PC&amp;rsquo;lere Gateway olarak bu IP adresi verilir. Bu IP adresine giden paketler de aktif olan Router&amp;rsquo;a yönlendirilir. Bu sayede iletişim sağlanır.&#xA;Router&amp;rsquo;lar birbirlerine 3 saniyede bir aktif olup olmadıklarını öğrendikleri Hello paketi yollarlar.</description>
     </item>
     <item>
       <title>DHCP Snooping</title>
-      <link>https://ittechnetworkk.github.io/posts/dhcpsnooping/dhcp-snooping/</link>
+      <link>http://localhost:1313/posts/dhcpsnooping/dhcp-snooping/</link>
       <pubDate>Sun, 31 Dec 2023 23:44:03 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dhcpsnooping/dhcp-snooping/</guid>
+      <guid>http://localhost:1313/posts/dhcpsnooping/dhcp-snooping/</guid>
       <description>DHCP(Dynamic Host Configuration Protocol), ağdaki cihazlarımıza otomatik olarak IP, DNS, Default Gateway bilgilerini dağıtan servistir. Ağa yeni bir cihaz katıldığında, kablo takılır takılmaz IP almak için Broadcast yayın yapar. Eğer ortamda DHCP servisi varsa o da karşılık verir. Toplam 4 aşamada IP alma işlemi tamamlanır.&#xA;Bu paketler Broadcast paketler olduğu için ağdaki herkese ulaşır bu da her zaman için iyi olmayabilir. Örneğin bir network yapısında iki DHCP server aynı anda çalışabilir.</description>
     </item>
   </channel>

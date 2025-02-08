@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SSH on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/ssh/</link>
+    <link>http://localhost:1313/tags/ssh/</link>
     <description>Recent content in SSH on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Sat, 08 Feb 2025 15:23:57 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[EN] SSH Server Configuration</title>
-      <link>https://ittechnetworkk.github.io/posts/sshserverconfiguration/ssh-server-configuration/</link>
+      <link>http://localhost:1313/posts/sshserverconfiguration/ssh-server-configuration/</link>
       <pubDate>Sat, 08 Feb 2025 15:23:57 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/sshserverconfiguration/ssh-server-configuration/</guid>
+      <guid>http://localhost:1313/posts/sshserverconfiguration/ssh-server-configuration/</guid>
       <description>Hi everyone, in this article, I will show you how to configure an SSH server in detail.&#xA;SSH (Secure Shell Protocol) is a widely-used protocol that securely connects and manages remote servers. In this tutorial, you will learn how to set up and configure an SSH server from scratch.&#xA;To set up an SSH server, you need to install the openssh-server package on the server and the openssh-client package on the client.</description>
     </item>
     <item>
       <title>Cisco ASA SSH Konfigürasyonu</title>
-      <link>https://ittechnetworkk.github.io/posts/asa5510ssh/asa5510-ssh/</link>
+      <link>http://localhost:1313/posts/asa5510ssh/asa5510-ssh/</link>
       <pubDate>Sun, 01 Dec 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/asa5510ssh/asa5510-ssh/</guid>
+      <guid>http://localhost:1313/posts/asa5510ssh/asa5510-ssh/</guid>
       <description>Merhabalar, bu yazımda Cisco ASA 5510&amp;rsquo;a SSH konfigürasyonu yapmayı göstereceğim.&#xA;İlk olarak bir kullanıcı oluşturuyorum:&#xA;ASA# conf t ASA(config)# username &amp;lt;User&amp;gt; password &amp;lt;Password&amp;gt; privilege 15 Kimlik doğrulama modunu ayarlıyorum:&#xA;ASA(config)# aaa authentication ssh console LOCAL SSH versiyonunu 2 yapıyorum ve timeout değerini ayarlıyorum:&#xA;ASA(config)# ssh version 2 ASA(config)# ssh timeout 30 Bir domain adı ve anahtar çifti yaratıyorum:&#xA;ASA(config)# domain-name sonersahin.local ASA(config)# crypto key generate rsa modulus 1024 Cihaza SSH yapacak network aralığı belirliyorum, isterseniz sadece belli bir IP adresini de yapabilirsiniz:</description>
     </item>
     <item>
       <title>Cisco Ssh</title>
-      <link>https://ittechnetworkk.github.io/posts/ciscossh/cisco-ssh/</link>
+      <link>http://localhost:1313/posts/ciscossh/cisco-ssh/</link>
       <pubDate>Wed, 07 Feb 2024 23:41:02 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ciscossh/cisco-ssh/</guid>
+      <guid>http://localhost:1313/posts/ciscossh/cisco-ssh/</guid>
       <description>SSH uzak bir cihaza bağlanmak için kullanılan kriptolu ve güvenli bir protokoldür. Defaultta 22 TCP portunu kullanır. Şimdi bir Cisco Router&amp;rsquo;a nasıl SSH konfigürasyonu yapılır bakalım. SSH konfigürasyonu birkaç adımdan oluşur.&#xA;A-ROUTER:&#xA;1: Hostname ver,&#xA;vIOS-01&amp;gt;enable vIOS-01#configure terminal vIOS-01(config)#hostname R1 2:* Bir domain-name tanımla,&#xA;R1(config)#ip domain-name ssnrshnn.local 3: Bir kullanıcı ve parola tanımla,&#xA;R1(config)#username suleyman privilege 15 secret seba 4: Bir key oluştur,&#xA;R1(config)#crypto key generate rsa general-keys modules 1024 5: vty moda geçiş yapıyoruz,</description>
     </item>
   </channel>

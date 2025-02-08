@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dual-Stack on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/dual-stack/</link>
+    <link>http://localhost:1313/tags/dual-stack/</link>
     <description>Recent content in Dual-Stack on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Thu, 06 Jun 2024 22:57:40 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/dual-stack/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/dual-stack/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>IPv6 Geçiş Çalışmaları İkili Yığın Yöntemi</title>
-      <link>https://ittechnetworkk.github.io/posts/ikiliyiginyontemi/ikili-yigin-yontemi/</link>
+      <link>http://localhost:1313/posts/ikiliyiginyontemi/ikili-yigin-yontemi/</link>
       <pubDate>Thu, 06 Jun 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ikiliyiginyontemi/ikili-yigin-yontemi/</guid>
+      <guid>http://localhost:1313/posts/ikiliyiginyontemi/ikili-yigin-yontemi/</guid>
       <description>Bu yöntem, IPv4&amp;rsquo;den IPv6&amp;rsquo;ya geçiş yöntemlerinden biri olan tünelleme tekniğidir. Bu yöntemde, cihazların hem IPv4 hem de IPv6 adreslerini birlikte kullanması yöntemidir. Yani IPv4 ile gelen cihaz IPv4, IPv6 ile gelen cihaz IPv6 ile haberleşir.&#xA;Uygulamada daha net anlaşılacaktır.&#xA;Aşağıdaki topolojiyi uygulayacağım.&#xA;Yapılacaklar:&#xA;Router ve VPC&amp;rsquo;lerin Interface&amp;rsquo;lerine IPv4 ve IPv6 adreslerini tanımla, Networklerin birbirleriyle haberleşmesi için statik rotalar yaz, Test et. 1. Router ve VPC&amp;rsquo;lerin Interface&amp;rsquo;lerine IPv4 ve IPv6 adreslerini tanımla,</description>
     </item>
   </channel>

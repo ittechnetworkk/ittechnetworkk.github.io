@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ipsec on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/ipsec/</link>
+    <link>http://localhost:1313/tags/ipsec/</link>
     <description>Recent content in Ipsec on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Fri, 22 Nov 2024 22:57:40 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/ipsec/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/ipsec/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GRE Over Ipsec</title>
-      <link>https://ittechnetworkk.github.io/posts/greoveripsec/greoveripsec/</link>
+      <link>http://localhost:1313/posts/greoveripsec/greoveripsec/</link>
       <pubDate>Fri, 22 Nov 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/greoveripsec/greoveripsec/</guid>
+      <guid>http://localhost:1313/posts/greoveripsec/greoveripsec/</guid>
       <description>Aşağıdaki topologiye göre ilerleyeceğim. Topolojideki cihazların interfacelerine IP adresleri verilmiştir.&#xA;GRE Config:&#xA;R1:&#xA;R1#conf t R1(config)#int tunnel 1 R1(config-if)#ip addr 192.168.1.1 255.255.255.0 R1(config-if)#tunnel source e0/0 R1(config-if)#tunnel destination 200.59.25.2 R2:&#xA;R1#conf t R2(config)#int tunnel 1 R2(config-if)#ip addr 192.168.1.2 255.255.255.0 R2(config-if)#tunnel source e0/0 R2(config-if)#tunnel destination 197.53.15.2 IPsec:&#xA;R1:&#xA;R1(config)#crypto isakmp policy 10 R1(config-isakmp)#authentication pre-share (define it later on) R1(config-isakmp)#encryption aes R1(config-isakmp)#group 14 (must be over 14) R1(config-isakmp)#hash sha R1(config-isakmp)#exit R1(config)#crypto isakmp key BENIMCICIPAROLAM address 200.</description>
     </item>
   </channel>

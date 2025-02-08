@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Switch on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/switch/</link>
+    <link>http://localhost:1313/tags/switch/</link>
     <description>Recent content in Switch on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Wed, 26 Jun 2024 17:53:48 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/switch/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/switch/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Temel Switch Konfigürasyonu</title>
-      <link>https://ittechnetworkk.github.io/posts/switchconfiguration/switch-conf/</link>
+      <link>http://localhost:1313/posts/switchconfiguration/switch-conf/</link>
       <pubDate>Wed, 26 Jun 2024 17:53:48 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/switchconfiguration/switch-conf/</guid>
+      <guid>http://localhost:1313/posts/switchconfiguration/switch-conf/</guid>
       <description>Merhaba, bu yazıda Cisco bir Switch&amp;rsquo;in temel bir konfigürasyonunu göstereceğim.&#xA;Tabi bu konfigürasyonları temel düzelde uygulayacağım, daha kapsamlı konfigürasyon network yapılarına göre, kullanılan teknolojilere göre değişiklik gösterecektir.&#xA;Uygulayacağım konfigürasyonları sırasıyla aşağıdaki gibi olacaktır:&#xA;Hostname, Zaman Konfigürasyonu, Yanlış Girilen Parola Politikası, Enable Password, Banner motd, Kullanıcı Oluşturma, Console Erişimi, SSH Konfigürasyonu, Default Gateway, Disable Ports, Konfigürasyonları Kaydetme, Kontrol. Başlayalım.&#xA;Ben konfigürasyonları, Cisco Catalyst 2960 Serisi bir Switch üzerinde uygulayacağım.&#xA;Console Kablosu ve Switch görüntü itibariyle aşağıdaki gibidir.</description>
     </item>
     <item>
       <title>EtherChannel</title>
-      <link>https://ittechnetworkk.github.io/posts/etherchannel/etherchannel/</link>
+      <link>http://localhost:1313/posts/etherchannel/etherchannel/</link>
       <pubDate>Fri, 22 Mar 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/etherchannel/etherchannel/</guid>
+      <guid>http://localhost:1313/posts/etherchannel/etherchannel/</guid>
       <description>EtherChannel Protokolü switchlerin birden fazla fiziksel portunu tek bir mantıksal port yapan protokoldür. Yapılmasının amacı şudur örneğin iki switch arasına 4 kablo çekip bırakırsak Stp (Spanning Tree Protocol) devreye girecek ve bu portlardan bazılarını kapatacaktır loop&amp;rsquo;u engellemek için. Eğer EtherChannel yaparsak bu portlar tek bir mantıksal port gibi görünecektir ve STP&amp;rsquo;ye gerek kalmayacaktır. Konfigüre etmek için karşılıklı portların yapısı aynı olmalıdır. Örneğin bir taraf GigabitEthernet diğeri FastEthernet olamaz. 3 EtherChannel Protokolü vardır:</description>
     </item>
   </channel>

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CML on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/cml/</link>
+    <link>http://localhost:1313/tags/cml/</link>
     <description>Recent content in CML on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Fri, 03 Jan 2025 23:31:39 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/cml/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/cml/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cml Freetrial</title>
-      <link>https://ittechnetworkk.github.io/posts/ciscocmlfreetrial/cml-freetrial/</link>
+      <link>http://localhost:1313/posts/ciscocmlfreetrial/cml-freetrial/</link>
       <pubDate>Fri, 03 Jan 2025 23:31:39 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ciscocmlfreetrial/cml-freetrial/</guid>
+      <guid>http://localhost:1313/posts/ciscocmlfreetrial/cml-freetrial/</guid>
       <description>CiscoCMLFreeTrial Merhabalar, bu yazımda Cml Freetrial konusunu anlatacağım.&#xA;Ben Vmware Workstation Pro&amp;rsquo;ya kuracağım, aşağıdaki linkten ilgili kurulum dosyalarını indiriyorum.&#xA;https://software.cisco.com/download/home/286193282/type/286326381/release/2.8.0%20Free%20Tier&#xA;Görseldeki en alt iki dosyayı indiriyorum&#xA;cml2_f_2.8.0-6_amd64-32.ova refplat-20241016-freetier-iso Kurulum adımları sırasıyla aşağıdaki gibi olacaktır.&#xA;VMWare:&#xA;File &amp;gt; Open &amp;gt; cml2_f_2.8.0-6_amd64-32.ova&#xA;.ova uzantılı dosya import edildikten sonra bunu editliyoruz.&#xA;Burada .iso uzantılı dosyanın yolunu belirtiyoruz.&#xA;Aşağıdaki kutucuğun işaretli olması gerekiyor.&#xA;Aşağıdaki gibi bir ekranla karşılaşırsanız, belirttiğimiz &amp;ldquo;refplat-20241016-freetier-iso&amp;rdquo; dosyası takılı değildir demektir. Ekranın sağ alt kısmındaki üzerinde çarpı olan CD icon&amp;rsquo;una tıklayıp connect dersek iso takılmış olacaktır.</description>
     </item>
   </channel>

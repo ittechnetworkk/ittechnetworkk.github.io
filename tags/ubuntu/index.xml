@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ubuntu on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/ubuntu/</link>
+    <link>http://localhost:1313/tags/ubuntu/</link>
     <description>Recent content in Ubuntu on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Thu, 23 Jan 2025 01:06:35 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[EN] DHCP Server Configuration</title>
-      <link>https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/</link>
+      <link>http://localhost:1313/posts/dhcpserver/dhcp-server-configuration/</link>
       <pubDate>Thu, 23 Jan 2025 01:06:35 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/</guid>
+      <guid>http://localhost:1313/posts/dhcpserver/dhcp-server-configuration/</guid>
       <description>Hello there!&#xA;In this article, I’m going to show you how to install and configure a DHCP server.&#xA;I’m going to install the DHCP server role on an Ubuntu server. However, the process is almost the same for all distributions.&#xA;We need to install the isc-dhcp-server package for DHCP role.&#xA;Let&amp;rsquo;s get started.&#xA;ubuntu@ubuntu:~$ sudo apt install isc-dhcp-server After the package is installed, let’s check the service called isc-dhcp-server.&#xA;ubuntu@ubuntu:~$ systemctl status isc-dhcp-server × isc-dhcp-server.</description>
     </item>
     <item>
       <title>Ubuntu 22.04 DHCP Server Konfigürasyonu</title>
-      <link>https://ittechnetworkk.github.io/posts/ubuntudhcpserver/ubuntu-dhcp-server/</link>
+      <link>http://localhost:1313/posts/ubuntudhcpserver/ubuntu-dhcp-server/</link>
       <pubDate>Thu, 07 Nov 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ubuntudhcpserver/ubuntu-dhcp-server/</guid>
+      <guid>http://localhost:1313/posts/ubuntudhcpserver/ubuntu-dhcp-server/</guid>
       <description>Merhabalar bu yazımda, Ubuntu-22.04 Server&amp;rsquo;a DHCP rolü kurup konfigürasyonunu yapacağım.&#xA;Ubuntu&amp;rsquo;ya DHCP rolü vermeden önce, Server&amp;rsquo;ın IP adresini statik olarak ayarlıyorum.&#xA;Statik IP adresi tanımlamak için &amp;ldquo;/etc/netplan/00-installer-config.yaml&amp;rdquo; dosyasını düzenliyorum.&#xA;network: version: 2 renderer: networkd ethernets: ens33: addresses: - 192.168.1.50/24 nameservers: addresses: [1.1.1.1, 8.8.8.8] routes: - to: default via: 192.168.1.1 Değişiklikleri geçerli kılmak için:&#xA;sudo netplan apply Grafik arayüzü ile yapılandırmak için &amp;ldquo;nmtui&amp;rdquo; aracını kullanabilirsiniz.&#xA;DHCP Server Rolü Kurulumu:&#xA;sudo apt install isc-dhcp-server DHCP rolü yüklendikten sonra, konfigürasyon dosyası &amp;ldquo;/etc/dhcp/dhcpd.</description>
     </item>
   </channel>

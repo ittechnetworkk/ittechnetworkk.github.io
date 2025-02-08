@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gpg on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/gpg/</link>
+    <link>http://localhost:1313/tags/gpg/</link>
     <description>Recent content in Gpg on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Tue, 23 Jul 2024 22:57:40 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/gpg/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/gpg/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GPG Nedir?</title>
-      <link>https://ittechnetworkk.github.io/posts/gpgnedir/gpg-nedir/</link>
+      <link>http://localhost:1313/posts/gpgnedir/gpg-nedir/</link>
       <pubDate>Tue, 23 Jul 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/gpgnedir/gpg-nedir/</guid>
+      <guid>http://localhost:1313/posts/gpgnedir/gpg-nedir/</guid>
       <description>GPG (GNU Privacy Guard )RFC4880 , GPL Lisanslı bir şifreleme ve imzalama aracıdır. Linux&amp;rsquo;da defaultta gelir, Windows için Web Sitesi&amp;rsquo;nden indirilebilir.&#xA;GPG asimetrik şifreleme algoritması kullanır. Yani Public ve Prive anahtarlar vasıtasıyla dataları şifreler veya çözer.&#xA;Nedir bu Public ve Prive anahtarlar?&#xA;2 kişi düşünelim birbirleriyle haberleşmek istesin. Her kişinin 2 anahtarı olur. Biri &amp;ldquo;Public Key&amp;rdquo; yani paylaşılan anahtar. Diğeri ise &amp;ldquo;Private key&amp;rdquo; yani gizli kalması gereken anahtar.&#xA;X kişisi Y kişisine gizli bir mesaj göndermek isterse bu mesajı Y kişisinin &amp;ldquo;Public Key&amp;quot;i ile şifrelemesi gerekir.</description>
     </item>
   </channel>
