@@ -2,452 +2,452 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://ittechnetworkk.github.io/tags/</link>
     <description>Recent content in Tags on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Sat, 08 Feb 2025 15:35:41 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ittechnetworkk.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>IoT</title>
-      <link>http://localhost:1313/tags/iot/</link>
+      <link>https://ittechnetworkk.github.io/tags/iot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/iot/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/iot/</guid>
       <description></description>
     </item>
     <item>
       <title>Raspberry Pi</title>
-      <link>http://localhost:1313/tags/raspberry-pi/</link>
+      <link>https://ittechnetworkk.github.io/tags/raspberry-pi/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/raspberry-pi/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/raspberry-pi/</guid>
       <description></description>
     </item>
     <item>
       <title>Skyforge</title>
-      <link>http://localhost:1313/tags/skyforge/</link>
+      <link>https://ittechnetworkk.github.io/tags/skyforge/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/skyforge/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/skyforge/</guid>
       <description></description>
     </item>
     <item>
       <title>Configuration</title>
-      <link>http://localhost:1313/tags/configuration/</link>
+      <link>https://ittechnetworkk.github.io/tags/configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/configuration/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/configuration/</guid>
       <description></description>
     </item>
     <item>
       <title>Server</title>
-      <link>http://localhost:1313/tags/server/</link>
+      <link>https://ittechnetworkk.github.io/tags/server/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/server/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/server/</guid>
       <description></description>
     </item>
     <item>
       <title>SSH</title>
-      <link>http://localhost:1313/tags/ssh/</link>
+      <link>https://ittechnetworkk.github.io/tags/ssh/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ssh/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/ssh/</guid>
       <description></description>
     </item>
     <item>
       <title>Cockpit</title>
-      <link>http://localhost:1313/tags/cockpit/</link>
+      <link>https://ittechnetworkk.github.io/tags/cockpit/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cockpit/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/cockpit/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>http://localhost:1313/tags/linux/</link>
+      <link>https://ittechnetworkk.github.io/tags/linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/linux/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Network Manager</title>
-      <link>http://localhost:1313/tags/network-manager/</link>
+      <link>https://ittechnetworkk.github.io/tags/network-manager/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/network-manager/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/network-manager/</guid>
       <description></description>
     </item>
     <item>
       <title>Dhcp</title>
-      <link>http://localhost:1313/tags/dhcp/</link>
+      <link>https://ittechnetworkk.github.io/tags/dhcp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/dhcp/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/dhcp/</guid>
       <description></description>
     </item>
     <item>
       <title>Ubuntu</title>
-      <link>http://localhost:1313/tags/ubuntu/</link>
+      <link>https://ittechnetworkk.github.io/tags/ubuntu/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ubuntu/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/ubuntu/</guid>
       <description></description>
     </item>
     <item>
       <title>Debian</title>
-      <link>http://localhost:1313/tags/debian/</link>
+      <link>https://ittechnetworkk.github.io/tags/debian/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/debian/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/debian/</guid>
       <description></description>
     </item>
     <item>
       <title>IP</title>
-      <link>http://localhost:1313/tags/ip/</link>
+      <link>https://ittechnetworkk.github.io/tags/ip/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ip/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/ip/</guid>
       <description></description>
     </item>
     <item>
       <title>Fedora</title>
-      <link>http://localhost:1313/tags/fedora/</link>
+      <link>https://ittechnetworkk.github.io/tags/fedora/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/fedora/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/fedora/</guid>
       <description></description>
     </item>
     <item>
       <title>Network</title>
-      <link>http://localhost:1313/tags/network/</link>
+      <link>https://ittechnetworkk.github.io/tags/network/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/network/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/network/</guid>
       <description></description>
     </item>
     <item>
       <title>Routing</title>
-      <link>http://localhost:1313/tags/routing/</link>
+      <link>https://ittechnetworkk.github.io/tags/routing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/routing/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/routing/</guid>
       <description></description>
     </item>
     <item>
       <title>Vlan</title>
-      <link>http://localhost:1313/tags/vlan/</link>
+      <link>https://ittechnetworkk.github.io/tags/vlan/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/vlan/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/vlan/</guid>
       <description></description>
     </item>
     <item>
       <title>Cisco</title>
-      <link>http://localhost:1313/tags/cisco/</link>
+      <link>https://ittechnetworkk.github.io/tags/cisco/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cisco/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/cisco/</guid>
       <description></description>
     </item>
     <item>
       <title>CML</title>
-      <link>http://localhost:1313/tags/cml/</link>
+      <link>https://ittechnetworkk.github.io/tags/cml/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cml/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/cml/</guid>
       <description></description>
     </item>
     <item>
       <title>Firewall</title>
-      <link>http://localhost:1313/tags/firewall/</link>
+      <link>https://ittechnetworkk.github.io/tags/firewall/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/firewall/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/firewall/</guid>
       <description></description>
     </item>
     <item>
       <title>Ipfire</title>
-      <link>http://localhost:1313/tags/ipfire/</link>
+      <link>https://ittechnetworkk.github.io/tags/ipfire/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ipfire/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/ipfire/</guid>
       <description></description>
     </item>
     <item>
       <title>Nanopi</title>
-      <link>http://localhost:1313/tags/nanopi/</link>
+      <link>https://ittechnetworkk.github.io/tags/nanopi/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/nanopi/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/nanopi/</guid>
       <description></description>
     </item>
     <item>
       <title>Asa</title>
-      <link>http://localhost:1313/tags/asa/</link>
+      <link>https://ittechnetworkk.github.io/tags/asa/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/asa/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/asa/</guid>
       <description></description>
     </item>
     <item>
       <title>Proxmox</title>
-      <link>http://localhost:1313/tags/proxmox/</link>
+      <link>https://ittechnetworkk.github.io/tags/proxmox/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/proxmox/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/proxmox/</guid>
       <description></description>
     </item>
     <item>
       <title>Virtualization</title>
-      <link>http://localhost:1313/tags/virtualization/</link>
+      <link>https://ittechnetworkk.github.io/tags/virtualization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/virtualization/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/virtualization/</guid>
       <description></description>
     </item>
     <item>
       <title>Gre</title>
-      <link>http://localhost:1313/tags/gre/</link>
+      <link>https://ittechnetworkk.github.io/tags/gre/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/gre/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/gre/</guid>
       <description></description>
     </item>
     <item>
       <title>Ipsec</title>
-      <link>http://localhost:1313/tags/ipsec/</link>
+      <link>https://ittechnetworkk.github.io/tags/ipsec/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ipsec/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/ipsec/</guid>
       <description></description>
     </item>
     <item>
       <title>Juniper</title>
-      <link>http://localhost:1313/tags/juniper/</link>
+      <link>https://ittechnetworkk.github.io/tags/juniper/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/juniper/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/juniper/</guid>
       <description></description>
     </item>
     <item>
       <title>Junos</title>
-      <link>http://localhost:1313/tags/junos/</link>
+      <link>https://ittechnetworkk.github.io/tags/junos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/junos/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/junos/</guid>
       <description></description>
     </item>
     <item>
       <title>Tunnelling</title>
-      <link>http://localhost:1313/tags/tunnelling/</link>
+      <link>https://ittechnetworkk.github.io/tags/tunnelling/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/tunnelling/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/tunnelling/</guid>
       <description></description>
     </item>
     <item>
       <title>Http</title>
-      <link>http://localhost:1313/tags/http/</link>
+      <link>https://ittechnetworkk.github.io/tags/http/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/http/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/http/</guid>
       <description></description>
     </item>
     <item>
       <title>Updog</title>
-      <link>http://localhost:1313/tags/updog/</link>
+      <link>https://ittechnetworkk.github.io/tags/updog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/updog/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/updog/</guid>
       <description></description>
     </item>
     <item>
       <title>Windows</title>
-      <link>http://localhost:1313/tags/windows/</link>
+      <link>https://ittechnetworkk.github.io/tags/windows/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/windows/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/windows/</guid>
       <description></description>
     </item>
     <item>
       <title>DMVPN</title>
-      <link>http://localhost:1313/tags/dmvpn/</link>
+      <link>https://ittechnetworkk.github.io/tags/dmvpn/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/dmvpn/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/dmvpn/</guid>
       <description></description>
     </item>
     <item>
       <title>EIGRP</title>
-      <link>http://localhost:1313/tags/eigrp/</link>
+      <link>https://ittechnetworkk.github.io/tags/eigrp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/eigrp/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/eigrp/</guid>
       <description></description>
     </item>
     <item>
       <title>Ospf</title>
-      <link>http://localhost:1313/tags/ospf/</link>
+      <link>https://ittechnetworkk.github.io/tags/ospf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ospf/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/ospf/</guid>
       <description></description>
     </item>
     <item>
       <title>Rip</title>
-      <link>http://localhost:1313/tags/rip/</link>
+      <link>https://ittechnetworkk.github.io/tags/rip/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/rip/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/rip/</guid>
       <description></description>
     </item>
     <item>
       <title>Vpn</title>
-      <link>http://localhost:1313/tags/vpn/</link>
+      <link>https://ittechnetworkk.github.io/tags/vpn/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/vpn/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/vpn/</guid>
       <description></description>
     </item>
     <item>
       <title>Pnetlab</title>
-      <link>http://localhost:1313/tags/pnetlab/</link>
+      <link>https://ittechnetworkk.github.io/tags/pnetlab/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/pnetlab/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/pnetlab/</guid>
       <description></description>
     </item>
     <item>
       <title>Troubleshooting</title>
-      <link>http://localhost:1313/tags/troubleshooting/</link>
+      <link>https://ittechnetworkk.github.io/tags/troubleshooting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/troubleshooting/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/troubleshooting/</guid>
       <description></description>
     </item>
     <item>
       <title>Gpg</title>
-      <link>http://localhost:1313/tags/gpg/</link>
+      <link>https://ittechnetworkk.github.io/tags/gpg/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/gpg/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/gpg/</guid>
       <description></description>
     </item>
     <item>
       <title>Logging</title>
-      <link>http://localhost:1313/tags/logging/</link>
+      <link>https://ittechnetworkk.github.io/tags/logging/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/logging/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/logging/</guid>
       <description></description>
     </item>
     <item>
       <title>Syslog</title>
-      <link>http://localhost:1313/tags/syslog/</link>
+      <link>https://ittechnetworkk.github.io/tags/syslog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/syslog/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/syslog/</guid>
       <description></description>
     </item>
     <item>
       <title>Cable</title>
-      <link>http://localhost:1313/tags/cable/</link>
+      <link>https://ittechnetworkk.github.io/tags/cable/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cable/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/cable/</guid>
       <description></description>
     </item>
     <item>
       <title>Switch</title>
-      <link>http://localhost:1313/tags/switch/</link>
+      <link>https://ittechnetworkk.github.io/tags/switch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/switch/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/switch/</guid>
       <description></description>
     </item>
     <item>
       <title>Ipv6</title>
-      <link>http://localhost:1313/tags/ipv6/</link>
+      <link>https://ittechnetworkk.github.io/tags/ipv6/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ipv6/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/ipv6/</guid>
       <description></description>
     </item>
     <item>
       <title>Router</title>
-      <link>http://localhost:1313/tags/router/</link>
+      <link>https://ittechnetworkk.github.io/tags/router/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/router/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/router/</guid>
       <description></description>
     </item>
     <item>
       <title>Dual-Stack</title>
-      <link>http://localhost:1313/tags/dual-stack/</link>
+      <link>https://ittechnetworkk.github.io/tags/dual-stack/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/dual-stack/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/dual-stack/</guid>
       <description></description>
     </item>
     <item>
       <title>Dietpi</title>
-      <link>http://localhost:1313/tags/dietpi/</link>
+      <link>https://ittechnetworkk.github.io/tags/dietpi/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/dietpi/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/dietpi/</guid>
       <description></description>
     </item>
     <item>
       <title>Portsecurity</title>
-      <link>http://localhost:1313/tags/portsecurity/</link>
+      <link>https://ittechnetworkk.github.io/tags/portsecurity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/portsecurity/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/portsecurity/</guid>
       <description></description>
     </item>
     <item>
       <title>Multilink</title>
-      <link>http://localhost:1313/tags/multilink/</link>
+      <link>https://ittechnetworkk.github.io/tags/multilink/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/multilink/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/multilink/</guid>
       <description></description>
     </item>
     <item>
       <title>Ppp</title>
-      <link>http://localhost:1313/tags/ppp/</link>
+      <link>https://ittechnetworkk.github.io/tags/ppp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ppp/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/ppp/</guid>
       <description></description>
     </item>
     <item>
       <title>IPv4</title>
-      <link>http://localhost:1313/tags/ipv4/</link>
+      <link>https://ittechnetworkk.github.io/tags/ipv4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ipv4/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/ipv4/</guid>
       <description></description>
     </item>
     <item>
       <title>Authentication</title>
-      <link>http://localhost:1313/tags/authentication/</link>
+      <link>https://ittechnetworkk.github.io/tags/authentication/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/authentication/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/authentication/</guid>
       <description></description>
     </item>
     <item>
       <title>Etherchannel</title>
-      <link>http://localhost:1313/tags/etherchannel/</link>
+      <link>https://ittechnetworkk.github.io/tags/etherchannel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/etherchannel/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/etherchannel/</guid>
       <description></description>
     </item>
     <item>
       <title>LACP</title>
-      <link>http://localhost:1313/tags/lacp/</link>
+      <link>https://ittechnetworkk.github.io/tags/lacp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/lacp/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/lacp/</guid>
       <description></description>
     </item>
     <item>
       <title>PaGP</title>
-      <link>http://localhost:1313/tags/pagp/</link>
+      <link>https://ittechnetworkk.github.io/tags/pagp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/pagp/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/pagp/</guid>
       <description></description>
     </item>
     <item>
       <title>CDP</title>
-      <link>http://localhost:1313/tags/cdp/</link>
+      <link>https://ittechnetworkk.github.io/tags/cdp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cdp/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/cdp/</guid>
       <description></description>
     </item>
     <item>
       <title>LLDP</title>
-      <link>http://localhost:1313/tags/lldp/</link>
+      <link>https://ittechnetworkk.github.io/tags/lldp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/lldp/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/lldp/</guid>
       <description></description>
     </item>
     <item>
       <title>Relay</title>
-      <link>http://localhost:1313/tags/relay/</link>
+      <link>https://ittechnetworkk.github.io/tags/relay/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/relay/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/relay/</guid>
       <description></description>
     </item>
     <item>
       <title>HSRP</title>
-      <link>http://localhost:1313/tags/hsrp/</link>
+      <link>https://ittechnetworkk.github.io/tags/hsrp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/hsrp/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/hsrp/</guid>
       <description></description>
     </item>
     <item>
       <title>Snooping</title>
-      <link>http://localhost:1313/tags/snooping/</link>
+      <link>https://ittechnetworkk.github.io/tags/snooping/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/snooping/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/snooping/</guid>
       <description></description>
     </item>
     <item>
       <title>VTP</title>
-      <link>http://localhost:1313/tags/vtp/</link>
+      <link>https://ittechnetworkk.github.io/tags/vtp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/vtp/</guid>
+      <guid>https://ittechnetworkk.github.io/tags/vtp/</guid>
       <description></description>
     </item>
   </channel>

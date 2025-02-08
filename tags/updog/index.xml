@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Updog on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/updog/</link>
+    <link>https://ittechnetworkk.github.io/tags/updog/</link>
     <description>Recent content in Updog on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Fri, 11 Oct 2024 22:57:40 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/updog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ittechnetworkk.github.io/tags/updog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Updog</title>
-      <link>http://localhost:1313/posts/updog/updog/</link>
+      <link>https://ittechnetworkk.github.io/posts/updog/updog/</link>
       <pubDate>Fri, 11 Oct 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/updog/updog/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/updog/updog/</guid>
       <description>Updog, SimpleHTTPServer alternatifi bir araçtır. Çok hızlı ve kolay bir şekilde localinizde bir HTTP Server ayağa kaldırmanızı sağlayan Python ile yazılmış açık kaynak kodlu bir araçtır.&#xA;Encryption ve Authentication destekler. Kendinden imzalı bir SSL sertifikası ve parola ile de bir Authentication sağlar.&#xA;Updog Yükleme:&#xA;pip3 install updog Updog kullanımı oldukça kolaydır aşağıda updog ile kullanılan tüm parametrelerini görebilirsiniz.&#xA;-d -p &amp;ndash;password &amp;ndash;ssl &amp;ndash;version -h&#xA;Bir örnek:&#xA;┌─[ssnrshnn@MARVEL]─[~/test] └──╼ $ls test1.txt ┌─[ssnrshnn@MARVEL]─[~/test] └──╼ $updog -d /home/ssnrshnn/test/ -p 6654 --password Pass123!</description>
     </item>
   </channel>

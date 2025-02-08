@@ -2,60 +2,60 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Routing on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/routing/</link>
+    <link>https://ittechnetworkk.github.io/tags/routing/</link>
     <description>Recent content in Routing on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Fri, 10 Jan 2025 11:43:33 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/routing/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ittechnetworkk.github.io/tags/routing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vlan Routing L3 Switch (SVI)</title>
-      <link>http://localhost:1313/posts/vlanroutingsvi/vlan-routing-svi/</link>
+      <link>https://ittechnetworkk.github.io/posts/vlanroutingsvi/vlan-routing-svi/</link>
       <pubDate>Fri, 10 Jan 2025 11:43:33 +0100</pubDate>
-      <guid>http://localhost:1313/posts/vlanroutingsvi/vlan-routing-svi/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/vlanroutingsvi/vlan-routing-svi/</guid>
       <description>Selamlar, bu yazımda VLAN Routing&amp;rsquo;in L3 bir Switch ile nasıl yapılacağını bir LAB senaryosu üzerinde yapacağım..&#xA;LAB&amp;rsquo;ı aşağıdaki topoloji üzerinde uygulayacağım.&#xA;Başlayalım.&#xA;İlk olarak cihazlara IP verelim.&#xA;VPC4:&#xA;VPCS&amp;gt; ip 10.10.10.10 255.255.255.0 gateway 10.10.10.1 VPC5:&#xA;VPCS&amp;gt; ip 10.10.20.10 255.255.255.0 gateway 10.10.20.1 VPC6:&#xA;VPCS&amp;gt; ip 10.10.10.11 255.255.255.0 gateway 10.10.10.1 VPC7:&#xA;VPCS&amp;gt; ip 10.10.20.11 255.255.255.0 gateway 10.10.20.1 Şimdi Switch&amp;rsquo;lerde VLAN&amp;rsquo;ları oluşturalım ve portlara atayalım.&#xA;SW2:&#xA;Switch&amp;gt;en Switch#conf t Switch(config)#vlan 10 Switch(config-vlan)#vlan 20 Switch(config-vlan)#exit Switch(config)#int e0/1 Switch(config-if)#switchport mode access Switch(config-if)#switchport access vlan 10 Switch(config-if)#exit Switch(config)#int e0/2 Switch(config-if)#switchport mode access Switch(config-if)#switchport access vlan 20 Switch(config-if)#exit #Vlan&amp;#39;ların geçeceği port trunk olmalı Switch(config)#int e0/0 Switch(config-if)#switchport trunk encapsulation dot1q Switch(config-if)#switchport mode trunk SW3:</description>
     </item>
     <item>
       <title>Vlan Routing (Router on a Stick)</title>
-      <link>http://localhost:1313/posts/vlanroutingroas/vlan-routing-roas/</link>
+      <link>https://ittechnetworkk.github.io/posts/vlanroutingroas/vlan-routing-roas/</link>
       <pubDate>Fri, 10 Jan 2025 11:43:17 +0100</pubDate>
-      <guid>http://localhost:1313/posts/vlanroutingroas/vlan-routing-roas/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/vlanroutingroas/vlan-routing-roas/</guid>
       <description>Selamlar, bu yazımda VLAN Routing&amp;rsquo;in bir Router ile nasıl yapılacağını bir LAB senaryosu üzerinde yapacağım..&#xA;LAB&amp;rsquo;ı aşağıdaki topoloji üzerinde uygulayacağım.&#xA;Başlayalım.&#xA;İlk olarak cihazlara IP verelim.&#xA;VPC4:&#xA;VPCS&amp;gt; ip 10.10.10.10 255.255.255.0 gateway 10.10.10.1 VPC5:&#xA;VPCS&amp;gt; ip 10.10.20.10 255.255.255.0 gateway 10.10.20.1 VPC6:&#xA;VPCS&amp;gt; ip 10.10.10.11 255.255.255.0 gateway 10.10.10.1 VPC7:&#xA;VPCS&amp;gt; ip 10.10.20.11 255.255.255.0 gateway 10.10.20.1 Şimdi Switch&amp;rsquo;lerde VLAN&amp;rsquo;ları oluşturalım ve portlara atayalım.&#xA;SW2:&#xA;Switch&amp;gt;en Switch#conf t Switch(config)#vlan 10 Switch(config-vlan)#vlan 20 Switch(config-vlan)#exit Switch(config)#int e0/1 Switch(config-if)#switchport mode access Switch(config-if)#switchport access vlan 10 Switch(config-if)#exit Switch(config)#int e0/2 Switch(config-if)#switchport mode access Switch(config-if)#switchport access vlan 20 Switch(config-if)#exit #Vlan&amp;#39;ların geçeceği port trunk olmalı Switch(config)#int e0/0 Switch(config-if)#switchport trunk encapsulation dot1q Switch(config-if)#switchport mode trunk SW3:</description>
     </item>
     <item>
       <title>IPv6 Static Routing</title>
-      <link>http://localhost:1313/posts/ipv6staticrouting/ipv6-static-routing/</link>
+      <link>https://ittechnetworkk.github.io/posts/ipv6staticrouting/ipv6-static-routing/</link>
       <pubDate>Tue, 25 Jun 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/ipv6staticrouting/ipv6-static-routing/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/ipv6staticrouting/ipv6-static-routing/</guid>
       <description>Static Route hedefe gitmek için manuel olarak yazılan rotadır. Static Route küçük networkler için kullanılabilir. Fakat orta ve büyük networklerde iş yükünü fazlaca artırabilir.&#xA;Bu da diğer Dynamic Routing protokollerinden ayıran bir özelliğidir. Bu demektir ki bir networkte Dynamic Routing Protokolü çalışsa bile öncelik statik olarak yazılan rotadadır.&#xA;Static Route Yazımı: Statik rota yazmak oldukça kolaydır. Aşağıda 2 farklı yazımı görebilirsiniz. İkisi de kullanılabilir.&#xA;Router(config)#ipv6 route 2001:3::/64 2001:2::2 Router(config)#ipv6 route 2001:3::/64 gi0/1 Bunun anlamı; 2001:3::/64 networküne gitmek için 2001:2::2 yolunu kullan.</description>
     </item>
     <item>
       <title>OSPF LAB</title>
-      <link>http://localhost:1313/posts/ospflab/ospf-lab/</link>
+      <link>https://ittechnetworkk.github.io/posts/ospflab/ospf-lab/</link>
       <pubDate>Sun, 07 Apr 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/ospflab/ospf-lab/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/ospflab/ospf-lab/</guid>
       <description>Bu Lab’daki amacım OSPF’in genel bir tekrarını yapmak olacak. Komutları uzun uzun yazıyor olacağım.&#xA;Aşağıdaki topolojiyi uygulayacağım.&#xA;Bu Lab&amp;rsquo;da istenilenler topolojinin sol üst köşesinde yazıyor.&#xA;Buna göre;&#xA;1- İlk olarak router interfacelerine ve VPC&amp;rsquo;lere sırasıyla IP&amp;rsquo;lerini vererek başlıyorum.&#xA;R1:&#xA;R1#configure terminal R1(config)#int e0/0 R1(config-if)#ip addr 10.0.1.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e0/1 R1(config-if)#ip address 10.0.3.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e0/2 R1(config-if)#ip addr 10.0.4.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e0/3 R1(config-if)#ip addr 10.0.2.1 255.</description>
     </item>
     <item>
       <title>OSPF Konfigürasyonu</title>
-      <link>http://localhost:1313/posts/ospfconfiguration/ospf-configuration/</link>
+      <link>https://ittechnetworkk.github.io/posts/ospfconfiguration/ospf-configuration/</link>
       <pubDate>Sun, 31 Mar 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/ospfconfiguration/ospf-configuration/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/ospfconfiguration/ospf-configuration/</guid>
       <description>OSPF (Open Short Path First), dinamik bir yönlendirme protokolüdür. OSPF bir Link State Routing protokolüdür. Bundan dolayı network haritasının tamamına hakimdir Bazı özellikleri şöyledir:&#xA;Açık kaynaklıdır, SPF(Shortest Path First) algoritmasını kullanır, Classless (Sınıfsız) bir protokoldür, CIDR (Classless Inter-Domain Routing), VLSM(Veriable Length Subnet Masking) destekler, Load balancing destekler, Güncelleme süresi hızlıdır, Administrative Distance değeri 110&amp;rsquo;dur, Area yapısı ile ölçeklenebilir, Kimlik doğrulamayı destekler (MD5) Metrik değeri olarak Cost kullanır. Multicast 224.0.0.5 ve 224.</description>
     </item>
     <item>
       <title>Static Routing</title>
-      <link>http://localhost:1313/posts/staticrouting/static-routing/</link>
+      <link>https://ittechnetworkk.github.io/posts/staticrouting/static-routing/</link>
       <pubDate>Mon, 18 Mar 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/staticrouting/static-routing/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/staticrouting/static-routing/</guid>
       <description>Static Routing, yönlendirme tablosuna manuel olarak route eklenmesidir. Topoloji değişikliklerinde networklerin de yine güncellenmesi manuel olarak yapılmalıdır. Administrative Distance değeri 1&amp;rsquo;dir&#xA;Aşağıdaki topolojiyi uygulayacağız.&#xA;Bu topolojide tüm cihazların birbirleriyle iletişim kurmasını istiyoruz. Başlayalım&#xA;1- Router interfacelerine ve VPC&amp;rsquo;lere IP&amp;rsquo;lerini verelim.&#xA;R1:&#xA;R1#enable R1#conf t R1(config)#int e0/0 R1(config-if)#ip add 192.168.1.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int s1/0 R1(config-if)#ip address 2.2.2.2 255.255.255.0 R1(config-if)#no sh R1(config-if)#int s1/1 R1(config-if)#ip addr 3.3.3.2 255.255.255.0 R1(config-if)#no sh R2:&#xA;R2#enable R2#conf t R2(config)#int e0/0 R2(config-if)#ip add 192.</description>
     </item>
     <item>
       <title>RIP Protokolü</title>
-      <link>http://localhost:1313/posts/rip/rip/</link>
+      <link>https://ittechnetworkk.github.io/posts/rip/rip/</link>
       <pubDate>Sun, 17 Dec 2023 23:45:55 +0100</pubDate>
-      <guid>http://localhost:1313/posts/rip/rip/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/rip/rip/</guid>
       <description>RIP(Router Information Protokol), bir dinamik yönlendirme protokolüdür. Basit ve kolay öğrenilebilen bir protokoldür. RIPv1 ve RIPv2 versiyonları vardır. RFC1058&amp;rsquo;de tanımlanmıştır. RIP Protokolü, yönlendirme tablosunu 30 saniyede bir günceller daha sonra üzerindeki aktif arayüzlere iletir. Administrative Distance değeri 120&amp;rsquo;dir. RIP protokolü en fazla 15 Hop Count&amp;rsquo;a izin verir. En iyi rotanın bulunmasında hop sayısına bakılarak paket iletilir. RIPv1 broadcast yayın yapar, subnet bilgisini routing tablosunu güncellediğinde göndermez, kimlik doğrulama yapmaz. RIPv2 Multicast(224.</description>
     </item>
   </channel>

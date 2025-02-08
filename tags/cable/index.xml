@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cable on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/cable/</link>
+    <link>https://ittechnetworkk.github.io/tags/cable/</link>
     <description>Recent content in Cable on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Sun, 07 Jul 2024 22:57:40 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/cable/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ittechnetworkk.github.io/tags/cable/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>UTP Kablo Yapımı</title>
-      <link>http://localhost:1313/posts/utpkabloyapimi/utp-kablo-yapimi/</link>
+      <link>https://ittechnetworkk.github.io/posts/utpkabloyapimi/utp-kablo-yapimi/</link>
       <pubDate>Sun, 07 Jul 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/utpkabloyapimi/utp-kablo-yapimi/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/utpkabloyapimi/utp-kablo-yapimi/</guid>
       <description>UTP Kablo yani ağ kabloları, internet iletişiminde cihazların birbirleriyle iletişim kurması için kullanılan kablolardır.&#xA;Birden fazla çeşidi vardır ve iletim hızlarına göre kategorilere ayrılmışlardır.&#xA;UTP kablolar 100 metreye kadar sinyal iletebilirler. Aşılması durumunda sinyal kayıpları, performans sorunları ile karşılaşılır.&#xA;UTP Kablolarının her iki ucu da RJ45 ile çakılır.&#xA;Kablolar koruyucu malzeme ile kablı olması veya olmaması gibi özelliklere göre 2&amp;rsquo;ye ayrılır.&#xA;Sheilded Twisted Pair (STP) kablonun içinde bir kuruyucu vardır, Unshielded Twisted Pair (UTP) koruyucu yoktur.</description>
     </item>
   </channel>

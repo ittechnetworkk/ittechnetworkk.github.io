@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Virtualization on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/virtualization/</link>
+    <link>https://ittechnetworkk.github.io/tags/virtualization/</link>
     <description>Recent content in Virtualization on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Mon, 02 Dec 2024 22:57:40 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/virtualization/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ittechnetworkk.github.io/tags/virtualization/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dell PowerEdge R640 Proxmox</title>
-      <link>http://localhost:1313/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</link>
+      <link>https://ittechnetworkk.github.io/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</link>
       <pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</guid>
       <description>Bu yazımda, Dell Poweredge R640 Server&amp;rsquo;a Proxmox kurulumunu anlatacağım.&#xA;Sahip olduğum donanım ve yazılımlar şu şekilde:&#xA;Dell PowerEdge R640 2x Xeon Gold 6132 14C 2.6GHz 128GB DDR4 RAM 8SFF H730 RAID, 2 x 1TB SSD Monitor, Klavye, Mause, USB Bellek, Ethernet Kablosu, Balena Etcher. Kablo bağlantılarının doğru yapıldığından emin olduktan sonra, ilk olarak web sitesinden Proxmox ISO&amp;rsquo;sunu indiriyorum.&#xA;Bu ISO dosyasını USB belleğe yazdırmak için Balena Etcher yazılımını kullanıyorum. İsteğe bağlı başka yazılımlar da kullanılabilir.</description>
     </item>
   </channel>

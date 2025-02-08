@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Network Manager on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/network-manager/</link>
+    <link>https://ittechnetworkk.github.io/tags/network-manager/</link>
     <description>Recent content in Network Manager on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Fri, 24 Jan 2025 21:46:46 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/network-manager/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ittechnetworkk.github.io/tags/network-manager/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[EN] NetworkManager Installation</title>
-      <link>http://localhost:1313/posts/networkmanagerinstallation/network-manager-installation/</link>
+      <link>https://ittechnetworkk.github.io/posts/networkmanagerinstallation/network-manager-installation/</link>
       <pubDate>Fri, 24 Jan 2025 21:46:46 +0100</pubDate>
-      <guid>http://localhost:1313/posts/networkmanagerinstallation/network-manager-installation/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/networkmanagerinstallation/network-manager-installation/</guid>
       <description>Hi there, in this article, I will show you how to switch netplan to NetworkManager to manage network interfaces on Ubuntu.&#xA;As you know, Ubuntu uses netplan as the default tool for network management. However NetworkManager is often a better choice due to its advanced features and ease of use.&#xA;In this guide, I’ll walk you through the steps to install and configure NetworkManager on an Ubuntu Server.&#xA;Step 1: Install NetworkManager</description>
     </item>
   </channel>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -9,12 +9,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> RaspberryPi Ipfire Kurulumu | ittechnetworkk</title>
-  <link rel = 'canonical' href = 'http://localhost:1313/posts/raspberrypiipfire/raspberrypi-ipfire/'>
+  <link rel = 'canonical' href = 'https://ittechnetworkk.github.io/posts/raspberrypiipfire/raspberrypi-ipfire/'>
   <meta name="description" content="Hello, I&#39;m Soner from Turkey. I prefer working with the CLI rather than GUI. On this site, I share my expertise in various technologies, insights into newly learned tools, as well as details of the projects I have completed and those I plan to undertake. I run this blog with the motivation to learn, have fun, and help others along the way.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:url" content="http://localhost:1313/posts/raspberrypiipfire/raspberrypi-ipfire/">
+  <meta property="og:url" content="https://ittechnetworkk.github.io/posts/raspberrypiipfire/raspberrypi-ipfire/">
   <meta property="og:site_name" content="ittechnetworkk">
   <meta property="og:title" content="RaspberryPi Ipfire Kurulumu">
   <meta property="og:description" content="Bu yazımda yeni aldığım Raspberry Pi 4 B modeline IPFire kurulumunu anlatacağım. IPFire, açık kaynak kodlu Linux tabanlı bir firewall yazılımıdır. IPFire’ı ISO olarak indirip bir sanal makine olarak da kurup inceleyebilirsiniz. Az kaynak tüketir ve işlevseldir.
@@ -48,7 +48,7 @@ Raspberry Pi 4 B, Kart Okuyucu, Harici Ethernet Kartı, USB to TypeC Güç Kablo
   
   
   
-  <link rel="stylesheet" href="http://localhost:1313/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg==">
+  <link rel="stylesheet" href="https://ittechnetworkk.github.io/css/styles.c05d68261bf086a9d7713c4f8a6215a3601608e267a816a7ee58f139b3d1aae51222aae2081c8e0c6bd35e1334773b7a16283022f31f92afd93bb37e5e822e66.css" integrity="sha512-wF1oJhvwhqnXcTxPimIVo2AWCOJnqBan7ljxObPRquUSIqriCByODGvTXhM0dzt6FigwIvMfkq/ZO7N&#43;XoIuZg==">
   
 
   
@@ -61,7 +61,7 @@ Raspberry Pi 4 B, Kart Okuyucu, Harici Ethernet Kartı, USB to TypeC Güç Kablo
   
 
   
-<link rel="icon" type="image/png" href="http://localhost:1313/images/favicon.ico" />
+<link rel="icon" type="image/png" href="https://ittechnetworkk.github.io/images/favicon.ico" />
 
   
 </head>
@@ -96,14 +96,14 @@ Raspberry Pi 4 B, Kart Okuyucu, Harici Ethernet Kartı, USB to TypeC Güç Kablo
       <ul>
         
         <li>
-          <a class="icon" href=" http://localhost:1313/posts/nanopirsadguard/nanopirs-adguard/" aria-label="Previous">
+          <a class="icon" href=" https://ittechnetworkk.github.io/posts/nanopirsadguard/nanopirs-adguard/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="http://localhost:1313/posts/ipv4ipv6tunelleme/ipv4-ipv6-tunelleme/" aria-label="Next">
+          <a class="icon" href="https://ittechnetworkk.github.io/posts/ipv4ipv6tunelleme/ipv4-ipv6-tunelleme/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -134,47 +134,47 @@ Raspberry Pi 4 B, Kart Okuyucu, Harici Ethernet Kartı, USB to TypeC Güç Kablo
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f" aria-label="Facebook">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&text=RaspberryPi%20Ipfire%20Kurulumu" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&text=RaspberryPi%20Ipfire%20Kurulumu" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&title=RaspberryPi%20Ipfire%20Kurulumu" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&title=RaspberryPi%20Ipfire%20Kurulumu" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&is_video=false&description=RaspberryPi%20Ipfire%20Kurulumu" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&is_video=false&description=RaspberryPi%20Ipfire%20Kurulumu" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=RaspberryPi%20Ipfire%20Kurulumu&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=RaspberryPi%20Ipfire%20Kurulumu&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&title=RaspberryPi%20Ipfire%20Kurulumu" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&title=RaspberryPi%20Ipfire%20Kurulumu" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&title=RaspberryPi%20Ipfire%20Kurulumu" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&title=RaspberryPi%20Ipfire%20Kurulumu" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&name=RaspberryPi%20Ipfire%20Kurulumu&description=Bu%20yaz%c4%b1mda%20yeni%20ald%c4%b1%c4%9f%c4%b1m%20Raspberry%20Pi%204%20B%20modeline%20IPFire%20kurulumunu%20anlataca%c4%9f%c4%b1m.%20IPFire%2c%20a%c3%a7%c4%b1k%20kaynak%20kodlu%20Linux%20tabanl%c4%b1%20bir%20firewall%20yaz%c4%b1l%c4%b1m%c4%b1d%c4%b1r.%20IPFire%26rsquo%3b%c4%b1%20ISO%20olarak%20indirip%20bir%20sanal%20makine%20olarak%20da%20kurup%20inceleyebilirsiniz.%20Az%20kaynak%20t%c3%bcketir%20ve%20i%c5%9flevseldir.%0aIPFire%26rsquo%3b%c4%b1n%20baz%c4%b1%20%c3%b6zellikleri%3a%0aNetwork%20Security%2c%20VLAN%2c%20DHCP%2c%20NTP%2c%20Captive%20Portal%2c%20Web%20Proxy%2c%20VPN%2c%20DNS%2c%20IPS%2c%20QoS%2c%20Ve%20%c3%a7ok%20daha%20fazlas%c4%b1.%20Kulland%c4%b1%c4%9f%c4%b1m%20Donan%c4%b1m%20ve%20Yaz%c4%b1l%c4%b1mlar%3a%0aRaspberry%20Pi%204%20B%2c%20Kart%20Okuyucu%2c%20Harici%20Ethernet%20Kart%c4%b1%2c%20USB%20to%20TypeC%20G%c3%bc%c3%a7%20Kablosu%2c%20Mouse%2c%20SD%20Kart%2c%20HDMI%20to%20Micro%20HDMI%20D%c3%b6n%c3%bc%c5%9ft%c3%bcr%c3%bcc%c3%bc%2c%20Klavye%2c%20Monitor%2c%20HDMI%20to%20HDMI%2c%202%20Ethernet%20kablosu%2c%20BalenaEtcher." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&name=RaspberryPi%20Ipfire%20Kurulumu&description=Bu%20yaz%c4%b1mda%20yeni%20ald%c4%b1%c4%9f%c4%b1m%20Raspberry%20Pi%204%20B%20modeline%20IPFire%20kurulumunu%20anlataca%c4%9f%c4%b1m.%20IPFire%2c%20a%c3%a7%c4%b1k%20kaynak%20kodlu%20Linux%20tabanl%c4%b1%20bir%20firewall%20yaz%c4%b1l%c4%b1m%c4%b1d%c4%b1r.%20IPFire%26rsquo%3b%c4%b1%20ISO%20olarak%20indirip%20bir%20sanal%20makine%20olarak%20da%20kurup%20inceleyebilirsiniz.%20Az%20kaynak%20t%c3%bcketir%20ve%20i%c5%9flevseldir.%0aIPFire%26rsquo%3b%c4%b1n%20baz%c4%b1%20%c3%b6zellikleri%3a%0aNetwork%20Security%2c%20VLAN%2c%20DHCP%2c%20NTP%2c%20Captive%20Portal%2c%20Web%20Proxy%2c%20VPN%2c%20DNS%2c%20IPS%2c%20QoS%2c%20Ve%20%c3%a7ok%20daha%20fazlas%c4%b1.%20Kulland%c4%b1%c4%9f%c4%b1m%20Donan%c4%b1m%20ve%20Yaz%c4%b1l%c4%b1mlar%3a%0aRaspberry%20Pi%204%20B%2c%20Kart%20Okuyucu%2c%20Harici%20Ethernet%20Kart%c4%b1%2c%20USB%20to%20TypeC%20G%c3%bc%c3%a7%20Kablosu%2c%20Mouse%2c%20SD%20Kart%2c%20HDMI%20to%20Micro%20HDMI%20D%c3%b6n%c3%bc%c5%9ft%c3%bcr%c3%bcc%c3%bc%2c%20Klavye%2c%20Monitor%2c%20HDMI%20to%20HDMI%2c%202%20Ethernet%20kablosu%2c%20BalenaEtcher." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&t=RaspberryPi%20Ipfire%20Kurulumu" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&t=RaspberryPi%20Ipfire%20Kurulumu" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -441,47 +441,47 @@ Riski kabul ederek devam ediyorum.</p>
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f" aria-label="Facebook">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&text=RaspberryPi%20Ipfire%20Kurulumu" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&text=RaspberryPi%20Ipfire%20Kurulumu" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&title=RaspberryPi%20Ipfire%20Kurulumu" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&title=RaspberryPi%20Ipfire%20Kurulumu" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&is_video=false&description=RaspberryPi%20Ipfire%20Kurulumu" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&is_video=false&description=RaspberryPi%20Ipfire%20Kurulumu" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=RaspberryPi%20Ipfire%20Kurulumu&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=RaspberryPi%20Ipfire%20Kurulumu&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&title=RaspberryPi%20Ipfire%20Kurulumu" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&title=RaspberryPi%20Ipfire%20Kurulumu" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&title=RaspberryPi%20Ipfire%20Kurulumu" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&title=RaspberryPi%20Ipfire%20Kurulumu" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&name=RaspberryPi%20Ipfire%20Kurulumu&description=Bu%20yaz%c4%b1mda%20yeni%20ald%c4%b1%c4%9f%c4%b1m%20Raspberry%20Pi%204%20B%20modeline%20IPFire%20kurulumunu%20anlataca%c4%9f%c4%b1m.%20IPFire%2c%20a%c3%a7%c4%b1k%20kaynak%20kodlu%20Linux%20tabanl%c4%b1%20bir%20firewall%20yaz%c4%b1l%c4%b1m%c4%b1d%c4%b1r.%20IPFire%26rsquo%3b%c4%b1%20ISO%20olarak%20indirip%20bir%20sanal%20makine%20olarak%20da%20kurup%20inceleyebilirsiniz.%20Az%20kaynak%20t%c3%bcketir%20ve%20i%c5%9flevseldir.%0aIPFire%26rsquo%3b%c4%b1n%20baz%c4%b1%20%c3%b6zellikleri%3a%0aNetwork%20Security%2c%20VLAN%2c%20DHCP%2c%20NTP%2c%20Captive%20Portal%2c%20Web%20Proxy%2c%20VPN%2c%20DNS%2c%20IPS%2c%20QoS%2c%20Ve%20%c3%a7ok%20daha%20fazlas%c4%b1.%20Kulland%c4%b1%c4%9f%c4%b1m%20Donan%c4%b1m%20ve%20Yaz%c4%b1l%c4%b1mlar%3a%0aRaspberry%20Pi%204%20B%2c%20Kart%20Okuyucu%2c%20Harici%20Ethernet%20Kart%c4%b1%2c%20USB%20to%20TypeC%20G%c3%bc%c3%a7%20Kablosu%2c%20Mouse%2c%20SD%20Kart%2c%20HDMI%20to%20Micro%20HDMI%20D%c3%b6n%c3%bc%c5%9ft%c3%bcr%c3%bcc%c3%bc%2c%20Klavye%2c%20Monitor%2c%20HDMI%20to%20HDMI%2c%202%20Ethernet%20kablosu%2c%20BalenaEtcher." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&name=RaspberryPi%20Ipfire%20Kurulumu&description=Bu%20yaz%c4%b1mda%20yeni%20ald%c4%b1%c4%9f%c4%b1m%20Raspberry%20Pi%204%20B%20modeline%20IPFire%20kurulumunu%20anlataca%c4%9f%c4%b1m.%20IPFire%2c%20a%c3%a7%c4%b1k%20kaynak%20kodlu%20Linux%20tabanl%c4%b1%20bir%20firewall%20yaz%c4%b1l%c4%b1m%c4%b1d%c4%b1r.%20IPFire%26rsquo%3b%c4%b1%20ISO%20olarak%20indirip%20bir%20sanal%20makine%20olarak%20da%20kurup%20inceleyebilirsiniz.%20Az%20kaynak%20t%c3%bcketir%20ve%20i%c5%9flevseldir.%0aIPFire%26rsquo%3b%c4%b1n%20baz%c4%b1%20%c3%b6zellikleri%3a%0aNetwork%20Security%2c%20VLAN%2c%20DHCP%2c%20NTP%2c%20Captive%20Portal%2c%20Web%20Proxy%2c%20VPN%2c%20DNS%2c%20IPS%2c%20QoS%2c%20Ve%20%c3%a7ok%20daha%20fazlas%c4%b1.%20Kulland%c4%b1%c4%9f%c4%b1m%20Donan%c4%b1m%20ve%20Yaz%c4%b1l%c4%b1mlar%3a%0aRaspberry%20Pi%204%20B%2c%20Kart%20Okuyucu%2c%20Harici%20Ethernet%20Kart%c4%b1%2c%20USB%20to%20TypeC%20G%c3%bc%c3%a7%20Kablosu%2c%20Mouse%2c%20SD%20Kart%2c%20HDMI%20to%20Micro%20HDMI%20D%c3%b6n%c3%bc%c5%9ft%c3%bcr%c3%bcc%c3%bc%2c%20Klavye%2c%20Monitor%2c%20HDMI%20to%20HDMI%2c%202%20Ethernet%20kablosu%2c%20BalenaEtcher." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&t=RaspberryPi%20Ipfire%20Kurulumu" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypiipfire%2fraspberrypi-ipfire%2f&t=RaspberryPi%20Ipfire%20Kurulumu" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

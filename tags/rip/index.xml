@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rip on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/rip/</link>
+    <link>https://ittechnetworkk.github.io/tags/rip/</link>
     <description>Recent content in Rip on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Wed, 11 Sep 2024 22:57:40 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/rip/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ittechnetworkk.github.io/tags/rip/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DMVPN Phase 1 RIP</title>
-      <link>http://localhost:1313/posts/dmvpnphase1rip/dmvpn-phase1-rip/</link>
+      <link>https://ittechnetworkk.github.io/posts/dmvpnphase1rip/dmvpn-phase1-rip/</link>
       <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/dmvpnphase1rip/dmvpn-phase1-rip/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/dmvpnphase1rip/dmvpn-phase1-rip/</guid>
       <description>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&#xA;Aşağıda oluşturduğum topoloji ile devam edeceğim.&#xA;Başlayalım.&#xA;HUB:&#xA;HUB#conf t HUB(config)#int tun0 HUB(config-if)#no sh HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 HUB(config-if)#tunnel source f0/0 HUB(config-if)#tunnel mode gre multipoint HUB(config-if)#ip mtu 1400 HUB(config-if)#ip tcp adjust-mss 1360 HUB(config-if)#ip nhrp network-id 1 HUB(config-if)#ip nhrp authentication Marvel1 HUB(config-if)#ip nhrp map multicast dynamic HUB(config-if)#end HUB#wr SPOKE-1:*&#xA;SPOKE-1#conf t SPOKE-1(config)#int tun0 SPOKE-1(config-if)#no sh SPOKE-1(config-if)#ip addr 10.</description>
     </item>
     <item>
       <title>DMVPN Phase 2 RIP</title>
-      <link>http://localhost:1313/posts/dmvpnphase2rip/dmvpn-phase2-rip/</link>
+      <link>https://ittechnetworkk.github.io/posts/dmvpnphase2rip/dmvpn-phase2-rip/</link>
       <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/dmvpnphase2rip/dmvpn-phase2-rip/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/dmvpnphase2rip/dmvpn-phase2-rip/</guid>
       <description>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&#xA;Aşağıda oluşturduğum topoloji ile devam edeceğim.&#xA;Başlayalım.&#xA;HUB:&#xA;HUB#conf t HUB(config)#int tun0 HUB(config-if)#no sh HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 HUB(config-if)#tunnel source f0/0 HUB(config-if)#tunnel mode gre multipoint HUB(config-if)#ip mtu 1400 HUB(config-if)#ip tcp adjust-mss 1360 HUB(config-if)#ip nhrp network-id 1 HUB(config-if)#ip nhrp authentication Marvel1 HUB(config-if)#ip nhrp map multicast dynamic HUB(config-if)#end HUB#wr SPOKE-1:*&#xA;SPOKE-1#conf t SPOKE-1(config)#int tun0 SPOKE-1(config-if)#no sh SPOKE-1(config-if)#ip addr 10.</description>
     </item>
     <item>
       <title>DMVPN Phase 3 RIP</title>
-      <link>http://localhost:1313/posts/dmvpnphase3rip/dmvpn-phase3-rip/</link>
+      <link>https://ittechnetworkk.github.io/posts/dmvpnphase3rip/dmvpn-phase3-rip/</link>
       <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/dmvpnphase3rip/dmvpn-phase3-rip/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/dmvpnphase3rip/dmvpn-phase3-rip/</guid>
       <description>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&#xA;Aşağıda oluşturduğum topoloji ile devam edeceğim.&#xA;Başlayalım.&#xA;HUB:&#xA;HUB#conf t HUB(config)#int tun0 HUB(config-if)#no sh HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 HUB(config-if)#tunnel source f0/0 HUB(config-if)#tunnel mode gre multipoint HUB(config-if)#ip mtu 1400 HUB(config-if)#ip tcp adjust-mss 1360 HUB(config-if)#ip nhrp network-id 1 HUB(config-if)#ip nhrp authentication Marvel1 HUB(config-if)#ip nhrp map multicast dynamic HUB(config-if)#end HUB#wr SPOKE-1:*&#xA;SPOKE-1#conf t SPOKE-1(config)#int tun0 SPOKE-1(config-if)#no sh SPOKE-1(config-if)#ip addr 10.</description>
     </item>
     <item>
       <title>RIP Protokolü</title>
-      <link>http://localhost:1313/posts/rip/rip/</link>
+      <link>https://ittechnetworkk.github.io/posts/rip/rip/</link>
       <pubDate>Sun, 17 Dec 2023 23:45:55 +0100</pubDate>
-      <guid>http://localhost:1313/posts/rip/rip/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/rip/rip/</guid>
       <description>RIP(Router Information Protokol), bir dinamik yönlendirme protokolüdür. Basit ve kolay öğrenilebilen bir protokoldür. RIPv1 ve RIPv2 versiyonları vardır. RFC1058&amp;rsquo;de tanımlanmıştır. RIP Protokolü, yönlendirme tablosunu 30 saniyede bir günceller daha sonra üzerindeki aktif arayüzlere iletir. Administrative Distance değeri 120&amp;rsquo;dir. RIP protokolü en fazla 15 Hop Count&amp;rsquo;a izin verir. En iyi rotanın bulunmasında hop sayısına bakılarak paket iletilir. RIPv1 broadcast yayın yapar, subnet bilgisini routing tablosunu güncellediğinde göndermez, kimlik doğrulama yapmaz. RIPv2 Multicast(224.</description>
     </item>
   </channel>

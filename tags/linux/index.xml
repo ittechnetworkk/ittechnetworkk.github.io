@@ -2,53 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/linux/</link>
+    <link>https://ittechnetworkk.github.io/tags/linux/</link>
     <description>Recent content in Linux on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Fri, 24 Jan 2025 21:46:46 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ittechnetworkk.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[EN] NetworkManager Installation</title>
-      <link>http://localhost:1313/posts/networkmanagerinstallation/network-manager-installation/</link>
+      <link>https://ittechnetworkk.github.io/posts/networkmanagerinstallation/network-manager-installation/</link>
       <pubDate>Fri, 24 Jan 2025 21:46:46 +0100</pubDate>
-      <guid>http://localhost:1313/posts/networkmanagerinstallation/network-manager-installation/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/networkmanagerinstallation/network-manager-installation/</guid>
       <description>Hi there, in this article, I will show you how to switch netplan to NetworkManager to manage network interfaces on Ubuntu.&#xA;As you know, Ubuntu uses netplan as the default tool for network management. However NetworkManager is often a better choice due to its advanced features and ease of use.&#xA;In this guide, I’ll walk you through the steps to install and configure NetworkManager on an Ubuntu Server.&#xA;Step 1: Install NetworkManager</description>
     </item>
     <item>
       <title>Debian Server IP Konfigürasyonu</title>
-      <link>http://localhost:1313/posts/debianip/debian-ip/</link>
+      <link>https://ittechnetworkk.github.io/posts/debianip/debian-ip/</link>
       <pubDate>Sun, 19 Jan 2025 23:56:33 +0100</pubDate>
-      <guid>http://localhost:1313/posts/debianip/debian-ip/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/debianip/debian-ip/</guid>
       <description>Selamlar, bu yazımda Debian Server&amp;rsquo;a nasıl statik veya dinamik IP tanımlanacağını göstereceğim.&#xA;Her Linux dağıtımında statik IP&amp;rsquo;ler aynı şekilde tanımlanmayabilir.&#xA;Linux sistemlerde her şey bir dosyadan okunduğu için bunun için de bir ilgili bir dosya vardır.&#xA;Debian&amp;rsquo;da bu dosya şuradadır:&#xA;/etc/network/interfaces Şimdi bu dosyayı editleyelim.&#xA;Dosyanın ilk hali şu şekildedir:&#xA;# This file describes the network interfaces available on your system # and how to activate them. For more information, see interfaces(5).</description>
     </item>
     <item>
       <title>Fedora Server IP Konfigürasyonu</title>
-      <link>http://localhost:1313/posts/fedoraip/fedora-ip/</link>
+      <link>https://ittechnetworkk.github.io/posts/fedoraip/fedora-ip/</link>
       <pubDate>Sun, 19 Jan 2025 22:51:26 +0100</pubDate>
-      <guid>http://localhost:1313/posts/fedoraip/fedora-ip/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/fedoraip/fedora-ip/</guid>
       <description>Selamlar, bu yazımda Fedora Server&amp;rsquo;a nasıl statik veya dinamik IP tanımlanacağını göstereceğim.&#xA;Her Linux dağıtımında statik IP&amp;rsquo;ler aynı şekilde tanımlanmayabilir. Fakat mantığını bilmek bir adım önde başlamak demektir.&#xA;Linux sistemlerde her şey bir dosyadan okunduğu için bunun için de bir ilgili bir dosya vardır.&#xA;Fedora&amp;rsquo;da bu dosya şuradadır:&#xA;NetworkManager kullanılmadığında;&#xA;/etc/sysconfig/network-scripts/ifcfg-ens33 NetworkManager kullanıldığında;&#xA;/etc/NetworkManager/system-connections/ens33.nmconnection Şimdi bu dosyayı editleyelim.&#xA;Dosyanın ilk hali şu şekildedir:&#xA;[connection] id=ens160 uuid=36903561-eb7f-38c2-986b-b098913248de type=ethernet autoconnect-priority=-999 interface-name=ens160 timestamp=1737213877 [ethernet] [ipv4] [ipv6] addr-gen-mode=eui64 method=auto [proxy] Bazı parametreler sisteminize bağlı olarak değişiklik gösterebilir, fakat bizim ilgilendiğimiz kısım şimdilik [ipv4] kısmı.</description>
     </item>
     <item>
       <title>[EN] Linux Process Prioritization</title>
-      <link>http://localhost:1313/posts/linuxprocessprioritization/linux-process-prioritization/</link>
+      <link>https://ittechnetworkk.github.io/posts/linuxprocessprioritization/linux-process-prioritization/</link>
       <pubDate>Sat, 11 Jan 2025 05:03:17 +0100</pubDate>
-      <guid>http://localhost:1313/posts/linuxprocessprioritization/linux-process-prioritization/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/linuxprocessprioritization/linux-process-prioritization/</guid>
       <description>In this article I am going to talk about Linux process Prioritization.&#xA;Sometimes we may want to prioritize our more important processes in Linux.&#xA;We prioritize process or processes that are more important for us with &amp;ldquo;NICE&amp;rdquo; parameters.&#xA;Each process has a &amp;ldquo;NICE&amp;rdquo; value. This value prioritizes processes.&#xA;The lower we set this value, the higher the priority of the process. However, this value can only be set between &amp;ldquo;+20&amp;rdquo; and &amp;ldquo;-20&amp;rdquo;.</description>
     </item>
     <item>
       <title>Ubuntu 22.04 DHCP Server Konfigürasyonu</title>
-      <link>http://localhost:1313/posts/ubuntudhcpserver/ubuntu-dhcp-server/</link>
+      <link>https://ittechnetworkk.github.io/posts/ubuntudhcpserver/ubuntu-dhcp-server/</link>
       <pubDate>Thu, 07 Nov 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/ubuntudhcpserver/ubuntu-dhcp-server/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/ubuntudhcpserver/ubuntu-dhcp-server/</guid>
       <description>Merhabalar bu yazımda, Ubuntu-22.04 Server&amp;rsquo;a DHCP rolü kurup konfigürasyonunu yapacağım.&#xA;Ubuntu&amp;rsquo;ya DHCP rolü vermeden önce, Server&amp;rsquo;ın IP adresini statik olarak ayarlıyorum.&#xA;Statik IP adresi tanımlamak için &amp;ldquo;/etc/netplan/00-installer-config.yaml&amp;rdquo; dosyasını düzenliyorum.&#xA;network: version: 2 renderer: networkd ethernets: ens33: addresses: - 192.168.1.50/24 nameservers: addresses: [1.1.1.1, 8.8.8.8] routes: - to: default via: 192.168.1.1 Değişiklikleri geçerli kılmak için:&#xA;sudo netplan apply Grafik arayüzü ile yapılandırmak için &amp;ldquo;nmtui&amp;rdquo; aracını kullanabilirsiniz.&#xA;DHCP Server Rolü Kurulumu:&#xA;sudo apt install isc-dhcp-server DHCP rolü yüklendikten sonra, konfigürasyon dosyası &amp;ldquo;/etc/dhcp/dhcpd.</description>
     </item>
     <item>
       <title>GPG Nedir?</title>
-      <link>http://localhost:1313/posts/gpgnedir/gpg-nedir/</link>
+      <link>https://ittechnetworkk.github.io/posts/gpgnedir/gpg-nedir/</link>
       <pubDate>Tue, 23 Jul 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/gpgnedir/gpg-nedir/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/gpgnedir/gpg-nedir/</guid>
       <description>GPG (GNU Privacy Guard )RFC4880 , GPL Lisanslı bir şifreleme ve imzalama aracıdır. Linux&amp;rsquo;da defaultta gelir, Windows için Web Sitesi&amp;rsquo;nden indirilebilir.&#xA;GPG asimetrik şifreleme algoritması kullanır. Yani Public ve Prive anahtarlar vasıtasıyla dataları şifreler veya çözer.&#xA;Nedir bu Public ve Prive anahtarlar?&#xA;2 kişi düşünelim birbirleriyle haberleşmek istesin. Her kişinin 2 anahtarı olur. Biri &amp;ldquo;Public Key&amp;rdquo; yani paylaşılan anahtar. Diğeri ise &amp;ldquo;Private key&amp;rdquo; yani gizli kalması gereken anahtar.&#xA;X kişisi Y kişisine gizli bir mesaj göndermek isterse bu mesajı Y kişisinin &amp;ldquo;Public Key&amp;quot;i ile şifrelemesi gerekir.</description>
     </item>
   </channel>

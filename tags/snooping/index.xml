@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Snooping on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/snooping/</link>
+    <link>https://ittechnetworkk.github.io/tags/snooping/</link>
     <description>Recent content in Snooping on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Sun, 31 Dec 2023 23:44:03 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/snooping/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ittechnetworkk.github.io/tags/snooping/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DHCP Snooping</title>
-      <link>http://localhost:1313/posts/dhcpsnooping/dhcp-snooping/</link>
+      <link>https://ittechnetworkk.github.io/posts/dhcpsnooping/dhcp-snooping/</link>
       <pubDate>Sun, 31 Dec 2023 23:44:03 +0100</pubDate>
-      <guid>http://localhost:1313/posts/dhcpsnooping/dhcp-snooping/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/dhcpsnooping/dhcp-snooping/</guid>
       <description>DHCP(Dynamic Host Configuration Protocol), ağdaki cihazlarımıza otomatik olarak IP, DNS, Default Gateway bilgilerini dağıtan servistir. Ağa yeni bir cihaz katıldığında, kablo takılır takılmaz IP almak için Broadcast yayın yapar. Eğer ortamda DHCP servisi varsa o da karşılık verir. Toplam 4 aşamada IP alma işlemi tamamlanır.&#xA;Bu paketler Broadcast paketler olduğu için ağdaki herkese ulaşır bu da her zaman için iyi olmayabilir. Örneğin bir network yapısında iki DHCP server aynı anda çalışabilir.</description>
     </item>
   </channel>

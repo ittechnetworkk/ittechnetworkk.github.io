@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Configuration on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/configuration/</link>
+    <link>https://ittechnetworkk.github.io/tags/configuration/</link>
     <description>Recent content in Configuration on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Sat, 08 Feb 2025 15:23:57 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/configuration/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ittechnetworkk.github.io/tags/configuration/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[EN] SSH Server Configuration</title>
-      <link>http://localhost:1313/posts/sshserverconfiguration/ssh-server-configuration/</link>
+      <link>https://ittechnetworkk.github.io/posts/sshserverconfiguration/ssh-server-configuration/</link>
       <pubDate>Sat, 08 Feb 2025 15:23:57 +0100</pubDate>
-      <guid>http://localhost:1313/posts/sshserverconfiguration/ssh-server-configuration/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/sshserverconfiguration/ssh-server-configuration/</guid>
       <description>Hi everyone, in this article, I will show you how to configure an SSH server in detail.&#xA;SSH (Secure Shell Protocol) is a widely-used protocol that securely connects and manages remote servers. In this tutorial, you will learn how to set up and configure an SSH server from scratch.&#xA;To set up an SSH server, you need to install the openssh-server package on the server and the openssh-client package on the client.</description>
     </item>
   </channel>

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ppp on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/ppp/</link>
+    <link>https://ittechnetworkk.github.io/tags/ppp/</link>
     <description>Recent content in Ppp on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Sun, 14 Apr 2024 22:57:40 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/ppp/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ittechnetworkk.github.io/tags/ppp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PPP Multilink Konfigürasyonu</title>
-      <link>http://localhost:1313/posts/pppmultilink/ppp-multilink/</link>
+      <link>https://ittechnetworkk.github.io/posts/pppmultilink/ppp-multilink/</link>
       <pubDate>Sun, 14 Apr 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/pppmultilink/ppp-multilink/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/pppmultilink/ppp-multilink/</guid>
       <description>PPP Multilink, routerlar arasındaki birden fazla fiziksel bağlantıyı tek bir mantıksal bağlantı yapmak amacıyla kullanılır. Bazı özellikleri:&#xA;Yük Dengeleme, Bant Genişliğinin Artırılması, Verimlilik, Yedeklilik. Multilink PPP LAB: Aşağıdaki basit yapıyı konfigüre edeceğim.&#xA;Bu yapıda serial 4 kablo ile bağlanmış iki router var. R1 ile başlayalım.&#xA;R1:&#xA;R1#conf t R1(config)#interface multilink 1 R1(config-if)#ip addr 10.0.0.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#ppp multilink R1(config-if)#ppp multilink group 1 R1(config-if)#exit R1(config)#int ser0/0 R1(config-if)#encapsulation ppp R1(config-if)#ppp multilink R1(config-if)#ppp multilink group 1 R1(config-if)#no sh R1(config-if)#int ser0/1 R1(config-if)#encapsulation ppp R1(config-if)#ppp multilink R1(config-if)#ppp multilink group 1 R1(config-if)#no sh R1(config-if)#int ser0/2 R1(config-if)#encapsulation ppp R1(config-if)#ppp multilink R1(config-if)#ppp multilink group 1 R1(config-if)#no sh R1(config-if)#int ser0/3 R1(config-if)#encapsulation ppp R1(config-if)#ppp multilink R1(config-if)#ppp multilink group 1 R1(config-if)#no sh R1(config-if)#exit R2:</description>
     </item>
   </channel>
