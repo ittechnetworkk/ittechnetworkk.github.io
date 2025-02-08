@@ -1,20 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Iot on ittechnetworkk</title>
+    <title>IoT on ittechnetworkk</title>
     <link>https://ittechnetworkk.github.io/tags/iot/</link>
-    <description>Recent content in Iot on ittechnetworkk</description>
+    <description>Recent content in IoT on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Fri, 03 Jan 2025 23:00:44 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 08 Feb 2025 15:35:41 +0100</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/tags/iot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Skyforge</title>
+      <link>https://ittechnetworkk.github.io/posts/skyforgeproject/skyforge/</link>
+      <pubDate>Sat, 08 Feb 2025 15:35:41 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/skyforgeproject/skyforge/</guid>
+      <description>Details coming soon.&#xA;Photos:</description>
+    </item>
     <item>
       <title>Nanopi R2S Ipfire Kurulumu</title>
       <link>https://ittechnetworkk.github.io/posts/nanopir2sipfirekurulumu/nanopir2s-ipfire/</link>
       <pubDate>Fri, 03 Jan 2025 23:00:44 +0100</pubDate>
       <guid>https://ittechnetworkk.github.io/posts/nanopir2sipfirekurulumu/nanopir2s-ipfire/</guid>
       <description>Merhaba, bu yazıda, NanoPi R2S cihazıma IPFire kurulumunu anlatacağım.&#xA;Kullandığım ekipmanlar:&#xA;NanoPi R2S, MicroSD Kart, Kart Okuyucu, Type C Güç Kablosu, USB to Serial Kablo, Ethernet Kablosu, Terminal yazılımı (Putty or minicom), Balena Etcher. İlk olarak IPFire imaj dosyasını indiriyorum ve Balena Etcher aracıyla SD Kart&amp;rsquo;a yazdırıyorum.&#xA;Bu işlem bittikten sonra SD Kart&amp;rsquo;ı cihaza takıyorum.&#xA;Serial Kablo&amp;rsquo;yu da aşağıdaki şekilde cihaza bağlıyorum. Siyah Kablo » G Beyaz Kablo » TX Turkuaz Kablo » RX</description>
+    </item>
+    <item>
+      <title>Raspberry Pi e-Paper Projesi</title>
+      <link>https://ittechnetworkk.github.io/posts/epaper/raspberry-pi-epaper/</link>
+      <pubDate>Tue, 25 Jun 2024 22:57:40 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/epaper/raspberry-pi-epaper/</guid>
+      <description>Merhabalar, bu yazıda Raspbery Pi Zero kullanarak anlık olarak Saati, Tarihi, IP bilgisini, Hostname&amp;rsquo;i ve Download/Upload değerlerini gösteren bir proje yapacağım.&#xA;Bu proje için Raspberry Pi Zero&amp;rsquo;ya uygun 2.13Inch bir e-Paper Display kullanacağım.&#xA;Kullanacağım donanım ve yazılımlar aşağıdaki gibidir.&#xA;Raspberry Pi Zero, 2.13 Inch E-Paper Display, 3.7V 1000mah UPS, SD Card, Card Reader, Raspberry Pi Imager, Ve birkaç vida. Donanımlar görüntü itibariyle aşağıdaki gibidir: İlk olarak Raspberry Pi Imager kullanarak işletim sistemini SD Kart&amp;rsquo;a yazdıracağım</description>
     </item>
     <item>
       <title>RaspberryPi Ipfire Kurulumu</title>

@@ -9,18 +9,48 @@
     <lastmod>2025-05-13T12:22:24+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/categories/</loc>
-    <lastmod>2025-01-24T22:16:16+01:00</lastmod>
+    <lastmod>2025-02-08T15:35:41+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/iot/</loc>
+    <lastmod>2025-02-08T15:35:41+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/categories/iot/</loc>
+    <lastmod>2025-02-08T15:35:41+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/raspberry-pi/</loc>
+    <lastmod>2025-02-08T15:35:41+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/categories/raspberry-pi/</loc>
+    <lastmod>2025-02-08T15:35:41+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/skyforge/</loc>
+    <lastmod>2025-02-08T15:35:41+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/posts/skyforgeproject/skyforge/</loc>
+    <lastmod>2025-02-08T15:35:41+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/</loc>
+    <lastmod>2025-02-08T15:35:41+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/posts/sshserverconfiguration/ssh-server-configuration/</loc>
+    <lastmod>2025-02-08T15:23:57+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/configuration/</loc>
+    <lastmod>2025-02-08T15:23:57+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/categories/linux/</loc>
+    <lastmod>2025-02-08T15:23:57+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/server/</loc>
+    <lastmod>2025-02-08T15:23:57+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/ssh/</loc>
+    <lastmod>2025-02-08T15:23:57+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/cockpit/</loc>
     <lastmod>2025-01-24T22:16:16+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/cockpitinstallation/cockpit/</loc>
-    <lastmod>2025-01-24T22:16:16+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/categories/linux/</loc>
-    <lastmod>2025-01-24T22:16:16+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/</loc>
     <lastmod>2025-01-24T22:16:16+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/networkmanagerinstallation/network-manager-installation/</loc>
@@ -36,9 +66,6 @@
     <lastmod>2025-01-23T01:06:35+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/dhcp/</loc>
-    <lastmod>2025-01-23T01:06:35+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/server/</loc>
     <lastmod>2025-01-23T01:06:35+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/ubuntu/</loc>
@@ -95,12 +122,6 @@
     <loc>https://ittechnetworkk.github.io/categories/firewall/</loc>
     <lastmod>2025-01-03T23:00:44+01:00</lastmod>
   </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/iot/</loc>
-    <lastmod>2025-01-03T23:00:44+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/categories/iot/</loc>
-    <lastmod>2025-01-03T23:00:44+01:00</lastmod>
-  </url><url>
     <loc>https://ittechnetworkk.github.io/tags/ipfire/</loc>
     <lastmod>2025-01-03T23:00:44+01:00</lastmod>
   </url><url>
@@ -135,9 +156,6 @@
     <lastmod>2024-12-02T22:57:40+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/asa5510ssh/asa5510-ssh/</loc>
-    <lastmod>2024-12-01T22:57:40+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/ssh/</loc>
     <lastmod>2024-12-01T22:57:40+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/gre/</loc>
@@ -258,9 +276,6 @@
     <lastmod>2024-07-15T22:57:40+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/raspberrypisyslogserver/raspberrypi-syslog/</loc>
-    <lastmod>2024-07-15T22:57:40+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/raspberrypi/</loc>
     <lastmod>2024-07-15T22:57:40+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/syslog/</loc>

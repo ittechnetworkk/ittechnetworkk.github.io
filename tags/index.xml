@@ -7,8 +7,50 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Fri, 24 Jan 2025 22:16:16 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 08 Feb 2025 15:35:41 +0100</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IoT</title>
+      <link>https://ittechnetworkk.github.io/tags/iot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/iot/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Raspberry Pi</title>
+      <link>https://ittechnetworkk.github.io/tags/raspberry-pi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/raspberry-pi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Skyforge</title>
+      <link>https://ittechnetworkk.github.io/tags/skyforge/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/skyforge/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Configuration</title>
+      <link>https://ittechnetworkk.github.io/tags/configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/configuration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Server</title>
+      <link>https://ittechnetworkk.github.io/tags/server/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/server/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SSH</title>
+      <link>https://ittechnetworkk.github.io/tags/ssh/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/ssh/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Cockpit</title>
       <link>https://ittechnetworkk.github.io/tags/cockpit/</link>
@@ -35,13 +77,6 @@
       <link>https://ittechnetworkk.github.io/tags/dhcp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/dhcp/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Server</title>
-      <link>https://ittechnetworkk.github.io/tags/server/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ittechnetworkk.github.io/tags/server/</guid>
       <description></description>
     </item>
     <item>
@@ -115,13 +150,6 @@
       <description></description>
     </item>
     <item>
-      <title>Iot</title>
-      <link>https://ittechnetworkk.github.io/tags/iot/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ittechnetworkk.github.io/tags/iot/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Ipfire</title>
       <link>https://ittechnetworkk.github.io/tags/ipfire/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -154,13 +182,6 @@
       <link>https://ittechnetworkk.github.io/tags/virtualization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/virtualization/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>SSH</title>
-      <link>https://ittechnetworkk.github.io/tags/ssh/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ittechnetworkk.github.io/tags/ssh/</guid>
       <description></description>
     </item>
     <item>
@@ -280,13 +301,6 @@
       <link>https://ittechnetworkk.github.io/tags/logging/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/logging/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Raspberrypi</title>
-      <link>https://ittechnetworkk.github.io/tags/raspberrypi/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ittechnetworkk.github.io/tags/raspberrypi/</guid>
       <description></description>
     </item>
     <item>

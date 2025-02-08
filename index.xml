@@ -7,8 +7,22 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Fri, 24 Jan 2025 22:16:16 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 08 Feb 2025 15:35:41 +0100</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Skyforge</title>
+      <link>https://ittechnetworkk.github.io/posts/skyforgeproject/skyforge/</link>
+      <pubDate>Sat, 08 Feb 2025 15:35:41 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/skyforgeproject/skyforge/</guid>
+      <description>Details coming soon.&#xA;Photos:</description>
+    </item>
+    <item>
+      <title>[EN] SSH Server Configuration</title>
+      <link>https://ittechnetworkk.github.io/posts/sshserverconfiguration/ssh-server-configuration/</link>
+      <pubDate>Sat, 08 Feb 2025 15:23:57 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/sshserverconfiguration/ssh-server-configuration/</guid>
+      <description>Hi everyone, in this article, I will show you how to configure an SSH server in detail.&#xA;SSH (Secure Shell Protocol) is a widely-used protocol that securely connects and manages remote servers. In this tutorial, you will learn how to set up and configure an SSH server from scratch.&#xA;To set up an SSH server, you need to install the openssh-server package on the server and the openssh-client package on the client.</description>
+    </item>
     <item>
       <title>Cockpit Kurulumu</title>
       <link>https://ittechnetworkk.github.io/posts/cockpitinstallation/cockpit/</link>
@@ -462,7 +476,7 @@
       <link>https://ittechnetworkk.github.io/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/projects/</guid>
-      <description>Raspberry Pi e-Paper Projesi Raspberry Pi Zero ve E-Paper Ekran İle Saat Uygulaması.&#xA;View Project Details →</description>
+      <description>Raspberry Pi e-Paper Projesi Raspberry Pi Zero ve E-Paper Ekran İle Saat Uygulaması.&#xA;View Project Details →&#xA;SkyForge Project SkyForge Project is a project that based on Raspberry Pi Zero that shows the weather, time, location and other information.&#xA;View Project Details →</description>
     </item>
   </channel>
 </rss>

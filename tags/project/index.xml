@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Project on ittechnetworkk</title>
+    <link>http://localhost:1313/tags/project/</link>
+    <description>Recent content in Project on ittechnetworkk</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>ittechnetworkk</copyright>
+    <lastBuildDate>Tue, 25 Jun 2024 22:57:40 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/project/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Raspberry Pi e-Paper Projesi</title>
+      <link>http://localhost:1313/posts/epaper/raspberry-pi-epaper/</link>
+      <pubDate>Tue, 25 Jun 2024 22:57:40 +0100</pubDate>
+      <guid>http://localhost:1313/posts/epaper/raspberry-pi-epaper/</guid>
+      <description>Merhabalar, bu yazıda Raspbery Pi Zero kullanarak anlık olarak Saati, Tarihi, IP bilgisini, Hostname&amp;rsquo;i ve Download/Upload değerlerini gösteren bir proje yapacağım.&#xA;Bu proje için Raspberry Pi Zero&amp;rsquo;ya uygun 2.13Inch bir e-Paper Display kullanacağım.&#xA;Kullanacağım donanım ve yazılımlar aşağıdaki gibidir.&#xA;Raspberry Pi Zero, 2.13 Inch E-Paper Display, 3.7V 1000mah UPS, SD Card, Card Reader, Raspberry Pi Imager, Ve birkaç vida. Donanımlar görüntü itibariyle aşağıdaki gibidir: İlk olarak Raspberry Pi Imager kullanarak işletim sistemini SD Kart&amp;rsquo;a yazdıracağım</description>
+    </item>
+  </channel>
+</rss>
