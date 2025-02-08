@@ -8,10 +8,25 @@
     <loc>https://ittechnetworkk.github.io/posts/</loc>
     <lastmod>2025-05-13T12:22:24+01:00</lastmod>
   </url><url>
-    <loc>https://ittechnetworkk.github.io/posts/skyforgeproject/skyforge/</loc>
-    <lastmod>2025-02-08T15:35:41+01:00</lastmod>
-  </url><url>
     <loc>https://ittechnetworkk.github.io/categories/</loc>
+    <lastmod>2025-02-08T21:46:11+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/docker/</loc>
+    <lastmod>2025-02-08T21:46:11+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/posts/dockernotlarim/docker-notlarim/</loc>
+    <lastmod>2025-02-08T21:46:11+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/linux/</loc>
+    <lastmod>2025-02-08T21:46:11+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/categories/linux/</loc>
+    <lastmod>2025-02-08T21:46:11+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/</loc>
+    <lastmod>2025-02-08T21:46:11+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/posts/skyforgeproject/skyforge/</loc>
     <lastmod>2025-02-08T15:35:41+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/iot/</loc>
@@ -29,16 +44,10 @@
     <loc>https://ittechnetworkk.github.io/tags/skyforge/</loc>
     <lastmod>2025-02-08T15:35:41+01:00</lastmod>
   </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/</loc>
-    <lastmod>2025-02-08T15:35:41+01:00</lastmod>
-  </url><url>
     <loc>https://ittechnetworkk.github.io/posts/sshserverconfiguration/ssh-server-configuration/</loc>
     <lastmod>2025-02-08T15:23:57+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/configuration/</loc>
-    <lastmod>2025-02-08T15:23:57+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/categories/linux/</loc>
     <lastmod>2025-02-08T15:23:57+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/server/</loc>
@@ -54,9 +63,6 @@
     <lastmod>2025-01-24T22:16:16+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/networkmanagerinstallation/network-manager-installation/</loc>
-    <lastmod>2025-01-24T21:46:46+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/linux/</loc>
     <lastmod>2025-01-24T21:46:46+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/network-manager/</loc>
