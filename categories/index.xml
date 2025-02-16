@@ -7,13 +7,20 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Sat, 08 Feb 2025 21:46:11 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 16 Feb 2025 14:48:43 +0100</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Linux</title>
-      <link>https://ittechnetworkk.github.io/categories/linux/</link>
+      <title>Kubernetes</title>
+      <link>https://ittechnetworkk.github.io/categories/kubernetes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ittechnetworkk.github.io/categories/linux/</guid>
+      <guid>https://ittechnetworkk.github.io/categories/kubernetes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>https://ittechnetworkk.github.io/categories/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/categories/docker/</guid>
       <description></description>
     </item>
     <item>
@@ -28,6 +35,13 @@
       <link>https://ittechnetworkk.github.io/categories/raspberry-pi/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/categories/raspberry-pi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>https://ittechnetworkk.github.io/categories/linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/categories/linux/</guid>
       <description></description>
     </item>
     <item>

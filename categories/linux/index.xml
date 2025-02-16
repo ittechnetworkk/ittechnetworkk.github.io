@@ -7,15 +7,8 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Sat, 08 Feb 2025 21:46:11 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 08 Feb 2025 15:23:57 +0100</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Docker Notlarım</title>
-      <link>https://ittechnetworkk.github.io/posts/dockernotlarim/docker-notlarim/</link>
-      <pubDate>Sat, 08 Feb 2025 21:46:11 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dockernotlarim/docker-notlarim/</guid>
-      <description>Docker&amp;rsquo;a giriş notlarım. Bu notlar Özgür Öztürk&amp;rsquo;ün Docker Eğitiminden aldığım notlarımdır.&#xA;#Container oluşturulduktan sonra date uygulaması çalıştırılacak. Container başka bir uygulama ile başlatılacak. docker container run --name deneme httpd date #Container&amp;#39;i arka planda çalıştırmak için docker container run -d deneme2 #Container içerisinde komut çalıştırmak için &amp;#34;exec&amp;#34; docker container exec 94ef4e4f89 ls #Çalışan container&amp;#39;a nasıl bağlanılır docker container exec -it deneme1 sh #Bir sanal makine ile Container&amp;#39;in farkı; Container&amp;#39;de kernel yoktur, üzerinde çalıştığı hostun kernel&amp;#39;ini kullanır.</description>
-    </item>
     <item>
       <title>[EN] SSH Server Configuration</title>
       <link>https://ittechnetworkk.github.io/posts/sshserverconfiguration/ssh-server-configuration/</link>
@@ -94,7 +87,7 @@
       <description>Merhaba, bu yazımda bi Raspberry Pi Zero&amp;rsquo;ya Syslog server rolü verip, bir Cisco Switch&amp;rsquo;e bu Syslog server konfigürasyonunu yapacağım.&#xA;Bu Lab için kullanacağım donanım ve yazılımlar:&#xA;Raspberry Pi Zero 2W, Cisco 2960 Switch, SD Cart, Kart Reader, Ethernet Kablosu, MicroUSB Power Cable, Switch Power Cable, ImagerPi. İlk olarak ImagerPi kullanarak SD Kart&amp;rsquo;a Ubuntu işletim sistemini kuruyorum.&#xA;SD Kart&amp;rsquo;ı Raspberry Pi&amp;rsquo;a takıp, modemin yakınında güç kablosunu takıp cihazı açıyorum.&#xA;Raspberry Pi&amp;rsquo;nin hangi IP adresini aldığını öğrenmek için:</description>
     </item>
     <item>
-      <title>Raspberry Pi e-Paper Projesi</title>
+      <title>Raspberry Pi e-Paper Uygulaması</title>
       <link>https://ittechnetworkk.github.io/posts/epaper/raspberry-pi-epaper/</link>
       <pubDate>Tue, 25 Jun 2024 22:57:40 +0100</pubDate>
       <guid>https://ittechnetworkk.github.io/posts/epaper/raspberry-pi-epaper/</guid>

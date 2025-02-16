@@ -24,7 +24,7 @@
       <description>Merhaba, bu yazımda bi Raspberry Pi Zero&amp;rsquo;ya Syslog server rolü verip, bir Cisco Switch&amp;rsquo;e bu Syslog server konfigürasyonunu yapacağım.&#xA;Bu Lab için kullanacağım donanım ve yazılımlar:&#xA;Raspberry Pi Zero 2W, Cisco 2960 Switch, SD Cart, Kart Reader, Ethernet Kablosu, MicroUSB Power Cable, Switch Power Cable, ImagerPi. İlk olarak ImagerPi kullanarak SD Kart&amp;rsquo;a Ubuntu işletim sistemini kuruyorum.&#xA;SD Kart&amp;rsquo;ı Raspberry Pi&amp;rsquo;a takıp, modemin yakınında güç kablosunu takıp cihazı açıyorum.&#xA;Raspberry Pi&amp;rsquo;nin hangi IP adresini aldığını öğrenmek için:</description>
     </item>
     <item>
-      <title>Raspberry Pi e-Paper Projesi</title>
+      <title>Raspberry Pi e-Paper Uygulaması</title>
       <link>https://ittechnetworkk.github.io/posts/epaper/raspberry-pi-epaper/</link>
       <pubDate>Tue, 25 Jun 2024 22:57:40 +0100</pubDate>
       <guid>https://ittechnetworkk.github.io/posts/epaper/raspberry-pi-epaper/</guid>

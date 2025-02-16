@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Sat, 08 Feb 2025 21:46:11 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 16 Feb 2025 14:48:43 +0100</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes Notlarım</title>
+      <link>https://ittechnetworkk.github.io/posts/kubernetesnotlarim/kubernetes-notlarim/</link>
+      <pubDate>Sun, 16 Feb 2025 14:48:43 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/kubernetesnotlarim/kubernetes-notlarim/</guid>
+      <description>Kubernetes&amp;rsquo;a giriş notlarım. Bu notlar Özgür Öztürk&amp;rsquo;ün Kubernetes Eğitiminden aldığım notlarımdır.&#xA;Kubernetes, container&amp;rsquo;ları kurup yönetme işlerini üstlenen sektör standardı bir araçtır. Container&amp;rsquo;ları, volume&amp;rsquo;ları, networkleri vs. yönetmeyi kolaylaştırır, işleri tek elden yapmayı sağlar.&#xA;Docker Swarm da aynı amaca hizmet eder fakat Kubernetes kadar popüler değildir.&#xA;Kubernetes hem beyan temelli yapılandırmayı hem de otomasyonu kolaylaştıran, container iş yüklerini ve hizmetlerini yönetmek için oluşturulmuş, taşınabilir ve genişletilebilir açık kaynaklı bir platformdur.&#xA;Monolithic - Microservice:</description>
+    </item>
     <item>
       <title>Docker Notlarım</title>
       <link>https://ittechnetworkk.github.io/posts/dockernotlarim/docker-notlarim/</link>
@@ -304,7 +311,7 @@
       <description>Static Route hedefe gitmek için manuel olarak yazılan rotadır. Static Route küçük networkler için kullanılabilir. Fakat orta ve büyük networklerde iş yükünü fazlaca artırabilir.&#xA;Bu da diğer Dynamic Routing protokollerinden ayıran bir özelliğidir. Bu demektir ki bir networkte Dynamic Routing Protokolü çalışsa bile öncelik statik olarak yazılan rotadadır.&#xA;Static Route Yazımı: Statik rota yazmak oldukça kolaydır. Aşağıda 2 farklı yazımı görebilirsiniz. İkisi de kullanılabilir.&#xA;Router(config)#ipv6 route 2001:3::/64 2001:2::2 Router(config)#ipv6 route 2001:3::/64 gi0/1 Bunun anlamı; 2001:3::/64 networküne gitmek için 2001:2::2 yolunu kullan.</description>
     </item>
     <item>
-      <title>Raspberry Pi e-Paper Projesi</title>
+      <title>Raspberry Pi e-Paper Uygulaması</title>
       <link>https://ittechnetworkk.github.io/posts/epaper/raspberry-pi-epaper/</link>
       <pubDate>Tue, 25 Jun 2024 22:57:40 +0100</pubDate>
       <guid>https://ittechnetworkk.github.io/posts/epaper/raspberry-pi-epaper/</guid>
