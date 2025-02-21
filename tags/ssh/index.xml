@@ -24,7 +24,7 @@
       <description>Merhabalar, bu yazımda Cisco ASA 5510&amp;rsquo;a SSH konfigürasyonu yapmayı göstereceğim.&#xA;İlk olarak bir kullanıcı oluşturuyorum:&#xA;ASA# conf t ASA(config)# username &amp;lt;User&amp;gt; password &amp;lt;Password&amp;gt; privilege 15 Kimlik doğrulama modunu ayarlıyorum:&#xA;ASA(config)# aaa authentication ssh console LOCAL SSH versiyonunu 2 yapıyorum ve timeout değerini ayarlıyorum:&#xA;ASA(config)# ssh version 2 ASA(config)# ssh timeout 30 Bir domain adı ve anahtar çifti yaratıyorum:&#xA;ASA(config)# domain-name sonersahin.local ASA(config)# crypto key generate rsa modulus 1024 Cihaza SSH yapacak network aralığı belirliyorum, isterseniz sadece belli bir IP adresini de yapabilirsiniz:</description>
     </item>
     <item>
-      <title>Cisco Ssh</title>
+      <title>Cisco IOS SSH Konfigürasyonu</title>
       <link>https://ittechnetworkk.github.io/posts/ciscossh/cisco-ssh/</link>
       <pubDate>Wed, 07 Feb 2024 23:41:02 +0100</pubDate>
       <guid>https://ittechnetworkk.github.io/posts/ciscossh/cisco-ssh/</guid>

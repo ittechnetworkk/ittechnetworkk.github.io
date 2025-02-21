@@ -7,8 +7,22 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Fri, 10 Jan 2025 11:43:33 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 21 Feb 2025 22:18:30 +0100</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/categories/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gre Lab</title>
+      <link>https://ittechnetworkk.github.io/posts/gre-lab/gre-lab/</link>
+      <pubDate>Fri, 21 Feb 2025 22:18:30 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/gre-lab/gre-lab/</guid>
+      <description>Hello everyone, in this LAB I will configure GRE Tunnels.&#xA;I will implement the following topology. In this topology some configurations have been done. So networks can already reach with each other. I will just focus on GRE Tunnels between the networks of Customer-A and Customer-B.&#xA;I will use 192.168.1.0/24 subnet for Customer-A, 192.168.2.0/24 subnet for Customer-B.&#xA;R1:&#xA;#TUNNEL CONFIGURATION R1&amp;gt;en R1#conf t R1(config)#int tunnel 1 R1(config-if)#ip addr 192.168.1.10 255.255.255.0 R1(config-if)#tunnel source e0/1 R1(config-if)#tunnel destination 1.</description>
+    </item>
+    <item>
+      <title>VRF-Lite Configuration</title>
+      <link>https://ittechnetworkk.github.io/posts/vrflitelab/vrf-lite/</link>
+      <pubDate>Fri, 21 Feb 2025 02:36:28 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/vrflitelab/vrf-lite/</guid>
+      <description>Hello everyone, in this LAB I will configure VRF-Lite.&#xA;I will implement the following topology.&#xA;R1:&#xA;#INTERFACE CONFIGURATION R1&amp;gt;en R1#conf t R1(config)#int e0/0 R1(config-if)#ip addr 10.0.1.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e0/1 R1(config-if)#ip addr 1.1.1.2 255.255.255.252 R1(config-if)#no sh R1(config-if)#exit #OSPF R1(config)#router ospf 1 R1(config-router)#network 1.1.1.0 0.0.0.3 area 0 R1(config-router)#network 10.0.1.0 0.0.0.255 area 0 R1(config-router)#exit R2:&#xA;#INTERFACE CONFIGURATION R2&amp;gt;en R2#conf t R2(config)#int e0/0 R2(config-if)#ip addr 10.0.2.1 255.255.255.0 R2(config-if)#no sh R2(config-if)#int e0/2 R2(config-if)#ip addr 1.</description>
+    </item>
     <item>
       <title>Vlan Routing L3 Switch (SVI)</title>
       <link>https://ittechnetworkk.github.io/posts/vlanroutingsvi/vlan-routing-svi/</link>
@@ -269,7 +283,7 @@
       <description>EIGRP Cisco tarafından geliştirilen, daha sonra kaynak kodları açılan bir dinamik yönlendirme protokolüdür. Kimlik doğrulama yapılmasının amacı networkte bir şekilde bulunan yetkisiz routerların, yetkili olan routerların routing tablosunu bozmasını engellemektir. Trafiği şifrelemez. Sadece kimlik doğrulama yapar. Authentication 2 aşamada yapılır.&#xA;Aşağıdaki topolojiyi uygulayacağız.&#xA;Burada 3 Router&amp;rsquo;ımız var, hali hazırda EIGRP konfigürasyonu yapılmış, networkler birbirlerini tanıyorlar. Bu topolojide, kötü niyetli biri routerlardan birine bir kablo takarsa rahatlıkla network duyuruları yapabilir, routing tablolarını şişirebilir, networkü kullanılmaz hale getirebilir.</description>
     </item>
     <item>
-      <title>Cisco Ssh</title>
+      <title>Cisco IOS SSH Konfigürasyonu</title>
       <link>https://ittechnetworkk.github.io/posts/ciscossh/cisco-ssh/</link>
       <pubDate>Wed, 07 Feb 2024 23:41:02 +0100</pubDate>
       <guid>https://ittechnetworkk.github.io/posts/ciscossh/cisco-ssh/</guid>

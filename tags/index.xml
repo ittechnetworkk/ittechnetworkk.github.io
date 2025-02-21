@@ -7,8 +7,36 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Sun, 16 Feb 2025 14:48:43 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 21 Feb 2025 22:18:30 +0100</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cisco</title>
+      <link>https://ittechnetworkk.github.io/tags/cisco/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/cisco/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gre</title>
+      <link>https://ittechnetworkk.github.io/tags/gre/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/gre/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IOS</title>
+      <link>https://ittechnetworkk.github.io/tags/ios/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/ios/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>VRF-Lite</title>
+      <link>https://ittechnetworkk.github.io/tags/vrf-lite/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/vrf-lite/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Kubernetes</title>
       <link>https://ittechnetworkk.github.io/tags/kubernetes/</link>
@@ -143,13 +171,6 @@
       <description></description>
     </item>
     <item>
-      <title>Cisco</title>
-      <link>https://ittechnetworkk.github.io/tags/cisco/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ittechnetworkk.github.io/tags/cisco/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>CML</title>
       <link>https://ittechnetworkk.github.io/tags/cml/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -196,13 +217,6 @@
       <link>https://ittechnetworkk.github.io/tags/virtualization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/virtualization/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Gre</title>
-      <link>https://ittechnetworkk.github.io/tags/gre/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ittechnetworkk.github.io/tags/gre/</guid>
       <description></description>
     </item>
     <item>

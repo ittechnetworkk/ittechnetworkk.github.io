@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Fri, 22 Nov 2024 22:57:40 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 21 Feb 2025 22:18:30 +0100</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/tags/gre/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gre Lab</title>
+      <link>https://ittechnetworkk.github.io/posts/gre-lab/gre-lab/</link>
+      <pubDate>Fri, 21 Feb 2025 22:18:30 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/gre-lab/gre-lab/</guid>
+      <description>Hello everyone, in this LAB I will configure GRE Tunnels.&#xA;I will implement the following topology. In this topology some configurations have been done. So networks can already reach with each other. I will just focus on GRE Tunnels between the networks of Customer-A and Customer-B.&#xA;I will use 192.168.1.0/24 subnet for Customer-A, 192.168.2.0/24 subnet for Customer-B.&#xA;R1:&#xA;#TUNNEL CONFIGURATION R1&amp;gt;en R1#conf t R1(config)#int tunnel 1 R1(config-if)#ip addr 192.168.1.10 255.255.255.0 R1(config-if)#tunnel source e0/1 R1(config-if)#tunnel destination 1.</description>
+    </item>
     <item>
       <title>GRE Over Ipsec</title>
       <link>https://ittechnetworkk.github.io/posts/greoveripsec/greoveripsec/</link>
