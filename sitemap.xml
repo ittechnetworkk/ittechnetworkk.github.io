@@ -8,28 +8,31 @@
     <loc>https://ittechnetworkk.github.io/posts/</loc>
     <lastmod>2025-05-13T12:22:24+01:00</lastmod>
   </url><url>
+    <loc>https://ittechnetworkk.github.io/categories/</loc>
+    <lastmod>2025-02-21T22:19:46+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/cisco/</loc>
+    <lastmod>2025-02-21T22:19:46+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/gre/</loc>
+    <lastmod>2025-02-21T22:19:46+01:00</lastmod>
+  </url><url>
     <loc>https://ittechnetworkk.github.io/posts/greoveripsec-lab/gre-over-ipsec-lab/</loc>
     <lastmod>2025-02-21T22:19:46+01:00</lastmod>
   </url><url>
-    <loc>https://ittechnetworkk.github.io/categories/</loc>
-    <lastmod>2025-02-21T22:18:30+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/cisco/</loc>
-    <lastmod>2025-02-21T22:18:30+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/gre/</loc>
-    <lastmod>2025-02-21T22:18:30+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/posts/gre-lab/gre-lab/</loc>
-    <lastmod>2025-02-21T22:18:30+01:00</lastmod>
-  </url><url>
     <loc>https://ittechnetworkk.github.io/tags/ios/</loc>
-    <lastmod>2025-02-21T22:18:30+01:00</lastmod>
+    <lastmod>2025-02-21T22:19:46+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/ipsec/</loc>
+    <lastmod>2025-02-21T22:19:46+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/categories/network/</loc>
-    <lastmod>2025-02-21T22:18:30+01:00</lastmod>
+    <lastmod>2025-02-21T22:19:46+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/</loc>
+    <lastmod>2025-02-21T22:19:46+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/posts/gre-lab/gre-lab/</loc>
     <lastmod>2025-02-21T22:18:30+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/vrf-lite/</loc>
@@ -195,9 +198,6 @@
     <lastmod>2024-12-01T22:57:40+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/greoveripsec/greoveripsec/</loc>
-    <lastmod>2024-11-22T22:57:40+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/ipsec/</loc>
     <lastmod>2024-11-22T22:57:40+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/juniper/</loc>

@@ -7,10 +7,17 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Fri, 21 Feb 2025 22:18:30 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 21 Feb 2025 22:19:46 +0100</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/categories/network/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Gre Lab</title>
+      <title>GRE Over IPSEC LAB</title>
+      <link>https://ittechnetworkk.github.io/posts/greoveripsec-lab/gre-over-ipsec-lab/</link>
+      <pubDate>Fri, 21 Feb 2025 22:19:46 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/greoveripsec-lab/gre-over-ipsec-lab/</guid>
+      <description>Hello everyone, in this LAB I will configure GRE over IPSec Tunnels.&#xA;I will implement the following topology. In this topology some configurations have been done. So networks can already reach with each other. I will just focus on GRE over IPSec Tunnels between the networks of Customer-A and Customer-B.&#xA;GRE Subnet for Customer-A: 192.168.1.0/24&#xA;GRE Subnet for Customer-B: 192.168.2.0/24&#xA;R1:&#xA;#GRE CONFIGURATION R1(config)#int tunnel 1 R1(config-if)#ip addr 192.168.1.10 255.255.255.0 R1(config-if)#tunnel source e0/1 R1(config-if)#tunnel destination 1.</description>
+    </item>
+    <item>
+      <title>GRE LAB</title>
       <link>https://ittechnetworkk.github.io/posts/gre-lab/gre-lab/</link>
       <pubDate>Fri, 21 Feb 2025 22:18:30 +0100</pubDate>
       <guid>https://ittechnetworkk.github.io/posts/gre-lab/gre-lab/</guid>
@@ -21,7 +28,7 @@
       <link>https://ittechnetworkk.github.io/posts/vrflitelab/vrf-lite/</link>
       <pubDate>Fri, 21 Feb 2025 02:36:28 +0100</pubDate>
       <guid>https://ittechnetworkk.github.io/posts/vrflitelab/vrf-lite/</guid>
-      <description>Hello everyone, in this LAB I will configure VRF-Lite.&#xA;I will implement the following topology.&#xA;R1:&#xA;#INTERFACE CONFIGURATION R1&amp;gt;en R1#conf t R1(config)#int e0/0 R1(config-if)#ip addr 10.0.1.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e0/1 R1(config-if)#ip addr 1.1.1.2 255.255.255.252 R1(config-if)#no sh R1(config-if)#exit #OSPF R1(config)#router ospf 1 R1(config-router)#network 1.1.1.0 0.0.0.3 area 0 R1(config-router)#network 10.0.1.0 0.0.0.255 area 0 R1(config-router)#exit R2:&#xA;#INTERFACE CONFIGURATION R2&amp;gt;en R2#conf t R2(config)#int e0/0 R2(config-if)#ip addr 10.0.2.1 255.255.255.0 R2(config-if)#no sh R2(config-if)#int e0/2 R2(config-if)#ip addr 1.</description>
+      <description>Hello everyone, in this LAB I will configure GRE Tunnels with following topology.&#xA;R1:&#xA;#INTERFACE CONFIGURATION R1&amp;gt;en R1#conf t R1(config)#int e0/0 R1(config-if)#ip addr 10.0.1.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e0/1 R1(config-if)#ip addr 1.1.1.2 255.255.255.252 R1(config-if)#no sh R1(config-if)#exit #OSPF R1(config)#router ospf 1 R1(config-router)#network 1.1.1.0 0.0.0.3 area 0 R1(config-router)#network 10.0.1.0 0.0.0.255 area 0 R1(config-router)#exit R2:&#xA;#INTERFACE CONFIGURATION R2&amp;gt;en R2#conf t R2(config)#int e0/0 R2(config-if)#ip addr 10.0.2.1 255.255.255.0 R2(config-if)#no sh R2(config-if)#int e0/2 R2(config-if)#ip addr 1.1.2.2 255.</description>
     </item>
     <item>
       <title>Vlan Routing L3 Switch (SVI)</title>

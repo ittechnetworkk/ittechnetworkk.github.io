@@ -17,11 +17,10 @@
   <meta property="og:url" content="https://ittechnetworkk.github.io/posts/vrflitelab/vrf-lite/">
   <meta property="og:site_name" content="ittechnetworkk">
   <meta property="og:title" content="VRF-Lite Configuration">
-  <meta property="og:description" content="Hello everyone, in this LAB I will configure VRF-Lite.
-I will implement the following topology.
+  <meta property="og:description" content="Hello everyone, in this LAB I will configure GRE Tunnels with following topology.
 R1:
 #INTERFACE CONFIGURATION R1&gt;en R1#conf t R1(config)#int e0/0 R1(config-if)#ip addr 10.0.1.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e0/1 R1(config-if)#ip addr 1.1.1.2 255.255.255.252 R1(config-if)#no sh R1(config-if)#exit #OSPF R1(config)#router ospf 1 R1(config-router)#network 1.1.1.0 0.0.0.3 area 0 R1(config-router)#network 10.0.1.0 0.0.0.255 area 0 R1(config-router)#exit R2:
-#INTERFACE CONFIGURATION R2&gt;en R2#conf t R2(config)#int e0/0 R2(config-if)#ip addr 10.0.2.1 255.255.255.0 R2(config-if)#no sh R2(config-if)#int e0/2 R2(config-if)#ip addr 1.">
+#INTERFACE CONFIGURATION R2&gt;en R2#conf t R2(config)#int e0/0 R2(config-if)#ip addr 10.0.2.1 255.255.255.0 R2(config-if)#no sh R2(config-if)#int e0/2 R2(config-if)#ip addr 1.1.2.2 255.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -34,11 +33,10 @@ R1:
   
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="VRF-Lite Configuration">
-  <meta name="twitter:description" content="Hello everyone, in this LAB I will configure VRF-Lite.
-I will implement the following topology.
+  <meta name="twitter:description" content="Hello everyone, in this LAB I will configure GRE Tunnels with following topology.
 R1:
 #INTERFACE CONFIGURATION R1&gt;en R1#conf t R1(config)#int e0/0 R1(config-if)#ip addr 10.0.1.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int e0/1 R1(config-if)#ip addr 1.1.1.2 255.255.255.252 R1(config-if)#no sh R1(config-if)#exit #OSPF R1(config)#router ospf 1 R1(config-router)#network 1.1.1.0 0.0.0.3 area 0 R1(config-router)#network 10.0.1.0 0.0.0.255 area 0 R1(config-router)#exit R2:
-#INTERFACE CONFIGURATION R2&gt;en R2#conf t R2(config)#int e0/0 R2(config-if)#ip addr 10.0.2.1 255.255.255.0 R2(config-if)#no sh R2(config-if)#int e0/2 R2(config-if)#ip addr 1.">
+#INTERFACE CONFIGURATION R2&gt;en R2#conf t R2(config)#int e0/0 R2(config-if)#ip addr 10.0.2.1 255.255.255.0 R2(config-if)#no sh R2(config-if)#int e0/2 R2(config-if)#ip addr 1.1.2.2 255.">
 
   
   
@@ -170,7 +168,7 @@ R1:
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvrflitelab%2fvrf-lite%2f&name=VRF-Lite%20Configuration&description=Hello%20everyone%2c%20in%20this%20LAB%20I%20will%20configure%20VRF-Lite.%0aI%20will%20implement%20the%20following%20topology.%0aR1%3a%0a%23INTERFACE%20CONFIGURATION%20R1%26gt%3ben%20R1%23conf%20t%20R1%28config%29%23int%20e0%2f0%20R1%28config-if%29%23ip%20addr%2010.0.1.1%20255.255.255.0%20R1%28config-if%29%23no%20sh%20R1%28config-if%29%23int%20e0%2f1%20R1%28config-if%29%23ip%20addr%201.1.1.2%20255.255.255.252%20R1%28config-if%29%23no%20sh%20R1%28config-if%29%23exit%20%23OSPF%20R1%28config%29%23router%20ospf%201%20R1%28config-router%29%23network%201.1.1.0%200.0.0.3%20area%200%20R1%28config-router%29%23network%2010.0.1.0%200.0.0.255%20area%200%20R1%28config-router%29%23exit%20R2%3a%0a%23INTERFACE%20CONFIGURATION%20R2%26gt%3ben%20R2%23conf%20t%20R2%28config%29%23int%20e0%2f0%20R2%28config-if%29%23ip%20addr%2010.0.2.1%20255.255.255.0%20R2%28config-if%29%23no%20sh%20R2%28config-if%29%23int%20e0%2f2%20R2%28config-if%29%23ip%20addr%201." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvrflitelab%2fvrf-lite%2f&name=VRF-Lite%20Configuration&description=Hello%20everyone%2c%20in%20this%20LAB%20I%20will%20configure%20GRE%20Tunnels%20with%20following%20topology.%0aR1%3a%0a%23INTERFACE%20CONFIGURATION%20R1%26gt%3ben%20R1%23conf%20t%20R1%28config%29%23int%20e0%2f0%20R1%28config-if%29%23ip%20addr%2010.0.1.1%20255.255.255.0%20R1%28config-if%29%23no%20sh%20R1%28config-if%29%23int%20e0%2f1%20R1%28config-if%29%23ip%20addr%201.1.1.2%20255.255.255.252%20R1%28config-if%29%23no%20sh%20R1%28config-if%29%23exit%20%23OSPF%20R1%28config%29%23router%20ospf%201%20R1%28config-router%29%23network%201.1.1.0%200.0.0.3%20area%200%20R1%28config-router%29%23network%2010.0.1.0%200.0.0.255%20area%200%20R1%28config-router%29%23exit%20R2%3a%0a%23INTERFACE%20CONFIGURATION%20R2%26gt%3ben%20R2%23conf%20t%20R2%28config%29%23int%20e0%2f0%20R2%28config-if%29%23ip%20addr%2010.0.2.1%20255.255.255.0%20R2%28config-if%29%23no%20sh%20R2%28config-if%29%23int%20e0%2f2%20R2%28config-if%29%23ip%20addr%201.1.2.2%20255." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -247,8 +245,7 @@ R1:
   
     
     <div class="content" itemprop="articleBody">
-      <p>Hello everyone, in this LAB I will configure VRF-Lite.</p>
-<p>I will implement the following topology.</p>
+      <p>Hello everyone, in this LAB I will configure GRE Tunnels with following topology.</p>
 <p><img src="/images/VRFLiteLAB/1.png" alt="vrf-lite"></p>
 <p><strong>R1:</strong></p>
 <pre tabindex="0"><code>#INTERFACE CONFIGURATION
@@ -609,7 +606,7 @@ VPCS : 10.0.4.10 255.255.255.0 gateway 10.0.4.1
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvrflitelab%2fvrf-lite%2f&name=VRF-Lite%20Configuration&description=Hello%20everyone%2c%20in%20this%20LAB%20I%20will%20configure%20VRF-Lite.%0aI%20will%20implement%20the%20following%20topology.%0aR1%3a%0a%23INTERFACE%20CONFIGURATION%20R1%26gt%3ben%20R1%23conf%20t%20R1%28config%29%23int%20e0%2f0%20R1%28config-if%29%23ip%20addr%2010.0.1.1%20255.255.255.0%20R1%28config-if%29%23no%20sh%20R1%28config-if%29%23int%20e0%2f1%20R1%28config-if%29%23ip%20addr%201.1.1.2%20255.255.255.252%20R1%28config-if%29%23no%20sh%20R1%28config-if%29%23exit%20%23OSPF%20R1%28config%29%23router%20ospf%201%20R1%28config-router%29%23network%201.1.1.0%200.0.0.3%20area%200%20R1%28config-router%29%23network%2010.0.1.0%200.0.0.255%20area%200%20R1%28config-router%29%23exit%20R2%3a%0a%23INTERFACE%20CONFIGURATION%20R2%26gt%3ben%20R2%23conf%20t%20R2%28config%29%23int%20e0%2f0%20R2%28config-if%29%23ip%20addr%2010.0.2.1%20255.255.255.0%20R2%28config-if%29%23no%20sh%20R2%28config-if%29%23int%20e0%2f2%20R2%28config-if%29%23ip%20addr%201." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fvrflitelab%2fvrf-lite%2f&name=VRF-Lite%20Configuration&description=Hello%20everyone%2c%20in%20this%20LAB%20I%20will%20configure%20GRE%20Tunnels%20with%20following%20topology.%0aR1%3a%0a%23INTERFACE%20CONFIGURATION%20R1%26gt%3ben%20R1%23conf%20t%20R1%28config%29%23int%20e0%2f0%20R1%28config-if%29%23ip%20addr%2010.0.1.1%20255.255.255.0%20R1%28config-if%29%23no%20sh%20R1%28config-if%29%23int%20e0%2f1%20R1%28config-if%29%23ip%20addr%201.1.1.2%20255.255.255.252%20R1%28config-if%29%23no%20sh%20R1%28config-if%29%23exit%20%23OSPF%20R1%28config%29%23router%20ospf%201%20R1%28config-router%29%23network%201.1.1.0%200.0.0.3%20area%200%20R1%28config-router%29%23network%2010.0.1.0%200.0.0.255%20area%200%20R1%28config-router%29%23exit%20R2%3a%0a%23INTERFACE%20CONFIGURATION%20R2%26gt%3ben%20R2%23conf%20t%20R2%28config%29%23int%20e0%2f0%20R2%28config-if%29%23ip%20addr%2010.0.2.1%20255.255.255.0%20R2%28config-if%29%23no%20sh%20R2%28config-if%29%23int%20e0%2f2%20R2%28config-if%29%23ip%20addr%201.1.2.2%20255." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
