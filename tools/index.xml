@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tools on ittechnetworkk</title>
+    <link>https://ittechnetworkk.github.io/tools/</link>
+    <description>Recent content in Tools on ittechnetworkk</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>ittechnetworkk</copyright>
+    <lastBuildDate>Tue, 27 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://ittechnetworkk.github.io/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Subnet Calculator</title>
+      <link>https://ittechnetworkk.github.io/tools/subnet-calculator/</link>
+      <pubDate>Tue, 27 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tools/subnet-calculator/</guid>
+      <description> &amp;lt;div class=&amp;quot;subnet-calculator&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;input-group&amp;quot;&amp;gt; &amp;lt;label for=&amp;quot;ip&amp;quot;&amp;gt;IP Address (IPv4 or IPv6):&amp;lt;/label&amp;gt; &amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;ip&amp;quot; placeholder=&amp;quot;e.g., 192.168.1.0 or 2001:db8::&amp;quot;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;input-group&amp;quot;&amp;gt; &amp;lt;label for=&amp;quot;cidr&amp;quot;&amp;gt;CIDR Notation:&amp;lt;/label&amp;gt; &amp;lt;input type=&amp;quot;number&amp;quot; id=&amp;quot;cidr&amp;quot; min=&amp;quot;0&amp;quot; max=&amp;quot;128&amp;quot; placeholder=&amp;quot;e.g., 24 for IPv4, 64 for IPv6&amp;quot;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;input-group&amp;quot;&amp;gt; &amp;lt;label for=&amp;quot;numSubnets&amp;quot;&amp;gt;Number of Subnets (optional):&amp;lt;/label&amp;gt; &amp;lt;input type=&amp;quot;number&amp;quot; id=&amp;quot;numSubnets&amp;quot; min=&amp;quot;0&amp;quot; max=&amp;quot;256&amp;quot; placeholder=&amp;quot;Leave empty for no subdivision&amp;quot;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;button class=&amp;quot;calculate-button&amp;quot; onclick=&amp;quot;calculateSubnet()&amp;quot;&amp;gt;Calculate&amp;lt;/button&amp;gt; &amp;lt;div id=&amp;quot;result&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;features-list&amp;quot;&amp;gt; &amp;lt;h3&amp;gt;Features&amp;lt;/h3&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;IPv4 and IPv6 support&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Binary representation of addresses&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Network &amp;amp; Broadcast address calculation&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Usable IP range determination&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Wildcard mask calculation&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;IP address classification&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Multiple subnet division calculator&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;VLSM support&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/div&amp;gt; </description>
+    </item>
+    <item>
+      <title>What is my IP?</title>
+      <link>https://ittechnetworkk.github.io/tools/ip-checker/</link>
+      <pubDate>Tue, 27 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tools/ip-checker/</guid>
+      <description> What is my IP? This tool helps you quickly find out your current IP address and related information.&#xA;Your IP Address: Loading... Refresh Country: Loading... Region: Loading... City: Loading... Location: Loading... ISP: Loading... Type: Loading... Additional Details Timezone Loading... Coordinates Loading... Currency Loading... </description>
+    </item>
+  </channel>
+</rss>

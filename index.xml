@@ -14,7 +14,7 @@
       <link>https://ittechnetworkk.github.io/posts/greoveripsec-lab/gre-over-ipsec-lab/</link>
       <pubDate>Fri, 21 Feb 2025 22:19:46 +0100</pubDate>
       <guid>https://ittechnetworkk.github.io/posts/greoveripsec-lab/gre-over-ipsec-lab/</guid>
-      <description>Hello everyone, in this LAB I will configure GRE over IPSec Tunnels.&#xA;I will implement the following topology. In this topology some configurations have been done. So networks can already reach with each other. I will just focus on GRE over IPSec Tunnels between the networks of Customer-A and Customer-B.&#xA;GRE Subnet for Customer-A: 192.168.1.0/24&#xA;GRE Subnet for Customer-B: 192.168.2.0/24&#xA;R1:&#xA;#GRE CONFIGURATION R1(config)#int tunnel 1 R1(config-if)#ip addr 192.168.1.10 255.255.255.0 R1(config-if)#tunnel source e0/1 R1(config-if)#tunnel destination 1.</description>
+      <description>Hello everyone, in this LAB I will configure GRE over IPSec Tunnels with following topology.&#xA;In this topology some configurations have been done. So networks can already reach with each other. I will just focus on GRE over IPSec Tunnels between the networks of Customer-A and Customer-B.&#xA;GRE Subnet for Customer-A: 192.168.1.0/24&#xA;GRE Subnet for Customer-B: 192.168.2.0/24&#xA;R1:&#xA;#GRE CONFIGURATION R1(config)#int tunnel 1 R1(config-if)#ip addr 192.168.1.10 255.255.255.0 R1(config-if)#tunnel source e0/1 R1(config-if)#tunnel destination 1.</description>
     </item>
     <item>
       <title>GRE LAB</title>
@@ -442,6 +442,34 @@
       <pubDate>Mon, 18 Mar 2024 22:57:40 +0100</pubDate>
       <guid>https://ittechnetworkk.github.io/posts/staticrouting/static-routing/</guid>
       <description>Static Routing, yönlendirme tablosuna manuel olarak route eklenmesidir. Topoloji değişikliklerinde networklerin de yine güncellenmesi manuel olarak yapılmalıdır. Administrative Distance değeri 1&amp;rsquo;dir&#xA;Aşağıdaki topolojiyi uygulayacağız.&#xA;Bu topolojide tüm cihazların birbirleriyle iletişim kurmasını istiyoruz. Başlayalım&#xA;1- Router interfacelerine ve VPC&amp;rsquo;lere IP&amp;rsquo;lerini verelim.&#xA;R1:&#xA;R1#enable R1#conf t R1(config)#int e0/0 R1(config-if)#ip add 192.168.1.1 255.255.255.0 R1(config-if)#no sh R1(config-if)#int s1/0 R1(config-if)#ip address 2.2.2.2 255.255.255.0 R1(config-if)#no sh R1(config-if)#int s1/1 R1(config-if)#ip addr 3.3.3.2 255.255.255.0 R1(config-if)#no sh R2:&#xA;R2#enable R2#conf t R2(config)#int e0/0 R2(config-if)#ip add 192.</description>
+    </item>
+    <item>
+      <title>Subnet Calculator</title>
+      <link>https://ittechnetworkk.github.io/subnet-calculator/</link>
+      <pubDate>Tue, 27 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/subnet-calculator/</guid>
+      <description> Advanced Subnet Calculator Calculate comprehensive subnet information including network address, broadcast address, usable IP range, and more. Supports both IPv4 and IPv6.&#xA;IP Address (IPv4 or IPv6): CIDR Notation: Number of Subnets (optional): Calculate Features IPv4 and IPv6 support Binary representation of addresses Network &amp; Broadcast address calculation Usable IP range determination Wildcard mask calculation IP address classification Multiple subnet division calculator VLSM support </description>
+    </item>
+    <item>
+      <title>Subnet Calculator</title>
+      <link>https://ittechnetworkk.github.io/tools/subnet-calculator/</link>
+      <pubDate>Tue, 27 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tools/subnet-calculator/</guid>
+      <description> &amp;lt;div class=&amp;quot;subnet-calculator&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;input-group&amp;quot;&amp;gt; &amp;lt;label for=&amp;quot;ip&amp;quot;&amp;gt;IP Address (IPv4 or IPv6):&amp;lt;/label&amp;gt; &amp;lt;input type=&amp;quot;text&amp;quot; id=&amp;quot;ip&amp;quot; placeholder=&amp;quot;e.g., 192.168.1.0 or 2001:db8::&amp;quot;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;input-group&amp;quot;&amp;gt; &amp;lt;label for=&amp;quot;cidr&amp;quot;&amp;gt;CIDR Notation:&amp;lt;/label&amp;gt; &amp;lt;input type=&amp;quot;number&amp;quot; id=&amp;quot;cidr&amp;quot; min=&amp;quot;0&amp;quot; max=&amp;quot;128&amp;quot; placeholder=&amp;quot;e.g., 24 for IPv4, 64 for IPv6&amp;quot;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;input-group&amp;quot;&amp;gt; &amp;lt;label for=&amp;quot;numSubnets&amp;quot;&amp;gt;Number of Subnets (optional):&amp;lt;/label&amp;gt; &amp;lt;input type=&amp;quot;number&amp;quot; id=&amp;quot;numSubnets&amp;quot; min=&amp;quot;0&amp;quot; max=&amp;quot;256&amp;quot; placeholder=&amp;quot;Leave empty for no subdivision&amp;quot;&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;button class=&amp;quot;calculate-button&amp;quot; onclick=&amp;quot;calculateSubnet()&amp;quot;&amp;gt;Calculate&amp;lt;/button&amp;gt; &amp;lt;div id=&amp;quot;result&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;features-list&amp;quot;&amp;gt; &amp;lt;h3&amp;gt;Features&amp;lt;/h3&amp;gt; &amp;lt;ul&amp;gt; &amp;lt;li&amp;gt;IPv4 and IPv6 support&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Binary representation of addresses&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Network &amp;amp; Broadcast address calculation&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Usable IP range determination&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Wildcard mask calculation&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;IP address classification&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;Multiple subnet division calculator&amp;lt;/li&amp;gt; &amp;lt;li&amp;gt;VLSM support&amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; &amp;lt;/div&amp;gt; </description>
+    </item>
+    <item>
+      <title>What is my IP?</title>
+      <link>https://ittechnetworkk.github.io/tools/ip-checker/</link>
+      <pubDate>Tue, 27 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tools/ip-checker/</guid>
+      <description> What is my IP? This tool helps you quickly find out your current IP address and related information.&#xA;Your IP Address: Loading... Refresh Country: Loading... Region: Loading... City: Loading... Location: Loading... ISP: Loading... Type: Loading... Additional Details Timezone Loading... Coordinates Loading... Currency Loading... </description>
+    </item>
+    <item>
+      <title>What is my IP?</title>
+      <link>https://ittechnetworkk.github.io/what-is-my-ip/</link>
+      <pubDate>Tue, 27 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/what-is-my-ip/</guid>
+      <description> What is my IP? Get detailed information about your internet connection and IP address.&#xA;Loading your IP information...&#xA;IP Addresses IPv4: - Copied! IPv6: - Copied! Location Information Country: - City: - Region: - Connection Details ISP: - Organization: - Timezone: - Browser Information User Agent: - Language: - Refresh Information Features Real-time IP detection IPv4 and IPv6 support Detailed geolocation data ISP and network information Browser and system details Mobile-friendly design </description>
     </item>
     <item>
       <title>CDP LLDP Protokolleri</title>
