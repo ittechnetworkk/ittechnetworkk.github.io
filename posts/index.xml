@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Fri, 21 Feb 2025 22:19:46 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 09 Mar 2025 23:13:13 +0100</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ESXi Installation</title>
+      <link>https://ittechnetworkk.github.io/posts/esxiinstallation/esxi-installation/</link>
+      <pubDate>Sun, 09 Mar 2025 23:13:13 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/esxiinstallation/esxi-installation/</guid>
+      <description>In this article I will show you how to install ESXi that a commonly used virtualization software in the industry providing lots of feature to solve issues that help IT guys quite a lot.&#xA;ESXi is one of the famous virtualization software used on servers. When it comes to talking about virtualization software, it is like a cornerstone because virtualization software helps us to virtualize our hardware, easy management, efficiency, cost benefits, isolation, fast deployment and more.</description>
+    </item>
     <item>
       <title>GRE Over IPSEC LAB</title>
       <link>https://ittechnetworkk.github.io/posts/greoveripsec-lab/gre-over-ipsec-lab/</link>
