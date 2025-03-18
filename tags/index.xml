@@ -7,8 +7,43 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Sun, 09 Mar 2025 23:13:13 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 18 Mar 2025 11:14:26 +0100</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ad</title>
+      <link>https://ittechnetworkk.github.io/tags/ad/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/ad/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dc</title>
+      <link>https://ittechnetworkk.github.io/tags/dc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/dc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Installation</title>
+      <link>https://ittechnetworkk.github.io/tags/installation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/installation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Server</title>
+      <link>https://ittechnetworkk.github.io/tags/server/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/server/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Windows</title>
+      <link>https://ittechnetworkk.github.io/tags/windows/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/windows/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Esxi</title>
       <link>https://ittechnetworkk.github.io/tags/esxi/</link>
@@ -28,6 +63,20 @@
       <link>https://ittechnetworkk.github.io/tags/vmware/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/vmware/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Configuration</title>
+      <link>https://ittechnetworkk.github.io/tags/configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/configuration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Initial</title>
+      <link>https://ittechnetworkk.github.io/tags/initial/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/initial/</guid>
       <description></description>
     </item>
     <item>
@@ -105,20 +154,6 @@
       <link>https://ittechnetworkk.github.io/tags/skyforge/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/skyforge/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Configuration</title>
-      <link>https://ittechnetworkk.github.io/tags/configuration/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ittechnetworkk.github.io/tags/configuration/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Server</title>
-      <link>https://ittechnetworkk.github.io/tags/server/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ittechnetworkk.github.io/tags/server/</guid>
       <description></description>
     </item>
     <item>
@@ -273,13 +308,6 @@
       <link>https://ittechnetworkk.github.io/tags/updog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/updog/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Windows</title>
-      <link>https://ittechnetworkk.github.io/tags/windows/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ittechnetworkk.github.io/tags/windows/</guid>
       <description></description>
     </item>
     <item>

@@ -10,21 +10,21 @@
     <lastBuildDate>Fri, 21 Feb 2025 22:19:46 +0100</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/categories/network/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>GRE Over IPSEC LAB</title>
+      <title>[EN] GRE Over IPSEC LAB</title>
       <link>https://ittechnetworkk.github.io/posts/greoveripsec-lab/gre-over-ipsec-lab/</link>
       <pubDate>Fri, 21 Feb 2025 22:19:46 +0100</pubDate>
       <guid>https://ittechnetworkk.github.io/posts/greoveripsec-lab/gre-over-ipsec-lab/</guid>
       <description>Hello everyone, in this LAB I will configure GRE over IPSec Tunnels with following topology.&#xA;In this topology some configurations have been done. So networks can already reach with each other. I will just focus on GRE over IPSec Tunnels between the networks of Customer-A and Customer-B.&#xA;GRE Subnet for Customer-A: 192.168.1.0/24&#xA;GRE Subnet for Customer-B: 192.168.2.0/24&#xA;R1:&#xA;#GRE CONFIGURATION R1(config)#int tunnel 1 R1(config-if)#ip addr 192.168.1.10 255.255.255.0 R1(config-if)#tunnel source e0/1 R1(config-if)#tunnel destination 1.</description>
     </item>
     <item>
-      <title>GRE LAB</title>
+      <title>[EN] GRE LAB</title>
       <link>https://ittechnetworkk.github.io/posts/gre-lab/gre-lab/</link>
       <pubDate>Fri, 21 Feb 2025 22:18:30 +0100</pubDate>
       <guid>https://ittechnetworkk.github.io/posts/gre-lab/gre-lab/</guid>
       <description>Hello everyone, in this LAB I will configure GRE Tunnels.&#xA;I will implement the following topology. In this topology some configurations have been done. So networks can already reach with each other. I will just focus on GRE Tunnels between the networks of Customer-A and Customer-B.&#xA;I will use 192.168.1.0/24 subnet for Customer-A, 192.168.2.0/24 subnet for Customer-B.&#xA;R1:&#xA;#TUNNEL CONFIGURATION R1&amp;gt;en R1#conf t R1(config)#int tunnel 1 R1(config-if)#ip addr 192.168.1.10 255.255.255.0 R1(config-if)#tunnel source e0/1 R1(config-if)#tunnel destination 1.</description>
     </item>
     <item>
-      <title>VRF-Lite Configuration</title>
+      <title>[EN] VRF-Lite Configuration</title>
       <link>https://ittechnetworkk.github.io/posts/vrflitelab/vrf-lite/</link>
       <pubDate>Fri, 21 Feb 2025 02:36:28 +0100</pubDate>
       <guid>https://ittechnetworkk.github.io/posts/vrflitelab/vrf-lite/</guid>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Initial on ittechnetworkk</title>
+    <link>https://ittechnetworkk.github.io/tags/initial/</link>
+    <description>Recent content in Initial on ittechnetworkk</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>ittechnetworkk</copyright>
+    <lastBuildDate>Tue, 18 Mar 2025 11:05:52 +0100</lastBuildDate>
+    <atom:link href="https://ittechnetworkk.github.io/tags/initial/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[EN] ESXi Initial Configuration</title>
+      <link>https://ittechnetworkk.github.io/posts/esxiinitialconfiguration/esxi-initial-configuration/</link>
+      <pubDate>Tue, 18 Mar 2025 11:05:52 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/esxiinitialconfiguration/esxi-initial-configuration/</guid>
+      <description>Hi everyone, in this article I will show you ESXi initial configuration and demonstrate how to install Windows Server 2022 as a virtual machine.&#xA;After installing ESXi, we need to configure some essential things such as NTP, Licence, Users, Roles etc.&#xA;Additionally, I will show you how to upload an ISO image and how to install a virtual machine.&#xA;License:&#xA;First, I will show you how to assign a license to an ESXi node.</description>
+    </item>
+  </channel>
+</rss>

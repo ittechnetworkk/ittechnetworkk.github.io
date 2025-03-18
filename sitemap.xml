@@ -8,34 +8,67 @@
     <loc>https://ittechnetworkk.github.io/posts/</loc>
     <lastmod>2025-05-13T12:22:24+01:00</lastmod>
   </url><url>
+    <loc>https://ittechnetworkk.github.io/posts/addcinstallation/ad-dc-installation/</loc>
+    <lastmod>2025-03-18T11:14:26+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/ad/</loc>
+    <lastmod>2025-03-18T11:14:26+01:00</lastmod>
+  </url><url>
     <loc>https://ittechnetworkk.github.io/categories/</loc>
-    <lastmod>2025-03-09T23:13:13+01:00</lastmod>
+    <lastmod>2025-03-18T11:14:26+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/dc/</loc>
+    <lastmod>2025-03-18T11:14:26+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/installation/</loc>
+    <lastmod>2025-03-18T11:14:26+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/server/</loc>
+    <lastmod>2025-03-18T11:14:26+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/</loc>
+    <lastmod>2025-03-18T11:14:26+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/windows/</loc>
+    <lastmod>2025-03-18T11:14:26+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/categories/windows/</loc>
+    <lastmod>2025-03-18T11:14:26+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/posts/esxivmcreating/esxi-creating-virtual-machine/</loc>
+    <lastmod>2025-03-18T11:11:14+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/esxi/</loc>
-    <lastmod>2025-03-09T23:13:13+01:00</lastmod>
+    <lastmod>2025-03-18T11:11:14+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/virtualization/</loc>
+    <lastmod>2025-03-18T11:11:14+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/categories/virtualization/</loc>
+    <lastmod>2025-03-18T11:11:14+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/vmware/</loc>
+    <lastmod>2025-03-18T11:11:14+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/posts/esxiinitialconfiguration/esxi-initial-configuration/</loc>
+    <lastmod>2025-03-18T11:05:52+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/configuration/</loc>
+    <lastmod>2025-03-18T11:05:52+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/initial/</loc>
+    <lastmod>2025-03-18T11:05:52+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/esxiinstallation/esxi-installation/</loc>
     <lastmod>2025-03-09T23:13:13+01:00</lastmod>
   </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/</loc>
-    <lastmod>2025-03-09T23:13:13+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/virtualization/</loc>
-    <lastmod>2025-03-09T23:13:13+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/categories/virtualization/</loc>
-    <lastmod>2025-03-09T23:13:13+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/vmware/</loc>
-    <lastmod>2025-03-09T23:13:13+01:00</lastmod>
+    <loc>https://ittechnetworkk.github.io/posts/greoveripsec-lab/gre-over-ipsec-lab/</loc>
+    <lastmod>2025-02-21T22:19:46+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/cisco/</loc>
     <lastmod>2025-02-21T22:19:46+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/gre/</loc>
-    <lastmod>2025-02-21T22:19:46+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/posts/greoveripsec-lab/gre-over-ipsec-lab/</loc>
     <lastmod>2025-02-21T22:19:46+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/ios/</loc>
@@ -50,10 +83,10 @@
     <loc>https://ittechnetworkk.github.io/posts/gre-lab/gre-lab/</loc>
     <lastmod>2025-02-21T22:18:30+01:00</lastmod>
   </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/vrf-lite/</loc>
+    <loc>https://ittechnetworkk.github.io/posts/vrflitelab/vrf-lite/</loc>
     <lastmod>2025-02-21T02:36:28+01:00</lastmod>
   </url><url>
-    <loc>https://ittechnetworkk.github.io/posts/vrflitelab/vrf-lite/</loc>
+    <loc>https://ittechnetworkk.github.io/tags/vrf-lite/</loc>
     <lastmod>2025-02-21T02:36:28+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/kubernetes/</loc>
@@ -98,13 +131,7 @@
     <loc>https://ittechnetworkk.github.io/posts/sshserverconfiguration/ssh-server-configuration/</loc>
     <lastmod>2025-02-08T15:23:57+01:00</lastmod>
   </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/configuration/</loc>
-    <lastmod>2025-02-08T15:23:57+01:00</lastmod>
-  </url><url>
     <loc>https://ittechnetworkk.github.io/categories/linux/</loc>
-    <lastmod>2025-02-08T15:23:57+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/server/</loc>
     <lastmod>2025-02-08T15:23:57+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/ssh/</loc>
@@ -244,12 +271,6 @@
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/updog/updog/</loc>
     <lastmod>2024-10-11T22:57:40+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/windows/</loc>
-    <lastmod>2024-10-10T22:57:40+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/categories/windows/</loc>
-    <lastmod>2024-10-10T22:57:40+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/windowsservernicteaming/windows-server-nic-teaming/</loc>
     <lastmod>2024-10-10T22:57:40+01:00</lastmod>

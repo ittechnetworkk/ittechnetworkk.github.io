@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ad on ittechnetworkk</title>
+    <link>https://ittechnetworkk.github.io/tags/ad/</link>
+    <description>Recent content in Ad on ittechnetworkk</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>ittechnetworkk</copyright>
+    <lastBuildDate>Tue, 18 Mar 2025 11:14:26 +0100</lastBuildDate>
+    <atom:link href="https://ittechnetworkk.github.io/tags/ad/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[EN] Active Directory Domain Controller Installation</title>
+      <link>https://ittechnetworkk.github.io/posts/addcinstallation/ad-dc-installation/</link>
+      <pubDate>Tue, 18 Mar 2025 11:14:26 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/addcinstallation/ad-dc-installation/</guid>
+      <description>Hi everyone,&#xA;In this article, I will show you how to install the Active Directory Domain Controller role on a Windows Server.&#xA;I will be using Windows Server 2022, which is already installed.&#xA;The installation process will be as follows:&#xA;Before starting the installation, we need to configure a few things.&#xA;First, we need to assign a static IP address to our server.&#xA;Next, we need to assign a hostname. Please note that this process will require a restart.</description>
+    </item>
+  </channel>
+</rss>
