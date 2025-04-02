@@ -7,8 +7,36 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Tue, 18 Mar 2025 11:14:26 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 02 Apr 2025 22:02:02 +0200</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cisco</title>
+      <link>https://ittechnetworkk.github.io/tags/cisco/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/cisco/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cisco IOS</title>
+      <link>https://ittechnetworkk.github.io/tags/cisco-ios/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/cisco-ios/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Juniper</title>
+      <link>https://ittechnetworkk.github.io/tags/juniper/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/juniper/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Junos</title>
+      <link>https://ittechnetworkk.github.io/tags/junos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/junos/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Ad</title>
       <link>https://ittechnetworkk.github.io/tags/ad/</link>
@@ -77,13 +105,6 @@
       <link>https://ittechnetworkk.github.io/tags/initial/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/initial/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Cisco</title>
-      <link>https://ittechnetworkk.github.io/tags/cisco/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ittechnetworkk.github.io/tags/cisco/</guid>
       <description></description>
     </item>
     <item>
@@ -273,20 +294,6 @@
       <link>https://ittechnetworkk.github.io/tags/proxmox/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/proxmox/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Juniper</title>
-      <link>https://ittechnetworkk.github.io/tags/juniper/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ittechnetworkk.github.io/tags/juniper/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Junos</title>
-      <link>https://ittechnetworkk.github.io/tags/junos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ittechnetworkk.github.io/tags/junos/</guid>
       <description></description>
     </item>
     <item>

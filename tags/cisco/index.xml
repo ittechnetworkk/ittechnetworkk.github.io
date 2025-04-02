@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Fri, 21 Feb 2025 22:19:46 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 02 Apr 2025 22:02:02 +0200</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/tags/cisco/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[EN] Dynamic Trunking Protocol (DTP)</title>
+      <link>https://ittechnetworkk.github.io/posts/dynamictrunkingprotocol/dynamic-trunking-protocol/</link>
+      <pubDate>Wed, 02 Apr 2025 22:02:02 +0200</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/dynamictrunkingprotocol/dynamic-trunking-protocol/</guid>
+      <description>Hi everyone, in this article, I will explain what DTP is and how it works.&#xA;DTP is a protocol that allows switch ports to be configured automatically.&#xA;In simple terms, if you change the mode of one port on a switch, the corresponding port on the connected switch will automatically adjust its mode. You can refer to the table below to see the possible mode combinations.&#xA;For example, if one port of a switch is dynamic auto and the port to which the other switch is connected is trunk, the ports will automatically switch to trunk mode</description>
+    </item>
     <item>
       <title>[EN] GRE Over IPSEC LAB</title>
       <link>https://ittechnetworkk.github.io/posts/greoveripsec-lab/gre-over-ipsec-lab/</link>

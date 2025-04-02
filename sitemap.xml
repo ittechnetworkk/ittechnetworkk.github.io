@@ -8,13 +8,46 @@
     <loc>https://ittechnetworkk.github.io/posts/</loc>
     <lastmod>2025-05-13T12:22:24+01:00</lastmod>
   </url><url>
+    <loc>https://ittechnetworkk.github.io/posts/dynamictrunkingprotocol/dynamic-trunking-protocol/</loc>
+    <lastmod>2025-04-02T22:02:02+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/categories/</loc>
+    <lastmod>2025-04-02T22:02:02+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/cisco/</loc>
+    <lastmod>2025-04-02T22:02:02+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/cisco-ios/</loc>
+    <lastmod>2025-04-02T22:02:02+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/categories/network/</loc>
+    <lastmod>2025-04-02T22:02:02+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/</loc>
+    <lastmod>2025-04-02T22:02:02+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/posts/juniperdynamicrouting/junos-dynamic-routing/</loc>
+    <lastmod>2025-04-02T21:49:12+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/juniper/</loc>
+    <lastmod>2025-04-02T21:49:12+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/junos/</loc>
+    <lastmod>2025-04-02T21:49:12+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/posts/juniperstaticrouting/junos-static-routing/</loc>
+    <lastmod>2025-04-02T21:46:23+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/posts/juniper-user-accounts/junos-user-accounts/</loc>
+    <lastmod>2025-04-02T21:40:28+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/posts/juniper-initial-configuration/junos-initiate-config/</loc>
+    <lastmod>2025-04-02T21:05:37+02:00</lastmod>
+  </url><url>
     <loc>https://ittechnetworkk.github.io/posts/addcinstallation/ad-dc-installation/</loc>
     <lastmod>2025-03-18T11:14:26+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/ad/</loc>
-    <lastmod>2025-03-18T11:14:26+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/categories/</loc>
     <lastmod>2025-03-18T11:14:26+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/dc/</loc>
@@ -24,9 +57,6 @@
     <lastmod>2025-03-18T11:14:26+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/server/</loc>
-    <lastmod>2025-03-18T11:14:26+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/</loc>
     <lastmod>2025-03-18T11:14:26+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/windows/</loc>
@@ -65,9 +95,6 @@
     <loc>https://ittechnetworkk.github.io/posts/greoveripsec-lab/gre-over-ipsec-lab/</loc>
     <lastmod>2025-02-21T22:19:46+01:00</lastmod>
   </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/cisco/</loc>
-    <lastmod>2025-02-21T22:19:46+01:00</lastmod>
-  </url><url>
     <loc>https://ittechnetworkk.github.io/tags/gre/</loc>
     <lastmod>2025-02-21T22:19:46+01:00</lastmod>
   </url><url>
@@ -75,9 +102,6 @@
     <lastmod>2025-02-21T22:19:46+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/ipsec/</loc>
-    <lastmod>2025-02-21T22:19:46+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/categories/network/</loc>
     <lastmod>2025-02-21T22:19:46+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/gre-lab/gre-lab/</loc>
@@ -236,13 +260,7 @@
     <loc>https://ittechnetworkk.github.io/posts/greoveripsec/greoveripsec/</loc>
     <lastmod>2024-11-22T22:57:40+01:00</lastmod>
   </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/juniper/</loc>
-    <lastmod>2024-11-22T22:57:40+01:00</lastmod>
-  </url><url>
     <loc>https://ittechnetworkk.github.io/posts/junosrollback/junos-rollback/</loc>
-    <lastmod>2024-11-22T22:57:40+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/junos/</loc>
     <lastmod>2024-11-22T22:57:40+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/tunnelling/</loc>
