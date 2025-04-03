@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Cisco IOS Config Generator | ittechnetworkk</title>
+  <link rel = 'canonical' href = 'https://ittechnetworkk.github.io/tools/cisco-ios-config/'>
+  <meta name="description" content="Hi, I’m Soner, and this is my personal blog where I share insights, guides, and articles on various tech topics, including Networking, Linux, Windows, Virtualization, Firewalls, IoT, and more. I&#39;m constantly learning and exploring new technologies, and this blog is where I document my journey. ">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:url" content="https://ittechnetworkk.github.io/tools/cisco-ios-config/">
+  <meta property="og:site_name" content="ittechnetworkk">
+  <meta property="og:title" content="Cisco IOS Config Generator">
+  <meta property="og:description" content="Cisco IOS Config Generator Generate Cisco IOS configuration files for common network setups. Customize configurations for routers, switches, and more.
+Basic Setup Interfaces Routing Security Services AAA Device Information Hostname: Domain Name: Enable Secret: Console Password: VTY Password: MOTD Banner: Interface Configuration Interface: GigabitEthernet0/0 GigabitEthernet0/1 FastEthernet0/0 FastEthernet0/1 Serial0/0/0 Serial0/0/1 Loopback0 Remove IP Address: Subnet Mask: Interface Enabled Add Description Description: Add Interface Routing Configuration Routing Protocol: None Static Routes RIP EIGRP OSPF Static Routes Destination Network: Subnet Mask: Next Hop: Remove Add Static Route RIP Configuration RIP Version: Version 1 Version 2 Networks (one per line): EIGRP Configuration Autonomous System Number: Networks (one per line): OSPF Configuration Process ID: Router ID (optional): Networks: Security Settings Enable SSH Auto-configure SSH requirements Adds domain-name if needed and places the RSA key command at the beginning of the configuration SSH Version: 1 2 Username: Password: SSH Key Generation SSH requires RSA keys to be generated on the device.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tools">
+    <meta property="article:published_time" content="2024-04-03T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-04-03T00:00:00+00:00">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Cisco IOS Config Generator">
+  <meta name="twitter:description" content="Cisco IOS Config Generator Generate Cisco IOS configuration files for common network setups. Customize configurations for routers, switches, and more.
+Basic Setup Interfaces Routing Security Services AAA Device Information Hostname: Domain Name: Enable Secret: Console Password: VTY Password: MOTD Banner: Interface Configuration Interface: GigabitEthernet0/0 GigabitEthernet0/1 FastEthernet0/0 FastEthernet0/1 Serial0/0/0 Serial0/0/1 Loopback0 Remove IP Address: Subnet Mask: Interface Enabled Add Description Description: Add Interface Routing Configuration Routing Protocol: None Static Routes RIP EIGRP OSPF Static Routes Destination Network: Subnet Mask: Next Hop: Remove Add Static Route RIP Configuration RIP Version: Version 1 Version 2 Networks (one per line): EIGRP Configuration Autonomous System Number: Networks (one per line): OSPF Configuration Process ID: Router ID (optional): Networks: Security Settings Enable SSH Auto-configure SSH requirements Adds domain-name if needed and places the RSA key command at the beginning of the configuration SSH Version: 1 2 Username: Password: SSH Key Generation SSH requires RSA keys to be generated on the device.">
+
+  
+  
+    
+  
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://ittechnetworkk.github.io/css/styles.8e7ef44bca90dd1b40eb31600e59ec1f88f1c79e72f6b875bbb4138841bbb7c2fa89c96a10140ef17070530fd3c6d7bfdb9018a552fef0a3fdeb62d172f4e72a.css" integrity="sha512-jn70S8qQ3RtA6zFgDlnsH4jxx55y9rh1u7QTiEG7t8L6iclqEBQO8XBwUw/Txte/25AYpVL&#43;8KP962LRcvTnKg==">
+  
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2717836175117539" crossorigin="anonymous"></script>
+
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://ittechnetworkk.github.io/images/favicon.ico" />
+
+  
+</head> 
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+    
+
+<link rel="stylesheet" href="/css/custom.min.017a5bae49533001feec102384d37dea16c681fe9f1bc940f0ca4ac618f8b249.css">
+
+<header id="header">
+  <a href="https://ittechnetworkk.github.io/">
+  
+    <div id="logo" style="background-image: url(https://ittechnetworkk.github.io/images/logo.png)"></div>
+  
+  <div id="title">
+    <h1>ittechnetworkk</h1>
+  </div>
+  </a>
+  <div id="nav" class="nav-container">
+    <ul>
+      <li class="icon">
+        <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x" aria-hidden="true"></i></a>
+      </li>
+      
+        
+          <li>
+            <a href="/">Home</a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/posts">Posts</a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/projects">Projects</a>
+          </li>
+        
+      
+        
+          <li class="has-dropdown">
+            <a href="/tools/">Tools</a>
+            <div class="nav-dropdown">
+              
+                <a href="/what-is-my-ip" >What is my IP?</a>
+              
+                <a href="/subnet-calculator" >Subnet Calculator</a>
+              
+                <a href="/cisco-ios-config" >Cisco IOS Config Generator</a>
+              
+                <a href="/junos-config" >Junos Config Generator</a>
+              
+            </div>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/categories/">Categories</a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/tags/">Tags</a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/resources">Resources</a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/library">Library</a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/about">About</a>
+          </li>
+        
+      
+    </ul>
+  </div>
+</header>
+
+
+
+    
+<article class="post" id="tools">
+    
+<link rel="stylesheet" href="/css/cisco-ios-config.min.7ff4035440aca02b070e7ae045285c2faad0bb1456947d2273b9fb403c0296c6.css">
+
+
+<script src="/js/cisco-ios-config.min.472b8c1a167608d191898128e7155a76cc786bbad10e28d953288a51d6340831.js"></script>
+
+<div class="tool-card">
+    <h1 class="tool-title">Cisco IOS Config Generator</h1>
+    <p class="tool-description">Generate Cisco IOS configuration files for common network setups. Customize configurations for routers, switches, and more.</p>
+
+    <div class="config-generator">
+        <div class="config-tabs">
+            <button class="tab-btn active" data-tab="basic">Basic Setup</button>
+            <button class="tab-btn" data-tab="interfaces">Interfaces</button>
+            <button class="tab-btn" data-tab="routing">Routing</button>
+            <button class="tab-btn" data-tab="security">Security</button>
+            <button class="tab-btn" data-tab="services">Services</button>
+            <button class="tab-btn" data-tab="aaa">AAA</button>
+        </div>
+
+        <div class="tab-content" id="basic-content" style="display: block;">
+            <div class="config-section">
+                <h3>Device Information</h3>
+                <div class="input-group">
+                    <label for="hostname">Hostname:</label>
+                    <input type="text" id="hostname" placeholder="Router1">
+                </div>
+                <div class="input-group">
+                    <label for="domain-name">Domain Name:</label>
+                    <input type="text" id="domain-name" placeholder="example.com">
+                </div>
+                <div class="input-group">
+                    <label for="enable-secret">Enable Secret:</label>
+                    <input type="password" id="enable-secret" placeholder="Enter enable secret">
+                </div>
+                <div class="input-group">
+                    <label for="console-password">Console Password:</label>
+                    <input type="password" id="console-password" placeholder="Enter console password">
+                </div>
+                <div class="input-group">
+                    <label for="vty-password">VTY Password:</label>
+                    <input type="password" id="vty-password" placeholder="Enter vty password">
+                </div>
+                <div class="input-group">
+                    <label for="banner-motd">MOTD Banner:</label>
+                    <textarea id="banner-motd" placeholder="Enter banner message of the day"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="interfaces-content" style="display: none;">
+            <div class="config-section">
+                <h3>Interface Configuration</h3>
+                <div id="interfaces-list">
+                    <div class="interface-item">
+                        <div class="interface-header">
+                            <div class="input-group">
+                                <label for="interface-type-0">Interface:</label>
+                                <select id="interface-type-0">
+                                    <option value="GigabitEthernet0/0">GigabitEthernet0/0</option>
+                                    <option value="GigabitEthernet0/1">GigabitEthernet0/1</option>
+                                    <option value="FastEthernet0/0">FastEthernet0/0</option>
+                                    <option value="FastEthernet0/1">FastEthernet0/1</option>
+                                    <option value="Serial0/0/0">Serial0/0/0</option>
+                                    <option value="Serial0/0/1">Serial0/0/1</option>
+                                    <option value="Loopback0">Loopback0</option>
+                                </select>
+                            </div>
+                            <button class="remove-interface" data-id="0">Remove</button>
+                        </div>
+                        <div class="interface-config">
+                            <div class="input-group">
+                                <label for="ip-address-0">IP Address:</label>
+                                <input type="text" id="ip-address-0" placeholder="192.168.1.1">
+                            </div>
+                            <div class="input-group">
+                                <label for="subnet-mask-0">Subnet Mask:</label>
+                                <input type="text" id="subnet-mask-0" placeholder="255.255.255.0">
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="interface-enabled-0" checked>
+                                <label for="interface-enabled-0">Interface Enabled</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="interface-description-enabled-0">
+                                <label for="interface-description-enabled-0">Add Description</label>
+                            </div>
+                            <div class="input-group description-input" id="description-group-0" style="display: none;">
+                                <label for="interface-description-0">Description:</label>
+                                <input type="text" id="interface-description-0" placeholder="LAN Interface">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="add-interface" class="add-btn">Add Interface</button>
+            </div>
+        </div>
+
+        <div class="tab-content" id="routing-content" style="display: none;">
+            <div class="config-section">
+                <h3>Routing Configuration</h3>
+                <div class="input-group">
+                    <label for="routing-protocol">Routing Protocol:</label>
+                    <select id="routing-protocol">
+                        <option value="none">None</option>
+                        <option value="static" selected>Static Routes</option>
+                        <option value="rip">RIP</option>
+                        <option value="eigrp">EIGRP</option>
+                        <option value="ospf">OSPF</option>
+                    </select>
+                </div>
+                
+                
+                <div id="static-routes-config" class="protocol-config" style="display: block;">
+                    <h4>Static Routes</h4>
+                    <div id="static-routes-list">
+                        <div class="static-route-item">
+                            <div class="input-group">
+                                <label for="route-destination-0">Destination Network:</label>
+                                <input type="text" id="route-destination-0" placeholder="192.168.2.0">
+                            </div>
+                            <div class="input-group">
+                                <label for="route-mask-0">Subnet Mask:</label>
+                                <input type="text" id="route-mask-0" placeholder="255.255.255.0">
+                            </div>
+                            <div class="input-group">
+                                <label for="next-hop-0">Next Hop:</label>
+                                <input type="text" id="next-hop-0" placeholder="10.0.0.2">
+                            </div>
+                            <button class="remove-route" data-id="0">Remove</button>
+                        </div>
+                    </div>
+                    <button id="add-static-route" class="add-btn">Add Static Route</button>
+                </div>
+                
+                
+                <div id="rip-config" class="protocol-config" style="display: none;">
+                    <h4>RIP Configuration</h4>
+                    <div class="input-group">
+                        <label for="rip-version">RIP Version:</label>
+                        <select id="rip-version">
+                            <option value="1">Version 1</option>
+                            <option value="2" selected>Version 2</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="rip-networks">Networks (one per line):</label>
+                        <textarea id="rip-networks" placeholder="192.168.1.0&#10;10.0.0.0"></textarea>
+                    </div>
+                </div>
+                
+                
+                <div id="eigrp-config" class="protocol-config" style="display: none;">
+                    <h4>EIGRP Configuration</h4>
+                    <div class="input-group">
+                        <label for="eigrp-as">Autonomous System Number:</label>
+                        <input type="number" id="eigrp-as" placeholder="100" min="1" max="65535">
+                    </div>
+                    <div class="input-group">
+                        <label for="eigrp-networks">Networks (one per line):</label>
+                        <textarea id="eigrp-networks" placeholder="192.168.1.0 0.0.0.255&#10;10.0.0.0 0.255.255.255"></textarea>
+                    </div>
+                </div>
+                
+                
+                <div id="ospf-config" class="protocol-config" style="display: none;">
+                    <h4>OSPF Configuration</h4>
+                    <div class="input-group">
+                        <label for="ospf-process-id">Process ID:</label>
+                        <input type="number" id="ospf-process-id" placeholder="1" min="1" max="65535">
+                    </div>
+                    <div class="input-group">
+                        <label for="ospf-router-id">Router ID (optional):</label>
+                        <input type="text" id="ospf-router-id" placeholder="1.1.1.1">
+                    </div>
+                    <div class="input-group">
+                        <label for="ospf-networks">Networks:</label>
+                        <textarea id="ospf-networks" placeholder="192.168.1.0 0.0.0.255 area 0&#10;10.0.0.0 0.255.255.255 area 0"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="security-content">
+            <div class="config-section">
+                <h3>Security Settings</h3>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="ssh-enabled">
+                    <label for="ssh-enabled">Enable SSH</label>
+                </div>
+                <div id="ssh-config" style="display: none;">
+                    <div class="checkbox-group auto-config-option">
+                        <input type="checkbox" id="ssh-auto-config" checked>
+                        <label for="ssh-auto-config">Auto-configure SSH requirements</label>
+                        <div class="tooltip">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="16" x2="12" y2="12"></line>
+                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                            </svg>
+                            <span class="tooltip-text">Adds domain-name if needed and places the RSA key command at the beginning of the configuration</span>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="ssh-version">SSH Version:</label>
+                        <select id="ssh-version">
+                            <option value="1">1</option>
+                            <option value="2" selected>2</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="ssh-username">Username:</label>
+                        <input type="text" id="ssh-username" placeholder="admin">
+                    </div>
+                    <div class="input-group">
+                        <label for="ssh-password">Password:</label>
+                        <input type="password" id="ssh-password" placeholder="Enter password">
+                    </div>
+                    <div class="ssh-info-panel">
+                        <div class="ssh-info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="16" x2="12" y2="12"></line>
+                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                            </svg>
+                        </div>
+                        <div class="ssh-info-content">
+                            <strong>SSH Key Generation</strong>
+                            <p>SSH requires RSA keys to be generated on the device. The <code>crypto key generate rsa modulus 2048</code> command will be included in your configuration.</p>
+                            <p><strong>Note:</strong> This command must be run first when applying your configuration to the device.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="acl-enabled">
+                    <label for="acl-enabled">Add Access Control Lists</label>
+                </div>
+                <div id="acl-config" style="display: none;">
+                    <div class="input-group">
+                        <label for="acl-type">ACL Type:</label>
+                        <select id="acl-type">
+                            <option value="standard">Standard ACL</option>
+                            <option value="extended">Extended ACL</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="acl-number">ACL Number:</label>
+                        <input type="number" id="acl-number" placeholder="100" min="1" max="199">
+                    </div>
+                    <div id="acl-entries">
+                        <div class="acl-entry">
+                            <div class="input-group">
+                                <label for="acl-action-0">Action:</label>
+                                <select id="acl-action-0">
+                                    <option value="permit">Permit</option>
+                                    <option value="deny">Deny</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="acl-source-0">Source:</label>
+                                <input type="text" id="acl-source-0" placeholder="any or IP address">
+                            </div>
+                            <div class="extended-acl-fields" style="display: none;">
+                                <div class="input-group">
+                                    <label for="acl-destination-0">Destination:</label>
+                                    <input type="text" id="acl-destination-0" placeholder="any or IP address">
+                                </div>
+                                <div class="input-group">
+                                    <label for="acl-protocol-0">Protocol:</label>
+                                    <select id="acl-protocol-0">
+                                        <option value="ip">IP</option>
+                                        <option value="tcp">TCP</option>
+                                        <option value="udp">UDP</option>
+                                        <option value="icmp">ICMP</option>
+                                    </select>
+                                </div>
+                                <div class="port-fields" style="display: none;">
+                                    <div class="input-group">
+                                        <label for="acl-sport-0">Source Port:</label>
+                                        <input type="text" id="acl-sport-0" placeholder="any or port number">
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="acl-dport-0">Destination Port:</label>
+                                        <input type="text" id="acl-dport-0" placeholder="any or port number">
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="remove-acl-entry" data-id="0">Remove</button>
+                        </div>
+                    </div>
+                    <button id="add-acl-entry" class="add-btn">Add ACL Entry</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="services-content">
+            <div class="config-section">
+                <h3>Network Services</h3>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="ntp-enabled">
+                    <label for="ntp-enabled">Enable NTP</label>
+                </div>
+                <div id="ntp-config" style="display: none;">
+                    <div class="input-group">
+                        <label for="ntp-servers">NTP Servers (one per line):</label>
+                        <textarea id="ntp-servers" placeholder="10.0.0.1&#10;10.0.0.2"></textarea>
+                    </div>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="dhcp-enabled">
+                    <label for="dhcp-enabled">Configure DHCP Server</label>
+                </div>
+                <div id="dhcp-config" style="display: none;">
+                    <div id="dhcp-pools">
+                        <div class="dhcp-pool">
+                            <div class="input-group">
+                                <label for="dhcp-name-0">Pool Name:</label>
+                                <input type="text" id="dhcp-name-0" placeholder="LAN_POOL">
+                            </div>
+                            <div class="input-group">
+                                <label for="dhcp-network-0">Network:</label>
+                                <input type="text" id="dhcp-network-0" placeholder="192.168.1.0">
+                            </div>
+                            <div class="input-group">
+                                <label for="dhcp-mask-0">Subnet Mask:</label>
+                                <input type="text" id="dhcp-mask-0" placeholder="255.255.255.0">
+                            </div>
+                            <div class="input-group">
+                                <label for="dhcp-gateway-0">Default Gateway:</label>
+                                <input type="text" id="dhcp-gateway-0" placeholder="192.168.1.1">
+                            </div>
+                            <div class="input-group">
+                                <label for="dhcp-dns-0">DNS Servers (comma separated):</label>
+                                <input type="text" id="dhcp-dns-0" placeholder="8.8.8.8, 8.8.4.4">
+                            </div>
+                            <div class="input-group">
+                                <label for="dhcp-domain-0">Domain Name:</label>
+                                <input type="text" id="dhcp-domain-0" placeholder="example.com">
+                            </div>
+                            <div class="input-group">
+                                <label for="dhcp-lease-0">Lease Time (days):</label>
+                                <input type="number" id="dhcp-lease-0" placeholder="7" min="1" max="365">
+                            </div>
+                            <button class="remove-dhcp-pool" data-id="0">Remove</button>
+                        </div>
+                    </div>
+                    <button id="add-dhcp-pool" class="add-btn">Add DHCP Pool</button>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="syslog-enabled">
+                    <label for="syslog-enabled">Configure Syslog</label>
+                </div>
+                <div id="syslog-config" style="display: none;">
+                    <div class="input-group">
+                        <label for="syslog-server">Syslog Server:</label>
+                        <input type="text" id="syslog-server" placeholder="10.0.0.100">
+                    </div>
+                    <div class="input-group">
+                        <label for="syslog-facility">Facility:</label>
+                        <select id="syslog-facility">
+                            <option value="local0">local0</option>
+                            <option value="local1">local1</option>
+                            <option value="local2">local2</option>
+                            <option value="local3">local3</option>
+                            <option value="local4">local4</option>
+                            <option value="local5">local5</option>
+                            <option value="local6">local6</option>
+                            <option value="local7">local7</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="syslog-level">Logging Level:</label>
+                        <select id="syslog-level">
+                            <option value="emergencies">Emergencies (0)</option>
+                            <option value="alerts">Alerts (1)</option>
+                            <option value="critical">Critical (2)</option>
+                            <option value="errors">Errors (3)</option>
+                            <option value="warnings">Warnings (4)</option>
+                            <option value="notifications">Notifications (5)</option>
+                            <option value="informational" selected>Informational (6)</option>
+                            <option value="debugging">Debugging (7)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="aaa-content">
+            <div class="config-section">
+                <h3>Authentication, Authorization, and Accounting</h3>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="aaa-new-model">
+                    <label for="aaa-new-model">Enable AAA New Model</label>
+                </div>
+                
+                <div id="aaa-config" style="display: none;">
+                    
+                    <h4>Authentication Servers</h4>
+                    <div class="input-group">
+                        <label for="aaa-method">Default Authentication Method:</label>
+                        <select id="aaa-method">
+                            <option value="local">Local</option>
+                            <option value="tacacs+">TACACS+</option>
+                            <option value="radius">RADIUS</option>
+                        </select>
+                    </div>
+                    
+                    
+                    <div id="tacacs-config" class="server-config" style="display: none;">
+                        <div id="tacacs-servers">
+                            <div class="server-item">
+                                <div class="input-group">
+                                    <label for="tacacs-server-address-0">Server Address:</label>
+                                    <input type="text" id="tacacs-server-address-0" placeholder="192.168.1.10">
+                                </div>
+                                <div class="input-group">
+                                    <label for="tacacs-server-key-0">Server Key:</label>
+                                    <input type="password" id="tacacs-server-key-0" placeholder="Enter server key">
+                                </div>
+                                <div class="input-group">
+                                    <label for="tacacs-server-port-0">Server Port:</label>
+                                    <input type="number" id="tacacs-server-port-0" placeholder="49" value="49">
+                                </div>
+                                <button class="remove-server" data-id="0">Remove</button>
+                            </div>
+                        </div>
+                        <button id="add-tacacs-server" class="add-btn">Add TACACS+ Server</button>
+                    </div>
+                    
+                    
+                    <div id="radius-config" class="server-config" style="display: none;">
+                        <div id="radius-servers">
+                            <div class="server-item">
+                                <div class="input-group">
+                                    <label for="radius-server-address-0">Server Address:</label>
+                                    <input type="text" id="radius-server-address-0" placeholder="192.168.1.20">
+                                </div>
+                                <div class="input-group">
+                                    <label for="radius-server-key-0">Server Key:</label>
+                                    <input type="password" id="radius-server-key-0" placeholder="Enter server key">
+                                </div>
+                                <div class="input-group">
+                                    <label for="radius-server-auth-port-0">Authentication Port:</label>
+                                    <input type="number" id="radius-server-auth-port-0" placeholder="1812" value="1812">
+                                </div>
+                                <div class="input-group">
+                                    <label for="radius-server-acct-port-0">Accounting Port:</label>
+                                    <input type="number" id="radius-server-acct-port-0" placeholder="1813" value="1813">
+                                </div>
+                                <button class="remove-server" data-id="0">Remove</button>
+                            </div>
+                        </div>
+                        <button id="add-radius-server" class="add-btn">Add RADIUS Server</button>
+                    </div>
+                    
+                    
+                    <h4>Authentication Methods</h4>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="auth-login-enabled">
+                        <label for="auth-login-enabled">Configure Login Authentication</label>
+                    </div>
+                    
+                    <div id="auth-login-config" style="display: none;">
+                        <div class="input-group">
+                            <label for="auth-login-list">Authentication List Name:</label>
+                            <input type="text" id="auth-login-list" placeholder="default" value="default">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Authentication Methods (in order):</label>
+                            <div class="method-list" id="login-method-list">
+                                <div class="method-item">
+                                    <select class="auth-method">
+                                        <option value="local">local</option>
+                                        <option value="group tacacs+">group tacacs+</option>
+                                        <option value="group radius">group radius</option>
+                                        <option value="enable">enable</option>
+                                    </select>
+                                    <button class="move-up">↑</button>
+                                    <button class="move-down">↓</button>
+                                    <button class="remove-method">×</button>
+                                </div>
+                            </div>
+                            <button id="add-login-method" class="add-btn small">Add Method</button>
+                        </div>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="auth-enable-enabled">
+                        <label for="auth-enable-enabled">Configure Enable Authentication</label>
+                    </div>
+                    
+                    <div id="auth-enable-config" style="display: none;">
+                        <div class="input-group">
+                            <label for="auth-enable-list">Authentication List Name:</label>
+                            <input type="text" id="auth-enable-list" placeholder="default" value="default">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Authentication Methods (in order):</label>
+                            <div class="method-list" id="enable-method-list">
+                                <div class="method-item">
+                                    <select class="auth-method">
+                                        <option value="enable">enable</option>
+                                        <option value="group tacacs+">group tacacs+</option>
+                                        <option value="group radius">group radius</option>
+                                        <option value="local">local</option>
+                                    </select>
+                                    <button class="move-up">↑</button>
+                                    <button class="move-down">↓</button>
+                                    <button class="remove-method">×</button>
+                                </div>
+                            </div>
+                            <button id="add-enable-method" class="add-btn small">Add Method</button>
+                        </div>
+                    </div>
+                    
+                    
+                    <h4>Authorization</h4>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="author-exec-enabled">
+                        <label for="author-exec-enabled">Configure EXEC Authorization</label>
+                    </div>
+                    
+                    <div id="author-exec-config" style="display: none;">
+                        <div class="input-group">
+                            <label for="author-exec-list">Authorization List Name:</label>
+                            <input type="text" id="author-exec-list" placeholder="default" value="default">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Authorization Methods (in order):</label>
+                            <div class="method-list" id="exec-author-method-list">
+                                <div class="method-item">
+                                    <select class="auth-method">
+                                        <option value="group tacacs+">group tacacs+</option>
+                                        <option value="group radius">group radius</option>
+                                        <option value="local">local</option>
+                                        <option value="if-authenticated">if-authenticated</option>
+                                    </select>
+                                    <button class="move-up">↑</button>
+                                    <button class="move-down">↓</button>
+                                    <button class="remove-method">×</button>
+                                </div>
+                            </div>
+                            <button id="add-exec-author-method" class="add-btn small">Add Method</button>
+                        </div>
+                    </div>
+                    
+                    
+                    <h4>Accounting</h4>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="acct-exec-enabled">
+                        <label for="acct-exec-enabled">Configure EXEC Accounting</label>
+                    </div>
+                    
+                    <div id="acct-exec-config" style="display: none;">
+                        <div class="input-group">
+                            <label for="acct-exec-list">Accounting List Name:</label>
+                            <input type="text" id="acct-exec-list" placeholder="default" value="default">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="acct-exec-record">Record Type:</label>
+                            <select id="acct-exec-record">
+                                <option value="start-stop">start-stop</option>
+                                <option value="stop-only">stop-only</option>
+                                <option value="wait-start">wait-start</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Accounting Methods:</label>
+                            <div class="method-list" id="exec-acct-method-list">
+                                <div class="method-item">
+                                    <select class="auth-method">
+                                        <option value="group tacacs+">group tacacs+</option>
+                                        <option value="group radius">group radius</option>
+                                    </select>
+                                    <button class="move-up">↑</button>
+                                    <button class="move-down">↓</button>
+                                    <button class="remove-method">×</button>
+                                </div>
+                            </div>
+                            <button id="add-exec-acct-method" class="add-btn small">Add Method</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="config-actions">
+            <button id="generate-config" class="generate-btn">Generate Configuration</button>
+            <button id="reset-form" class="reset-btn">Reset Form</button>
+            <button id="validate-config" class="validate-btn">Validate Configuration</button>
+        </div>
+
+        <div id="validation-container" style="display: none;">
+            <h3>Configuration Validation Results:</h3>
+            <div class="validation-summary">
+                <div class="validation-stats">
+                    <span id="validation-errors" class="validation-count error">0 Errors</span>
+                    <span id="validation-warnings" class="validation-count warning">0 Warnings</span>
+                    <span id="validation-info" class="validation-count info">0 Suggestions</span>
+                </div>
+                <button id="close-validation" class="close-validation-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div id="validation-results" class="validation-results">
+                
+            </div>
+        </div>
+
+        <div id="config-output-container" style="display: none;">
+            <h3>Generated Configuration:</h3>
+            <div class="copy-container">
+                <button id="copy-config" class="copy-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="copy-icon">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    Copy Configuration
+                </button>
+                <span id="copy-tooltip" class="copy-tooltip">Copied!</span>
+            </div>
+            <pre id="config-output" class="config-output"></pre>
+        </div>
+    </div>
+
+    <div class="features-list">
+        <h3>Features</h3>
+        <ul>
+            <li>Basic device configuration</li>
+            <li>Interface configuration</li>
+            <li>Routing protocols (Static, RIP, EIGRP, OSPF)</li>
+            <li>Security settings (SSH, ACLs)</li>
+            <li>Network services (NTP, DHCP, Syslog)</li>
+            <li>Copy-ready configuration files</li>
+        </ul>
+    </div>
+</div> 
+
+</article>
+
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2025  ittechnetworkk 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/projects">Projects</a></li>
+         
+        <li><a href="/tools/">Tools</a></li>
+         
+        <li><a href="/categories/">Categories</a></li>
+         
+        <li><a href="/tags/">Tags</a></li>
+         
+        <li><a href="/resources">Resources</a></li>
+         
+        <li><a href="/library">Library</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+</html>

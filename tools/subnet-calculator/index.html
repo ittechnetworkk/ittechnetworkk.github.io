@@ -10,7 +10,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> Subnet Calculator | ittechnetworkk</title>
   <link rel = 'canonical' href = 'https://ittechnetworkk.github.io/tools/subnet-calculator/'>
-  <meta name="description" content="Hello, I am Soner, in this blog page, I share articles about Network, Linux, Windows, Virtualization, Firewall, IoT etc. technologies. ">
+  <meta name="description" content="Hi, I’m Soner, and this is my personal blog where I share insights, guides, and articles on various tech topics, including Networking, Linux, Windows, Virtualization, Firewalls, IoT, and more. I&#39;m constantly learning and exploring new technologies, and this blog is where I document my journey. ">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
@@ -106,6 +106,10 @@
               
                 <a href="/subnet-calculator" >Subnet Calculator</a>
               
+                <a href="/cisco-ios-config" >Cisco IOS Config Generator</a>
+              
+                <a href="/junos-config" >Junos Config Generator</a>
+              
             </div>
           </li>
         
@@ -118,13 +122,19 @@
       
         
           <li>
+            <a href="/tags/">Tags</a>
+          </li>
+        
+      
+        
+          <li>
             <a href="/resources">Resources</a>
           </li>
         
       
         
           <li>
-            <a href="/tags/">Tags</a>
+            <a href="/library">Library</a>
           </li>
         
       
@@ -142,56 +152,42 @@
 
     
 <article class="post" id="tools">
-    <header>
-        <h1 class="post-title">Subnet Calculator</h1>
-    </header>
+    <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<pre><code>&lt;div class=&quot;subnet-calculator&quot;&gt;
+    &lt;div class=&quot;input-group&quot;&gt;
+        &lt;label for=&quot;ip&quot;&gt;IP Address (IPv4 or IPv6):&lt;/label&gt;
+        &lt;input type=&quot;text&quot; id=&quot;ip&quot; placeholder=&quot;e.g., 192.168.1.0 or 2001:db8::&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;input-group&quot;&gt;
+        &lt;label for=&quot;cidr&quot;&gt;CIDR Notation:&lt;/label&gt;
+        &lt;input type=&quot;number&quot; id=&quot;cidr&quot; min=&quot;0&quot; max=&quot;128&quot; placeholder=&quot;e.g., 24 for IPv4, 64 for IPv6&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;input-group&quot;&gt;
+        &lt;label for=&quot;numSubnets&quot;&gt;Number of Subnets (optional):&lt;/label&gt;
+        &lt;input type=&quot;number&quot; id=&quot;numSubnets&quot; min=&quot;0&quot; max=&quot;256&quot; placeholder=&quot;Leave empty for no subdivision&quot;&gt;
+    &lt;/div&gt;
+    &lt;button class=&quot;calculate-button&quot; onclick=&quot;calculateSubnet()&quot;&gt;Calculate&lt;/button&gt;
+    &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
 
-    
-    <link rel="stylesheet" href="/css/subnet-calculator.min.c829ca238b0afafd30eb43aa97b444de8f354b007bd7c152ed91dff2e2907d3f.css">
+&lt;div class=&quot;features-list&quot;&gt;
+    &lt;h3&gt;Features&lt;/h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;IPv4 and IPv6 support&lt;/li&gt;
+        &lt;li&gt;Binary representation of addresses&lt;/li&gt;
+        &lt;li&gt;Network &amp; Broadcast address calculation&lt;/li&gt;
+        &lt;li&gt;Usable IP range determination&lt;/li&gt;
+        &lt;li&gt;Wildcard mask calculation&lt;/li&gt;
+        &lt;li&gt;IP address classification&lt;/li&gt;
+        &lt;li&gt;Multiple subnet division calculator&lt;/li&gt;
+        &lt;li&gt;VLSM support&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+<!-- raw HTML omitted -->
 
-    
-    <script src="/js/subnet-calculator.min.0285b0b8939f2f0bc59e6e762964be4c08253c742bd8bd0819d35c56a71afcfc.js"></script>
-
-    <div class="post-content">
-        <h2>Our Tools and Services</h2>
-
-        <p>Welcome to our tools section! Here you'll find various online tools and services that we've developed to help make your work easier and more efficient.</p>
-
-        <div class="tools-container">
-            
-            <div class="tool-card">
-                <h4>Subnet Calculator</h4>
-                <p>Our Subnet Calculator helps network administrators and IT professionals quickly calculate subnet information including network address, broadcast address, usable IP range, and more.</p>
-                
-                <div class="subnet-calculator">
-                    <div class="input-group">
-                        <label for="ip">IP Address:</label>
-                        <input type="text" id="ip" placeholder="e.g., 192.168.1.0">
-                    </div>
-                    <div class="input-group">
-                        <label for="cidr">CIDR Notation (0-32):</label>
-                        <input type="number" id="cidr" min="0" max="32" placeholder="e.g., 24">
-                    </div>
-                    <button class="calculate-btn" onclick="calculateSubnet()">Calculate</button>
-                    <div id="result"></div>
-                </div>
-            </div>
-
-            
-        </div>
-
-        <div class="features-list">
-            <h3>Features</h3>
-            <ul>
-                <li>Professional-grade tools</li>
-                <li>Easy to use interfaces</li>
-                <li>Regular updates and improvements</li>
-                <li>Technical support</li>
-            </ul>
-        </div>
-
-        <p>Stay tuned for more tools and services. We're working hard to bring you solutions that will enhance your productivity and workflow.</p>
-    </div>
 </article>
 
 
@@ -213,9 +209,11 @@
          
         <li><a href="/categories/">Categories</a></li>
          
+        <li><a href="/tags/">Tags</a></li>
+         
         <li><a href="/resources">Resources</a></li>
          
-        <li><a href="/tags/">Tags</a></li>
+        <li><a href="/library">Library</a></li>
          
         <li><a href="/about">About</a></li>
         
