@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Wed, 02 Apr 2025 22:02:02 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 10 Apr 2025 00:05:20 +0200</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[EN] EvilTwin Project</title>
+      <link>https://ittechnetworkk.github.io/posts/eviltwin/eviltwin/</link>
+      <pubDate>Thu, 10 Apr 2025 00:05:20 +0200</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/eviltwin/eviltwin/</guid>
+      <description>Details coming soon.&#xA;Photos:&#xA;Videos:&#xA;Your browser does not support the video tag. Your browser does not support the video tag. Your browser does not support the video tag. Your browser does not support the video tag. </description>
+    </item>
     <item>
       <title>[EN] Dynamic Trunking Protocol (DTP)</title>
       <link>https://ittechnetworkk.github.io/posts/dynamictrunkingprotocol/dynamic-trunking-protocol/</link>

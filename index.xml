@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Wed, 02 Apr 2025 22:02:02 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 10 Apr 2025 00:05:20 +0200</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[EN] EvilTwin Project</title>
+      <link>https://ittechnetworkk.github.io/posts/eviltwin/eviltwin/</link>
+      <pubDate>Thu, 10 Apr 2025 00:05:20 +0200</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/eviltwin/eviltwin/</guid>
+      <description>Details coming soon.&#xA;Photos:&#xA;Videos:&#xA;Your browser does not support the video tag. Your browser does not support the video tag. Your browser does not support the video tag. Your browser does not support the video tag. </description>
+    </item>
     <item>
       <title>[EN] Dynamic Trunking Protocol (DTP)</title>
       <link>https://ittechnetworkk.github.io/posts/dynamictrunkingprotocol/dynamic-trunking-protocol/</link>
@@ -497,7 +504,7 @@
       <link>https://ittechnetworkk.github.io/library/</link>
       <pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/library/</guid>
-      <description>📚 My Personal Library Welcome to my personal library collection! Here you&amp;rsquo;ll find a curated list of movies, TV series, and books that I&amp;rsquo;ve enjoyed or plan to enjoy in the future.&#xA;🎬 Movies Watched (91) Sixty Minutes (2024) - Action/Sport&#xA;Sonic the Hedgehog 3 (2024) - Action/Family/Comedy&#xA;Einstein and the Bomb (2024) - Documentary&#xA;The Camera (2024) - Thriller/Sci-fi&#xA;Space Cadet (2024) - Action/Adventure/Sci-fi&#xA;Escape Plan: The Extractors (2024) - Action/Thriller</description>
+      <description>📚 My Personal Library Welcome to my personal library collection! Here you&amp;rsquo;ll find a curated list of movies, TV series, and books that I&amp;rsquo;ve enjoyed or plan to enjoy in the future.&#xA;🎬 Movies Watched (95) Sixty Minutes (2024) - Action/Sport&#xA;Sonic the Hedgehog 3 (2024) - Action/Family/Comedy&#xA;Einstein and the Bomb (2024) - Documentary&#xA;The Camera (2024) - Thriller/Sci-fi&#xA;Space Cadet (2024) - Action/Adventure/Sci-fi&#xA;Escape Plan: The Extractors (2024) - Action/Thriller</description>
     </item>
     <item>
       <title>OSPF Authentication</title>
@@ -630,7 +637,7 @@
       <link>https://ittechnetworkk.github.io/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/projects/</guid>
-      <description>Raspberry Pi e-Paper Uygulaması Raspberry Pi Zero ve E-Paper Ekran İle Saat Uygulaması.&#xA;View Project Details →&#xA;SkyForge Project SkyForge Project is a project that based on Raspberry Pi Zero that shows the weather, time, location and so on.&#xA;View Project Details →</description>
+      <description>Raspberry Pi e-Paper Uygulaması Raspberry Pi Zero ve E-Paper Ekran İle Saat Uygulaması.&#xA;View Project Details →&#xA;SkyForge Project SkyForge Project is a project that based on Raspberry Pi Zero that shows the weather, time, location and so on.&#xA;View Project Details →&#xA;EvilTwin Project EvilTwin Project is a project that based on ESP32 that provide us Deauth and EvilTwin attack.&#xA;View Project Details →</description>
     </item>
   </channel>
 </rss>
