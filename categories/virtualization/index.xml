@@ -7,8 +7,36 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Tue, 18 Mar 2025 11:11:14 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 19 Apr 2025 23:09:46 +0200</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/categories/virtualization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[EN] Vmware to Proxmox Migration</title>
+      <link>https://ittechnetworkk.github.io/posts/proxmoxvmwaremigration/vmware-to-proxmox-migration/</link>
+      <pubDate>Sat, 19 Apr 2025 23:09:46 +0200</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/proxmoxvmwaremigration/vmware-to-proxmox-migration/</guid>
+      <description>Hi everyone, in this article I will show you two methods for migrating virtual machines from VMware to Proxmox.&#xA;There are two ways to perform a VMware to Proxmox migration:&#xA;Manual Method: In this approach, you need to export the .vmdk and .ovf files from the ESXi host and import them into Proxmox using the following command:&#xA;qm importdisk &amp;lt;VM-ID&amp;gt; &amp;lt;TheNameOfvmdk&amp;gt; &amp;lt;StorageName&amp;gt; -format raw|qcow2 qm importdisk 100 Win22.vmdk local-lvm -format raw Automatic Method: This method leverages the VMware ESXi API to automate the process.</description>
+    </item>
+    <item>
+      <title>[EN] Proxmox Live Migration</title>
+      <link>https://ittechnetworkk.github.io/posts/proxmoxlivemigration/proxmox-live-migration/</link>
+      <pubDate>Sat, 19 Apr 2025 23:08:02 +0200</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/proxmoxlivemigration/proxmox-live-migration/</guid>
+      <description>Hi everyone, in this article I will show you how to migrate virtual machines between nodes where in the cluster.&#xA;I have 2 virtual machines running, one of them is Centos-7 on node-1 and the other one is WIN-SERVER-2022 on node-2.&#xA;I will migrate them vice versa at the same time and will start a ping in case to be able to see any outage.&#xA;Steps will be as follows.</description>
+    </item>
+    <item>
+      <title>[EN] Proxmox LACP</title>
+      <link>https://ittechnetworkk.github.io/posts/proxmoxlacp/proxmox-lacp/</link>
+      <pubDate>Sat, 19 Apr 2025 23:05:27 +0200</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/proxmoxlacp/proxmox-lacp/</guid>
+      <description>Hi everyone, in this article I will show you how to configure LACP between Proxmox and a L2 Cisco Switch.&#xA;LACP (Link Aggregation Control Protocol) is used to combine multiple physical interfaces into a single logical interface. This provides benefits such as load balancing, redundancy, and high availability.&#xA;When aiming for load balancing, redundancy, and high availability, LACP becomes an essential configuration.&#xA;Here&amp;rsquo;s how to configure:&#xA;L2 Cisco Switch:&#xA;I will use Fa0/1, Fa0/2 interfaces for LACP.</description>
+    </item>
+    <item>
+      <title>[EN] Proxmox Cluster Creation</title>
+      <link>https://ittechnetworkk.github.io/posts/proxmoxclustercreation/proxmox-cluster-creation/</link>
+      <pubDate>Sat, 19 Apr 2025 22:59:48 +0200</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/proxmoxclustercreation/proxmox-cluster-creation/</guid>
+      <description>Hi everyone, in this article I will show you how to create Proxmox Cluster and how a node joins to the cluster.&#xA;Creating Cluster on Proxmox is not that hard or complex thing.&#xA;I have 2 single Proxmox nodes, node-1 and node-2. I will create cluster on node-1 and will add node-2 to the cluster.&#xA;Steps are as follows.&#xA;The cluster has been successfully installed. It is time to join.</description>
+    </item>
     <item>
       <title>[EN] ESXi Creating Virtual Machine</title>
       <link>https://ittechnetworkk.github.io/posts/esxivmcreating/esxi-creating-virtual-machine/</link>

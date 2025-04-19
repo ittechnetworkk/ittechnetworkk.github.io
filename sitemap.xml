@@ -8,10 +8,37 @@
     <loc>https://ittechnetworkk.github.io/posts/</loc>
     <lastmod>2025-05-13T12:22:24+01:00</lastmod>
   </url><url>
-    <loc>https://ittechnetworkk.github.io/posts/eviltwin/eviltwin/</loc>
-    <lastmod>2025-04-10T00:05:20+02:00</lastmod>
+    <loc>https://ittechnetworkk.github.io/posts/proxmoxvmwaremigration/vmware-to-proxmox-migration/</loc>
+    <lastmod>2025-04-19T23:09:46+02:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/categories/</loc>
+    <lastmod>2025-04-19T23:09:46+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/proxmox/</loc>
+    <lastmod>2025-04-19T23:09:46+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/</loc>
+    <lastmod>2025-04-19T23:09:46+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/virtualization/</loc>
+    <lastmod>2025-04-19T23:09:46+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/categories/virtualization/</loc>
+    <lastmod>2025-04-19T23:09:46+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/posts/proxmoxlivemigration/proxmox-live-migration/</loc>
+    <lastmod>2025-04-19T23:08:02+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/virtualization-/</loc>
+    <lastmod>2025-04-19T23:08:02+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/posts/proxmoxlacp/proxmox-lacp/</loc>
+    <lastmod>2025-04-19T23:05:27+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/posts/proxmoxclustercreation/proxmox-cluster-creation/</loc>
+    <lastmod>2025-04-19T22:59:48+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/posts/eviltwin/eviltwin/</loc>
     <lastmod>2025-04-10T00:05:20+02:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/esp32/</loc>
@@ -24,9 +51,6 @@
     <lastmod>2025-04-10T00:05:20+02:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/categories/iot/</loc>
-    <lastmod>2025-04-10T00:05:20+02:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/</loc>
     <lastmod>2025-04-10T00:05:20+02:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/dynamictrunkingprotocol/dynamic-trunking-protocol/</loc>
@@ -84,12 +108,6 @@
     <lastmod>2025-03-18T11:11:14+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/esxi/</loc>
-    <lastmod>2025-03-18T11:11:14+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/virtualization/</loc>
-    <lastmod>2025-03-18T11:11:14+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/categories/virtualization/</loc>
     <lastmod>2025-03-18T11:11:14+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/vmware/</loc>
@@ -258,9 +276,6 @@
     <lastmod>2024-12-02T22:57:40+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</loc>
-    <lastmod>2024-12-02T22:57:40+01:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/proxmox/</loc>
     <lastmod>2024-12-02T22:57:40+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/asa5510ssh/asa5510-ssh/</loc>
