@@ -192,20 +192,12 @@ Since private IP addresses (e.">
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#there-are-3-types-of-nat">There are 3 types of NAT:</a></li>
-            <li><a href="#static-nat-configuration">Static NAT Configuration:</a></li>
-            <li><a href="#dynamic-nat-configuration">Dynamic NAT Configuration:</a></li>
-            <li><a href="#pat-configuration">PAT Configuration:</a></li>
-            <li><a href="#show-commands">Show Commands:</a></li>
-            <li><a href="#debugging-commands">Debugging Commands:</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
+    <li><a href="#there-are-3-types-of-nat"><strong>There are 3 types of NAT:</strong></a></li>
+    <li><a href="#static-nat-configuration"><strong>Static NAT Configuration:</strong></a></li>
+    <li><a href="#dynamic-nat-configuration"><strong>Dynamic NAT Configuration:</strong></a></li>
+    <li><a href="#pat-configuration"><strong>PAT Configuration:</strong></a></li>
+    <li><a href="#show-commands"><strong>Show Commands:</strong></a></li>
+    <li><a href="#debugging-commands"><strong>Debugging Commands:</strong></a></li>
   </ul>
 </nav>
     </div>
@@ -281,13 +273,13 @@ Since private IP addresses (e.">
 <p>NAT (Network Address Translation) is a method used in routers and firewalls that allows private IP addresses within a local network to access the public internet using a single or a few public IP addresses.</p>
 <p>Since private IP addresses (e.g., 192.168.x.x, 10.x.x.x, 172.16.x.x–172.31.x.x) are not routable on the internet, NAT translates these private IP addresses into a public IP before forwarding traffic. It also translates incoming public traffic back to the appropriate private IP inside the network.</p>
 <p>The primary reason NAT exists is because of the limited number of IPv4 addresses available globally.</p>
-<h4 id="there-are-3-types-of-nat">There are 3 types of NAT:</h4>
+<h2 id="there-are-3-types-of-nat"><strong>There are 3 types of NAT:</strong></h2>
 <ul>
 <li><strong>Static NAT:</strong> A single private IP is always mapped to the same public IP.</li>
 <li><strong>Dynamic NAT:</strong> Private IPs are mapped to a pool of public IPs, but not fixed; the router picks an available public IP dynamically.</li>
 <li><strong>PAT or NAT-Overload:</strong> Many private IPs are mapped to a single public IP using different ports.</li>
 </ul>
-<h4 id="static-nat-configuration">Static NAT Configuration:</h4>
+<h2 id="static-nat-configuration"><strong>Static NAT Configuration:</strong></h2>
 <pre tabindex="0"><code>R1&gt;enable
 R1#configure terminal
 R1(config)#int g0/0                                  
@@ -299,7 +291,7 @@ R1(config-if)#exit
 R1(config)#ip nat inside source static 192.168.1.1 50.65.84.74
 OR
 R1(config)#ip nat inside source static 192.168.1.1 interface g0/1
-</code></pre><h4 id="dynamic-nat-configuration">Dynamic NAT Configuration:</h4>
+</code></pre><h2 id="dynamic-nat-configuration"><strong>Dynamic NAT Configuration:</strong></h2>
 <pre tabindex="0"><code>R1&gt;enable
 R1#configure terminal
 R1(config)#int g0/0                                  
@@ -311,7 +303,7 @@ R1(config-if)#exit
 R1(config)#ip nat pool NATPool 80.60.50.10 80.60.50.20 netmask 255.255.255.0
 R1(config)#access-list 10 permit 192.168.1.0 0.0.0.255
 R1(config)#ip nat inside source list 10 pool NATPool
-</code></pre><h4 id="pat-configuration">PAT Configuration:</h4>
+</code></pre><h2 id="pat-configuration"><strong>PAT Configuration:</strong></h2>
 <pre tabindex="0"><code>R1&gt;enable
 R1#configure terminal
 R1(config)#int g0/0                                  
@@ -322,11 +314,11 @@ R1(config-if)#exit
 
 R1(config)#access-list 10 permit 192.168.1.0 0.0.0.255
 R1(config)#ip nat inside source list 10 interface g0/1 overload
-</code></pre><h4 id="show-commands">Show Commands:</h4>
+</code></pre><h2 id="show-commands"><strong>Show Commands:</strong></h2>
 <pre tabindex="0"><code>show ip nat translations
 show ip nat statistics
 show running-config | include nat
-</code></pre><h4 id="debugging-commands">Debugging Commands:</h4>
+</code></pre><h2 id="debugging-commands"><strong>Debugging Commands:</strong></h2>
 <pre tabindex="0"><code>debug ip nat
 debug ip nat detailed
 </code></pre><p>Thank you for taking time to read this article, I hope you will</p>
@@ -375,20 +367,12 @@ debug ip nat detailed
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#there-are-3-types-of-nat">There are 3 types of NAT:</a></li>
-            <li><a href="#static-nat-configuration">Static NAT Configuration:</a></li>
-            <li><a href="#dynamic-nat-configuration">Dynamic NAT Configuration:</a></li>
-            <li><a href="#pat-configuration">PAT Configuration:</a></li>
-            <li><a href="#show-commands">Show Commands:</a></li>
-            <li><a href="#debugging-commands">Debugging Commands:</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
+    <li><a href="#there-are-3-types-of-nat"><strong>There are 3 types of NAT:</strong></a></li>
+    <li><a href="#static-nat-configuration"><strong>Static NAT Configuration:</strong></a></li>
+    <li><a href="#dynamic-nat-configuration"><strong>Dynamic NAT Configuration:</strong></a></li>
+    <li><a href="#pat-configuration"><strong>PAT Configuration:</strong></a></li>
+    <li><a href="#show-commands"><strong>Show Commands:</strong></a></li>
+    <li><a href="#debugging-commands"><strong>Debugging Commands:</strong></a></li>
   </ul>
 </nav>
     </div>

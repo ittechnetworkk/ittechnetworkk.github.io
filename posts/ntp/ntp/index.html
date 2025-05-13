@@ -179,24 +179,16 @@ UDP Port: 123 The closest router to the Atomic Clock is called Stratum 1 A devic
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#configuring-clock-and-date-manually">Configuring Clock and Date Manually:</a></li>
-            <li><a href="#setting-the-time-zone">Setting the Time Zone:</a></li>
-            <li><a href="#configuring-daylight-saving-time">Configuring Daylight Saving Time:</a></li>
-            <li><a href="#ntp-server-configuration">NTP Server Configuration:</a></li>
-            <li><a href="#configuring-a-cisco-device-as-an-ntp-server">Configuring a Cisco Device as an NTP Server:</a></li>
-            <li><a href="#ntp-peering">NTP Peering:</a></li>
-            <li><a href="#ntp-authentication">NTP Authentication:</a></li>
-            <li><a href="#enable-ntp-logging">Enable NTP Logging:</a></li>
-            <li><a href="#show-commands">Show Commands:</a></li>
-            <li><a href="#debug-commands">Debug Commands:</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
+    <li><a href="#configuring-clock-and-date-manually"><strong>Configuring Clock and Date Manually:</strong></a></li>
+    <li><a href="#setting-the-time-zone">*<em>Setting the Time Zone:</em></a></li>
+    <li><a href="#configuring-daylight-saving-time"><strong>Configuring Daylight Saving Time:</strong></a></li>
+    <li><a href="#ntp-server-configuration"><strong>NTP Server Configuration:</strong></a></li>
+    <li><a href="#configuring-a-cisco-device-as-an-ntp-server"><strong>Configuring a Cisco Device as an NTP Server:</strong></a></li>
+    <li><a href="#ntp-peering"><strong>NTP Peering:</strong></a></li>
+    <li><a href="#ntp-authentication"><strong>NTP Authentication:</strong></a></li>
+    <li><a href="#enable-ntp-logging"><strong>Enable NTP Logging:</strong></a></li>
+    <li><a href="#show-commands"><strong>Show Commands:</strong></a></li>
+    <li><a href="#debug-commands"><strong>Debug Commands:</strong></a></li>
   </ul>
 </nav>
     </div>
@@ -266,14 +258,14 @@ UDP Port: 123 The closest router to the Atomic Clock is called Stratum 1 A devic
 <li>Each hop increases the Stratum value.</li>
 <li>Maximum supported stratum level is 15</li>
 </ul>
-<h4 id="configuring-clock-and-date-manually">Configuring Clock and Date Manually:</h4>
+<h2 id="configuring-clock-and-date-manually"><strong>Configuring Clock and Date Manually:</strong></h2>
 <pre tabindex="0"><code>SW-1#clock set 12:00:00 1 AUG 2019
-</code></pre><h4 id="setting-the-time-zone">Setting the Time Zone:</h4>
+</code></pre><h2 id="setting-the-time-zone">*<em>Setting the Time Zone:</em></h2>
 <pre tabindex="0"><code>SW-1#conf t
 SW-1(config)#clock timezone EST +2
-</code></pre><h4 id="configuring-daylight-saving-time">Configuring Daylight Saving Time:</h4>
+</code></pre><h2 id="configuring-daylight-saving-time"><strong>Configuring Daylight Saving Time:</strong></h2>
 <pre tabindex="0"><code>SW-1(config)#clock summer-time CEST recurring last Sun Mar 2:00 last Sun Oct 3:00  
-</code></pre><h4 id="ntp-server-configuration">NTP Server Configuration:</h4>
+</code></pre><h2 id="ntp-server-configuration"><strong>NTP Server Configuration:</strong></h2>
 <pre tabindex="0"><code>SW-1(config)#ip domain-lookup                  # DNS
 SW-1(config)#ip name-server 1.1.1.1 8.8.8.8    # DNS
 
@@ -281,11 +273,11 @@ SW-1(config)#ntp server 198.111.152.100         #NTP Server
 SW-1(config)#ntp server 0.tr.pool.ntp.org       #NTP Server
 SW-1(config)#ntp update-calendar
 </code></pre><p>If you want to use an external source for NTP information, you can visit <a href="https://www.ntppool.org/en/">this site</a> to find NTP servers suitable for your location.</p>
-<h4 id="configuring-a-cisco-device-as-an-ntp-server">Configuring a Cisco Device as an NTP Server:</h4>
+<h2 id="configuring-a-cisco-device-as-an-ntp-server"><strong>Configuring a Cisco Device as an NTP Server:</strong></h2>
 <pre tabindex="0"><code>SW-1(config)#ntp master 2
-</code></pre><h4 id="ntp-peering">NTP Peering:</h4>
+</code></pre><h2 id="ntp-peering"><strong>NTP Peering:</strong></h2>
 <pre tabindex="0"><code>SW-1(config)#ntp peer 10.53.56.100 source gigabitEthernet 0/0
-</code></pre><h4 id="ntp-authentication">NTP Authentication:</h4>
+</code></pre><h2 id="ntp-authentication"><strong>NTP Authentication:</strong></h2>
 <pre tabindex="0"><code>#On the NTP Server:
 SW-1(config)#ntp authenticate
 SW-1(config)#ntp authentication-key 5 md5 Password123!
@@ -296,15 +288,15 @@ SW-1(config)#ntp authenticate
 SW-1(config)#ntp authentication-key 5 md5 Password123!
 SW-1(config)#ntp trusted-key 5
 SW-1(config)#ntp server 192.168.254.1 key 5
-</code></pre><h4 id="enable-ntp-logging">Enable NTP Logging:</h4>
+</code></pre><h2 id="enable-ntp-logging"><strong>Enable NTP Logging:</strong></h2>
 <pre tabindex="0"><code>SW-1(config)#ntp logging
-</code></pre><h4 id="show-commands">Show Commands:</h4>
+</code></pre><h2 id="show-commands"><strong>Show Commands:</strong></h2>
 <pre tabindex="0"><code>show clock
 show calendar
 show ntp status
 show ntp associations
 show ntp associations detail 
-</code></pre><h4 id="debug-commands">Debug Commands:</h4>
+</code></pre><h2 id="debug-commands"><strong>Debug Commands:</strong></h2>
 <pre tabindex="0"><code>debug ntp packet
 debug ntp all
 </code></pre><p>Thank you for taking time to read this article, I hope you will find it helpful.</p>
@@ -352,24 +344,16 @@ debug ntp all
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#configuring-clock-and-date-manually">Configuring Clock and Date Manually:</a></li>
-            <li><a href="#setting-the-time-zone">Setting the Time Zone:</a></li>
-            <li><a href="#configuring-daylight-saving-time">Configuring Daylight Saving Time:</a></li>
-            <li><a href="#ntp-server-configuration">NTP Server Configuration:</a></li>
-            <li><a href="#configuring-a-cisco-device-as-an-ntp-server">Configuring a Cisco Device as an NTP Server:</a></li>
-            <li><a href="#ntp-peering">NTP Peering:</a></li>
-            <li><a href="#ntp-authentication">NTP Authentication:</a></li>
-            <li><a href="#enable-ntp-logging">Enable NTP Logging:</a></li>
-            <li><a href="#show-commands">Show Commands:</a></li>
-            <li><a href="#debug-commands">Debug Commands:</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
+    <li><a href="#configuring-clock-and-date-manually"><strong>Configuring Clock and Date Manually:</strong></a></li>
+    <li><a href="#setting-the-time-zone">*<em>Setting the Time Zone:</em></a></li>
+    <li><a href="#configuring-daylight-saving-time"><strong>Configuring Daylight Saving Time:</strong></a></li>
+    <li><a href="#ntp-server-configuration"><strong>NTP Server Configuration:</strong></a></li>
+    <li><a href="#configuring-a-cisco-device-as-an-ntp-server"><strong>Configuring a Cisco Device as an NTP Server:</strong></a></li>
+    <li><a href="#ntp-peering"><strong>NTP Peering:</strong></a></li>
+    <li><a href="#ntp-authentication"><strong>NTP Authentication:</strong></a></li>
+    <li><a href="#enable-ntp-logging"><strong>Enable NTP Logging:</strong></a></li>
+    <li><a href="#show-commands"><strong>Show Commands:</strong></a></li>
+    <li><a href="#debug-commands"><strong>Debug Commands:</strong></a></li>
   </ul>
 </nav>
     </div>
