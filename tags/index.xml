@@ -7,8 +7,43 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Sat, 19 Apr 2025 23:09:46 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 13 May 2025 21:23:07 +0200</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NTP</title>
+      <link>https://ittechnetworkk.github.io/tags/ntp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/ntp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dynamic NAT</title>
+      <link>https://ittechnetworkk.github.io/tags/dynamic-nat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/dynamic-nat/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>NAT</title>
+      <link>https://ittechnetworkk.github.io/tags/nat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/nat/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PAT</title>
+      <link>https://ittechnetworkk.github.io/tags/pat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/pat/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Static NAT</title>
+      <link>https://ittechnetworkk.github.io/tags/static-nat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/static-nat/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Proxmox</title>
       <link>https://ittechnetworkk.github.io/tags/proxmox/</link>
@@ -441,6 +476,13 @@
       <link>https://ittechnetworkk.github.io/tags/dual-stack/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/tags/dual-stack/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pihole</title>
+      <link>https://ittechnetworkk.github.io/tags/pihole/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/tags/pihole/</guid>
       <description></description>
     </item>
     <item>

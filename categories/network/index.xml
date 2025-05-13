@@ -7,8 +7,22 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Wed, 02 Apr 2025 22:02:02 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 13 May 2025 21:23:07 +0200</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/categories/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[EN] Network Time Protocol (NTP)</title>
+      <link>https://ittechnetworkk.github.io/posts/ntp/ntp/</link>
+      <pubDate>Tue, 13 May 2025 21:23:07 +0200</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/ntp/ntp/</guid>
+      <description>In modern networks, accurate time synchronization is crucial for tasks such as logging, authentication, and system coordination. Network Time Protocol (NTP) is a widely used protocol that allows devices on a network to synchronize their clocks with a reliable time source. This guide will walk you through the configuration of NTP on Cisco devices, including manual time setup, using a device as an NTP server, authentication, and debugging.&#xA;UDP Port: 123 The closest router to the Atomic Clock is called Stratum 1 A device directly connected to an authorized NTP server is considered Stratum 1.</description>
+    </item>
+    <item>
+      <title>[EN] Network Address Translation (NAT)</title>
+      <link>https://ittechnetworkk.github.io/posts/nat/nat/</link>
+      <pubDate>Tue, 13 May 2025 21:08:38 +0200</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/nat/nat/</guid>
+      <description>Hi everyone,&#xA;In this article, I will walk you through Network Address Translation (NAT)—what it is, how it works, why we use it, and how to configure it using a lab.&#xA;NAT (Network Address Translation) is a method used in routers and firewalls that allows private IP addresses within a local network to access the public internet using a single or a few public IP addresses.&#xA;Since private IP addresses (e.</description>
+    </item>
     <item>
       <title>[EN] Dynamic Trunking Protocol (DTP)</title>
       <link>https://ittechnetworkk.github.io/posts/dynamictrunkingprotocol/dynamic-trunking-protocol/</link>
@@ -339,7 +353,7 @@
       <description>EIGRP (Enchanced Interior Gateway Routing Protocol), Cisco tarafından geliştirilen bir dinamik yönlendirme protokolüdür. Daha sonradan diğer firmaların kullanımına sunulmuştur. RFC7868de tanımlanmıştır. Hem Distance Vector hem de Link State protokol özelliklerini aldığı için Hybrid Protokol olarak da geçer. Bazı özellikleri şöyledir:&#xA;Max 224 hop destekler, VLSM destekler, yani subnetting destekler, Hem Unicast hem de Multicast çalışır 224.0.0.10, Bir ana rota (Succesor), bir de yedek rota (Feasible Succesor) belirlenir, Hızlı yakınsama sağlar, alternatif rotalar arasında geçiş hızlıdır, Administrative Distance değeri 90&amp;rsquo;dır, Yönlendirme tablosunda değişiklik olduğunda tüm tabloyu değil sadece değişiklik olan kısmı diğer Router&amp;rsquo;lara gönderir, 5 Saniyede bir &amp;ldquo;Hello&amp;rdquo; paketi gönderir, 15 saniye &amp;ldquo;Acknowledgement&amp;rdquo; paketiyle cevap gelmezse komşuluk düşer, EIGRP Paketleri: Hello: Routerlar kendi aralarında 5 saniyede bir ayakta olduklarını duyurmak için kullandıkları pakettir.</description>
     </item>
     <item>
-      <title>Dhcp Relay Agent</title>
+      <title>DHCP Relay Agent</title>
       <link>https://ittechnetworkk.github.io/posts/dhcprelayagent/dhcp-relay-agent/</link>
       <pubDate>Sun, 14 Jan 2024 23:43:35 +0100</pubDate>
       <guid>https://ittechnetworkk.github.io/posts/dhcprelayagent/dhcp-relay-agent/</guid>

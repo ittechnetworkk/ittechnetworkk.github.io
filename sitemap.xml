@@ -2,22 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ittechnetworkk.github.io/posts/ntp/ntp/</loc>
+    <lastmod>2025-05-13T21:23:07+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/categories/</loc>
+    <lastmod>2025-05-13T21:23:07+02:00</lastmod>
+  </url><url>
     <loc>https://ittechnetworkk.github.io/</loc>
-    <lastmod>2025-05-13T12:22:24+01:00</lastmod>
+    <lastmod>2025-05-13T21:23:07+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/categories/network/</loc>
+    <lastmod>2025-05-13T21:23:07+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/ntp/</loc>
+    <lastmod>2025-05-13T21:23:07+02:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/</loc>
-    <lastmod>2025-05-13T12:22:24+01:00</lastmod>
+    <lastmod>2025-05-13T21:23:07+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/</loc>
+    <lastmod>2025-05-13T21:23:07+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/posts/nat/nat/</loc>
+    <lastmod>2025-05-13T21:08:38+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/dynamic-nat/</loc>
+    <lastmod>2025-05-13T21:08:38+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/nat/</loc>
+    <lastmod>2025-05-13T21:08:38+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/pat/</loc>
+    <lastmod>2025-05-13T21:08:38+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/static-nat/</loc>
+    <lastmod>2025-05-13T21:08:38+02:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/proxmoxvmwaremigration/vmware-to-proxmox-migration/</loc>
     <lastmod>2025-04-19T23:09:46+02:00</lastmod>
   </url><url>
-    <loc>https://ittechnetworkk.github.io/categories/</loc>
-    <lastmod>2025-04-19T23:09:46+02:00</lastmod>
-  </url><url>
     <loc>https://ittechnetworkk.github.io/tags/proxmox/</loc>
-    <lastmod>2025-04-19T23:09:46+02:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/</loc>
     <lastmod>2025-04-19T23:09:46+02:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/virtualization/</loc>
@@ -60,9 +84,6 @@
     <lastmod>2025-04-02T22:02:02+02:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/tags/cisco-ios/</loc>
-    <lastmod>2025-04-02T22:02:02+02:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/categories/network/</loc>
     <lastmod>2025-04-02T22:02:02+02:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/juniperdynamicrouting/junos-dynamic-routing/</loc>
@@ -430,6 +451,12 @@
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/raspberrypiipfire/raspberrypi-ipfire/</loc>
     <lastmod>2024-05-19T23:00:44+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/pihole/</loc>
+    <lastmod>2024-05-13T12:22:24+01:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/posts/raspberrypipihole/raspberrypi-pihole/</loc>
+    <lastmod>2024-05-13T12:22:24+01:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/nanopirsadguard/nanopirs-adguard/</loc>
     <lastmod>2024-05-12T22:57:40+01:00</lastmod>

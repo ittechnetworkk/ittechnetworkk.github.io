@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NTP on ittechnetworkk</title>
+    <link>https://ittechnetworkk.github.io/tags/ntp/</link>
+    <description>Recent content in NTP on ittechnetworkk</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>ittechnetworkk</copyright>
+    <lastBuildDate>Tue, 13 May 2025 21:23:07 +0200</lastBuildDate>
+    <atom:link href="https://ittechnetworkk.github.io/tags/ntp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[EN] Network Time Protocol (NTP)</title>
+      <link>https://ittechnetworkk.github.io/posts/ntp/ntp/</link>
+      <pubDate>Tue, 13 May 2025 21:23:07 +0200</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/ntp/ntp/</guid>
+      <description>In modern networks, accurate time synchronization is crucial for tasks such as logging, authentication, and system coordination. Network Time Protocol (NTP) is a widely used protocol that allows devices on a network to synchronize their clocks with a reliable time source. This guide will walk you through the configuration of NTP on Cisco devices, including manual time setup, using a device as an NTP server, authentication, and debugging.&#xA;UDP Port: 123 The closest router to the Atomic Clock is called Stratum 1 A device directly connected to an authorized NTP server is considered Stratum 1.</description>
+    </item>
+  </channel>
+</rss>

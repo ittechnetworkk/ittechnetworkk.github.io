@@ -31,7 +31,7 @@
       <description>DHCP(Dynamic Host Configuration Protocol), bir networkteki bir cihaza IP, DNS, Default Gateway parametrelerini dağıtan servistir. Yani networkteki bir cihazın başka bir cihaz ile konuşmasını sağlayacak parametlereleri dağıtan servistir. DHCPv6, DHCPv4&amp;rsquo;den bazı özellikleriyle ayrılıyor. DHCPv6 2 şekilde yapılandırılabilir.&#xA;Stateful(Durumlu) DHCPv6, Stateless SLAAC (Durumsuz) DHCPv6 Stateful DHCPv6 tıpkı DHCPv4 gibi, bir DHCP server üzerinden parametreleri dağıtmaktır.&#xA;Stateless SLAAC DHCPv6 da ise herhangi bir DHCP server olmaksızın cihazların Router üzerinden IPv6 parametrelerini alıp otomatik olarak kendini yapılandırmasıdır.</description>
     </item>
     <item>
-      <title>Dhcp Relay Agent</title>
+      <title>DHCP Relay Agent</title>
       <link>https://ittechnetworkk.github.io/posts/dhcprelayagent/dhcp-relay-agent/</link>
       <pubDate>Sun, 14 Jan 2024 23:43:35 +0100</pubDate>
       <guid>https://ittechnetworkk.github.io/posts/dhcprelayagent/dhcp-relay-agent/</guid>

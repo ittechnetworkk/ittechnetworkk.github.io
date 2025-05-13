@@ -44,5 +44,12 @@
       <guid>https://ittechnetworkk.github.io/posts/raspberrypiipfire/raspberrypi-ipfire/</guid>
       <description>Bu yazımda yeni aldığım Raspberry Pi 4 B modeline IPFire kurulumunu anlatacağım. IPFire, açık kaynak kodlu Linux tabanlı bir firewall yazılımıdır. IPFire&amp;rsquo;ı ISO olarak indirip bir sanal makine olarak da kurup inceleyebilirsiniz. Az kaynak tüketir ve işlevseldir.&#xA;IPFire&amp;rsquo;ın bazı özellikleri:&#xA;Network Security, VLAN, DHCP, NTP, Captive Portal, Web Proxy, VPN, DNS, IPS, QoS, Ve çok daha fazlası. Kullandığım Donanım ve Yazılımlar:&#xA;Raspberry Pi 4 B, Kart Okuyucu, Harici Ethernet Kartı, USB to TypeC Güç Kablosu, Mouse, SD Kart, HDMI to Micro HDMI Dönüştürücü, Klavye, Monitor, HDMI to HDMI, 2 Ethernet kablosu, BalenaEtcher.</description>
     </item>
+    <item>
+      <title>RaspberryPi Zero&#39;ya Pihole Kurulumu</title>
+      <link>https://ittechnetworkk.github.io/posts/raspberrypipihole/raspberrypi-pihole/</link>
+      <pubDate>Mon, 13 May 2024 12:22:24 +0100</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/raspberrypipihole/raspberrypi-pihole/</guid>
+      <description>Selamlar, bu yazımda Raspberry Pi Zero 2W cihazına Pi-Hole kurulumunu anlatmaya çalışacağım. Pi-hole, dns server, reklam engelleyici, dhcp server olarak çalışabilen açık kaynak kodlu bir yazılımdır. Bu yazılımı networkümüzde bir dhcp sunucu, reklam engelleyici olarak kullanabiliriz. Pi-hole birçok işletim sistemini destekler, aynı zamanda Docker container olarak da kurup kullanabilirsiniz.&#xA;Peki nedir bu Raspberry Pi Zero 2W? Raspberry Pi Zero 2W, temel olarak küçük bir bilgisayardır. Bu bilgisayar ile birçok proje yapabilirsiniz.</description>
+    </item>
   </channel>
 </rss>

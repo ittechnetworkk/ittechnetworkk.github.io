@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Static NAT on ittechnetworkk</title>
+    <link>https://ittechnetworkk.github.io/tags/static-nat/</link>
+    <description>Recent content in Static NAT on ittechnetworkk</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>ittechnetworkk</copyright>
+    <lastBuildDate>Tue, 13 May 2025 21:08:38 +0200</lastBuildDate>
+    <atom:link href="https://ittechnetworkk.github.io/tags/static-nat/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[EN] Network Address Translation (NAT)</title>
+      <link>https://ittechnetworkk.github.io/posts/nat/nat/</link>
+      <pubDate>Tue, 13 May 2025 21:08:38 +0200</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/nat/nat/</guid>
+      <description>Hi everyone,&#xA;In this article, I will walk you through Network Address Translation (NAT)—what it is, how it works, why we use it, and how to configure it using a lab.&#xA;NAT (Network Address Translation) is a method used in routers and firewalls that allows private IP addresses within a local network to access the public internet using a single or a few public IP addresses.&#xA;Since private IP addresses (e.</description>
+    </item>
+  </channel>
+</rss>

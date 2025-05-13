@@ -185,7 +185,7 @@
       <description>EIGRP (Enchanced Interior Gateway Routing Protocol), Cisco tarafından geliştirilen bir dinamik yönlendirme protokolüdür. Daha sonradan diğer firmaların kullanımına sunulmuştur. RFC7868de tanımlanmıştır. Hem Distance Vector hem de Link State protokol özelliklerini aldığı için Hybrid Protokol olarak da geçer. Bazı özellikleri şöyledir:&#xA;Max 224 hop destekler, VLSM destekler, yani subnetting destekler, Hem Unicast hem de Multicast çalışır 224.0.0.10, Bir ana rota (Succesor), bir de yedek rota (Feasible Succesor) belirlenir, Hızlı yakınsama sağlar, alternatif rotalar arasında geçiş hızlıdır, Administrative Distance değeri 90&amp;rsquo;dır, Yönlendirme tablosunda değişiklik olduğunda tüm tabloyu değil sadece değişiklik olan kısmı diğer Router&amp;rsquo;lara gönderir, 5 Saniyede bir &amp;ldquo;Hello&amp;rdquo; paketi gönderir, 15 saniye &amp;ldquo;Acknowledgement&amp;rdquo; paketiyle cevap gelmezse komşuluk düşer, EIGRP Paketleri: Hello: Routerlar kendi aralarında 5 saniyede bir ayakta olduklarını duyurmak için kullandıkları pakettir.</description>
     </item>
     <item>
-      <title>Dhcp Relay Agent</title>
+      <title>DHCP Relay Agent</title>
       <link>https://ittechnetworkk.github.io/posts/dhcprelayagent/dhcp-relay-agent/</link>
       <pubDate>Sun, 14 Jan 2024 23:43:35 +0100</pubDate>
       <guid>https://ittechnetworkk.github.io/posts/dhcprelayagent/dhcp-relay-agent/</guid>
