@@ -192,7 +192,6 @@ Since private IP addresses (e.">
     <div id="toc">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#there-are-3-types-of-nat"><strong>There are 3 types of NAT:</strong></a></li>
     <li><a href="#static-nat-configuration"><strong>Static NAT Configuration:</strong></a></li>
     <li><a href="#dynamic-nat-configuration"><strong>Dynamic NAT Configuration:</strong></a></li>
     <li><a href="#pat-configuration"><strong>PAT Configuration:</strong></a></li>
@@ -273,7 +272,7 @@ Since private IP addresses (e.">
 <p>NAT (Network Address Translation) is a method used in routers and firewalls that allows private IP addresses within a local network to access the public internet using a single or a few public IP addresses.</p>
 <p>Since private IP addresses (e.g., 192.168.x.x, 10.x.x.x, 172.16.x.x–172.31.x.x) are not routable on the internet, NAT translates these private IP addresses into a public IP before forwarding traffic. It also translates incoming public traffic back to the appropriate private IP inside the network.</p>
 <p>The primary reason NAT exists is because of the limited number of IPv4 addresses available globally.</p>
-<h2 id="there-are-3-types-of-nat"><strong>There are 3 types of NAT:</strong></h2>
+<p><strong>There are 3 types of NAT:</strong></p>
 <ul>
 <li><strong>Static NAT:</strong> A single private IP is always mapped to the same public IP.</li>
 <li><strong>Dynamic NAT:</strong> Private IPs are mapped to a pool of public IPs, but not fixed; the router picks an available public IP dynamically.</li>
@@ -367,7 +366,6 @@ debug ip nat detailed
     <div id="toc-footer" style="display: none">
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#there-are-3-types-of-nat"><strong>There are 3 types of NAT:</strong></a></li>
     <li><a href="#static-nat-configuration"><strong>Static NAT Configuration:</strong></a></li>
     <li><a href="#dynamic-nat-configuration"><strong>Dynamic NAT Configuration:</strong></a></li>
     <li><a href="#pat-configuration"><strong>PAT Configuration:</strong></a></li>

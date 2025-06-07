@@ -103,6 +103,12 @@ UDP Port: 123 The closest router to the Atomic Clock is called Stratum 1 A devic
         
         
         <li>
+          <a class="icon" href="https://ittechnetworkk.github.io/posts/esp32/esp32-ntp/" aria-label="Next">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
           <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
             <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
           </a>
@@ -180,7 +186,7 @@ UDP Port: 123 The closest router to the Atomic Clock is called Stratum 1 A devic
       <nav id="TableOfContents">
   <ul>
     <li><a href="#configuring-clock-and-date-manually"><strong>Configuring Clock and Date Manually:</strong></a></li>
-    <li><a href="#setting-the-time-zone">*<em>Setting the Time Zone:</em></a></li>
+    <li><a href="#setting-the-time-zone"><strong>Setting the Time Zone:</strong></a></li>
     <li><a href="#configuring-daylight-saving-time"><strong>Configuring Daylight Saving Time:</strong></a></li>
     <li><a href="#ntp-server-configuration"><strong>NTP Server Configuration:</strong></a></li>
     <li><a href="#configuring-a-cisco-device-as-an-ntp-server"><strong>Configuring a Cisco Device as an NTP Server:</strong></a></li>
@@ -260,7 +266,7 @@ UDP Port: 123 The closest router to the Atomic Clock is called Stratum 1 A devic
 </ul>
 <h2 id="configuring-clock-and-date-manually"><strong>Configuring Clock and Date Manually:</strong></h2>
 <pre tabindex="0"><code>SW-1#clock set 12:00:00 1 AUG 2019
-</code></pre><h2 id="setting-the-time-zone">*<em>Setting the Time Zone:</em></h2>
+</code></pre><h2 id="setting-the-time-zone"><strong>Setting the Time Zone:</strong></h2>
 <pre tabindex="0"><code>SW-1#conf t
 SW-1(config)#clock timezone EST +2
 </code></pre><h2 id="configuring-daylight-saving-time"><strong>Configuring Daylight Saving Time:</strong></h2>
@@ -345,7 +351,7 @@ debug ntp all
       <nav id="TableOfContents">
   <ul>
     <li><a href="#configuring-clock-and-date-manually"><strong>Configuring Clock and Date Manually:</strong></a></li>
-    <li><a href="#setting-the-time-zone">*<em>Setting the Time Zone:</em></a></li>
+    <li><a href="#setting-the-time-zone"><strong>Setting the Time Zone:</strong></a></li>
     <li><a href="#configuring-daylight-saving-time"><strong>Configuring Daylight Saving Time:</strong></a></li>
     <li><a href="#ntp-server-configuration"><strong>NTP Server Configuration:</strong></a></li>
     <li><a href="#configuring-a-cisco-device-as-an-ntp-server"><strong>Configuring a Cisco Device as an NTP Server:</strong></a></li>
