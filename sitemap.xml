@@ -2,28 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ittechnetworkk.github.io/categories/</loc>
+    <lastmod>2025-06-07T06:50:06+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/esp32/</loc>
+    <lastmod>2025-06-07T06:50:06+02:00</lastmod>
+  </url><url>
     <loc>https://ittechnetworkk.github.io/posts/esp32/esp32-ntp/</loc>
+    <lastmod>2025-06-07T06:50:06+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/iot/</loc>
+    <lastmod>2025-06-07T06:50:06+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/categories/iot/</loc>
     <lastmod>2025-06-07T06:50:06+02:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/</loc>
     <lastmod>2025-06-07T06:50:06+02:00</lastmod>
   </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/ntp/</loc>
+    <lastmod>2025-06-07T06:50:06+02:00</lastmod>
+  </url><url>
     <loc>https://ittechnetworkk.github.io/posts/</loc>
+    <lastmod>2025-06-07T06:50:06+02:00</lastmod>
+  </url><url>
+    <loc>https://ittechnetworkk.github.io/tags/</loc>
     <lastmod>2025-06-07T06:50:06+02:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/ntp/ntp/</loc>
     <lastmod>2025-05-13T21:23:07+02:00</lastmod>
   </url><url>
-    <loc>https://ittechnetworkk.github.io/categories/</loc>
-    <lastmod>2025-05-13T21:23:07+02:00</lastmod>
-  </url><url>
     <loc>https://ittechnetworkk.github.io/categories/network/</loc>
-    <lastmod>2025-05-13T21:23:07+02:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/ntp/</loc>
-    <lastmod>2025-05-13T21:23:07+02:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/</loc>
     <lastmod>2025-05-13T21:23:07+02:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/nat/nat/</loc>
@@ -68,16 +77,7 @@
     <loc>https://ittechnetworkk.github.io/posts/eviltwin/eviltwin/</loc>
     <lastmod>2025-04-10T00:05:20+02:00</lastmod>
   </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/esp32/</loc>
-    <lastmod>2025-04-10T00:05:20+02:00</lastmod>
-  </url><url>
     <loc>https://ittechnetworkk.github.io/tags/eviltwin/</loc>
-    <lastmod>2025-04-10T00:05:20+02:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/tags/iot/</loc>
-    <lastmod>2025-04-10T00:05:20+02:00</lastmod>
-  </url><url>
-    <loc>https://ittechnetworkk.github.io/categories/iot/</loc>
     <lastmod>2025-04-10T00:05:20+02:00</lastmod>
   </url><url>
     <loc>https://ittechnetworkk.github.io/posts/dynamictrunkingprotocol/dynamic-trunking-protocol/</loc>

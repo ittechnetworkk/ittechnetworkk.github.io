@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Tue, 13 May 2025 21:23:07 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 07 Jun 2025 06:50:06 +0200</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IoT</title>
+      <link>https://ittechnetworkk.github.io/categories/iot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ittechnetworkk.github.io/categories/iot/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Network</title>
       <link>https://ittechnetworkk.github.io/categories/network/</link>
@@ -21,13 +28,6 @@
       <link>https://ittechnetworkk.github.io/categories/virtualization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://ittechnetworkk.github.io/categories/virtualization/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>IoT</title>
-      <link>https://ittechnetworkk.github.io/categories/iot/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://ittechnetworkk.github.io/categories/iot/</guid>
       <description></description>
     </item>
     <item>

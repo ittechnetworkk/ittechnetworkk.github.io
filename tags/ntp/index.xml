@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Tue, 13 May 2025 21:23:07 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 07 Jun 2025 06:50:06 +0200</lastBuildDate>
     <atom:link href="https://ittechnetworkk.github.io/tags/ntp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ESP32-NTP Server Project</title>
+      <link>https://ittechnetworkk.github.io/posts/esp32/esp32-ntp/</link>
+      <pubDate>Sat, 07 Jun 2025 06:50:06 +0200</pubDate>
+      <guid>https://ittechnetworkk.github.io/posts/esp32/esp32-ntp/</guid>
+      <description>ESP32-NTP Server Project&#xA;https://github.com/ssnrshnn/ESP32-NTP&#xA;Photos:</description>
+    </item>
     <item>
       <title>[EN] Network Time Protocol (NTP)</title>
       <link>https://ittechnetworkk.github.io/posts/ntp/ntp/</link>
