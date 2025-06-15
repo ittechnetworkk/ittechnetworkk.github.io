@@ -10,7 +10,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> Docker Notlarım | ittechnetworkk</title>
   <link rel = 'canonical' href = 'https://ittechnetworkk.github.io/posts/dockernotlarim/docker-notlarim/'>
-  <meta name="description" content="Hi, I’m Soner, and this is my personal blog where I share insights, guides, and articles on various tech topics, including Networking, Linux, Windows, Virtualization, Firewalls, IoT, and more. I&#39;m constantly learning and exploring new technologies, and this blog is where I document my journey. ">
+  <meta name="description" content="Hi, I&#39;m Soner, and this is my personal blog where I share insights, guides, and articles on various tech topics, including Networking, Linux, Windows, Virtualization, Firewalls, IoT, and more. I&#39;m constantly learning and exploring new technologies, and this blog is where I document my journey. ">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
@@ -18,7 +18,7 @@
   <meta property="og:site_name" content="ittechnetworkk">
   <meta property="og:title" content="Docker Notlarım">
   <meta property="og:description" content="Docker’a giriş notlarım. Bu notlar Özgür Öztürk’ün Docker Eğitiminden aldığım notlarımdır.
-#Container oluşturulduktan sonra date uygulaması çalıştırılacak. Container başka bir uygulama ile başlatılacak. docker container run --name deneme httpd date #Container&#39;i arka planda çalıştırmak için docker container run -d deneme2 #Container içerisinde komut çalıştırmak için &#34;exec&#34; docker container exec 94ef4e4f89 ls #Çalışan container&#39;a nasıl bağlanılır docker container exec -it deneme1 sh #Bir sanal makine ile Container&#39;in farkı; Container&#39;de kernel yoktur, üzerinde çalıştığı hostun kernel&#39;ini kullanır.">
+#Container oluşturulduktan sonra date uygulaması çalıştırılacak. Container başka bir uygulama ile başlatılacak. docker container run --name deneme httpd date #Container&#39;i arka planda çalıştırmak için docker container run -d deneme2 #Container içerisinde komut çalıştırmak için &#34;exec&#34; docker container exec 94ef4e4f89 ls #Çalışan container&#39;a nasıl bağlanılır docker container exec -it deneme1 sh #Bir sanal makine ile Container&#39;in farkı; Container&#39;de kernel yoktur, üzerinde çalıştığı hostun kernel&#39;ini kullanır. #Container ile ilgili daha fazla bilgi edinmek için docker container inspect deneme1 docker network inspect bridge docker image inspect fedora #Container&#39;a bağlanıp değişiklik yapılması pek önerilmez. Bazılarına bağlanılmaz bile. #Container loglarına bakmak için docker container logs deneme1 #Container loglarını zaman damgalarıyla göstermek için docker container logs -t deneme1 #Container loglarındaki son birkaç satırı görmek için docker container logs --tail 5 deneme1 #Container loglarını canlı görmek için docker container logs -f deneme1 #Container&#39;ın kaynaklarına bakmak için docker container top webserver docker container stats webserver docker stats #Container&#39;ları sınırlamadığımız sürece host makinedeki kaynakları sınırsız kullanabilir. Bu container&#39;ların kaynaklarını kısıtlayabiliriz. #Container&#39;ın memory kısıtlaması için docker container run -d --name deneme3 --memory=1G httpd docker container run -d --name deneme3 --memory=500K httpd #CPU kısıtlaması için iki yol vardır #Container sadece 1 core kullanabilecek random olarak docker run -d --name cpukisit --cpus=&#34;1&#34; httpd #Container 2 ve 8 nolu core&#39;ları kullanabilecek docker container run -d --name cpukisit2 --cpuset-cpus=&#34;2,8&#34; httpd #Container&#39;de swap belirlemek için docker run -d --name swap --memory-swap=1G httpd #Tüm containerları topluca silmek için docker container prune">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -31,7 +31,7 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Docker Notlarım">
   <meta name="twitter:description" content="Docker’a giriş notlarım. Bu notlar Özgür Öztürk’ün Docker Eğitiminden aldığım notlarımdır.
-#Container oluşturulduktan sonra date uygulaması çalıştırılacak. Container başka bir uygulama ile başlatılacak. docker container run --name deneme httpd date #Container&#39;i arka planda çalıştırmak için docker container run -d deneme2 #Container içerisinde komut çalıştırmak için &#34;exec&#34; docker container exec 94ef4e4f89 ls #Çalışan container&#39;a nasıl bağlanılır docker container exec -it deneme1 sh #Bir sanal makine ile Container&#39;in farkı; Container&#39;de kernel yoktur, üzerinde çalıştığı hostun kernel&#39;ini kullanır.">
+#Container oluşturulduktan sonra date uygulaması çalıştırılacak. Container başka bir uygulama ile başlatılacak. docker container run --name deneme httpd date #Container&#39;i arka planda çalıştırmak için docker container run -d deneme2 #Container içerisinde komut çalıştırmak için &#34;exec&#34; docker container exec 94ef4e4f89 ls #Çalışan container&#39;a nasıl bağlanılır docker container exec -it deneme1 sh #Bir sanal makine ile Container&#39;in farkı; Container&#39;de kernel yoktur, üzerinde çalıştığı hostun kernel&#39;ini kullanır. #Container ile ilgili daha fazla bilgi edinmek için docker container inspect deneme1 docker network inspect bridge docker image inspect fedora #Container&#39;a bağlanıp değişiklik yapılması pek önerilmez. Bazılarına bağlanılmaz bile. #Container loglarına bakmak için docker container logs deneme1 #Container loglarını zaman damgalarıyla göstermek için docker container logs -t deneme1 #Container loglarındaki son birkaç satırı görmek için docker container logs --tail 5 deneme1 #Container loglarını canlı görmek için docker container logs -f deneme1 #Container&#39;ın kaynaklarına bakmak için docker container top webserver docker container stats webserver docker stats #Container&#39;ları sınırlamadığımız sürece host makinedeki kaynakları sınırsız kullanabilir. Bu container&#39;ların kaynaklarını kısıtlayabiliriz. #Container&#39;ın memory kısıtlaması için docker container run -d --name deneme3 --memory=1G httpd docker container run -d --name deneme3 --memory=500K httpd #CPU kısıtlaması için iki yol vardır #Container sadece 1 core kullanabilecek random olarak docker run -d --name cpukisit --cpus=&#34;1&#34; httpd #Container 2 ve 8 nolu core&#39;ları kullanabilecek docker container run -d --name cpukisit2 --cpuset-cpus=&#34;2,8&#34; httpd #Container&#39;de swap belirlemek için docker run -d --name swap --memory-swap=1G httpd #Tüm containerları topluca silmek için docker container prune">
 
   
   
@@ -170,7 +170,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdockernotlarim%2fdocker-notlarim%2f&name=Docker%20Notlar%c4%b1m&description=Docker%26rsquo%3ba%20giri%c5%9f%20notlar%c4%b1m.%20Bu%20notlar%20%c3%96zg%c3%bcr%20%c3%96zt%c3%bcrk%26rsquo%3b%c3%bcn%20Docker%20E%c4%9fitiminden%20ald%c4%b1%c4%9f%c4%b1m%20notlar%c4%b1md%c4%b1r.%0a%23Container%20olu%c5%9fturulduktan%20sonra%20date%20uygulamas%c4%b1%20%c3%a7al%c4%b1%c5%9ft%c4%b1r%c4%b1lacak.%20Container%20ba%c5%9fka%20bir%20uygulama%20ile%20ba%c5%9flat%c4%b1lacak.%20docker%20container%20run%20--name%20deneme%20httpd%20date%20%23Container%26%2339%3bi%20arka%20planda%20%c3%a7al%c4%b1%c5%9ft%c4%b1rmak%20i%c3%a7in%20docker%20container%20run%20-d%20deneme2%20%23Container%20i%c3%a7erisinde%20komut%20%c3%a7al%c4%b1%c5%9ft%c4%b1rmak%20i%c3%a7in%20%26%2334%3bexec%26%2334%3b%20docker%20container%20exec%2094ef4e4f89%20ls%20%23%c3%87al%c4%b1%c5%9fan%20container%26%2339%3ba%20nas%c4%b1l%20ba%c4%9flan%c4%b1l%c4%b1r%20docker%20container%20exec%20-it%20deneme1%20sh%20%23Bir%20sanal%20makine%20ile%20Container%26%2339%3bin%20fark%c4%b1%3b%20Container%26%2339%3bde%20kernel%20yoktur%2c%20%c3%bczerinde%20%c3%a7al%c4%b1%c5%9ft%c4%b1%c4%9f%c4%b1%20hostun%20kernel%26%2339%3bini%20kullan%c4%b1r." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdockernotlarim%2fdocker-notlarim%2f&name=Docker%20Notlar%c4%b1m&description=%3cp%3eDocker%26rsquo%3ba%20giri%c5%9f%20notlar%c4%b1m.%20Bu%20notlar%20%c3%96zg%c3%bcr%20%c3%96zt%c3%bcrk%26rsquo%3b%c3%bcn%20Docker%20E%c4%9fitiminden%20ald%c4%b1%c4%9f%c4%b1m%20notlar%c4%b1md%c4%b1r.%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3e%23Container%20olu%c5%9fturulduktan%20sonra%20date%20uygulamas%c4%b1%20%c3%a7al%c4%b1%c5%9ft%c4%b1r%c4%b1lacak.%20Container%20ba%c5%9fka%20bir%20uygulama%20ile%20ba%c5%9flat%c4%b1lacak.%0adocker%20container%20run%20--name%20deneme%20httpd%20date%0a%0a%23Container%26%2339%3bi%20arka%20planda%20%c3%a7al%c4%b1%c5%9ft%c4%b1rmak%20i%c3%a7in%0adocker%20container%20run%20-d%20deneme2%0a%0a%23Container%20i%c3%a7erisinde%20komut%20%c3%a7al%c4%b1%c5%9ft%c4%b1rmak%20i%c3%a7in%20%26%2334%3bexec%26%2334%3b%0adocker%20container%20exec%2094ef4e4f89%20ls%0a%0a%23%c3%87al%c4%b1%c5%9fan%20container%26%2339%3ba%20nas%c4%b1l%20ba%c4%9flan%c4%b1l%c4%b1r%0adocker%20container%20exec%20-it%20deneme1%20sh%0a%0a%23Bir%20sanal%20makine%20ile%20Container%26%2339%3bin%20fark%c4%b1%3b%20Container%26%2339%3bde%20kernel%20yoktur%2c%20%c3%bczerinde%20%c3%a7al%c4%b1%c5%9ft%c4%b1%c4%9f%c4%b1%20hostun%20kernel%26%2339%3bini%20kullan%c4%b1r.%0a%0a%23Container%20ile%20ilgili%20daha%20fazla%20bilgi%20edinmek%20i%c3%a7in%0adocker%20container%20inspect%20deneme1%0adocker%20network%20inspect%20bridge%0adocker%20image%20inspect%20fedora%0a%0a%23Container%26%2339%3ba%20ba%c4%9flan%c4%b1p%20de%c4%9fi%c5%9fiklik%20yap%c4%b1lmas%c4%b1%20pek%20%c3%b6nerilmez.%20Baz%c4%b1lar%c4%b1na%20ba%c4%9flan%c4%b1lmaz%20bile.%0a%0a%23Container%20loglar%c4%b1na%20bakmak%20i%c3%a7in%0adocker%20container%20logs%20deneme1%0a%0a%23Container%20loglar%c4%b1n%c4%b1%20zaman%20damgalar%c4%b1yla%20g%c3%b6stermek%20i%c3%a7in%0adocker%20container%20logs%20-t%20deneme1%0a%0a%23Container%20loglar%c4%b1ndaki%20son%20birka%c3%a7%20sat%c4%b1r%c4%b1%20g%c3%b6rmek%20i%c3%a7in%0adocker%20container%20logs%20--tail%205%20deneme1%0a%0a%23Container%20loglar%c4%b1n%c4%b1%20canl%c4%b1%20g%c3%b6rmek%20i%c3%a7in%20%0adocker%20container%20logs%20-f%20deneme1%0a%0a%23Container%26%2339%3b%c4%b1n%20kaynaklar%c4%b1na%20bakmak%20i%c3%a7in%0adocker%20container%20top%20webserver%0adocker%20container%20stats%20webserver%0adocker%20stats%20%0a%0a%23Container%26%2339%3blar%c4%b1%20s%c4%b1n%c4%b1rlamad%c4%b1%c4%9f%c4%b1m%c4%b1z%20s%c3%bcrece%20host%20makinedeki%20kaynaklar%c4%b1%20s%c4%b1n%c4%b1rs%c4%b1z%20kullanabilir.%0aBu%20container%26%2339%3blar%c4%b1n%20kaynaklar%c4%b1n%c4%b1%20k%c4%b1s%c4%b1tlayabiliriz.%0a%23Container%26%2339%3b%c4%b1n%20memory%20k%c4%b1s%c4%b1tlamas%c4%b1%20i%c3%a7in%0adocker%20container%20run%20-d%20--name%20deneme3%20--memory%3d1G%20httpd%0adocker%20container%20run%20-d%20--name%20deneme3%20--memory%3d500K%20httpd%0a%0a%23CPU%20k%c4%b1s%c4%b1tlamas%c4%b1%20i%c3%a7in%20iki%20yol%20vard%c4%b1r%0a%23Container%20sadece%201%20core%20kullanabilecek%20random%20olarak%0adocker%20run%20-d%20--name%20cpukisit%20--cpus%3d%26%2334%3b1%26%2334%3b%20httpd%0a%0a%23Container%202%20ve%208%20nolu%20core%26%2339%3blar%c4%b1%20kullanabilecek%0adocker%20container%20run%20-d%20--name%20cpukisit2%20--cpuset-cpus%3d%26%2334%3b2%2c8%26%2334%3b%20httpd%0a%0a%23Container%26%2339%3bde%20swap%20belirlemek%20i%c3%a7in%0adocker%20run%20-d%20--name%20swap%20--memory-swap%3d1G%20httpd%0a%0a%23T%c3%bcm%20containerlar%c4%b1%20topluca%20silmek%20i%c3%a7in%0adocker%20container%20prune%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3e%3cimg%20src%3d%22%2fimages%2fDocker%2f1.png%22%20alt%3d%22docker%22%3e%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -415,90 +415,90 @@ docker login -u soner4444
 <p>Docker&rsquo;a özgü bir dil formatı ile conterner&rsquo;a ne olacağını söylediğimiz dosyadır.
 Dockerfile&rsquo;ı iyi dizayn etmemiz gerekiyor bekleme sürelerini minimalize etmek için. Değişiklik olan kısımları dosyanın altına doğru yazmamız gerekir ki Cache mekanizmasını daha efektif kullanılabilsin.</p>
 <table>
-<thead>
-<tr>
-<th>Instruction</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://docs.docker.com/reference/dockerfile/#add"><code>ADD</code></a></td>
-<td>Add local or remote files and directories.</td>
-</tr>
-<tr>
-<td><a href="https://docs.docker.com/reference/dockerfile/#arg"><code>ARG</code></a></td>
-<td>Use build-time variables.</td>
-</tr>
-<tr>
-<td><a href="https://docs.docker.com/reference/dockerfile/#cmd"><code>CMD</code></a></td>
-<td>Specify default commands.</td>
-</tr>
-<tr>
-<td><a href="https://docs.docker.com/reference/dockerfile/#copy"><code>COPY</code></a></td>
-<td>Copy files and directories.</td>
-</tr>
-<tr>
-<td><a href="https://docs.docker.com/reference/dockerfile/#entrypoint"><code>ENTRYPOINT</code></a></td>
-<td>Specify default executable.</td>
-</tr>
-<tr>
-<td><a href="https://docs.docker.com/reference/dockerfile/#env"><code>ENV</code></a></td>
-<td>Set environment variables.</td>
-</tr>
-<tr>
-<td><a href="https://docs.docker.com/reference/dockerfile/#expose"><code>EXPOSE</code></a></td>
-<td>Describe which ports your application is listening on.</td>
-</tr>
-<tr>
-<td><a href="https://docs.docker.com/reference/dockerfile/#from"><code>FROM</code></a></td>
-<td>Create a new build stage from a base image.</td>
-</tr>
-<tr>
-<td><a href="https://docs.docker.com/reference/dockerfile/#healthcheck"><code>HEALTHCHECK</code></a></td>
-<td>Check a container&rsquo;s health on startup.</td>
-</tr>
-<tr>
-<td><a href="https://docs.docker.com/reference/dockerfile/#label"><code>LABEL</code></a></td>
-<td>Add metadata to an image.</td>
-</tr>
-<tr>
-<td><a href="https://docs.docker.com/reference/dockerfile/#maintainer-deprecated"><code>MAINTAINER</code></a></td>
-<td>Specify the author of an image.</td>
-</tr>
-<tr>
-<td><a href="https://docs.docker.com/reference/dockerfile/#onbuild"><code>ONBUILD</code></a></td>
-<td>Specify instructions for when the image is used in a build.</td>
-</tr>
-<tr>
-<td><a href="https://docs.docker.com/reference/dockerfile/#run"><code>RUN</code></a></td>
-<td>Execute build commands.</td>
-</tr>
-<tr>
-<td><a href="https://docs.docker.com/reference/dockerfile/#shell"><code>SHELL</code></a></td>
-<td>Set the default shell of an image.</td>
-</tr>
-<tr>
-<td><a href="https://docs.docker.com/reference/dockerfile/#stopsignal"><code>STOPSIGNAL</code></a></td>
-<td>Specify the system call signal for exiting a container.</td>
-</tr>
-<tr>
-<td><a href="https://docs.docker.com/reference/dockerfile/#user"><code>USER</code></a></td>
-<td>Set user and group ID.</td>
-</tr>
-<tr>
-<td><a href="https://docs.docker.com/reference/dockerfile/#volume"><code>VOLUME</code></a></td>
-<td>Create volume mounts.</td>
-</tr>
-<tr>
-<td><a href="https://docs.docker.com/reference/dockerfile/#workdir"><code>WORKDIR</code></a></td>
-<td>Change working directory.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Instruction</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><a href="https://docs.docker.com/reference/dockerfile/#add"><code>ADD</code></a></td>
+          <td>Add local or remote files and directories.</td>
+      </tr>
+      <tr>
+          <td><a href="https://docs.docker.com/reference/dockerfile/#arg"><code>ARG</code></a></td>
+          <td>Use build-time variables.</td>
+      </tr>
+      <tr>
+          <td><a href="https://docs.docker.com/reference/dockerfile/#cmd"><code>CMD</code></a></td>
+          <td>Specify default commands.</td>
+      </tr>
+      <tr>
+          <td><a href="https://docs.docker.com/reference/dockerfile/#copy"><code>COPY</code></a></td>
+          <td>Copy files and directories.</td>
+      </tr>
+      <tr>
+          <td><a href="https://docs.docker.com/reference/dockerfile/#entrypoint"><code>ENTRYPOINT</code></a></td>
+          <td>Specify default executable.</td>
+      </tr>
+      <tr>
+          <td><a href="https://docs.docker.com/reference/dockerfile/#env"><code>ENV</code></a></td>
+          <td>Set environment variables.</td>
+      </tr>
+      <tr>
+          <td><a href="https://docs.docker.com/reference/dockerfile/#expose"><code>EXPOSE</code></a></td>
+          <td>Describe which ports your application is listening on.</td>
+      </tr>
+      <tr>
+          <td><a href="https://docs.docker.com/reference/dockerfile/#from"><code>FROM</code></a></td>
+          <td>Create a new build stage from a base image.</td>
+      </tr>
+      <tr>
+          <td><a href="https://docs.docker.com/reference/dockerfile/#healthcheck"><code>HEALTHCHECK</code></a></td>
+          <td>Check a container&rsquo;s health on startup.</td>
+      </tr>
+      <tr>
+          <td><a href="https://docs.docker.com/reference/dockerfile/#label"><code>LABEL</code></a></td>
+          <td>Add metadata to an image.</td>
+      </tr>
+      <tr>
+          <td><a href="https://docs.docker.com/reference/dockerfile/#maintainer-deprecated"><code>MAINTAINER</code></a></td>
+          <td>Specify the author of an image.</td>
+      </tr>
+      <tr>
+          <td><a href="https://docs.docker.com/reference/dockerfile/#onbuild"><code>ONBUILD</code></a></td>
+          <td>Specify instructions for when the image is used in a build.</td>
+      </tr>
+      <tr>
+          <td><a href="https://docs.docker.com/reference/dockerfile/#run"><code>RUN</code></a></td>
+          <td>Execute build commands.</td>
+      </tr>
+      <tr>
+          <td><a href="https://docs.docker.com/reference/dockerfile/#shell"><code>SHELL</code></a></td>
+          <td>Set the default shell of an image.</td>
+      </tr>
+      <tr>
+          <td><a href="https://docs.docker.com/reference/dockerfile/#stopsignal"><code>STOPSIGNAL</code></a></td>
+          <td>Specify the system call signal for exiting a container.</td>
+      </tr>
+      <tr>
+          <td><a href="https://docs.docker.com/reference/dockerfile/#user"><code>USER</code></a></td>
+          <td>Set user and group ID.</td>
+      </tr>
+      <tr>
+          <td><a href="https://docs.docker.com/reference/dockerfile/#volume"><code>VOLUME</code></a></td>
+          <td>Create volume mounts.</td>
+      </tr>
+      <tr>
+          <td><a href="https://docs.docker.com/reference/dockerfile/#workdir"><code>WORKDIR</code></a></td>
+          <td>Change working directory.</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
 </table>
 <pre tabindex="0"><code>#Oluşturulacak imajın hangi imajdan oluşturulacağını belirten talimat. 
 #Dockerfile içerisinde geçmesi mecburi tek talimat budur. Mutlaka olmalıdır.
@@ -777,7 +777,7 @@ docker compose down
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdockernotlarim%2fdocker-notlarim%2f&name=Docker%20Notlar%c4%b1m&description=Docker%26rsquo%3ba%20giri%c5%9f%20notlar%c4%b1m.%20Bu%20notlar%20%c3%96zg%c3%bcr%20%c3%96zt%c3%bcrk%26rsquo%3b%c3%bcn%20Docker%20E%c4%9fitiminden%20ald%c4%b1%c4%9f%c4%b1m%20notlar%c4%b1md%c4%b1r.%0a%23Container%20olu%c5%9fturulduktan%20sonra%20date%20uygulamas%c4%b1%20%c3%a7al%c4%b1%c5%9ft%c4%b1r%c4%b1lacak.%20Container%20ba%c5%9fka%20bir%20uygulama%20ile%20ba%c5%9flat%c4%b1lacak.%20docker%20container%20run%20--name%20deneme%20httpd%20date%20%23Container%26%2339%3bi%20arka%20planda%20%c3%a7al%c4%b1%c5%9ft%c4%b1rmak%20i%c3%a7in%20docker%20container%20run%20-d%20deneme2%20%23Container%20i%c3%a7erisinde%20komut%20%c3%a7al%c4%b1%c5%9ft%c4%b1rmak%20i%c3%a7in%20%26%2334%3bexec%26%2334%3b%20docker%20container%20exec%2094ef4e4f89%20ls%20%23%c3%87al%c4%b1%c5%9fan%20container%26%2339%3ba%20nas%c4%b1l%20ba%c4%9flan%c4%b1l%c4%b1r%20docker%20container%20exec%20-it%20deneme1%20sh%20%23Bir%20sanal%20makine%20ile%20Container%26%2339%3bin%20fark%c4%b1%3b%20Container%26%2339%3bde%20kernel%20yoktur%2c%20%c3%bczerinde%20%c3%a7al%c4%b1%c5%9ft%c4%b1%c4%9f%c4%b1%20hostun%20kernel%26%2339%3bini%20kullan%c4%b1r." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdockernotlarim%2fdocker-notlarim%2f&name=Docker%20Notlar%c4%b1m&description=%3cp%3eDocker%26rsquo%3ba%20giri%c5%9f%20notlar%c4%b1m.%20Bu%20notlar%20%c3%96zg%c3%bcr%20%c3%96zt%c3%bcrk%26rsquo%3b%c3%bcn%20Docker%20E%c4%9fitiminden%20ald%c4%b1%c4%9f%c4%b1m%20notlar%c4%b1md%c4%b1r.%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3e%23Container%20olu%c5%9fturulduktan%20sonra%20date%20uygulamas%c4%b1%20%c3%a7al%c4%b1%c5%9ft%c4%b1r%c4%b1lacak.%20Container%20ba%c5%9fka%20bir%20uygulama%20ile%20ba%c5%9flat%c4%b1lacak.%0adocker%20container%20run%20--name%20deneme%20httpd%20date%0a%0a%23Container%26%2339%3bi%20arka%20planda%20%c3%a7al%c4%b1%c5%9ft%c4%b1rmak%20i%c3%a7in%0adocker%20container%20run%20-d%20deneme2%0a%0a%23Container%20i%c3%a7erisinde%20komut%20%c3%a7al%c4%b1%c5%9ft%c4%b1rmak%20i%c3%a7in%20%26%2334%3bexec%26%2334%3b%0adocker%20container%20exec%2094ef4e4f89%20ls%0a%0a%23%c3%87al%c4%b1%c5%9fan%20container%26%2339%3ba%20nas%c4%b1l%20ba%c4%9flan%c4%b1l%c4%b1r%0adocker%20container%20exec%20-it%20deneme1%20sh%0a%0a%23Bir%20sanal%20makine%20ile%20Container%26%2339%3bin%20fark%c4%b1%3b%20Container%26%2339%3bde%20kernel%20yoktur%2c%20%c3%bczerinde%20%c3%a7al%c4%b1%c5%9ft%c4%b1%c4%9f%c4%b1%20hostun%20kernel%26%2339%3bini%20kullan%c4%b1r.%0a%0a%23Container%20ile%20ilgili%20daha%20fazla%20bilgi%20edinmek%20i%c3%a7in%0adocker%20container%20inspect%20deneme1%0adocker%20network%20inspect%20bridge%0adocker%20image%20inspect%20fedora%0a%0a%23Container%26%2339%3ba%20ba%c4%9flan%c4%b1p%20de%c4%9fi%c5%9fiklik%20yap%c4%b1lmas%c4%b1%20pek%20%c3%b6nerilmez.%20Baz%c4%b1lar%c4%b1na%20ba%c4%9flan%c4%b1lmaz%20bile.%0a%0a%23Container%20loglar%c4%b1na%20bakmak%20i%c3%a7in%0adocker%20container%20logs%20deneme1%0a%0a%23Container%20loglar%c4%b1n%c4%b1%20zaman%20damgalar%c4%b1yla%20g%c3%b6stermek%20i%c3%a7in%0adocker%20container%20logs%20-t%20deneme1%0a%0a%23Container%20loglar%c4%b1ndaki%20son%20birka%c3%a7%20sat%c4%b1r%c4%b1%20g%c3%b6rmek%20i%c3%a7in%0adocker%20container%20logs%20--tail%205%20deneme1%0a%0a%23Container%20loglar%c4%b1n%c4%b1%20canl%c4%b1%20g%c3%b6rmek%20i%c3%a7in%20%0adocker%20container%20logs%20-f%20deneme1%0a%0a%23Container%26%2339%3b%c4%b1n%20kaynaklar%c4%b1na%20bakmak%20i%c3%a7in%0adocker%20container%20top%20webserver%0adocker%20container%20stats%20webserver%0adocker%20stats%20%0a%0a%23Container%26%2339%3blar%c4%b1%20s%c4%b1n%c4%b1rlamad%c4%b1%c4%9f%c4%b1m%c4%b1z%20s%c3%bcrece%20host%20makinedeki%20kaynaklar%c4%b1%20s%c4%b1n%c4%b1rs%c4%b1z%20kullanabilir.%0aBu%20container%26%2339%3blar%c4%b1n%20kaynaklar%c4%b1n%c4%b1%20k%c4%b1s%c4%b1tlayabiliriz.%0a%23Container%26%2339%3b%c4%b1n%20memory%20k%c4%b1s%c4%b1tlamas%c4%b1%20i%c3%a7in%0adocker%20container%20run%20-d%20--name%20deneme3%20--memory%3d1G%20httpd%0adocker%20container%20run%20-d%20--name%20deneme3%20--memory%3d500K%20httpd%0a%0a%23CPU%20k%c4%b1s%c4%b1tlamas%c4%b1%20i%c3%a7in%20iki%20yol%20vard%c4%b1r%0a%23Container%20sadece%201%20core%20kullanabilecek%20random%20olarak%0adocker%20run%20-d%20--name%20cpukisit%20--cpus%3d%26%2334%3b1%26%2334%3b%20httpd%0a%0a%23Container%202%20ve%208%20nolu%20core%26%2339%3blar%c4%b1%20kullanabilecek%0adocker%20container%20run%20-d%20--name%20cpukisit2%20--cpuset-cpus%3d%26%2334%3b2%2c8%26%2334%3b%20httpd%0a%0a%23Container%26%2339%3bde%20swap%20belirlemek%20i%c3%a7in%0adocker%20run%20-d%20--name%20swap%20--memory-swap%3d1G%20httpd%0a%0a%23T%c3%bcm%20containerlar%c4%b1%20topluca%20silmek%20i%c3%a7in%0adocker%20container%20prune%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3e%3cimg%20src%3d%22%2fimages%2fDocker%2f1.png%22%20alt%3d%22docker%22%3e%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

@@ -10,7 +10,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> [EN] Vmware to Proxmox Migration | ittechnetworkk</title>
   <link rel = 'canonical' href = 'https://ittechnetworkk.github.io/posts/proxmoxvmwaremigration/vmware-to-proxmox-migration/'>
-  <meta name="description" content="Hi, I’m Soner, and this is my personal blog where I share insights, guides, and articles on various tech topics, including Networking, Linux, Windows, Virtualization, Firewalls, IoT, and more. I&#39;m constantly learning and exploring new technologies, and this blog is where I document my journey. ">
+  <meta name="description" content="Hi, I&#39;m Soner, and this is my personal blog where I share insights, guides, and articles on various tech topics, including Networking, Linux, Windows, Virtualization, Firewalls, IoT, and more. I&#39;m constantly learning and exploring new technologies, and this blog is where I document my journey. ">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
@@ -20,7 +20,7 @@
   <meta property="og:description" content="Hi everyone, in this article I will show you two methods for migrating virtual machines from VMware to Proxmox.
 There are two ways to perform a VMware to Proxmox migration:
 Manual Method: In this approach, you need to export the .vmdk and .ovf files from the ESXi host and import them into Proxmox using the following command:
-qm importdisk &lt;VM-ID&gt; &lt;TheNameOfvmdk&gt; &lt;StorageName&gt; -format raw|qcow2 qm importdisk 100 Win22.vmdk local-lvm -format raw Automatic Method: This method leverages the VMware ESXi API to automate the process.">
+qm importdisk &lt;VM-ID&gt; &lt;TheNameOfvmdk&gt; &lt;StorageName&gt; -format raw|qcow2 qm importdisk 100 Win22.vmdk local-lvm -format raw Automatic Method: This method leverages the VMware ESXi API to automate the process. Later on, we will add the ESXi host under Proxmox VE &gt; Datacenter &gt; Storage &gt; ESXi, enabling seamless integration">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -35,7 +35,7 @@ qm importdisk &lt;VM-ID&gt; &lt;TheNameOfvmdk&gt; &lt;StorageName&gt; -format ra
   <meta name="twitter:description" content="Hi everyone, in this article I will show you two methods for migrating virtual machines from VMware to Proxmox.
 There are two ways to perform a VMware to Proxmox migration:
 Manual Method: In this approach, you need to export the .vmdk and .ovf files from the ESXi host and import them into Proxmox using the following command:
-qm importdisk &lt;VM-ID&gt; &lt;TheNameOfvmdk&gt; &lt;StorageName&gt; -format raw|qcow2 qm importdisk 100 Win22.vmdk local-lvm -format raw Automatic Method: This method leverages the VMware ESXi API to automate the process.">
+qm importdisk &lt;VM-ID&gt; &lt;TheNameOfvmdk&gt; &lt;StorageName&gt; -format raw|qcow2 qm importdisk 100 Win22.vmdk local-lvm -format raw Automatic Method: This method leverages the VMware ESXi API to automate the process. Later on, we will add the ESXi host under Proxmox VE &gt; Datacenter &gt; Storage &gt; ESXi, enabling seamless integration">
 
   
   
@@ -174,7 +174,7 @@ qm importdisk &lt;VM-ID&gt; &lt;TheNameOfvmdk&gt; &lt;StorageName&gt; -format ra
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fproxmoxvmwaremigration%2fvmware-to-proxmox-migration%2f&name=%5bEN%5d%20Vmware%20to%20Proxmox%20Migration&description=Hi%20everyone%2c%20in%20this%20article%20I%20will%20show%20you%20two%20methods%20for%20migrating%20virtual%20machines%20from%20VMware%20to%20Proxmox.%0aThere%20are%20two%20ways%20to%20perform%20a%20VMware%20to%20Proxmox%20migration%3a%0aManual%20Method%3a%20In%20this%20approach%2c%20you%20need%20to%20export%20the%20.vmdk%20and%20.ovf%20files%20from%20the%20ESXi%20host%20and%20import%20them%20into%20Proxmox%20using%20the%20following%20command%3a%0aqm%20importdisk%20%26lt%3bVM-ID%26gt%3b%20%26lt%3bTheNameOfvmdk%26gt%3b%20%26lt%3bStorageName%26gt%3b%20-format%20raw%7cqcow2%20qm%20importdisk%20100%20Win22.vmdk%20local-lvm%20-format%20raw%20Automatic%20Method%3a%20This%20method%20leverages%20the%20VMware%20ESXi%20API%20to%20automate%20the%20process." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fproxmoxvmwaremigration%2fvmware-to-proxmox-migration%2f&name=%5bEN%5d%20Vmware%20to%20Proxmox%20Migration&description=%3cp%3eHi%20everyone%2c%20in%20this%20article%20I%20will%20show%20you%20two%20methods%20for%20migrating%20virtual%20machines%20from%20VMware%20to%20Proxmox.%3c%2fp%3e%0a%3cp%3eThere%20are%20two%20ways%20to%20perform%20a%20VMware%20to%20Proxmox%20migration%3a%3c%2fp%3e%0a%3col%3e%0a%3cli%3eManual%20Method%3a%3c%2fli%3e%0a%3c%2fol%3e%0a%3cp%3eIn%20this%20approach%2c%20you%20need%20to%20export%20the%20%3ccode%3e.vmdk%3c%2fcode%3e%20and%20%3ccode%3e.ovf%3c%2fcode%3e%20files%20from%20the%20ESXi%20host%20and%20import%20them%20into%20Proxmox%20using%20the%20following%20command%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eqm%20importdisk%20%26lt%3bVM-ID%26gt%3b%20%26lt%3bTheNameOfvmdk%26gt%3b%20%26lt%3bStorageName%26gt%3b%20-format%20raw%7cqcow2%0a%0aqm%20importdisk%20100%20Win22.vmdk%20local-lvm%20-format%20raw%0a%3c%2fcode%3e%3c%2fpre%3e%3col%20start%3d%222%22%3e%0a%3cli%3eAutomatic%20Method%3a%3c%2fli%3e%0a%3c%2fol%3e%0a%3cp%3eThis%20method%20leverages%20the%20VMware%20ESXi%20API%20to%20automate%20the%20process.%20Later%20on%2c%20we%20will%20add%20the%20ESXi%20host%20under%20%3cstrong%3eProxmox%20VE%20%26gt%3b%20Datacenter%20%26gt%3b%20Storage%20%26gt%3b%20ESXi%3c%2fstrong%3e%2c%20enabling%20seamless%20integration%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -400,7 +400,7 @@ cat Win2022.ovf |grep ResourceSubType
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fproxmoxvmwaremigration%2fvmware-to-proxmox-migration%2f&name=%5bEN%5d%20Vmware%20to%20Proxmox%20Migration&description=Hi%20everyone%2c%20in%20this%20article%20I%20will%20show%20you%20two%20methods%20for%20migrating%20virtual%20machines%20from%20VMware%20to%20Proxmox.%0aThere%20are%20two%20ways%20to%20perform%20a%20VMware%20to%20Proxmox%20migration%3a%0aManual%20Method%3a%20In%20this%20approach%2c%20you%20need%20to%20export%20the%20.vmdk%20and%20.ovf%20files%20from%20the%20ESXi%20host%20and%20import%20them%20into%20Proxmox%20using%20the%20following%20command%3a%0aqm%20importdisk%20%26lt%3bVM-ID%26gt%3b%20%26lt%3bTheNameOfvmdk%26gt%3b%20%26lt%3bStorageName%26gt%3b%20-format%20raw%7cqcow2%20qm%20importdisk%20100%20Win22.vmdk%20local-lvm%20-format%20raw%20Automatic%20Method%3a%20This%20method%20leverages%20the%20VMware%20ESXi%20API%20to%20automate%20the%20process." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fproxmoxvmwaremigration%2fvmware-to-proxmox-migration%2f&name=%5bEN%5d%20Vmware%20to%20Proxmox%20Migration&description=%3cp%3eHi%20everyone%2c%20in%20this%20article%20I%20will%20show%20you%20two%20methods%20for%20migrating%20virtual%20machines%20from%20VMware%20to%20Proxmox.%3c%2fp%3e%0a%3cp%3eThere%20are%20two%20ways%20to%20perform%20a%20VMware%20to%20Proxmox%20migration%3a%3c%2fp%3e%0a%3col%3e%0a%3cli%3eManual%20Method%3a%3c%2fli%3e%0a%3c%2fol%3e%0a%3cp%3eIn%20this%20approach%2c%20you%20need%20to%20export%20the%20%3ccode%3e.vmdk%3c%2fcode%3e%20and%20%3ccode%3e.ovf%3c%2fcode%3e%20files%20from%20the%20ESXi%20host%20and%20import%20them%20into%20Proxmox%20using%20the%20following%20command%3a%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3eqm%20importdisk%20%26lt%3bVM-ID%26gt%3b%20%26lt%3bTheNameOfvmdk%26gt%3b%20%26lt%3bStorageName%26gt%3b%20-format%20raw%7cqcow2%0a%0aqm%20importdisk%20100%20Win22.vmdk%20local-lvm%20-format%20raw%0a%3c%2fcode%3e%3c%2fpre%3e%3col%20start%3d%222%22%3e%0a%3cli%3eAutomatic%20Method%3a%3c%2fli%3e%0a%3c%2fol%3e%0a%3cp%3eThis%20method%20leverages%20the%20VMware%20ESXi%20API%20to%20automate%20the%20process.%20Later%20on%2c%20we%20will%20add%20the%20ESXi%20host%20under%20%3cstrong%3eProxmox%20VE%20%26gt%3b%20Datacenter%20%26gt%3b%20Storage%20%26gt%3b%20ESXi%3c%2fstrong%3e%2c%20enabling%20seamless%20integration%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

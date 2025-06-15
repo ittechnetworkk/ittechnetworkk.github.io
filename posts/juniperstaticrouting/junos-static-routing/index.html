@@ -10,7 +10,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> [EN] Junos Static Routing | ittechnetworkk</title>
   <link rel = 'canonical' href = 'https://ittechnetworkk.github.io/posts/juniperstaticrouting/junos-static-routing/'>
-  <meta name="description" content="Hi, I’m Soner, and this is my personal blog where I share insights, guides, and articles on various tech topics, including Networking, Linux, Windows, Virtualization, Firewalls, IoT, and more. I&#39;m constantly learning and exploring new technologies, and this blog is where I document my journey. ">
+  <meta name="description" content="Hi, I&#39;m Soner, and this is my personal blog where I share insights, guides, and articles on various tech topics, including Networking, Linux, Windows, Virtualization, Firewalls, IoT, and more. I&#39;m constantly learning and exploring new technologies, and this blog is where I document my journey. ">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
@@ -21,7 +21,7 @@
 Routing Preferences in Junos:
 - Direct/Local 0 - Static Route 5 - OSPF Internal 10 - ISIS Internal L1/L2 15-18 - RIP 100 - OSPF External 150 - ISIS External L1/L2 160/165 - BGP 170 Static Route Configuration:
 [edit] root# edit routing-options [edit routing-options] root# set static route 10.10.10.0/24 next-hop 9.9.9.1 OR
-[edit] root# set routing-options static route 10.">
+[edit] root# set routing-options static route 10.10.10.0/24 next-hop 9.9.9.1 Adding a backup route with different preference value.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -37,7 +37,7 @@ Routing Preferences in Junos:
 Routing Preferences in Junos:
 - Direct/Local 0 - Static Route 5 - OSPF Internal 10 - ISIS Internal L1/L2 15-18 - RIP 100 - OSPF External 150 - ISIS External L1/L2 160/165 - BGP 170 Static Route Configuration:
 [edit] root# edit routing-options [edit routing-options] root# set static route 10.10.10.0/24 next-hop 9.9.9.1 OR
-[edit] root# set routing-options static route 10.">
+[edit] root# set routing-options static route 10.10.10.0/24 next-hop 9.9.9.1 Adding a backup route with different preference value.">
 
   
   
@@ -176,7 +176,7 @@ Routing Preferences in Junos:
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fjuniperstaticrouting%2fjunos-static-routing%2f&name=%5bEN%5d%20Junos%20Static%20Routing&description=In%20Junos%20devices%20static%20routing%20configuration%20will%20be%20done%20in%20the%20following%20way.%0aRouting%20Preferences%20in%20Junos%3a%0a-%20Direct%2fLocal%200%20-%20Static%20Route%205%20-%20OSPF%20Internal%2010%20-%20ISIS%20Internal%20L1%2fL2%2015-18%20-%20RIP%20100%20-%20OSPF%20External%20150%20-%20ISIS%20External%20L1%2fL2%20160%2f165%20-%20BGP%20170%20Static%20Route%20Configuration%3a%0a%5bedit%5d%20root%23%20edit%20routing-options%20%5bedit%20routing-options%5d%20root%23%20set%20static%20route%2010.10.10.0%2f24%20next-hop%209.9.9.1%20OR%0a%5bedit%5d%20root%23%20set%20routing-options%20static%20route%2010." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fjuniperstaticrouting%2fjunos-static-routing%2f&name=%5bEN%5d%20Junos%20Static%20Routing&description=%3cp%3eIn%20Junos%20devices%20static%20routing%20configuration%20will%20be%20done%20in%20the%20following%20way.%3c%2fp%3e%0a%3cp%3e%3cstrong%3eRouting%20Preferences%20in%20Junos%3a%3c%2fstrong%3e%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3e-%20Direct%2fLocal%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%200%0a-%20Static%20Route%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%205%0a-%20OSPF%20Internal%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2010%0a-%20ISIS%20Internal%20L1%2fL2%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2015-18%0a-%20RIP%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20100%0a-%20OSPF%20External%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20150%0a-%20ISIS%20External%20L1%2fL2%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20160%2f165%0a-%20BGP%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20170%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3e%3cstrong%3eStatic%20Route%20Configuration%3a%3c%2fstrong%3e%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3e%5bedit%5d%20%0aroot%23%20edit%20routing-options%20%0a%0a%5bedit%20routing-options%5d%0aroot%23%20set%20static%20route%2010.10.10.0%2f24%20next-hop%209.9.9.1%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eOR%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3e%5bedit%5d%0aroot%23%20set%20routing-options%20static%20route%2010.10.10.0%2f24%20next-hop%209.9.9.1%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eAdding%20a%20backup%20route%20with%20different%20preference%20value.%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -404,7 +404,7 @@ root&gt; show route terse
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fjuniperstaticrouting%2fjunos-static-routing%2f&name=%5bEN%5d%20Junos%20Static%20Routing&description=In%20Junos%20devices%20static%20routing%20configuration%20will%20be%20done%20in%20the%20following%20way.%0aRouting%20Preferences%20in%20Junos%3a%0a-%20Direct%2fLocal%200%20-%20Static%20Route%205%20-%20OSPF%20Internal%2010%20-%20ISIS%20Internal%20L1%2fL2%2015-18%20-%20RIP%20100%20-%20OSPF%20External%20150%20-%20ISIS%20External%20L1%2fL2%20160%2f165%20-%20BGP%20170%20Static%20Route%20Configuration%3a%0a%5bedit%5d%20root%23%20edit%20routing-options%20%5bedit%20routing-options%5d%20root%23%20set%20static%20route%2010.10.10.0%2f24%20next-hop%209.9.9.1%20OR%0a%5bedit%5d%20root%23%20set%20routing-options%20static%20route%2010." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fjuniperstaticrouting%2fjunos-static-routing%2f&name=%5bEN%5d%20Junos%20Static%20Routing&description=%3cp%3eIn%20Junos%20devices%20static%20routing%20configuration%20will%20be%20done%20in%20the%20following%20way.%3c%2fp%3e%0a%3cp%3e%3cstrong%3eRouting%20Preferences%20in%20Junos%3a%3c%2fstrong%3e%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3e-%20Direct%2fLocal%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%200%0a-%20Static%20Route%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%205%0a-%20OSPF%20Internal%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2010%0a-%20ISIS%20Internal%20L1%2fL2%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2015-18%0a-%20RIP%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20100%0a-%20OSPF%20External%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20150%0a-%20ISIS%20External%20L1%2fL2%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20160%2f165%0a-%20BGP%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20170%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3e%3cstrong%3eStatic%20Route%20Configuration%3a%3c%2fstrong%3e%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3e%5bedit%5d%20%0aroot%23%20edit%20routing-options%20%0a%0a%5bedit%20routing-options%5d%0aroot%23%20set%20static%20route%2010.10.10.0%2f24%20next-hop%209.9.9.1%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eOR%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3e%5bedit%5d%0aroot%23%20set%20routing-options%20static%20route%2010.10.10.0%2f24%20next-hop%209.9.9.1%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3eAdding%20a%20backup%20route%20with%20different%20preference%20value.%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

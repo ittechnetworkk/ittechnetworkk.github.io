@@ -14,7 +14,7 @@
       <link>https://ittechnetworkk.github.io/posts/hsrp/hsrp/</link>
       <pubDate>Sun, 07 Jan 2024 23:45:22 +0100</pubDate>
       <guid>https://ittechnetworkk.github.io/posts/hsrp/hsrp/</guid>
-      <description>HSRP (Hot Standby Router Protocol), router yedekliliğini sağlamak amacıyla Cisco tarafından geliştirilmiş bir protokoldür. Birden fazla Router bulunan networklerde aktif olarak belirtilen Router&amp;rsquo;ın çalışmaması durumunda yedek olarak bekleyen Router&amp;rsquo;ın devreye girmesi prensibiyle çalışır. Bunun için sanal bir ortak IP adresi oluşturulur ve PC&amp;rsquo;lere Gateway olarak bu IP adresi verilir. Bu IP adresine giden paketler de aktif olan Router&amp;rsquo;a yönlendirilir. Bu sayede iletişim sağlanır.&#xA;Router&amp;rsquo;lar birbirlerine 3 saniyede bir aktif olup olmadıklarını öğrendikleri Hello paketi yollarlar.</description>
+      <description>&lt;p&gt;HSRP (Hot Standby Router Protocol), router yedekliliğini sağlamak amacıyla Cisco tarafından geliştirilmiş bir protokoldür. Birden fazla Router bulunan networklerde aktif olarak belirtilen Router&amp;rsquo;ın çalışmaması durumunda yedek olarak bekleyen Router&amp;rsquo;ın devreye girmesi prensibiyle çalışır. Bunun için sanal bir ortak IP adresi oluşturulur ve PC&amp;rsquo;lere Gateway olarak bu IP adresi verilir. Bu IP adresine giden paketler de aktif olan Router&amp;rsquo;a yönlendirilir. Bu sayede iletişim sağlanır.&lt;/p&gt;&#xA;&lt;p&gt;Router&amp;rsquo;lar birbirlerine 3 saniyede bir aktif olup olmadıklarını öğrendikleri Hello paketi yollarlar. Eğer aktif Router&amp;rsquo;dan 10 saniye cevap gelmezse yedek Router devreye girer, paketler o Router üzerinden iletilir. Bu değerler isteğe bağlı değiştirilebilir.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

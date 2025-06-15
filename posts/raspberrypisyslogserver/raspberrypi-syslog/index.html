@@ -10,7 +10,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> Raspberry Pi Syslog Server | ittechnetworkk</title>
   <link rel = 'canonical' href = 'https://ittechnetworkk.github.io/posts/raspberrypisyslogserver/raspberrypi-syslog/'>
-  <meta name="description" content="Hi, I’m Soner, and this is my personal blog where I share insights, guides, and articles on various tech topics, including Networking, Linux, Windows, Virtualization, Firewalls, IoT, and more. I&#39;m constantly learning and exploring new technologies, and this blog is where I document my journey. ">
+  <meta name="description" content="Hi, I&#39;m Soner, and this is my personal blog where I share insights, guides, and articles on various tech topics, including Networking, Linux, Windows, Virtualization, Firewalls, IoT, and more. I&#39;m constantly learning and exploring new technologies, and this blog is where I document my journey. ">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
@@ -20,8 +20,7 @@
   <meta property="og:description" content="Merhaba, bu yazımda bi Raspberry Pi Zero’ya Syslog server rolü verip, bir Cisco Switch’e bu Syslog server konfigürasyonunu yapacağım.
 Bu Lab için kullanacağım donanım ve yazılımlar:
 Raspberry Pi Zero 2W, Cisco 2960 Switch, SD Cart, Kart Reader, Ethernet Kablosu, MicroUSB Power Cable, Switch Power Cable, ImagerPi. İlk olarak ImagerPi kullanarak SD Kart’a Ubuntu işletim sistemini kuruyorum.
-SD Kart’ı Raspberry Pi’a takıp, modemin yakınında güç kablosunu takıp cihazı açıyorum.
-Raspberry Pi’nin hangi IP adresini aldığını öğrenmek için:">
+SD Kart’ı Raspberry Pi’a takıp, modemin yakınında güç kablosunu takıp cihazı açıyorum.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -38,8 +37,7 @@ Raspberry Pi’nin hangi IP adresini aldığını öğrenmek için:">
   <meta name="twitter:description" content="Merhaba, bu yazımda bi Raspberry Pi Zero’ya Syslog server rolü verip, bir Cisco Switch’e bu Syslog server konfigürasyonunu yapacağım.
 Bu Lab için kullanacağım donanım ve yazılımlar:
 Raspberry Pi Zero 2W, Cisco 2960 Switch, SD Cart, Kart Reader, Ethernet Kablosu, MicroUSB Power Cable, Switch Power Cable, ImagerPi. İlk olarak ImagerPi kullanarak SD Kart’a Ubuntu işletim sistemini kuruyorum.
-SD Kart’ı Raspberry Pi’a takıp, modemin yakınında güç kablosunu takıp cihazı açıyorum.
-Raspberry Pi’nin hangi IP adresini aldığını öğrenmek için:">
+SD Kart’ı Raspberry Pi’a takıp, modemin yakınında güç kablosunu takıp cihazı açıyorum.">
 
   
   
@@ -178,7 +176,7 @@ Raspberry Pi’nin hangi IP adresini aldığını öğrenmek için:">
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypisyslogserver%2fraspberrypi-syslog%2f&name=Raspberry%20Pi%20Syslog%20Server&description=Merhaba%2c%20bu%20yaz%c4%b1mda%20bi%20Raspberry%20Pi%20Zero%26rsquo%3bya%20Syslog%20server%20rol%c3%bc%20verip%2c%20bir%20Cisco%20Switch%26rsquo%3be%20bu%20Syslog%20server%20konfig%c3%bcrasyonunu%20yapaca%c4%9f%c4%b1m.%0aBu%20Lab%20i%c3%a7in%20kullanaca%c4%9f%c4%b1m%20donan%c4%b1m%20ve%20yaz%c4%b1l%c4%b1mlar%3a%0aRaspberry%20Pi%20Zero%202W%2c%20Cisco%202960%20Switch%2c%20SD%20Cart%2c%20Kart%20Reader%2c%20Ethernet%20Kablosu%2c%20MicroUSB%20Power%20Cable%2c%20Switch%20Power%20Cable%2c%20ImagerPi.%20%c4%b0lk%20olarak%20ImagerPi%20kullanarak%20SD%20Kart%26rsquo%3ba%20Ubuntu%20i%c5%9fletim%20sistemini%20kuruyorum.%0aSD%20Kart%26rsquo%3b%c4%b1%20Raspberry%20Pi%26rsquo%3ba%20tak%c4%b1p%2c%20modemin%20yak%c4%b1n%c4%b1nda%20g%c3%bc%c3%a7%20kablosunu%20tak%c4%b1p%20cihaz%c4%b1%20a%c3%a7%c4%b1yorum.%0aRaspberry%20Pi%26rsquo%3bnin%20hangi%20IP%20adresini%20ald%c4%b1%c4%9f%c4%b1n%c4%b1%20%c3%b6%c4%9frenmek%20i%c3%a7in%3a" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypisyslogserver%2fraspberrypi-syslog%2f&name=Raspberry%20Pi%20Syslog%20Server&description=%3cp%3eMerhaba%2c%20bu%20yaz%c4%b1mda%20bi%20Raspberry%20Pi%20Zero%26rsquo%3bya%20Syslog%20server%20rol%c3%bc%20verip%2c%20bir%20Cisco%20Switch%26rsquo%3be%20bu%20Syslog%20server%20konfig%c3%bcrasyonunu%20yapaca%c4%9f%c4%b1m.%3c%2fp%3e%0a%3cp%3eBu%20Lab%20i%c3%a7in%20kullanaca%c4%9f%c4%b1m%20donan%c4%b1m%20ve%20yaz%c4%b1l%c4%b1mlar%3a%3c%2fp%3e%0a%3cul%3e%0a%3cli%3eRaspberry%20Pi%20Zero%202W%2c%3c%2fli%3e%0a%3cli%3eCisco%202960%20Switch%2c%3c%2fli%3e%0a%3cli%3eSD%20Cart%2c%3c%2fli%3e%0a%3cli%3eKart%20Reader%2c%3c%2fli%3e%0a%3cli%3eEthernet%20Kablosu%2c%3c%2fli%3e%0a%3cli%3eMicroUSB%20Power%20Cable%2c%3c%2fli%3e%0a%3cli%3eSwitch%20Power%20Cable%2c%3c%2fli%3e%0a%3cli%3eImagerPi.%3c%2fli%3e%0a%3c%2ful%3e%0a%3cp%3e%c4%b0lk%20olarak%20ImagerPi%20kullanarak%20SD%20Kart%26rsquo%3ba%20Ubuntu%20i%c5%9fletim%20sistemini%20kuruyorum.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fRaspberryPiSyslogServer%2f1.png%22%20alt%3d%22syslog%22%3e%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fRaspberryPiSyslogServer%2f2.png%22%20alt%3d%22syslog%22%3e%3c%2fp%3e%0a%3cp%3eSD%20Kart%26rsquo%3b%c4%b1%20Raspberry%20Pi%26rsquo%3ba%20tak%c4%b1p%2c%20modemin%20yak%c4%b1n%c4%b1nda%20g%c3%bc%c3%a7%20kablosunu%20tak%c4%b1p%20cihaz%c4%b1%20a%c3%a7%c4%b1yorum.%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -430,7 +428,7 @@ SW1#sh logging                           #kontrol
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypisyslogserver%2fraspberrypi-syslog%2f&name=Raspberry%20Pi%20Syslog%20Server&description=Merhaba%2c%20bu%20yaz%c4%b1mda%20bi%20Raspberry%20Pi%20Zero%26rsquo%3bya%20Syslog%20server%20rol%c3%bc%20verip%2c%20bir%20Cisco%20Switch%26rsquo%3be%20bu%20Syslog%20server%20konfig%c3%bcrasyonunu%20yapaca%c4%9f%c4%b1m.%0aBu%20Lab%20i%c3%a7in%20kullanaca%c4%9f%c4%b1m%20donan%c4%b1m%20ve%20yaz%c4%b1l%c4%b1mlar%3a%0aRaspberry%20Pi%20Zero%202W%2c%20Cisco%202960%20Switch%2c%20SD%20Cart%2c%20Kart%20Reader%2c%20Ethernet%20Kablosu%2c%20MicroUSB%20Power%20Cable%2c%20Switch%20Power%20Cable%2c%20ImagerPi.%20%c4%b0lk%20olarak%20ImagerPi%20kullanarak%20SD%20Kart%26rsquo%3ba%20Ubuntu%20i%c5%9fletim%20sistemini%20kuruyorum.%0aSD%20Kart%26rsquo%3b%c4%b1%20Raspberry%20Pi%26rsquo%3ba%20tak%c4%b1p%2c%20modemin%20yak%c4%b1n%c4%b1nda%20g%c3%bc%c3%a7%20kablosunu%20tak%c4%b1p%20cihaz%c4%b1%20a%c3%a7%c4%b1yorum.%0aRaspberry%20Pi%26rsquo%3bnin%20hangi%20IP%20adresini%20ald%c4%b1%c4%9f%c4%b1n%c4%b1%20%c3%b6%c4%9frenmek%20i%c3%a7in%3a" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fraspberrypisyslogserver%2fraspberrypi-syslog%2f&name=Raspberry%20Pi%20Syslog%20Server&description=%3cp%3eMerhaba%2c%20bu%20yaz%c4%b1mda%20bi%20Raspberry%20Pi%20Zero%26rsquo%3bya%20Syslog%20server%20rol%c3%bc%20verip%2c%20bir%20Cisco%20Switch%26rsquo%3be%20bu%20Syslog%20server%20konfig%c3%bcrasyonunu%20yapaca%c4%9f%c4%b1m.%3c%2fp%3e%0a%3cp%3eBu%20Lab%20i%c3%a7in%20kullanaca%c4%9f%c4%b1m%20donan%c4%b1m%20ve%20yaz%c4%b1l%c4%b1mlar%3a%3c%2fp%3e%0a%3cul%3e%0a%3cli%3eRaspberry%20Pi%20Zero%202W%2c%3c%2fli%3e%0a%3cli%3eCisco%202960%20Switch%2c%3c%2fli%3e%0a%3cli%3eSD%20Cart%2c%3c%2fli%3e%0a%3cli%3eKart%20Reader%2c%3c%2fli%3e%0a%3cli%3eEthernet%20Kablosu%2c%3c%2fli%3e%0a%3cli%3eMicroUSB%20Power%20Cable%2c%3c%2fli%3e%0a%3cli%3eSwitch%20Power%20Cable%2c%3c%2fli%3e%0a%3cli%3eImagerPi.%3c%2fli%3e%0a%3c%2ful%3e%0a%3cp%3e%c4%b0lk%20olarak%20ImagerPi%20kullanarak%20SD%20Kart%26rsquo%3ba%20Ubuntu%20i%c5%9fletim%20sistemini%20kuruyorum.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fRaspberryPiSyslogServer%2f1.png%22%20alt%3d%22syslog%22%3e%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fRaspberryPiSyslogServer%2f2.png%22%20alt%3d%22syslog%22%3e%3c%2fp%3e%0a%3cp%3eSD%20Kart%26rsquo%3b%c4%b1%20Raspberry%20Pi%26rsquo%3ba%20tak%c4%b1p%2c%20modemin%20yak%c4%b1n%c4%b1nda%20g%c3%bc%c3%a7%20kablosunu%20tak%c4%b1p%20cihaz%c4%b1%20a%c3%a7%c4%b1yorum.%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
