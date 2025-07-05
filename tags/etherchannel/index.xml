@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Etherchannel on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/etherchannel/</link>
+    <link>http://localhost:1313/tags/etherchannel/</link>
     <description>Recent content in Etherchannel on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Fri, 22 Mar 2024 22:57:40 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/etherchannel/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/etherchannel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>EtherChannel</title>
-      <link>https://ittechnetworkk.github.io/posts/etherchannel/etherchannel/</link>
+      <link>http://localhost:1313/posts/etherchannel/etherchannel/</link>
       <pubDate>Fri, 22 Mar 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/etherchannel/etherchannel/</guid>
+      <guid>http://localhost:1313/posts/etherchannel/etherchannel/</guid>
       <description>&lt;p&gt;EtherChannel Protokolü switchlerin birden fazla fiziksel portunu tek bir mantıksal port yapan protokoldür. Yapılmasının amacı şudur örneğin iki switch arasına 4 kablo çekip bırakırsak Stp (Spanning Tree Protocol) devreye girecek ve bu portlardan bazılarını kapatacaktır loop&amp;rsquo;u engellemek için. Eğer EtherChannel yaparsak bu portlar tek bir mantıksal port gibi görünecektir ve STP&amp;rsquo;ye gerek kalmayacaktır. Konfigüre etmek için karşılıklı portların yapısı aynı olmalıdır. Örneğin bir taraf GigabitEthernet diğeri FastEthernet olamaz.&#xA;3 EtherChannel Protokolü vardır:&lt;/p&gt;</description>
     </item>
   </channel>

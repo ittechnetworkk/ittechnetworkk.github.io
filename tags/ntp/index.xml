@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NTP on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/ntp/</link>
+    <link>http://localhost:1313/tags/ntp/</link>
     <description>Recent content in NTP on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Sat, 07 Jun 2025 06:50:06 +0200</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/ntp/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/ntp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ESP32-NTP Server Project</title>
-      <link>https://ittechnetworkk.github.io/posts/esp32/esp32-ntp/</link>
+      <link>http://localhost:1313/posts/esp32/esp32-ntp/</link>
       <pubDate>Sat, 07 Jun 2025 06:50:06 +0200</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/esp32/esp32-ntp/</guid>
-      <description>&lt;p&gt;ESP32-NTP Server Project&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/ssnrshnn/ESP32-NTP&#34;&gt;https://github.com/ssnrshnn/ESP32-NTP&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Photos:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/esp32/1.jpg&#34; alt=&#34;esp32&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/esp32/2.jpg&#34; alt=&#34;esp32&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/esp32/3.jpg&#34; alt=&#34;esp32&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/esp32/cover.jpg&#34; alt=&#34;esp32&#34;&gt;&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/esp32/esp32-ntp/</guid>
+      <description>&lt;p&gt;ESP32-NTP Server Project&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/ssnrshnn/ESP32-NTP&#34;&gt;https://github.com/ssnrshnn/ESP32-NTP&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Photos:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/esp32/1.jpg&#34; alt=&#34;esp32&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/esp32/2.jpg&#34; alt=&#34;esp32&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/esp32/3.jpg&#34; alt=&#34;esp32&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/esp32/cover.jpg&#34; alt=&#34;esp32&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>[EN] Network Time Protocol (NTP)</title>
-      <link>https://ittechnetworkk.github.io/posts/ntp/ntp/</link>
+      <link>http://localhost:1313/posts/ntp/ntp/</link>
       <pubDate>Tue, 13 May 2025 21:23:07 +0200</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ntp/ntp/</guid>
+      <guid>http://localhost:1313/posts/ntp/ntp/</guid>
       <description>&lt;p&gt;In modern networks, accurate time synchronization is crucial for tasks such as logging, authentication, and system coordination. Network Time Protocol (NTP) is a widely used protocol that allows devices on a network to synchronize their clocks with a reliable time source. This guide will walk you through the configuration of NTP on Cisco devices, including manual time setup, using a device as an NTP server, authentication, and debugging.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;UDP Port: 123&lt;/li&gt;&#xA;&lt;li&gt;The closest router to the Atomic Clock is called Stratum 1&lt;/li&gt;&#xA;&lt;li&gt;A device directly connected to an authorized NTP server is considered Stratum 1. Each subsequent device adds one to the stratum level&lt;/li&gt;&#xA;&lt;li&gt;Each hop increases the Stratum value.&lt;/li&gt;&#xA;&lt;li&gt;Maximum supported stratum level is 15&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;configuring-clock-and-date-manually&#34;&gt;&lt;strong&gt;Configuring Clock and Date Manually:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SW-1#clock set 12:00:00 1 AUG 2019&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;setting-the-time-zone&#34;&gt;&lt;strong&gt;Setting the Time Zone:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SW-1#conf t&#xA;SW-1(config)#clock timezone EST +2&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;configuring-daylight-saving-time&#34;&gt;&lt;strong&gt;Configuring Daylight Saving Time:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SW-1(config)#clock summer-time CEST recurring last Sun Mar 2:00 last Sun Oct 3:00  &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;ntp-server-configuration&#34;&gt;&lt;strong&gt;NTP Server Configuration:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SW-1(config)#ip domain-lookup                  # DNS&#xA;SW-1(config)#ip name-server 1.1.1.1 8.8.8.8    # DNS&#xA;&#xA;SW-1(config)#ntp server 198.111.152.100         #NTP Server&#xA;SW-1(config)#ntp server 0.tr.pool.ntp.org       #NTP Server&#xA;SW-1(config)#ntp update-calendar&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you want to use an external source for NTP information, you can visit &lt;a href=&#34;https://www.ntppool.org/en/&#34;&gt;this site&lt;/a&gt; to find NTP servers suitable for your location.&lt;/p&gt;</description>
     </item>
   </channel>

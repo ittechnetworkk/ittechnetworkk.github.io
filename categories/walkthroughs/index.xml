@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Walkthroughs on ittechnetworkk</title>
+    <link>http://localhost:1313/categories/walkthroughs/</link>
+    <description>Recent content in Walkthroughs on ittechnetworkk</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>ittechnetworkk</copyright>
+    <lastBuildDate>Sat, 05 Jul 2025 14:02:53 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/walkthroughs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ramnit Lab</title>
+      <link>http://localhost:1313/walkthroughs/ramnit/</link>
+      <pubDate>Sat, 05 Jul 2025 14:02:53 +0200</pubDate>
+      <guid>http://localhost:1313/walkthroughs/ramnit/</guid>
+      <description>&lt;p&gt;Lab URL: &lt;a href=&#34;https://cyberdefenders.org/blueteam-ctf-challenges/ramnit/&#34;&gt;https://cyberdefenders.org/blueteam-ctf-challenges/ramnit/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;question-1&#34;&gt;&lt;strong&gt;Question 1&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;What is the name of the process responsible for the suspicious activity?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vol3 -f memory.dmp windows.pstree&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/Walkthroughs/RamnitLab/1-2.png&#34; alt=&#34;Ramnit&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; ChromeSetup.exe&lt;/p&gt;&#xA;&lt;h3 id=&#34;question-2&#34;&gt;&lt;strong&gt;Question 2&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;What is the exact path of the executable for the malicious process?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vol3 -f memory.dmp windows.pstree&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/Walkthroughs/RamnitLab/1-2.png&#34; alt=&#34;Ramnit&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; C:\Users\alex\Downloads\ChromeSetup.exe&lt;/p&gt;&#xA;&lt;h3 id=&#34;question-3&#34;&gt;&lt;strong&gt;Question 3&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Identifying network connections is crucial for understanding the malware&amp;rsquo;s communication strategy. What IP address did the malware attempt to connect to?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vol3 -f memory.dmp windows.netscan |grep 4628&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/Walkthroughs/RamnitLab/3.png&#34; alt=&#34;Ramnit&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>BlackEnergy Lab</title>
+      <link>http://localhost:1313/walkthroughs/blackenergylab/</link>
+      <pubDate>Sat, 05 Jul 2025 13:40:46 +0200</pubDate>
+      <guid>http://localhost:1313/walkthroughs/blackenergylab/</guid>
+      <description>&lt;p&gt;Lab URL: &lt;a href=&#34;https://cyberdefenders.org/blueteam-ctf-challenges/blackenergy/&#34;&gt;https://cyberdefenders.org/blueteam-ctf-challenges/blackenergy/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;question-1&#34;&gt;&lt;strong&gt;Question 1&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Which volatility profile would be best for this machine?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vol.py -f CYBERDEF-567078-20230213-171333.raw imageinfo&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; WinXPSP2x86&lt;/p&gt;&#xA;&lt;h3 id=&#34;question-2&#34;&gt;&lt;strong&gt;Question 2&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;How many processes were running when the image was acquired?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vol.py -f CYBERDEF-567078-20230213-171333.raw --profile=WinXPSP2x86 pslist&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; 19&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/Walkthroughs/BlackEnergyLab/2.png&#34; alt=&#34;maliciousPowershellAnalysis&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;question-3&#34;&gt;&lt;strong&gt;Question 3&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;What is the process ID of &lt;code&gt;cmd.exe&lt;/code&gt;?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vol.py -f CYBERDEF-567078-20230213-171333.raw --profile=WinXPSP2x86 pslist |grep cmd&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; 1960&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/Walkthroughs/BlackEnergyLab/3.png&#34; alt=&#34;maliciousPowershellAnalysis&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;question-4&#34;&gt;&lt;strong&gt;Question 4&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;What is the name of the most suspicious process?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vol.py -f CYBERDEF-567078-20230213-171333.raw --profile=WinXPSP2x86 pslist&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; rootkit.exe&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Malicious PowerShell Analysis</title>
+      <link>http://localhost:1313/walkthroughs/maliciouspowershellanalysis/</link>
+      <pubDate>Sat, 05 Jul 2025 13:40:46 +0200</pubDate>
+      <guid>http://localhost:1313/walkthroughs/maliciouspowershellanalysis/</guid>
+      <description>&lt;p&gt;In this write-up, I’ll be investigating a challenge named &lt;a href=&#34;https://blueteamlabs.online/home/challenge/malicious-powershell-analysis-bf6b52faef&#34;&gt;&lt;strong&gt;Malicious PowerShell Analysis&lt;/strong&gt;&lt;/a&gt; from Blue Team Labs Online. This challenge isn’t particularly difficult, making it a great exercise for learning or sharpening malware analysis skills.&lt;/p&gt;&#xA;&lt;h3 id=&#34;-step-1-downloading-the-file&#34;&gt;🧪 &lt;strong&gt;Step 1: Downloading the File&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;First, I downloaded the malicious file to an isolated analysis environment (virtual machine).&lt;/p&gt;&#xA;&lt;p&gt;The file came as an encrypted ZIP archive named:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/Walkthroughs/MaliciousPowershellAnalysis/1.png&#34; alt=&#34;maliciousPowershellAnalysis&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;-step-2-hash-analysis&#34;&gt;🔍 &lt;strong&gt;Step 2: Hash Analysis&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;To begin the investigation, I calculated the file’s MD5 hash using &lt;code&gt;md5sum&lt;/code&gt;, then submitted it to multiple threat intelligence platforms:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cockpit on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/cockpit/</link>
+    <link>http://localhost:1313/tags/cockpit/</link>
     <description>Recent content in Cockpit on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Fri, 24 Jan 2025 22:16:16 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/cockpit/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/cockpit/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cockpit Kurulumu</title>
-      <link>https://ittechnetworkk.github.io/posts/cockpitinstallation/cockpit/</link>
+      <link>http://localhost:1313/posts/cockpitinstallation/cockpit/</link>
       <pubDate>Fri, 24 Jan 2025 22:16:16 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/cockpitinstallation/cockpit/</guid>
+      <guid>http://localhost:1313/posts/cockpitinstallation/cockpit/</guid>
       <description>&lt;p&gt;Selamlar, bu yazımda Linux sunucularda Cockpit kurulumuna değineceğim.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://cockpit-project.org/&#34;&gt;Cockpit&lt;/a&gt;, Linux sunucuları yönetebilmeyi sağlayan bir araçtır.&lt;/p&gt;&#xA;&lt;p&gt;Cockpit&amp;rsquo;i kurduktan sonra sunucuyu web tarayıcısı üzerinden yönetebilmeyi sağlar.&lt;/p&gt;&#xA;&lt;p&gt;Alternatif olarak, Webmin, cPanel, Plesk, DirectAdmin gibi araçlar da bulunur.&lt;/p&gt;&#xA;&lt;p&gt;Kurulumu oldukça kolaydır. Ben Fedora Server üzerine kurulumunu göstereceğim.&lt;/p&gt;&#xA;&lt;p&gt;Ayrıca &lt;a href=&#34;https://cockpit-project.org/running.html&#34;&gt;Web Sitesini&amp;rsquo;de &lt;/a&gt;ziyaret edebilirsiniz.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;fedora@fedora:~$ sudo dnf check-update&#xA;fedora@fedora:~$ sudo dnf install cockpit&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Kurulum bittikten sonra servisi başlatıp daha sonra enable ediyorum. Cockpit servisinin adı &lt;code&gt;cockpit.socket&lt;/code&gt; tir.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;fedora@fedora:~$ systemctl start cockpit.socket&#xA;fedora@fedora:~$ systemctl enable --now cockpit.socket&#xA;fedora@fedora:~$ systemctl status cockpit.socket&#xA;● cockpit.socket - Cockpit Web Service Socket&#xA;     Loaded: loaded (/usr/lib/systemd/system/cockpit.socket; disabled; preset: disabled)&#xA;     Active: active (listening) since Mon 2025-01-20 16:42:14 CET; 2s ago&#xA; Invocation: 5dac77b73372402bafe6d98b15bb39f8&#xA;   Triggers: ● cockpit.service&#xA;       Docs: man:cockpit-ws(8)&#xA;     Listen: [::]:9090 (Stream)&#xA;    Process: 1267 ExecStartPost=/usr/share/cockpit/issue/update-issue  localhost (code=exited, status=0/SUCCESS)&#xA;    Process: 1275 ExecStartPost=/bin/ln -snf active.issue /run/cockpit/issue (code=exited, status=0/SUCCESS)&#xA;      Tasks: 0 (limit: 2248)&#xA;     Memory: 660K (peak: 2.2M)&#xA;        CPU: 18ms&#xA;     CGroup: /system.slice/cockpit.socket&#xA;&#xA;Jan 20 16:42:14 fedora systemd[1]: Starting cockpit.socket - Cockpit Web Service Socket...&#xA;Jan 20 16:42:14 fedora systemd[1]: Listening on cockpit.socket - Cockpit Web Service Socket.&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Kurulum ve servisi hallettikten sonra Cockpit&amp;rsquo;in hangi portta çalıştığını bulmak için yukarıdaki &lt;code&gt;systemctl&lt;/code&gt; çıktısına bakabilir veya ağ bağlantılarını kontrol edebilirsiniz.&lt;/p&gt;</description>
     </item>
   </channel>

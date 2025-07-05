@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Configuration on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/configuration/</link>
+    <link>http://localhost:1313/tags/configuration/</link>
     <description>Recent content in Configuration on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Tue, 18 Mar 2025 11:05:52 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/configuration/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/configuration/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[EN] ESXi Initial Configuration</title>
-      <link>https://ittechnetworkk.github.io/posts/esxiinitialconfiguration/esxi-initial-configuration/</link>
+      <link>http://localhost:1313/posts/esxiinitialconfiguration/esxi-initial-configuration/</link>
       <pubDate>Tue, 18 Mar 2025 11:05:52 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/esxiinitialconfiguration/esxi-initial-configuration/</guid>
+      <guid>http://localhost:1313/posts/esxiinitialconfiguration/esxi-initial-configuration/</guid>
       <description>&lt;p&gt;Hi everyone, in this article I will show you ESXi initial configuration and demonstrate how to install Windows Server 2022 as a virtual machine.&lt;/p&gt;&#xA;&lt;p&gt;After installing ESXi, we need to configure some essential things such as NTP, Licence, Users, Roles etc.&lt;/p&gt;&#xA;&lt;p&gt;Additionally, I will show you how to upload an ISO image and how to install a virtual machine.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;License:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;First, I will show you how to assign a license to an ESXi node. To obtain a license, you can visit the &lt;a href=&#34;https://support.broadcom.com/group/ecx/my-dashboard&#34;&gt;Broadcom Website&lt;/a&gt;. I will use a license that you will find with quick searching. But never use this license in the bussiness. I&amp;rsquo;m just labbing therefore I&amp;rsquo;m using this license. The steps are as follows:&lt;/p&gt;</description>
     </item>
     <item>
       <title>[EN] SSH Server Configuration</title>
-      <link>https://ittechnetworkk.github.io/posts/sshserverconfiguration/ssh-server-configuration/</link>
+      <link>http://localhost:1313/posts/sshserverconfiguration/ssh-server-configuration/</link>
       <pubDate>Sat, 08 Feb 2025 15:23:57 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/sshserverconfiguration/ssh-server-configuration/</guid>
+      <guid>http://localhost:1313/posts/sshserverconfiguration/ssh-server-configuration/</guid>
       <description>&lt;p&gt;Hi everyone, in this article, I will show you how to configure an SSH server in detail.&lt;/p&gt;&#xA;&lt;p&gt;SSH (Secure Shell Protocol) is a widely-used protocol that securely connects and manages remote servers. In this tutorial, you will learn how to set up and configure an SSH server from scratch.&lt;/p&gt;&#xA;&lt;p&gt;To set up an SSH server, you need to install the &lt;code&gt;openssh-server&lt;/code&gt; package on the server and the &lt;code&gt;openssh-client&lt;/code&gt; package on the client.&lt;/p&gt;</description>
     </item>
   </channel>
