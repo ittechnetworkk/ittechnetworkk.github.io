@@ -1,2 +1,0 @@
-# ittechnetworkk.github.io
-networkBlog
