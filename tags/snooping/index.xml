@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Snooping on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/snooping/</link>
+    <link>https://ittechnetworkk.github.io/tags/snooping/</link>
     <description>Recent content in Snooping on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Sun, 31 Dec 2023 23:44:03 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/snooping/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ittechnetworkk.github.io/tags/snooping/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DHCP Snooping</title>
-      <link>http://localhost:1313/posts/dhcpsnooping/dhcp-snooping/</link>
+      <link>https://ittechnetworkk.github.io/posts/dhcpsnooping/dhcp-snooping/</link>
       <pubDate>Sun, 31 Dec 2023 23:44:03 +0100</pubDate>
-      <guid>http://localhost:1313/posts/dhcpsnooping/dhcp-snooping/</guid>
-      <description>&lt;p&gt;DHCP(Dynamic Host Configuration Protocol), ağdaki cihazlarımıza otomatik olarak IP, DNS, Default Gateway bilgilerini dağıtan servistir. Ağa yeni bir cihaz katıldığında, kablo takılır takılmaz IP almak için Broadcast yayın yapar. Eğer ortamda DHCP servisi varsa o da karşılık verir. Toplam 4 aşamada IP alma işlemi tamamlanır.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/DHCPSnooping/8.png&#34; alt=&#34;dhcp&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Bu paketler Broadcast paketler olduğu için ağdaki herkese ulaşır bu da her zaman için iyi olmayabilir. Örneğin bir network yapısında iki DHCP server aynı anda çalışabilir. Biri istenmeyen, kötü niyetli de olabilir ve cihaza istediği IP, DNS, Default Gateway bilgisi dağıtarak, trafiği istenmeyen şekilde etkileyebilir. DHCP Snooping&amp;rsquo;i aktif hale getirmek gerekir.&#xA;DHCP Server&amp;rsquo;ın kim ve switch&amp;rsquo;in hangi portundan bağlı olduğunu bildiğimiz için, switch&amp;rsquo;e bunu öğretebiliriz ve bu sayede bu kötü senaryonun önüne geçmiş oluruz.&#xA;DHCP Snooping&amp;rsquo;in yaptığı ise belirli bir port veya portlar üzerinden DHCP trafiğine izin verir geri kalanını engeller.&lt;/p&gt;</description>
+      <guid>https://ittechnetworkk.github.io/posts/dhcpsnooping/dhcp-snooping/</guid>
+      <description>&lt;p&gt;DHCP(Dynamic Host Configuration Protocol), ağdaki cihazlarımıza otomatik olarak IP, DNS, Default Gateway bilgilerini dağıtan servistir. Ağa yeni bir cihaz katıldığında, kablo takılır takılmaz IP almak için Broadcast yayın yapar. Eğer ortamda DHCP servisi varsa o da karşılık verir. Toplam 4 aşamada IP alma işlemi tamamlanır.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/DHCPSnooping/8.png&#34; alt=&#34;dhcp&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Bu paketler Broadcast paketler olduğu için ağdaki herkese ulaşır bu da her zaman için iyi olmayabilir. Örneğin bir network yapısında iki DHCP server aynı anda çalışabilir. Biri istenmeyen, kötü niyetli de olabilir ve cihaza istediği IP, DNS, Default Gateway bilgisi dağıtarak, trafiği istenmeyen şekilde etkileyebilir. DHCP Snooping&amp;rsquo;i aktif hale getirmek gerekir.&#xA;DHCP Server&amp;rsquo;ın kim ve switch&amp;rsquo;in hangi portundan bağlı olduğunu bildiğimiz için, switch&amp;rsquo;e bunu öğretebiliriz ve bu sayede bu kötü senaryonun önüne geçmiş oluruz.&#xA;DHCP Snooping&amp;rsquo;in yaptığı ise belirli bir port veya portlar üzerinden DHCP trafiğine izin verir geri kalanını engeller.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Letsdefend on ittechnetworkk</title>
+    <link>https://ittechnetworkk.github.io/tags/letsdefend/</link>
+    <description>Recent content in Letsdefend on ittechnetworkk</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>ittechnetworkk</copyright>
+    <lastBuildDate>Sat, 05 Jul 2025 15:04:55 +0200</lastBuildDate>
+    <atom:link href="https://ittechnetworkk.github.io/tags/letsdefend/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Memory Analysis</title>
+      <link>https://ittechnetworkk.github.io/walkthroughs/memoryanalysis-letsdefend/</link>
+      <pubDate>Sat, 05 Jul 2025 15:04:55 +0200</pubDate>
+      <guid>https://ittechnetworkk.github.io/walkthroughs/memoryanalysis-letsdefend/</guid>
+      <description>&lt;p&gt;Lab URL: &lt;a href=&#34;https://app.letsdefend.io/challenge/memory-analysis&#34;&gt;https://app.letsdefend.io/challenge/memory-analysis&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;question-1&#34;&gt;&lt;strong&gt;Question 1&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;What was the date and time when Memory from the compromised endpoint was acquired?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vol -f dump.mem windows.info&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/Walkthroughs/MemoryAnalysis-Letsdefend/1.png&#34; alt=&#34;MemoryAnalysis-Letsdefend&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; 2022-07-26 18:16:32&lt;/p&gt;&#xA;&lt;h3 id=&#34;question-2&#34;&gt;&lt;strong&gt;Question 2&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;What was the suspicious process running on the system? (Format : name.extension)&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vol -f dump.mem windows.pslist&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/Walkthroughs/MemoryAnalysis-Letsdefend/2.png&#34; alt=&#34;MemoryAnalysis-Letsdefend&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;explorer.exe &amp;gt; lsass.exe ????&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; lsass.exe&lt;/p&gt;&#xA;&lt;h3 id=&#34;question-3&#34;&gt;&lt;strong&gt;Question 3&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Analyze and find the malicious tool running on the system by the attacker (Format name.extension)&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vol -f dump.mem -o . windows.dumpfiles --pid 7592&#xA;&#xA;strings -n 5 file.0xdf0e86793960.0xdf0e8708e520.ImageSectionObject.lsass.exe.img&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/Walkthroughs/MemoryAnalysis-Letsdefend/3.png&#34; alt=&#34;MemoryAnalysis-Letsdefend&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

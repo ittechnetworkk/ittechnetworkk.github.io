@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Static NAT on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/static-nat/</link>
+    <link>https://ittechnetworkk.github.io/tags/static-nat/</link>
     <description>Recent content in Static NAT on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Tue, 13 May 2025 21:08:38 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/static-nat/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ittechnetworkk.github.io/tags/static-nat/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[EN] Network Address Translation (NAT)</title>
-      <link>http://localhost:1313/posts/nat/nat/</link>
+      <link>https://ittechnetworkk.github.io/posts/nat/nat/</link>
       <pubDate>Tue, 13 May 2025 21:08:38 +0200</pubDate>
-      <guid>http://localhost:1313/posts/nat/nat/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/nat/nat/</guid>
       <description>&lt;p&gt;Hi everyone,&lt;/p&gt;&#xA;&lt;p&gt;In this article, I will walk you through Network Address Translation (NAT)—what it is, how it works, why we use it, and how to configure it using a lab.&lt;/p&gt;&#xA;&lt;p&gt;NAT (Network Address Translation) is a method used in routers and firewalls that allows private IP addresses within a local network to access the public internet using a single or a few public IP addresses.&lt;/p&gt;&#xA;&lt;p&gt;Since private IP addresses (e.g., 192.168.x.x, 10.x.x.x, 172.16.x.x–172.31.x.x) are not routable on the internet, NAT translates these private IP addresses into a public IP before forwarding traffic. It also translates incoming public traffic back to the appropriate private IP inside the network.&lt;/p&gt;</description>
     </item>
   </channel>

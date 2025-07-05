@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -9,12 +9,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title> DHCP Snooping | ittechnetworkk</title>
-  <link rel = 'canonical' href = 'http://localhost:1313/posts/dhcpsnooping/dhcp-snooping/'>
+  <link rel = 'canonical' href = 'https://ittechnetworkk.github.io/posts/dhcpsnooping/dhcp-snooping/'>
   <meta name="description" content="Hi, I&#39;m Soner, and this is my personal blog where I share insights, guides, and articles on various tech topics, including Networking, Linux, Windows, Virtualization, Firewalls, IoT, and more. I&#39;m constantly learning and exploring new technologies, and this blog is where I document my journey. ">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:url" content="http://localhost:1313/posts/dhcpsnooping/dhcp-snooping/">
+  <meta property="og:url" content="https://ittechnetworkk.github.io/posts/dhcpsnooping/dhcp-snooping/">
   <meta property="og:site_name" content="ittechnetworkk">
   <meta property="og:title" content="DHCP Snooping">
   <meta property="og:description" content="DHCP(Dynamic Host Configuration Protocol), ağdaki cihazlarımıza otomatik olarak IP, DNS, Default Gateway bilgilerini dağıtan servistir. Ağa yeni bir cihaz katıldığında, kablo takılır takılmaz IP almak için Broadcast yayın yapar. Eğer ortamda DHCP servisi varsa o da karşılık verir. Toplam 4 aşamada IP alma işlemi tamamlanır.
@@ -43,13 +43,13 @@ Bu paketler Broadcast paketler olduğu için ağdaki herkese ulaşır bu da her 
   
   
   
-  <link rel="stylesheet" href="http://localhost:1313/css/styles.8e7ef44bca90dd1b40eb31600e59ec1f88f1c79e72f6b875bbb4138841bbb7c2fa89c96a10140ef17070530fd3c6d7bfdb9018a552fef0a3fdeb62d172f4e72a.css" integrity="sha512-jn70S8qQ3RtA6zFgDlnsH4jxx55y9rh1u7QTiEG7t8L6iclqEBQO8XBwUw/Txte/25AYpVL&#43;8KP962LRcvTnKg==">
+  <link rel="stylesheet" href="https://ittechnetworkk.github.io/css/styles.8e7ef44bca90dd1b40eb31600e59ec1f88f1c79e72f6b875bbb4138841bbb7c2fa89c96a10140ef17070530fd3c6d7bfdb9018a552fef0a3fdeb62d172f4e72a.css" integrity="sha512-jn70S8qQ3RtA6zFgDlnsH4jxx55y9rh1u7QTiEG7t8L6iclqEBQO8XBwUw/Txte/25AYpVL&#43;8KP962LRcvTnKg==">
   
   
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2717836175117539" crossorigin="anonymous"></script>
 
   
-   <link rel="stylesheet" href="http://localhost:1313/css/custom.css"> 
+   <link rel="stylesheet" href="https://ittechnetworkk.github.io/css/custom.css">  <link rel="stylesheet" href="https://ittechnetworkk.github.io/css/lightbox.css"> 
   
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -58,7 +58,7 @@ Bu paketler Broadcast paketler olduğu için ağdaki herkese ulaşır bu da her 
   
 
   
-<link rel="icon" type="image/png" href="http://localhost:1313/images/favicon.ico" />
+<link rel="icon" type="image/png" href="https://ittechnetworkk.github.io/images/favicon.ico" />
 
   
 </head> 
@@ -98,14 +98,14 @@ Bu paketler Broadcast paketler olduğu için ağdaki herkese ulaşır bu da her 
       <ul>
         
         <li>
-          <a class="icon" href=" http://localhost:1313/posts/vtp/vtp/" aria-label="Previous">
+          <a class="icon" href=" https://ittechnetworkk.github.io/posts/vtp/vtp/" aria-label="Previous">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="http://localhost:1313/posts/hsrp/hsrp/" aria-label="Next">
+          <a class="icon" href="https://ittechnetworkk.github.io/posts/hsrp/hsrp/" aria-label="Next">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -136,47 +136,47 @@ Bu paketler Broadcast paketler olduğu için ağdaki herkese ulaşır bu da her 
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f" aria-label="Facebook">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&text=DHCP%20Snooping" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&text=DHCP%20Snooping" aria-label="Twitter">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&title=DHCP%20Snooping" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&title=DHCP%20Snooping" aria-label="Linkedin">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&is_video=false&description=DHCP%20Snooping" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&is_video=false&description=DHCP%20Snooping" aria-label="Pinterest">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=DHCP%20Snooping&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=DHCP%20Snooping&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f" aria-label="Email">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&title=DHCP%20Snooping" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&title=DHCP%20Snooping" aria-label="Pocket">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&title=DHCP%20Snooping" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&title=DHCP%20Snooping" aria-label="reddit">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&name=DHCP%20Snooping&description=%3cp%3eDHCP%28Dynamic%20Host%20Configuration%20Protocol%29%2c%20a%c4%9fdaki%20cihazlar%c4%b1m%c4%b1za%20otomatik%20olarak%20IP%2c%20DNS%2c%20Default%20Gateway%20bilgilerini%20da%c4%9f%c4%b1tan%20servistir.%20A%c4%9fa%20yeni%20bir%20cihaz%20kat%c4%b1ld%c4%b1%c4%9f%c4%b1nda%2c%20kablo%20tak%c4%b1l%c4%b1r%20tak%c4%b1lmaz%20IP%20almak%20i%c3%a7in%20Broadcast%20yay%c4%b1n%20yapar.%20E%c4%9fer%20ortamda%20DHCP%20servisi%20varsa%20o%20da%20kar%c5%9f%c4%b1l%c4%b1k%20verir.%20Toplam%204%20a%c5%9famada%20IP%20alma%20i%c5%9flemi%20tamamlan%c4%b1r.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fDHCPSnooping%2f8.png%22%20alt%3d%22dhcp%22%3e%3c%2fp%3e%0a%3cp%3eBu%20paketler%20Broadcast%20paketler%20oldu%c4%9fu%20i%c3%a7in%20a%c4%9fdaki%20herkese%20ula%c5%9f%c4%b1r%20bu%20da%20her%20zaman%20i%c3%a7in%20iyi%20olmayabilir.%20%c3%96rne%c4%9fin%20bir%20network%20yap%c4%b1s%c4%b1nda%20iki%20DHCP%20server%20ayn%c4%b1%20anda%20%c3%a7al%c4%b1%c5%9fabilir.%20Biri%20istenmeyen%2c%20k%c3%b6t%c3%bc%20niyetli%20de%20olabilir%20ve%20cihaza%20istedi%c4%9fi%20IP%2c%20DNS%2c%20Default%20Gateway%20bilgisi%20da%c4%9f%c4%b1tarak%2c%20trafi%c4%9fi%20istenmeyen%20%c5%9fekilde%20etkileyebilir.%20DHCP%20Snooping%26rsquo%3bi%20aktif%20hale%20getirmek%20gerekir.%0aDHCP%20Server%26rsquo%3b%c4%b1n%20kim%20ve%20switch%26rsquo%3bin%20hangi%20portundan%20ba%c4%9fl%c4%b1%20oldu%c4%9funu%20bildi%c4%9fimiz%20i%c3%a7in%2c%20switch%26rsquo%3be%20bunu%20%c3%b6%c4%9fretebiliriz%20ve%20bu%20sayede%20bu%20k%c3%b6t%c3%bc%20senaryonun%20%c3%b6n%c3%bcne%20ge%c3%a7mi%c5%9f%20oluruz.%0aDHCP%20Snooping%26rsquo%3bin%20yapt%c4%b1%c4%9f%c4%b1%20ise%20belirli%20bir%20port%20veya%20portlar%20%c3%bczerinden%20DHCP%20trafi%c4%9fine%20izin%20verir%20geri%20kalan%c4%b1n%c4%b1%20engeller.%3c%2fp%3e" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&name=DHCP%20Snooping&description=%3cp%3eDHCP%28Dynamic%20Host%20Configuration%20Protocol%29%2c%20a%c4%9fdaki%20cihazlar%c4%b1m%c4%b1za%20otomatik%20olarak%20IP%2c%20DNS%2c%20Default%20Gateway%20bilgilerini%20da%c4%9f%c4%b1tan%20servistir.%20A%c4%9fa%20yeni%20bir%20cihaz%20kat%c4%b1ld%c4%b1%c4%9f%c4%b1nda%2c%20kablo%20tak%c4%b1l%c4%b1r%20tak%c4%b1lmaz%20IP%20almak%20i%c3%a7in%20Broadcast%20yay%c4%b1n%20yapar.%20E%c4%9fer%20ortamda%20DHCP%20servisi%20varsa%20o%20da%20kar%c5%9f%c4%b1l%c4%b1k%20verir.%20Toplam%204%20a%c5%9famada%20IP%20alma%20i%c5%9flemi%20tamamlan%c4%b1r.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fDHCPSnooping%2f8.png%22%20alt%3d%22dhcp%22%3e%3c%2fp%3e%0a%3cp%3eBu%20paketler%20Broadcast%20paketler%20oldu%c4%9fu%20i%c3%a7in%20a%c4%9fdaki%20herkese%20ula%c5%9f%c4%b1r%20bu%20da%20her%20zaman%20i%c3%a7in%20iyi%20olmayabilir.%20%c3%96rne%c4%9fin%20bir%20network%20yap%c4%b1s%c4%b1nda%20iki%20DHCP%20server%20ayn%c4%b1%20anda%20%c3%a7al%c4%b1%c5%9fabilir.%20Biri%20istenmeyen%2c%20k%c3%b6t%c3%bc%20niyetli%20de%20olabilir%20ve%20cihaza%20istedi%c4%9fi%20IP%2c%20DNS%2c%20Default%20Gateway%20bilgisi%20da%c4%9f%c4%b1tarak%2c%20trafi%c4%9fi%20istenmeyen%20%c5%9fekilde%20etkileyebilir.%20DHCP%20Snooping%26rsquo%3bi%20aktif%20hale%20getirmek%20gerekir.%0aDHCP%20Server%26rsquo%3b%c4%b1n%20kim%20ve%20switch%26rsquo%3bin%20hangi%20portundan%20ba%c4%9fl%c4%b1%20oldu%c4%9funu%20bildi%c4%9fimiz%20i%c3%a7in%2c%20switch%26rsquo%3be%20bunu%20%c3%b6%c4%9fretebiliriz%20ve%20bu%20sayede%20bu%20k%c3%b6t%c3%bc%20senaryonun%20%c3%b6n%c3%bcne%20ge%c3%a7mi%c5%9f%20oluruz.%0aDHCP%20Snooping%26rsquo%3bin%20yapt%c4%b1%c4%9f%c4%b1%20ise%20belirli%20bir%20port%20veya%20portlar%20%c3%bczerinden%20DHCP%20trafi%c4%9fine%20izin%20verir%20geri%20kalan%c4%b1n%c4%b1%20engeller.%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&t=DHCP%20Snooping" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&t=DHCP%20Snooping" aria-label="Hacker News">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -349,47 +349,47 @@ Switch(config-if)#ip dhcp snooping trust
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f" aria-label="Facebook">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f" aria-label="Facebook">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&text=DHCP%20Snooping" aria-label="Twitter">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&text=DHCP%20Snooping" aria-label="Twitter">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&title=DHCP%20Snooping" aria-label="Linkedin">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&title=DHCP%20Snooping" aria-label="Linkedin">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&is_video=false&description=DHCP%20Snooping" aria-label="Pinterest">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&is_video=false&description=DHCP%20Snooping" aria-label="Pinterest">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=DHCP%20Snooping&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f" aria-label="Email">
+    <a class="icon" href="mailto:?subject=DHCP%20Snooping&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f" aria-label="Email">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&title=DHCP%20Snooping" aria-label="Pocket">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&title=DHCP%20Snooping" aria-label="Pocket">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&title=DHCP%20Snooping" aria-label="reddit">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&title=DHCP%20Snooping" aria-label="reddit">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&name=DHCP%20Snooping&description=%3cp%3eDHCP%28Dynamic%20Host%20Configuration%20Protocol%29%2c%20a%c4%9fdaki%20cihazlar%c4%b1m%c4%b1za%20otomatik%20olarak%20IP%2c%20DNS%2c%20Default%20Gateway%20bilgilerini%20da%c4%9f%c4%b1tan%20servistir.%20A%c4%9fa%20yeni%20bir%20cihaz%20kat%c4%b1ld%c4%b1%c4%9f%c4%b1nda%2c%20kablo%20tak%c4%b1l%c4%b1r%20tak%c4%b1lmaz%20IP%20almak%20i%c3%a7in%20Broadcast%20yay%c4%b1n%20yapar.%20E%c4%9fer%20ortamda%20DHCP%20servisi%20varsa%20o%20da%20kar%c5%9f%c4%b1l%c4%b1k%20verir.%20Toplam%204%20a%c5%9famada%20IP%20alma%20i%c5%9flemi%20tamamlan%c4%b1r.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fDHCPSnooping%2f8.png%22%20alt%3d%22dhcp%22%3e%3c%2fp%3e%0a%3cp%3eBu%20paketler%20Broadcast%20paketler%20oldu%c4%9fu%20i%c3%a7in%20a%c4%9fdaki%20herkese%20ula%c5%9f%c4%b1r%20bu%20da%20her%20zaman%20i%c3%a7in%20iyi%20olmayabilir.%20%c3%96rne%c4%9fin%20bir%20network%20yap%c4%b1s%c4%b1nda%20iki%20DHCP%20server%20ayn%c4%b1%20anda%20%c3%a7al%c4%b1%c5%9fabilir.%20Biri%20istenmeyen%2c%20k%c3%b6t%c3%bc%20niyetli%20de%20olabilir%20ve%20cihaza%20istedi%c4%9fi%20IP%2c%20DNS%2c%20Default%20Gateway%20bilgisi%20da%c4%9f%c4%b1tarak%2c%20trafi%c4%9fi%20istenmeyen%20%c5%9fekilde%20etkileyebilir.%20DHCP%20Snooping%26rsquo%3bi%20aktif%20hale%20getirmek%20gerekir.%0aDHCP%20Server%26rsquo%3b%c4%b1n%20kim%20ve%20switch%26rsquo%3bin%20hangi%20portundan%20ba%c4%9fl%c4%b1%20oldu%c4%9funu%20bildi%c4%9fimiz%20i%c3%a7in%2c%20switch%26rsquo%3be%20bunu%20%c3%b6%c4%9fretebiliriz%20ve%20bu%20sayede%20bu%20k%c3%b6t%c3%bc%20senaryonun%20%c3%b6n%c3%bcne%20ge%c3%a7mi%c5%9f%20oluruz.%0aDHCP%20Snooping%26rsquo%3bin%20yapt%c4%b1%c4%9f%c4%b1%20ise%20belirli%20bir%20port%20veya%20portlar%20%c3%bczerinden%20DHCP%20trafi%c4%9fine%20izin%20verir%20geri%20kalan%c4%b1n%c4%b1%20engeller.%3c%2fp%3e" aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&name=DHCP%20Snooping&description=%3cp%3eDHCP%28Dynamic%20Host%20Configuration%20Protocol%29%2c%20a%c4%9fdaki%20cihazlar%c4%b1m%c4%b1za%20otomatik%20olarak%20IP%2c%20DNS%2c%20Default%20Gateway%20bilgilerini%20da%c4%9f%c4%b1tan%20servistir.%20A%c4%9fa%20yeni%20bir%20cihaz%20kat%c4%b1ld%c4%b1%c4%9f%c4%b1nda%2c%20kablo%20tak%c4%b1l%c4%b1r%20tak%c4%b1lmaz%20IP%20almak%20i%c3%a7in%20Broadcast%20yay%c4%b1n%20yapar.%20E%c4%9fer%20ortamda%20DHCP%20servisi%20varsa%20o%20da%20kar%c5%9f%c4%b1l%c4%b1k%20verir.%20Toplam%204%20a%c5%9famada%20IP%20alma%20i%c5%9flemi%20tamamlan%c4%b1r.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fDHCPSnooping%2f8.png%22%20alt%3d%22dhcp%22%3e%3c%2fp%3e%0a%3cp%3eBu%20paketler%20Broadcast%20paketler%20oldu%c4%9fu%20i%c3%a7in%20a%c4%9fdaki%20herkese%20ula%c5%9f%c4%b1r%20bu%20da%20her%20zaman%20i%c3%a7in%20iyi%20olmayabilir.%20%c3%96rne%c4%9fin%20bir%20network%20yap%c4%b1s%c4%b1nda%20iki%20DHCP%20server%20ayn%c4%b1%20anda%20%c3%a7al%c4%b1%c5%9fabilir.%20Biri%20istenmeyen%2c%20k%c3%b6t%c3%bc%20niyetli%20de%20olabilir%20ve%20cihaza%20istedi%c4%9fi%20IP%2c%20DNS%2c%20Default%20Gateway%20bilgisi%20da%c4%9f%c4%b1tarak%2c%20trafi%c4%9fi%20istenmeyen%20%c5%9fekilde%20etkileyebilir.%20DHCP%20Snooping%26rsquo%3bi%20aktif%20hale%20getirmek%20gerekir.%0aDHCP%20Server%26rsquo%3b%c4%b1n%20kim%20ve%20switch%26rsquo%3bin%20hangi%20portundan%20ba%c4%9fl%c4%b1%20oldu%c4%9funu%20bildi%c4%9fimiz%20i%c3%a7in%2c%20switch%26rsquo%3be%20bunu%20%c3%b6%c4%9fretebiliriz%20ve%20bu%20sayede%20bu%20k%c3%b6t%c3%bc%20senaryonun%20%c3%b6n%c3%bcne%20ge%c3%a7mi%c5%9f%20oluruz.%0aDHCP%20Snooping%26rsquo%3bin%20yapt%c4%b1%c4%9f%c4%b1%20ise%20belirli%20bir%20port%20veya%20portlar%20%c3%bczerinden%20DHCP%20trafi%c4%9fine%20izin%20verir%20geri%20kalan%c4%b1n%c4%b1%20engeller.%3c%2fp%3e" aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&t=DHCP%20Snooping" aria-label="Hacker News">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fdhcpsnooping%2fdhcp-snooping%2f&t=DHCP%20Snooping" aria-label="Hacker News">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>
@@ -453,6 +453,7 @@ Switch(config-if)#ip dhcp snooping trust
 <link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
 <script src=/lib/jquery/jquery.min.js></script>
 <script src=/js/main.js></script>
+<script src=/js/lightbox.js></script>
 
 <script src=/js/code-copy.js></script>
 

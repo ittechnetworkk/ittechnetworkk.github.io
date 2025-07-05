@@ -2,81 +2,81 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on ittechnetworkk</title>
-    <link>http://localhost:1313/categories/</link>
+    <link>https://ittechnetworkk.github.io/categories/</link>
     <description>Recent content in Categories on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Sat, 05 Jul 2025 14:02:53 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Jul 2025 15:16:47 +0200</lastBuildDate>
+    <atom:link href="https://ittechnetworkk.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Walkthroughs</title>
-      <link>http://localhost:1313/categories/walkthroughs/</link>
-      <pubDate>Sat, 05 Jul 2025 14:02:53 +0200</pubDate>
-      <guid>http://localhost:1313/categories/walkthroughs/</guid>
+      <link>https://ittechnetworkk.github.io/categories/walkthroughs/</link>
+      <pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate>
+      <guid>https://ittechnetworkk.github.io/categories/walkthroughs/</guid>
       <description></description>
     </item>
     <item>
       <title>IoT</title>
-      <link>http://localhost:1313/categories/iot/</link>
+      <link>https://ittechnetworkk.github.io/categories/iot/</link>
       <pubDate>Sat, 07 Jun 2025 06:50:06 +0200</pubDate>
-      <guid>http://localhost:1313/categories/iot/</guid>
+      <guid>https://ittechnetworkk.github.io/categories/iot/</guid>
       <description></description>
     </item>
     <item>
       <title>Network</title>
-      <link>http://localhost:1313/categories/network/</link>
+      <link>https://ittechnetworkk.github.io/categories/network/</link>
       <pubDate>Tue, 13 May 2025 21:23:07 +0200</pubDate>
-      <guid>http://localhost:1313/categories/network/</guid>
+      <guid>https://ittechnetworkk.github.io/categories/network/</guid>
       <description></description>
     </item>
     <item>
       <title>Virtualization</title>
-      <link>http://localhost:1313/categories/virtualization/</link>
+      <link>https://ittechnetworkk.github.io/categories/virtualization/</link>
       <pubDate>Sat, 19 Apr 2025 23:09:46 +0200</pubDate>
-      <guid>http://localhost:1313/categories/virtualization/</guid>
+      <guid>https://ittechnetworkk.github.io/categories/virtualization/</guid>
       <description></description>
     </item>
     <item>
       <title>Windows</title>
-      <link>http://localhost:1313/categories/windows/</link>
+      <link>https://ittechnetworkk.github.io/categories/windows/</link>
       <pubDate>Tue, 18 Mar 2025 11:14:26 +0100</pubDate>
-      <guid>http://localhost:1313/categories/windows/</guid>
+      <guid>https://ittechnetworkk.github.io/categories/windows/</guid>
       <description></description>
     </item>
     <item>
       <title>Kubernetes</title>
-      <link>http://localhost:1313/categories/kubernetes/</link>
+      <link>https://ittechnetworkk.github.io/categories/kubernetes/</link>
       <pubDate>Sun, 16 Feb 2025 14:48:43 +0100</pubDate>
-      <guid>http://localhost:1313/categories/kubernetes/</guid>
+      <guid>https://ittechnetworkk.github.io/categories/kubernetes/</guid>
       <description></description>
     </item>
     <item>
       <title>Docker</title>
-      <link>http://localhost:1313/categories/docker/</link>
+      <link>https://ittechnetworkk.github.io/categories/docker/</link>
       <pubDate>Sat, 08 Feb 2025 21:46:11 +0100</pubDate>
-      <guid>http://localhost:1313/categories/docker/</guid>
+      <guid>https://ittechnetworkk.github.io/categories/docker/</guid>
       <description></description>
     </item>
     <item>
       <title>Raspberry Pi</title>
-      <link>http://localhost:1313/categories/raspberry-pi/</link>
+      <link>https://ittechnetworkk.github.io/categories/raspberry-pi/</link>
       <pubDate>Sat, 08 Feb 2025 15:35:41 +0100</pubDate>
-      <guid>http://localhost:1313/categories/raspberry-pi/</guid>
+      <guid>https://ittechnetworkk.github.io/categories/raspberry-pi/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>http://localhost:1313/categories/linux/</link>
+      <link>https://ittechnetworkk.github.io/categories/linux/</link>
       <pubDate>Sat, 08 Feb 2025 15:23:57 +0100</pubDate>
-      <guid>http://localhost:1313/categories/linux/</guid>
+      <guid>https://ittechnetworkk.github.io/categories/linux/</guid>
       <description></description>
     </item>
     <item>
       <title>Firewall</title>
-      <link>http://localhost:1313/categories/firewall/</link>
+      <link>https://ittechnetworkk.github.io/categories/firewall/</link>
       <pubDate>Fri, 03 Jan 2025 23:00:44 +0100</pubDate>
-      <guid>http://localhost:1313/categories/firewall/</guid>
+      <guid>https://ittechnetworkk.github.io/categories/firewall/</guid>
       <description></description>
     </item>
   </channel>

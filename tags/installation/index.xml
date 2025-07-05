@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Installation on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/installation/</link>
+    <link>https://ittechnetworkk.github.io/tags/installation/</link>
     <description>Recent content in Installation on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Tue, 18 Mar 2025 11:14:26 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/installation/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ittechnetworkk.github.io/tags/installation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[EN] Active Directory Domain Controller Installation</title>
-      <link>http://localhost:1313/posts/addcinstallation/ad-dc-installation/</link>
+      <link>https://ittechnetworkk.github.io/posts/addcinstallation/ad-dc-installation/</link>
       <pubDate>Tue, 18 Mar 2025 11:14:26 +0100</pubDate>
-      <guid>http://localhost:1313/posts/addcinstallation/ad-dc-installation/</guid>
-      <description>&lt;p&gt;Hi everyone,&lt;/p&gt;&#xA;&lt;p&gt;In this article, I will show you how to install the &lt;strong&gt;Active Directory Domain Controller&lt;/strong&gt; role on a Windows Server.&lt;/p&gt;&#xA;&lt;p&gt;I will be using &lt;strong&gt;Windows Server 2022&lt;/strong&gt;, which is already installed.&lt;/p&gt;&#xA;&lt;p&gt;The installation process will be as follows:&lt;/p&gt;&#xA;&lt;p&gt;Before starting the installation, we need to configure a few things.&lt;/p&gt;&#xA;&lt;p&gt;First, we need to assign a static IP address to our server.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ADDCInstallation/1.png&#34; alt=&#34;esxi&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ADDCInstallation/2.png&#34; alt=&#34;esxi&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ADDCInstallation/3.png&#34; alt=&#34;esxi&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ADDCInstallation/4.png&#34; alt=&#34;esxi&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ADDCInstallation/5.png&#34; alt=&#34;esxi&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ADDCInstallation/6.png&#34; alt=&#34;esxi&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ADDCInstallation/7.png&#34; alt=&#34;esxi&#34;&gt;&lt;/p&gt;</description>
+      <guid>https://ittechnetworkk.github.io/posts/addcinstallation/ad-dc-installation/</guid>
+      <description>&lt;p&gt;Hi everyone,&lt;/p&gt;&#xA;&lt;p&gt;In this article, I will show you how to install the &lt;strong&gt;Active Directory Domain Controller&lt;/strong&gt; role on a Windows Server.&lt;/p&gt;&#xA;&lt;p&gt;I will be using &lt;strong&gt;Windows Server 2022&lt;/strong&gt;, which is already installed.&lt;/p&gt;&#xA;&lt;p&gt;The installation process will be as follows:&lt;/p&gt;&#xA;&lt;p&gt;Before starting the installation, we need to configure a few things.&lt;/p&gt;&#xA;&lt;p&gt;First, we need to assign a static IP address to our server.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/ADDCInstallation/1.png&#34; alt=&#34;esxi&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/ADDCInstallation/2.png&#34; alt=&#34;esxi&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/ADDCInstallation/3.png&#34; alt=&#34;esxi&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/ADDCInstallation/4.png&#34; alt=&#34;esxi&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/ADDCInstallation/5.png&#34; alt=&#34;esxi&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/ADDCInstallation/6.png&#34; alt=&#34;esxi&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/ADDCInstallation/7.png&#34; alt=&#34;esxi&#34;&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
