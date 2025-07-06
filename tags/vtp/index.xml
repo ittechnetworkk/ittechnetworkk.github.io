@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>VTP on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/vtp/</link>
+    <link>https://ittechnetworkk.github.io/tags/vtp/</link>
     <description>Recent content in VTP on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Sun, 24 Dec 2023 23:46:15 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/vtp/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ittechnetworkk.github.io/tags/vtp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VTP Protokolü</title>
-      <link>http://localhost:1313/posts/vtp/vtp/</link>
+      <link>https://ittechnetworkk.github.io/posts/vtp/vtp/</link>
       <pubDate>Sun, 24 Dec 2023 23:46:15 +0100</pubDate>
-      <guid>http://localhost:1313/posts/vtp/vtp/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/vtp/vtp/</guid>
       <description>&lt;p&gt;VTP (Vlan Trunking Protokol), çok sayıda switch bulunan networklerde yönetimi kolaylaştırmak için kullanılan bir protokoldür. Server-Client mantığıyla çalışır ve Cisco tarafından geliştirilmiştir. Bu protokolün amacı çok fazla switch bulunan networklerde tek tek vlanları ilgili switchlere tanımlamaktansa merkezi bir yerden vlanları dağıtmayı sağlar. Bu vlanlar trunk portlar üzerinden dağıtılır. Senkron çalışır yani merkezde bir vlan oluşturulduğunda veya silindiğinde bu değişiklik ilgili switchlere de dağıtılır. Vlanları dağıtılması işlemi için cihazların VTP etki alanında olması gerekir. Bunun için bir Domain ve Password&amp;rsquo;e ihtiyaç duyulur.&lt;/p&gt;</description>
     </item>
   </channel>

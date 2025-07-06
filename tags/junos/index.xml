@@ -2,74 +2,74 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Junos on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/junos/</link>
+    <link>https://ittechnetworkk.github.io/tags/junos/</link>
     <description>Recent content in Junos on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Wed, 02 Apr 2025 21:49:12 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/junos/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ittechnetworkk.github.io/tags/junos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[EN] Junos Dynamic Routing</title>
-      <link>http://localhost:1313/posts/juniperdynamicrouting/junos-dynamic-routing/</link>
+      <link>https://ittechnetworkk.github.io/posts/juniperdynamicrouting/junos-dynamic-routing/</link>
       <pubDate>Wed, 02 Apr 2025 21:49:12 +0200</pubDate>
-      <guid>http://localhost:1313/posts/juniperdynamicrouting/junos-dynamic-routing/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/juniperdynamicrouting/junos-dynamic-routing/</guid>
       <description>&lt;p&gt;Hi everyone, in this article I will show you how to configure dynamic routing in Junos.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]&#xA;root# edit protocols ospf area 0  &#xA;&#xA;[edit protocols ospf area 0.0.0.0]&#xA;root# set interface ge-0/0/0 &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;OR&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]&#xA;root# set protocols ospf area 0.0.0.0 interface ge-0/0/0 &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Control:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;root# show |compare &#xA;[edit]&#xA;+  protocols {&#xA;+      ospf {&#xA;+          area 0.0.0.0 {&#xA;+              interface ge-0/0/0.0;&#xA;+          }&#xA;+      }&#xA;+  }&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Thank you for taking the time to read this article. I hope you found it useful.&lt;/p&gt;</description>
     </item>
     <item>
       <title>[EN] Junos Static Routing</title>
-      <link>http://localhost:1313/posts/juniperstaticrouting/junos-static-routing/</link>
+      <link>https://ittechnetworkk.github.io/posts/juniperstaticrouting/junos-static-routing/</link>
       <pubDate>Wed, 02 Apr 2025 21:46:23 +0200</pubDate>
-      <guid>http://localhost:1313/posts/juniperstaticrouting/junos-static-routing/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/juniperstaticrouting/junos-static-routing/</guid>
       <description>&lt;p&gt;In Junos devices static routing configuration will be done in the following way.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Routing Preferences in Junos:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;- Direct/Local                           0&#xA;- Static Route                           5&#xA;- OSPF Internal                          10&#xA;- ISIS Internal L1/L2                    15-18&#xA;- RIP                                    100&#xA;- OSPF External                          150&#xA;- ISIS External L1/L2                    160/165&#xA;- BGP                                    170&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Static Route Configuration:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit] &#xA;root# edit routing-options &#xA;&#xA;[edit routing-options]&#xA;root# set static route 10.10.10.0/24 next-hop 9.9.9.1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;OR&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]&#xA;root# set routing-options static route 10.10.10.0/24 next-hop 9.9.9.1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Adding a backup route with different preference value.&lt;/p&gt;</description>
     </item>
     <item>
       <title>[EN] Junos User Accounts</title>
-      <link>http://localhost:1313/posts/juniper-user-accounts/junos-user-accounts/</link>
+      <link>https://ittechnetworkk.github.io/posts/juniper-user-accounts/junos-user-accounts/</link>
       <pubDate>Wed, 02 Apr 2025 21:40:28 +0200</pubDate>
-      <guid>http://localhost:1313/posts/juniper-user-accounts/junos-user-accounts/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/juniper-user-accounts/junos-user-accounts/</guid>
       <description>&lt;p&gt;In this article I will show you user accounts in Junos.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Login Classes:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;In Junos you can create a login class to assign detailed privileges per class and add user to that class.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Authorization:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;super-user:&lt;/strong&gt; all permissions&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;operator:&lt;/strong&gt; clear, reset, trace, view&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;read-only:&lt;/strong&gt; view&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;unauthorized:&lt;/strong&gt; nothing&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Allowed or denied commands can be specified for each class.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;User Authentication:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;In Junos you can authenticate users by;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Local Database,&lt;/li&gt;&#xA;&lt;li&gt;Radius Server,&lt;/li&gt;&#xA;&lt;li&gt;Tacacs Server.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;User Creating:&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>[EN] Junos Initial Configuration</title>
-      <link>http://localhost:1313/posts/juniper-initial-configuration/junos-initiate-config/</link>
+      <link>https://ittechnetworkk.github.io/posts/juniper-initial-configuration/junos-initiate-config/</link>
       <pubDate>Wed, 02 Apr 2025 21:05:37 +0200</pubDate>
-      <guid>http://localhost:1313/posts/juniper-initial-configuration/junos-initiate-config/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/juniper-initial-configuration/junos-initiate-config/</guid>
       <description>&lt;p&gt;Hi everyone, in this article I will cover on how to make initial configuration in Junos.&lt;/p&gt;&#xA;&lt;h2 id=&#34;root-password&#34;&gt;&lt;strong&gt;Root Password:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;root&amp;gt; configure &#xA;Entering configuration mode&#xA;&#xA;[edit]&#xA;root# set system root-authentication plain-text-password &#xA;New password:&#xA;Retype new password:&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;hostname&#34;&gt;&lt;strong&gt;Hostname:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]&#xA;root# set system host-name ssnrshnn &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;system-time&#34;&gt;&lt;strong&gt;System Time:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;root&amp;gt; set date 202503241608 &#xA;date: connect: Can&amp;#39;t assign requested address&#xA;Mon Mar 24 16:08:00 UTC 2025&#xA;&#xA;root&amp;gt; show system uptime          &#xA;Current time: 2025-03-24 16:08:11 UTC&#xA;Time Source:  LOCAL CLOCK &#xA;System booted: 2025-03-24 15:38:44 UTC (00:30:27 ago)&#xA;Protocols started: 2025-03-24 15:40:23 UTC (00:28:48 ago)&#xA;Last configured: 2025-03-24 14:41:02 UTC (01:28:09 ago) by root&#xA; 4:09PM  up 30 mins, 1 users, load averages: 0.60, 0.66, 0.59&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;time-zone&#34;&gt;&lt;strong&gt;Time Zone:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]                                  &#xA;root# set system time-zone Europe/Berlin &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;ntp&#34;&gt;&lt;strong&gt;NTP:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]                                  &#xA;root# set system ntp server 88.88.88.88&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;user-creating&#34;&gt;&lt;strong&gt;User Creating:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]&#xA;root# set system login user ssnrshnn uid 1001 class super-user authentication plain-text-password &#xA;New password:&#xA;Retype new password:&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;radius&#34;&gt;&lt;strong&gt;RADIUS&lt;/strong&gt;:&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]&#xA;root# set system radius-server 50.50.50.1 port 1144 secret PASSWORD &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;tacacs&#34;&gt;&lt;strong&gt;TACACS:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]&#xA;root# set system tacplus-server 55.55.55.1 port 1142 secret PASSWORD  &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;management-protocols&#34;&gt;&lt;strong&gt;Management Protocols:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]&#xA;root# set system services telnet       &#xA;&#xA;[edit]&#xA;root# set system services ssh &#xA;&#xA;[edit]                                  &#xA;root# set system services ssh root-login allow &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;ssh-key&#34;&gt;&lt;strong&gt;SSH-key:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]&#xA;root@# set system root-authentication ssh-rsa &amp;lt;ssh-key&amp;gt;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;management-interface&#34;&gt;&lt;strong&gt;Management Interface:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]&#xA;root@# set interfaces fxp0 unit 0 family inet address &amp;lt;IP/Prefix&amp;gt;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;domain-name&#34;&gt;&lt;strong&gt;Domain Name:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]&#xA;root@# set system domain-name &amp;lt;domain-name&amp;gt;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;dns&#34;&gt;&lt;strong&gt;DNS:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]&#xA;root@# set system name-server &amp;lt;address&amp;gt;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;cli-idle-time-out&#34;&gt;&lt;strong&gt;CLI idle time-out:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;root&amp;gt; set cli idle-timeout 5 &#xA;Idle timeout set to 5 minutes&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;logs&#34;&gt;&lt;strong&gt;Logs:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;In default syslog is enabled. You can see logs with the command below.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Juniper Rollback</title>
-      <link>http://localhost:1313/posts/junosrollback/junos-rollback/</link>
+      <link>https://ittechnetworkk.github.io/posts/junosrollback/junos-rollback/</link>
       <pubDate>Fri, 22 Nov 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/junosrollback/junos-rollback/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/junosrollback/junos-rollback/</guid>
       <description>&lt;p&gt;Rollback, cihazda yapılan önceki konfigürasyonlara dönebilmeyi sağlayan komuttur. Örneğin cihazda bir konfigürasyon yaptık ve commit ettik. Fakat yapılan konfigürasyon hatalıydı veya başka bir sebepten dolayı eski konfigürasyonu bir şekilde geri almamız gerekiyor. Bu durumda Rollback kullanılır.&lt;/p&gt;&#xA;&lt;p&gt;Rollback dosyalar 50 adettir, 0&amp;rsquo;dan başlar ve sıfırıncı dosya cihazda hali hazırda çalışan konfigürasyon dosyasıdır.&lt;/p&gt;&#xA;&lt;p&gt;Cihaz&amp;rsquo;da 49 Rollback dosyası olması halinde her commit işleminde 49. Rollback dosyasını uçurur.&lt;/p&gt;&#xA;&lt;p&gt;Rollback dosyalarını görmek için;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{master:0}[edit]&#xA;root@vqfx-re# rollback ?             &#xA;Possible completions:&#xA;  &amp;lt;[Enter]&amp;gt;            Execute this command&#xA;  0                    2024-10-07 02:20:28 UTC by root via cli &#xA;  1                    2024-10-07 02:20:20 UTC by root via cli &#xA;  2                    2024-10-07 02:20:19 UTC by root via cli &#xA;  3                    2024-10-07 02:20:18 UTC by root via cli &#xA;  4                    2024-10-07 02:20:17 UTC by root via cli &#xA;  5                    2024-10-07 02:19:57 UTC by root via cli &#xA;  6                    2024-10-07 02:19:37 UTC by root via cli &#xA;  7                    2024-10-07 02:19:34 UTC by root via cli &#xA;  8                    2024-10-07 02:12:37 UTC by root via cli &#xA;  9                    2020-08-19 17:30:33 UTC by root via cli &#xA;  10                   2020-08-19 17:22:59 UTC by root via other &#xA;  |                    Pipe through a command&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Yukarıda görüldüğü gibi, Rollback dosyalarının tarih, saat, kim tarafından, vs. bilgilerini görebiliyoruz. Sıfırıncı dosya çalışan konfigürasyon dosyasıdır.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Juniper Commit Usage</title>
-      <link>http://localhost:1313/posts/junos-commit-usage/junos-commit-usage/</link>
+      <link>https://ittechnetworkk.github.io/posts/junos-commit-usage/junos-commit-usage/</link>
       <pubDate>Fri, 22 Nov 2024 17:53:48 +0100</pubDate>
-      <guid>http://localhost:1313/posts/junos-commit-usage/junos-commit-usage/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/junos-commit-usage/junos-commit-usage/</guid>
       <description>&lt;p&gt;JunOS sistemlerde bir diğer önemli konu ise Commit kullanımıdır.&lt;/p&gt;&#xA;&lt;p&gt;JunOS&amp;rsquo;da commit işlemi, yapılan konfigürasyonu etkinleştirmek için kullanılır. Yani yapılan konfigürasyonu commit etmezsek yaptığımız konfigürasyon geçerli olmaz.&lt;/p&gt;&#xA;&lt;p&gt;Bundan dolayı mutlaka konfigürasyon sonrası commit etmemiz gerekiyor.&lt;/p&gt;&#xA;&lt;p&gt;Commit işlemi yaparken bazı parametreler var ki işleri kolaylaştırır.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Commit tipleri:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&amp;ldquo;commit&amp;rdquo;&lt;/strong&gt; : Bu komut, direkt olarak yapılan konfigürasyonu etkileştirir.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&amp;ldquo;commit check&amp;rdquo;&lt;/strong&gt; : Bu komut, yapılan konfigürasyondan emin olmadığımız durumlarda, yapılan konfigürasyonun doğruluğunu kontrol eder. Eğer bir konfigürasyon hatası varsa bize ilgili kısmın hatasını gösterir.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Juniper CLI Help Komutları</title>
-      <link>http://localhost:1313/posts/junosclihelpcommands/junos-cli-help-commands/</link>
+      <link>https://ittechnetworkk.github.io/posts/junosclihelpcommands/junos-cli-help-commands/</link>
       <pubDate>Sat, 16 Nov 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/junosclihelpcommands/junos-cli-help-commands/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/junosclihelpcommands/junos-cli-help-commands/</guid>
       <description>&lt;p&gt;JunOS&amp;rsquo;da Cli yardım alma komutları oldukça detaylı ve kullanışlıdır. Junos sadece bir işletim sistemi değil aynı zamanda içinde bir kütüphanedir.&lt;/p&gt;&#xA;&lt;p&gt;JunOS&amp;rsquo;da birden fazla yardım alma komutu vardır ve her biri birbirinden kulanıcı dostudur.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Cli Help Komutları:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;root&amp;gt; help ?   &#xA;Possible completions:&#xA;  &amp;lt;[Enter]&amp;gt;            Execute this command&#xA;  apropos              Find help information about a topic&#xA;  reference            Reference material&#xA;  syslog               System log error messages&#xA;  tip                  Tip for the day&#xA;  topic                Help for high level topics&#xA;  |                    Pipe through a command&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Help komutlarıyla birlikte ne kullanılacağını &amp;ldquo;help ?&amp;rdquo; komutuyla görebiliriz.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Juniper Filtering Output</title>
-      <link>http://localhost:1313/posts/junosfilteringoutput/junos-filtering-output/</link>
+      <link>https://ittechnetworkk.github.io/posts/junosfilteringoutput/junos-filtering-output/</link>
       <pubDate>Sat, 16 Nov 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/junosfilteringoutput/junos-filtering-output/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/junosfilteringoutput/junos-filtering-output/</guid>
       <description>&lt;p&gt;JunOS işletim sisteminde çıktıları filtrelemek çoğu zaman hayat kurtarır. JunOS&amp;rsquo;da bazı çıktılar çok uzun olabiliyor, bu çıktıları filtrelemek amacımıza ulaşmak için zamandan tasarruf sağlıyor.&lt;/p&gt;&#xA;&lt;p&gt;JunOS FreeBSD tabanlı olduğu için Linux işletim sistemi bilenler için komutlara aşağı yukarı aşinalık gösterir.&lt;/p&gt;&#xA;&lt;p&gt;Linux bilen JunOS&amp;rsquo;da ve benzeri sistemlerde bir şekilde yolunu bulur.&lt;/p&gt;&#xA;&lt;p&gt;Çıktıları filtrelemek JunOS&amp;rsquo;da oldukça kolaydır. Aşağıdaki filtreleme komutlarını ve açıklamalarını görebilirsiniz.&lt;/p&gt;&#xA;&lt;p&gt;Çıktıları filtrelemek için temel olarak pipe &amp;ldquo;|&amp;rdquo; komutu ve devamında amaca uygun komutu kullanmak işi çözecektir.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Juniper Shortcuts</title>
-      <link>http://localhost:1313/posts/junosshortcuts/junos-shortcuts/</link>
+      <link>https://ittechnetworkk.github.io/posts/junosshortcuts/junos-shortcuts/</link>
       <pubDate>Sat, 16 Nov 2024 17:53:48 +0100</pubDate>
-      <guid>http://localhost:1313/posts/junosshortcuts/junos-shortcuts/</guid>
+      <guid>https://ittechnetworkk.github.io/posts/junosshortcuts/junos-shortcuts/</guid>
       <description>&lt;p&gt;Junos Shortcuts, JunOS CLI ekranında bize pratiklik sağlayan kısayollardır. Başlıcaları aşağıdaki gibidir.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;CTRL + b:&#xA;İmleci bir karakter sola kaydırır.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;CTRL + f:&#xA;İmleci bir karakter sağa kaydırır.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;CTRL + a:&#xA;İmleci satır en başına getirir.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;CTRL + e:&#xA;İmleci satırın en sonuna getirir.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;CTRL + d:&#xA;İmlecin sağından bir karakter siler.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;CTRL + k:&#xA;İmlecin sağındaki her şeyi siler.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;CTRL + u:&#xA;Tüm satırı siler.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;CTRL + w:&#xA;İmlecin solundan bir kelime/komut siler.&lt;/p&gt;</description>
     </item>
   </channel>

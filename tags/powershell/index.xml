@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Powershell on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/powershell/</link>
+    <link>https://ittechnetworkk.github.io/tags/powershell/</link>
     <description>Recent content in Powershell on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Sat, 05 Jul 2025 13:40:46 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ittechnetworkk.github.io/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Malicious PowerShell Analysis</title>
-      <link>http://localhost:1313/walkthroughs/maliciouspowershellanalysis/</link>
+      <link>https://ittechnetworkk.github.io/walkthroughs/maliciouspowershellanalysis/</link>
       <pubDate>Sat, 05 Jul 2025 13:40:46 +0200</pubDate>
-      <guid>http://localhost:1313/walkthroughs/maliciouspowershellanalysis/</guid>
-      <description>&lt;p&gt;In this write-up, I’ll be investigating a challenge named &lt;a href=&#34;https://blueteamlabs.online/home/challenge/malicious-powershell-analysis-bf6b52faef&#34;&gt;&lt;strong&gt;Malicious PowerShell Analysis&lt;/strong&gt;&lt;/a&gt; from Blue Team Labs Online. This challenge isn’t particularly difficult, making it a great exercise for learning or sharpening malware analysis skills.&lt;/p&gt;&#xA;&lt;h3 id=&#34;-step-1-downloading-the-file&#34;&gt;🧪 &lt;strong&gt;Step 1: Downloading the File&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;First, I downloaded the malicious file to an isolated analysis environment (virtual machine).&lt;/p&gt;&#xA;&lt;p&gt;The file came as an encrypted ZIP archive named:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/Walkthroughs/MaliciousPowershellAnalysis/1.png&#34; alt=&#34;maliciousPowershellAnalysis&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;-step-2-hash-analysis&#34;&gt;🔍 &lt;strong&gt;Step 2: Hash Analysis&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;To begin the investigation, I calculated the file’s MD5 hash using &lt;code&gt;md5sum&lt;/code&gt;, then submitted it to multiple threat intelligence platforms:&lt;/p&gt;</description>
+      <guid>https://ittechnetworkk.github.io/walkthroughs/maliciouspowershellanalysis/</guid>
+      <description>&lt;p&gt;In this write-up, I’ll be investigating a challenge named &lt;a href=&#34;https://blueteamlabs.online/home/challenge/malicious-powershell-analysis-bf6b52faef&#34;&gt;&lt;strong&gt;Malicious PowerShell Analysis&lt;/strong&gt;&lt;/a&gt; from Blue Team Labs Online. This challenge isn’t particularly difficult, making it a great exercise for learning or sharpening malware analysis skills.&lt;/p&gt;&#xA;&lt;h3 id=&#34;-step-1-downloading-the-file&#34;&gt;🧪 &lt;strong&gt;Step 1: Downloading the File&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;First, I downloaded the malicious file to an isolated analysis environment (virtual machine).&lt;/p&gt;&#xA;&lt;p&gt;The file came as an encrypted ZIP archive named:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/Walkthroughs/MaliciousPowershellAnalysis/1.png&#34; alt=&#34;maliciousPowershellAnalysis&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;-step-2-hash-analysis&#34;&gt;🔍 &lt;strong&gt;Step 2: Hash Analysis&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;To begin the investigation, I calculated the file’s MD5 hash using &lt;code&gt;md5sum&lt;/code&gt;, then submitted it to multiple threat intelligence platforms:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
