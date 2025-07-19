@@ -2,60 +2,67 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/linux/</link>
+    <link>http://localhost:1313/tags/linux/</link>
     <description>Recent content in Linux on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Sat, 08 Feb 2025 21:46:11 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Jul 2025 14:37:10 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cacti Installation</title>
+      <link>http://localhost:1313/posts/cacti/cacti-install/</link>
+      <pubDate>Sat, 19 Jul 2025 14:37:10 +0200</pubDate>
+      <guid>http://localhost:1313/posts/cacti/cacti-install/</guid>
+      <description>&lt;p&gt;Merhabalar, bu yazımda Cacti Monitoring yazılımını Rasperry pi Zero&amp;rsquo;ya kurulumunu göstereceğim.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/Cacti/cacti&#34;&gt;Cacti&lt;/a&gt;, açık kaynak kodlu bir network monitoring yazılımıdır.&lt;/p&gt;&#xA;&lt;p&gt;Ben Raspberry Pi Zero&amp;rsquo;ya kuracağım,&lt;/p&gt;&#xA;&lt;p&gt;Başlayalım.&lt;/p&gt;&#xA;&lt;p&gt;Kullandığım donanım ve yazılımlar:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Raspberry Pi Zero 2W,&lt;/li&gt;&#xA;&lt;li&gt;SD Kart,&lt;/li&gt;&#xA;&lt;li&gt;Kart Okuyucu,&lt;/li&gt;&#xA;&lt;li&gt;Raspberry Pi Güç Kablosu,&lt;/li&gt;&#xA;&lt;li&gt;ImagerPi&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;İlk olarak ImagerPi kullanarak SD Kart&amp;rsquo;a Raspbian işletim sistemini kuruyorum.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/Cacti/1.png&#34; alt=&#34;cacti&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Yazdırma işlemi bittikten sonra, SD Kart&amp;rsquo;ı cihaza takıp güç kablosunu modemin usb portuna bağlıyorum (güncellemeleri ve kurulumları daha hızlı yapabilmek için).&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Docker Notlarım</title>
-      <link>https://ittechnetworkk.github.io/posts/dockernotlarim/docker-notlarim/</link>
+      <link>http://localhost:1313/posts/dockernotlarim/docker-notlarim/</link>
       <pubDate>Sat, 08 Feb 2025 21:46:11 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dockernotlarim/docker-notlarim/</guid>
-      <description>&lt;p&gt;Docker&amp;rsquo;a giriş notlarım. Bu notlar Özgür Öztürk&amp;rsquo;ün Docker Eğitiminden aldığım notlarımdır.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#Container oluşturulduktan sonra date uygulaması çalıştırılacak. Container başka bir uygulama ile başlatılacak.&#xA;docker container run --name deneme httpd date&#xA;&#xA;#Container&amp;#39;i arka planda çalıştırmak için&#xA;docker container run -d deneme2&#xA;&#xA;#Container içerisinde komut çalıştırmak için &amp;#34;exec&amp;#34;&#xA;docker container exec 94ef4e4f89 ls&#xA;&#xA;#Çalışan container&amp;#39;a nasıl bağlanılır&#xA;docker container exec -it deneme1 sh&#xA;&#xA;#Bir sanal makine ile Container&amp;#39;in farkı; Container&amp;#39;de kernel yoktur, üzerinde çalıştığı hostun kernel&amp;#39;ini kullanır.&#xA;&#xA;#Container ile ilgili daha fazla bilgi edinmek için&#xA;docker container inspect deneme1&#xA;docker network inspect bridge&#xA;docker image inspect fedora&#xA;&#xA;#Container&amp;#39;a bağlanıp değişiklik yapılması pek önerilmez. Bazılarına bağlanılmaz bile.&#xA;&#xA;#Container loglarına bakmak için&#xA;docker container logs deneme1&#xA;&#xA;#Container loglarını zaman damgalarıyla göstermek için&#xA;docker container logs -t deneme1&#xA;&#xA;#Container loglarındaki son birkaç satırı görmek için&#xA;docker container logs --tail 5 deneme1&#xA;&#xA;#Container loglarını canlı görmek için &#xA;docker container logs -f deneme1&#xA;&#xA;#Container&amp;#39;ın kaynaklarına bakmak için&#xA;docker container top webserver&#xA;docker container stats webserver&#xA;docker stats &#xA;&#xA;#Container&amp;#39;ları sınırlamadığımız sürece host makinedeki kaynakları sınırsız kullanabilir.&#xA;Bu container&amp;#39;ların kaynaklarını kısıtlayabiliriz.&#xA;#Container&amp;#39;ın memory kısıtlaması için&#xA;docker container run -d --name deneme3 --memory=1G httpd&#xA;docker container run -d --name deneme3 --memory=500K httpd&#xA;&#xA;#CPU kısıtlaması için iki yol vardır&#xA;#Container sadece 1 core kullanabilecek random olarak&#xA;docker run -d --name cpukisit --cpus=&amp;#34;1&amp;#34; httpd&#xA;&#xA;#Container 2 ve 8 nolu core&amp;#39;ları kullanabilecek&#xA;docker container run -d --name cpukisit2 --cpuset-cpus=&amp;#34;2,8&amp;#34; httpd&#xA;&#xA;#Container&amp;#39;de swap belirlemek için&#xA;docker run -d --name swap --memory-swap=1G httpd&#xA;&#xA;#Tüm containerları topluca silmek için&#xA;docker container prune&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;https://ittechnetworkk.github.io/images/Docker/1.png&#34; alt=&#34;docker&#34;&gt;&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/dockernotlarim/docker-notlarim/</guid>
+      <description>&lt;p&gt;Docker&amp;rsquo;a giriş notlarım. Bu notlar Özgür Öztürk&amp;rsquo;ün Docker Eğitiminden aldığım notlarımdır.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#Container oluşturulduktan sonra date uygulaması çalıştırılacak. Container başka bir uygulama ile başlatılacak.&#xA;docker container run --name deneme httpd date&#xA;&#xA;#Container&amp;#39;i arka planda çalıştırmak için&#xA;docker container run -d deneme2&#xA;&#xA;#Container içerisinde komut çalıştırmak için &amp;#34;exec&amp;#34;&#xA;docker container exec 94ef4e4f89 ls&#xA;&#xA;#Çalışan container&amp;#39;a nasıl bağlanılır&#xA;docker container exec -it deneme1 sh&#xA;&#xA;#Bir sanal makine ile Container&amp;#39;in farkı; Container&amp;#39;de kernel yoktur, üzerinde çalıştığı hostun kernel&amp;#39;ini kullanır.&#xA;&#xA;#Container ile ilgili daha fazla bilgi edinmek için&#xA;docker container inspect deneme1&#xA;docker network inspect bridge&#xA;docker image inspect fedora&#xA;&#xA;#Container&amp;#39;a bağlanıp değişiklik yapılması pek önerilmez. Bazılarına bağlanılmaz bile.&#xA;&#xA;#Container loglarına bakmak için&#xA;docker container logs deneme1&#xA;&#xA;#Container loglarını zaman damgalarıyla göstermek için&#xA;docker container logs -t deneme1&#xA;&#xA;#Container loglarındaki son birkaç satırı görmek için&#xA;docker container logs --tail 5 deneme1&#xA;&#xA;#Container loglarını canlı görmek için &#xA;docker container logs -f deneme1&#xA;&#xA;#Container&amp;#39;ın kaynaklarına bakmak için&#xA;docker container top webserver&#xA;docker container stats webserver&#xA;docker stats &#xA;&#xA;#Container&amp;#39;ları sınırlamadığımız sürece host makinedeki kaynakları sınırsız kullanabilir.&#xA;Bu container&amp;#39;ların kaynaklarını kısıtlayabiliriz.&#xA;#Container&amp;#39;ın memory kısıtlaması için&#xA;docker container run -d --name deneme3 --memory=1G httpd&#xA;docker container run -d --name deneme3 --memory=500K httpd&#xA;&#xA;#CPU kısıtlaması için iki yol vardır&#xA;#Container sadece 1 core kullanabilecek random olarak&#xA;docker run -d --name cpukisit --cpus=&amp;#34;1&amp;#34; httpd&#xA;&#xA;#Container 2 ve 8 nolu core&amp;#39;ları kullanabilecek&#xA;docker container run -d --name cpukisit2 --cpuset-cpus=&amp;#34;2,8&amp;#34; httpd&#xA;&#xA;#Container&amp;#39;de swap belirlemek için&#xA;docker run -d --name swap --memory-swap=1G httpd&#xA;&#xA;#Tüm containerları topluca silmek için&#xA;docker container prune&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/Docker/1.png&#34; alt=&#34;docker&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>[EN] NetworkManager Installation</title>
-      <link>https://ittechnetworkk.github.io/posts/networkmanagerinstallation/network-manager-installation/</link>
+      <link>http://localhost:1313/posts/networkmanagerinstallation/network-manager-installation/</link>
       <pubDate>Fri, 24 Jan 2025 21:46:46 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/networkmanagerinstallation/network-manager-installation/</guid>
+      <guid>http://localhost:1313/posts/networkmanagerinstallation/network-manager-installation/</guid>
       <description>&lt;p&gt;Hi there, in this article, I will show you how to switch &lt;code&gt;netplan&lt;/code&gt; to &lt;code&gt;NetworkManager&lt;/code&gt; to manage network interfaces on Ubuntu.&lt;/p&gt;&#xA;&lt;p&gt;As you know, Ubuntu uses netplan as the default tool for network management. However NetworkManager is often a better choice due to its advanced features and ease of use.&lt;/p&gt;&#xA;&lt;p&gt;In this guide, I’ll walk you through the steps to install and configure NetworkManager on an Ubuntu Server.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Step 1: Install NetworkManager&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Debian Server IP Konfigürasyonu</title>
-      <link>https://ittechnetworkk.github.io/posts/debianip/debian-ip/</link>
+      <link>http://localhost:1313/posts/debianip/debian-ip/</link>
       <pubDate>Sun, 19 Jan 2025 23:56:33 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/debianip/debian-ip/</guid>
+      <guid>http://localhost:1313/posts/debianip/debian-ip/</guid>
       <description>&lt;p&gt;Selamlar, bu yazımda Debian Server&amp;rsquo;a nasıl statik veya dinamik IP tanımlanacağını göstereceğim.&lt;/p&gt;&#xA;&lt;p&gt;Her Linux dağıtımında statik IP&amp;rsquo;ler aynı şekilde tanımlanmayabilir.&lt;/p&gt;&#xA;&lt;p&gt;Linux sistemlerde her şey bir dosyadan okunduğu için bunun için de bir ilgili bir dosya vardır.&lt;/p&gt;&#xA;&lt;p&gt;Debian&amp;rsquo;da bu dosya şuradadır:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;/etc/network/interfaces&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Şimdi bu dosyayı editleyelim.&lt;/p&gt;&#xA;&lt;p&gt;Dosyanın ilk hali şu şekildedir:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# This file describes the network interfaces available on your system&#xA;# and how to activate them. For more information, see interfaces(5).&#xA;&#xA;source /etc/network/interfaces.d/*&#xA;&#xA;# The loopback network interface&#xA;auto lo&#xA;iface lo inet loopback&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Bazı parametreler sisteminize bağlı olarak değişiklik gösterebilir.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Fedora Server IP Konfigürasyonu</title>
-      <link>https://ittechnetworkk.github.io/posts/fedoraip/fedora-ip/</link>
+      <link>http://localhost:1313/posts/fedoraip/fedora-ip/</link>
       <pubDate>Sun, 19 Jan 2025 22:51:26 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/fedoraip/fedora-ip/</guid>
+      <guid>http://localhost:1313/posts/fedoraip/fedora-ip/</guid>
       <description>&lt;p&gt;Selamlar, bu yazımda Fedora Server&amp;rsquo;a nasıl statik veya dinamik IP tanımlanacağını göstereceğim.&lt;/p&gt;&#xA;&lt;p&gt;Her Linux dağıtımında statik IP&amp;rsquo;ler aynı şekilde tanımlanmayabilir. Fakat mantığını bilmek bir adım önde başlamak demektir.&lt;/p&gt;&#xA;&lt;p&gt;Linux sistemlerde her şey bir dosyadan okunduğu için bunun için de bir ilgili bir dosya vardır.&lt;/p&gt;&#xA;&lt;p&gt;Fedora&amp;rsquo;da bu dosya şuradadır:&lt;/p&gt;&#xA;&lt;p&gt;NetworkManager kullanılmadığında;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;/etc/sysconfig/network-scripts/ifcfg-ens33&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;NetworkManager kullanıldığında;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;/etc/NetworkManager/system-connections/ens33.nmconnection&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Şimdi bu dosyayı editleyelim.&lt;/p&gt;&#xA;&lt;p&gt;Dosyanın ilk hali şu şekildedir:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[connection]&#xA;id=ens160&#xA;uuid=36903561-eb7f-38c2-986b-b098913248de&#xA;type=ethernet&#xA;autoconnect-priority=-999&#xA;interface-name=ens160&#xA;timestamp=1737213877&#xA;&#xA;[ethernet]&#xA;&#xA;[ipv4]&#xA;&#xA;&#xA;[ipv6]&#xA;addr-gen-mode=eui64&#xA;method=auto&#xA;&#xA;[proxy]&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Bazı parametreler sisteminize bağlı olarak değişiklik gösterebilir, fakat bizim ilgilendiğimiz kısım şimdilik &lt;code&gt;[ipv4]&lt;/code&gt; kısmı.&lt;/p&gt;</description>
     </item>
     <item>
       <title>[EN] Linux Process Prioritization</title>
-      <link>https://ittechnetworkk.github.io/posts/linuxprocessprioritization/linux-process-prioritization/</link>
+      <link>http://localhost:1313/posts/linuxprocessprioritization/linux-process-prioritization/</link>
       <pubDate>Sat, 11 Jan 2025 05:03:17 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/linuxprocessprioritization/linux-process-prioritization/</guid>
+      <guid>http://localhost:1313/posts/linuxprocessprioritization/linux-process-prioritization/</guid>
       <description>&lt;p&gt;In this article I am going to talk about Linux process Prioritization.&lt;/p&gt;&#xA;&lt;p&gt;Sometimes we may want to prioritize our more important processes in Linux.&lt;/p&gt;&#xA;&lt;p&gt;We prioritize process or processes that are more important for us with &amp;ldquo;NICE&amp;rdquo; parameters.&lt;/p&gt;&#xA;&lt;p&gt;Each process has a &amp;ldquo;NICE&amp;rdquo; value. This value prioritizes processes.&lt;/p&gt;&#xA;&lt;p&gt;The lower we set this value, the higher the priority of the process. However, this value can only be set between &amp;ldquo;+20&amp;rdquo; and &amp;ldquo;-20&amp;rdquo;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ubuntu 22.04 DHCP Server Konfigürasyonu</title>
-      <link>https://ittechnetworkk.github.io/posts/ubuntudhcpserver/ubuntu-dhcp-server/</link>
+      <link>http://localhost:1313/posts/ubuntudhcpserver/ubuntu-dhcp-server/</link>
       <pubDate>Thu, 07 Nov 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ubuntudhcpserver/ubuntu-dhcp-server/</guid>
+      <guid>http://localhost:1313/posts/ubuntudhcpserver/ubuntu-dhcp-server/</guid>
       <description>&lt;p&gt;Merhabalar bu yazımda, Ubuntu-22.04 Server&amp;rsquo;a DHCP rolü kurup konfigürasyonunu yapacağım.&lt;/p&gt;&#xA;&lt;p&gt;Ubuntu&amp;rsquo;ya DHCP rolü vermeden önce, Server&amp;rsquo;ın IP adresini statik olarak ayarlıyorum.&lt;/p&gt;&#xA;&lt;p&gt;Statik IP adresi tanımlamak için &amp;ldquo;/etc/netplan/00-installer-config.yaml&amp;rdquo; dosyasını düzenliyorum.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;network:&#xA;  version: 2&#xA;  renderer: networkd&#xA;  ethernets:&#xA;    ens33:&#xA;      addresses:&#xA;        - 192.168.1.50/24&#xA;      nameservers:&#xA;        addresses: [1.1.1.1, 8.8.8.8]&#xA;      routes:&#xA;        - to: default&#xA;          via: 192.168.1.1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Değişiklikleri geçerli kılmak için:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo netplan apply&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Grafik arayüzü ile yapılandırmak için &amp;ldquo;nmtui&amp;rdquo; aracını kullanabilirsiniz.&lt;/p&gt;&#xA;&lt;p&gt;DHCP Server Rolü Kurulumu:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt install isc-dhcp-server&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;DHCP rolü yüklendikten sonra, konfigürasyon dosyası &amp;ldquo;/etc/dhcp/dhcpd.conf&amp;quot;dur.&lt;/p&gt;</description>
     </item>
     <item>
       <title>GPG Nedir?</title>
-      <link>https://ittechnetworkk.github.io/posts/gpgnedir/gpg-nedir/</link>
+      <link>http://localhost:1313/posts/gpgnedir/gpg-nedir/</link>
       <pubDate>Tue, 23 Jul 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/gpgnedir/gpg-nedir/</guid>
+      <guid>http://localhost:1313/posts/gpgnedir/gpg-nedir/</guid>
       <description>&lt;p&gt;GPG (GNU Privacy Guard )&lt;a href=&#34;https://datatracker.ietf.org/doc/html/rfc4880&#34;&gt;RFC4880&lt;/a&gt; , GPL Lisanslı bir şifreleme ve imzalama aracıdır. Linux&amp;rsquo;da defaultta gelir, Windows için &lt;a href=&#34;https://www.gnupg.org/download/&#34;&gt;Web Sitesi&lt;/a&gt;&amp;rsquo;nden indirilebilir.&lt;/p&gt;&#xA;&lt;p&gt;GPG asimetrik şifreleme algoritması kullanır. Yani Public ve Prive anahtarlar vasıtasıyla dataları şifreler veya çözer.&lt;/p&gt;&#xA;&lt;p&gt;Nedir bu Public ve Prive anahtarlar?&lt;/p&gt;&#xA;&lt;p&gt;2 kişi düşünelim birbirleriyle haberleşmek istesin. Her kişinin 2 anahtarı olur. Biri &amp;ldquo;Public Key&amp;rdquo; yani paylaşılan anahtar. Diğeri ise &amp;ldquo;Private key&amp;rdquo; yani gizli kalması gereken anahtar.&lt;/p&gt;&#xA;&lt;p&gt;X kişisi Y kişisine gizli bir mesaj göndermek isterse bu mesajı Y kişisinin &amp;ldquo;Public Key&amp;quot;i ile şifrelemesi gerekir.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -1,0 +1,335 @@
+/* Enhanced Walkthroughs Page - Military Cybersecurity Theme */
+.walkthroughs-container {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0d1117 50%, #1a1a1a 100%);
+    min-height: 100vh;
+    padding: 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.walkthroughs-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(43, 188, 138, 0.03) 2px, transparent 2px),
+        radial-gradient(circle at 80% 80%, rgba(43, 188, 138, 0.02) 1px, transparent 1px);
+    background-size: 100px 100px, 60px 60px;
+    animation: matrixMove 30s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes matrixMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(100px, 100px); }
+}
+
+.walkthroughs-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.walkthroughs-title {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, #2bbc8a, #1e8e6b, #2bbc8a);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease-in-out infinite;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(43, 188, 138, 0.3);
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.walkthroughs-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(43, 188, 138, 0.1);
+    border: 2px solid rgba(43, 188, 138, 0.3);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    color: #2bbc8a;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.walkthroughs-badge i {
+    font-size: 1.2rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* Enhanced Walkthrough Cards */
+.walkthrough-card {
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    border: 2px solid #333;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.walkthrough-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2bbc8a, #1e8e6b, #2bbc8a);
+    background-size: 200% 100%;
+    animation: borderGlow 3s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.walkthrough-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    border-color: #2bbc8a;
+    box-shadow: 
+        0 20px 60px rgba(43, 188, 138, 0.2),
+        0 0 0 1px rgba(43, 188, 138, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.walkthrough-card:hover::before {
+    height: 6px;
+    box-shadow: 0 0 20px rgba(43, 188, 138, 0.5);
+}
+
+.walkthrough-content {
+    padding: 2rem;
+    position: relative;
+}
+
+.walkthrough-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.walkthrough-category {
+    background: rgba(43, 188, 138, 0.15);
+    color: #2bbc8a;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(43, 188, 138, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.walkthrough-date {
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.walkthrough-date i {
+    color: #2bbc8a;
+}
+
+.walkthrough-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    transition: color 0.3s ease;
+}
+
+.walkthrough-card:hover .walkthrough-title {
+    color: #2bbc8a;
+}
+
+.walkthrough-excerpt {
+    color: #aaa;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.walkthrough-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.walkthrough-tag {
+    background: rgba(43, 188, 138, 0.1);
+    color: #2bbc8a;
+    padding: 0.3rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border: 1px solid rgba(43, 188, 138, 0.2);
+    transition: all 0.3s ease;
+}
+
+.walkthrough-card:hover .walkthrough-tag {
+    background: rgba(43, 188, 138, 0.2);
+    border-color: rgba(43, 188, 138, 0.4);
+}
+
+.walkthrough-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid #333;
+}
+
+.walkthrough-difficulty {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #2bbc8a;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.difficulty-indicator {
+    display: flex;
+    gap: 2px;
+}
+
+.difficulty-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #333;
+    transition: all 0.3s ease;
+}
+
+.difficulty-dot.active {
+    background: #2bbc8a;
+    box-shadow: 0 0 8px rgba(43, 188, 138, 0.5);
+}
+
+.walkthrough-read-more {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #2bbc8a;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.walkthrough-card:hover .walkthrough-read-more {
+    color: #fff;
+    transform: translateX(5px);
+}
+
+.walkthrough-read-more i {
+    transition: transform 0.3s ease;
+}
+
+.walkthrough-card:hover .walkthrough-read-more i {
+    transform: translateX(3px);
+}
+
+/* Security Theme Elements */
+.security-accent {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    background: rgba(43, 188, 138, 0.1);
+    border: 1px solid rgba(43, 188, 138, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2bbc8a;
+    font-size: 1.2rem;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.walkthrough-card:hover .security-accent {
+    background: rgba(43, 188, 138, 0.2);
+    border-color: rgba(43, 188, 138, 0.5);
+    transform: rotate(180deg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .walkthroughs-title {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+    
+    .walkthrough-content {
+        padding: 1.5rem;
+    }
+    
+    .walkthrough-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+    
+    .walkthrough-title {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .walkthroughs-container {
+        padding: 1rem 0;
+    }
+    
+    .walkthroughs-title {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+    
+    .walkthrough-content {
+        padding: 1.25rem;
+    }
+    
+    .walkthrough-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+} 

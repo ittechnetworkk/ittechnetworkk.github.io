@@ -1,0 +1,338 @@
+/* Walkthroughs Page - Enhanced Military Theme */
+.walkthroughs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+    min-height: 100vh;
+}
+
+.walkthroughs-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.walkthroughs-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #2bbc8a;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(43, 188, 138, 0.3);
+}
+
+.walkthroughs-subtitle {
+    color: #888;
+    font-size: 1.1rem;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.walkthroughs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.walkthrough-card {
+    background: linear-gradient(145deg, #2a2a2a, #1f1f1f);
+    border: 2px solid #333;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.walkthrough-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #2bbc8a, #239a70, #2bbc8a);
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.walkthrough-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(43, 188, 138, 0.25);
+    border-color: #2bbc8a;
+}
+
+.walkthrough-card:hover::before {
+    animation: shimmer 1s ease-in-out infinite;
+}
+
+.walkthrough-image {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+}
+
+.walkthrough-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.walkthrough-card:hover .walkthrough-image img {
+    transform: scale(1.1);
+}
+
+.walkthrough-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(43, 188, 138, 0.15) 0%,
+        rgba(0, 0, 0, 0.4) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.walkthrough-card:hover .walkthrough-overlay {
+    opacity: 1;
+}
+
+.walkthrough-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: linear-gradient(135deg, #2bbc8a, #239a70);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 15px rgba(43, 188, 138, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.walkthrough-date {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.walkthrough-content {
+    padding: 1.5rem;
+}
+
+.walkthrough-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.walkthrough-excerpt {
+    color: #bbb;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.walkthrough-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #333;
+}
+
+.walkthrough-tags {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.walkthrough-tag {
+    background: linear-gradient(135deg, rgba(43, 188, 138, 0.15), rgba(43, 188, 138, 0.05));
+    color: #2bbc8a;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid rgba(43, 188, 138, 0.3);
+    transition: all 0.3s ease;
+}
+
+.walkthrough-tag:hover {
+    background: rgba(43, 188, 138, 0.2);
+    transform: translateY(-2px);
+}
+
+.walkthrough-read-more {
+    color: #2bbc8a;
+    font-size: 0.95rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 1rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.walkthrough-read-more::after {
+    content: '→';
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.walkthrough-card:hover .walkthrough-read-more {
+    color: #fff;
+}
+
+.walkthrough-card:hover .walkthrough-read-more::after {
+    transform: translateX(5px);
+}
+
+/* Fallback for walkthroughs without images */
+.walkthrough-no-image {
+    background: linear-gradient(145deg, #2a2a2a, #1f1f1f);
+    border: 2px solid #333;
+}
+
+.walkthrough-no-image .walkthrough-content {
+    padding: 2rem 1.5rem;
+}
+
+.walkthrough-no-image .walkthrough-badge {
+    position: static;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.walkthrough-no-image .walkthrough-date {
+    position: static;
+    background: linear-gradient(135deg, rgba(43, 188, 138, 0.15), rgba(43, 188, 138, 0.05));
+    color: #2bbc8a;
+    float: right;
+    margin-top: -2.5rem;
+}
+
+/* Loading animation for walkthrough cards */
+.walkthrough-card {
+    animation: fadeInUpWalkthrough 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.walkthrough-card:nth-child(1) { animation-delay: 0.1s; }
+.walkthrough-card:nth-child(2) { animation-delay: 0.2s; }
+.walkthrough-card:nth-child(3) { animation-delay: 0.3s; }
+.walkthrough-card:nth-child(4) { animation-delay: 0.4s; }
+.walkthrough-card:nth-child(5) { animation-delay: 0.5s; }
+.walkthrough-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUpWalkthrough {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .walkthroughs-container {
+        padding: 1rem;
+    }
+    
+    .walkthroughs-title {
+        font-size: 2rem;
+    }
+    
+    .walkthroughs-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin: 1rem 0;
+    }
+    
+    .walkthrough-content {
+        padding: 1.25rem;
+    }
+    
+    .walkthrough-title {
+        font-size: 1.3rem;
+    }
+    
+    .walkthrough-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .walkthrough-read-more {
+        margin-left: 0;
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 480px) {
+    .walkthrough-image {
+        height: 160px;
+    }
+    
+    .walkthrough-content {
+        padding: 1rem;
+    }
+    
+    .walkthrough-title {
+        font-size: 1.2rem;
+    }
+    
+    .walkthrough-excerpt {
+        font-size: 0.9rem;
+    }
+    
+    .walkthroughs-title {
+        font-size: 1.8rem;
+    }
+} 

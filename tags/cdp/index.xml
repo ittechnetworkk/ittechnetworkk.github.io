@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CDP on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/cdp/</link>
+    <link>http://localhost:1313/tags/cdp/</link>
     <description>Recent content in CDP on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Thu, 08 Feb 2024 23:39:19 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/cdp/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/cdp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CDP LLDP Protokolleri</title>
-      <link>https://ittechnetworkk.github.io/posts/cdp-lldp/cdp-lldp/</link>
+      <link>http://localhost:1313/posts/cdp-lldp/cdp-lldp/</link>
       <pubDate>Thu, 08 Feb 2024 23:39:19 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/cdp-lldp/cdp-lldp/</guid>
+      <guid>http://localhost:1313/posts/cdp-lldp/cdp-lldp/</guid>
       <description>&lt;p&gt;&lt;strong&gt;A-CDP Protokolü:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;CDP (Cisco Discovery Protocol), Cisco cihazlara özel cihaz keşif protokolüdür.&lt;/li&gt;&#xA;&lt;li&gt;Layer 2 seviyesinde çalışır.&lt;/li&gt;&#xA;&lt;li&gt;Cihaz türü, IP adresi, yazılım sürümü, işletim sistemi gibi bilgileri elde etmemizi sağlar.&lt;/li&gt;&#xA;&lt;li&gt;Varsayılan olarak açık gelir. İstenirse port bazında açabilir veya kapatabiliriz.&lt;/li&gt;&#xA;&lt;li&gt;Networkü tanımak için kullanılır fakat her zaman için iyi olmayabilir.&lt;/li&gt;&#xA;&lt;li&gt;60 saniyede bir CDP mesajı yollanır, 180 saniye tabloda tutulur.&lt;/li&gt;&#xA;&lt;li&gt;Multicast yayın yapar.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;CDP Cihaz keşfi komutları:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;R1#show cdp neighbors &#xA;R1#show cdp neighbors detail&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;CDP Kapatmak için:&lt;/p&gt;</description>
     </item>
   </channel>

@@ -1,0 +1,241 @@
+/* Tools Cards Styling - Matching Posts Design */
+.tools-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin: 2rem 0;
+    padding: 0;
+}
+
+.tool-card {
+    background: linear-gradient(135deg, var(--card-bg-from), var(--card-bg-to));
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(43, 188, 138, 0.2);
+    border-color: var(--card-hover-border);
+}
+
+.tool-card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--card-icon-color);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tool-card-icon i {
+    font-size: 2.5rem;
+}
+
+.tool-card-icon svg {
+    width: 60px;
+    height: 60px;
+    stroke: var(--card-icon-color);
+}
+
+.tool-card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.tool-card-badge {
+    background: rgba(43, 188, 138, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(43, 188, 138, 0.3);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #2bbc8a;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.tool-card-description {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+.tool-features {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.tool-features span {
+    background: rgba(43, 188, 138, 0.1);
+    border: 1px solid rgba(43, 188, 138, 0.3);
+    color: #2bbc8a;
+    padding: 0.25rem 0.5rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.tool-card-link {
+    color: #2bbc8a;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.tool-card-link:hover {
+    color: #fff;
+    transform: translateX(5px);
+}
+
+/* Tool card color schemes - Dark Military Theme */
+.card-subnet {
+    --card-bg-from: #2d2d2d;
+    --card-bg-to: #1a1a1a;
+    --card-border: #444;
+    --card-hover-border: #2bbc8a;
+    --card-icon-color: #2bbc8a;
+}
+
+.card-ip-checker {
+    --card-bg-from: #2d2d2d;
+    --card-bg-to: #1a1a1a;
+    --card-border: #444;
+    --card-hover-border: #2bbc8a;
+    --card-icon-color: #2bbc8a;
+}
+
+.card-cisco {
+    --card-bg-from: #2d2d2d;
+    --card-bg-to: #1a1a1a;
+    --card-border: #444;
+    --card-hover-border: #2bbc8a;
+    --card-icon-color: #2bbc8a;
+}
+
+.card-junos {
+    --card-bg-from: #2d2d2d;
+    --card-bg-to: #1a1a1a;
+    --card-border: #444;
+    --card-hover-border: #2bbc8a;
+    --card-icon-color: #2bbc8a;
+}
+
+/* Default card for new tools */
+.card-default {
+    --card-bg-from: #2d2d2d;
+    --card-bg-to: #1a1a1a;
+    --card-border: #444;
+    --card-hover-border: #2bbc8a;
+    --card-icon-color: #2bbc8a;
+}
+
+/* Tools section header */
+.tools-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.tools-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2bbc8a;
+    margin-bottom: 1rem;
+}
+
+.tools-subtitle {
+    color: #aaa;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .tools-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin: 1.5rem 0;
+    }
+    
+    .tool-card {
+        padding: 1.25rem;
+    }
+    
+    .tools-title {
+        font-size: 2rem;
+    }
+    
+    .tools-subtitle {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tool-card-icon {
+        font-size: 2rem;
+    }
+    
+    .tool-card-icon svg {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .tool-card-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* Animation for card entry */
+.tool-card {
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.tool-card:nth-child(1) { animation-delay: 0.1s; }
+.tool-card:nth-child(2) { animation-delay: 0.2s; }
+.tool-card:nth-child(3) { animation-delay: 0.3s; }
+.tool-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 

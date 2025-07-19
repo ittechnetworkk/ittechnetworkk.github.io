@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cirus Total on ittechnetworkk</title>
+    <link>http://localhost:1313/tags/cirus-total/</link>
+    <description>Recent content in Cirus Total on ittechnetworkk</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>ittechnetworkk</copyright>
+    <lastBuildDate>Sat, 05 Jul 2025 15:16:47 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cirus-total/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SOC127 - SQL Injection Detected</title>
+      <link>http://localhost:1313/walkthroughs/soc127/</link>
+      <pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate>
+      <guid>http://localhost:1313/walkthroughs/soc127/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

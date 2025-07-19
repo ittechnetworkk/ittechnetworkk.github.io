@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ubuntu on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/ubuntu/</link>
+    <link>http://localhost:1313/tags/ubuntu/</link>
     <description>Recent content in Ubuntu on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Thu, 23 Jan 2025 01:06:35 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[EN] DHCP Server Configuration</title>
-      <link>https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/</link>
+      <link>http://localhost:1313/posts/dhcpserver/dhcp-server-configuration/</link>
       <pubDate>Thu, 23 Jan 2025 01:06:35 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/</guid>
+      <guid>http://localhost:1313/posts/dhcpserver/dhcp-server-configuration/</guid>
       <description>&lt;p&gt;Hello there!&lt;/p&gt;&#xA;&lt;p&gt;In this article, I’m going to show you how to install and configure a DHCP server.&lt;/p&gt;&#xA;&lt;p&gt;I’m going to install the DHCP server role on an Ubuntu server. However, the process is almost the same for all distributions.&lt;/p&gt;&#xA;&lt;p&gt;We need to install the &lt;code&gt;isc-dhcp-server&lt;/code&gt; package for DHCP role.&lt;/p&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s get started.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ubuntu@ubuntu:~$ sudo apt install isc-dhcp-server&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After the package is installed, let’s check the service called &lt;code&gt;isc-dhcp-server&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ubuntu@ubuntu:~$ systemctl status isc-dhcp-server&#xA;× isc-dhcp-server.service - ISC DHCP IPv4 server&#xA;     Loaded: loaded (/lib/systemd/system/isc-dhcp-server.service; enabled; vendor preset: enabled)&#xA;     Active: failed (Result: exit-code) since Wed 2025-01-22 22:22:49 UTC; 1min 46s ago&#xA;       Docs: man:dhcpd(8)&#xA;    Process: 1553 ExecStart=/bin/sh -ec      CONFIG_FILE=/etc/dhcp/dhcpd.conf;      if [ -f /etc/ltsp/dhcpd.conf ]; then CONFIG_F&amp;gt;&#xA;   Main PID: 1553 (code=exited, status=1/FAILURE)&#xA;        CPU: 7ms&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;As you can see, the service is currently not working. We will configure it and then start the service.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Ubuntu 22.04 DHCP Server Konfigürasyonu</title>
-      <link>https://ittechnetworkk.github.io/posts/ubuntudhcpserver/ubuntu-dhcp-server/</link>
+      <link>http://localhost:1313/posts/ubuntudhcpserver/ubuntu-dhcp-server/</link>
       <pubDate>Thu, 07 Nov 2024 22:57:40 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/ubuntudhcpserver/ubuntu-dhcp-server/</guid>
+      <guid>http://localhost:1313/posts/ubuntudhcpserver/ubuntu-dhcp-server/</guid>
       <description>&lt;p&gt;Merhabalar bu yazımda, Ubuntu-22.04 Server&amp;rsquo;a DHCP rolü kurup konfigürasyonunu yapacağım.&lt;/p&gt;&#xA;&lt;p&gt;Ubuntu&amp;rsquo;ya DHCP rolü vermeden önce, Server&amp;rsquo;ın IP adresini statik olarak ayarlıyorum.&lt;/p&gt;&#xA;&lt;p&gt;Statik IP adresi tanımlamak için &amp;ldquo;/etc/netplan/00-installer-config.yaml&amp;rdquo; dosyasını düzenliyorum.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;network:&#xA;  version: 2&#xA;  renderer: networkd&#xA;  ethernets:&#xA;    ens33:&#xA;      addresses:&#xA;        - 192.168.1.50/24&#xA;      nameservers:&#xA;        addresses: [1.1.1.1, 8.8.8.8]&#xA;      routes:&#xA;        - to: default&#xA;          via: 192.168.1.1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Değişiklikleri geçerli kılmak için:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo netplan apply&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Grafik arayüzü ile yapılandırmak için &amp;ldquo;nmtui&amp;rdquo; aracını kullanabilirsiniz.&lt;/p&gt;&#xA;&lt;p&gt;DHCP Server Rolü Kurulumu:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sudo apt install isc-dhcp-server&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;DHCP rolü yüklendikten sonra, konfigürasyon dosyası &amp;ldquo;/etc/dhcp/dhcpd.conf&amp;quot;dur.&lt;/p&gt;</description>
     </item>
   </channel>

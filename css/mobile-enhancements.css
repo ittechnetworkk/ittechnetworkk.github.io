@@ -1,0 +1,436 @@
+/* Mobile & Touch Enhancements */
+
+/* Touch-friendly button sizing */
+@media (pointer: coarse) {
+  button,
+  .btn,
+  a[role="button"],
+  input[type="submit"],
+  input[type="button"] {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.75rem 1.5rem;
+  }
+
+  /* Tool cards touch optimization */
+  .tool-card,
+  .category-card {
+    min-height: 120px;
+    padding: 1.5rem;
+  }
+
+  /* Menu items */
+  .menu a,
+  .nav-link {
+    min-height: 48px;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Enhanced mobile navigation */
+@media (max-width: 768px) {
+  /* Hamburger menu improvements */
+  .mobile-menu-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1001;
+    background: rgba(43, 188, 138, 0.1);
+    border: 2px solid #2bbc8a;
+    border-radius: 8px;
+    color: #2bbc8a;
+    padding: 0.75rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+
+  .mobile-menu-toggle:hover,
+  .mobile-menu-toggle.active {
+    background: #2bbc8a;
+    color: white;
+    transform: scale(1.1);
+  }
+
+  .mobile-menu-toggle.active {
+    transform: rotate(90deg);
+  }
+
+  /* Full-screen mobile menu */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+  }
+
+  .mobile-menu.show {
+    transform: translateY(0);
+  }
+
+  .mobile-menu-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  .mobile-menu-item {
+    margin: 1rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+  }
+
+  .mobile-menu.show .mobile-menu-item {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .mobile-menu.show .mobile-menu-item:nth-child(1) { transition-delay: 0.1s; }
+  .mobile-menu.show .mobile-menu-item:nth-child(2) { transition-delay: 0.2s; }
+  .mobile-menu.show .mobile-menu-item:nth-child(3) { transition-delay: 0.3s; }
+  .mobile-menu.show .mobile-menu-item:nth-child(4) { transition-delay: 0.4s; }
+  .mobile-menu.show .mobile-menu-item:nth-child(5) { transition-delay: 0.5s; }
+
+  .mobile-menu-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: block;
+    border: 2px solid transparent;
+  }
+
+  .mobile-menu-link:hover {
+    color: #2bbc8a;
+    border-color: #2bbc8a;
+    background: rgba(43, 188, 138, 0.1);
+    transform: scale(1.05);
+  }
+
+  /* Quick actions in mobile menu */
+  .mobile-quick-actions {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .mobile-quick-action {
+    background: rgba(43, 188, 138, 0.1);
+    border: 1px solid #2bbc8a;
+    color: #2bbc8a;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .mobile-quick-action:hover {
+    background: #2bbc8a;
+    color: white;
+    transform: translateY(-2px);
+  }
+}
+
+/* Improved scroll behavior on mobile */
+@media (max-width: 768px) {
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+
+  /* Enhanced card layouts for mobile */
+  .posts-grid,
+  .tools-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .category-card,
+  .tool-card {
+    margin-bottom: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Better mobile typography */
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  
+  p, .description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Mobile-optimized forms */
+  input,
+  select,
+  textarea {
+    font-size: 16px; /* Prevent zoom on iOS */
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  /* Better button spacing */
+  .btn {
+    margin: 0.5rem 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn + .btn {
+    margin-top: 0.5rem;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .posts-grid,
+  .tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .hero-content {
+    padding: 1.5rem;
+  }
+
+  .tool-header {
+    padding: 1.5rem;
+  }
+}
+
+/* Landscape phone optimizations */
+@media (max-width: 768px) and (orientation: landscape) {
+  .mobile-menu {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .mobile-menu-items {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .mobile-menu-item {
+    margin: 0;
+  }
+
+  .mobile-menu-link {
+    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .mobile-quick-actions {
+    margin-top: 0;
+    margin-left: 2rem;
+    flex-direction: column;
+  }
+}
+
+/* Enhanced touch feedback */
+.touch-feedback {
+  position: relative;
+  overflow: hidden;
+}
+
+.touch-feedback::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(43, 188, 138, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.touch-feedback:active::before {
+  width: 200px;
+  height: 200px;
+}
+
+/* Gesture hints */
+.swipe-hint {
+  position: relative;
+}
+
+.swipe-hint::after {
+  content: '← Swipe →';
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  color: #666;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.swipe-hint:hover::after {
+  opacity: 1;
+}
+
+/* Safe area support for devices with notches */
+@supports (padding: max(0px)) {
+  .mobile-menu {
+    padding-top: max(1rem, env(safe-area-inset-top));
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+
+  .mobile-menu-toggle {
+    top: max(1rem, env(safe-area-inset-top));
+    right: max(1rem, env(safe-area-inset-right));
+  }
+
+  .pwa-status-indicator {
+    bottom: max(2rem, calc(2rem + env(safe-area-inset-bottom)));
+    right: max(2rem, calc(2rem + env(safe-area-inset-right)));
+  }
+
+  .pwa-install-banner {
+    padding-bottom: max(0px, env(safe-area-inset-bottom));
+  }
+}
+
+/* Dark mode considerations for mobile */
+@media (prefers-color-scheme: dark) {
+  .mobile-menu {
+    background: linear-gradient(135deg, #0a0a0a, #1d1d1d);
+  }
+
+  .mobile-menu-toggle {
+    background: rgba(43, 188, 138, 0.15);
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .mobile-menu,
+  .mobile-menu-item,
+  .mobile-menu-toggle {
+    transition: none;
+  }
+
+  .touch-feedback::before {
+    transition: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .mobile-menu-toggle {
+    border-width: 3px;
+  }
+
+  .mobile-menu-link {
+    border-width: 3px;
+  }
+
+  .mobile-quick-action {
+    border-width: 2px;
+  }
+}
+
+/* Focus management for accessibility */
+.mobile-menu-link:focus,
+.mobile-quick-action:focus,
+.mobile-menu-toggle:focus {
+  outline: 3px solid #2bbc8a;
+  outline-offset: 2px;
+}
+
+/* Prevent horizontal scroll on mobile */
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  * {
+    max-width: 100%;
+  }
+
+  /* Ensure images don't break layout */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Handle pre and code blocks */
+  pre,
+  code {
+    overflow-x: auto;
+    word-wrap: break-word;
+  }
+
+  /* Table responsiveness */
+  table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+    white-space: nowrap;
+  }
+}
+
+/* Loading states for mobile */
+.mobile-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.mobile-loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(43, 188, 138, 0.1);
+  border-top: 3px solid #2bbc8a;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} 

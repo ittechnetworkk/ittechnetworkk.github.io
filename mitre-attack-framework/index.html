@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1314&amp;path=livereload" data-no-instant defer></script>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> MITRE ATT&amp;CK Framework | ittechnetworkk</title>
+  <link rel = 'canonical' href = 'http://localhost:1314/mitre-attack-framework/'>
+  <meta name="description" content="Hi, I&#39;m Soner, and this is my personal blog where I share insights, guides, and articles on various tech topics, including Networking, Linux, Windows, Virtualization, Firewalls, IoT, and more. I&#39;m constantly learning and exploring new technologies, and this blog is where I document my journey. ">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:url" content="http://localhost:1314/mitre-attack-framework/">
+  <meta property="og:site_name" content="ittechnetworkk">
+  <meta property="og:title" content="MITRE ATT&CK Framework">
+  <meta property="og:description" content="Interactive MITRE ATT&amp;CK Framework - Comprehensive cybersecurity attack framework with tactics, techniques, and procedures">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2024-12-05T22:55:21+01:00">
+    <meta property="article:modified_time" content="2024-12-05T22:55:21+01:00">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="MITRE ATT&CK Framework">
+  <meta name="twitter:description" content="Interactive MITRE ATT&amp;CK Framework - Comprehensive cybersecurity attack framework with tactics, techniques, and procedures">
+
+  
+  
+    
+  
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="http://localhost:1314/css/styles.8e7ef44bca90dd1b40eb31600e59ec1f88f1c79e72f6b875bbb4138841bbb7c2fa89c96a10140ef17070530fd3c6d7bfdb9018a552fef0a3fdeb62d172f4e72a.css" integrity="sha512-jn70S8qQ3RtA6zFgDlnsH4jxx55y9rh1u7QTiEG7t8L6iclqEBQO8XBwUw/Txte/25AYpVL&#43;8KP962LRcvTnKg==">
+
+  
+   <link rel="stylesheet" href="http://localhost:1314/css/custom.css">  <link rel="stylesheet" href="http://localhost:1314/css/lightbox.css">  <link rel="stylesheet" href="http://localhost:1314/css/tools.css">  <link rel="stylesheet" href="http://localhost:1314/css/mitre-attack.css">  <link rel="stylesheet" href="http://localhost:1314/css/mitre-attack-enhanced.css"> 
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="http://localhost:1314/images/favicon.ico" />
+
+  
+</head> 
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+    
+
+<link rel="stylesheet" href="/css/custom.min.08723c608d61ffd5e055a58e9e73ac558e1273a64221321a91fdfc38a02f4b10.css">
+
+<header id="header">
+  <a href="http://localhost:1314/">
+  
+    
+      <div id="logo" class="font-awesome-logo">
+        <i class="fas fa-medal fa-4x" aria-hidden="true" style="color: #2bbc8a;"></i>
+      </div>
+    
+  
+  <div id="title">
+    <h1>ittechnetworkk</h1>
+  </div>
+  </a>
+  <div id="nav" class="nav-container">
+    <ul>
+      <li class="icon">
+        <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x" aria-hidden="true"></i></a>
+      </li>
+      
+        
+          <li>
+            <a href="/">Home</a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/posts">Posts</a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/walkthroughs">Walkthroughs</a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/projects">Projects</a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/mitre-attack-framework">MITRE ATT&amp;CK</a>
+          </li>
+        
+      
+        
+          <li class="has-dropdown">
+            <a href="/tools/">Tools</a>
+            <div class="nav-dropdown">
+              
+                <a href="/what-is-my-ip" >What is my IP?</a>
+              
+                <a href="/subnet-calculator" >Subnet Calculator</a>
+              
+                <a href="/cisco-ios-config" >Cisco IOS Config Generator</a>
+              
+                <a href="/junos-config" >Junos Config Generator</a>
+              
+            </div>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/resources">Resources</a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/library">Library</a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/about">About</a>
+          </li>
+        
+      
+    </ul>
+  </div>
+</header>
+
+
+
+    
+
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="content" itemprop="articleBody">
+        <h1 id="mitre-attck-framework">MITRE ATT&amp;CK Framework</h1>
+<h2 id="what-is-mitre-attck">What is MITRE ATT&amp;CK?</h2>
+<p>MITRE ATT&amp;CK (Adversarial Tactics, Techniques, and Common Knowledge) is a globally-accessible knowledge base of adversary tactics and techniques based on real-world observations. The ATT&amp;CK knowledge base is used as a foundation for the development of specific threat models and methodologies in the private sector, in government, and in the cybersecurity product and service community.</p>
+
+
+
+
+<link rel="stylesheet" href="/css/mitre-attack.min.bb4ceaec4ae147d9651366611e6e1caddb50c3dd09855a4fd1bda38636e765f6.css">
+<link rel="stylesheet" href="/css/mitre-attack-enhanced.min.fb190669fb8d18c6f37bd59f0ee412a53cd145bd7840307250e7f855bf919f55.css">
+<script src="/js/cybersecurity-apis.min.5dd52e8cfe7a25fcb4de43abe5cf24a779b38e9316f8e67f1602767592ac13e9.js"></script>
+<script src="/js/mitre-attack-enhanced.min.d955ce4496c52aacbb1c3de7d12be9d7e8d86e76eeee7a4d1f8bb37a67a3c5eb.js"></script>
+
+<div class="mitre-attack-framework">
+  <div class="mitre-intro">
+    <div class="mitre-banner">
+      <h2>🔍 Interactive MITRE ATT&CK Framework</h2>
+      <p>Explore the comprehensive cybersecurity framework for understanding and defending against cyber threats</p>
+    </div>
+  </div>
+
+  <div class="mitre-tabs">
+    <div class="tab-buttons">
+      <button class="tab-btn active" onclick="showTab('enterprise')">Enterprise</button>
+      <button class="tab-btn" onclick="showTab('mobile')">Mobile</button>
+      <button class="tab-btn" onclick="showTab('ics')">ICS</button>
+    </div>
+
+    <div id="enterprise" class="tab-content active">
+      <h3>Enterprise ATT&CK Matrix</h3>
+      <div class="tactics-grid">
+        <div class="tactic-card" onclick="showTechniques('reconnaissance')">
+          <h4>🕵️ Reconnaissance</h4>
+          <p>Gathering information to plan future operations</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('resource-development')">
+          <h4>🏗️ Resource Development</h4>
+          <p>Establishing resources to support operations</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('initial-access')">
+          <h4>🚪 Initial Access</h4>
+          <p>Getting into the network</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('execution')">
+          <h4>⚡ Execution</h4>
+          <p>Running malicious code</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('persistence')">
+          <h4>🔒 Persistence</h4>
+          <p>Maintaining access</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('privilege-escalation')">
+          <h4>📈 Privilege Escalation</h4>
+          <p>Gaining higher-level permissions</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('defense-evasion')">
+          <h4>🛡️ Defense Evasion</h4>
+          <p>Avoiding detection</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('credential-access')">
+          <h4>🔑 Credential Access</h4>
+          <p>Stealing account names and passwords</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('discovery')">
+          <h4>🔍 Discovery</h4>
+          <p>Learning about the environment</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('lateral-movement')">
+          <h4>🔄 Lateral Movement</h4>
+          <p>Moving through the environment</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('collection')">
+          <h4>📦 Collection</h4>
+          <p>Gathering data of interest</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('command-and-control')">
+          <h4>🎮 Command and Control</h4>
+          <p>Communicating with compromised systems</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('exfiltration')">
+          <h4>📤 Exfiltration</h4>
+          <p>Stealing data</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('impact')">
+          <h4>💥 Impact</h4>
+          <p>Manipulating, interrupting, or destroying systems</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile" class="tab-content">
+      <h3>Mobile ATT&CK Matrix</h3>
+      <div class="tactics-grid">
+        <div class="tactic-card" onclick="showTechniques('initial-access')">
+          <h4>🚪 Initial Access</h4>
+          <p>Getting into the device</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('execution')">
+          <h4>⚡ Execution</h4>
+          <p>Running malicious code</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('persistence')">
+          <h4>🔒 Persistence</h4>
+          <p>Maintaining access</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('privilege-escalation')">
+          <h4>📈 Privilege Escalation</h4>
+          <p>Gaining higher-level permissions</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('defense-evasion')">
+          <h4>🛡️ Defense Evasion</h4>
+          <p>Avoiding detection</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('credential-access')">
+          <h4>🔑 Credential Access</h4>
+          <p>Stealing account names and passwords</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('discovery')">
+          <h4>🔍 Discovery</h4>
+          <p>Learning about the environment</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('lateral-movement')">
+          <h4>🔄 Lateral Movement</h4>
+          <p>Moving through the environment</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('collection')">
+          <h4>📦 Collection</h4>
+          <p>Gathering data of interest</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('command-and-control')">
+          <h4>🎮 Command and Control</h4>
+          <p>Communicating with compromised systems</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('exfiltration')">
+          <h4>📤 Exfiltration</h4>
+          <p>Stealing data</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('impact')">
+          <h4>💥 Impact</h4>
+          <p>Manipulating, interrupting, or destroying systems</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="ics" class="tab-content">
+      <h3>Industrial Control Systems (ICS) ATT&CK Matrix</h3>
+      <div class="tactics-grid">
+        <div class="tactic-card" onclick="showTechniques('initial-access')">
+          <h4>🚪 Initial Access</h4>
+          <p>Getting into the ICS environment</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('execution')">
+          <h4>⚡ Execution</h4>
+          <p>Running malicious code</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('persistence')">
+          <h4>🔒 Persistence</h4>
+          <p>Maintaining access</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('privilege-escalation')">
+          <h4>📈 Privilege Escalation</h4>
+          <p>Gaining higher-level permissions</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('evasion')">
+          <h4>🛡️ Evasion</h4>
+          <p>Avoiding detection</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('discovery')">
+          <h4>🔍 Discovery</h4>
+          <p>Learning about the environment</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('lateral-movement')">
+          <h4>🔄 Lateral Movement</h4>
+          <p>Moving through the environment</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('collection')">
+          <h4>📦 Collection</h4>
+          <p>Gathering data of interest</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('command-and-control')">
+          <h4>🎮 Command and Control</h4>
+          <p>Communicating with compromised systems</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('inhibit-response')">
+          <h4>🚫 Inhibit Response</h4>
+          <p>Preventing response to incidents</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('impair-process-control')">
+          <h4>⚙️ Impair Process Control</h4>
+          <p>Manipulating control processes</p>
+        </div>
+        <div class="tactic-card" onclick="showTechniques('impact')">
+          <h4>💥 Impact</h4>
+          <p>Manipulating, interrupting, or destroying systems</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="technique-explorer">
+    <div class="search-section">
+      <input type="text" id="techniqueSearch" placeholder="Search for techniques..." onkeyup="searchTechniques()">
+      <select id="tacticFilter" onchange="filterByTactic()">
+        <option value="">All Tactics</option>
+        <option value="reconnaissance">Reconnaissance</option>
+        <option value="resource-development">Resource Development</option>
+        <option value="initial-access">Initial Access</option>
+        <option value="execution">Execution</option>
+        <option value="persistence">Persistence</option>
+        <option value="privilege-escalation">Privilege Escalation</option>
+        <option value="defense-evasion">Defense Evasion</option>
+        <option value="credential-access">Credential Access</option>
+        <option value="discovery">Discovery</option>
+        <option value="lateral-movement">Lateral Movement</option>
+        <option value="collection">Collection</option>
+        <option value="command-and-control">Command and Control</option>
+        <option value="exfiltration">Exfiltration</option>
+        <option value="impact">Impact</option>
+      </select>
+    </div>
+
+    <div id="techniquesList" class="techniques-list">
+      <p>Select a tactic from the matrix above to view techniques.</p>
+    </div>
+  </div>
+
+  <div class="popular-techniques">
+    <h3>Popular Techniques</h3>
+    <div class="technique-card">
+      <h4>T1078 - Valid Accounts</h4>
+      <p>Adversaries may obtain and abuse credentials of existing accounts as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion.</p>
+      <div class="technique-tags">
+        <span class="tag">Initial Access</span>
+        <span class="tag">Persistence</span>
+        <span class="tag">Privilege Escalation</span>
+      </div>
+    </div>
+
+    <div class="technique-card">
+      <h4>T1059 - Command and Scripting Interpreter</h4>
+      <p>Adversaries may abuse command and script interpreters to execute commands, scripts, or binaries. These interfaces and languages provide ways of interacting with computer systems and are a common feature across many different platforms.</p>
+      <div class="technique-tags">
+        <span class="tag">Execution</span>
+      </div>
+    </div>
+
+    <div class="technique-card">
+      <h4>T1071 - Application Layer Protocol</h4>
+      <p>Adversaries may communicate using application layer protocols to avoid detection/network filtering by blending in with existing traffic. Commands to the remote system, and often the results of those commands, will be embedded within the protocol traffic between the client and server.</p>
+      <div class="technique-tags">
+        <span class="tag">Command and Control</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="threat-groups">
+    <h3>Threat Groups</h3>
+    <div class="group-card">
+      <h4>APT29 (Cozy Bear)</h4>
+      <p>Russian state-sponsored threat group known for sophisticated cyber espionage campaigns.</p>
+      <div class="group-techniques">
+        <span class="technique">T1078</span>
+        <span class="technique">T1059</span>
+        <span class="technique">T1071</span>
+      </div>
+    </div>
+
+    <div class="group-card">
+      <h4>APT28 (Fancy Bear)</h4>
+      <p>Russian state-sponsored threat group targeting government, military, and security organizations.</p>
+      <div class="group-techniques">
+        <span class="technique">T1078</span>
+        <span class="technique">T1059</span>
+        <span class="technique">T1071</span>
+      </div>
+    </div>
+
+    <div class="group-card">
+      <h4>Lazarus Group</h4>
+      <p>North Korean state-sponsored threat group known for financial cybercrime and espionage.</p>
+      <div class="group-techniques">
+        <span class="technique">T1078</span>
+        <span class="technique">T1059</span>
+        <span class="technique">T1071</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="defensive-strategies">
+    <h3>Defensive Strategies</h3>
+    <div class="strategy-card">
+      <h4>🛡️ Detection</h4>
+      <ul>
+        <li>Monitor for suspicious account activity</li>
+        <li>Implement behavioral analytics</li>
+        <li>Use SIEM solutions for correlation</li>
+        <li>Deploy endpoint detection and response (EDR)</li>
+      </ul>
+    </div>
+
+    <div class="strategy-card">
+      <h4>🔒 Prevention</h4>
+      <ul>
+        <li>Implement multi-factor authentication</li>
+        <li>Use privileged access management</li>
+        <li>Apply principle of least privilege</li>
+        <li>Regular security awareness training</li>
+      </ul>
+    </div>
+
+    <div class="strategy-card">
+      <h4>🔄 Response</h4>
+      <ul>
+        <li>Incident response playbooks</li>
+        <li>Threat hunting capabilities</li>
+        <li>Forensic analysis tools</li>
+        <li>Communication and coordination plans</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mitre-resources">
+    <h3>Resources and Tools</h3>
+    <div class="resource-card">
+      <h4>📚 Official Resources</h4>
+      <ul>
+        <li><a href="https://attack.mitre.org/" target="_blank">MITRE ATT&CK Website</a></li>
+        <li><a href="https://attack.mitre.org/matrices/" target="_blank">ATT&CK Matrices</a></li>
+        <li><a href="https://attack.mitre.org/groups/" target="_blank">Threat Groups</a></li>
+        <li><a href="https://attack.mitre.org/software/" target="_blank">Malware</a></li>
+      </ul>
+    </div>
+
+    <div class="resource-card">
+      <h4>🛠️ Tools</h4>
+      <ul>
+        <li><a href="https://github.com/redcanaryco/atomic-red-team" target="_blank">Atomic Red Team</a></li>
+        <li><a href="https://github.com/caldera/caldera" target="_blank">MITRE Caldera</a></li>
+        <li><a href="https://github.com/redcanaryco/atomic-red-team" target="_blank">Red Canary Atomic</a></li>
+        <li><a href="https://github.com/redcanaryco/atomic-red-team" target="_blank">Invoke-AtomicRedTeam</a></li>
+      </ul>
+    </div>
+
+    <div class="resource-card">
+      <h4>📖 Learning</h4>
+      <ul>
+        <li><a href="https://attack.mitre.org/resources/training/" target="_blank">Training Resources</a></li>
+        <li><a href="https://attack.mitre.org/resources/working-with-attack/" target="_blank">Working with ATT&CK</a></li>
+        <li><a href="https://attack.mitre.org/resources/faq/" target="_blank">FAQ</a></li>
+        <li><a href="https://attack.mitre.org/resources/updates/" target="_blank">Updates</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+
+let currentTab = 'enterprise';
+let techniquesData = {};
+
+
+function showTab(tabName) {
+  
+  const tabContents = document.querySelectorAll('.tab-content');
+  tabContents.forEach(content => content.classList.remove('active'));
+  
+  
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  tabButtons.forEach(btn => btn.classList.remove('active'));
+  
+  
+  document.getElementById(tabName).classList.add('active');
+  
+  
+  event.target.classList.add('active');
+  
+  currentTab = tabName;
+}
+
+
+function showTechniques(tactic) {
+  const techniques = getTechniquesForTactic(tactic);
+  displayTechniques(techniques, tactic);
+}
+
+
+function getTechniquesForTactic(tactic) {
+  const techniqueMap = {
+    'reconnaissance': [
+      { id: 'T1595', name: 'Active Scanning', description: 'Scanning IP addresses, ports, and services' },
+      { id: 'T1592', name: 'Gather Victim Host Information', description: 'Collecting information about the target' },
+      { id: 'T1589', name: 'Gather Victim Identity Information', description: 'Collecting identity information' }
+    ],
+    'initial-access': [
+      { id: 'T1078', name: 'Valid Accounts', description: 'Using existing accounts to gain access' },
+      { id: 'T1190', name: 'Exploit Public-Facing Application', description: 'Exploiting vulnerabilities in applications' },
+      { id: 'T1133', name: 'External Remote Services', description: 'Using external services for access' }
+    ],
+    'execution': [
+      { id: 'T1059', name: 'Command and Scripting Interpreter', description: 'Using command line interfaces' },
+      { id: 'T1053', name: 'Scheduled Task/Job', description: 'Using scheduled tasks for execution' },
+      { id: 'T1047', name: 'Windows Management Instrumentation', description: 'Using WMI for execution' }
+    ],
+    'persistence': [
+      { id: 'T1547', name: 'Boot or Logon Autostart Execution', description: 'Configuring autostart mechanisms' },
+      { id: 'T1053', name: 'Scheduled Task/Job', description: 'Creating scheduled tasks' },
+      { id: 'T1543', name: 'Create or Modify System Process', description: 'Creating system processes' }
+    ],
+    'privilege-escalation': [
+      { id: 'T1548', name: 'Abuse Elevation Control Mechanism', description: 'Abusing elevation mechanisms' },
+      { id: 'T1134', name: 'Access Token Manipulation', description: 'Manipulating access tokens' },
+      { id: 'T1547', name: 'Boot or Logon Autostart Execution', description: 'Using autostart for escalation' }
+    ],
+    'defense-evasion': [
+      { id: 'T1562', name: 'Impair Defenses', description: 'Disabling security controls' },
+      { id: 'T1070', name: 'Indicator Removal on Host', description: 'Removing evidence of compromise' },
+      { id: 'T1027', name: 'Obfuscated Files or Information', description: 'Hiding malicious files' }
+    ],
+    'credential-access': [
+      { id: 'T1110', name: 'Brute Force', description: 'Attempting to guess passwords' },
+      { id: 'T1555', name: 'Credentials from Password Stores', description: 'Extracting stored credentials' },
+      { id: 'T1212', name: 'Exploitation for Credential Access', description: 'Exploiting systems for credentials' }
+    ],
+    'discovery': [
+      { id: 'T1083', name: 'File and Directory Discovery', description: 'Exploring file systems' },
+      { id: 'T1018', name: 'Remote System Discovery', description: 'Finding remote systems' },
+      { id: 'T1082', name: 'System Information Discovery', description: 'Gathering system information' }
+    ],
+    'lateral-movement': [
+      { id: 'T1021', name: 'Remote Services', description: 'Using remote services for movement' },
+      { id: 'T1091', name: 'Replication Through Removable Media', description: 'Using removable media' },
+      { id: 'T1210', name: 'Exploitation of Remote Services', description: 'Exploiting remote services' }
+    ],
+    'collection': [
+      { id: 'T1056', name: 'Input Capture', description: 'Capturing user input' },
+      { id: 'T1113', name: 'Screen Capture', description: 'Taking screenshots' },
+      { id: 'T1114', name: 'Email Collection', description: 'Collecting email data' }
+    ],
+    'command-and-control': [
+      { id: 'T1071', name: 'Application Layer Protocol', description: 'Using application protocols for C2' },
+      { id: 'T1095', name: 'Non-Application Layer Protocol', description: 'Using non-application protocols' },
+      { id: 'T1104', name: 'Multi-Stage Channels', description: 'Using multi-stage communication' }
+    ],
+    'exfiltration': [
+      { id: 'T1041', name: 'Exfiltration Over C2 Channel', description: 'Using C2 channels for exfiltration' },
+      { id: 'T1011', name: 'Exfiltration Over Other Network Medium', description: 'Using other network protocols' },
+      { id: 'T1052', name: 'Exfiltration Over Physical Medium', description: 'Using physical media' }
+    ],
+    'impact': [
+      { id: 'T1486', name: 'Data Encrypted for Impact', description: 'Encrypting data for ransom' },
+      { id: 'T1489', name: 'Service Stop', description: 'Stopping services' },
+      { id: 'T1565', name: 'Data Manipulation', description: 'Manipulating data integrity' }
+    ]
+  };
+  
+  return techniqueMap[tactic] || [];
+}
+
+
+function displayTechniques(techniques, tactic) {
+  const container = document.getElementById('techniquesList');
+  container.innerHTML = '';
+  
+  if (techniques.length === 0) {
+    container.innerHTML = '<p>No techniques found for this tactic.</p>';
+    return;
+  }
+  
+  const tacticTitle = document.createElement('h3');
+  tacticTitle.textContent = `${tactic.charAt(0).toUpperCase() + tactic.slice(1).replace('-', ' ')} Techniques`;
+  container.appendChild(tacticTitle);
+  
+  techniques.forEach(technique => {
+    const techniqueDiv = document.createElement('div');
+    techniqueDiv.className = 'technique-item';
+    techniqueDiv.innerHTML = `
+      <h4>${technique.id} - ${technique.name}</h4>
+      <p>${technique.description}</p>
+      <div class="technique-actions">
+        <button onclick="showTechniqueDetails('${technique.id}')">Details</button>
+        <button onclick="addToFavorites('${technique.id}')">Favorite</button>
+      </div>
+    `;
+    container.appendChild(techniqueDiv);
+  });
+}
+
+
+function searchTechniques() {
+  const searchTerm = document.getElementById('techniqueSearch').value.toLowerCase();
+  const allTechniques = getAllTechniques();
+  const filteredTechniques = allTechniques.filter(technique => 
+    technique.name.toLowerCase().includes(searchTerm) ||
+    technique.description.toLowerCase().includes(searchTerm) ||
+    technique.id.toLowerCase().includes(searchTerm)
+  );
+  
+  displaySearchResults(filteredTechniques);
+}
+
+
+function getAllTechniques() {
+  const allTechniques = [];
+  const tactics = ['reconnaissance', 'initial-access', 'execution', 'persistence', 'privilege-escalation', 
+                   'defense-evasion', 'credential-access', 'discovery', 'lateral-movement', 'collection', 
+                   'command-and-control', 'exfiltration', 'impact'];
+  
+  tactics.forEach(tactic => {
+    const techniques = getTechniquesForTactic(tactic);
+    techniques.forEach(technique => {
+      technique.tactic = tactic;
+      allTechniques.push(technique);
+    });
+  });
+  
+  return allTechniques;
+}
+
+
+function displaySearchResults(techniques) {
+  const container = document.getElementById('techniquesList');
+  container.innerHTML = '';
+  
+  if (techniques.length === 0) {
+    container.innerHTML = '<p>No techniques found matching your search.</p>';
+    return;
+  }
+  
+  const resultsTitle = document.createElement('h3');
+  resultsTitle.textContent = `Search Results (${techniques.length} techniques)`;
+  container.appendChild(resultsTitle);
+  
+  techniques.forEach(technique => {
+    const techniqueDiv = document.createElement('div');
+    techniqueDiv.className = 'technique-item';
+    techniqueDiv.innerHTML = `
+      <h4>${technique.id} - ${technique.name}</h4>
+      <p>${technique.description}</p>
+      <span class="tactic-tag">${technique.tactic}</span>
+      <div class="technique-actions">
+        <button onclick="showTechniqueDetails('${technique.id}')">Details</button>
+        <button onclick="addToFavorites('${technique.id}')">Favorite</button>
+      </div>
+    `;
+    container.appendChild(techniqueDiv);
+  });
+}
+
+
+function filterByTactic() {
+  const selectedTactic = document.getElementById('tacticFilter').value;
+  if (selectedTactic) {
+    const techniques = getTechniquesForTactic(selectedTactic);
+    displayTechniques(techniques, selectedTactic);
+  } else {
+    document.getElementById('techniquesList').innerHTML = '<p>Select a tactic to view techniques.</p>';
+  }
+}
+
+
+function showTechniqueDetails(techniqueId) {
+  alert(`Detailed information for ${techniqueId} would be displayed here. This could include:\n\n- Detailed description\n- Examples of use\n- Detection methods\n- Mitigation strategies\n- Related techniques\n- Threat groups that use this technique`);
+}
+
+
+function addToFavorites(techniqueId) {
+  const favorites = JSON.parse(localStorage.getItem('mitreFavorites') || '[]');
+  if (!favorites.includes(techniqueId)) {
+    favorites.push(techniqueId);
+    localStorage.setItem('mitreFavorites', JSON.stringify(favorites));
+    alert(`${techniqueId} added to favorites!`);
+  } else {
+    alert(`${techniqueId} is already in your favorites.`);
+  }
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  
+  document.getElementById('techniquesList').innerHTML = '<p>Select a tactic from the matrix above to view techniques.</p>';
+  
+  
+  const tacticCards = document.querySelectorAll('.tactic-card');
+  tacticCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'scale(1.05)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = 'scale(1)';
+    });
+  });
+});
+</script> 
+<h2 id="framework-overview">Framework Overview</h2>
+<p>The MITRE ATT&amp;CK Framework provides a comprehensive understanding of cyber adversary behavior and helps organizations:</p>
+<ul>
+<li><strong>Identify threats</strong> by understanding adversary tactics and techniques</li>
+<li><strong>Improve detection</strong> by mapping security controls to specific techniques</li>
+<li><strong>Enhance response</strong> by developing targeted mitigation strategies</li>
+<li><strong>Share intelligence</strong> using a common language for threat information</li>
+</ul>
+<h2 id="key-benefits">Key Benefits</h2>
+<ol>
+<li><strong>Standardized Language</strong>: Provides a common taxonomy for describing cyber threats</li>
+<li><strong>Threat Intelligence</strong>: Enables sharing and collaboration on threat information</li>
+<li><strong>Security Assessment</strong>: Helps evaluate security posture against known threats</li>
+<li><strong>Detection Engineering</strong>: Guides development of effective security controls</li>
+<li><strong>Incident Response</strong>: Supports structured analysis and response planning</li>
+</ol>
+<h2 id="getting-started">Getting Started</h2>
+<ol>
+<li><strong>Explore the Matrix</strong>: Click on any tactic card above to see related techniques</li>
+<li><strong>Search Techniques</strong>: Use the search bar to find specific techniques</li>
+<li><strong>Filter by Tactic</strong>: Use the dropdown to focus on specific attack phases</li>
+<li><strong>Study Threat Groups</strong>: Learn about real-world adversaries and their methods</li>
+<li><strong>Implement Defenses</strong>: Use the defensive strategies to improve your security posture</li>
+</ol>
+<h2 id="additional-resources">Additional Resources</h2>
+<ul>
+<li><a href="https://attack.mitre.org/">Official MITRE ATT&amp;CK Website</a></li>
+<li><a href="https://attack.mitre.org/matrices/">ATT&amp;CK Matrices</a></li>
+<li><a href="https://attack.mitre.org/groups/">Threat Groups</a></li>
+<li><a href="https://attack.mitre.org/resources/training/">Training Resources</a></li>
+</ul>
+
+    </div>
+</article>
+
+
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2025  ittechnetworkk 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/walkthroughs">Walkthroughs</a></li>
+         
+        <li><a href="/projects">Projects</a></li>
+         
+        <li><a href="/mitre-attack-framework">MITRE ATT&amp;CK</a></li>
+         
+        <li><a href="/tools/">Tools</a></li>
+         
+        <li><a href="/resources">Resources</a></li>
+         
+        <li><a href="/library">Library</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+<script src=/js/lightbox.js></script>
+</html>

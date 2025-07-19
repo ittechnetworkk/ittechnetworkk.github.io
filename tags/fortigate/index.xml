@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fortigate on ittechnetworkk</title>
+    <link>http://localhost:1313/tags/fortigate/</link>
+    <description>Recent content in Fortigate on ittechnetworkk</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>ittechnetworkk</copyright>
+    <lastBuildDate>Sat, 19 Jul 2025 15:26:52 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/fortigate/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fortigate Wazuh Integration</title>
+      <link>http://localhost:1313/posts/fortigatewazuhintegration/fortigate-wazuh-integration/</link>
+      <pubDate>Sat, 19 Jul 2025 15:26:52 +0200</pubDate>
+      <guid>http://localhost:1313/posts/fortigatewazuhintegration/fortigate-wazuh-integration/</guid>
+      <description>&lt;p&gt;Hi everyone, in this article I will guide you through how to integrate Fortigate firewall with the Wazuh SIEM tool for centralized logging and monitoring.&lt;/p&gt;&#xA;&lt;p&gt;Fortigate is one of the best firewall solutions used in networks of all sizes worldwide. Wazuh is also one of the best open-source SIEM platforms available.&lt;/p&gt;&#xA;&lt;p&gt;In this article, I will show you how to send Fortigate logs to the Wazuh SIEM platform to centralize all environment logs in one location.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vmware on ittechnetworkk</title>
-    <link>https://ittechnetworkk.github.io/tags/vmware/</link>
+    <link>http://localhost:1313/tags/vmware/</link>
     <description>Recent content in Vmware on ittechnetworkk</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>ittechnetworkk</copyright>
     <lastBuildDate>Tue, 18 Mar 2025 11:11:14 +0100</lastBuildDate>
-    <atom:link href="https://ittechnetworkk.github.io/tags/vmware/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/vmware/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[EN] ESXi Creating Virtual Machine</title>
-      <link>https://ittechnetworkk.github.io/posts/esxivmcreating/esxi-creating-virtual-machine/</link>
+      <link>http://localhost:1313/posts/esxivmcreating/esxi-creating-virtual-machine/</link>
       <pubDate>Tue, 18 Mar 2025 11:11:14 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/esxivmcreating/esxi-creating-virtual-machine/</guid>
+      <guid>http://localhost:1313/posts/esxivmcreating/esxi-creating-virtual-machine/</guid>
       <description>&lt;p&gt;Hi everyone,&lt;/p&gt;&#xA;&lt;p&gt;In this article, I will cover how to create a virtual machine on an ESXi node.&lt;/p&gt;&#xA;&lt;p&gt;ESXi nodes are typically not used as standalone servers; they are usually managed centrally with vCenter, which allows for easier management of multiple ESXi nodes.&lt;/p&gt;&#xA;&lt;p&gt;However, in this article, I will show you how to create a virtual machine directly on an ESXi node.&lt;/p&gt;&#xA;&lt;p&gt;I will walk you through the process of creating, installing, and configuring &lt;strong&gt;Windows Server 2022&lt;/strong&gt; as an &lt;strong&gt;AD-DC&lt;/strong&gt; (Active Directory Domain Controller). The creation process will be as follows:&lt;/p&gt;</description>
     </item>
     <item>
       <title>[EN] ESXi Installation</title>
-      <link>https://ittechnetworkk.github.io/posts/esxiinstallation/esxi-installation/</link>
+      <link>http://localhost:1313/posts/esxiinstallation/esxi-installation/</link>
       <pubDate>Sun, 09 Mar 2025 23:13:13 +0100</pubDate>
-      <guid>https://ittechnetworkk.github.io/posts/esxiinstallation/esxi-installation/</guid>
+      <guid>http://localhost:1313/posts/esxiinstallation/esxi-installation/</guid>
       <description>&lt;p&gt;In this article I will show you how to install ESXi that a commonly used virtualization software in the industry providing lots of feature to solve issues that help IT guys quite a lot.&lt;/p&gt;&#xA;&lt;p&gt;ESXi is one of the famous virtualization software used on servers. When it comes to talking about virtualization software, it is like a cornerstone because virtualization software helps us to virtualize our hardware, easy management, efficiency, cost benefits, isolation, fast deployment and more.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -1,0 +1,173 @@
+/* Sticky Navigation */
+#header {
+    position: relative;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+#header.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #444;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Light theme sticky header */
+body.light-theme #header.sticky {
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom-color: #e9ecef;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Sticky navigation adjustments */
+#header.sticky #logo {
+    width: 40px;
+    height: 40px;
+    margin: 0.5rem 0;
+}
+
+#header.sticky #title h1 {
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1;
+}
+
+#header.sticky #nav {
+    margin-top: 0;
+}
+
+#header.sticky #nav ul li a {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+}
+
+/* Add padding to body when header becomes sticky */
+body.has-sticky-header {
+    padding-top: 80px;
+}
+
+/* Scroll progress indicator */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #2bbc8a, #45d4a6);
+    z-index: 1001;
+    transition: width 0.1s ease;
+    opacity: 0;
+}
+
+#header.sticky .scroll-progress {
+    opacity: 1;
+}
+
+/* Search and theme toggle adjustments in sticky mode */
+#header.sticky .search-container,
+#header.sticky .theme-toggle {
+    margin-left: 0.5rem;
+}
+
+#header.sticky .search-toggle,
+#header.sticky .theme-toggle-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+}
+
+/* Mobile sticky navigation */
+@media (max-width: 768px) {
+    #header.sticky {
+        padding: 0.5rem;
+    }
+    
+    #header.sticky #logo {
+        width: 35px;
+        height: 35px;
+    }
+    
+    #header.sticky #title h1 {
+        font-size: 1rem;
+    }
+    
+    body.has-sticky-header {
+        padding-top: 70px;
+    }
+    
+    #header.sticky #nav ul {
+        background: rgba(26, 26, 26, 0.98);
+        backdrop-filter: blur(15px);
+        border: 1px solid #444;
+        border-radius: 8px;
+        margin-top: 0.5rem;
+    }
+    
+    body.light-theme #header.sticky #nav ul {
+        background: rgba(255, 255, 255, 0.98);
+        border-color: #e9ecef;
+    }
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Back to top button (enhanced for sticky nav) */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: #2bbc8a;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(43, 188, 138, 0.3);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: #239f7a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(43, 188, 138, 0.4);
+}
+
+/* Hide back to top on very small screens */
+@media (max-width: 480px) {
+    .back-to-top {
+        bottom: 1rem;
+        right: 1rem;
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+} 
