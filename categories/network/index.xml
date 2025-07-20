@@ -1,398 +1,1173 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Network on ittechnetworkk</title>
-    <link>http://localhost:1313/categories/network/</link>
-    <description>Recent content in Network on ittechnetworkk</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Sat, 19 Jul 2025 14:50:44 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/network/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Cisco Device Syslog Integration with Wazuh SIEM</title>
-      <link>http://localhost:1313/posts/ciscowazuhintegration/cisco-wazuh-integration/</link>
-      <pubDate>Sat, 19 Jul 2025 14:50:44 +0200</pubDate>
-      <guid>http://localhost:1313/posts/ciscowazuhintegration/cisco-wazuh-integration/</guid>
-      <description>&lt;p&gt;Hi everyone, in this article I will guide you through how to integrate Cisco devices (switches and routers) with the Wazuh SIEM tool for centralized logging and monitoring.&lt;/p&gt;&#xA;&lt;p&gt;The integration will be done in the following steps:&lt;/p&gt;&#xA;&lt;h2 id=&#34;cisco-switch-configuration&#34;&gt;&lt;strong&gt;Cisco switch configuration:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# VLAN Configuration for Switch&#xA;Switch&amp;gt;enable&#xA;Switch#configure terminal&#xA;Switch(config)#interface vlan1&#xA;Switch(config-if)#ip address 10.1.5.100 255.255.255.0&#xA;Switch(config-if)#no shutdown&#xA;Switch(config-if)#exit&#xA;&#xA;# Default Gateway Configuration&#xA;Switch(config)#ip default-gateway 10.1.5.1&#xA;&#xA;# Syslog Configuration&#xA;Switch(config)#logging on&#xA;Switch(config)#logging host 10.1.8.10&#xA;Switch(config)#logging facility local1&#xA;Switch(config)#logging source-interface vlan1&#xA;Switch(config)#logging buffered 4096&#xA;Switch(config)#logging trap informational&#xA;&#xA;# Routing Configuration&#xA;Switch(config)# ip route 10.1.8.0 255.255.255.0 10.1.5.1&#xA;&#xA;# Save &#xA;Switch(config)#end&#xA;Switch#wr&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;cisco-router-configuration&#34;&gt;&lt;strong&gt;Cisco router configuration:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# Interface Configuration for Router&#xA;Router&amp;gt;enable&#xA;Router#configure terminal&#xA;Router(config)#interface e0/0&#xA;Router(config-if)#ip address 10.1.6.100 255.255.255.0&#xA;Router(config-if)#no shutdown&#xA;Router(config-if)#exit&#xA;&#xA;# Default Gateway Configuration&#xA;Router(config)#ip default-gateway 10.1.5.1&#xA;&#xA;# Syslog Configuration&#xA;Router(config)#logging on&#xA;Router(config)#logging host 10.1.8.10&#xA;Router(config)#logging facility local0&#xA;Router(config)#logging source-interface e0/0&#xA;Router(config)#logging buffered 4096&#xA;Router(config)#logging trap informational&#xA;&#xA;# Routing Configuration&#xA;Router(config)# ip route 10.1.8.0 255.255.255.0 10.1.5.1&#xA;&#xA;# Save &#xA;Router(config)#end&#xA;Router#wr&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;wazuh-server-configuration&#34;&gt;&lt;strong&gt;Wazuh Server Configuration:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;remote&amp;gt;  &#xA;  &amp;lt;connection&amp;gt;syslog&amp;lt;/connection&amp;gt;  &#xA;  &amp;lt;port&amp;gt;514&amp;lt;/port&amp;gt;  &#xA;  &amp;lt;protocol&amp;gt;udp&amp;lt;/protocol&amp;gt;                      &#xA;  &amp;lt;allowed-ips&amp;gt;10.1.5.100&amp;lt;/allowed-ips&amp;gt;             # Switch/Router IP&#xA;  &amp;lt;local_ip&amp;gt;10.1.8.10&amp;lt;/local_ip&amp;gt;                    # Wazuh Server IP&#xA;&amp;lt;/remote&amp;gt;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;alternative-port-configuration&#34;&gt;&lt;strong&gt;Alternative Port Configuration:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;If you want to use a different port (e.g., 1514 for TCP or 10514 for custom UDP), modify the configuration:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[EN] Network Time Protocol (NTP)</title>
-      <link>http://localhost:1313/posts/ntp/ntp/</link>
-      <pubDate>Tue, 13 May 2025 21:23:07 +0200</pubDate>
-      <guid>http://localhost:1313/posts/ntp/ntp/</guid>
-      <description>&lt;p&gt;In modern networks, accurate time synchronization is crucial for tasks such as logging, authentication, and system coordination. Network Time Protocol (NTP) is a widely used protocol that allows devices on a network to synchronize their clocks with a reliable time source. This guide will walk you through the configuration of NTP on Cisco devices, including manual time setup, using a device as an NTP server, authentication, and debugging.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;UDP Port: 123&lt;/li&gt;&#xA;&lt;li&gt;The closest router to the Atomic Clock is called Stratum 1&lt;/li&gt;&#xA;&lt;li&gt;A device directly connected to an authorized NTP server is considered Stratum 1. Each subsequent device adds one to the stratum level&lt;/li&gt;&#xA;&lt;li&gt;Each hop increases the Stratum value.&lt;/li&gt;&#xA;&lt;li&gt;Maximum supported stratum level is 15&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;configuring-clock-and-date-manually&#34;&gt;&lt;strong&gt;Configuring Clock and Date Manually:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SW-1#clock set 12:00:00 1 AUG 2019&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;setting-the-time-zone&#34;&gt;&lt;strong&gt;Setting the Time Zone:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SW-1#conf t&#xA;SW-1(config)#clock timezone EST +2&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;configuring-daylight-saving-time&#34;&gt;&lt;strong&gt;Configuring Daylight Saving Time:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SW-1(config)#clock summer-time CEST recurring last Sun Mar 2:00 last Sun Oct 3:00  &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;ntp-server-configuration&#34;&gt;&lt;strong&gt;NTP Server Configuration:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SW-1(config)#ip domain-lookup                  # DNS&#xA;SW-1(config)#ip name-server 1.1.1.1 8.8.8.8    # DNS&#xA;&#xA;SW-1(config)#ntp server 198.111.152.100         #NTP Server&#xA;SW-1(config)#ntp server 0.tr.pool.ntp.org       #NTP Server&#xA;SW-1(config)#ntp update-calendar&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you want to use an external source for NTP information, you can visit &lt;a href=&#34;https://www.ntppool.org/en/&#34;&gt;this site&lt;/a&gt; to find NTP servers suitable for your location.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[EN] Network Address Translation (NAT)</title>
-      <link>http://localhost:1313/posts/nat/nat/</link>
-      <pubDate>Tue, 13 May 2025 21:08:38 +0200</pubDate>
-      <guid>http://localhost:1313/posts/nat/nat/</guid>
-      <description>&lt;p&gt;Hi everyone,&lt;/p&gt;&#xA;&lt;p&gt;In this article, I will walk you through Network Address Translation (NAT)—what it is, how it works, why we use it, and how to configure it using a lab.&lt;/p&gt;&#xA;&lt;p&gt;NAT (Network Address Translation) is a method used in routers and firewalls that allows private IP addresses within a local network to access the public internet using a single or a few public IP addresses.&lt;/p&gt;&#xA;&lt;p&gt;Since private IP addresses (e.g., 192.168.x.x, 10.x.x.x, 172.16.x.x–172.31.x.x) are not routable on the internet, NAT translates these private IP addresses into a public IP before forwarding traffic. It also translates incoming public traffic back to the appropriate private IP inside the network.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[EN] Dynamic Trunking Protocol (DTP)</title>
-      <link>http://localhost:1313/posts/dynamictrunkingprotocol/dynamic-trunking-protocol/</link>
-      <pubDate>Wed, 02 Apr 2025 22:02:02 +0200</pubDate>
-      <guid>http://localhost:1313/posts/dynamictrunkingprotocol/dynamic-trunking-protocol/</guid>
-      <description>&lt;p&gt;Hi everyone, in this article, I will explain what DTP is and how it works.&lt;/p&gt;&#xA;&lt;p&gt;DTP is a protocol that allows switch ports to be configured automatically.&lt;/p&gt;&#xA;&lt;p&gt;In simple terms, if you change the mode of one port on a switch, the corresponding port on the connected switch will automatically adjust its mode. You can refer to the table below to see the possible mode combinations.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/DynamicTrunkingProtocol/1.png&#34; alt=&#34;dtp&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;For example, if one port of a switch is &lt;em&gt;dynamic auto&lt;/em&gt; and the port to which the other switch is connected is &lt;em&gt;trunk&lt;/em&gt;, the ports will automatically switch to &lt;em&gt;trunk&lt;/em&gt; mode&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[EN] Junos Dynamic Routing</title>
-      <link>http://localhost:1313/posts/juniperdynamicrouting/junos-dynamic-routing/</link>
-      <pubDate>Wed, 02 Apr 2025 21:49:12 +0200</pubDate>
-      <guid>http://localhost:1313/posts/juniperdynamicrouting/junos-dynamic-routing/</guid>
-      <description>&lt;p&gt;Hi everyone, in this article I will show you how to configure dynamic routing in Junos.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]&#xA;root# edit protocols ospf area 0  &#xA;&#xA;[edit protocols ospf area 0.0.0.0]&#xA;root# set interface ge-0/0/0 &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;OR&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]&#xA;root# set protocols ospf area 0.0.0.0 interface ge-0/0/0 &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Control:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;root# show |compare &#xA;[edit]&#xA;+  protocols {&#xA;+      ospf {&#xA;+          area 0.0.0.0 {&#xA;+              interface ge-0/0/0.0;&#xA;+          }&#xA;+      }&#xA;+  }&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Thank you for taking the time to read this article. I hope you found it useful.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[EN] Junos Static Routing</title>
-      <link>http://localhost:1313/posts/juniperstaticrouting/junos-static-routing/</link>
-      <pubDate>Wed, 02 Apr 2025 21:46:23 +0200</pubDate>
-      <guid>http://localhost:1313/posts/juniperstaticrouting/junos-static-routing/</guid>
-      <description>&lt;p&gt;In Junos devices static routing configuration will be done in the following way.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Routing Preferences in Junos:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;- Direct/Local                           0&#xA;- Static Route                           5&#xA;- OSPF Internal                          10&#xA;- ISIS Internal L1/L2                    15-18&#xA;- RIP                                    100&#xA;- OSPF External                          150&#xA;- ISIS External L1/L2                    160/165&#xA;- BGP                                    170&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Static Route Configuration:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit] &#xA;root# edit routing-options &#xA;&#xA;[edit routing-options]&#xA;root# set static route 10.10.10.0/24 next-hop 9.9.9.1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;OR&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]&#xA;root# set routing-options static route 10.10.10.0/24 next-hop 9.9.9.1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Adding a backup route with different preference value.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[EN] Junos User Accounts</title>
-      <link>http://localhost:1313/posts/juniper-user-accounts/junos-user-accounts/</link>
-      <pubDate>Wed, 02 Apr 2025 21:40:28 +0200</pubDate>
-      <guid>http://localhost:1313/posts/juniper-user-accounts/junos-user-accounts/</guid>
-      <description>&lt;p&gt;In this article I will show you user accounts in Junos.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Login Classes:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;In Junos you can create a login class to assign detailed privileges per class and add user to that class.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Authorization:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;super-user:&lt;/strong&gt; all permissions&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;operator:&lt;/strong&gt; clear, reset, trace, view&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;read-only:&lt;/strong&gt; view&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;unauthorized:&lt;/strong&gt; nothing&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Allowed or denied commands can be specified for each class.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;User Authentication:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;In Junos you can authenticate users by;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Local Database,&lt;/li&gt;&#xA;&lt;li&gt;Radius Server,&lt;/li&gt;&#xA;&lt;li&gt;Tacacs Server.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;User Creating:&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[EN] Junos Initial Configuration</title>
-      <link>http://localhost:1313/posts/juniper-initial-configuration/junos-initiate-config/</link>
-      <pubDate>Wed, 02 Apr 2025 21:05:37 +0200</pubDate>
-      <guid>http://localhost:1313/posts/juniper-initial-configuration/junos-initiate-config/</guid>
-      <description>&lt;p&gt;Hi everyone, in this article I will cover on how to make initial configuration in Junos.&lt;/p&gt;&#xA;&lt;h2 id=&#34;root-password&#34;&gt;&lt;strong&gt;Root Password:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;root&amp;gt; configure &#xA;Entering configuration mode&#xA;&#xA;[edit]&#xA;root# set system root-authentication plain-text-password &#xA;New password:&#xA;Retype new password:&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;hostname&#34;&gt;&lt;strong&gt;Hostname:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]&#xA;root# set system host-name ssnrshnn &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;system-time&#34;&gt;&lt;strong&gt;System Time:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;root&amp;gt; set date 202503241608 &#xA;date: connect: Can&amp;#39;t assign requested address&#xA;Mon Mar 24 16:08:00 UTC 2025&#xA;&#xA;root&amp;gt; show system uptime          &#xA;Current time: 2025-03-24 16:08:11 UTC&#xA;Time Source:  LOCAL CLOCK &#xA;System booted: 2025-03-24 15:38:44 UTC (00:30:27 ago)&#xA;Protocols started: 2025-03-24 15:40:23 UTC (00:28:48 ago)&#xA;Last configured: 2025-03-24 14:41:02 UTC (01:28:09 ago) by root&#xA; 4:09PM  up 30 mins, 1 users, load averages: 0.60, 0.66, 0.59&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;time-zone&#34;&gt;&lt;strong&gt;Time Zone:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]                                  &#xA;root# set system time-zone Europe/Berlin &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;ntp&#34;&gt;&lt;strong&gt;NTP:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]                                  &#xA;root# set system ntp server 88.88.88.88&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;user-creating&#34;&gt;&lt;strong&gt;User Creating:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]&#xA;root# set system login user ssnrshnn uid 1001 class super-user authentication plain-text-password &#xA;New password:&#xA;Retype new password:&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;radius&#34;&gt;&lt;strong&gt;RADIUS&lt;/strong&gt;:&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]&#xA;root# set system radius-server 50.50.50.1 port 1144 secret PASSWORD &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;tacacs&#34;&gt;&lt;strong&gt;TACACS:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]&#xA;root# set system tacplus-server 55.55.55.1 port 1142 secret PASSWORD  &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;management-protocols&#34;&gt;&lt;strong&gt;Management Protocols:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]&#xA;root# set system services telnet       &#xA;&#xA;[edit]&#xA;root# set system services ssh &#xA;&#xA;[edit]                                  &#xA;root# set system services ssh root-login allow &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;ssh-key&#34;&gt;&lt;strong&gt;SSH-key:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]&#xA;root@# set system root-authentication ssh-rsa &amp;lt;ssh-key&amp;gt;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;management-interface&#34;&gt;&lt;strong&gt;Management Interface:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]&#xA;root@# set interfaces fxp0 unit 0 family inet address &amp;lt;IP/Prefix&amp;gt;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;domain-name&#34;&gt;&lt;strong&gt;Domain Name:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]&#xA;root@# set system domain-name &amp;lt;domain-name&amp;gt;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;dns&#34;&gt;&lt;strong&gt;DNS:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[edit]&#xA;root@# set system name-server &amp;lt;address&amp;gt;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;cli-idle-time-out&#34;&gt;&lt;strong&gt;CLI idle time-out:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;root&amp;gt; set cli idle-timeout 5 &#xA;Idle timeout set to 5 minutes&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;logs&#34;&gt;&lt;strong&gt;Logs:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;In default syslog is enabled. You can see logs with the command below.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[EN] GRE Over IPSEC LAB</title>
-      <link>http://localhost:1313/posts/greoveripsec-lab/gre-over-ipsec-lab/</link>
-      <pubDate>Fri, 21 Feb 2025 22:19:46 +0100</pubDate>
-      <guid>http://localhost:1313/posts/greoveripsec-lab/gre-over-ipsec-lab/</guid>
-      <description>&lt;p&gt;Hello everyone, in this LAB I will configure GRE over IPSec Tunnels with following topology.&lt;/p&gt;&#xA;&lt;p&gt;In this topology some configurations have been done. So networks can already reach with each other. I will just focus on GRE over IPSec Tunnels between the networks of Customer-A and Customer-B.&lt;/p&gt;&#xA;&lt;p&gt;GRE Subnet for Customer-A: 192.168.1.0/24&lt;/p&gt;&#xA;&lt;p&gt;GRE Subnet for Customer-B: 192.168.2.0/24&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/GREoverIPSEC-LAB/1.png&#34; alt=&#34;gre-over-ipsec-lab&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;R1:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#GRE CONFIGURATION&#xA;R1(config)#int tunnel 1&#xA;R1(config-if)#ip addr 192.168.1.10 255.255.255.0&#xA;R1(config-if)#tunnel source e0/1&#xA;R1(config-if)#tunnel destination 1.1.4.2 &#xA;R1(config-if)#exit&#xA;&#xA;&#xA;#IPSEC CONFIGURATION&#xA;R1(config)#crypto isakmp policy 100&#xA;R1(config-isakmp)#authentication pre-share &#xA;R1(config-isakmp)#encryption aes &#xA;R1(config-isakmp)#group 14&#xA;R1(config-isakmp)#hash sha&#xA;R1(config-isakmp)#exit&#xA;&#xA;R1(config)#crypto isakmp key ittechnetworkk address 1.1.4.2&#xA;&#xA;R1(config)#crypto ipsec transform-set XYZ esp-aes esp-sha-hmac &#xA;R1(cfg-crypto-trans)#mode transport &#xA;R1(cfg-crypto-trans)#exit&#xA;&#xA;R1(config)#ip access-list extended GRE-IPSEC&#xA;R1(config-ext-nacl)#permit gre host 1.1.1.2 host 1.1.4.2&#xA;R1(config-ext-nacl)#exit&#xA;&#xA;R1(config)#crypto map IPSEC 10 ipsec-isakmp &#xA;R1(config-crypto-map)#match address GRE-IPSEC&#xA;R1(config-crypto-map)#set peer 1.1.4.2&#xA;R1(config-crypto-map)#set transform-set XYZ&#xA;R1(config-crypto-map)#exit&#xA;&#xA;R1(config)#int e0/1&#xA;R1(config-if)#crypto map IPSEC&#xA;R1(config-if)#exit&#xA;&#xA;&#xA;#ROUTING&#xA;R1(config)#ip route 10.0.4.0 255.255.255.0 tunnel 1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R10:&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[EN] GRE LAB</title>
-      <link>http://localhost:1313/posts/gre-lab/gre-lab/</link>
-      <pubDate>Fri, 21 Feb 2025 22:18:30 +0100</pubDate>
-      <guid>http://localhost:1313/posts/gre-lab/gre-lab/</guid>
-      <description>&lt;p&gt;Hello everyone, in this LAB I will configure GRE Tunnels.&lt;/p&gt;&#xA;&lt;p&gt;I will implement the following topology. In this topology some configurations have been done. So networks can already reach with each other. I will just focus on GRE Tunnels between the networks of Customer-A and Customer-B.&lt;/p&gt;&#xA;&lt;p&gt;I will use 192.168.1.0/24 subnet for Customer-A, 192.168.2.0/24 subnet for Customer-B.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/GRE-LAB/1.png&#34; alt=&#34;gre-lab&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;R1:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#TUNNEL CONFIGURATION&#xA;R1&amp;gt;en&#xA;R1#conf t&#xA;R1(config)#int tunnel 1&#xA;R1(config-if)#ip addr 192.168.1.10 255.255.255.0&#xA;R1(config-if)#tunnel source e0/1&#xA;R1(config-if)#tunnel destination 1.1.4.2 &#xA;R1(config-if)#exit&#xA;&#xA;#ROUTING&#xA;R1(config)#ip route 10.0.4.0 255.255.255.0 tunnel 1    &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R10:&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[EN] VRF-Lite Configuration</title>
-      <link>http://localhost:1313/posts/vrflitelab/vrf-lite/</link>
-      <pubDate>Fri, 21 Feb 2025 02:36:28 +0100</pubDate>
-      <guid>http://localhost:1313/posts/vrflitelab/vrf-lite/</guid>
-      <description>&lt;p&gt;Hello everyone, in this LAB I will configure GRE Tunnels with following topology.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/VRFLiteLAB/1.png&#34; alt=&#34;vrf-lite&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;R1:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#INTERFACE CONFIGURATION&#xA;R1&amp;gt;en&#xA;R1#conf t&#xA;R1(config)#int e0/0&#xA;R1(config-if)#ip addr 10.0.1.1 255.255.255.0&#xA;R1(config-if)#no sh&#xA;R1(config-if)#int e0/1&#xA;R1(config-if)#ip addr 1.1.1.2 255.255.255.252&#xA;R1(config-if)#no sh&#xA;R1(config-if)#exit&#xA;&#xA;#OSPF&#xA;R1(config)#router ospf 1&#xA;R1(config-router)#network 1.1.1.0 0.0.0.3 area 0&#xA;R1(config-router)#network 10.0.1.0 0.0.0.255 area 0&#xA;R1(config-router)#exit&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R2:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#INTERFACE CONFIGURATION&#xA;R2&amp;gt;en&#xA;R2#conf t&#xA;R2(config)#int e0/0&#xA;R2(config-if)#ip addr 10.0.2.1 255.255.255.0&#xA;R2(config-if)#no sh&#xA;R2(config-if)#int e0/2&#xA;R2(config-if)#ip addr 1.1.2.2 255.255.255.252&#xA;R2(config-if)#no sh&#xA;R2(config-if)#exit&#xA;&#xA;#OSPF&#xA;R2(config)#router ospf 1&#xA;R2(config-router)#network 10.0.2.0 0.0.0.255 area 0&#xA;R2(config-router)#network 1.1.2.0 0.0.0.3 area 0&#xA;R2(config-router)#exit&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R3:&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Vlan Routing L3 Switch (SVI)</title>
-      <link>http://localhost:1313/posts/vlanroutingsvi/vlan-routing-svi/</link>
-      <pubDate>Fri, 10 Jan 2025 11:43:33 +0100</pubDate>
-      <guid>http://localhost:1313/posts/vlanroutingsvi/vlan-routing-svi/</guid>
-      <description>&lt;p&gt;Selamlar, bu yazımda VLAN Routing&amp;rsquo;in L3 bir Switch ile nasıl yapılacağını bir LAB senaryosu üzerinde yapacağım..&lt;/p&gt;&#xA;&lt;p&gt;LAB&amp;rsquo;ı aşağıdaki topoloji üzerinde uygulayacağım.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/VLANRoutingSVI/1.png&#34; alt=&#34;vlan&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Başlayalım.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;İlk olarak cihazlara IP verelim.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;VPC4:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;VPCS&amp;gt; ip 10.10.10.10 255.255.255.0 gateway 10.10.10.1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;VPC5:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;VPCS&amp;gt; ip 10.10.20.10 255.255.255.0 gateway 10.10.20.1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;VPC6:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;VPCS&amp;gt; ip 10.10.10.11 255.255.255.0 gateway 10.10.10.1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;VPC7:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;VPCS&amp;gt; ip 10.10.20.11 255.255.255.0 gateway 10.10.20.1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Şimdi Switch&amp;rsquo;lerde VLAN&amp;rsquo;ları oluşturalım ve portlara atayalım.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;SW2:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Switch&amp;gt;en&#xA;Switch#conf t&#xA;Switch(config)#vlan 10&#xA;Switch(config-vlan)#vlan 20&#xA;Switch(config-vlan)#exit&#xA;&#xA;Switch(config)#int e0/1&#xA;Switch(config-if)#switchport mode access &#xA;Switch(config-if)#switchport access vlan 10&#xA;Switch(config-if)#exit&#xA;&#xA;Switch(config)#int e0/2&#xA;Switch(config-if)#switchport mode access &#xA;Switch(config-if)#switchport access vlan 20&#xA;Switch(config-if)#exit&#xA;&#xA;#Vlan&amp;#39;ların geçeceği port trunk olmalı&#xA;Switch(config)#int e0/0&#xA;Switch(config-if)#switchport trunk encapsulation dot1q&#xA;Switch(config-if)#switchport mode trunk &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SW3:&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Vlan Routing (Router on a Stick)</title>
-      <link>http://localhost:1313/posts/vlanroutingroas/vlan-routing-roas/</link>
-      <pubDate>Fri, 10 Jan 2025 11:43:17 +0100</pubDate>
-      <guid>http://localhost:1313/posts/vlanroutingroas/vlan-routing-roas/</guid>
-      <description>&lt;p&gt;Selamlar, bu yazımda VLAN Routing&amp;rsquo;in bir Router ile nasıl yapılacağını bir LAB senaryosu üzerinde yapacağım..&lt;/p&gt;&#xA;&lt;p&gt;LAB&amp;rsquo;ı aşağıdaki topoloji üzerinde uygulayacağım.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/VLANRoutingROAS/1.png&#34; alt=&#34;vlan&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Başlayalım.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;İlk olarak cihazlara IP verelim.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;VPC4:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;VPCS&amp;gt; ip 10.10.10.10 255.255.255.0 gateway 10.10.10.1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;VPC5:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;VPCS&amp;gt; ip 10.10.20.10 255.255.255.0 gateway 10.10.20.1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;VPC6:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;VPCS&amp;gt; ip 10.10.10.11 255.255.255.0 gateway 10.10.10.1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;VPC7:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;VPCS&amp;gt; ip 10.10.20.11 255.255.255.0 gateway 10.10.20.1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Şimdi Switch&amp;rsquo;lerde VLAN&amp;rsquo;ları oluşturalım ve portlara atayalım.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;SW2:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Switch&amp;gt;en&#xA;Switch#conf t&#xA;Switch(config)#vlan 10&#xA;Switch(config-vlan)#vlan 20&#xA;Switch(config-vlan)#exit&#xA;&#xA;Switch(config)#int e0/1&#xA;Switch(config-if)#switchport mode access &#xA;Switch(config-if)#switchport access vlan 10&#xA;Switch(config-if)#exit&#xA;&#xA;Switch(config)#int e0/2&#xA;Switch(config-if)#switchport mode access &#xA;Switch(config-if)#switchport access vlan 20&#xA;Switch(config-if)#exit&#xA;&#xA;#Vlan&amp;#39;ların geçeceği port trunk olmalı&#xA;Switch(config)#int e0/0&#xA;Switch(config-if)#switchport trunk encapsulation dot1q&#xA;Switch(config-if)#switchport mode trunk &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SW3:&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Cml Freetrial</title>
-      <link>http://localhost:1313/posts/ciscocmlfreetrial/cml-freetrial/</link>
-      <pubDate>Fri, 03 Jan 2025 23:31:39 +0100</pubDate>
-      <guid>http://localhost:1313/posts/ciscocmlfreetrial/cml-freetrial/</guid>
-      <description>&lt;p&gt;CiscoCMLFreeTrial&#xA;Merhabalar, bu yazımda Cml Freetrial konusunu anlatacağım.&lt;/p&gt;&#xA;&lt;p&gt;Ben Vmware Workstation Pro&amp;rsquo;ya kuracağım, aşağıdaki linkten ilgili kurulum dosyalarını indiriyorum.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://software.cisco.com/download/home/286193282/type/286326381/release/2.8.0%20Free%20Tier&#34;&gt;https://software.cisco.com/download/home/286193282/type/286326381/release/2.8.0%20Free%20Tier&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/CiscoCMLFreeTrial/1.png&#34; alt=&#34;cml&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Görseldeki en alt iki dosyayı indiriyorum&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;cml2_f_2.8.0-6_amd64-32.ova&lt;/li&gt;&#xA;&lt;li&gt;refplat-20241016-freetier-iso&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Kurulum adımları sırasıyla aşağıdaki gibi olacaktır.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;VMWare:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;File &amp;gt; Open &amp;gt; cml2_f_2.8.0-6_amd64-32.ova&lt;/p&gt;&#xA;&lt;p&gt;.ova uzantılı dosya import edildikten sonra bunu editliyoruz.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/CiscoCMLFreeTrial/2.png&#34; alt=&#34;cml&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Burada .iso uzantılı dosyanın yolunu belirtiyoruz.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/CiscoCMLFreeTrial/3.png&#34; alt=&#34;cml&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/CiscoCMLFreeTrial/4.png&#34; alt=&#34;cml&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Aşağıdaki kutucuğun işaretli olması gerekiyor.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/CiscoCMLFreeTrial/5.png&#34; alt=&#34;cml&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/CiscoCMLFreeTrial/6.png&#34; alt=&#34;cml&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/CiscoCMLFreeTrial/7.png&#34; alt=&#34;cml&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/CiscoCMLFreeTrial/8.png&#34; alt=&#34;cml&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/CiscoCMLFreeTrial/9.png&#34; alt=&#34;cml&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/CiscoCMLFreeTrial/10.png&#34; alt=&#34;cml&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/CiscoCMLFreeTrial/11.png&#34; alt=&#34;cml&#34;&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>GRE Over Ipsec</title>
-      <link>http://localhost:1313/posts/greoveripsec/greoveripsec/</link>
-      <pubDate>Fri, 22 Nov 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/greoveripsec/greoveripsec/</guid>
-      <description>&lt;p&gt;Aşağıdaki topologiye göre ilerleyeceğim. Topolojideki cihazların interfacelerine IP adresleri verilmiştir.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/greoveripsec/1.png&#34; alt=&#34;ipsec&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;GRE Config:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;R1:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;R1#conf t&#xA;R1(config)#int tunnel 1&#xA;R1(config-if)#ip addr 192.168.1.1 255.255.255.0&#xA;R1(config-if)#tunnel source e0/0&#xA;R1(config-if)#tunnel destination 200.59.25.2&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R2:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;R1#conf t&#xA;R2(config)#int tunnel 1&#xA;R2(config-if)#ip addr 192.168.1.2 255.255.255.0&#xA;R2(config-if)#tunnel source e0/0&#xA;R2(config-if)#tunnel destination 197.53.15.2 &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;IPsec:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;R1:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;R1(config)#crypto isakmp policy 10&#xA;R1(config-isakmp)#authentication pre-share               (define it later on)&#xA;R1(config-isakmp)#encryption aes&#xA;R1(config-isakmp)#group 14                               (must be over 14)&#xA;R1(config-isakmp)#hash sha&#xA;R1(config-isakmp)#exit&#xA;&#xA;R1(config)#crypto isakmp key BENIMCICIPAROLAM address 200.59.25.2   (pre-share key and next point IP)&#xA;&#xA;R1(config)#crypto ipsec transform-set AABBCC esp-aes esp-sha-hmac &#xA;R1(cfg-crypto-trans)#mode transport &#xA;R1(cfg-crypto-trans)#exit&#xA;&#xA;R1(config)#ip access-list extended GRE-IPSEC&#xA;R1(config-ext-nacl)#permit gre host 197.53.15.2 host 200.59.25.2     (src &amp;gt; dst)&#xA;R1(config-ext-nacl)#exit&#xA;&#xA;R1(config)#crypto map IPSEC-MAP 10 ipsec-isakmp &#xA;R1(config-crypto-map)#match address GRE-IPSEC&#xA;R1(config-crypto-map)#set peer 200.59.25.2&#xA;R1(config-crypto-map)#set transform-set AABBCC&#xA;R1(config-crypto-map)#exit&#xA;&#xA;R1(config)#int e0/0&#xA;R1(config-if)#crypto map IPSEC-MAP&#xA;R1(config-if)#end&#xA;R1#wr&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R2:&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Juniper Rollback</title>
-      <link>http://localhost:1313/posts/junosrollback/junos-rollback/</link>
-      <pubDate>Fri, 22 Nov 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/junosrollback/junos-rollback/</guid>
-      <description>&lt;p&gt;Rollback, cihazda yapılan önceki konfigürasyonlara dönebilmeyi sağlayan komuttur. Örneğin cihazda bir konfigürasyon yaptık ve commit ettik. Fakat yapılan konfigürasyon hatalıydı veya başka bir sebepten dolayı eski konfigürasyonu bir şekilde geri almamız gerekiyor. Bu durumda Rollback kullanılır.&lt;/p&gt;&#xA;&lt;p&gt;Rollback dosyalar 50 adettir, 0&amp;rsquo;dan başlar ve sıfırıncı dosya cihazda hali hazırda çalışan konfigürasyon dosyasıdır.&lt;/p&gt;&#xA;&lt;p&gt;Cihaz&amp;rsquo;da 49 Rollback dosyası olması halinde her commit işleminde 49. Rollback dosyasını uçurur.&lt;/p&gt;&#xA;&lt;p&gt;Rollback dosyalarını görmek için;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;{master:0}[edit]&#xA;root@vqfx-re# rollback ?             &#xA;Possible completions:&#xA;  &amp;lt;[Enter]&amp;gt;            Execute this command&#xA;  0                    2024-10-07 02:20:28 UTC by root via cli &#xA;  1                    2024-10-07 02:20:20 UTC by root via cli &#xA;  2                    2024-10-07 02:20:19 UTC by root via cli &#xA;  3                    2024-10-07 02:20:18 UTC by root via cli &#xA;  4                    2024-10-07 02:20:17 UTC by root via cli &#xA;  5                    2024-10-07 02:19:57 UTC by root via cli &#xA;  6                    2024-10-07 02:19:37 UTC by root via cli &#xA;  7                    2024-10-07 02:19:34 UTC by root via cli &#xA;  8                    2024-10-07 02:12:37 UTC by root via cli &#xA;  9                    2020-08-19 17:30:33 UTC by root via cli &#xA;  10                   2020-08-19 17:22:59 UTC by root via other &#xA;  |                    Pipe through a command&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Yukarıda görüldüğü gibi, Rollback dosyalarının tarih, saat, kim tarafından, vs. bilgilerini görebiliyoruz. Sıfırıncı dosya çalışan konfigürasyon dosyasıdır.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Juniper Commit Usage</title>
-      <link>http://localhost:1313/posts/junos-commit-usage/junos-commit-usage/</link>
-      <pubDate>Fri, 22 Nov 2024 17:53:48 +0100</pubDate>
-      <guid>http://localhost:1313/posts/junos-commit-usage/junos-commit-usage/</guid>
-      <description>&lt;p&gt;JunOS sistemlerde bir diğer önemli konu ise Commit kullanımıdır.&lt;/p&gt;&#xA;&lt;p&gt;JunOS&amp;rsquo;da commit işlemi, yapılan konfigürasyonu etkinleştirmek için kullanılır. Yani yapılan konfigürasyonu commit etmezsek yaptığımız konfigürasyon geçerli olmaz.&lt;/p&gt;&#xA;&lt;p&gt;Bundan dolayı mutlaka konfigürasyon sonrası commit etmemiz gerekiyor.&lt;/p&gt;&#xA;&lt;p&gt;Commit işlemi yaparken bazı parametreler var ki işleri kolaylaştırır.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Commit tipleri:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&amp;ldquo;commit&amp;rdquo;&lt;/strong&gt; : Bu komut, direkt olarak yapılan konfigürasyonu etkileştirir.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&amp;ldquo;commit check&amp;rdquo;&lt;/strong&gt; : Bu komut, yapılan konfigürasyondan emin olmadığımız durumlarda, yapılan konfigürasyonun doğruluğunu kontrol eder. Eğer bir konfigürasyon hatası varsa bize ilgili kısmın hatasını gösterir.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Juniper CLI Help Komutları</title>
-      <link>http://localhost:1313/posts/junosclihelpcommands/junos-cli-help-commands/</link>
-      <pubDate>Sat, 16 Nov 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/junosclihelpcommands/junos-cli-help-commands/</guid>
-      <description>&lt;p&gt;JunOS&amp;rsquo;da Cli yardım alma komutları oldukça detaylı ve kullanışlıdır. Junos sadece bir işletim sistemi değil aynı zamanda içinde bir kütüphanedir.&lt;/p&gt;&#xA;&lt;p&gt;JunOS&amp;rsquo;da birden fazla yardım alma komutu vardır ve her biri birbirinden kulanıcı dostudur.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Cli Help Komutları:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;root&amp;gt; help ?   &#xA;Possible completions:&#xA;  &amp;lt;[Enter]&amp;gt;            Execute this command&#xA;  apropos              Find help information about a topic&#xA;  reference            Reference material&#xA;  syslog               System log error messages&#xA;  tip                  Tip for the day&#xA;  topic                Help for high level topics&#xA;  |                    Pipe through a command&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Help komutlarıyla birlikte ne kullanılacağını &amp;ldquo;help ?&amp;rdquo; komutuyla görebiliriz.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Juniper Filtering Output</title>
-      <link>http://localhost:1313/posts/junosfilteringoutput/junos-filtering-output/</link>
-      <pubDate>Sat, 16 Nov 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/junosfilteringoutput/junos-filtering-output/</guid>
-      <description>&lt;p&gt;JunOS işletim sisteminde çıktıları filtrelemek çoğu zaman hayat kurtarır. JunOS&amp;rsquo;da bazı çıktılar çok uzun olabiliyor, bu çıktıları filtrelemek amacımıza ulaşmak için zamandan tasarruf sağlıyor.&lt;/p&gt;&#xA;&lt;p&gt;JunOS FreeBSD tabanlı olduğu için Linux işletim sistemi bilenler için komutlara aşağı yukarı aşinalık gösterir.&lt;/p&gt;&#xA;&lt;p&gt;Linux bilen JunOS&amp;rsquo;da ve benzeri sistemlerde bir şekilde yolunu bulur.&lt;/p&gt;&#xA;&lt;p&gt;Çıktıları filtrelemek JunOS&amp;rsquo;da oldukça kolaydır. Aşağıdaki filtreleme komutlarını ve açıklamalarını görebilirsiniz.&lt;/p&gt;&#xA;&lt;p&gt;Çıktıları filtrelemek için temel olarak pipe &amp;ldquo;|&amp;rdquo; komutu ve devamında amaca uygun komutu kullanmak işi çözecektir.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Juniper Shortcuts</title>
-      <link>http://localhost:1313/posts/junosshortcuts/junos-shortcuts/</link>
-      <pubDate>Sat, 16 Nov 2024 17:53:48 +0100</pubDate>
-      <guid>http://localhost:1313/posts/junosshortcuts/junos-shortcuts/</guid>
-      <description>&lt;p&gt;Junos Shortcuts, JunOS CLI ekranında bize pratiklik sağlayan kısayollardır. Başlıcaları aşağıdaki gibidir.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;CTRL + b:&#xA;İmleci bir karakter sola kaydırır.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;CTRL + f:&#xA;İmleci bir karakter sağa kaydırır.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;CTRL + a:&#xA;İmleci satır en başına getirir.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;CTRL + e:&#xA;İmleci satırın en sonuna getirir.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;CTRL + d:&#xA;İmlecin sağından bir karakter siler.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;CTRL + k:&#xA;İmlecin sağındaki her şeyi siler.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;CTRL + u:&#xA;Tüm satırı siler.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;CTRL + w:&#xA;İmlecin solundan bir kelime/komut siler.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>DMVPN Phase 1 EIGRP</title>
-      <link>http://localhost:1313/posts/dmvpnphase1eigrp/dmvpn-phase1-eigrp/</link>
-      <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/dmvpnphase1eigrp/dmvpn-phase1-eigrp/</guid>
-      <description>&lt;p&gt;Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p&gt;&#xA;&lt;p&gt;Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/DMVPNPhase1EIGRP/1.png&#34; alt=&#34;DMVPN&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Başlayalım.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;HUB:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;HUB#conf t &#xA;HUB(config)#int tun0 &#xA;HUB(config-if)#no sh&#xA;HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 &#xA;HUB(config-if)#tunnel source f0/0&#xA;HUB(config-if)#tunnel mode gre multipoint&#xA;HUB(config-if)#ip mtu 1400&#xA;HUB(config-if)#ip tcp adjust-mss 1360 &#xA;HUB(config-if)#ip nhrp network-id 1  &#xA;HUB(config-if)#ip nhrp authentication Marvel1   &#xA;HUB(config-if)#ip nhrp map multicast dynamic  &#xA;HUB(config-if)#end&#xA;HUB#wr&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-1:&lt;/strong&gt;*&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SPOKE-1#conf t&#xA;SPOKE-1(config)#int tun0&#xA;SPOKE-1(config-if)#no sh&#xA;SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0&#xA;SPOKE-1(config-if)#ip mtu 1400&#xA;SPOKE-1(config-if)#ip tcp adjust-mss 1360&#xA;SPOKE-1(config-if)#tunnel source f0/0&#xA;SPOKE-1(config-if)#tunnel destination 1.1.1.1&#xA;SPOKE-1(config-if)#ip nhrp network-id 1&#xA;SPOKE-1(config-if)#ip nhrp authentication Marvel1&#xA;SPOKE-1(config-if)#ip nhrp nhs 10.0.0.1&#xA;SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1&#xA;SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1&#xA;SPOKE-1(config-if)#end&#xA;SPOKE-1#wr&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-2:&lt;/strong&gt;*&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>DMVPN Phase 1 OSPF</title>
-      <link>http://localhost:1313/posts/dmvpnphase1ospf/dmvpn-phase1-ospf/</link>
-      <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/dmvpnphase1ospf/dmvpn-phase1-ospf/</guid>
-      <description>&lt;p&gt;Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p&gt;&#xA;&lt;p&gt;Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/DMVPNPhase1OSPF/1.png&#34; alt=&#34;DMVPN&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Başlayalım.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;HUB:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;HUB#conf t &#xA;HUB(config)#int tun0 &#xA;HUB(config-if)#no sh&#xA;HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 &#xA;HUB(config-if)#tunnel source f0/0&#xA;HUB(config-if)#tunnel mode gre multipoint&#xA;HUB(config-if)#ip mtu 1400&#xA;HUB(config-if)#ip tcp adjust-mss 1360 &#xA;HUB(config-if)#ip nhrp network-id 1  &#xA;HUB(config-if)#ip nhrp authentication Marvel1   &#xA;HUB(config-if)#ip nhrp map multicast dynamic  &#xA;HUB(config-if)#end&#xA;HUB#wr&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-1:&lt;/strong&gt;*&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SPOKE-1#conf t&#xA;SPOKE-1(config)#int tun0&#xA;SPOKE-1(config-if)#no sh&#xA;SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0&#xA;SPOKE-1(config-if)#ip mtu 1400&#xA;SPOKE-1(config-if)#ip tcp adjust-mss 1360&#xA;SPOKE-1(config-if)#tunnel source f0/0&#xA;SPOKE-1(config-if)#tunnel destination 1.1.1.1&#xA;SPOKE-1(config-if)#ip nhrp network-id 1&#xA;SPOKE-1(config-if)#ip nhrp authentication Marvel1&#xA;SPOKE-1(config-if)#ip nhrp nhs 10.0.0.1&#xA;SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1&#xA;SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1&#xA;SPOKE-1(config-if)#end&#xA;SPOKE-1#wr&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-2:&lt;/strong&gt;*&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>DMVPN Phase 1 RIP</title>
-      <link>http://localhost:1313/posts/dmvpnphase1rip/dmvpn-phase1-rip/</link>
-      <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/dmvpnphase1rip/dmvpn-phase1-rip/</guid>
-      <description>&lt;p&gt;Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p&gt;&#xA;&lt;p&gt;Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/DMVPNPhase1RIP/1.png&#34; alt=&#34;DMVPN&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Başlayalım.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;HUB:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;HUB#conf t &#xA;HUB(config)#int tun0 &#xA;HUB(config-if)#no sh&#xA;HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 &#xA;HUB(config-if)#tunnel source f0/0&#xA;HUB(config-if)#tunnel mode gre multipoint&#xA;HUB(config-if)#ip mtu 1400&#xA;HUB(config-if)#ip tcp adjust-mss 1360 &#xA;HUB(config-if)#ip nhrp network-id 1  &#xA;HUB(config-if)#ip nhrp authentication Marvel1   &#xA;HUB(config-if)#ip nhrp map multicast dynamic  &#xA;HUB(config-if)#end&#xA;HUB#wr&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-1:&lt;/strong&gt;*&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SPOKE-1#conf t&#xA;SPOKE-1(config)#int tun0&#xA;SPOKE-1(config-if)#no sh&#xA;SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0&#xA;SPOKE-1(config-if)#ip mtu 1400&#xA;SPOKE-1(config-if)#ip tcp adjust-mss 1360&#xA;SPOKE-1(config-if)#tunnel source f0/0&#xA;SPOKE-1(config-if)#tunnel destination 1.1.1.1&#xA;SPOKE-1(config-if)#ip nhrp network-id 1&#xA;SPOKE-1(config-if)#ip nhrp authentication Marvel1&#xA;SPOKE-1(config-if)#ip nhrp nhs 10.0.0.1&#xA;SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1&#xA;SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1&#xA;SPOKE-1(config-if)#end&#xA;SPOKE-1#wr&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-2:&lt;/strong&gt;*&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>DMVPN Phase 2 EIGRP</title>
-      <link>http://localhost:1313/posts/dmvpnphase2eigrp/dmvpn-phase2-eigrp/</link>
-      <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/dmvpnphase2eigrp/dmvpn-phase2-eigrp/</guid>
-      <description>&lt;p&gt;Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p&gt;&#xA;&lt;p&gt;Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/DMVPNPhase2EIGRP/1.png&#34; alt=&#34;DMVPN&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Başlayalım.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;HUB:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;HUB#conf t &#xA;HUB(config)#int tun0 &#xA;HUB(config-if)#no sh&#xA;HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 &#xA;HUB(config-if)#tunnel source f0/0&#xA;HUB(config-if)#tunnel mode gre multipoint&#xA;HUB(config-if)#ip mtu 1400&#xA;HUB(config-if)#ip tcp adjust-mss 1360 &#xA;HUB(config-if)#ip nhrp network-id 1  &#xA;HUB(config-if)#ip nhrp authentication Marvel1   &#xA;HUB(config-if)#ip nhrp map multicast dynamic  &#xA;HUB(config-if)#end&#xA;HUB#wr&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-1:&lt;/strong&gt;*&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SPOKE-1#conf t&#xA;SPOKE-1(config)#int tun0&#xA;SPOKE-1(config-if)#no sh&#xA;SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0&#xA;SPOKE-1(config-if)#ip mtu 1400&#xA;SPOKE-1(config-if)#ip tcp adjust-mss 1360&#xA;SPOKE-1(config-if)#tunnel source f0/0&#xA;SPOKE-1(config-if)#tunnel destination 1.1.1.1&#xA;SPOKE-1(config-if)#ip nhrp network-id 1&#xA;SPOKE-1(config-if)#ip nhrp authentication Marvel1&#xA;SPOKE-1(config-if)#ip nhrp nhs 10.0.0.1&#xA;SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1&#xA;SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1&#xA;SPOKE-1(config-if)#end&#xA;SPOKE-1#wr&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-2:&lt;/strong&gt;*&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>DMVPN Phase 2 OSPF</title>
-      <link>http://localhost:1313/posts/dmvpnphase2ospf/dmvpn-phase2-ospf/</link>
-      <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/dmvpnphase2ospf/dmvpn-phase2-ospf/</guid>
-      <description>&lt;p&gt;Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p&gt;&#xA;&lt;p&gt;Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/DMVPNPhase2OSPF/1.png&#34; alt=&#34;DMVPN&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Başlayalım.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;HUB:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;HUB#conf t &#xA;HUB(config)#int tun0 &#xA;HUB(config-if)#no sh&#xA;HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 &#xA;HUB(config-if)#tunnel source f0/0&#xA;HUB(config-if)#tunnel mode gre multipoint&#xA;HUB(config-if)#ip mtu 1400&#xA;HUB(config-if)#ip tcp adjust-mss 1360 &#xA;HUB(config-if)#ip nhrp network-id 1  &#xA;HUB(config-if)#ip nhrp authentication Marvel1   &#xA;HUB(config-if)#ip nhrp map multicast dynamic  &#xA;HUB(config-if)#end&#xA;HUB#wr&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-1:&lt;/strong&gt;*&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SPOKE-1#conf t&#xA;SPOKE-1(config)#int tun0&#xA;SPOKE-1(config-if)#no sh&#xA;SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0&#xA;SPOKE-1(config-if)#ip mtu 1400&#xA;SPOKE-1(config-if)#ip tcp adjust-mss 1360&#xA;SPOKE-1(config-if)#tunnel source f0/0&#xA;SPOKE-1(config-if)#tunnel destination 1.1.1.1&#xA;SPOKE-1(config-if)#ip nhrp network-id 1&#xA;SPOKE-1(config-if)#ip nhrp authentication Marvel1&#xA;SPOKE-1(config-if)#ip nhrp nhs 10.0.0.1&#xA;SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1&#xA;SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1&#xA;SPOKE-1(config-if)#end&#xA;SPOKE-1#wr&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-2:&lt;/strong&gt;*&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>DMVPN Phase 2 RIP</title>
-      <link>http://localhost:1313/posts/dmvpnphase2rip/dmvpn-phase2-rip/</link>
-      <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/dmvpnphase2rip/dmvpn-phase2-rip/</guid>
-      <description>&lt;p&gt;Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p&gt;&#xA;&lt;p&gt;Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/DMVPNPhase2RIP/1.png&#34; alt=&#34;DMVPN&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Başlayalım.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;HUB:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;HUB#conf t &#xA;HUB(config)#int tun0 &#xA;HUB(config-if)#no sh&#xA;HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 &#xA;HUB(config-if)#tunnel source f0/0&#xA;HUB(config-if)#tunnel mode gre multipoint&#xA;HUB(config-if)#ip mtu 1400&#xA;HUB(config-if)#ip tcp adjust-mss 1360 &#xA;HUB(config-if)#ip nhrp network-id 1  &#xA;HUB(config-if)#ip nhrp authentication Marvel1   &#xA;HUB(config-if)#ip nhrp map multicast dynamic  &#xA;HUB(config-if)#end&#xA;HUB#wr&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-1:&lt;/strong&gt;*&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SPOKE-1#conf t&#xA;SPOKE-1(config)#int tun0&#xA;SPOKE-1(config-if)#no sh&#xA;SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0&#xA;SPOKE-1(config-if)#ip mtu 1400&#xA;SPOKE-1(config-if)#ip tcp adjust-mss 1360&#xA;SPOKE-1(config-if)#tunnel source f0/0&#xA;SPOKE-1(config-if)#tunnel destination 1.1.1.1&#xA;SPOKE-1(config-if)#ip nhrp network-id 1&#xA;SPOKE-1(config-if)#ip nhrp authentication Marvel1&#xA;SPOKE-1(config-if)#ip nhrp nhs 10.0.0.1&#xA;SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1&#xA;SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1&#xA;SPOKE-1(config-if)#end&#xA;SPOKE-1#wr&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-2:&lt;/strong&gt;*&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>DMVPN Phase 3 EIGRP</title>
-      <link>http://localhost:1313/posts/dmvpnphase3eigrp/dmvpn-phase3-eigrp/</link>
-      <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/dmvpnphase3eigrp/dmvpn-phase3-eigrp/</guid>
-      <description>&lt;p&gt;Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p&gt;&#xA;&lt;p&gt;Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/DMVPNPhase3EIGRP/1.png&#34; alt=&#34;DMVPN&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Başlayalım.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;HUB:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;HUB#conf t &#xA;HUB(config)#int tun0 &#xA;HUB(config-if)#no sh&#xA;HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 &#xA;HUB(config-if)#tunnel source f0/0&#xA;HUB(config-if)#tunnel mode gre multipoint&#xA;HUB(config-if)#ip mtu 1400&#xA;HUB(config-if)#ip tcp adjust-mss 1360 &#xA;HUB(config-if)#ip nhrp network-id 1  &#xA;HUB(config-if)#ip nhrp authentication Marvel1   &#xA;HUB(config-if)#ip nhrp map multicast dynamic  &#xA;HUB(config-if)#end&#xA;HUB#wr&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-1:&lt;/strong&gt;*&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SPOKE-1#conf t&#xA;SPOKE-1(config)#int tun0&#xA;SPOKE-1(config-if)#no sh&#xA;SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0&#xA;SPOKE-1(config-if)#ip mtu 1400&#xA;SPOKE-1(config-if)#ip tcp adjust-mss 1360&#xA;SPOKE-1(config-if)#tunnel source f0/0&#xA;SPOKE-1(config-if)#tunnel destination 1.1.1.1&#xA;SPOKE-1(config-if)#ip nhrp network-id 1&#xA;SPOKE-1(config-if)#ip nhrp authentication Marvel1&#xA;SPOKE-1(config-if)#ip nhrp nhs 10.0.0.1&#xA;SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1&#xA;SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1&#xA;SPOKE-1(config-if)#end&#xA;SPOKE-1#wr&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-2:&lt;/strong&gt;*&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>DMVPN Phase 3 OSPF</title>
-      <link>http://localhost:1313/posts/dmvpnphase3ospf/dmvpn-phase3-ospf/</link>
-      <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/dmvpnphase3ospf/dmvpn-phase3-ospf/</guid>
-      <description>&lt;p&gt;Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p&gt;&#xA;&lt;p&gt;Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/DMVPNPhase3OSPF/1.png&#34; alt=&#34;DMVPN&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Başlayalım.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;HUB:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;HUB#conf t &#xA;HUB(config)#int tun0 &#xA;HUB(config-if)#no sh&#xA;HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 &#xA;HUB(config-if)#tunnel source f0/0&#xA;HUB(config-if)#tunnel mode gre multipoint&#xA;HUB(config-if)#ip mtu 1400&#xA;HUB(config-if)#ip tcp adjust-mss 1360 &#xA;HUB(config-if)#ip nhrp network-id 1  &#xA;HUB(config-if)#ip nhrp authentication Marvel1   &#xA;HUB(config-if)#ip nhrp map multicast dynamic  &#xA;HUB(config-if)#end&#xA;HUB#wr&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-1:&lt;/strong&gt;*&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SPOKE-1#conf t&#xA;SPOKE-1(config)#int tun0&#xA;SPOKE-1(config-if)#no sh&#xA;SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0&#xA;SPOKE-1(config-if)#ip mtu 1400&#xA;SPOKE-1(config-if)#ip tcp adjust-mss 1360&#xA;SPOKE-1(config-if)#tunnel source f0/0&#xA;SPOKE-1(config-if)#tunnel destination 1.1.1.1&#xA;SPOKE-1(config-if)#ip nhrp network-id 1&#xA;SPOKE-1(config-if)#ip nhrp authentication Marvel1&#xA;SPOKE-1(config-if)#ip nhrp nhs 10.0.0.1&#xA;SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1&#xA;SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1&#xA;SPOKE-1(config-if)#end&#xA;SPOKE-1#wr&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-2:&lt;/strong&gt;*&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>DMVPN Phase 3 RIP</title>
-      <link>http://localhost:1313/posts/dmvpnphase3rip/dmvpn-phase3-rip/</link>
-      <pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/dmvpnphase3rip/dmvpn-phase3-rip/</guid>
-      <description>&lt;p&gt;Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p&gt;&#xA;&lt;p&gt;Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/DMVPNPhase3RIP/1.png&#34; alt=&#34;DMVPN&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Başlayalım.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;HUB:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;HUB#conf t &#xA;HUB(config)#int tun0 &#xA;HUB(config-if)#no sh&#xA;HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 &#xA;HUB(config-if)#tunnel source f0/0&#xA;HUB(config-if)#tunnel mode gre multipoint&#xA;HUB(config-if)#ip mtu 1400&#xA;HUB(config-if)#ip tcp adjust-mss 1360 &#xA;HUB(config-if)#ip nhrp network-id 1  &#xA;HUB(config-if)#ip nhrp authentication Marvel1   &#xA;HUB(config-if)#ip nhrp map multicast dynamic  &#xA;HUB(config-if)#end&#xA;HUB#wr&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-1:&lt;/strong&gt;*&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;SPOKE-1#conf t&#xA;SPOKE-1(config)#int tun0&#xA;SPOKE-1(config-if)#no sh&#xA;SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0&#xA;SPOKE-1(config-if)#ip mtu 1400&#xA;SPOKE-1(config-if)#ip tcp adjust-mss 1360&#xA;SPOKE-1(config-if)#tunnel source f0/0&#xA;SPOKE-1(config-if)#tunnel destination 1.1.1.1&#xA;SPOKE-1(config-if)#ip nhrp network-id 1&#xA;SPOKE-1(config-if)#ip nhrp authentication Marvel1&#xA;SPOKE-1(config-if)#ip nhrp nhs 10.0.0.1&#xA;SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1&#xA;SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1&#xA;SPOKE-1(config-if)#end&#xA;SPOKE-1#wr&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-2:&lt;/strong&gt;*&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Network Troubleshooting</title>
-      <link>http://localhost:1313/posts/networktroubleshooting/network-troubleshooting/</link>
-      <pubDate>Sun, 28 Jul 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/networktroubleshooting/network-troubleshooting/</guid>
-      <description>&lt;p&gt;İlk olarak eğer hatanın nereden kaynaklandığını az çok tahmin edebiliyorsak ilk o noktaya yoğunlaşmakta fayda olacağını düşünüyorum diyerek başlamak istiyorum.&lt;/p&gt;&#xA;&lt;p&gt;Network&amp;rsquo;te bir sorunu çözerken yaklaşımımızın adım adım olacak şekilde ilk olarak en yakınımızdaki cihaz veya uygulama veya katman olmalıdır.&lt;/p&gt;&#xA;&lt;p&gt;Peki ne demek istiyorum?&lt;/p&gt;&#xA;&lt;p&gt;Aşağıda örnek bir senaryom var. Bu senaryoda PC1 İnternete erişemediğini varsayalım.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/network-troubleshooting/1.png&#34; alt=&#34;troubleshooting&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Buradaki senaryomda, PC&amp;rsquo;nin bütün ayarlarını gözden geçirdikten sonra yani PC&amp;rsquo;nin Ethernet kablosu, IP Adres, Default Gateway, DNS gibi.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Raspberry Pi Syslog Server</title>
-      <link>http://localhost:1313/posts/raspberrypisyslogserver/raspberrypi-syslog/</link>
-      <pubDate>Mon, 15 Jul 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/raspberrypisyslogserver/raspberrypi-syslog/</guid>
-      <description>&lt;p&gt;Merhaba, bu yazımda bi Raspberry Pi Zero&amp;rsquo;ya Syslog server rolü verip, bir Cisco Switch&amp;rsquo;e bu Syslog server konfigürasyonunu yapacağım.&lt;/p&gt;&#xA;&lt;p&gt;Bu Lab için kullanacağım donanım ve yazılımlar:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Raspberry Pi Zero 2W,&lt;/li&gt;&#xA;&lt;li&gt;Cisco 2960 Switch,&lt;/li&gt;&#xA;&lt;li&gt;SD Cart,&lt;/li&gt;&#xA;&lt;li&gt;Kart Reader,&lt;/li&gt;&#xA;&lt;li&gt;Ethernet Kablosu,&lt;/li&gt;&#xA;&lt;li&gt;MicroUSB Power Cable,&lt;/li&gt;&#xA;&lt;li&gt;Switch Power Cable,&lt;/li&gt;&#xA;&lt;li&gt;ImagerPi.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;İlk olarak ImagerPi kullanarak SD Kart&amp;rsquo;a Ubuntu işletim sistemini kuruyorum.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/RaspberryPiSyslogServer/1.png&#34; alt=&#34;syslog&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/RaspberryPiSyslogServer/2.png&#34; alt=&#34;syslog&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;SD Kart&amp;rsquo;ı Raspberry Pi&amp;rsquo;a takıp, modemin yakınında güç kablosunu takıp cihazı açıyorum.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>UTP Kablo Yapımı</title>
-      <link>http://localhost:1313/posts/utpkabloyapimi/utp-kablo-yapimi/</link>
-      <pubDate>Sun, 07 Jul 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/utpkabloyapimi/utp-kablo-yapimi/</guid>
-      <description>&lt;p&gt;UTP Kablo yani ağ kabloları, internet iletişiminde cihazların birbirleriyle iletişim kurması için kullanılan kablolardır.&lt;/p&gt;&#xA;&lt;p&gt;Birden fazla çeşidi vardır ve iletim hızlarına göre kategorilere ayrılmışlardır.&lt;/p&gt;&#xA;&lt;p&gt;UTP kablolar 100 metreye kadar sinyal iletebilirler. Aşılması durumunda sinyal kayıpları, performans sorunları ile karşılaşılır.&lt;/p&gt;&#xA;&lt;p&gt;UTP Kablolarının her iki ucu da RJ45 ile çakılır.&lt;/p&gt;&#xA;&lt;p&gt;Kablolar koruyucu malzeme ile kablı olması veya olmaması gibi özelliklere göre 2&amp;rsquo;ye ayrılır.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Sheilded Twisted Pair (STP) kablonun içinde bir kuruyucu vardır,&lt;/li&gt;&#xA;&lt;li&gt;Unshielded Twisted Pair (UTP) koruyucu yoktur.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Buradaki koruyucu metal malzemenin görevi ise kablonun elektromanyetik alandan etkilenmemesini sağlamaktır.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Temel Switch Konfigürasyonu</title>
-      <link>http://localhost:1313/posts/switchconfiguration/switch-conf/</link>
-      <pubDate>Wed, 26 Jun 2024 17:53:48 +0100</pubDate>
-      <guid>http://localhost:1313/posts/switchconfiguration/switch-conf/</guid>
-      <description>&lt;p&gt;Merhaba, bu yazıda Cisco bir Switch&amp;rsquo;in temel bir konfigürasyonunu göstereceğim.&lt;/p&gt;&#xA;&lt;p&gt;Tabi bu konfigürasyonları temel düzelde uygulayacağım, daha kapsamlı konfigürasyon network yapılarına göre, kullanılan teknolojilere göre değişiklik gösterecektir.&lt;/p&gt;&#xA;&lt;p&gt;Uygulayacağım konfigürasyonları sırasıyla aşağıdaki gibi olacaktır:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Hostname,&lt;/li&gt;&#xA;&lt;li&gt;Zaman Konfigürasyonu,&lt;/li&gt;&#xA;&lt;li&gt;Yanlış Girilen Parola Politikası,&lt;/li&gt;&#xA;&lt;li&gt;Enable Password,&lt;/li&gt;&#xA;&lt;li&gt;Banner motd,&lt;/li&gt;&#xA;&lt;li&gt;Kullanıcı Oluşturma,&lt;/li&gt;&#xA;&lt;li&gt;Console Erişimi,&lt;/li&gt;&#xA;&lt;li&gt;SSH Konfigürasyonu,&lt;/li&gt;&#xA;&lt;li&gt;Default Gateway,&lt;/li&gt;&#xA;&lt;li&gt;Disable Ports,&lt;/li&gt;&#xA;&lt;li&gt;Konfigürasyonları Kaydetme,&lt;/li&gt;&#xA;&lt;li&gt;Kontrol.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Başlayalım.&lt;/p&gt;&#xA;&lt;p&gt;Ben konfigürasyonları, Cisco Catalyst 2960 Serisi bir Switch üzerinde uygulayacağım.&lt;/p&gt;&#xA;&lt;p&gt;Console Kablosu  ve Switch görüntü itibariyle aşağıdaki gibidir.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>IPv6 Static Routing</title>
-      <link>http://localhost:1313/posts/ipv6staticrouting/ipv6-static-routing/</link>
-      <pubDate>Tue, 25 Jun 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/ipv6staticrouting/ipv6-static-routing/</guid>
-      <description>&lt;p&gt;Static Route hedefe gitmek için manuel olarak yazılan rotadır. Static Route küçük networkler için kullanılabilir. Fakat orta ve büyük networklerde iş yükünü fazlaca artırabilir.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ipv6-static-routing/1.png&#34; alt=&#34;routing&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Bu da diğer Dynamic Routing protokollerinden ayıran bir özelliğidir. Bu demektir ki bir networkte Dynamic Routing Protokolü çalışsa bile öncelik statik olarak yazılan rotadadır.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Static Route Yazımı:&lt;/strong&gt;&#xA;Statik rota yazmak oldukça kolaydır. Aşağıda 2 farklı yazımı görebilirsiniz. İkisi de kullanılabilir.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Router(config)#ipv6 route 2001:3::/64 2001:2::2&#xA;Router(config)#ipv6 route 2001:3::/64 gi0/1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Bunun anlamı; &lt;em&gt;&lt;strong&gt;2001:3::/64&lt;/strong&gt;&lt;/em&gt; networküne gitmek için &lt;em&gt;&lt;strong&gt;2001:2::2&lt;/strong&gt;&lt;/em&gt; yolunu kullan.&#xA;veya yine &lt;em&gt;&lt;strong&gt;2001:3::/64&lt;/strong&gt;&lt;/em&gt; networküne gitmek için &lt;em&gt;&lt;strong&gt;gi0/1&lt;/strong&gt;&lt;/em&gt; interfacesini kullan.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Cisco Router Parola Sıfırlama</title>
-      <link>http://localhost:1313/posts/ciscorouterpasswordrocovery/cisco-router-parola-sifirlama/</link>
-      <pubDate>Sun, 09 Jun 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/ciscorouterpasswordrocovery/cisco-router-parola-sifirlama/</guid>
-      <description>&lt;p&gt;Cisco Router ve Switch&amp;rsquo;lerde unutulan parolayı cihazı fabrika ayarlarına döndürmeden nasıl sıfırlayabiliriz?&#xA;Cisco cihazlarda unutulan parolayı, konfigürasyonu bozmadan sıfırlamak mümkün. Bu işlem birkaç adımda yapılır.&#xA;Ben bu uygulamayı elimde bulunan Cisco 800 Serisi bir Router&amp;rsquo;da adım adım uygulayacağım.&#xA;Cihaz şekilde görüldüğü gibidir.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/CiscoRouterPasswordRocovery/1.jpg&#34; alt=&#34;router&#34;&gt;&#xA;CiscoRouterPasswordRocovery&lt;/p&gt;&#xA;&lt;p&gt;İlk olarak Console Portundan cihaza bağlanıyorum.&lt;/p&gt;&#xA;&lt;p&gt;Cihaz&amp;rsquo;a güç verdikten hemen sonra, cihaz açılış aşamasındayken &amp;ldquo;&lt;code&gt;CTRL+BREAK&lt;/code&gt;&amp;rdquo; tuşlarına basarak &amp;ldquo;&lt;code&gt;Rommon&lt;/code&gt;&amp;rdquo; moduna geçiyorum.&lt;/p&gt;&#xA;&lt;p&gt;Her terminal programında farklılık gösterebilir. Örneğin ben minicom kullanıyorum ve açılırken &amp;ldquo;&lt;code&gt;CTRL + A + F&lt;/code&gt;&amp;rdquo; tuş kombinasyonlarını kullanarak &amp;ldquo;&lt;code&gt;BREAK&lt;/code&gt;&amp;rdquo; sinyali gönderebiliyorum.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>GRE Tunnel</title>
-      <link>http://localhost:1313/posts/gretunnel/gre-tunnel/</link>
-      <pubDate>Fri, 07 Jun 2024 17:53:48 +0100</pubDate>
-      <guid>http://localhost:1313/posts/gretunnel/gre-tunnel/</guid>
-      <description>&lt;p&gt;GRE(Generic Routing Encapsulation) Protokolü, paketin kaynaktan hedefe, oluşturulan tünel sayesinde iletilmesini sağlayan protokoldür.&#xA;GRE, Cisco tarafından geliştirilmiştir.&#xA;GRE kullanarak birden fazla şubesi olan networkler birleştirilebilir.&#xA;Fakat oluşturulan tünelden iletilen paketler okunabilir şekilde iletilir. Yani araya girip trafik dinlenirse, paketler okunabilir. Bu tünel daha sonra güvenli hale de getirilebilir.&#xA;GRE, IP paketini kapsüle ederek yönlendirme yapar.&#xA;Enkapsülasyon yapılırken IP başlığına(20), 4 Byte GRE başlık bilgisi eklenir.&lt;/p&gt;&#xA;&lt;p&gt;Aşağıdaki GRE Lab Topolojisini uygulayacağım.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>IPv6 Geçiş Çalışmaları İkili Yığın Yöntemi</title>
-      <link>http://localhost:1313/posts/ikiliyiginyontemi/ikili-yigin-yontemi/</link>
-      <pubDate>Thu, 06 Jun 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/ikiliyiginyontemi/ikili-yigin-yontemi/</guid>
-      <description>&lt;p&gt;Bu yöntem, IPv4&amp;rsquo;den IPv6&amp;rsquo;ya geçiş yöntemlerinden biri olan tünelleme tekniğidir. Bu yöntemde, cihazların hem IPv4 hem de IPv6 adreslerini birlikte kullanması yöntemidir.&#xA;Yani IPv4 ile gelen cihaz IPv4, IPv6 ile gelen cihaz IPv6 ile haberleşir.&lt;/p&gt;&#xA;&lt;p&gt;Uygulamada daha net anlaşılacaktır.&lt;/p&gt;&#xA;&lt;p&gt;Aşağıdaki topolojiyi uygulayacağım.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/IkiliYiginYontemi/1.png&#34; alt=&#34;ipv6&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Yapılacaklar:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Router ve VPC&amp;rsquo;lerin Interface&amp;rsquo;lerine IPv4 ve IPv6 adreslerini tanımla,&lt;/li&gt;&#xA;&lt;li&gt;Networklerin birbirleriyle haberleşmesi için statik rotalar yaz,&lt;/li&gt;&#xA;&lt;li&gt;Test et.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;strong&gt;1. Router ve VPC&amp;rsquo;lerin Interface&amp;rsquo;lerine IPv4 ve IPv6 adreslerini tanımla,&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>DHCPv6</title>
-      <link>http://localhost:1313/posts/dhcpv6/dhcpv6/</link>
-      <pubDate>Fri, 31 May 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/dhcpv6/dhcpv6/</guid>
-      <description>&lt;p&gt;DHCP(Dynamic Host Configuration Protocol), bir networkteki bir cihaza IP, DNS, Default Gateway parametrelerini dağıtan servistir. Yani networkteki bir cihazın başka bir cihaz ile konuşmasını sağlayacak parametlereleri dağıtan servistir.&#xA;DHCPv6, DHCPv4&amp;rsquo;den bazı özellikleriyle ayrılıyor. DHCPv6 2 şekilde yapılandırılabilir.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Stateful(Durumlu) DHCPv6,&lt;/li&gt;&#xA;&lt;li&gt;Stateless SLAAC (Durumsuz) DHCPv6&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Stateful DHCPv6 tıpkı DHCPv4 gibi, bir DHCP server üzerinden parametreleri dağıtmaktır.&lt;/p&gt;&#xA;&lt;p&gt;Stateless SLAAC DHCPv6 da ise herhangi bir DHCP server olmaksızın cihazların Router üzerinden IPv6 parametrelerini alıp otomatik olarak kendini yapılandırmasıdır.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>IPv4 IPv6 Tünelleme</title>
-      <link>http://localhost:1313/posts/ipv4ipv6tunelleme/ipv4-ipv6-tunelleme/</link>
-      <pubDate>Fri, 31 May 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/ipv4ipv6tunelleme/ipv4-ipv6-tunelleme/</guid>
-      <description>&lt;p&gt;Bu yöntem, IPv4&amp;rsquo;den IPv6&amp;rsquo;ya geçiş yöntemlerinden biri olan tünelleme tekniğidir. Bu yöntemde, IPv6 networkleri IPv4 üzerinden tünellenerek birbirleriyle haberleşirler. IPv4-IPv6 geçiş aşamalarında kullanılabilecek bu yöntemin yanı sıra Dual Stack, Translation yöntemleri de vardır.&lt;/p&gt;&#xA;&lt;p&gt;IPv4-IPv6 Tünelleme tekniği için aşağıdaki topolojiyi uygulayacağım.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/Ipv4Ipv6Tunelleme/1.png&#34; alt=&#34;ipv6&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Yapılacaklar:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Interfacelere IP ver.&lt;/li&gt;&#xA;&lt;li&gt;Sırasıyla tunnel oluştur.&lt;/li&gt;&#xA;&lt;li&gt;Statik route yazarak networkleri haberleştir.&lt;/li&gt;&#xA;&lt;li&gt;Test&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;strong&gt;1. Interfacelere IP ver.&lt;/strong&gt;&#xA;&lt;strong&gt;R1:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;R1#configure terminal &#xA;R1(config)#int e0/0&#xA;R1(config-if)#ip addr 192.168.3.2 255.255.255.0&#xA;R1(config-if)#no sh&#xA;R1(config-if)#int e0/1&#xA;R1(config-if)#ip addr 192.168.1.1 255.255.255.0&#xA;R1(config-if)#no sh&#xA;R1(config-if)#int loopback 0&#xA;R1(config-if)#ipv6 addr 2001:1::1/64&#xA;R1(config-if)#no sh&#xA;R1(config-if)#exit&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R2:&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Port Security</title>
-      <link>http://localhost:1313/posts/portsecurity/port-security/</link>
-      <pubDate>Sun, 21 Apr 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/portsecurity/port-security/</guid>
-      <description>&lt;p&gt;Port Security, yetkisiz cihazların networke erişimini engellemek için kullanılır. Layer 2 seviyesinde uygulanır. Switch portlarına bağlanabilecek cihazların MAC adresleri bazında güvenliği sağlanır. Port Security uygulanacak switch portu ya access ya da trunk olamalıdır. Cihaz&amp;rsquo;a default olarak geldiği gibi Port Security yapılmaz, hata verir.&#xA;Konfigürasyon interface altında yapılır.&lt;/p&gt;&#xA;&lt;p&gt;Switch&amp;rsquo;de boşta bulunan portları kapatmak güvenliğin ilk adımıdır.&lt;/p&gt;&#xA;&lt;p&gt;3 Yöntem vardır;&#xA;&lt;strong&gt;1- MAC Adresi Manuel Belirlenebilir.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;switchport port-security mac-address 0000.1111.2222.3333&#xA;switchport port-security maximum 2       (Max. 2 MAC Adresine izin verir.)&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;2- MAC Adresi Dinamik Olarak Öğrenilebiliyor.&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>PPP Multilink Konfigürasyonu</title>
-      <link>http://localhost:1313/posts/pppmultilink/ppp-multilink/</link>
-      <pubDate>Sun, 14 Apr 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/pppmultilink/ppp-multilink/</guid>
-      <description>&lt;p&gt;PPP Multilink, routerlar arasındaki birden fazla fiziksel bağlantıyı tek bir mantıksal bağlantı yapmak amacıyla kullanılır.&#xA;Bazı özellikleri:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Yük Dengeleme,&lt;/li&gt;&#xA;&lt;li&gt;Bant Genişliğinin Artırılması,&lt;/li&gt;&#xA;&lt;li&gt;Verimlilik,&lt;/li&gt;&#xA;&lt;li&gt;Yedeklilik.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Multilink PPP LAB:&lt;/strong&gt;&#xA;Aşağıdaki basit yapıyı konfigüre edeceğim.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ppp-multilink/1.png&#34; alt=&#34;ppp&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Bu yapıda serial 4 kablo ile bağlanmış iki router var. R1 ile başlayalım.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;R1:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;R1#conf t&#xA;R1(config)#interface multilink 1&#xA;R1(config-if)#ip addr 10.0.0.1 255.255.255.0&#xA;R1(config-if)#no sh&#xA;R1(config-if)#ppp multilink&#xA;R1(config-if)#ppp multilink group 1&#xA;R1(config-if)#exit&#xA;&#xA;R1(config)#int ser0/0&#xA;R1(config-if)#encapsulation ppp&#xA;R1(config-if)#ppp multilink &#xA;R1(config-if)#ppp multilink group 1  &#xA;R1(config-if)#no sh&#xA;&#xA;R1(config-if)#int ser0/1&#xA;R1(config-if)#encapsulation ppp&#xA;R1(config-if)#ppp multilink&#xA;R1(config-if)#ppp multilink group 1&#xA;R1(config-if)#no sh&#xA;&#xA;R1(config-if)#int ser0/2&#xA;R1(config-if)#encapsulation ppp&#xA;R1(config-if)#ppp multilink&#xA;R1(config-if)#ppp multilink group 1&#xA;R1(config-if)#no sh&#xA;&#xA;R1(config-if)#int ser0/3&#xA;R1(config-if)#encapsulation ppp&#xA;R1(config-if)#ppp multilink&#xA;R1(config-if)#ppp multilink group 1&#xA;R1(config-if)#no sh&#xA;R1(config-if)#exit&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R2:&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>OSPF LAB</title>
-      <link>http://localhost:1313/posts/ospflab/ospf-lab/</link>
-      <pubDate>Sun, 07 Apr 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/ospflab/ospf-lab/</guid>
-      <description>&lt;p&gt;Bu Lab’daki amacım OSPF’in genel bir tekrarını yapmak olacak. Komutları uzun uzun yazıyor olacağım.&lt;/p&gt;&#xA;&lt;p&gt;Aşağıdaki topolojiyi uygulayacağım.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/OSPFLAB/1.png&#34; alt=&#34;ospf&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Bu Lab&amp;rsquo;da istenilenler topolojinin sol üst köşesinde yazıyor.&lt;/p&gt;&#xA;&lt;p&gt;Buna göre;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;1- İlk olarak router interfacelerine ve VPC&amp;rsquo;lere sırasıyla IP&amp;rsquo;lerini vererek başlıyorum.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;R1:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;R1#configure terminal &#xA;R1(config)#int e0/0&#xA;R1(config-if)#ip addr 10.0.1.1 255.255.255.0&#xA;R1(config-if)#no sh&#xA;R1(config-if)#int e0/1&#xA;R1(config-if)#ip address 10.0.3.1 255.255.255.0&#xA;R1(config-if)#no sh&#xA;R1(config-if)#int e0/2&#xA;R1(config-if)#ip addr 10.0.4.1 255.255.255.0&#xA;R1(config-if)#no sh&#xA;R1(config-if)#int e0/3&#xA;R1(config-if)#ip addr 10.0.2.1 255.255.255.0&#xA;R1(config-if)#no sh&#xA;R1(config-if)#int e1/0&#xA;R1(config-if)#ip addr 10.0.0.1 255.255.255.0&#xA;R1(config-if)#no sh&#xA;R1(config-if)#exit&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R2:&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>OSPF Authentication</title>
-      <link>http://localhost:1313/posts/ospfauthentication/ospf-authentication/</link>
-      <pubDate>Sun, 31 Mar 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/ospfauthentication/ospf-authentication/</guid>
-      <description>&lt;p&gt;OSPF Authentication, OSPF network trafiğinin güvenliğini artırmak amacıyla kullanılır.&#xA;3 Çeşit doğrulama yöntemi vardır;&lt;/p&gt;&#xA;&lt;p&gt;1- Plain Text Authentication,&lt;/p&gt;&#xA;&lt;p&gt;2- MD5 Authentication,&lt;/p&gt;&#xA;&lt;p&gt;3- SHA-HMAC Authentication (IOS 15.4 ve sonrası versiyonlar için)&lt;/p&gt;&#xA;&lt;p&gt;Aşağıdaki topolojiyi uygulayacağız.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ospf-authentication/1.png&#34; alt=&#34;ospf&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Bu topolojide 3 Authentication metodunu da uygulayacağız.&lt;/p&gt;&#xA;&lt;p&gt;R1 ve R3 arasında Plain Text Authentication (Area 1),&lt;/p&gt;&#xA;&lt;p&gt;R1 ve R2 arasında MD5 Authentication (Area 0),&lt;/p&gt;&#xA;&lt;p&gt;R2 ve R4 arasında SHA-HMAC Authentication yapacağız. (Area 2)&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;1- Interfacelere IP vererek başlayalım:&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>OSPF Konfigürasyonu</title>
-      <link>http://localhost:1313/posts/ospfconfiguration/ospf-configuration/</link>
-      <pubDate>Sun, 31 Mar 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/ospfconfiguration/ospf-configuration/</guid>
-      <description>&lt;p&gt;OSPF (Open Short Path First), dinamik bir yönlendirme protokolüdür. OSPF bir Link State Routing protokolüdür. Bundan dolayı network haritasının tamamına hakimdir Bazı özellikleri şöyledir:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Açık kaynaklıdır,&lt;/li&gt;&#xA;&lt;li&gt;SPF(Shortest Path First) algoritmasını kullanır,&lt;/li&gt;&#xA;&lt;li&gt;Classless (Sınıfsız) bir protokoldür,&lt;/li&gt;&#xA;&lt;li&gt;CIDR (Classless Inter-Domain Routing), VLSM(Veriable Length Subnet Masking) destekler,&lt;/li&gt;&#xA;&lt;li&gt;Load balancing destekler,&lt;/li&gt;&#xA;&lt;li&gt;Güncelleme süresi hızlıdır,&lt;/li&gt;&#xA;&lt;li&gt;Administrative Distance değeri 110&amp;rsquo;dur,&lt;/li&gt;&#xA;&lt;li&gt;Area yapısı ile ölçeklenebilir,&lt;/li&gt;&#xA;&lt;li&gt;Kimlik doğrulamayı destekler (MD5)&lt;/li&gt;&#xA;&lt;li&gt;Metrik değeri olarak Cost kullanır.&lt;/li&gt;&#xA;&lt;li&gt;Multicast 224.0.0.5 ve 224.0.0.6 adreslerinden yayın yapar.&lt;/li&gt;&#xA;&lt;li&gt;89 portunu kullanır.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;OSPF Paket Tipleri:&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>EtherChannel</title>
-      <link>http://localhost:1313/posts/etherchannel/etherchannel/</link>
-      <pubDate>Fri, 22 Mar 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/etherchannel/etherchannel/</guid>
-      <description>&lt;p&gt;EtherChannel Protokolü switchlerin birden fazla fiziksel portunu tek bir mantıksal port yapan protokoldür. Yapılmasının amacı şudur örneğin iki switch arasına 4 kablo çekip bırakırsak Stp (Spanning Tree Protocol) devreye girecek ve bu portlardan bazılarını kapatacaktır loop&amp;rsquo;u engellemek için. Eğer EtherChannel yaparsak bu portlar tek bir mantıksal port gibi görünecektir ve STP&amp;rsquo;ye gerek kalmayacaktır. Konfigüre etmek için karşılıklı portların yapısı aynı olmalıdır. Örneğin bir taraf GigabitEthernet diğeri FastEthernet olamaz.&#xA;3 EtherChannel Protokolü vardır:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Static Routing</title>
-      <link>http://localhost:1313/posts/staticrouting/static-routing/</link>
-      <pubDate>Mon, 18 Mar 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/staticrouting/static-routing/</guid>
-      <description>&lt;p&gt;Static Routing, yönlendirme tablosuna manuel olarak route eklenmesidir.&#xA;Topoloji değişikliklerinde networklerin de yine güncellenmesi manuel olarak yapılmalıdır.&#xA;Administrative Distance değeri 1&amp;rsquo;dir&lt;/p&gt;&#xA;&lt;p&gt;Aşağıdaki topolojiyi uygulayacağız.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/StaticRouting/2.png&#34; alt=&#34;UTP&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Bu topolojide tüm cihazların birbirleriyle iletişim kurmasını istiyoruz. Başlayalım&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;1-&lt;/strong&gt; Router interfacelerine ve VPC&amp;rsquo;lere IP&amp;rsquo;lerini verelim.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;R1:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;R1#enable &#xA;R1#conf t     &#xA;R1(config)#int e0/0&#xA;R1(config-if)#ip add 192.168.1.1 255.255.255.0&#xA;R1(config-if)#no sh&#xA;R1(config-if)#int s1/0&#xA;R1(config-if)#ip address 2.2.2.2 255.255.255.0&#xA;R1(config-if)#no sh&#xA;R1(config-if)#int s1/1&#xA;R1(config-if)#ip addr 3.3.3.2 255.255.255.0&#xA;R1(config-if)#no sh&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R2:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;R2#enable&#xA;R2#conf t&#xA;R2(config)#int e0/0&#xA;R2(config-if)#ip add 192.168.2.1 255.255.255.0&#xA;R2(config-if)#no sh&#xA;R2(config-if)#int s1/0&#xA;R2(config-if)#ip add 2.2.2.1 255.255.255.0&#xA;R2(config-if)#no sh&#xA;R2(config-if)#int s1/1&#xA;R2(config-if)#ip add 1.1.1.1 255.255.255.0&#xA;R2(config-if)#no sh&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R3:&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>CDP LLDP Protokolleri</title>
-      <link>http://localhost:1313/posts/cdp-lldp/cdp-lldp/</link>
-      <pubDate>Thu, 08 Feb 2024 23:39:19 +0100</pubDate>
-      <guid>http://localhost:1313/posts/cdp-lldp/cdp-lldp/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;A-CDP Protokolü:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;CDP (Cisco Discovery Protocol), Cisco cihazlara özel cihaz keşif protokolüdür.&lt;/li&gt;&#xA;&lt;li&gt;Layer 2 seviyesinde çalışır.&lt;/li&gt;&#xA;&lt;li&gt;Cihaz türü, IP adresi, yazılım sürümü, işletim sistemi gibi bilgileri elde etmemizi sağlar.&lt;/li&gt;&#xA;&lt;li&gt;Varsayılan olarak açık gelir. İstenirse port bazında açabilir veya kapatabiliriz.&lt;/li&gt;&#xA;&lt;li&gt;Networkü tanımak için kullanılır fakat her zaman için iyi olmayabilir.&lt;/li&gt;&#xA;&lt;li&gt;60 saniyede bir CDP mesajı yollanır, 180 saniye tabloda tutulur.&lt;/li&gt;&#xA;&lt;li&gt;Multicast yayın yapar.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;CDP Cihaz keşfi komutları:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;R1#show cdp neighbors &#xA;R1#show cdp neighbors detail&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;CDP Kapatmak için:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>EIGRP Authentication</title>
-      <link>http://localhost:1313/posts/eigrpauthentication/eigrp-authentication/</link>
-      <pubDate>Wed, 07 Feb 2024 23:44:36 +0100</pubDate>
-      <guid>http://localhost:1313/posts/eigrpauthentication/eigrp-authentication/</guid>
-      <description>&lt;p&gt;EIGRP Cisco tarafından geliştirilen, daha sonra kaynak kodları açılan bir dinamik yönlendirme protokolüdür. Kimlik doğrulama yapılmasının amacı networkte bir şekilde bulunan yetkisiz routerların, yetkili olan routerların routing tablosunu bozmasını engellemektir. Trafiği şifrelemez. Sadece kimlik doğrulama yapar. Authentication 2 aşamada yapılır.&lt;/p&gt;&#xA;&lt;p&gt;Aşağıdaki topolojiyi uygulayacağız.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/EIGRPAuthentication/2.png&#34; alt=&#34;eigrp&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Burada 3 Router&amp;rsquo;ımız var, hali hazırda EIGRP konfigürasyonu yapılmış, networkler birbirlerini tanıyorlar. Bu topolojide, kötü niyetli biri routerlardan birine bir kablo takarsa rahatlıkla network duyuruları yapabilir, routing tablolarını şişirebilir, networkü kullanılmaz hale getirebilir. Kimlik doğrulamayı etkinleştirdiğimizde ise, kötü niyetli kişi artık bunları yapamaz.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Cisco IOS SSH Konfigürasyonu</title>
-      <link>http://localhost:1313/posts/ciscossh/cisco-ssh/</link>
-      <pubDate>Wed, 07 Feb 2024 23:41:02 +0100</pubDate>
-      <guid>http://localhost:1313/posts/ciscossh/cisco-ssh/</guid>
-      <description>&lt;p&gt;SSH uzak bir cihaza bağlanmak için kullanılan kriptolu ve güvenli bir protokoldür. Defaultta 22 TCP portunu kullanır. Şimdi bir Cisco Router&amp;rsquo;a nasıl SSH konfigürasyonu yapılır bakalım.&#xA;SSH konfigürasyonu birkaç adımdan oluşur.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;A-ROUTER:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;1:&lt;/strong&gt; Hostname ver,&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vIOS-01&amp;gt;enable&#xA;vIOS-01#configure terminal&#xA;vIOS-01(config)#hostname R1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;2:&lt;/strong&gt;* Bir domain-name tanımla,&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;R1(config)#ip domain-name ssnrshnn.local&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;3:&lt;/strong&gt; Bir kullanıcı ve parola tanımla,&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;R1(config)#username suleyman privilege 15 secret seba&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;4:&lt;/strong&gt; Bir key oluştur,&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;R1(config)#crypto key generate rsa general-keys modules 1024&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;5:&lt;/strong&gt; vty moda geçiş yapıyoruz,&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>EIGRP Protokolü</title>
-      <link>http://localhost:1313/posts/eigrp/eigrp/</link>
-      <pubDate>Sun, 21 Jan 2024 23:44:58 +0100</pubDate>
-      <guid>http://localhost:1313/posts/eigrp/eigrp/</guid>
-      <description>&lt;p&gt;EIGRP (Enchanced Interior Gateway Routing Protocol), Cisco tarafından geliştirilen bir dinamik yönlendirme protokolüdür. Daha sonradan diğer firmaların kullanımına sunulmuştur. RFC7868de tanımlanmıştır. Hem Distance Vector hem de Link State protokol özelliklerini aldığı için Hybrid Protokol olarak da geçer. Bazı özellikleri şöyledir:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Max 224 hop destekler,&lt;/li&gt;&#xA;&lt;li&gt;VLSM destekler, yani subnetting destekler,&lt;/li&gt;&#xA;&lt;li&gt;Hem Unicast hem de Multicast çalışır 224.0.0.10,&lt;/li&gt;&#xA;&lt;li&gt;Bir ana rota (Succesor), bir de yedek rota (Feasible Succesor) belirlenir,&lt;/li&gt;&#xA;&lt;li&gt;Hızlı yakınsama sağlar, alternatif rotalar arasında geçiş hızlıdır,&lt;/li&gt;&#xA;&lt;li&gt;Administrative Distance değeri 90&amp;rsquo;dır,&lt;/li&gt;&#xA;&lt;li&gt;Yönlendirme tablosunda değişiklik olduğunda tüm tabloyu değil sadece değişiklik olan kısmı diğer Router&amp;rsquo;lara gönderir,&lt;/li&gt;&#xA;&lt;li&gt;5 Saniyede bir &amp;ldquo;Hello&amp;rdquo; paketi gönderir, 15 saniye &amp;ldquo;Acknowledgement&amp;rdquo; paketiyle cevap gelmezse komşuluk düşer,&lt;/li&gt;&#xA;&lt;li&gt;EIGRP Paketleri:&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Hello: Routerlar kendi aralarında 5 saniyede bir ayakta olduklarını duyurmak için kullandıkları pakettir.&lt;/li&gt;&#xA;&lt;li&gt;Acknowledgement: Yapılan komşulukların onaylanmasında kullanılan pakettir.&lt;/li&gt;&#xA;&lt;li&gt;Update: Ağ topolojisindeki değişiklikler bu paketle duyurulur.&lt;/li&gt;&#xA;&lt;li&gt;Query: Yönlendirme bilgisine gerek duyan Router&amp;rsquo;lara gönderilir.&lt;/li&gt;&#xA;&lt;li&gt;Reply: Query paketlerine cevaben gönderilen pakettir.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Bu paketlerin iletiminde RTP(Reliable Transport Protocol) kullanılır,&lt;/li&gt;&#xA;&lt;li&gt;Metrik hesaplamada;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;K1= Bant Genişliği (Bandwidth),&lt;/li&gt;&#xA;&lt;li&gt;K2= Yük (Load),&lt;/li&gt;&#xA;&lt;li&gt;K3= Gecikme (Delay),&lt;/li&gt;&#xA;&lt;li&gt;K4= Güvenilirlik (Reliability),&lt;/li&gt;&#xA;&lt;li&gt;K5= MTU,&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Defaultta Bant Genişliği(Bandwidth) ve Gecikme(Delay) parametlereleri kullanlılarak metrik hesaplanır. Metrik = (Bandwidth + Delay) * 256&lt;/li&gt;&#xA;&lt;li&gt;Metrik değerleri aynı olmayan cihazlar komşuluk kuramaz,&lt;/li&gt;&#xA;&lt;li&gt;EIGRP Network duyurularında aşağıdaki farklı kullanım şekilleri sunulmuştur. 3&amp;rsquo;ü de kullanılabilir.&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;R1(config-router)# network 192.168.1.0 0.0.0.255        # atası budur&#xA;R1(config-router)# network 192.168.1.0 255.255.255.0    # yeni cihazlar tanıyabiliyor&#xA;R1(config-router)# network 192.168.1.5 0.0.0.0          # ilgili interface duyurulur&#xA;R1(config-router)# network 192.168.1.0&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;UYGULAMA:&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>DHCP Relay Agent</title>
-      <link>http://localhost:1313/posts/dhcprelayagent/dhcp-relay-agent/</link>
-      <pubDate>Sun, 14 Jan 2024 23:43:35 +0100</pubDate>
-      <guid>http://localhost:1313/posts/dhcprelayagent/dhcp-relay-agent/</guid>
-      <description>&lt;p&gt;DHCP, cihazlara IP, DNS, Default Gateway dağıtan protokoldür. Bu protokol client-server mantığıyla çalışır. İstemci talep eder ve server hizmet verir. UDP çalışır ve 4 aşamada işlem tamamlanır.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/DHCPRelayAgent/8.png&#34; alt=&#34;dhcp&#34;&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Client, DHCP Discover paketini networke gönderir. Bunun anlamı &amp;ldquo;Bana IP verecek bir DHCP Server var mı?&amp;rdquo;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Server, DHCP Offer paketiyle karşılık verir ve der ki &amp;ldquo;Evet ben verebilirim&amp;rdquo;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Client, DHCP Request paketiyle IP adresi talep eder.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Server, DHCP Ack paketiyle ile cihaza IP adresi ataması yapar.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>HSRP Protokolü</title>
-      <link>http://localhost:1313/posts/hsrp/hsrp/</link>
-      <pubDate>Sun, 07 Jan 2024 23:45:22 +0100</pubDate>
-      <guid>http://localhost:1313/posts/hsrp/hsrp/</guid>
-      <description>&lt;p&gt;HSRP (Hot Standby Router Protocol), router yedekliliğini sağlamak amacıyla Cisco tarafından geliştirilmiş bir protokoldür. Birden fazla Router bulunan networklerde aktif olarak belirtilen Router&amp;rsquo;ın çalışmaması durumunda yedek olarak bekleyen Router&amp;rsquo;ın devreye girmesi prensibiyle çalışır. Bunun için sanal bir ortak IP adresi oluşturulur ve PC&amp;rsquo;lere Gateway olarak bu IP adresi verilir. Bu IP adresine giden paketler de aktif olan Router&amp;rsquo;a yönlendirilir. Bu sayede iletişim sağlanır.&lt;/p&gt;&#xA;&lt;p&gt;Router&amp;rsquo;lar birbirlerine 3 saniyede bir aktif olup olmadıklarını öğrendikleri Hello paketi yollarlar. Eğer aktif Router&amp;rsquo;dan 10 saniye cevap gelmezse yedek Router devreye girer, paketler o Router üzerinden iletilir. Bu değerler isteğe bağlı değiştirilebilir.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>DHCP Snooping</title>
-      <link>http://localhost:1313/posts/dhcpsnooping/dhcp-snooping/</link>
-      <pubDate>Sun, 31 Dec 2023 23:44:03 +0100</pubDate>
-      <guid>http://localhost:1313/posts/dhcpsnooping/dhcp-snooping/</guid>
-      <description>&lt;p&gt;DHCP(Dynamic Host Configuration Protocol), ağdaki cihazlarımıza otomatik olarak IP, DNS, Default Gateway bilgilerini dağıtan servistir. Ağa yeni bir cihaz katıldığında, kablo takılır takılmaz IP almak için Broadcast yayın yapar. Eğer ortamda DHCP servisi varsa o da karşılık verir. Toplam 4 aşamada IP alma işlemi tamamlanır.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/DHCPSnooping/8.png&#34; alt=&#34;dhcp&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Bu paketler Broadcast paketler olduğu için ağdaki herkese ulaşır bu da her zaman için iyi olmayabilir. Örneğin bir network yapısında iki DHCP server aynı anda çalışabilir. Biri istenmeyen, kötü niyetli de olabilir ve cihaza istediği IP, DNS, Default Gateway bilgisi dağıtarak, trafiği istenmeyen şekilde etkileyebilir. DHCP Snooping&amp;rsquo;i aktif hale getirmek gerekir.&#xA;DHCP Server&amp;rsquo;ın kim ve switch&amp;rsquo;in hangi portundan bağlı olduğunu bildiğimiz için, switch&amp;rsquo;e bunu öğretebiliriz ve bu sayede bu kötü senaryonun önüne geçmiş oluruz.&#xA;DHCP Snooping&amp;rsquo;in yaptığı ise belirli bir port veya portlar üzerinden DHCP trafiğine izin verir geri kalanını engeller.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>VTP Protokolü</title>
-      <link>http://localhost:1313/posts/vtp/vtp/</link>
-      <pubDate>Sun, 24 Dec 2023 23:46:15 +0100</pubDate>
-      <guid>http://localhost:1313/posts/vtp/vtp/</guid>
-      <description>&lt;p&gt;VTP (Vlan Trunking Protokol), çok sayıda switch bulunan networklerde yönetimi kolaylaştırmak için kullanılan bir protokoldür. Server-Client mantığıyla çalışır ve Cisco tarafından geliştirilmiştir. Bu protokolün amacı çok fazla switch bulunan networklerde tek tek vlanları ilgili switchlere tanımlamaktansa merkezi bir yerden vlanları dağıtmayı sağlar. Bu vlanlar trunk portlar üzerinden dağıtılır. Senkron çalışır yani merkezde bir vlan oluşturulduğunda veya silindiğinde bu değişiklik ilgili switchlere de dağıtılır. Vlanları dağıtılması işlemi için cihazların VTP etki alanında olması gerekir. Bunun için bir Domain ve Password&amp;rsquo;e ihtiyaç duyulur.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>RIP Protokolü</title>
-      <link>http://localhost:1313/posts/rip/rip/</link>
-      <pubDate>Sun, 17 Dec 2023 23:45:55 +0100</pubDate>
-      <guid>http://localhost:1313/posts/rip/rip/</guid>
-      <description>&lt;ul&gt;&#xA;&lt;li&gt;RIP(Router Information Protokol), bir dinamik yönlendirme protokolüdür.&lt;/li&gt;&#xA;&lt;li&gt;Basit ve kolay öğrenilebilen bir protokoldür.&lt;/li&gt;&#xA;&lt;li&gt;RIPv1 ve RIPv2 versiyonları vardır. RFC1058&amp;rsquo;de tanımlanmıştır.&lt;/li&gt;&#xA;&lt;li&gt;RIP Protokolü, yönlendirme tablosunu 30 saniyede bir günceller daha sonra üzerindeki aktif arayüzlere iletir.&lt;/li&gt;&#xA;&lt;li&gt;Administrative Distance değeri 120&amp;rsquo;dir.&lt;/li&gt;&#xA;&lt;li&gt;RIP protokolü en fazla 15 Hop Count&amp;rsquo;a  izin verir.&lt;/li&gt;&#xA;&lt;li&gt;En iyi rotanın bulunmasında hop sayısına bakılarak paket iletilir.&lt;/li&gt;&#xA;&lt;li&gt;RIPv1 broadcast yayın yapar, subnet bilgisini routing tablosunu güncellediğinde göndermez, kimlik doğrulama yapmaz.&lt;/li&gt;&#xA;&lt;li&gt;RIPv2 Multicast(224.0.0.9) yayın yapar, subnet bilgisini gönderir, kimlik doğrulama desteği vardır.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;RIPv2 Konfigürasyonu:&lt;/strong&gt;&#xA;Aşağıdaki örnek topolojiyi uygulayalım.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Network on ittechnetworkk</title><link>https://ittechnetworkk.github.io/categories/network/</link><description>Recent content in Network on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sat, 19 Jul 2025 14:50:44 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/categories/network/index.xml" rel="self" type="application/rss+xml"/><item><title>Cisco Device Syslog Integration with Wazuh SIEM</title><link>https://ittechnetworkk.github.io/posts/ciscowazuhintegration/cisco-wazuh-integration/</link><pubDate>Sat, 19 Jul 2025 14:50:44 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/ciscowazuhintegration/cisco-wazuh-integration/</guid><description>&lt;p>Hi everyone, in this article I will guide you through how to integrate Cisco devices (switches and routers) with the Wazuh SIEM tool for centralized logging and monitoring.&lt;/p>
+&lt;p>The integration will be done in the following steps:&lt;/p>
+&lt;h2 id="cisco-switch-configuration">&lt;strong>Cisco switch configuration:&lt;/strong>&lt;/h2>
+&lt;pre tabindex="0">&lt;code># VLAN Configuration for Switch
+Switch&amp;gt;enable
+Switch#configure terminal
+Switch(config)#interface vlan1
+Switch(config-if)#ip address 10.1.5.100 255.255.255.0
+Switch(config-if)#no shutdown
+Switch(config-if)#exit
+
+# Default Gateway Configuration
+Switch(config)#ip default-gateway 10.1.5.1
+
+# Syslog Configuration
+Switch(config)#logging on
+Switch(config)#logging host 10.1.8.10
+Switch(config)#logging facility local1
+Switch(config)#logging source-interface vlan1
+Switch(config)#logging buffered 4096
+Switch(config)#logging trap informational
+
+# Routing Configuration
+Switch(config)# ip route 10.1.8.0 255.255.255.0 10.1.5.1
+
+# Save 
+Switch(config)#end
+Switch#wr
+&lt;/code>&lt;/pre>&lt;h2 id="cisco-router-configuration">&lt;strong>Cisco router configuration:&lt;/strong>&lt;/h2>
+&lt;pre tabindex="0">&lt;code># Interface Configuration for Router
+Router&amp;gt;enable
+Router#configure terminal
+Router(config)#interface e0/0
+Router(config-if)#ip address 10.1.6.100 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#exit
+
+# Default Gateway Configuration
+Router(config)#ip default-gateway 10.1.5.1
+
+# Syslog Configuration
+Router(config)#logging on
+Router(config)#logging host 10.1.8.10
+Router(config)#logging facility local0
+Router(config)#logging source-interface e0/0
+Router(config)#logging buffered 4096
+Router(config)#logging trap informational
+
+# Routing Configuration
+Router(config)# ip route 10.1.8.0 255.255.255.0 10.1.5.1
+
+# Save 
+Router(config)#end
+Router#wr
+&lt;/code>&lt;/pre>&lt;h2 id="wazuh-server-configuration">&lt;strong>Wazuh Server Configuration:&lt;/strong>&lt;/h2>
+&lt;pre tabindex="0">&lt;code>&amp;lt;remote&amp;gt; 
+ &amp;lt;connection&amp;gt;syslog&amp;lt;/connection&amp;gt; 
+ &amp;lt;port&amp;gt;514&amp;lt;/port&amp;gt; 
+ &amp;lt;protocol&amp;gt;udp&amp;lt;/protocol&amp;gt; 
+ &amp;lt;allowed-ips&amp;gt;10.1.5.100&amp;lt;/allowed-ips&amp;gt; # Switch/Router IP
+ &amp;lt;local_ip&amp;gt;10.1.8.10&amp;lt;/local_ip&amp;gt; # Wazuh Server IP
+&amp;lt;/remote&amp;gt;
+&lt;/code>&lt;/pre>&lt;h2 id="alternative-port-configuration">&lt;strong>Alternative Port Configuration:&lt;/strong>&lt;/h2>
+&lt;p>If you want to use a different port (e.g., 1514 for TCP or 10514 for custom UDP), modify the configuration:&lt;/p></description></item><item><title>[EN] Network Time Protocol (NTP)</title><link>https://ittechnetworkk.github.io/posts/ntp/ntp/</link><pubDate>Tue, 13 May 2025 21:23:07 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/ntp/ntp/</guid><description>&lt;p>In modern networks, accurate time synchronization is crucial for tasks such as logging, authentication, and system coordination. Network Time Protocol (NTP) is a widely used protocol that allows devices on a network to synchronize their clocks with a reliable time source. This guide will walk you through the configuration of NTP on Cisco devices, including manual time setup, using a device as an NTP server, authentication, and debugging.&lt;/p>
+&lt;ul>
+&lt;li>UDP Port: 123&lt;/li>
+&lt;li>The closest router to the Atomic Clock is called Stratum 1&lt;/li>
+&lt;li>A device directly connected to an authorized NTP server is considered Stratum 1. Each subsequent device adds one to the stratum level&lt;/li>
+&lt;li>Each hop increases the Stratum value.&lt;/li>
+&lt;li>Maximum supported stratum level is 15&lt;/li>
+&lt;/ul>
+&lt;h2 id="configuring-clock-and-date-manually">&lt;strong>Configuring Clock and Date Manually:&lt;/strong>&lt;/h2>
+&lt;pre tabindex="0">&lt;code>SW-1#clock set 12:00:00 1 AUG 2019
+&lt;/code>&lt;/pre>&lt;h2 id="setting-the-time-zone">&lt;strong>Setting the Time Zone:&lt;/strong>&lt;/h2>
+&lt;pre tabindex="0">&lt;code>SW-1#conf t
+SW-1(config)#clock timezone EST +2
+&lt;/code>&lt;/pre>&lt;h2 id="configuring-daylight-saving-time">&lt;strong>Configuring Daylight Saving Time:&lt;/strong>&lt;/h2>
+&lt;pre tabindex="0">&lt;code>SW-1(config)#clock summer-time CEST recurring last Sun Mar 2:00 last Sun Oct 3:00 
+&lt;/code>&lt;/pre>&lt;h2 id="ntp-server-configuration">&lt;strong>NTP Server Configuration:&lt;/strong>&lt;/h2>
+&lt;pre tabindex="0">&lt;code>SW-1(config)#ip domain-lookup # DNS
+SW-1(config)#ip name-server 1.1.1.1 8.8.8.8 # DNS
+
+SW-1(config)#ntp server 198.111.152.100 #NTP Server
+SW-1(config)#ntp server 0.tr.pool.ntp.org #NTP Server
+SW-1(config)#ntp update-calendar
+&lt;/code>&lt;/pre>&lt;p>If you want to use an external source for NTP information, you can visit &lt;a href="https://www.ntppool.org/en/">this site&lt;/a> to find NTP servers suitable for your location.&lt;/p></description></item><item><title>[EN] Network Address Translation (NAT)</title><link>https://ittechnetworkk.github.io/posts/nat/nat/</link><pubDate>Tue, 13 May 2025 21:08:38 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/nat/nat/</guid><description>&lt;p>Hi everyone,&lt;/p>
+&lt;p>In this article, I will walk you through Network Address Translation (NAT)—what it is, how it works, why we use it, and how to configure it using a lab.&lt;/p>
+&lt;p>NAT (Network Address Translation) is a method used in routers and firewalls that allows private IP addresses within a local network to access the public internet using a single or a few public IP addresses.&lt;/p>
+&lt;p>Since private IP addresses (e.g., 192.168.x.x, 10.x.x.x, 172.16.x.x–172.31.x.x) are not routable on the internet, NAT translates these private IP addresses into a public IP before forwarding traffic. It also translates incoming public traffic back to the appropriate private IP inside the network.&lt;/p></description></item><item><title>[EN] Dynamic Trunking Protocol (DTP)</title><link>https://ittechnetworkk.github.io/posts/dynamictrunkingprotocol/dynamic-trunking-protocol/</link><pubDate>Wed, 02 Apr 2025 22:02:02 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/dynamictrunkingprotocol/dynamic-trunking-protocol/</guid><description>&lt;p>Hi everyone, in this article, I will explain what DTP is and how it works.&lt;/p>
+&lt;p>DTP is a protocol that allows switch ports to be configured automatically.&lt;/p>
+&lt;p>In simple terms, if you change the mode of one port on a switch, the corresponding port on the connected switch will automatically adjust its mode. You can refer to the table below to see the possible mode combinations.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/DynamicTrunkingProtocol/1.png" alt="dtp">&lt;/p>
+&lt;p>For example, if one port of a switch is &lt;em>dynamic auto&lt;/em> and the port to which the other switch is connected is &lt;em>trunk&lt;/em>, the ports will automatically switch to &lt;em>trunk&lt;/em> mode&lt;/p></description></item><item><title>[EN] Junos Dynamic Routing</title><link>https://ittechnetworkk.github.io/posts/juniperdynamicrouting/junos-dynamic-routing/</link><pubDate>Wed, 02 Apr 2025 21:49:12 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/juniperdynamicrouting/junos-dynamic-routing/</guid><description>&lt;p>Hi everyone, in this article I will show you how to configure dynamic routing in Junos.&lt;/p>
+&lt;pre tabindex="0">&lt;code>[edit]
+root# edit protocols ospf area 0 
+
+[edit protocols ospf area 0.0.0.0]
+root# set interface ge-0/0/0 
+&lt;/code>&lt;/pre>&lt;p>OR&lt;/p>
+&lt;pre tabindex="0">&lt;code>[edit]
+root# set protocols ospf area 0.0.0.0 interface ge-0/0/0 
+&lt;/code>&lt;/pre>&lt;p>Control:&lt;/p>
+&lt;pre tabindex="0">&lt;code>root# show |compare 
+[edit]
++ protocols {
++ ospf {
++ area 0.0.0.0 {
++ interface ge-0/0/0.0;
++ }
++ }
++ }
+&lt;/code>&lt;/pre>&lt;p>Thank you for taking the time to read this article. I hope you found it useful.&lt;/p></description></item><item><title>[EN] Junos Static Routing</title><link>https://ittechnetworkk.github.io/posts/juniperstaticrouting/junos-static-routing/</link><pubDate>Wed, 02 Apr 2025 21:46:23 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/juniperstaticrouting/junos-static-routing/</guid><description>&lt;p>In Junos devices static routing configuration will be done in the following way.&lt;/p>
+&lt;p>&lt;strong>Routing Preferences in Junos:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>- Direct/Local 0
+- Static Route 5
+- OSPF Internal 10
+- ISIS Internal L1/L2 15-18
+- RIP 100
+- OSPF External 150
+- ISIS External L1/L2 160/165
+- BGP 170
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>Static Route Configuration:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>[edit] 
+root# edit routing-options 
+
+[edit routing-options]
+root# set static route 10.10.10.0/24 next-hop 9.9.9.1
+&lt;/code>&lt;/pre>&lt;p>OR&lt;/p>
+&lt;pre tabindex="0">&lt;code>[edit]
+root# set routing-options static route 10.10.10.0/24 next-hop 9.9.9.1
+&lt;/code>&lt;/pre>&lt;p>Adding a backup route with different preference value.&lt;/p></description></item><item><title>[EN] Junos User Accounts</title><link>https://ittechnetworkk.github.io/posts/juniper-user-accounts/junos-user-accounts/</link><pubDate>Wed, 02 Apr 2025 21:40:28 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/juniper-user-accounts/junos-user-accounts/</guid><description>&lt;p>In this article I will show you user accounts in Junos.&lt;/p>
+&lt;p>&lt;strong>Login Classes:&lt;/strong>&lt;/p>
+&lt;p>In Junos you can create a login class to assign detailed privileges per class and add user to that class.&lt;/p>
+&lt;p>&lt;strong>Authorization:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>super-user:&lt;/strong> all permissions&lt;/li>
+&lt;li>&lt;strong>operator:&lt;/strong> clear, reset, trace, view&lt;/li>
+&lt;li>&lt;strong>read-only:&lt;/strong> view&lt;/li>
+&lt;li>&lt;strong>unauthorized:&lt;/strong> nothing&lt;/li>
+&lt;/ul>
+&lt;p>Allowed or denied commands can be specified for each class.&lt;/p>
+&lt;p>&lt;strong>User Authentication:&lt;/strong>&lt;/p>
+&lt;p>In Junos you can authenticate users by;&lt;/p>
+&lt;ul>
+&lt;li>Local Database,&lt;/li>
+&lt;li>Radius Server,&lt;/li>
+&lt;li>Tacacs Server.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>User Creating:&lt;/strong>&lt;/p></description></item><item><title>[EN] Junos Initial Configuration</title><link>https://ittechnetworkk.github.io/posts/juniper-initial-configuration/junos-initiate-config/</link><pubDate>Wed, 02 Apr 2025 21:05:37 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/juniper-initial-configuration/junos-initiate-config/</guid><description>&lt;p>Hi everyone, in this article I will cover on how to make initial configuration in Junos.&lt;/p>
+&lt;h2 id="root-password">&lt;strong>Root Password:&lt;/strong>&lt;/h2>
+&lt;pre tabindex="0">&lt;code>root&amp;gt; configure 
+Entering configuration mode
+
+[edit]
+root# set system root-authentication plain-text-password 
+New password:
+Retype new password:
+&lt;/code>&lt;/pre>&lt;h2 id="hostname">&lt;strong>Hostname:&lt;/strong>&lt;/h2>
+&lt;pre tabindex="0">&lt;code>[edit]
+root# set system host-name ssnrshnn 
+&lt;/code>&lt;/pre>&lt;h2 id="system-time">&lt;strong>System Time:&lt;/strong>&lt;/h2>
+&lt;pre tabindex="0">&lt;code>root&amp;gt; set date 202503241608 
+date: connect: Can&amp;#39;t assign requested address
+Mon Mar 24 16:08:00 UTC 2025
+
+root&amp;gt; show system uptime 
+Current time: 2025-03-24 16:08:11 UTC
+Time Source: LOCAL CLOCK 
+System booted: 2025-03-24 15:38:44 UTC (00:30:27 ago)
+Protocols started: 2025-03-24 15:40:23 UTC (00:28:48 ago)
+Last configured: 2025-03-24 14:41:02 UTC (01:28:09 ago) by root
+ 4:09PM up 30 mins, 1 users, load averages: 0.60, 0.66, 0.59
+&lt;/code>&lt;/pre>&lt;h2 id="time-zone">&lt;strong>Time Zone:&lt;/strong>&lt;/h2>
+&lt;pre tabindex="0">&lt;code>[edit] 
+root# set system time-zone Europe/Berlin 
+&lt;/code>&lt;/pre>&lt;h2 id="ntp">&lt;strong>NTP:&lt;/strong>&lt;/h2>
+&lt;pre tabindex="0">&lt;code>[edit] 
+root# set system ntp server 88.88.88.88
+&lt;/code>&lt;/pre>&lt;h2 id="user-creating">&lt;strong>User Creating:&lt;/strong>&lt;/h2>
+&lt;pre tabindex="0">&lt;code>[edit]
+root# set system login user ssnrshnn uid 1001 class super-user authentication plain-text-password 
+New password:
+Retype new password:
+&lt;/code>&lt;/pre>&lt;h2 id="radius">&lt;strong>RADIUS&lt;/strong>:&lt;/h2>
+&lt;pre tabindex="0">&lt;code>[edit]
+root# set system radius-server 50.50.50.1 port 1144 secret PASSWORD 
+&lt;/code>&lt;/pre>&lt;h2 id="tacacs">&lt;strong>TACACS:&lt;/strong>&lt;/h2>
+&lt;pre tabindex="0">&lt;code>[edit]
+root# set system tacplus-server 55.55.55.1 port 1142 secret PASSWORD 
+&lt;/code>&lt;/pre>&lt;h2 id="management-protocols">&lt;strong>Management Protocols:&lt;/strong>&lt;/h2>
+&lt;pre tabindex="0">&lt;code>[edit]
+root# set system services telnet 
+
+[edit]
+root# set system services ssh 
+
+[edit] 
+root# set system services ssh root-login allow 
+&lt;/code>&lt;/pre>&lt;h2 id="ssh-key">&lt;strong>SSH-key:&lt;/strong>&lt;/h2>
+&lt;pre tabindex="0">&lt;code>[edit]
+root@# set system root-authentication ssh-rsa &amp;lt;ssh-key&amp;gt;
+&lt;/code>&lt;/pre>&lt;h2 id="management-interface">&lt;strong>Management Interface:&lt;/strong>&lt;/h2>
+&lt;pre tabindex="0">&lt;code>[edit]
+root@# set interfaces fxp0 unit 0 family inet address &amp;lt;IP/Prefix&amp;gt;
+&lt;/code>&lt;/pre>&lt;h2 id="domain-name">&lt;strong>Domain Name:&lt;/strong>&lt;/h2>
+&lt;pre tabindex="0">&lt;code>[edit]
+root@# set system domain-name &amp;lt;domain-name&amp;gt;
+&lt;/code>&lt;/pre>&lt;h2 id="dns">&lt;strong>DNS:&lt;/strong>&lt;/h2>
+&lt;pre tabindex="0">&lt;code>[edit]
+root@# set system name-server &amp;lt;address&amp;gt;
+&lt;/code>&lt;/pre>&lt;h2 id="cli-idle-time-out">&lt;strong>CLI idle time-out:&lt;/strong>&lt;/h2>
+&lt;pre tabindex="0">&lt;code>root&amp;gt; set cli idle-timeout 5 
+Idle timeout set to 5 minutes
+&lt;/code>&lt;/pre>&lt;h2 id="logs">&lt;strong>Logs:&lt;/strong>&lt;/h2>
+&lt;p>In default syslog is enabled. You can see logs with the command below.&lt;/p></description></item><item><title>[EN] GRE Over IPSEC LAB</title><link>https://ittechnetworkk.github.io/posts/greoveripsec-lab/gre-over-ipsec-lab/</link><pubDate>Fri, 21 Feb 2025 22:19:46 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/greoveripsec-lab/gre-over-ipsec-lab/</guid><description>&lt;p>Hello everyone, in this LAB I will configure GRE over IPSec Tunnels with following topology.&lt;/p>
+&lt;p>In this topology some configurations have been done. So networks can already reach with each other. I will just focus on GRE over IPSec Tunnels between the networks of Customer-A and Customer-B.&lt;/p>
+&lt;p>GRE Subnet for Customer-A: 192.168.1.0/24&lt;/p>
+&lt;p>GRE Subnet for Customer-B: 192.168.2.0/24&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/GREoverIPSEC-LAB/1.png" alt="gre-over-ipsec-lab">&lt;/p>
+&lt;p>&lt;strong>R1:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>#GRE CONFIGURATION
+R1(config)#int tunnel 1
+R1(config-if)#ip addr 192.168.1.10 255.255.255.0
+R1(config-if)#tunnel source e0/1
+R1(config-if)#tunnel destination 1.1.4.2 
+R1(config-if)#exit
+
+
+#IPSEC CONFIGURATION
+R1(config)#crypto isakmp policy 100
+R1(config-isakmp)#authentication pre-share 
+R1(config-isakmp)#encryption aes 
+R1(config-isakmp)#group 14
+R1(config-isakmp)#hash sha
+R1(config-isakmp)#exit
+
+R1(config)#crypto isakmp key ittechnetworkk address 1.1.4.2
+
+R1(config)#crypto ipsec transform-set XYZ esp-aes esp-sha-hmac 
+R1(cfg-crypto-trans)#mode transport 
+R1(cfg-crypto-trans)#exit
+
+R1(config)#ip access-list extended GRE-IPSEC
+R1(config-ext-nacl)#permit gre host 1.1.1.2 host 1.1.4.2
+R1(config-ext-nacl)#exit
+
+R1(config)#crypto map IPSEC 10 ipsec-isakmp 
+R1(config-crypto-map)#match address GRE-IPSEC
+R1(config-crypto-map)#set peer 1.1.4.2
+R1(config-crypto-map)#set transform-set XYZ
+R1(config-crypto-map)#exit
+
+R1(config)#int e0/1
+R1(config-if)#crypto map IPSEC
+R1(config-if)#exit
+
+
+#ROUTING
+R1(config)#ip route 10.0.4.0 255.255.255.0 tunnel 1
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>R10:&lt;/strong>&lt;/p></description></item><item><title>[EN] GRE LAB</title><link>https://ittechnetworkk.github.io/posts/gre-lab/gre-lab/</link><pubDate>Fri, 21 Feb 2025 22:18:30 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/gre-lab/gre-lab/</guid><description>&lt;p>Hello everyone, in this LAB I will configure GRE Tunnels.&lt;/p>
+&lt;p>I will implement the following topology. In this topology some configurations have been done. So networks can already reach with each other. I will just focus on GRE Tunnels between the networks of Customer-A and Customer-B.&lt;/p>
+&lt;p>I will use 192.168.1.0/24 subnet for Customer-A, 192.168.2.0/24 subnet for Customer-B.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/GRE-LAB/1.png" alt="gre-lab">&lt;/p>
+&lt;p>&lt;strong>R1:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>#TUNNEL CONFIGURATION
+R1&amp;gt;en
+R1#conf t
+R1(config)#int tunnel 1
+R1(config-if)#ip addr 192.168.1.10 255.255.255.0
+R1(config-if)#tunnel source e0/1
+R1(config-if)#tunnel destination 1.1.4.2 
+R1(config-if)#exit
+
+#ROUTING
+R1(config)#ip route 10.0.4.0 255.255.255.0 tunnel 1 
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>R10:&lt;/strong>&lt;/p></description></item><item><title>[EN] VRF-Lite Configuration</title><link>https://ittechnetworkk.github.io/posts/vrflitelab/vrf-lite/</link><pubDate>Fri, 21 Feb 2025 02:36:28 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/vrflitelab/vrf-lite/</guid><description>&lt;p>Hello everyone, in this LAB I will configure GRE Tunnels with following topology.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/VRFLiteLAB/1.png" alt="vrf-lite">&lt;/p>
+&lt;p>&lt;strong>R1:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>#INTERFACE CONFIGURATION
+R1&amp;gt;en
+R1#conf t
+R1(config)#int e0/0
+R1(config-if)#ip addr 10.0.1.1 255.255.255.0
+R1(config-if)#no sh
+R1(config-if)#int e0/1
+R1(config-if)#ip addr 1.1.1.2 255.255.255.252
+R1(config-if)#no sh
+R1(config-if)#exit
+
+#OSPF
+R1(config)#router ospf 1
+R1(config-router)#network 1.1.1.0 0.0.0.3 area 0
+R1(config-router)#network 10.0.1.0 0.0.0.255 area 0
+R1(config-router)#exit
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>R2:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>#INTERFACE CONFIGURATION
+R2&amp;gt;en
+R2#conf t
+R2(config)#int e0/0
+R2(config-if)#ip addr 10.0.2.1 255.255.255.0
+R2(config-if)#no sh
+R2(config-if)#int e0/2
+R2(config-if)#ip addr 1.1.2.2 255.255.255.252
+R2(config-if)#no sh
+R2(config-if)#exit
+
+#OSPF
+R2(config)#router ospf 1
+R2(config-router)#network 10.0.2.0 0.0.0.255 area 0
+R2(config-router)#network 1.1.2.0 0.0.0.3 area 0
+R2(config-router)#exit
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>R3:&lt;/strong>&lt;/p></description></item><item><title>Vlan Routing L3 Switch (SVI)</title><link>https://ittechnetworkk.github.io/posts/vlanroutingsvi/vlan-routing-svi/</link><pubDate>Fri, 10 Jan 2025 11:43:33 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/vlanroutingsvi/vlan-routing-svi/</guid><description>&lt;p>Selamlar, bu yazımda VLAN Routing&amp;rsquo;in L3 bir Switch ile nasıl yapılacağını bir LAB senaryosu üzerinde yapacağım..&lt;/p>
+&lt;p>LAB&amp;rsquo;ı aşağıdaki topoloji üzerinde uygulayacağım.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/VLANRoutingSVI/1.png" alt="vlan">&lt;/p>
+&lt;p>&lt;strong>Başlayalım.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>İlk olarak cihazlara IP verelim.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>VPC4:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>VPCS&amp;gt; ip 10.10.10.10 255.255.255.0 gateway 10.10.10.1
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>VPC5:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>VPCS&amp;gt; ip 10.10.20.10 255.255.255.0 gateway 10.10.20.1
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>VPC6:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>VPCS&amp;gt; ip 10.10.10.11 255.255.255.0 gateway 10.10.10.1
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>VPC7:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>VPCS&amp;gt; ip 10.10.20.11 255.255.255.0 gateway 10.10.20.1
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>Şimdi Switch&amp;rsquo;lerde VLAN&amp;rsquo;ları oluşturalım ve portlara atayalım.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>SW2:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>Switch&amp;gt;en
+Switch#conf t
+Switch(config)#vlan 10
+Switch(config-vlan)#vlan 20
+Switch(config-vlan)#exit
+
+Switch(config)#int e0/1
+Switch(config-if)#switchport mode access 
+Switch(config-if)#switchport access vlan 10
+Switch(config-if)#exit
+
+Switch(config)#int e0/2
+Switch(config-if)#switchport mode access 
+Switch(config-if)#switchport access vlan 20
+Switch(config-if)#exit
+
+#Vlan&amp;#39;ların geçeceği port trunk olmalı
+Switch(config)#int e0/0
+Switch(config-if)#switchport trunk encapsulation dot1q
+Switch(config-if)#switchport mode trunk 
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>SW3:&lt;/strong>&lt;/p></description></item><item><title>Vlan Routing (Router on a Stick)</title><link>https://ittechnetworkk.github.io/posts/vlanroutingroas/vlan-routing-roas/</link><pubDate>Fri, 10 Jan 2025 11:43:17 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/vlanroutingroas/vlan-routing-roas/</guid><description>&lt;p>Selamlar, bu yazımda VLAN Routing&amp;rsquo;in bir Router ile nasıl yapılacağını bir LAB senaryosu üzerinde yapacağım..&lt;/p>
+&lt;p>LAB&amp;rsquo;ı aşağıdaki topoloji üzerinde uygulayacağım.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/VLANRoutingROAS/1.png" alt="vlan">&lt;/p>
+&lt;p>&lt;strong>Başlayalım.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>İlk olarak cihazlara IP verelim.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>VPC4:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>VPCS&amp;gt; ip 10.10.10.10 255.255.255.0 gateway 10.10.10.1
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>VPC5:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>VPCS&amp;gt; ip 10.10.20.10 255.255.255.0 gateway 10.10.20.1
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>VPC6:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>VPCS&amp;gt; ip 10.10.10.11 255.255.255.0 gateway 10.10.10.1
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>VPC7:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>VPCS&amp;gt; ip 10.10.20.11 255.255.255.0 gateway 10.10.20.1
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>Şimdi Switch&amp;rsquo;lerde VLAN&amp;rsquo;ları oluşturalım ve portlara atayalım.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>SW2:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>Switch&amp;gt;en
+Switch#conf t
+Switch(config)#vlan 10
+Switch(config-vlan)#vlan 20
+Switch(config-vlan)#exit
+
+Switch(config)#int e0/1
+Switch(config-if)#switchport mode access 
+Switch(config-if)#switchport access vlan 10
+Switch(config-if)#exit
+
+Switch(config)#int e0/2
+Switch(config-if)#switchport mode access 
+Switch(config-if)#switchport access vlan 20
+Switch(config-if)#exit
+
+#Vlan&amp;#39;ların geçeceği port trunk olmalı
+Switch(config)#int e0/0
+Switch(config-if)#switchport trunk encapsulation dot1q
+Switch(config-if)#switchport mode trunk 
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>SW3:&lt;/strong>&lt;/p></description></item><item><title>Cml Freetrial</title><link>https://ittechnetworkk.github.io/posts/ciscocmlfreetrial/cml-freetrial/</link><pubDate>Fri, 03 Jan 2025 23:31:39 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ciscocmlfreetrial/cml-freetrial/</guid><description>&lt;p>CiscoCMLFreeTrial
+Merhabalar, bu yazımda Cml Freetrial konusunu anlatacağım.&lt;/p>
+&lt;p>Ben Vmware Workstation Pro&amp;rsquo;ya kuracağım, aşağıdaki linkten ilgili kurulum dosyalarını indiriyorum.&lt;/p>
+&lt;p>&lt;a href="https://software.cisco.com/download/home/286193282/type/286326381/release/2.8.0%20Free%20Tier">https://software.cisco.com/download/home/286193282/type/286326381/release/2.8.0%20Free%20Tier&lt;/a>&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/CiscoCMLFreeTrial/1.png" alt="cml">&lt;/p>
+&lt;p>Görseldeki en alt iki dosyayı indiriyorum&lt;/p>
+&lt;ul>
+&lt;li>cml2_f_2.8.0-6_amd64-32.ova&lt;/li>
+&lt;li>refplat-20241016-freetier-iso&lt;/li>
+&lt;/ul>
+&lt;p>Kurulum adımları sırasıyla aşağıdaki gibi olacaktır.&lt;/p>
+&lt;p>&lt;strong>VMWare:&lt;/strong>&lt;/p>
+&lt;p>File &amp;gt; Open &amp;gt; cml2_f_2.8.0-6_amd64-32.ova&lt;/p>
+&lt;p>.ova uzantılı dosya import edildikten sonra bunu editliyoruz.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/CiscoCMLFreeTrial/2.png" alt="cml">&lt;/p>
+&lt;p>Burada .iso uzantılı dosyanın yolunu belirtiyoruz.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/CiscoCMLFreeTrial/3.png" alt="cml">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/CiscoCMLFreeTrial/4.png" alt="cml">&lt;/p>
+&lt;p>Aşağıdaki kutucuğun işaretli olması gerekiyor.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/CiscoCMLFreeTrial/5.png" alt="cml">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/CiscoCMLFreeTrial/6.png" alt="cml">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/CiscoCMLFreeTrial/7.png" alt="cml">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/CiscoCMLFreeTrial/8.png" alt="cml">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/CiscoCMLFreeTrial/9.png" alt="cml">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/CiscoCMLFreeTrial/10.png" alt="cml">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/CiscoCMLFreeTrial/11.png" alt="cml">&lt;/p></description></item><item><title>GRE Over Ipsec</title><link>https://ittechnetworkk.github.io/posts/greoveripsec/greoveripsec/</link><pubDate>Fri, 22 Nov 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/greoveripsec/greoveripsec/</guid><description>&lt;p>Aşağıdaki topologiye göre ilerleyeceğim. Topolojideki cihazların interfacelerine IP adresleri verilmiştir.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/greoveripsec/1.png" alt="ipsec">&lt;/p>
+&lt;p>&lt;strong>GRE Config:&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>R1:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>R1#conf t
+R1(config)#int tunnel 1
+R1(config-if)#ip addr 192.168.1.1 255.255.255.0
+R1(config-if)#tunnel source e0/0
+R1(config-if)#tunnel destination 200.59.25.2
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>R2:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>R1#conf t
+R2(config)#int tunnel 1
+R2(config-if)#ip addr 192.168.1.2 255.255.255.0
+R2(config-if)#tunnel source e0/0
+R2(config-if)#tunnel destination 197.53.15.2 
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>IPsec:&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>R1:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>R1(config)#crypto isakmp policy 10
+R1(config-isakmp)#authentication pre-share (define it later on)
+R1(config-isakmp)#encryption aes
+R1(config-isakmp)#group 14 (must be over 14)
+R1(config-isakmp)#hash sha
+R1(config-isakmp)#exit
+
+R1(config)#crypto isakmp key BENIMCICIPAROLAM address 200.59.25.2 (pre-share key and next point IP)
+
+R1(config)#crypto ipsec transform-set AABBCC esp-aes esp-sha-hmac 
+R1(cfg-crypto-trans)#mode transport 
+R1(cfg-crypto-trans)#exit
+
+R1(config)#ip access-list extended GRE-IPSEC
+R1(config-ext-nacl)#permit gre host 197.53.15.2 host 200.59.25.2 (src &amp;gt; dst)
+R1(config-ext-nacl)#exit
+
+R1(config)#crypto map IPSEC-MAP 10 ipsec-isakmp 
+R1(config-crypto-map)#match address GRE-IPSEC
+R1(config-crypto-map)#set peer 200.59.25.2
+R1(config-crypto-map)#set transform-set AABBCC
+R1(config-crypto-map)#exit
+
+R1(config)#int e0/0
+R1(config-if)#crypto map IPSEC-MAP
+R1(config-if)#end
+R1#wr
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>R2:&lt;/strong>&lt;/p></description></item><item><title>Juniper Rollback</title><link>https://ittechnetworkk.github.io/posts/junosrollback/junos-rollback/</link><pubDate>Fri, 22 Nov 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/junosrollback/junos-rollback/</guid><description>&lt;p>Rollback, cihazda yapılan önceki konfigürasyonlara dönebilmeyi sağlayan komuttur. Örneğin cihazda bir konfigürasyon yaptık ve commit ettik. Fakat yapılan konfigürasyon hatalıydı veya başka bir sebepten dolayı eski konfigürasyonu bir şekilde geri almamız gerekiyor. Bu durumda Rollback kullanılır.&lt;/p>
+&lt;p>Rollback dosyalar 50 adettir, 0&amp;rsquo;dan başlar ve sıfırıncı dosya cihazda hali hazırda çalışan konfigürasyon dosyasıdır.&lt;/p>
+&lt;p>Cihaz&amp;rsquo;da 49 Rollback dosyası olması halinde her commit işleminde 49. Rollback dosyasını uçurur.&lt;/p>
+&lt;p>Rollback dosyalarını görmek için;&lt;/p>
+&lt;pre tabindex="0">&lt;code>{master:0}[edit]
+root@vqfx-re# rollback ? 
+Possible completions:
+ &amp;lt;[Enter]&amp;gt; Execute this command
+ 0 2024-10-07 02:20:28 UTC by root via cli 
+ 1 2024-10-07 02:20:20 UTC by root via cli 
+ 2 2024-10-07 02:20:19 UTC by root via cli 
+ 3 2024-10-07 02:20:18 UTC by root via cli 
+ 4 2024-10-07 02:20:17 UTC by root via cli 
+ 5 2024-10-07 02:19:57 UTC by root via cli 
+ 6 2024-10-07 02:19:37 UTC by root via cli 
+ 7 2024-10-07 02:19:34 UTC by root via cli 
+ 8 2024-10-07 02:12:37 UTC by root via cli 
+ 9 2020-08-19 17:30:33 UTC by root via cli 
+ 10 2020-08-19 17:22:59 UTC by root via other 
+ | Pipe through a command
+&lt;/code>&lt;/pre>&lt;p>Yukarıda görüldüğü gibi, Rollback dosyalarının tarih, saat, kim tarafından, vs. bilgilerini görebiliyoruz. Sıfırıncı dosya çalışan konfigürasyon dosyasıdır.&lt;/p></description></item><item><title>Juniper Commit Usage</title><link>https://ittechnetworkk.github.io/posts/junos-commit-usage/junos-commit-usage/</link><pubDate>Fri, 22 Nov 2024 17:53:48 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/junos-commit-usage/junos-commit-usage/</guid><description>&lt;p>JunOS sistemlerde bir diğer önemli konu ise Commit kullanımıdır.&lt;/p>
+&lt;p>JunOS&amp;rsquo;da commit işlemi, yapılan konfigürasyonu etkinleştirmek için kullanılır. Yani yapılan konfigürasyonu commit etmezsek yaptığımız konfigürasyon geçerli olmaz.&lt;/p>
+&lt;p>Bundan dolayı mutlaka konfigürasyon sonrası commit etmemiz gerekiyor.&lt;/p>
+&lt;p>Commit işlemi yaparken bazı parametreler var ki işleri kolaylaştırır.&lt;/p>
+&lt;p>&lt;strong>Commit tipleri:&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>&amp;ldquo;commit&amp;rdquo;&lt;/strong> : Bu komut, direkt olarak yapılan konfigürasyonu etkileştirir.&lt;/p>
+&lt;p>&lt;strong>&amp;ldquo;commit check&amp;rdquo;&lt;/strong> : Bu komut, yapılan konfigürasyondan emin olmadığımız durumlarda, yapılan konfigürasyonun doğruluğunu kontrol eder. Eğer bir konfigürasyon hatası varsa bize ilgili kısmın hatasını gösterir.&lt;/p></description></item><item><title>Juniper CLI Help Komutları</title><link>https://ittechnetworkk.github.io/posts/junosclihelpcommands/junos-cli-help-commands/</link><pubDate>Sat, 16 Nov 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/junosclihelpcommands/junos-cli-help-commands/</guid><description>&lt;p>JunOS&amp;rsquo;da Cli yardım alma komutları oldukça detaylı ve kullanışlıdır. Junos sadece bir işletim sistemi değil aynı zamanda içinde bir kütüphanedir.&lt;/p>
+&lt;p>JunOS&amp;rsquo;da birden fazla yardım alma komutu vardır ve her biri birbirinden kulanıcı dostudur.&lt;/p>
+&lt;p>&lt;strong>Cli Help Komutları:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>root&amp;gt; help ? 
+Possible completions:
+ &amp;lt;[Enter]&amp;gt; Execute this command
+ apropos Find help information about a topic
+ reference Reference material
+ syslog System log error messages
+ tip Tip for the day
+ topic Help for high level topics
+ | Pipe through a command
+&lt;/code>&lt;/pre>&lt;p>Help komutlarıyla birlikte ne kullanılacağını &amp;ldquo;help ?&amp;rdquo; komutuyla görebiliriz.&lt;/p></description></item><item><title>Juniper Filtering Output</title><link>https://ittechnetworkk.github.io/posts/junosfilteringoutput/junos-filtering-output/</link><pubDate>Sat, 16 Nov 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/junosfilteringoutput/junos-filtering-output/</guid><description>&lt;p>JunOS işletim sisteminde çıktıları filtrelemek çoğu zaman hayat kurtarır. JunOS&amp;rsquo;da bazı çıktılar çok uzun olabiliyor, bu çıktıları filtrelemek amacımıza ulaşmak için zamandan tasarruf sağlıyor.&lt;/p>
+&lt;p>JunOS FreeBSD tabanlı olduğu için Linux işletim sistemi bilenler için komutlara aşağı yukarı aşinalık gösterir.&lt;/p>
+&lt;p>Linux bilen JunOS&amp;rsquo;da ve benzeri sistemlerde bir şekilde yolunu bulur.&lt;/p>
+&lt;p>Çıktıları filtrelemek JunOS&amp;rsquo;da oldukça kolaydır. Aşağıdaki filtreleme komutlarını ve açıklamalarını görebilirsiniz.&lt;/p>
+&lt;p>Çıktıları filtrelemek için temel olarak pipe &amp;ldquo;|&amp;rdquo; komutu ve devamında amaca uygun komutu kullanmak işi çözecektir.&lt;/p></description></item><item><title>Juniper Shortcuts</title><link>https://ittechnetworkk.github.io/posts/junosshortcuts/junos-shortcuts/</link><pubDate>Sat, 16 Nov 2024 17:53:48 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/junosshortcuts/junos-shortcuts/</guid><description>&lt;p>Junos Shortcuts, JunOS CLI ekranında bize pratiklik sağlayan kısayollardır. Başlıcaları aşağıdaki gibidir.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>CTRL + b:
+İmleci bir karakter sola kaydırır.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>CTRL + f:
+İmleci bir karakter sağa kaydırır.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>CTRL + a:
+İmleci satır en başına getirir.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>CTRL + e:
+İmleci satırın en sonuna getirir.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>CTRL + d:
+İmlecin sağından bir karakter siler.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>CTRL + k:
+İmlecin sağındaki her şeyi siler.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>CTRL + u:
+Tüm satırı siler.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>CTRL + w:
+İmlecin solundan bir kelime/komut siler.&lt;/p></description></item><item><title>DMVPN Phase 1 EIGRP</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase1eigrp/dmvpn-phase1-eigrp/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase1eigrp/dmvpn-phase1-eigrp/</guid><description>&lt;p>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p>
+&lt;p>Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase1EIGRP/1.png" alt="DMVPN">&lt;/p>
+&lt;p>Başlayalım.&lt;/p>
+&lt;p>&lt;strong>HUB:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>HUB#conf t 
+HUB(config)#int tun0 
+HUB(config-if)#no sh
+HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 
+HUB(config-if)#tunnel source f0/0
+HUB(config-if)#tunnel mode gre multipoint
+HUB(config-if)#ip mtu 1400
+HUB(config-if)#ip tcp adjust-mss 1360 
+HUB(config-if)#ip nhrp network-id 1 
+HUB(config-if)#ip nhrp authentication Marvel1  
+HUB(config-if)#ip nhrp map multicast dynamic 
+HUB(config-if)#end
+HUB#wr
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-1:&lt;/strong>*&lt;/p>
+&lt;pre tabindex="0">&lt;code>SPOKE-1#conf t
+SPOKE-1(config)#int tun0
+SPOKE-1(config-if)#no sh
+SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0
+SPOKE-1(config-if)#ip mtu 1400
+SPOKE-1(config-if)#ip tcp adjust-mss 1360
+SPOKE-1(config-if)#tunnel source f0/0
+SPOKE-1(config-if)#tunnel destination 1.1.1.1
+SPOKE-1(config-if)#ip nhrp network-id 1
+SPOKE-1(config-if)#ip nhrp authentication Marvel1
+SPOKE-1(config-if)#ip nhrp nhs 10.0.0.1
+SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1
+SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1
+SPOKE-1(config-if)#end
+SPOKE-1#wr
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-2:&lt;/strong>*&lt;/p></description></item><item><title>DMVPN Phase 1 OSPF</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase1ospf/dmvpn-phase1-ospf/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase1ospf/dmvpn-phase1-ospf/</guid><description>&lt;p>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p>
+&lt;p>Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase1OSPF/1.png" alt="DMVPN">&lt;/p>
+&lt;p>Başlayalım.&lt;/p>
+&lt;p>&lt;strong>HUB:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>HUB#conf t 
+HUB(config)#int tun0 
+HUB(config-if)#no sh
+HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 
+HUB(config-if)#tunnel source f0/0
+HUB(config-if)#tunnel mode gre multipoint
+HUB(config-if)#ip mtu 1400
+HUB(config-if)#ip tcp adjust-mss 1360 
+HUB(config-if)#ip nhrp network-id 1 
+HUB(config-if)#ip nhrp authentication Marvel1  
+HUB(config-if)#ip nhrp map multicast dynamic 
+HUB(config-if)#end
+HUB#wr
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-1:&lt;/strong>*&lt;/p>
+&lt;pre tabindex="0">&lt;code>SPOKE-1#conf t
+SPOKE-1(config)#int tun0
+SPOKE-1(config-if)#no sh
+SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0
+SPOKE-1(config-if)#ip mtu 1400
+SPOKE-1(config-if)#ip tcp adjust-mss 1360
+SPOKE-1(config-if)#tunnel source f0/0
+SPOKE-1(config-if)#tunnel destination 1.1.1.1
+SPOKE-1(config-if)#ip nhrp network-id 1
+SPOKE-1(config-if)#ip nhrp authentication Marvel1
+SPOKE-1(config-if)#ip nhrp nhs 10.0.0.1
+SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1
+SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1
+SPOKE-1(config-if)#end
+SPOKE-1#wr
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-2:&lt;/strong>*&lt;/p></description></item><item><title>DMVPN Phase 1 RIP</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase1rip/dmvpn-phase1-rip/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase1rip/dmvpn-phase1-rip/</guid><description>&lt;p>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p>
+&lt;p>Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase1RIP/1.png" alt="DMVPN">&lt;/p>
+&lt;p>Başlayalım.&lt;/p>
+&lt;p>&lt;strong>HUB:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>HUB#conf t 
+HUB(config)#int tun0 
+HUB(config-if)#no sh
+HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 
+HUB(config-if)#tunnel source f0/0
+HUB(config-if)#tunnel mode gre multipoint
+HUB(config-if)#ip mtu 1400
+HUB(config-if)#ip tcp adjust-mss 1360 
+HUB(config-if)#ip nhrp network-id 1 
+HUB(config-if)#ip nhrp authentication Marvel1  
+HUB(config-if)#ip nhrp map multicast dynamic 
+HUB(config-if)#end
+HUB#wr
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-1:&lt;/strong>*&lt;/p>
+&lt;pre tabindex="0">&lt;code>SPOKE-1#conf t
+SPOKE-1(config)#int tun0
+SPOKE-1(config-if)#no sh
+SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0
+SPOKE-1(config-if)#ip mtu 1400
+SPOKE-1(config-if)#ip tcp adjust-mss 1360
+SPOKE-1(config-if)#tunnel source f0/0
+SPOKE-1(config-if)#tunnel destination 1.1.1.1
+SPOKE-1(config-if)#ip nhrp network-id 1
+SPOKE-1(config-if)#ip nhrp authentication Marvel1
+SPOKE-1(config-if)#ip nhrp nhs 10.0.0.1
+SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1
+SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1
+SPOKE-1(config-if)#end
+SPOKE-1#wr
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-2:&lt;/strong>*&lt;/p></description></item><item><title>DMVPN Phase 2 EIGRP</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase2eigrp/dmvpn-phase2-eigrp/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase2eigrp/dmvpn-phase2-eigrp/</guid><description>&lt;p>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p>
+&lt;p>Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase2EIGRP/1.png" alt="DMVPN">&lt;/p>
+&lt;p>Başlayalım.&lt;/p>
+&lt;p>&lt;strong>HUB:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>HUB#conf t 
+HUB(config)#int tun0 
+HUB(config-if)#no sh
+HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 
+HUB(config-if)#tunnel source f0/0
+HUB(config-if)#tunnel mode gre multipoint
+HUB(config-if)#ip mtu 1400
+HUB(config-if)#ip tcp adjust-mss 1360 
+HUB(config-if)#ip nhrp network-id 1 
+HUB(config-if)#ip nhrp authentication Marvel1  
+HUB(config-if)#ip nhrp map multicast dynamic 
+HUB(config-if)#end
+HUB#wr
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-1:&lt;/strong>*&lt;/p>
+&lt;pre tabindex="0">&lt;code>SPOKE-1#conf t
+SPOKE-1(config)#int tun0
+SPOKE-1(config-if)#no sh
+SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0
+SPOKE-1(config-if)#ip mtu 1400
+SPOKE-1(config-if)#ip tcp adjust-mss 1360
+SPOKE-1(config-if)#tunnel source f0/0
+SPOKE-1(config-if)#tunnel destination 1.1.1.1
+SPOKE-1(config-if)#ip nhrp network-id 1
+SPOKE-1(config-if)#ip nhrp authentication Marvel1
+SPOKE-1(config-if)#ip nhrp nhs 10.0.0.1
+SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1
+SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1
+SPOKE-1(config-if)#end
+SPOKE-1#wr
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-2:&lt;/strong>*&lt;/p></description></item><item><title>DMVPN Phase 2 OSPF</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase2ospf/dmvpn-phase2-ospf/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase2ospf/dmvpn-phase2-ospf/</guid><description>&lt;p>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p>
+&lt;p>Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase2OSPF/1.png" alt="DMVPN">&lt;/p>
+&lt;p>Başlayalım.&lt;/p>
+&lt;p>&lt;strong>HUB:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>HUB#conf t 
+HUB(config)#int tun0 
+HUB(config-if)#no sh
+HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 
+HUB(config-if)#tunnel source f0/0
+HUB(config-if)#tunnel mode gre multipoint
+HUB(config-if)#ip mtu 1400
+HUB(config-if)#ip tcp adjust-mss 1360 
+HUB(config-if)#ip nhrp network-id 1 
+HUB(config-if)#ip nhrp authentication Marvel1  
+HUB(config-if)#ip nhrp map multicast dynamic 
+HUB(config-if)#end
+HUB#wr
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-1:&lt;/strong>*&lt;/p>
+&lt;pre tabindex="0">&lt;code>SPOKE-1#conf t
+SPOKE-1(config)#int tun0
+SPOKE-1(config-if)#no sh
+SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0
+SPOKE-1(config-if)#ip mtu 1400
+SPOKE-1(config-if)#ip tcp adjust-mss 1360
+SPOKE-1(config-if)#tunnel source f0/0
+SPOKE-1(config-if)#tunnel destination 1.1.1.1
+SPOKE-1(config-if)#ip nhrp network-id 1
+SPOKE-1(config-if)#ip nhrp authentication Marvel1
+SPOKE-1(config-if)#ip nhrp nhs 10.0.0.1
+SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1
+SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1
+SPOKE-1(config-if)#end
+SPOKE-1#wr
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-2:&lt;/strong>*&lt;/p></description></item><item><title>DMVPN Phase 2 RIP</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase2rip/dmvpn-phase2-rip/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase2rip/dmvpn-phase2-rip/</guid><description>&lt;p>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p>
+&lt;p>Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase2RIP/1.png" alt="DMVPN">&lt;/p>
+&lt;p>Başlayalım.&lt;/p>
+&lt;p>&lt;strong>HUB:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>HUB#conf t 
+HUB(config)#int tun0 
+HUB(config-if)#no sh
+HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 
+HUB(config-if)#tunnel source f0/0
+HUB(config-if)#tunnel mode gre multipoint
+HUB(config-if)#ip mtu 1400
+HUB(config-if)#ip tcp adjust-mss 1360 
+HUB(config-if)#ip nhrp network-id 1 
+HUB(config-if)#ip nhrp authentication Marvel1  
+HUB(config-if)#ip nhrp map multicast dynamic 
+HUB(config-if)#end
+HUB#wr
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-1:&lt;/strong>*&lt;/p>
+&lt;pre tabindex="0">&lt;code>SPOKE-1#conf t
+SPOKE-1(config)#int tun0
+SPOKE-1(config-if)#no sh
+SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0
+SPOKE-1(config-if)#ip mtu 1400
+SPOKE-1(config-if)#ip tcp adjust-mss 1360
+SPOKE-1(config-if)#tunnel source f0/0
+SPOKE-1(config-if)#tunnel destination 1.1.1.1
+SPOKE-1(config-if)#ip nhrp network-id 1
+SPOKE-1(config-if)#ip nhrp authentication Marvel1
+SPOKE-1(config-if)#ip nhrp nhs 10.0.0.1
+SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1
+SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1
+SPOKE-1(config-if)#end
+SPOKE-1#wr
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-2:&lt;/strong>*&lt;/p></description></item><item><title>DMVPN Phase 3 EIGRP</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase3eigrp/dmvpn-phase3-eigrp/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase3eigrp/dmvpn-phase3-eigrp/</guid><description>&lt;p>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p>
+&lt;p>Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase3EIGRP/1.png" alt="DMVPN">&lt;/p>
+&lt;p>Başlayalım.&lt;/p>
+&lt;p>&lt;strong>HUB:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>HUB#conf t 
+HUB(config)#int tun0 
+HUB(config-if)#no sh
+HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 
+HUB(config-if)#tunnel source f0/0
+HUB(config-if)#tunnel mode gre multipoint
+HUB(config-if)#ip mtu 1400
+HUB(config-if)#ip tcp adjust-mss 1360 
+HUB(config-if)#ip nhrp network-id 1 
+HUB(config-if)#ip nhrp authentication Marvel1  
+HUB(config-if)#ip nhrp map multicast dynamic 
+HUB(config-if)#end
+HUB#wr
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-1:&lt;/strong>*&lt;/p>
+&lt;pre tabindex="0">&lt;code>SPOKE-1#conf t
+SPOKE-1(config)#int tun0
+SPOKE-1(config-if)#no sh
+SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0
+SPOKE-1(config-if)#ip mtu 1400
+SPOKE-1(config-if)#ip tcp adjust-mss 1360
+SPOKE-1(config-if)#tunnel source f0/0
+SPOKE-1(config-if)#tunnel destination 1.1.1.1
+SPOKE-1(config-if)#ip nhrp network-id 1
+SPOKE-1(config-if)#ip nhrp authentication Marvel1
+SPOKE-1(config-if)#ip nhrp nhs 10.0.0.1
+SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1
+SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1
+SPOKE-1(config-if)#end
+SPOKE-1#wr
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-2:&lt;/strong>*&lt;/p></description></item><item><title>DMVPN Phase 3 OSPF</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase3ospf/dmvpn-phase3-ospf/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase3ospf/dmvpn-phase3-ospf/</guid><description>&lt;p>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p>
+&lt;p>Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase3OSPF/1.png" alt="DMVPN">&lt;/p>
+&lt;p>Başlayalım.&lt;/p>
+&lt;p>&lt;strong>HUB:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>HUB#conf t 
+HUB(config)#int tun0 
+HUB(config-if)#no sh
+HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 
+HUB(config-if)#tunnel source f0/0
+HUB(config-if)#tunnel mode gre multipoint
+HUB(config-if)#ip mtu 1400
+HUB(config-if)#ip tcp adjust-mss 1360 
+HUB(config-if)#ip nhrp network-id 1 
+HUB(config-if)#ip nhrp authentication Marvel1  
+HUB(config-if)#ip nhrp map multicast dynamic 
+HUB(config-if)#end
+HUB#wr
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-1:&lt;/strong>*&lt;/p>
+&lt;pre tabindex="0">&lt;code>SPOKE-1#conf t
+SPOKE-1(config)#int tun0
+SPOKE-1(config-if)#no sh
+SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0
+SPOKE-1(config-if)#ip mtu 1400
+SPOKE-1(config-if)#ip tcp adjust-mss 1360
+SPOKE-1(config-if)#tunnel source f0/0
+SPOKE-1(config-if)#tunnel destination 1.1.1.1
+SPOKE-1(config-if)#ip nhrp network-id 1
+SPOKE-1(config-if)#ip nhrp authentication Marvel1
+SPOKE-1(config-if)#ip nhrp nhs 10.0.0.1
+SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1
+SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1
+SPOKE-1(config-if)#end
+SPOKE-1#wr
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-2:&lt;/strong>*&lt;/p></description></item><item><title>DMVPN Phase 3 RIP</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase3rip/dmvpn-phase3-rip/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase3rip/dmvpn-phase3-rip/</guid><description>&lt;p>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p>
+&lt;p>Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase3RIP/1.png" alt="DMVPN">&lt;/p>
+&lt;p>Başlayalım.&lt;/p>
+&lt;p>&lt;strong>HUB:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>HUB#conf t 
+HUB(config)#int tun0 
+HUB(config-if)#no sh
+HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 
+HUB(config-if)#tunnel source f0/0
+HUB(config-if)#tunnel mode gre multipoint
+HUB(config-if)#ip mtu 1400
+HUB(config-if)#ip tcp adjust-mss 1360 
+HUB(config-if)#ip nhrp network-id 1 
+HUB(config-if)#ip nhrp authentication Marvel1  
+HUB(config-if)#ip nhrp map multicast dynamic 
+HUB(config-if)#end
+HUB#wr
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-1:&lt;/strong>*&lt;/p>
+&lt;pre tabindex="0">&lt;code>SPOKE-1#conf t
+SPOKE-1(config)#int tun0
+SPOKE-1(config-if)#no sh
+SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0
+SPOKE-1(config-if)#ip mtu 1400
+SPOKE-1(config-if)#ip tcp adjust-mss 1360
+SPOKE-1(config-if)#tunnel source f0/0
+SPOKE-1(config-if)#tunnel destination 1.1.1.1
+SPOKE-1(config-if)#ip nhrp network-id 1
+SPOKE-1(config-if)#ip nhrp authentication Marvel1
+SPOKE-1(config-if)#ip nhrp nhs 10.0.0.1
+SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1
+SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1
+SPOKE-1(config-if)#end
+SPOKE-1#wr
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-2:&lt;/strong>*&lt;/p></description></item><item><title>Network Troubleshooting</title><link>https://ittechnetworkk.github.io/posts/networktroubleshooting/network-troubleshooting/</link><pubDate>Sun, 28 Jul 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/networktroubleshooting/network-troubleshooting/</guid><description>&lt;p>İlk olarak eğer hatanın nereden kaynaklandığını az çok tahmin edebiliyorsak ilk o noktaya yoğunlaşmakta fayda olacağını düşünüyorum diyerek başlamak istiyorum.&lt;/p>
+&lt;p>Network&amp;rsquo;te bir sorunu çözerken yaklaşımımızın adım adım olacak şekilde ilk olarak en yakınımızdaki cihaz veya uygulama veya katman olmalıdır.&lt;/p>
+&lt;p>Peki ne demek istiyorum?&lt;/p>
+&lt;p>Aşağıda örnek bir senaryom var. Bu senaryoda PC1 İnternete erişemediğini varsayalım.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/network-troubleshooting/1.png" alt="troubleshooting">&lt;/p>
+&lt;p>Buradaki senaryomda, PC&amp;rsquo;nin bütün ayarlarını gözden geçirdikten sonra yani PC&amp;rsquo;nin Ethernet kablosu, IP Adres, Default Gateway, DNS gibi.&lt;/p></description></item><item><title>Raspberry Pi Syslog Server</title><link>https://ittechnetworkk.github.io/posts/raspberrypisyslogserver/raspberrypi-syslog/</link><pubDate>Mon, 15 Jul 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/raspberrypisyslogserver/raspberrypi-syslog/</guid><description>&lt;p>Merhaba, bu yazımda bi Raspberry Pi Zero&amp;rsquo;ya Syslog server rolü verip, bir Cisco Switch&amp;rsquo;e bu Syslog server konfigürasyonunu yapacağım.&lt;/p>
+&lt;p>Bu Lab için kullanacağım donanım ve yazılımlar:&lt;/p>
+&lt;ul>
+&lt;li>Raspberry Pi Zero 2W,&lt;/li>
+&lt;li>Cisco 2960 Switch,&lt;/li>
+&lt;li>SD Cart,&lt;/li>
+&lt;li>Kart Reader,&lt;/li>
+&lt;li>Ethernet Kablosu,&lt;/li>
+&lt;li>MicroUSB Power Cable,&lt;/li>
+&lt;li>Switch Power Cable,&lt;/li>
+&lt;li>ImagerPi.&lt;/li>
+&lt;/ul>
+&lt;p>İlk olarak ImagerPi kullanarak SD Kart&amp;rsquo;a Ubuntu işletim sistemini kuruyorum.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/RaspberryPiSyslogServer/1.png" alt="syslog">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/RaspberryPiSyslogServer/2.png" alt="syslog">&lt;/p>
+&lt;p>SD Kart&amp;rsquo;ı Raspberry Pi&amp;rsquo;a takıp, modemin yakınında güç kablosunu takıp cihazı açıyorum.&lt;/p></description></item><item><title>UTP Kablo Yapımı</title><link>https://ittechnetworkk.github.io/posts/utpkabloyapimi/utp-kablo-yapimi/</link><pubDate>Sun, 07 Jul 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/utpkabloyapimi/utp-kablo-yapimi/</guid><description>&lt;p>UTP Kablo yani ağ kabloları, internet iletişiminde cihazların birbirleriyle iletişim kurması için kullanılan kablolardır.&lt;/p>
+&lt;p>Birden fazla çeşidi vardır ve iletim hızlarına göre kategorilere ayrılmışlardır.&lt;/p>
+&lt;p>UTP kablolar 100 metreye kadar sinyal iletebilirler. Aşılması durumunda sinyal kayıpları, performans sorunları ile karşılaşılır.&lt;/p>
+&lt;p>UTP Kablolarının her iki ucu da RJ45 ile çakılır.&lt;/p>
+&lt;p>Kablolar koruyucu malzeme ile kablı olması veya olmaması gibi özelliklere göre 2&amp;rsquo;ye ayrılır.&lt;/p>
+&lt;ul>
+&lt;li>Sheilded Twisted Pair (STP) kablonun içinde bir kuruyucu vardır,&lt;/li>
+&lt;li>Unshielded Twisted Pair (UTP) koruyucu yoktur.&lt;/li>
+&lt;/ul>
+&lt;p>Buradaki koruyucu metal malzemenin görevi ise kablonun elektromanyetik alandan etkilenmemesini sağlamaktır.&lt;/p></description></item><item><title>Temel Switch Konfigürasyonu</title><link>https://ittechnetworkk.github.io/posts/switchconfiguration/switch-conf/</link><pubDate>Wed, 26 Jun 2024 17:53:48 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/switchconfiguration/switch-conf/</guid><description>&lt;p>Merhaba, bu yazıda Cisco bir Switch&amp;rsquo;in temel bir konfigürasyonunu göstereceğim.&lt;/p>
+&lt;p>Tabi bu konfigürasyonları temel düzelde uygulayacağım, daha kapsamlı konfigürasyon network yapılarına göre, kullanılan teknolojilere göre değişiklik gösterecektir.&lt;/p>
+&lt;p>Uygulayacağım konfigürasyonları sırasıyla aşağıdaki gibi olacaktır:&lt;/p>
+&lt;ol>
+&lt;li>Hostname,&lt;/li>
+&lt;li>Zaman Konfigürasyonu,&lt;/li>
+&lt;li>Yanlış Girilen Parola Politikası,&lt;/li>
+&lt;li>Enable Password,&lt;/li>
+&lt;li>Banner motd,&lt;/li>
+&lt;li>Kullanıcı Oluşturma,&lt;/li>
+&lt;li>Console Erişimi,&lt;/li>
+&lt;li>SSH Konfigürasyonu,&lt;/li>
+&lt;li>Default Gateway,&lt;/li>
+&lt;li>Disable Ports,&lt;/li>
+&lt;li>Konfigürasyonları Kaydetme,&lt;/li>
+&lt;li>Kontrol.&lt;/li>
+&lt;/ol>
+&lt;p>Başlayalım.&lt;/p>
+&lt;p>Ben konfigürasyonları, Cisco Catalyst 2960 Serisi bir Switch üzerinde uygulayacağım.&lt;/p>
+&lt;p>Console Kablosu ve Switch görüntü itibariyle aşağıdaki gibidir.&lt;/p></description></item><item><title>IPv6 Static Routing</title><link>https://ittechnetworkk.github.io/posts/ipv6staticrouting/ipv6-static-routing/</link><pubDate>Tue, 25 Jun 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ipv6staticrouting/ipv6-static-routing/</guid><description>&lt;p>Static Route hedefe gitmek için manuel olarak yazılan rotadır. Static Route küçük networkler için kullanılabilir. Fakat orta ve büyük networklerde iş yükünü fazlaca artırabilir.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/ipv6-static-routing/1.png" alt="routing">&lt;/p>
+&lt;p>Bu da diğer Dynamic Routing protokollerinden ayıran bir özelliğidir. Bu demektir ki bir networkte Dynamic Routing Protokolü çalışsa bile öncelik statik olarak yazılan rotadadır.&lt;/p>
+&lt;p>&lt;strong>Static Route Yazımı:&lt;/strong>
+Statik rota yazmak oldukça kolaydır. Aşağıda 2 farklı yazımı görebilirsiniz. İkisi de kullanılabilir.&lt;/p>
+&lt;pre tabindex="0">&lt;code>Router(config)#ipv6 route 2001:3::/64 2001:2::2
+Router(config)#ipv6 route 2001:3::/64 gi0/1
+&lt;/code>&lt;/pre>&lt;p>Bunun anlamı; &lt;em>&lt;strong>2001:3::/64&lt;/strong>&lt;/em> networküne gitmek için &lt;em>&lt;strong>2001:2::2&lt;/strong>&lt;/em> yolunu kullan.
+veya yine &lt;em>&lt;strong>2001:3::/64&lt;/strong>&lt;/em> networküne gitmek için &lt;em>&lt;strong>gi0/1&lt;/strong>&lt;/em> interfacesini kullan.&lt;/p></description></item><item><title>Cisco Router Parola Sıfırlama</title><link>https://ittechnetworkk.github.io/posts/ciscorouterpasswordrocovery/cisco-router-parola-sifirlama/</link><pubDate>Sun, 09 Jun 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ciscorouterpasswordrocovery/cisco-router-parola-sifirlama/</guid><description>&lt;p>Cisco Router ve Switch&amp;rsquo;lerde unutulan parolayı cihazı fabrika ayarlarına döndürmeden nasıl sıfırlayabiliriz?
+Cisco cihazlarda unutulan parolayı, konfigürasyonu bozmadan sıfırlamak mümkün. Bu işlem birkaç adımda yapılır.
+Ben bu uygulamayı elimde bulunan Cisco 800 Serisi bir Router&amp;rsquo;da adım adım uygulayacağım.
+Cihaz şekilde görüldüğü gibidir.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/CiscoRouterPasswordRocovery/1.jpg" alt="router">
+CiscoRouterPasswordRocovery&lt;/p>
+&lt;p>İlk olarak Console Portundan cihaza bağlanıyorum.&lt;/p>
+&lt;p>Cihaz&amp;rsquo;a güç verdikten hemen sonra, cihaz açılış aşamasındayken &amp;ldquo;&lt;code>CTRL+BREAK&lt;/code>&amp;rdquo; tuşlarına basarak &amp;ldquo;&lt;code>Rommon&lt;/code>&amp;rdquo; moduna geçiyorum.&lt;/p>
+&lt;p>Her terminal programında farklılık gösterebilir. Örneğin ben minicom kullanıyorum ve açılırken &amp;ldquo;&lt;code>CTRL + A + F&lt;/code>&amp;rdquo; tuş kombinasyonlarını kullanarak &amp;ldquo;&lt;code>BREAK&lt;/code>&amp;rdquo; sinyali gönderebiliyorum.&lt;/p></description></item><item><title>GRE Tunnel</title><link>https://ittechnetworkk.github.io/posts/gretunnel/gre-tunnel/</link><pubDate>Fri, 07 Jun 2024 17:53:48 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/gretunnel/gre-tunnel/</guid><description>&lt;p>GRE(Generic Routing Encapsulation) Protokolü, paketin kaynaktan hedefe, oluşturulan tünel sayesinde iletilmesini sağlayan protokoldür.
+GRE, Cisco tarafından geliştirilmiştir.
+GRE kullanarak birden fazla şubesi olan networkler birleştirilebilir.
+Fakat oluşturulan tünelden iletilen paketler okunabilir şekilde iletilir. Yani araya girip trafik dinlenirse, paketler okunabilir. Bu tünel daha sonra güvenli hale de getirilebilir.
+GRE, IP paketini kapsüle ederek yönlendirme yapar.
+Enkapsülasyon yapılırken IP başlığına(20), 4 Byte GRE başlık bilgisi eklenir.&lt;/p>
+&lt;p>Aşağıdaki GRE Lab Topolojisini uygulayacağım.&lt;/p></description></item><item><title>IPv6 Geçiş Çalışmaları İkili Yığın Yöntemi</title><link>https://ittechnetworkk.github.io/posts/ikiliyiginyontemi/ikili-yigin-yontemi/</link><pubDate>Thu, 06 Jun 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ikiliyiginyontemi/ikili-yigin-yontemi/</guid><description>&lt;p>Bu yöntem, IPv4&amp;rsquo;den IPv6&amp;rsquo;ya geçiş yöntemlerinden biri olan tünelleme tekniğidir. Bu yöntemde, cihazların hem IPv4 hem de IPv6 adreslerini birlikte kullanması yöntemidir.
+Yani IPv4 ile gelen cihaz IPv4, IPv6 ile gelen cihaz IPv6 ile haberleşir.&lt;/p>
+&lt;p>Uygulamada daha net anlaşılacaktır.&lt;/p>
+&lt;p>Aşağıdaki topolojiyi uygulayacağım.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/IkiliYiginYontemi/1.png" alt="ipv6">&lt;/p>
+&lt;p>Yapılacaklar:&lt;/p>
+&lt;ol>
+&lt;li>Router ve VPC&amp;rsquo;lerin Interface&amp;rsquo;lerine IPv4 ve IPv6 adreslerini tanımla,&lt;/li>
+&lt;li>Networklerin birbirleriyle haberleşmesi için statik rotalar yaz,&lt;/li>
+&lt;li>Test et.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>1. Router ve VPC&amp;rsquo;lerin Interface&amp;rsquo;lerine IPv4 ve IPv6 adreslerini tanımla,&lt;/strong>&lt;/p></description></item><item><title>DHCPv6</title><link>https://ittechnetworkk.github.io/posts/dhcpv6/dhcpv6/</link><pubDate>Fri, 31 May 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dhcpv6/dhcpv6/</guid><description>&lt;p>DHCP(Dynamic Host Configuration Protocol), bir networkteki bir cihaza IP, DNS, Default Gateway parametrelerini dağıtan servistir. Yani networkteki bir cihazın başka bir cihaz ile konuşmasını sağlayacak parametlereleri dağıtan servistir.
+DHCPv6, DHCPv4&amp;rsquo;den bazı özellikleriyle ayrılıyor. DHCPv6 2 şekilde yapılandırılabilir.&lt;/p>
+&lt;ul>
+&lt;li>Stateful(Durumlu) DHCPv6,&lt;/li>
+&lt;li>Stateless SLAAC (Durumsuz) DHCPv6&lt;/li>
+&lt;/ul>
+&lt;p>Stateful DHCPv6 tıpkı DHCPv4 gibi, bir DHCP server üzerinden parametreleri dağıtmaktır.&lt;/p>
+&lt;p>Stateless SLAAC DHCPv6 da ise herhangi bir DHCP server olmaksızın cihazların Router üzerinden IPv6 parametrelerini alıp otomatik olarak kendini yapılandırmasıdır.&lt;/p></description></item><item><title>IPv4 IPv6 Tünelleme</title><link>https://ittechnetworkk.github.io/posts/ipv4ipv6tunelleme/ipv4-ipv6-tunelleme/</link><pubDate>Fri, 31 May 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ipv4ipv6tunelleme/ipv4-ipv6-tunelleme/</guid><description>&lt;p>Bu yöntem, IPv4&amp;rsquo;den IPv6&amp;rsquo;ya geçiş yöntemlerinden biri olan tünelleme tekniğidir. Bu yöntemde, IPv6 networkleri IPv4 üzerinden tünellenerek birbirleriyle haberleşirler. IPv4-IPv6 geçiş aşamalarında kullanılabilecek bu yöntemin yanı sıra Dual Stack, Translation yöntemleri de vardır.&lt;/p>
+&lt;p>IPv4-IPv6 Tünelleme tekniği için aşağıdaki topolojiyi uygulayacağım.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Ipv4Ipv6Tunelleme/1.png" alt="ipv6">&lt;/p>
+&lt;p>Yapılacaklar:&lt;/p>
+&lt;ol>
+&lt;li>Interfacelere IP ver.&lt;/li>
+&lt;li>Sırasıyla tunnel oluştur.&lt;/li>
+&lt;li>Statik route yazarak networkleri haberleştir.&lt;/li>
+&lt;li>Test&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>1. Interfacelere IP ver.&lt;/strong>
+&lt;strong>R1:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>R1#configure terminal 
+R1(config)#int e0/0
+R1(config-if)#ip addr 192.168.3.2 255.255.255.0
+R1(config-if)#no sh
+R1(config-if)#int e0/1
+R1(config-if)#ip addr 192.168.1.1 255.255.255.0
+R1(config-if)#no sh
+R1(config-if)#int loopback 0
+R1(config-if)#ipv6 addr 2001:1::1/64
+R1(config-if)#no sh
+R1(config-if)#exit
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>R2:&lt;/strong>&lt;/p></description></item><item><title>Port Security</title><link>https://ittechnetworkk.github.io/posts/portsecurity/port-security/</link><pubDate>Sun, 21 Apr 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/portsecurity/port-security/</guid><description>&lt;p>Port Security, yetkisiz cihazların networke erişimini engellemek için kullanılır. Layer 2 seviyesinde uygulanır. Switch portlarına bağlanabilecek cihazların MAC adresleri bazında güvenliği sağlanır. Port Security uygulanacak switch portu ya access ya da trunk olamalıdır. Cihaz&amp;rsquo;a default olarak geldiği gibi Port Security yapılmaz, hata verir.
+Konfigürasyon interface altında yapılır.&lt;/p>
+&lt;p>Switch&amp;rsquo;de boşta bulunan portları kapatmak güvenliğin ilk adımıdır.&lt;/p>
+&lt;p>3 Yöntem vardır;
+&lt;strong>1- MAC Adresi Manuel Belirlenebilir.&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>switchport port-security mac-address 0000.1111.2222.3333
+switchport port-security maximum 2 (Max. 2 MAC Adresine izin verir.)
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>2- MAC Adresi Dinamik Olarak Öğrenilebiliyor.&lt;/strong>&lt;/p></description></item><item><title>PPP Multilink Konfigürasyonu</title><link>https://ittechnetworkk.github.io/posts/pppmultilink/ppp-multilink/</link><pubDate>Sun, 14 Apr 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/pppmultilink/ppp-multilink/</guid><description>&lt;p>PPP Multilink, routerlar arasındaki birden fazla fiziksel bağlantıyı tek bir mantıksal bağlantı yapmak amacıyla kullanılır.
+Bazı özellikleri:&lt;/p>
+&lt;ul>
+&lt;li>Yük Dengeleme,&lt;/li>
+&lt;li>Bant Genişliğinin Artırılması,&lt;/li>
+&lt;li>Verimlilik,&lt;/li>
+&lt;li>Yedeklilik.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Multilink PPP LAB:&lt;/strong>
+Aşağıdaki basit yapıyı konfigüre edeceğim.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/ppp-multilink/1.png" alt="ppp">&lt;/p>
+&lt;p>Bu yapıda serial 4 kablo ile bağlanmış iki router var. R1 ile başlayalım.&lt;/p>
+&lt;p>&lt;strong>R1:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>R1#conf t
+R1(config)#interface multilink 1
+R1(config-if)#ip addr 10.0.0.1 255.255.255.0
+R1(config-if)#no sh
+R1(config-if)#ppp multilink
+R1(config-if)#ppp multilink group 1
+R1(config-if)#exit
+
+R1(config)#int ser0/0
+R1(config-if)#encapsulation ppp
+R1(config-if)#ppp multilink 
+R1(config-if)#ppp multilink group 1 
+R1(config-if)#no sh
+
+R1(config-if)#int ser0/1
+R1(config-if)#encapsulation ppp
+R1(config-if)#ppp multilink
+R1(config-if)#ppp multilink group 1
+R1(config-if)#no sh
+
+R1(config-if)#int ser0/2
+R1(config-if)#encapsulation ppp
+R1(config-if)#ppp multilink
+R1(config-if)#ppp multilink group 1
+R1(config-if)#no sh
+
+R1(config-if)#int ser0/3
+R1(config-if)#encapsulation ppp
+R1(config-if)#ppp multilink
+R1(config-if)#ppp multilink group 1
+R1(config-if)#no sh
+R1(config-if)#exit
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>R2:&lt;/strong>&lt;/p></description></item><item><title>OSPF LAB</title><link>https://ittechnetworkk.github.io/posts/ospflab/ospf-lab/</link><pubDate>Sun, 07 Apr 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ospflab/ospf-lab/</guid><description>&lt;p>Bu Lab’daki amacım OSPF’in genel bir tekrarını yapmak olacak. Komutları uzun uzun yazıyor olacağım.&lt;/p>
+&lt;p>Aşağıdaki topolojiyi uygulayacağım.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/OSPFLAB/1.png" alt="ospf">&lt;/p>
+&lt;p>Bu Lab&amp;rsquo;da istenilenler topolojinin sol üst köşesinde yazıyor.&lt;/p>
+&lt;p>Buna göre;&lt;/p>
+&lt;p>&lt;strong>1- İlk olarak router interfacelerine ve VPC&amp;rsquo;lere sırasıyla IP&amp;rsquo;lerini vererek başlıyorum.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>R1:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>R1#configure terminal 
+R1(config)#int e0/0
+R1(config-if)#ip addr 10.0.1.1 255.255.255.0
+R1(config-if)#no sh
+R1(config-if)#int e0/1
+R1(config-if)#ip address 10.0.3.1 255.255.255.0
+R1(config-if)#no sh
+R1(config-if)#int e0/2
+R1(config-if)#ip addr 10.0.4.1 255.255.255.0
+R1(config-if)#no sh
+R1(config-if)#int e0/3
+R1(config-if)#ip addr 10.0.2.1 255.255.255.0
+R1(config-if)#no sh
+R1(config-if)#int e1/0
+R1(config-if)#ip addr 10.0.0.1 255.255.255.0
+R1(config-if)#no sh
+R1(config-if)#exit
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>R2:&lt;/strong>&lt;/p></description></item><item><title>OSPF Authentication</title><link>https://ittechnetworkk.github.io/posts/ospfauthentication/ospf-authentication/</link><pubDate>Sun, 31 Mar 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ospfauthentication/ospf-authentication/</guid><description>&lt;p>OSPF Authentication, OSPF network trafiğinin güvenliğini artırmak amacıyla kullanılır.
+3 Çeşit doğrulama yöntemi vardır;&lt;/p>
+&lt;p>1- Plain Text Authentication,&lt;/p>
+&lt;p>2- MD5 Authentication,&lt;/p>
+&lt;p>3- SHA-HMAC Authentication (IOS 15.4 ve sonrası versiyonlar için)&lt;/p>
+&lt;p>Aşağıdaki topolojiyi uygulayacağız.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/ospf-authentication/1.png" alt="ospf">&lt;/p>
+&lt;p>Bu topolojide 3 Authentication metodunu da uygulayacağız.&lt;/p>
+&lt;p>R1 ve R3 arasında Plain Text Authentication (Area 1),&lt;/p>
+&lt;p>R1 ve R2 arasında MD5 Authentication (Area 0),&lt;/p>
+&lt;p>R2 ve R4 arasında SHA-HMAC Authentication yapacağız. (Area 2)&lt;/p>
+&lt;p>&lt;strong>1- Interfacelere IP vererek başlayalım:&lt;/strong>&lt;/p></description></item><item><title>OSPF Konfigürasyonu</title><link>https://ittechnetworkk.github.io/posts/ospfconfiguration/ospf-configuration/</link><pubDate>Sun, 31 Mar 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ospfconfiguration/ospf-configuration/</guid><description>&lt;p>OSPF (Open Short Path First), dinamik bir yönlendirme protokolüdür. OSPF bir Link State Routing protokolüdür. Bundan dolayı network haritasının tamamına hakimdir Bazı özellikleri şöyledir:&lt;/p>
+&lt;ul>
+&lt;li>Açık kaynaklıdır,&lt;/li>
+&lt;li>SPF(Shortest Path First) algoritmasını kullanır,&lt;/li>
+&lt;li>Classless (Sınıfsız) bir protokoldür,&lt;/li>
+&lt;li>CIDR (Classless Inter-Domain Routing), VLSM(Veriable Length Subnet Masking) destekler,&lt;/li>
+&lt;li>Load balancing destekler,&lt;/li>
+&lt;li>Güncelleme süresi hızlıdır,&lt;/li>
+&lt;li>Administrative Distance değeri 110&amp;rsquo;dur,&lt;/li>
+&lt;li>Area yapısı ile ölçeklenebilir,&lt;/li>
+&lt;li>Kimlik doğrulamayı destekler (MD5)&lt;/li>
+&lt;li>Metrik değeri olarak Cost kullanır.&lt;/li>
+&lt;li>Multicast 224.0.0.5 ve 224.0.0.6 adreslerinden yayın yapar.&lt;/li>
+&lt;li>89 portunu kullanır.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>OSPF Paket Tipleri:&lt;/strong>&lt;/p></description></item><item><title>EtherChannel</title><link>https://ittechnetworkk.github.io/posts/etherchannel/etherchannel/</link><pubDate>Fri, 22 Mar 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/etherchannel/etherchannel/</guid><description>&lt;p>EtherChannel Protokolü switchlerin birden fazla fiziksel portunu tek bir mantıksal port yapan protokoldür. Yapılmasının amacı şudur örneğin iki switch arasına 4 kablo çekip bırakırsak Stp (Spanning Tree Protocol) devreye girecek ve bu portlardan bazılarını kapatacaktır loop&amp;rsquo;u engellemek için. Eğer EtherChannel yaparsak bu portlar tek bir mantıksal port gibi görünecektir ve STP&amp;rsquo;ye gerek kalmayacaktır. Konfigüre etmek için karşılıklı portların yapısı aynı olmalıdır. Örneğin bir taraf GigabitEthernet diğeri FastEthernet olamaz.
+3 EtherChannel Protokolü vardır:&lt;/p></description></item><item><title>Static Routing</title><link>https://ittechnetworkk.github.io/posts/staticrouting/static-routing/</link><pubDate>Mon, 18 Mar 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/staticrouting/static-routing/</guid><description>&lt;p>Static Routing, yönlendirme tablosuna manuel olarak route eklenmesidir.
+Topoloji değişikliklerinde networklerin de yine güncellenmesi manuel olarak yapılmalıdır.
+Administrative Distance değeri 1&amp;rsquo;dir&lt;/p>
+&lt;p>Aşağıdaki topolojiyi uygulayacağız.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/StaticRouting/2.png" alt="UTP">&lt;/p>
+&lt;p>Bu topolojide tüm cihazların birbirleriyle iletişim kurmasını istiyoruz. Başlayalım&lt;/p>
+&lt;p>&lt;strong>1-&lt;/strong> Router interfacelerine ve VPC&amp;rsquo;lere IP&amp;rsquo;lerini verelim.&lt;/p>
+&lt;p>&lt;strong>R1:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>R1#enable 
+R1#conf t 
+R1(config)#int e0/0
+R1(config-if)#ip add 192.168.1.1 255.255.255.0
+R1(config-if)#no sh
+R1(config-if)#int s1/0
+R1(config-if)#ip address 2.2.2.2 255.255.255.0
+R1(config-if)#no sh
+R1(config-if)#int s1/1
+R1(config-if)#ip addr 3.3.3.2 255.255.255.0
+R1(config-if)#no sh
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>R2:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>R2#enable
+R2#conf t
+R2(config)#int e0/0
+R2(config-if)#ip add 192.168.2.1 255.255.255.0
+R2(config-if)#no sh
+R2(config-if)#int s1/0
+R2(config-if)#ip add 2.2.2.1 255.255.255.0
+R2(config-if)#no sh
+R2(config-if)#int s1/1
+R2(config-if)#ip add 1.1.1.1 255.255.255.0
+R2(config-if)#no sh
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>R3:&lt;/strong>&lt;/p></description></item><item><title>CDP LLDP Protokolleri</title><link>https://ittechnetworkk.github.io/posts/cdp-lldp/cdp-lldp/</link><pubDate>Thu, 08 Feb 2024 23:39:19 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/cdp-lldp/cdp-lldp/</guid><description>&lt;p>&lt;strong>A-CDP Protokolü:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>CDP (Cisco Discovery Protocol), Cisco cihazlara özel cihaz keşif protokolüdür.&lt;/li>
+&lt;li>Layer 2 seviyesinde çalışır.&lt;/li>
+&lt;li>Cihaz türü, IP adresi, yazılım sürümü, işletim sistemi gibi bilgileri elde etmemizi sağlar.&lt;/li>
+&lt;li>Varsayılan olarak açık gelir. İstenirse port bazında açabilir veya kapatabiliriz.&lt;/li>
+&lt;li>Networkü tanımak için kullanılır fakat her zaman için iyi olmayabilir.&lt;/li>
+&lt;li>60 saniyede bir CDP mesajı yollanır, 180 saniye tabloda tutulur.&lt;/li>
+&lt;li>Multicast yayın yapar.&lt;/li>
+&lt;/ul>
+&lt;p>CDP Cihaz keşfi komutları:&lt;/p>
+&lt;pre tabindex="0">&lt;code>R1#show cdp neighbors 
+R1#show cdp neighbors detail
+&lt;/code>&lt;/pre>&lt;p>CDP Kapatmak için:&lt;/p></description></item><item><title>EIGRP Authentication</title><link>https://ittechnetworkk.github.io/posts/eigrpauthentication/eigrp-authentication/</link><pubDate>Wed, 07 Feb 2024 23:44:36 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/eigrpauthentication/eigrp-authentication/</guid><description>&lt;p>EIGRP Cisco tarafından geliştirilen, daha sonra kaynak kodları açılan bir dinamik yönlendirme protokolüdür. Kimlik doğrulama yapılmasının amacı networkte bir şekilde bulunan yetkisiz routerların, yetkili olan routerların routing tablosunu bozmasını engellemektir. Trafiği şifrelemez. Sadece kimlik doğrulama yapar. Authentication 2 aşamada yapılır.&lt;/p>
+&lt;p>Aşağıdaki topolojiyi uygulayacağız.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/EIGRPAuthentication/2.png" alt="eigrp">&lt;/p>
+&lt;p>Burada 3 Router&amp;rsquo;ımız var, hali hazırda EIGRP konfigürasyonu yapılmış, networkler birbirlerini tanıyorlar. Bu topolojide, kötü niyetli biri routerlardan birine bir kablo takarsa rahatlıkla network duyuruları yapabilir, routing tablolarını şişirebilir, networkü kullanılmaz hale getirebilir. Kimlik doğrulamayı etkinleştirdiğimizde ise, kötü niyetli kişi artık bunları yapamaz.&lt;/p></description></item><item><title>Cisco IOS SSH Konfigürasyonu</title><link>https://ittechnetworkk.github.io/posts/ciscossh/cisco-ssh/</link><pubDate>Wed, 07 Feb 2024 23:41:02 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ciscossh/cisco-ssh/</guid><description>&lt;p>SSH uzak bir cihaza bağlanmak için kullanılan kriptolu ve güvenli bir protokoldür. Defaultta 22 TCP portunu kullanır. Şimdi bir Cisco Router&amp;rsquo;a nasıl SSH konfigürasyonu yapılır bakalım.
+SSH konfigürasyonu birkaç adımdan oluşur.&lt;/p>
+&lt;p>&lt;strong>A-ROUTER:&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>1:&lt;/strong> Hostname ver,&lt;/p>
+&lt;pre tabindex="0">&lt;code>vIOS-01&amp;gt;enable
+vIOS-01#configure terminal
+vIOS-01(config)#hostname R1
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>2:&lt;/strong>* Bir domain-name tanımla,&lt;/p>
+&lt;pre tabindex="0">&lt;code>R1(config)#ip domain-name ssnrshnn.local
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>3:&lt;/strong> Bir kullanıcı ve parola tanımla,&lt;/p>
+&lt;pre tabindex="0">&lt;code>R1(config)#username suleyman privilege 15 secret seba
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>4:&lt;/strong> Bir key oluştur,&lt;/p>
+&lt;pre tabindex="0">&lt;code>R1(config)#crypto key generate rsa general-keys modules 1024
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>5:&lt;/strong> vty moda geçiş yapıyoruz,&lt;/p></description></item><item><title>EIGRP Protokolü</title><link>https://ittechnetworkk.github.io/posts/eigrp/eigrp/</link><pubDate>Sun, 21 Jan 2024 23:44:58 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/eigrp/eigrp/</guid><description>&lt;p>EIGRP (Enchanced Interior Gateway Routing Protocol), Cisco tarafından geliştirilen bir dinamik yönlendirme protokolüdür. Daha sonradan diğer firmaların kullanımına sunulmuştur. RFC7868de tanımlanmıştır. Hem Distance Vector hem de Link State protokol özelliklerini aldığı için Hybrid Protokol olarak da geçer. Bazı özellikleri şöyledir:&lt;/p>
+&lt;ul>
+&lt;li>Max 224 hop destekler,&lt;/li>
+&lt;li>VLSM destekler, yani subnetting destekler,&lt;/li>
+&lt;li>Hem Unicast hem de Multicast çalışır 224.0.0.10,&lt;/li>
+&lt;li>Bir ana rota (Succesor), bir de yedek rota (Feasible Succesor) belirlenir,&lt;/li>
+&lt;li>Hızlı yakınsama sağlar, alternatif rotalar arasında geçiş hızlıdır,&lt;/li>
+&lt;li>Administrative Distance değeri 90&amp;rsquo;dır,&lt;/li>
+&lt;li>Yönlendirme tablosunda değişiklik olduğunda tüm tabloyu değil sadece değişiklik olan kısmı diğer Router&amp;rsquo;lara gönderir,&lt;/li>
+&lt;li>5 Saniyede bir &amp;ldquo;Hello&amp;rdquo; paketi gönderir, 15 saniye &amp;ldquo;Acknowledgement&amp;rdquo; paketiyle cevap gelmezse komşuluk düşer,&lt;/li>
+&lt;li>EIGRP Paketleri:
+&lt;ul>
+&lt;li>Hello: Routerlar kendi aralarında 5 saniyede bir ayakta olduklarını duyurmak için kullandıkları pakettir.&lt;/li>
+&lt;li>Acknowledgement: Yapılan komşulukların onaylanmasında kullanılan pakettir.&lt;/li>
+&lt;li>Update: Ağ topolojisindeki değişiklikler bu paketle duyurulur.&lt;/li>
+&lt;li>Query: Yönlendirme bilgisine gerek duyan Router&amp;rsquo;lara gönderilir.&lt;/li>
+&lt;li>Reply: Query paketlerine cevaben gönderilen pakettir.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Bu paketlerin iletiminde RTP(Reliable Transport Protocol) kullanılır,&lt;/li>
+&lt;li>Metrik hesaplamada;
+&lt;ul>
+&lt;li>K1= Bant Genişliği (Bandwidth),&lt;/li>
+&lt;li>K2= Yük (Load),&lt;/li>
+&lt;li>K3= Gecikme (Delay),&lt;/li>
+&lt;li>K4= Güvenilirlik (Reliability),&lt;/li>
+&lt;li>K5= MTU,&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Defaultta Bant Genişliği(Bandwidth) ve Gecikme(Delay) parametlereleri kullanlılarak metrik hesaplanır. Metrik = (Bandwidth + Delay) * 256&lt;/li>
+&lt;li>Metrik değerleri aynı olmayan cihazlar komşuluk kuramaz,&lt;/li>
+&lt;li>EIGRP Network duyurularında aşağıdaki farklı kullanım şekilleri sunulmuştur. 3&amp;rsquo;ü de kullanılabilir.
+&lt;pre tabindex="0">&lt;code>R1(config-router)# network 192.168.1.0 0.0.0.255 # atası budur
+R1(config-router)# network 192.168.1.0 255.255.255.0 # yeni cihazlar tanıyabiliyor
+R1(config-router)# network 192.168.1.5 0.0.0.0 # ilgili interface duyurulur
+R1(config-router)# network 192.168.1.0
+&lt;/code>&lt;/pre>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>UYGULAMA:&lt;/strong>&lt;/p></description></item><item><title>DHCP Relay Agent</title><link>https://ittechnetworkk.github.io/posts/dhcprelayagent/dhcp-relay-agent/</link><pubDate>Sun, 14 Jan 2024 23:43:35 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dhcprelayagent/dhcp-relay-agent/</guid><description>&lt;p>DHCP, cihazlara IP, DNS, Default Gateway dağıtan protokoldür. Bu protokol client-server mantığıyla çalışır. İstemci talep eder ve server hizmet verir. UDP çalışır ve 4 aşamada işlem tamamlanır.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/DHCPRelayAgent/8.png" alt="dhcp">&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Client, DHCP Discover paketini networke gönderir. Bunun anlamı &amp;ldquo;Bana IP verecek bir DHCP Server var mı?&amp;rdquo;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Server, DHCP Offer paketiyle karşılık verir ve der ki &amp;ldquo;Evet ben verebilirim&amp;rdquo;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Client, DHCP Request paketiyle IP adresi talep eder.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Server, DHCP Ack paketiyle ile cihaza IP adresi ataması yapar.&lt;/p></description></item><item><title>HSRP Protokolü</title><link>https://ittechnetworkk.github.io/posts/hsrp/hsrp/</link><pubDate>Sun, 07 Jan 2024 23:45:22 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/hsrp/hsrp/</guid><description>&lt;p>HSRP (Hot Standby Router Protocol), router yedekliliğini sağlamak amacıyla Cisco tarafından geliştirilmiş bir protokoldür. Birden fazla Router bulunan networklerde aktif olarak belirtilen Router&amp;rsquo;ın çalışmaması durumunda yedek olarak bekleyen Router&amp;rsquo;ın devreye girmesi prensibiyle çalışır. Bunun için sanal bir ortak IP adresi oluşturulur ve PC&amp;rsquo;lere Gateway olarak bu IP adresi verilir. Bu IP adresine giden paketler de aktif olan Router&amp;rsquo;a yönlendirilir. Bu sayede iletişim sağlanır.&lt;/p>
+&lt;p>Router&amp;rsquo;lar birbirlerine 3 saniyede bir aktif olup olmadıklarını öğrendikleri Hello paketi yollarlar. Eğer aktif Router&amp;rsquo;dan 10 saniye cevap gelmezse yedek Router devreye girer, paketler o Router üzerinden iletilir. Bu değerler isteğe bağlı değiştirilebilir.&lt;/p></description></item><item><title>DHCP Snooping</title><link>https://ittechnetworkk.github.io/posts/dhcpsnooping/dhcp-snooping/</link><pubDate>Sun, 31 Dec 2023 23:44:03 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dhcpsnooping/dhcp-snooping/</guid><description>&lt;p>DHCP(Dynamic Host Configuration Protocol), ağdaki cihazlarımıza otomatik olarak IP, DNS, Default Gateway bilgilerini dağıtan servistir. Ağa yeni bir cihaz katıldığında, kablo takılır takılmaz IP almak için Broadcast yayın yapar. Eğer ortamda DHCP servisi varsa o da karşılık verir. Toplam 4 aşamada IP alma işlemi tamamlanır.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/DHCPSnooping/8.png" alt="dhcp">&lt;/p>
+&lt;p>Bu paketler Broadcast paketler olduğu için ağdaki herkese ulaşır bu da her zaman için iyi olmayabilir. Örneğin bir network yapısında iki DHCP server aynı anda çalışabilir. Biri istenmeyen, kötü niyetli de olabilir ve cihaza istediği IP, DNS, Default Gateway bilgisi dağıtarak, trafiği istenmeyen şekilde etkileyebilir. DHCP Snooping&amp;rsquo;i aktif hale getirmek gerekir.
+DHCP Server&amp;rsquo;ın kim ve switch&amp;rsquo;in hangi portundan bağlı olduğunu bildiğimiz için, switch&amp;rsquo;e bunu öğretebiliriz ve bu sayede bu kötü senaryonun önüne geçmiş oluruz.
+DHCP Snooping&amp;rsquo;in yaptığı ise belirli bir port veya portlar üzerinden DHCP trafiğine izin verir geri kalanını engeller.&lt;/p></description></item><item><title>VTP Protokolü</title><link>https://ittechnetworkk.github.io/posts/vtp/vtp/</link><pubDate>Sun, 24 Dec 2023 23:46:15 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/vtp/vtp/</guid><description>&lt;p>VTP (Vlan Trunking Protokol), çok sayıda switch bulunan networklerde yönetimi kolaylaştırmak için kullanılan bir protokoldür. Server-Client mantığıyla çalışır ve Cisco tarafından geliştirilmiştir. Bu protokolün amacı çok fazla switch bulunan networklerde tek tek vlanları ilgili switchlere tanımlamaktansa merkezi bir yerden vlanları dağıtmayı sağlar. Bu vlanlar trunk portlar üzerinden dağıtılır. Senkron çalışır yani merkezde bir vlan oluşturulduğunda veya silindiğinde bu değişiklik ilgili switchlere de dağıtılır. Vlanları dağıtılması işlemi için cihazların VTP etki alanında olması gerekir. Bunun için bir Domain ve Password&amp;rsquo;e ihtiyaç duyulur.&lt;/p></description></item><item><title>RIP Protokolü</title><link>https://ittechnetworkk.github.io/posts/rip/rip/</link><pubDate>Sun, 17 Dec 2023 23:45:55 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/rip/rip/</guid><description>&lt;ul>
+&lt;li>RIP(Router Information Protokol), bir dinamik yönlendirme protokolüdür.&lt;/li>
+&lt;li>Basit ve kolay öğrenilebilen bir protokoldür.&lt;/li>
+&lt;li>RIPv1 ve RIPv2 versiyonları vardır. RFC1058&amp;rsquo;de tanımlanmıştır.&lt;/li>
+&lt;li>RIP Protokolü, yönlendirme tablosunu 30 saniyede bir günceller daha sonra üzerindeki aktif arayüzlere iletir.&lt;/li>
+&lt;li>Administrative Distance değeri 120&amp;rsquo;dir.&lt;/li>
+&lt;li>RIP protokolü en fazla 15 Hop Count&amp;rsquo;a izin verir.&lt;/li>
+&lt;li>En iyi rotanın bulunmasında hop sayısına bakılarak paket iletilir.&lt;/li>
+&lt;li>RIPv1 broadcast yayın yapar, subnet bilgisini routing tablosunu güncellediğinde göndermez, kimlik doğrulama yapmaz.&lt;/li>
+&lt;li>RIPv2 Multicast(224.0.0.9) yayın yapar, subnet bilgisini gönderir, kimlik doğrulama desteği vardır.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>RIPv2 Konfigürasyonu:&lt;/strong>
+Aşağıdaki örnek topolojiyi uygulayalım.&lt;/p></description></item></channel></rss>

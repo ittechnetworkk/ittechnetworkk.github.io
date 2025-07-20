@@ -1,20 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Threat Intel on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/threat-intel/</link>
-    <description>Recent content in Threat Intel on ittechnetworkk</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Sat, 05 Jul 2025 15:16:47 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/threat-intel/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>SOC141 - Phishing URL Detected</title>
-      <link>http://localhost:1313/walkthroughs/soc141/</link>
-      <pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate>
-      <guid>http://localhost:1313/walkthroughs/soc141/</guid>
-      <description></description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Threat Intel on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/threat-intel/</link><description>Recent content in Threat Intel on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sat, 05 Jul 2025 15:16:47 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/threat-intel/index.xml" rel="self" type="application/rss+xml"/><item><title>SOC141 - Phishing URL Detected</title><link>https://ittechnetworkk.github.io/walkthroughs/soc141/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/soc141/</guid><description>&lt;p>EventID : 86
+Event Time : Mar, 22, 2021, 09:23 PM
+Rule : SOC141 - Phishing URL Detected
+Level : Security Analyst&lt;/p>
+&lt;p>Source Address : 172.16.17.49
+Source Hostname : EmilyComp
+Destination Address : 91.189.114.8
+Destination Hostname : mogagrocol.ru&lt;/p>
+&lt;p>Username : ellie
+Request URL : &lt;a href="http://mogagrocol.ru/wp-content/plugins/akismet/fv/index.php?email=ellie@letsdefend.io">http://mogagrocol.ru/wp-content/plugins/akismet/fv/index.php?email=ellie@letsdefend.io&lt;/a>
+User Agent : Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&lt;/p>
+&lt;p>Device Action : Allowed&lt;/p>
+&lt;p>&lt;strong>Log Management:&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/SOC141/Log-1.png" alt="SOC141">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/SOC141/Log-2.png" alt="SOC141">&lt;/p>
+&lt;p>&lt;strong>Endpoint Security:&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/SOC141/Endpoint-1.png" alt="SOC141">&lt;/p></description></item></channel></rss>

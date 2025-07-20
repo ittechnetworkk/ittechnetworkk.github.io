@@ -1,270 +1,29 @@
-<!DOCTYPE html>
-<html lang="en-us">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> [EN] GRE Over IPSEC LAB | ittechnetworkk</title>
-  <link rel = 'canonical' href = 'http://localhost:1313/posts/greoveripsec-lab/gre-over-ipsec-lab/'>
-  <meta name="description" content="Hi, I&#39;m Soner, and this is my personal blog where I share insights, guides, and articles on various tech topics, including Networking, Linux, Windows, Virtualization, Firewalls, IoT, and more. I&#39;m constantly learning and exploring new technologies, and this blog is where I document my journey. ">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="robots" content="all,follow">
-  <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:url" content="http://localhost:1313/posts/greoveripsec-lab/gre-over-ipsec-lab/">
-  <meta property="og:site_name" content="ittechnetworkk">
-  <meta property="og:title" content="[EN] GRE Over IPSEC LAB">
-  <meta property="og:description" content="Hello everyone, in this LAB I will configure GRE over IPSec Tunnels with following topology.
+<!doctype html><html lang=en-us><head><link rel=preload href=/lib/font-awesome/webfonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/lib/font-awesome/webfonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/lib/font-awesome/webfonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>[EN] GRE Over IPSEC LAB | ittechnetworkk</title><link rel=canonical href=https://ittechnetworkk.github.io/posts/greoveripsec-lab/gre-over-ipsec-lab/><meta name=description content="Hi, I'm Soner, and this is my personal blog where I share insights, guides, and articles on various tech topics, including Networking, Linux, Windows, Virtualization, Firewalls, IoT, and more. I'm constantly learning and exploring new technologies, and this blog is where I document my journey. "><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name=robots content="all,follow"><meta name=googlebot content="index,follow,snippet,archive"><meta property="og:url" content="https://ittechnetworkk.github.io/posts/greoveripsec-lab/gre-over-ipsec-lab/"><meta property="og:site_name" content="ittechnetworkk"><meta property="og:title" content="[EN] GRE Over IPSEC LAB"><meta property="og:description" content="Hello everyone, in this LAB I will configure GRE over IPSec Tunnels with following topology.
 In this topology some configurations have been done. So networks can already reach with each other. I will just focus on GRE over IPSec Tunnels between the networks of Customer-A and Customer-B.
 GRE Subnet for Customer-A: 192.168.1.0/24
 GRE Subnet for Customer-B: 192.168.2.0/24
 R1:
-#GRE CONFIGURATION R1(config)#int tunnel 1 R1(config-if)#ip addr 192.168.1.10 255.255.255.0 R1(config-if)#tunnel source e0/1 R1(config-if)#tunnel destination 1.1.4.2 R1(config-if)#exit #IPSEC CONFIGURATION R1(config)#crypto isakmp policy 100 R1(config-isakmp)#authentication pre-share R1(config-isakmp)#encryption aes R1(config-isakmp)#group 14 R1(config-isakmp)#hash sha R1(config-isakmp)#exit R1(config)#crypto isakmp key ittechnetworkk address 1.1.4.2 R1(config)#crypto ipsec transform-set XYZ esp-aes esp-sha-hmac R1(cfg-crypto-trans)#mode transport R1(cfg-crypto-trans)#exit R1(config)#ip access-list extended GRE-IPSEC R1(config-ext-nacl)#permit gre host 1.1.1.2 host 1.1.4.2 R1(config-ext-nacl)#exit R1(config)#crypto map IPSEC 10 ipsec-isakmp R1(config-crypto-map)#match address GRE-IPSEC R1(config-crypto-map)#set peer 1.1.4.2 R1(config-crypto-map)#set transform-set XYZ R1(config-crypto-map)#exit R1(config)#int e0/1 R1(config-if)#crypto map IPSEC R1(config-if)#exit #ROUTING R1(config)#ip route 10.0.4.0 255.255.255.0 tunnel 1 R10:">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-02-21T22:19:46+01:00">
-    <meta property="article:modified_time" content="2025-02-21T22:19:46+01:00">
-    <meta property="article:tag" content="Gre">
-    <meta property="article:tag" content="Ipsec">
-    <meta property="article:tag" content="Cisco">
-    <meta property="article:tag" content="IOS">
-
-  
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="[EN] GRE Over IPSEC LAB">
-  <meta name="twitter:description" content="Hello everyone, in this LAB I will configure GRE over IPSec Tunnels with following topology.
+#GRE CONFIGURATION R1(config)#int tunnel 1 R1(config-if)#ip addr 192.168.1.10 255.255.255.0 R1(config-if)#tunnel source e0/1 R1(config-if)#tunnel destination 1.1.4.2 R1(config-if)#exit #IPSEC CONFIGURATION R1(config)#crypto isakmp policy 100 R1(config-isakmp)#authentication pre-share R1(config-isakmp)#encryption aes R1(config-isakmp)#group 14 R1(config-isakmp)#hash sha R1(config-isakmp)#exit R1(config)#crypto isakmp key ittechnetworkk address 1.1.4.2 R1(config)#crypto ipsec transform-set XYZ esp-aes esp-sha-hmac R1(cfg-crypto-trans)#mode transport R1(cfg-crypto-trans)#exit R1(config)#ip access-list extended GRE-IPSEC R1(config-ext-nacl)#permit gre host 1.1.1.2 host 1.1.4.2 R1(config-ext-nacl)#exit R1(config)#crypto map IPSEC 10 ipsec-isakmp R1(config-crypto-map)#match address GRE-IPSEC R1(config-crypto-map)#set peer 1.1.4.2 R1(config-crypto-map)#set transform-set XYZ R1(config-crypto-map)#exit R1(config)#int e0/1 R1(config-if)#crypto map IPSEC R1(config-if)#exit #ROUTING R1(config)#ip route 10.0.4.0 255.255.255.0 tunnel 1 R10:"><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2025-02-21T22:19:46+01:00"><meta property="article:modified_time" content="2025-02-21T22:19:46+01:00"><meta property="article:tag" content="Gre"><meta property="article:tag" content="Ipsec"><meta property="article:tag" content="Cisco"><meta property="article:tag" content="IOS"><meta name=twitter:card content="summary"><meta name=twitter:title content="[EN] GRE Over IPSEC LAB"><meta name=twitter:description content="Hello everyone, in this LAB I will configure GRE over IPSec Tunnels with following topology.
 In this topology some configurations have been done. So networks can already reach with each other. I will just focus on GRE over IPSec Tunnels between the networks of Customer-A and Customer-B.
 GRE Subnet for Customer-A: 192.168.1.0/24
 GRE Subnet for Customer-B: 192.168.2.0/24
 R1:
-#GRE CONFIGURATION R1(config)#int tunnel 1 R1(config-if)#ip addr 192.168.1.10 255.255.255.0 R1(config-if)#tunnel source e0/1 R1(config-if)#tunnel destination 1.1.4.2 R1(config-if)#exit #IPSEC CONFIGURATION R1(config)#crypto isakmp policy 100 R1(config-isakmp)#authentication pre-share R1(config-isakmp)#encryption aes R1(config-isakmp)#group 14 R1(config-isakmp)#hash sha R1(config-isakmp)#exit R1(config)#crypto isakmp key ittechnetworkk address 1.1.4.2 R1(config)#crypto ipsec transform-set XYZ esp-aes esp-sha-hmac R1(cfg-crypto-trans)#mode transport R1(cfg-crypto-trans)#exit R1(config)#ip access-list extended GRE-IPSEC R1(config-ext-nacl)#permit gre host 1.1.1.2 host 1.1.4.2 R1(config-ext-nacl)#exit R1(config)#crypto map IPSEC 10 ipsec-isakmp R1(config-crypto-map)#match address GRE-IPSEC R1(config-crypto-map)#set peer 1.1.4.2 R1(config-crypto-map)#set transform-set XYZ R1(config-crypto-map)#exit R1(config)#int e0/1 R1(config-if)#crypto map IPSEC R1(config-if)#exit #ROUTING R1(config)#ip route 10.0.4.0 255.255.255.0 tunnel 1 R10:">
-
-  
-  
-    
-  
-  
-
-  
-  
-  
-  <link rel="stylesheet" href="http://localhost:1313/css/styles.bdd621ce0dc4beed42cba9d295fbb7a846b8870c3fda65b870471926d718c2543ebb5d8d248ba9a5554cba6ec2e05b0dc829190fd4e4fef576beaa4c3f244abe.css" integrity="sha512-vdYhzg3Evu1Cy6nSlfu3qEa4hww/2mW4cEcZJtcYwlQ&#43;u12NJIuppVVMum7C4FsNyCkZD9Tk/vV2vqpMPyRKvg==">
-
-  
-   <link rel="stylesheet" href="http://localhost:1313/css/custom.css">  <link rel="stylesheet" href="http://localhost:1313/css/lightbox.css">  <link rel="stylesheet" href="http://localhost:1313/css/tools.css"> 
-  
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  
-
-  
-<link rel="icon" type="image/png" href="http://localhost:1313/images/favicon.ico" />
-
-  
-</head> 
-<body class="max-width mx-auto px3 ltr">
-  <div class="content index py4">
-
-  <div id="header-post">
-  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
-         
-        <li><a href="/">Home</a></li>
-         
-        <li><a href="/posts">Posts</a></li>
-         
-        <li><a href="/walkthroughs">Walkthroughs</a></li>
-         
-        <li><a href="/projects">Projects</a></li>
-         
-        <li><a href="/tools/">Tools</a></li>
-         
-        <li><a href="/resources">Resources</a></li>
-         
-        <li><a href="/library">Library</a></li>
-         
-        <li><a href="/about">About</a></li>
-        
-      </ul>
-    </span>
-    <br/>
-    <span id="actions">
-      <ul>
-        
-        <li>
-          <a class="icon" href=" http://localhost:1313/posts/gre-lab/gre-lab/" aria-label="Previous">
-            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
-          </a>
-        </li>
-        
-        
-        <li>
-          <a class="icon" href="http://localhost:1313/posts/esxiinstallation/esxi-installation/" aria-label="Next">
-            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
-          </a>
-        </li>
-        
-        <li>
-          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
-            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
-          </a>
-        </li>
-        <li>
-          <a class="icon" href="#" aria-label="Share">
-            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
-          </a>
-        </li>
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
-    </span>
-    <br/>
-    <div id="share" style="display: none">
-      
-      <ul>
-  
-  
-    
-  
-  
-  <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f" aria-label="Facebook">
-      <i class="fab fa-facebook " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&text=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB" aria-label="Twitter">
-      <i class="fab fa-twitter " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&title=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB" aria-label="Linkedin">
-      <i class="fab fa-linkedin " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&is_video=false&description=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB" aria-label="Pinterest">
-      <i class="fab fa-pinterest " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f" aria-label="Email">
-      <i class="fas fa-envelope " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&title=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB" aria-label="Pocket">
-      <i class="fab fa-get-pocket " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&title=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB" aria-label="reddit">
-      <i class="fab fa-reddit " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&name=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB&description=%3cp%3eHello%20everyone%2c%20in%20this%20LAB%20I%20will%20configure%20GRE%20over%20IPSec%20Tunnels%20with%20following%20topology.%3c%2fp%3e%0a%3cp%3eIn%20this%20topology%20some%20configurations%20have%20been%20done.%20So%20networks%20can%20already%20reach%20with%20each%20other.%20I%20will%20just%20focus%20on%20GRE%20over%20IPSec%20Tunnels%20between%20the%20networks%20of%20Customer-A%20and%20Customer-B.%3c%2fp%3e%0a%3cp%3eGRE%20Subnet%20for%20Customer-A%3a%20192.168.1.0%2f24%3c%2fp%3e%0a%3cp%3eGRE%20Subnet%20for%20Customer-B%3a%20192.168.2.0%2f24%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fGREoverIPSEC-LAB%2f1.png%22%20alt%3d%22gre-over-ipsec-lab%22%3e%3c%2fp%3e%0a%3cp%3e%3cstrong%3eR1%3a%3c%2fstrong%3e%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3e%23GRE%20CONFIGURATION%0aR1%28config%29%23int%20tunnel%201%0aR1%28config-if%29%23ip%20addr%20192.168.1.10%20255.255.255.0%0aR1%28config-if%29%23tunnel%20source%20e0%2f1%0aR1%28config-if%29%23tunnel%20destination%201.1.4.2%20%0aR1%28config-if%29%23exit%0a%0a%0a%23IPSEC%20CONFIGURATION%0aR1%28config%29%23crypto%20isakmp%20policy%20100%0aR1%28config-isakmp%29%23authentication%20pre-share%20%0aR1%28config-isakmp%29%23encryption%20aes%20%0aR1%28config-isakmp%29%23group%2014%0aR1%28config-isakmp%29%23hash%20sha%0aR1%28config-isakmp%29%23exit%0a%0aR1%28config%29%23crypto%20isakmp%20key%20ittechnetworkk%20address%201.1.4.2%0a%0aR1%28config%29%23crypto%20ipsec%20transform-set%20XYZ%20esp-aes%20esp-sha-hmac%20%0aR1%28cfg-crypto-trans%29%23mode%20transport%20%0aR1%28cfg-crypto-trans%29%23exit%0a%0aR1%28config%29%23ip%20access-list%20extended%20GRE-IPSEC%0aR1%28config-ext-nacl%29%23permit%20gre%20host%201.1.1.2%20host%201.1.4.2%0aR1%28config-ext-nacl%29%23exit%0a%0aR1%28config%29%23crypto%20map%20IPSEC%2010%20ipsec-isakmp%20%0aR1%28config-crypto-map%29%23match%20address%20GRE-IPSEC%0aR1%28config-crypto-map%29%23set%20peer%201.1.4.2%0aR1%28config-crypto-map%29%23set%20transform-set%20XYZ%0aR1%28config-crypto-map%29%23exit%0a%0aR1%28config%29%23int%20e0%2f1%0aR1%28config-if%29%23crypto%20map%20IPSEC%0aR1%28config-if%29%23exit%0a%0a%0a%23ROUTING%0aR1%28config%29%23ip%20route%2010.0.4.0%20255.255.255.0%20tunnel%201%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3e%3cstrong%3eR10%3a%3c%2fstrong%3e%3c%2fp%3e" aria-label="Tumblr">
-      <i class="fab fa-tumblr " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&t=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB" aria-label="Hacker News">
-      <i class="fab fa-hacker-news " aria-hidden="true"></i>
-    </a>
-  </li>
-</ul>
-
-    </div>
-    
-    <div id="toc">
-      <nav id="TableOfContents"></nav>
-    </div>
-    
-  </span>
-</div>
-
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      <h1 class="posttitle" itemprop="name headline">
-        [EN] GRE Over IPSEC LAB
-      </h1>
-      <div class="meta">
-        
-        <div class="author-info" style="font-size: 1.1em; margin-bottom: 10px;">
-          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <strong>Author:</strong> <span itemprop="name">Soner Sahin</span>
-          </span>
-        </div>
-        
-        <div class="postdate">
-          
-          <time datetime="2025-02-21 22:19:46 &#43;0100 CET" itemprop="datePublished">2025-02-21</time>
-          
-        </div>
-        
-        
-        <div class="article-read-time">
-          <i class="far fa-clock"></i>
-          
-          2 minute read
-        </div>
-        
-        
-        <div class="article-category">
-            <i class="fas fa-archive"></i>
-            
-            
-            <a class="category-link" href="/categories/network">Network</a>
-            
-        </div>
-        
-        
-        <div class="article-tag">
-            <i class="fas fa-tag"></i>
-            
-            
-            <a class="tag-link" href="/tags/gre" rel="tag">gre</a>
-            
-             ,  
-            <a class="tag-link" href="/tags/ipsec" rel="tag">ipsec</a>
-            
-             ,  
-            <a class="tag-link" href="/tags/cisco" rel="tag">cisco</a>
-            
-             ,  
-            <a class="tag-link" href="/tags/ios" rel="tag">ios</a>
-            
-        </div>
-        
-      </div>
-    </header>
-
-    
-    
-
-    
-    
-    <div class="content" itemprop="articleBody">
-      <p>Hello everyone, in this LAB I will configure GRE over IPSec Tunnels with following topology.</p>
-<p>In this topology some configurations have been done. So networks can already reach with each other. I will just focus on GRE over IPSec Tunnels between the networks of Customer-A and Customer-B.</p>
-<p>GRE Subnet for Customer-A: 192.168.1.0/24</p>
-<p>GRE Subnet for Customer-B: 192.168.2.0/24</p>
-<p><img src="/images/GREoverIPSEC-LAB/1.png" alt="gre-over-ipsec-lab"></p>
-<p><strong>R1:</strong></p>
-<pre tabindex="0"><code>#GRE CONFIGURATION
+#GRE CONFIGURATION R1(config)#int tunnel 1 R1(config-if)#ip addr 192.168.1.10 255.255.255.0 R1(config-if)#tunnel source e0/1 R1(config-if)#tunnel destination 1.1.4.2 R1(config-if)#exit #IPSEC CONFIGURATION R1(config)#crypto isakmp policy 100 R1(config-isakmp)#authentication pre-share R1(config-isakmp)#encryption aes R1(config-isakmp)#group 14 R1(config-isakmp)#hash sha R1(config-isakmp)#exit R1(config)#crypto isakmp key ittechnetworkk address 1.1.4.2 R1(config)#crypto ipsec transform-set XYZ esp-aes esp-sha-hmac R1(cfg-crypto-trans)#mode transport R1(cfg-crypto-trans)#exit R1(config)#ip access-list extended GRE-IPSEC R1(config-ext-nacl)#permit gre host 1.1.1.2 host 1.1.4.2 R1(config-ext-nacl)#exit R1(config)#crypto map IPSEC 10 ipsec-isakmp R1(config-crypto-map)#match address GRE-IPSEC R1(config-crypto-map)#set peer 1.1.4.2 R1(config-crypto-map)#set transform-set XYZ R1(config-crypto-map)#exit R1(config)#int e0/1 R1(config-if)#crypto map IPSEC R1(config-if)#exit #ROUTING R1(config)#ip route 10.0.4.0 255.255.255.0 tunnel 1 R10:"><link rel=stylesheet href=https://ittechnetworkk.github.io/css/styles.bdd621ce0dc4beed42cba9d295fbb7a846b8870c3fda65b870471926d718c2543ebb5d8d248ba9a5554cba6ec2e05b0dc829190fd4e4fef576beaa4c3f244abe.css integrity="sha512-vdYhzg3Evu1Cy6nSlfu3qEa4hww/2mW4cEcZJtcYwlQ+u12NJIuppVVMum7C4FsNyCkZD9Tk/vV2vqpMPyRKvg=="><link rel=stylesheet href=https://ittechnetworkk.github.io/css/custom.css><link rel=stylesheet href=https://ittechnetworkk.github.io/css/lightbox.css><link rel=stylesheet href=https://ittechnetworkk.github.io/css/tools.css><link rel=stylesheet href=https://ittechnetworkk.github.io/css/tools-cards.css><link rel=stylesheet href=https://ittechnetworkk.github.io/css/post-cards.css><link rel=stylesheet href=https://ittechnetworkk.github.io/css/posts-cards.css><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script><script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]--><link rel=icon type=image/png href=https://ittechnetworkk.github.io/images/favicon.ico></head><body class="max-width mx-auto px3 ltr"><div class="content index py4"><div id=header-post><a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=menu-icon-tablet href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=top-icon-tablet href=# onclick='$("html, body").animate({scrollTop:0},"fast")' style=display:none aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+<span id=menu><span id=nav><ul><li><a href=/>Home</a></li><li><a href=/posts>Posts</a></li><li><a href=/walkthroughs>Walkthroughs</a></li><li><a href=/projects>Projects</a></li><li><a href=/tools/>Tools</a></li><li><a href=/resources>Resources</a></li><li><a href=/library>Library</a></li><li><a href=/about>About</a></li></ul></span><br><span id=actions><ul><li><a class=icon href=https://ittechnetworkk.github.io/posts/gre-lab/gre-lab/ aria-label=Previous><i class="fas fa-chevron-left" aria-hidden=true onmouseover='$("#i-prev").toggle()' onmouseout='$("#i-prev").toggle()'></i></a></li><li><a class=icon href=https://ittechnetworkk.github.io/posts/esxiinstallation/esxi-installation/ aria-label=Next><i class="fas fa-chevron-right" aria-hidden=true onmouseover='$("#i-next").toggle()' onmouseout='$("#i-next").toggle()'></i></a></li><li><a class=icon href=# onclick='$("html, body").animate({scrollTop:0},"fast")' aria-label="Top of Page"><i class="fas fa-chevron-up" aria-hidden=true onmouseover='$("#i-top").toggle()' onmouseout='$("#i-top").toggle()'></i></a></li><li><a class=icon href=# aria-label=Share><i class="fas fa-share-alt" aria-hidden=true onmouseover='$("#i-share").toggle()' onmouseout='$("#i-share").toggle()' onclick='return $("#share").toggle(),!1'></i></a></li></ul><span id=i-prev class=info style=display:none>Previous post</span>
+<span id=i-next class=info style=display:none>Next post</span>
+<span id=i-top class=info style=display:none>Back to top</span>
+<span id=i-share class=info style=display:none>Share post</span></span><br><div id=share style=display:none><ul><li><a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f" aria-label=Facebook><i class="fab fa-facebook" aria-hidden=true></i></a></li><li><a class=icon href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&text=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB" aria-label=Twitter><i class="fab fa-twitter" aria-hidden=true></i></a></li><li><a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&title=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB" aria-label=Linkedin><i class="fab fa-linkedin" aria-hidden=true></i></a></li><li><a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&is_video=false&description=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB" aria-label=Pinterest><i class="fab fa-pinterest" aria-hidden=true></i></a></li><li><a class=icon href="mailto:?subject=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f" aria-label=Email><i class="fas fa-envelope" aria-hidden=true></i></a></li><li><a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&title=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB" aria-label=Pocket><i class="fab fa-get-pocket" aria-hidden=true></i></a></li><li><a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&title=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB" aria-label=reddit><i class="fab fa-reddit" aria-hidden=true></i></a></li><li><a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&name=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB&description=%3cp%3eHello%20everyone%2c%20in%20this%20LAB%20I%20will%20configure%20GRE%20over%20IPSec%20Tunnels%20with%20following%20topology.%3c%2fp%3e%0a%3cp%3eIn%20this%20topology%20some%20configurations%20have%20been%20done.%20So%20networks%20can%20already%20reach%20with%20each%20other.%20I%20will%20just%20focus%20on%20GRE%20over%20IPSec%20Tunnels%20between%20the%20networks%20of%20Customer-A%20and%20Customer-B.%3c%2fp%3e%0a%3cp%3eGRE%20Subnet%20for%20Customer-A%3a%20192.168.1.0%2f24%3c%2fp%3e%0a%3cp%3eGRE%20Subnet%20for%20Customer-B%3a%20192.168.2.0%2f24%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fGREoverIPSEC-LAB%2f1.png%22%20alt%3d%22gre-over-ipsec-lab%22%3e%3c%2fp%3e%0a%3cp%3e%3cstrong%3eR1%3a%3c%2fstrong%3e%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3e%23GRE%20CONFIGURATION%0aR1%28config%29%23int%20tunnel%201%0aR1%28config-if%29%23ip%20addr%20192.168.1.10%20255.255.255.0%0aR1%28config-if%29%23tunnel%20source%20e0%2f1%0aR1%28config-if%29%23tunnel%20destination%201.1.4.2%20%0aR1%28config-if%29%23exit%0a%0a%0a%23IPSEC%20CONFIGURATION%0aR1%28config%29%23crypto%20isakmp%20policy%20100%0aR1%28config-isakmp%29%23authentication%20pre-share%20%0aR1%28config-isakmp%29%23encryption%20aes%20%0aR1%28config-isakmp%29%23group%2014%0aR1%28config-isakmp%29%23hash%20sha%0aR1%28config-isakmp%29%23exit%0a%0aR1%28config%29%23crypto%20isakmp%20key%20ittechnetworkk%20address%201.1.4.2%0a%0aR1%28config%29%23crypto%20ipsec%20transform-set%20XYZ%20esp-aes%20esp-sha-hmac%20%0aR1%28cfg-crypto-trans%29%23mode%20transport%20%0aR1%28cfg-crypto-trans%29%23exit%0a%0aR1%28config%29%23ip%20access-list%20extended%20GRE-IPSEC%0aR1%28config-ext-nacl%29%23permit%20gre%20host%201.1.1.2%20host%201.1.4.2%0aR1%28config-ext-nacl%29%23exit%0a%0aR1%28config%29%23crypto%20map%20IPSEC%2010%20ipsec-isakmp%20%0aR1%28config-crypto-map%29%23match%20address%20GRE-IPSEC%0aR1%28config-crypto-map%29%23set%20peer%201.1.4.2%0aR1%28config-crypto-map%29%23set%20transform-set%20XYZ%0aR1%28config-crypto-map%29%23exit%0a%0aR1%28config%29%23int%20e0%2f1%0aR1%28config-if%29%23crypto%20map%20IPSEC%0aR1%28config-if%29%23exit%0a%0a%0a%23ROUTING%0aR1%28config%29%23ip%20route%2010.0.4.0%20255.255.255.0%20tunnel%201%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3e%3cstrong%3eR10%3a%3c%2fstrong%3e%3c%2fp%3e" aria-label=Tumblr><i class="fab fa-tumblr" aria-hidden=true></i></a></li><li><a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&t=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB" aria-label="Hacker News"><i class="fab fa-hacker-news" aria-hidden=true></i></a></li></ul></div><div id=toc><nav id=TableOfContents></nav></div></span></div><article class=post itemscope itemtype=http://schema.org/BlogPosting><header><h1 class=posttitle itemprop="name headline">[EN] GRE Over IPSEC LAB</h1><div class=meta><div class=author-info style=font-size:1.1em;margin-bottom:10px><span class=author itemprop=author itemscope itemtype=http://schema.org/Person><strong>Author:</strong> <span itemprop=name>Soner Sahin</span></span></div><div class=postdate><time datetime="2025-02-21 22:19:46 +0100 CET" itemprop=datePublished>2025-02-21</time></div><div class=article-read-time><i class="far fa-clock"></i>
+2 minute read</div><div class=article-category><i class="fas fa-archive"></i>
+<a class=category-link href=/categories/network>Network</a></div><div class=article-tag><i class="fas fa-tag"></i>
+<a class=tag-link href=/tags/gre rel=tag>gre</a>
+,
+<a class=tag-link href=/tags/ipsec rel=tag>ipsec</a>
+,
+<a class=tag-link href=/tags/cisco rel=tag>cisco</a>
+,
+<a class=tag-link href=/tags/ios rel=tag>ios</a></div></div></header><div class=content itemprop=articleBody><p>Hello everyone, in this LAB I will configure GRE over IPSec Tunnels with following topology.</p><p>In this topology some configurations have been done. So networks can already reach with each other. I will just focus on GRE over IPSec Tunnels between the networks of Customer-A and Customer-B.</p><p>GRE Subnet for Customer-A: 192.168.1.0/24</p><p>GRE Subnet for Customer-B: 192.168.2.0/24</p><p><img src=/images/GREoverIPSEC-LAB/1.png alt=gre-over-ipsec-lab></p><p><strong>R1:</strong></p><pre tabindex=0><code>#GRE CONFIGURATION
 R1(config)#int tunnel 1
 R1(config-if)#ip addr 192.168.1.10 255.255.255.0
 R1(config-if)#tunnel source e0/1
@@ -303,8 +62,7 @@ R1(config-if)#exit
 
 #ROUTING
 R1(config)#ip route 10.0.4.0 255.255.255.0 tunnel 1
-</code></pre><p><strong>R10:</strong></p>
-<pre tabindex="0"><code>#GRE CONFIGURATION
+</code></pre><p><strong>R10:</strong></p><pre tabindex=0><code>#GRE CONFIGURATION
 R10&gt;en
 R10#conf t
 R10(config)#int tunnel 1
@@ -345,8 +103,7 @@ R10(config-if)#exit
 
 #ROUTING
 R10(config)#ip route 10.0.1.0 255.255.255.0 tunnel 1
-</code></pre><p><strong>R2:</strong></p>
-<pre tabindex="0"><code>#GRE CONFIGURATION
+</code></pre><p><strong>R2:</strong></p><pre tabindex=0><code>#GRE CONFIGURATION
 R2&gt;en
 R2#conf t
 R2(config)#int tunnel 1
@@ -387,8 +144,7 @@ R2(config-if)#exit
 
 #ROUTING
 R2(config)#ip route 10.0.3.0 255.255.255.0 tunnel 1
-</code></pre><p><strong>R9:</strong></p>
-<pre tabindex="0"><code>#GRE CONFIGURATION
+</code></pre><p><strong>R9:</strong></p><pre tabindex=0><code>#GRE CONFIGURATION
 R9&gt;en
 R9#conf t
 R9(config)#int tunnel 1
@@ -429,178 +185,15 @@ R2(config-if)#exit
 
 #ROUTING
 R2(config)#ip route 10.0.2.0 255.255.255.0 tunnel 1
-</code></pre><p><strong>TEST:</strong></p>
-<p>VPC15 &gt; VPC21:</p>
-<pre tabindex="0"><code>VPCS&gt; trace 10.0.4.10
+</code></pre><p><strong>TEST:</strong></p><p>VPC15 > VPC21:</p><pre tabindex=0><code>VPCS&gt; trace 10.0.4.10
 trace to 10.0.4.10, 8 hops max, press Ctrl+C to stop
  1   10.0.1.1   0.397 ms  0.413 ms  0.441 ms
  2   192.168.1.11   1.954 ms  1.508 ms  1.360 ms
-</code></pre><p>VPC18 &gt; VPC19:</p>
-<pre tabindex="0"><code>VPCS&gt; trace 10.0.3.10
+</code></pre><p>VPC18 > VPC19:</p><pre tabindex=0><code>VPCS&gt; trace 10.0.3.10
 trace to 10.0.3.10, 8 hops max, press Ctrl+C to stop
  1   10.0.2.1   0.639 ms  0.410 ms  0.403 ms
  2   192.168.2.11   1.657 ms  1.293 ms  1.129 ms
-</code></pre><p>Thank you for taking the time to read this article.</p>
-<p>Keep up the good work!</p>
-
-    </div>
-  </article>
-
-  
-  
-
-
-
-
-
-
-  <div id="footer-post-container">
-  <div id="footer-post">
-
-    <div id="nav-footer" style="display: none">
-      <ul>
-         
-          <li><a href="/">Home</a></li>
-         
-          <li><a href="/posts">Posts</a></li>
-         
-          <li><a href="/walkthroughs">Walkthroughs</a></li>
-         
-          <li><a href="/projects">Projects</a></li>
-         
-          <li><a href="/tools/">Tools</a></li>
-         
-          <li><a href="/resources">Resources</a></li>
-         
-          <li><a href="/library">Library</a></li>
-         
-          <li><a href="/about">About</a></li>
-        
-      </ul>
-    </div>
-
-    
-    <div id="toc-footer" style="display: none">
-      <nav id="TableOfContents"></nav>
-    </div>
-    
-
-    <div id="share-footer" style="display: none">
-      
-      <ul>
-  
-  
-    
-  
-  
-  <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f" aria-label="Facebook">
-      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&text=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB" aria-label="Twitter">
-      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&title=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB" aria-label="Linkedin">
-      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&is_video=false&description=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB" aria-label="Pinterest">
-      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f" aria-label="Email">
-      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&title=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB" aria-label="Pocket">
-      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&title=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB" aria-label="reddit">
-      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&name=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB&description=%3cp%3eHello%20everyone%2c%20in%20this%20LAB%20I%20will%20configure%20GRE%20over%20IPSec%20Tunnels%20with%20following%20topology.%3c%2fp%3e%0a%3cp%3eIn%20this%20topology%20some%20configurations%20have%20been%20done.%20So%20networks%20can%20already%20reach%20with%20each%20other.%20I%20will%20just%20focus%20on%20GRE%20over%20IPSec%20Tunnels%20between%20the%20networks%20of%20Customer-A%20and%20Customer-B.%3c%2fp%3e%0a%3cp%3eGRE%20Subnet%20for%20Customer-A%3a%20192.168.1.0%2f24%3c%2fp%3e%0a%3cp%3eGRE%20Subnet%20for%20Customer-B%3a%20192.168.2.0%2f24%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fGREoverIPSEC-LAB%2f1.png%22%20alt%3d%22gre-over-ipsec-lab%22%3e%3c%2fp%3e%0a%3cp%3e%3cstrong%3eR1%3a%3c%2fstrong%3e%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3e%23GRE%20CONFIGURATION%0aR1%28config%29%23int%20tunnel%201%0aR1%28config-if%29%23ip%20addr%20192.168.1.10%20255.255.255.0%0aR1%28config-if%29%23tunnel%20source%20e0%2f1%0aR1%28config-if%29%23tunnel%20destination%201.1.4.2%20%0aR1%28config-if%29%23exit%0a%0a%0a%23IPSEC%20CONFIGURATION%0aR1%28config%29%23crypto%20isakmp%20policy%20100%0aR1%28config-isakmp%29%23authentication%20pre-share%20%0aR1%28config-isakmp%29%23encryption%20aes%20%0aR1%28config-isakmp%29%23group%2014%0aR1%28config-isakmp%29%23hash%20sha%0aR1%28config-isakmp%29%23exit%0a%0aR1%28config%29%23crypto%20isakmp%20key%20ittechnetworkk%20address%201.1.4.2%0a%0aR1%28config%29%23crypto%20ipsec%20transform-set%20XYZ%20esp-aes%20esp-sha-hmac%20%0aR1%28cfg-crypto-trans%29%23mode%20transport%20%0aR1%28cfg-crypto-trans%29%23exit%0a%0aR1%28config%29%23ip%20access-list%20extended%20GRE-IPSEC%0aR1%28config-ext-nacl%29%23permit%20gre%20host%201.1.1.2%20host%201.1.4.2%0aR1%28config-ext-nacl%29%23exit%0a%0aR1%28config%29%23crypto%20map%20IPSEC%2010%20ipsec-isakmp%20%0aR1%28config-crypto-map%29%23match%20address%20GRE-IPSEC%0aR1%28config-crypto-map%29%23set%20peer%201.1.4.2%0aR1%28config-crypto-map%29%23set%20transform-set%20XYZ%0aR1%28config-crypto-map%29%23exit%0a%0aR1%28config%29%23int%20e0%2f1%0aR1%28config-if%29%23crypto%20map%20IPSEC%0aR1%28config-if%29%23exit%0a%0a%0a%23ROUTING%0aR1%28config%29%23ip%20route%2010.0.4.0%20255.255.255.0%20tunnel%201%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3e%3cstrong%3eR10%3a%3c%2fstrong%3e%3c%2fp%3e" aria-label="Tumblr">
-      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&t=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB" aria-label="Hacker News">
-      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-</ul>
-
-    </div>
-
-    <div id="actions-footer">
-      
-        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
-          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-        
-        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
-          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        
-        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
-          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
-          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
-    </div>
-
-  </div>
-</div>
-
-
-  <footer id="footer">
-  <div class="footer-left">
-    Copyright  &copy; 2025  ittechnetworkk 
-  </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-         
-        <li><a href="/">Home</a></li>
-         
-        <li><a href="/posts">Posts</a></li>
-         
-        <li><a href="/walkthroughs">Walkthroughs</a></li>
-         
-        <li><a href="/projects">Projects</a></li>
-         
-        <li><a href="/tools/">Tools</a></li>
-         
-        <li><a href="/resources">Resources</a></li>
-         
-        <li><a href="/library">Library</a></li>
-         
-        <li><a href="/about">About</a></li>
-        
-      </ul>
-    </nav>
-  </div>
-</footer>
-
-
-  </div>
-</body>
-
-<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
-<script src=/lib/jquery/jquery.min.js></script>
-<script src=/js/main.js></script>
-<script src=/js/lightbox.js></script>
-
-<script src=/js/code-copy.js></script>
-
-
-
-
-</html> 
+</code></pre><p>Thank you for taking the time to read this article.</p><p>Keep up the good work!</p></div></article><div id=footer-post-container><div id=footer-post><div id=nav-footer style=display:none><ul><li><a href=/>Home</a></li><li><a href=/posts>Posts</a></li><li><a href=/walkthroughs>Walkthroughs</a></li><li><a href=/projects>Projects</a></li><li><a href=/tools/>Tools</a></li><li><a href=/resources>Resources</a></li><li><a href=/library>Library</a></li><li><a href=/about>About</a></li></ul></div><div id=toc-footer style=display:none><nav id=TableOfContents></nav></div><div id=share-footer style=display:none><ul><li><a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f" aria-label=Facebook><i class="fab fa-facebook fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&text=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB" aria-label=Twitter><i class="fab fa-twitter fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&title=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB" aria-label=Linkedin><i class="fab fa-linkedin fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&is_video=false&description=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB" aria-label=Pinterest><i class="fab fa-pinterest fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="mailto:?subject=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f" aria-label=Email><i class="fas fa-envelope fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&title=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB" aria-label=Pocket><i class="fab fa-get-pocket fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&title=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB" aria-label=reddit><i class="fab fa-reddit fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&name=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB&description=%3cp%3eHello%20everyone%2c%20in%20this%20LAB%20I%20will%20configure%20GRE%20over%20IPSec%20Tunnels%20with%20following%20topology.%3c%2fp%3e%0a%3cp%3eIn%20this%20topology%20some%20configurations%20have%20been%20done.%20So%20networks%20can%20already%20reach%20with%20each%20other.%20I%20will%20just%20focus%20on%20GRE%20over%20IPSec%20Tunnels%20between%20the%20networks%20of%20Customer-A%20and%20Customer-B.%3c%2fp%3e%0a%3cp%3eGRE%20Subnet%20for%20Customer-A%3a%20192.168.1.0%2f24%3c%2fp%3e%0a%3cp%3eGRE%20Subnet%20for%20Customer-B%3a%20192.168.2.0%2f24%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fGREoverIPSEC-LAB%2f1.png%22%20alt%3d%22gre-over-ipsec-lab%22%3e%3c%2fp%3e%0a%3cp%3e%3cstrong%3eR1%3a%3c%2fstrong%3e%3c%2fp%3e%0a%3cpre%20tabindex%3d%220%22%3e%3ccode%3e%23GRE%20CONFIGURATION%0aR1%28config%29%23int%20tunnel%201%0aR1%28config-if%29%23ip%20addr%20192.168.1.10%20255.255.255.0%0aR1%28config-if%29%23tunnel%20source%20e0%2f1%0aR1%28config-if%29%23tunnel%20destination%201.1.4.2%20%0aR1%28config-if%29%23exit%0a%0a%0a%23IPSEC%20CONFIGURATION%0aR1%28config%29%23crypto%20isakmp%20policy%20100%0aR1%28config-isakmp%29%23authentication%20pre-share%20%0aR1%28config-isakmp%29%23encryption%20aes%20%0aR1%28config-isakmp%29%23group%2014%0aR1%28config-isakmp%29%23hash%20sha%0aR1%28config-isakmp%29%23exit%0a%0aR1%28config%29%23crypto%20isakmp%20key%20ittechnetworkk%20address%201.1.4.2%0a%0aR1%28config%29%23crypto%20ipsec%20transform-set%20XYZ%20esp-aes%20esp-sha-hmac%20%0aR1%28cfg-crypto-trans%29%23mode%20transport%20%0aR1%28cfg-crypto-trans%29%23exit%0a%0aR1%28config%29%23ip%20access-list%20extended%20GRE-IPSEC%0aR1%28config-ext-nacl%29%23permit%20gre%20host%201.1.1.2%20host%201.1.4.2%0aR1%28config-ext-nacl%29%23exit%0a%0aR1%28config%29%23crypto%20map%20IPSEC%2010%20ipsec-isakmp%20%0aR1%28config-crypto-map%29%23match%20address%20GRE-IPSEC%0aR1%28config-crypto-map%29%23set%20peer%201.1.4.2%0aR1%28config-crypto-map%29%23set%20transform-set%20XYZ%0aR1%28config-crypto-map%29%23exit%0a%0aR1%28config%29%23int%20e0%2f1%0aR1%28config-if%29%23crypto%20map%20IPSEC%0aR1%28config-if%29%23exit%0a%0a%0a%23ROUTING%0aR1%28config%29%23ip%20route%2010.0.4.0%20255.255.255.0%20tunnel%201%0a%3c%2fcode%3e%3c%2fpre%3e%3cp%3e%3cstrong%3eR10%3a%3c%2fstrong%3e%3c%2fp%3e" aria-label=Tumblr><i class="fab fa-tumblr fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fgreoveripsec-lab%2fgre-over-ipsec-lab%2f&t=%5bEN%5d%20GRE%20Over%20IPSEC%20LAB" aria-label="Hacker News"><i class="fab fa-hacker-news fa-lg" aria-hidden=true></i></a></li></ul></div><div id=actions-footer><a id=menu-toggle class=icon href=# onclick='return $("#nav-footer").toggle(),!1' aria-label=Menu><i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
+<a id=toc-toggle class=icon href=# onclick='return $("#toc-footer").toggle(),!1' aria-label=TOC><i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
+<a id=share-toggle class=icon href=# onclick='return $("#share-footer").toggle(),!1' aria-label=Share><i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
+<a id=top style=display:none class=icon href=# onclick='$("html, body").animate({scrollTop:0},"fast")' aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a></div></div></div><footer id=footer><div class=footer-left>Copyright &copy; 2025 ittechnetworkk</div><div class=footer-right><nav><ul><li><a href=/>Home</a></li><li><a href=/posts>Posts</a></li><li><a href=/walkthroughs>Walkthroughs</a></li><li><a href=/projects>Projects</a></li><li><a href=/tools/>Tools</a></li><li><a href=/resources>Resources</a></li><li><a href=/library>Library</a></li><li><a href=/about>About</a></li></ul></nav></div></footer></div></body><link rel=stylesheet href=/lib/font-awesome/css/all.min.css><script src=/lib/jquery/jquery.min.js></script><script src=/js/main.js></script><script src=/js/lightbox.js></script><script src=/js/code-copy.js></script></html>

@@ -1,27 +1,66 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Soc on ittechnetworkk</title>
-    <link>http://localhost:1313/categories/soc/</link>
-    <description>Recent content in Soc on ittechnetworkk</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Sat, 19 Jul 2025 15:26:52 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/soc/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Fortigate Wazuh Integration</title>
-      <link>http://localhost:1313/posts/fortigatewazuhintegration/fortigate-wazuh-integration/</link>
-      <pubDate>Sat, 19 Jul 2025 15:26:52 +0200</pubDate>
-      <guid>http://localhost:1313/posts/fortigatewazuhintegration/fortigate-wazuh-integration/</guid>
-      <description>&lt;p&gt;Hi everyone, in this article I will guide you through how to integrate Fortigate firewall with the Wazuh SIEM tool for centralized logging and monitoring.&lt;/p&gt;&#xA;&lt;p&gt;Fortigate is one of the best firewall solutions used in networks of all sizes worldwide. Wazuh is also one of the best open-source SIEM platforms available.&lt;/p&gt;&#xA;&lt;p&gt;In this article, I will show you how to send Fortigate logs to the Wazuh SIEM platform to centralize all environment logs in one location.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Cisco Device Syslog Integration with Wazuh SIEM</title>
-      <link>http://localhost:1313/posts/ciscowazuhintegration/cisco-wazuh-integration/</link>
-      <pubDate>Sat, 19 Jul 2025 14:50:44 +0200</pubDate>
-      <guid>http://localhost:1313/posts/ciscowazuhintegration/cisco-wazuh-integration/</guid>
-      <description>&lt;p&gt;Hi everyone, in this article I will guide you through how to integrate Cisco devices (switches and routers) with the Wazuh SIEM tool for centralized logging and monitoring.&lt;/p&gt;&#xA;&lt;p&gt;The integration will be done in the following steps:&lt;/p&gt;&#xA;&lt;h2 id=&#34;cisco-switch-configuration&#34;&gt;&lt;strong&gt;Cisco switch configuration:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# VLAN Configuration for Switch&#xA;Switch&amp;gt;enable&#xA;Switch#configure terminal&#xA;Switch(config)#interface vlan1&#xA;Switch(config-if)#ip address 10.1.5.100 255.255.255.0&#xA;Switch(config-if)#no shutdown&#xA;Switch(config-if)#exit&#xA;&#xA;# Default Gateway Configuration&#xA;Switch(config)#ip default-gateway 10.1.5.1&#xA;&#xA;# Syslog Configuration&#xA;Switch(config)#logging on&#xA;Switch(config)#logging host 10.1.8.10&#xA;Switch(config)#logging facility local1&#xA;Switch(config)#logging source-interface vlan1&#xA;Switch(config)#logging buffered 4096&#xA;Switch(config)#logging trap informational&#xA;&#xA;# Routing Configuration&#xA;Switch(config)# ip route 10.1.8.0 255.255.255.0 10.1.5.1&#xA;&#xA;# Save &#xA;Switch(config)#end&#xA;Switch#wr&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;cisco-router-configuration&#34;&gt;&lt;strong&gt;Cisco router configuration:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# Interface Configuration for Router&#xA;Router&amp;gt;enable&#xA;Router#configure terminal&#xA;Router(config)#interface e0/0&#xA;Router(config-if)#ip address 10.1.6.100 255.255.255.0&#xA;Router(config-if)#no shutdown&#xA;Router(config-if)#exit&#xA;&#xA;# Default Gateway Configuration&#xA;Router(config)#ip default-gateway 10.1.5.1&#xA;&#xA;# Syslog Configuration&#xA;Router(config)#logging on&#xA;Router(config)#logging host 10.1.8.10&#xA;Router(config)#logging facility local0&#xA;Router(config)#logging source-interface e0/0&#xA;Router(config)#logging buffered 4096&#xA;Router(config)#logging trap informational&#xA;&#xA;# Routing Configuration&#xA;Router(config)# ip route 10.1.8.0 255.255.255.0 10.1.5.1&#xA;&#xA;# Save &#xA;Router(config)#end&#xA;Router#wr&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;wazuh-server-configuration&#34;&gt;&lt;strong&gt;Wazuh Server Configuration:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;remote&amp;gt;  &#xA;  &amp;lt;connection&amp;gt;syslog&amp;lt;/connection&amp;gt;  &#xA;  &amp;lt;port&amp;gt;514&amp;lt;/port&amp;gt;  &#xA;  &amp;lt;protocol&amp;gt;udp&amp;lt;/protocol&amp;gt;                      &#xA;  &amp;lt;allowed-ips&amp;gt;10.1.5.100&amp;lt;/allowed-ips&amp;gt;             # Switch/Router IP&#xA;  &amp;lt;local_ip&amp;gt;10.1.8.10&amp;lt;/local_ip&amp;gt;                    # Wazuh Server IP&#xA;&amp;lt;/remote&amp;gt;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;alternative-port-configuration&#34;&gt;&lt;strong&gt;Alternative Port Configuration:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;If you want to use a different port (e.g., 1514 for TCP or 10514 for custom UDP), modify the configuration:&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Soc on ittechnetworkk</title><link>https://ittechnetworkk.github.io/categories/soc/</link><description>Recent content in Soc on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sat, 19 Jul 2025 15:26:52 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/categories/soc/index.xml" rel="self" type="application/rss+xml"/><item><title>Fortigate Wazuh Integration</title><link>https://ittechnetworkk.github.io/posts/fortigatewazuhintegration/fortigate-wazuh-integration/</link><pubDate>Sat, 19 Jul 2025 15:26:52 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/fortigatewazuhintegration/fortigate-wazuh-integration/</guid><description>&lt;p>Hi everyone, in this article I will guide you through how to integrate Fortigate firewall with the Wazuh SIEM tool for centralized logging and monitoring.&lt;/p>
+&lt;p>Fortigate is one of the best firewall solutions used in networks of all sizes worldwide. Wazuh is also one of the best open-source SIEM platforms available.&lt;/p>
+&lt;p>In this article, I will show you how to send Fortigate logs to the Wazuh SIEM platform to centralize all environment logs in one location.&lt;/p></description></item><item><title>Cisco Device Syslog Integration with Wazuh SIEM</title><link>https://ittechnetworkk.github.io/posts/ciscowazuhintegration/cisco-wazuh-integration/</link><pubDate>Sat, 19 Jul 2025 14:50:44 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/ciscowazuhintegration/cisco-wazuh-integration/</guid><description>&lt;p>Hi everyone, in this article I will guide you through how to integrate Cisco devices (switches and routers) with the Wazuh SIEM tool for centralized logging and monitoring.&lt;/p>
+&lt;p>The integration will be done in the following steps:&lt;/p>
+&lt;h2 id="cisco-switch-configuration">&lt;strong>Cisco switch configuration:&lt;/strong>&lt;/h2>
+&lt;pre tabindex="0">&lt;code># VLAN Configuration for Switch
+Switch&amp;gt;enable
+Switch#configure terminal
+Switch(config)#interface vlan1
+Switch(config-if)#ip address 10.1.5.100 255.255.255.0
+Switch(config-if)#no shutdown
+Switch(config-if)#exit
+
+# Default Gateway Configuration
+Switch(config)#ip default-gateway 10.1.5.1
+
+# Syslog Configuration
+Switch(config)#logging on
+Switch(config)#logging host 10.1.8.10
+Switch(config)#logging facility local1
+Switch(config)#logging source-interface vlan1
+Switch(config)#logging buffered 4096
+Switch(config)#logging trap informational
+
+# Routing Configuration
+Switch(config)# ip route 10.1.8.0 255.255.255.0 10.1.5.1
+
+# Save 
+Switch(config)#end
+Switch#wr
+&lt;/code>&lt;/pre>&lt;h2 id="cisco-router-configuration">&lt;strong>Cisco router configuration:&lt;/strong>&lt;/h2>
+&lt;pre tabindex="0">&lt;code># Interface Configuration for Router
+Router&amp;gt;enable
+Router#configure terminal
+Router(config)#interface e0/0
+Router(config-if)#ip address 10.1.6.100 255.255.255.0
+Router(config-if)#no shutdown
+Router(config-if)#exit
+
+# Default Gateway Configuration
+Router(config)#ip default-gateway 10.1.5.1
+
+# Syslog Configuration
+Router(config)#logging on
+Router(config)#logging host 10.1.8.10
+Router(config)#logging facility local0
+Router(config)#logging source-interface e0/0
+Router(config)#logging buffered 4096
+Router(config)#logging trap informational
+
+# Routing Configuration
+Router(config)# ip route 10.1.8.0 255.255.255.0 10.1.5.1
+
+# Save 
+Router(config)#end
+Router#wr
+&lt;/code>&lt;/pre>&lt;h2 id="wazuh-server-configuration">&lt;strong>Wazuh Server Configuration:&lt;/strong>&lt;/h2>
+&lt;pre tabindex="0">&lt;code>&amp;lt;remote&amp;gt; 
+ &amp;lt;connection&amp;gt;syslog&amp;lt;/connection&amp;gt; 
+ &amp;lt;port&amp;gt;514&amp;lt;/port&amp;gt; 
+ &amp;lt;protocol&amp;gt;udp&amp;lt;/protocol&amp;gt; 
+ &amp;lt;allowed-ips&amp;gt;10.1.5.100&amp;lt;/allowed-ips&amp;gt; # Switch/Router IP
+ &amp;lt;local_ip&amp;gt;10.1.8.10&amp;lt;/local_ip&amp;gt; # Wazuh Server IP
+&amp;lt;/remote&amp;gt;
+&lt;/code>&lt;/pre>&lt;h2 id="alternative-port-configuration">&lt;strong>Alternative Port Configuration:&lt;/strong>&lt;/h2>
+&lt;p>If you want to use a different port (e.g., 1514 for TCP or 10514 for custom UDP), modify the configuration:&lt;/p></description></item></channel></rss>

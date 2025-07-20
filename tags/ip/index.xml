@@ -1,27 +1,50 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>IP on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/ip/</link>
-    <description>Recent content in IP on ittechnetworkk</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Sun, 19 Jan 2025 23:56:33 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/ip/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Debian Server IP Konfigürasyonu</title>
-      <link>http://localhost:1313/posts/debianip/debian-ip/</link>
-      <pubDate>Sun, 19 Jan 2025 23:56:33 +0100</pubDate>
-      <guid>http://localhost:1313/posts/debianip/debian-ip/</guid>
-      <description>&lt;p&gt;Selamlar, bu yazımda Debian Server&amp;rsquo;a nasıl statik veya dinamik IP tanımlanacağını göstereceğim.&lt;/p&gt;&#xA;&lt;p&gt;Her Linux dağıtımında statik IP&amp;rsquo;ler aynı şekilde tanımlanmayabilir.&lt;/p&gt;&#xA;&lt;p&gt;Linux sistemlerde her şey bir dosyadan okunduğu için bunun için de bir ilgili bir dosya vardır.&lt;/p&gt;&#xA;&lt;p&gt;Debian&amp;rsquo;da bu dosya şuradadır:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;/etc/network/interfaces&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Şimdi bu dosyayı editleyelim.&lt;/p&gt;&#xA;&lt;p&gt;Dosyanın ilk hali şu şekildedir:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# This file describes the network interfaces available on your system&#xA;# and how to activate them. For more information, see interfaces(5).&#xA;&#xA;source /etc/network/interfaces.d/*&#xA;&#xA;# The loopback network interface&#xA;auto lo&#xA;iface lo inet loopback&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Bazı parametreler sisteminize bağlı olarak değişiklik gösterebilir.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Fedora Server IP Konfigürasyonu</title>
-      <link>http://localhost:1313/posts/fedoraip/fedora-ip/</link>
-      <pubDate>Sun, 19 Jan 2025 22:51:26 +0100</pubDate>
-      <guid>http://localhost:1313/posts/fedoraip/fedora-ip/</guid>
-      <description>&lt;p&gt;Selamlar, bu yazımda Fedora Server&amp;rsquo;a nasıl statik veya dinamik IP tanımlanacağını göstereceğim.&lt;/p&gt;&#xA;&lt;p&gt;Her Linux dağıtımında statik IP&amp;rsquo;ler aynı şekilde tanımlanmayabilir. Fakat mantığını bilmek bir adım önde başlamak demektir.&lt;/p&gt;&#xA;&lt;p&gt;Linux sistemlerde her şey bir dosyadan okunduğu için bunun için de bir ilgili bir dosya vardır.&lt;/p&gt;&#xA;&lt;p&gt;Fedora&amp;rsquo;da bu dosya şuradadır:&lt;/p&gt;&#xA;&lt;p&gt;NetworkManager kullanılmadığında;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;/etc/sysconfig/network-scripts/ifcfg-ens33&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;NetworkManager kullanıldığında;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;/etc/NetworkManager/system-connections/ens33.nmconnection&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Şimdi bu dosyayı editleyelim.&lt;/p&gt;&#xA;&lt;p&gt;Dosyanın ilk hali şu şekildedir:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[connection]&#xA;id=ens160&#xA;uuid=36903561-eb7f-38c2-986b-b098913248de&#xA;type=ethernet&#xA;autoconnect-priority=-999&#xA;interface-name=ens160&#xA;timestamp=1737213877&#xA;&#xA;[ethernet]&#xA;&#xA;[ipv4]&#xA;&#xA;&#xA;[ipv6]&#xA;addr-gen-mode=eui64&#xA;method=auto&#xA;&#xA;[proxy]&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Bazı parametreler sisteminize bağlı olarak değişiklik gösterebilir, fakat bizim ilgilendiğimiz kısım şimdilik &lt;code&gt;[ipv4]&lt;/code&gt; kısmı.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IP on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/ip/</link><description>Recent content in IP on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sun, 19 Jan 2025 23:56:33 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/ip/index.xml" rel="self" type="application/rss+xml"/><item><title>Debian Server IP Konfigürasyonu</title><link>https://ittechnetworkk.github.io/posts/debianip/debian-ip/</link><pubDate>Sun, 19 Jan 2025 23:56:33 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/debianip/debian-ip/</guid><description>&lt;p>Selamlar, bu yazımda Debian Server&amp;rsquo;a nasıl statik veya dinamik IP tanımlanacağını göstereceğim.&lt;/p>
+&lt;p>Her Linux dağıtımında statik IP&amp;rsquo;ler aynı şekilde tanımlanmayabilir.&lt;/p>
+&lt;p>Linux sistemlerde her şey bir dosyadan okunduğu için bunun için de bir ilgili bir dosya vardır.&lt;/p>
+&lt;p>Debian&amp;rsquo;da bu dosya şuradadır:&lt;/p>
+&lt;ul>
+&lt;li>/etc/network/interfaces&lt;/li>
+&lt;/ul>
+&lt;p>Şimdi bu dosyayı editleyelim.&lt;/p>
+&lt;p>Dosyanın ilk hali şu şekildedir:&lt;/p>
+&lt;pre tabindex="0">&lt;code># This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+&lt;/code>&lt;/pre>&lt;p>Bazı parametreler sisteminize bağlı olarak değişiklik gösterebilir.&lt;/p></description></item><item><title>Fedora Server IP Konfigürasyonu</title><link>https://ittechnetworkk.github.io/posts/fedoraip/fedora-ip/</link><pubDate>Sun, 19 Jan 2025 22:51:26 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/fedoraip/fedora-ip/</guid><description>&lt;p>Selamlar, bu yazımda Fedora Server&amp;rsquo;a nasıl statik veya dinamik IP tanımlanacağını göstereceğim.&lt;/p>
+&lt;p>Her Linux dağıtımında statik IP&amp;rsquo;ler aynı şekilde tanımlanmayabilir. Fakat mantığını bilmek bir adım önde başlamak demektir.&lt;/p>
+&lt;p>Linux sistemlerde her şey bir dosyadan okunduğu için bunun için de bir ilgili bir dosya vardır.&lt;/p>
+&lt;p>Fedora&amp;rsquo;da bu dosya şuradadır:&lt;/p>
+&lt;p>NetworkManager kullanılmadığında;&lt;/p>
+&lt;ul>
+&lt;li>/etc/sysconfig/network-scripts/ifcfg-ens33&lt;/li>
+&lt;/ul>
+&lt;p>NetworkManager kullanıldığında;&lt;/p>
+&lt;ul>
+&lt;li>/etc/NetworkManager/system-connections/ens33.nmconnection&lt;/li>
+&lt;/ul>
+&lt;p>Şimdi bu dosyayı editleyelim.&lt;/p>
+&lt;p>Dosyanın ilk hali şu şekildedir:&lt;/p>
+&lt;pre tabindex="0">&lt;code>[connection]
+id=ens160
+uuid=36903561-eb7f-38c2-986b-b098913248de
+type=ethernet
+autoconnect-priority=-999
+interface-name=ens160
+timestamp=1737213877
+
+[ethernet]
+
+[ipv4]
+
+
+[ipv6]
+addr-gen-mode=eui64
+method=auto
+
+[proxy]
+&lt;/code>&lt;/pre>&lt;p>Bazı parametreler sisteminize bağlı olarak değişiklik gösterebilir, fakat bizim ilgilendiğimiz kısım şimdilik &lt;code>[ipv4]&lt;/code> kısmı.&lt;/p></description></item></channel></rss>

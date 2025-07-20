@@ -1,20 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Ransomware on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/ransomware/</link>
-    <description>Recent content in Ransomware on ittechnetworkk</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Sat, 05 Jul 2025 15:16:47 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/ransomware/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Network Analysis - Ransomware</title>
-      <link>http://localhost:1313/walkthroughs/networkanalysis-ransomware/</link>
-      <pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate>
-      <guid>http://localhost:1313/walkthroughs/networkanalysis-ransomware/</guid>
-      <description>&lt;p&gt;Lab URL: &lt;a href=&#34;https://blueteamlabs.online/home/challenge/network-analysis-ransomware-3dd520c7ec&#34;&gt;https://blueteamlabs.online/home/challenge/network-analysis-ransomware-3dd520c7ec&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;question-1&#34;&gt;&lt;strong&gt;Question 1&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;What is the operating system of the host from which the network traffic was captured?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;remnux@remnux:~/Downloads/BTLO Network Analysis - Ransomware/Challenge Files$ file *&#xA;&#xA;help_recover_instructions.HTM: HTML document, ASCII text, with very long lines&#xA;help_recover_instructions.png: PNG image data, 1150 x 1000, 8-bit/color RGBA, non-interlaced&#xA;help_recover_instructions.TXT: ASCII text, with CRLF line terminators&#xA;ransom_traffic.pcapng:         pcapng capture file - version 1.0&#xA;Tender.pdf.micro:              data&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/NetworkAnalysisRansomware/1.png&#34; alt=&#34;networkforensics&#34;&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;wireshark ransom_traffic.pcapng&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Statistics &amp;gt; Capture File Properties&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/NetworkAnalysisRansomware/1.1.png&#34; alt=&#34;networkforensics&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/NetworkAnalysisRansomware/1.2.png&#34; alt=&#34;networkforensics&#34;&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ransomware on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/ransomware/</link><description>Recent content in Ransomware on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sat, 05 Jul 2025 15:16:47 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/ransomware/index.xml" rel="self" type="application/rss+xml"/><item><title>Network Analysis - Ransomware</title><link>https://ittechnetworkk.github.io/walkthroughs/networkanalysis-ransomware/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/networkanalysis-ransomware/</guid><description>&lt;p>Lab URL: &lt;a href="https://blueteamlabs.online/home/challenge/network-analysis-ransomware-3dd520c7ec">https://blueteamlabs.online/home/challenge/network-analysis-ransomware-3dd520c7ec&lt;/a>&lt;/p>
+&lt;h3 id="question-1">&lt;strong>Question 1&lt;/strong>&lt;/h3>
+&lt;p>&lt;strong>What is the operating system of the host from which the network traffic was captured?&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>remnux@remnux:~/Downloads/BTLO Network Analysis - Ransomware/Challenge Files$ file *
+
+help_recover_instructions.HTM: HTML document, ASCII text, with very long lines
+help_recover_instructions.png: PNG image data, 1150 x 1000, 8-bit/color RGBA, non-interlaced
+help_recover_instructions.TXT: ASCII text, with CRLF line terminators
+ransom_traffic.pcapng: pcapng capture file - version 1.0
+Tender.pdf.micro: data
+&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/NetworkAnalysisRansomware/1.png" alt="networkforensics">&lt;/p>
+&lt;pre tabindex="0">&lt;code>wireshark ransom_traffic.pcapng
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>Statistics &amp;gt; Capture File Properties&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/NetworkAnalysisRansomware/1.1.png" alt="networkforensics">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/NetworkAnalysisRansomware/1.2.png" alt="networkforensics">&lt;/p></description></item></channel></rss>

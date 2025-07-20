@@ -1,27 +1,71 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Vlan on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/vlan/</link>
-    <description>Recent content in Vlan on ittechnetworkk</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Fri, 10 Jan 2025 11:43:33 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/vlan/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Vlan Routing L3 Switch (SVI)</title>
-      <link>http://localhost:1313/posts/vlanroutingsvi/vlan-routing-svi/</link>
-      <pubDate>Fri, 10 Jan 2025 11:43:33 +0100</pubDate>
-      <guid>http://localhost:1313/posts/vlanroutingsvi/vlan-routing-svi/</guid>
-      <description>&lt;p&gt;Selamlar, bu yazımda VLAN Routing&amp;rsquo;in L3 bir Switch ile nasıl yapılacağını bir LAB senaryosu üzerinde yapacağım..&lt;/p&gt;&#xA;&lt;p&gt;LAB&amp;rsquo;ı aşağıdaki topoloji üzerinde uygulayacağım.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/VLANRoutingSVI/1.png&#34; alt=&#34;vlan&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Başlayalım.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;İlk olarak cihazlara IP verelim.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;VPC4:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;VPCS&amp;gt; ip 10.10.10.10 255.255.255.0 gateway 10.10.10.1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;VPC5:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;VPCS&amp;gt; ip 10.10.20.10 255.255.255.0 gateway 10.10.20.1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;VPC6:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;VPCS&amp;gt; ip 10.10.10.11 255.255.255.0 gateway 10.10.10.1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;VPC7:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;VPCS&amp;gt; ip 10.10.20.11 255.255.255.0 gateway 10.10.20.1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Şimdi Switch&amp;rsquo;lerde VLAN&amp;rsquo;ları oluşturalım ve portlara atayalım.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;SW2:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Switch&amp;gt;en&#xA;Switch#conf t&#xA;Switch(config)#vlan 10&#xA;Switch(config-vlan)#vlan 20&#xA;Switch(config-vlan)#exit&#xA;&#xA;Switch(config)#int e0/1&#xA;Switch(config-if)#switchport mode access &#xA;Switch(config-if)#switchport access vlan 10&#xA;Switch(config-if)#exit&#xA;&#xA;Switch(config)#int e0/2&#xA;Switch(config-if)#switchport mode access &#xA;Switch(config-if)#switchport access vlan 20&#xA;Switch(config-if)#exit&#xA;&#xA;#Vlan&amp;#39;ların geçeceği port trunk olmalı&#xA;Switch(config)#int e0/0&#xA;Switch(config-if)#switchport trunk encapsulation dot1q&#xA;Switch(config-if)#switchport mode trunk &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SW3:&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Vlan Routing (Router on a Stick)</title>
-      <link>http://localhost:1313/posts/vlanroutingroas/vlan-routing-roas/</link>
-      <pubDate>Fri, 10 Jan 2025 11:43:17 +0100</pubDate>
-      <guid>http://localhost:1313/posts/vlanroutingroas/vlan-routing-roas/</guid>
-      <description>&lt;p&gt;Selamlar, bu yazımda VLAN Routing&amp;rsquo;in bir Router ile nasıl yapılacağını bir LAB senaryosu üzerinde yapacağım..&lt;/p&gt;&#xA;&lt;p&gt;LAB&amp;rsquo;ı aşağıdaki topoloji üzerinde uygulayacağım.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/VLANRoutingROAS/1.png&#34; alt=&#34;vlan&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Başlayalım.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;İlk olarak cihazlara IP verelim.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;VPC4:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;VPCS&amp;gt; ip 10.10.10.10 255.255.255.0 gateway 10.10.10.1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;VPC5:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;VPCS&amp;gt; ip 10.10.20.10 255.255.255.0 gateway 10.10.20.1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;VPC6:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;VPCS&amp;gt; ip 10.10.10.11 255.255.255.0 gateway 10.10.10.1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;VPC7:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;VPCS&amp;gt; ip 10.10.20.11 255.255.255.0 gateway 10.10.20.1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Şimdi Switch&amp;rsquo;lerde VLAN&amp;rsquo;ları oluşturalım ve portlara atayalım.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;SW2:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Switch&amp;gt;en&#xA;Switch#conf t&#xA;Switch(config)#vlan 10&#xA;Switch(config-vlan)#vlan 20&#xA;Switch(config-vlan)#exit&#xA;&#xA;Switch(config)#int e0/1&#xA;Switch(config-if)#switchport mode access &#xA;Switch(config-if)#switchport access vlan 10&#xA;Switch(config-if)#exit&#xA;&#xA;Switch(config)#int e0/2&#xA;Switch(config-if)#switchport mode access &#xA;Switch(config-if)#switchport access vlan 20&#xA;Switch(config-if)#exit&#xA;&#xA;#Vlan&amp;#39;ların geçeceği port trunk olmalı&#xA;Switch(config)#int e0/0&#xA;Switch(config-if)#switchport trunk encapsulation dot1q&#xA;Switch(config-if)#switchport mode trunk &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SW3:&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Vlan on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/vlan/</link><description>Recent content in Vlan on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Fri, 10 Jan 2025 11:43:33 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/vlan/index.xml" rel="self" type="application/rss+xml"/><item><title>Vlan Routing L3 Switch (SVI)</title><link>https://ittechnetworkk.github.io/posts/vlanroutingsvi/vlan-routing-svi/</link><pubDate>Fri, 10 Jan 2025 11:43:33 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/vlanroutingsvi/vlan-routing-svi/</guid><description>&lt;p>Selamlar, bu yazımda VLAN Routing&amp;rsquo;in L3 bir Switch ile nasıl yapılacağını bir LAB senaryosu üzerinde yapacağım..&lt;/p>
+&lt;p>LAB&amp;rsquo;ı aşağıdaki topoloji üzerinde uygulayacağım.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/VLANRoutingSVI/1.png" alt="vlan">&lt;/p>
+&lt;p>&lt;strong>Başlayalım.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>İlk olarak cihazlara IP verelim.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>VPC4:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>VPCS&amp;gt; ip 10.10.10.10 255.255.255.0 gateway 10.10.10.1
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>VPC5:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>VPCS&amp;gt; ip 10.10.20.10 255.255.255.0 gateway 10.10.20.1
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>VPC6:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>VPCS&amp;gt; ip 10.10.10.11 255.255.255.0 gateway 10.10.10.1
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>VPC7:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>VPCS&amp;gt; ip 10.10.20.11 255.255.255.0 gateway 10.10.20.1
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>Şimdi Switch&amp;rsquo;lerde VLAN&amp;rsquo;ları oluşturalım ve portlara atayalım.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>SW2:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>Switch&amp;gt;en
+Switch#conf t
+Switch(config)#vlan 10
+Switch(config-vlan)#vlan 20
+Switch(config-vlan)#exit
+
+Switch(config)#int e0/1
+Switch(config-if)#switchport mode access 
+Switch(config-if)#switchport access vlan 10
+Switch(config-if)#exit
+
+Switch(config)#int e0/2
+Switch(config-if)#switchport mode access 
+Switch(config-if)#switchport access vlan 20
+Switch(config-if)#exit
+
+#Vlan&amp;#39;ların geçeceği port trunk olmalı
+Switch(config)#int e0/0
+Switch(config-if)#switchport trunk encapsulation dot1q
+Switch(config-if)#switchport mode trunk 
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>SW3:&lt;/strong>&lt;/p></description></item><item><title>Vlan Routing (Router on a Stick)</title><link>https://ittechnetworkk.github.io/posts/vlanroutingroas/vlan-routing-roas/</link><pubDate>Fri, 10 Jan 2025 11:43:17 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/vlanroutingroas/vlan-routing-roas/</guid><description>&lt;p>Selamlar, bu yazımda VLAN Routing&amp;rsquo;in bir Router ile nasıl yapılacağını bir LAB senaryosu üzerinde yapacağım..&lt;/p>
+&lt;p>LAB&amp;rsquo;ı aşağıdaki topoloji üzerinde uygulayacağım.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/VLANRoutingROAS/1.png" alt="vlan">&lt;/p>
+&lt;p>&lt;strong>Başlayalım.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>İlk olarak cihazlara IP verelim.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>VPC4:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>VPCS&amp;gt; ip 10.10.10.10 255.255.255.0 gateway 10.10.10.1
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>VPC5:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>VPCS&amp;gt; ip 10.10.20.10 255.255.255.0 gateway 10.10.20.1
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>VPC6:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>VPCS&amp;gt; ip 10.10.10.11 255.255.255.0 gateway 10.10.10.1
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>VPC7:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>VPCS&amp;gt; ip 10.10.20.11 255.255.255.0 gateway 10.10.20.1
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>Şimdi Switch&amp;rsquo;lerde VLAN&amp;rsquo;ları oluşturalım ve portlara atayalım.&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>SW2:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>Switch&amp;gt;en
+Switch#conf t
+Switch(config)#vlan 10
+Switch(config-vlan)#vlan 20
+Switch(config-vlan)#exit
+
+Switch(config)#int e0/1
+Switch(config-if)#switchport mode access 
+Switch(config-if)#switchport access vlan 10
+Switch(config-if)#exit
+
+Switch(config)#int e0/2
+Switch(config-if)#switchport mode access 
+Switch(config-if)#switchport access vlan 20
+Switch(config-if)#exit
+
+#Vlan&amp;#39;ların geçeceği port trunk olmalı
+Switch(config)#int e0/0
+Switch(config-if)#switchport trunk encapsulation dot1q
+Switch(config-if)#switchport mode trunk 
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>SW3:&lt;/strong>&lt;/p></description></item></channel></rss>

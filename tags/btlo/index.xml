@@ -1,41 +1,61 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>BTLO on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/btlo/</link>
-    <description>Recent content in BTLO on ittechnetworkk</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Sat, 05 Jul 2025 15:16:47 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/btlo/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Memory Analysis - Ransomware</title>
-      <link>http://localhost:1313/walkthroughs/memoryanalysis-ransomware/</link>
-      <pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate>
-      <guid>http://localhost:1313/walkthroughs/memoryanalysis-ransomware/</guid>
-      <description>&lt;p&gt;Lab URL: &lt;a href=&#34;https://blueteamlabs.online/home/challenge/memory-analysis-ransomware-7da6c9244d&#34;&gt;https://blueteamlabs.online/home/challenge/memory-analysis-ransomware-7da6c9244d&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;question-1&#34;&gt;&lt;strong&gt;Question 1&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;Run “vol.py -f infected.vmem &amp;ndash;profile=Win7SP1x86 psscan” that will list all processes. What is the name of the suspicious process?&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vol.py -f infected.vmem --profile=Win7SP1x86 psscan&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/Walkthroughs/MemoryAnalysis-Ransomware/1.png&#34; alt=&#34;MemoryAnalysis-Ransomware&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; @WanaDecryptor&lt;/p&gt;&#xA;&lt;h3 id=&#34;question-2&#34;&gt;&lt;strong&gt;Question 2&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;What is the parent process ID for the suspicious process?&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vol3 -f infected.vmem windows.pslist&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/Walkthroughs/MemoryAnalysis-Ransomware/2.png&#34; alt=&#34;MemoryAnalysis-Ransomware&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt;  2732&lt;/p&gt;&#xA;&lt;h3 id=&#34;question-3&#34;&gt;&lt;strong&gt;Question 3&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;What is the initial malicious executable that created this process?&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;vol3 -f infected.vmem windows.cmdline&#xA;&#xA;OR&#xA;&#xA;vol3 -f infected.vmem windows.filescan |grep -E &amp;#34;.exe&amp;#34;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/Walkthroughs/MemoryAnalysis-Ransomware/3.png&#34; alt=&#34;MemoryAnalysis-Ransomware&#34;&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Network Analysis - Ransomware</title>
-      <link>http://localhost:1313/walkthroughs/networkanalysis-ransomware/</link>
-      <pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate>
-      <guid>http://localhost:1313/walkthroughs/networkanalysis-ransomware/</guid>
-      <description>&lt;p&gt;Lab URL: &lt;a href=&#34;https://blueteamlabs.online/home/challenge/network-analysis-ransomware-3dd520c7ec&#34;&gt;https://blueteamlabs.online/home/challenge/network-analysis-ransomware-3dd520c7ec&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;question-1&#34;&gt;&lt;strong&gt;Question 1&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;What is the operating system of the host from which the network traffic was captured?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;remnux@remnux:~/Downloads/BTLO Network Analysis - Ransomware/Challenge Files$ file *&#xA;&#xA;help_recover_instructions.HTM: HTML document, ASCII text, with very long lines&#xA;help_recover_instructions.png: PNG image data, 1150 x 1000, 8-bit/color RGBA, non-interlaced&#xA;help_recover_instructions.TXT: ASCII text, with CRLF line terminators&#xA;ransom_traffic.pcapng:         pcapng capture file - version 1.0&#xA;Tender.pdf.micro:              data&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/NetworkAnalysisRansomware/1.png&#34; alt=&#34;networkforensics&#34;&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;wireshark ransom_traffic.pcapng&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Statistics &amp;gt; Capture File Properties&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/NetworkAnalysisRansomware/1.1.png&#34; alt=&#34;networkforensics&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/NetworkAnalysisRansomware/1.2.png&#34; alt=&#34;networkforensics&#34;&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Phishing Analysis 2</title>
-      <link>http://localhost:1313/walkthroughs/phishinganalysis-2/</link>
-      <pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate>
-      <guid>http://localhost:1313/walkthroughs/phishinganalysis-2/</guid>
-      <description>&lt;p&gt;Lab URL: &lt;a href=&#34;https://blueteamlabs.online/home/challenge/phishing-analysis-2-a1091574b8&#34;&gt;https://blueteamlabs.online/home/challenge/phishing-analysis-2-a1091574b8&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;question-1&#34;&gt;&lt;strong&gt;Question 1&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;What is the sending email address?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Search for &amp;#34;From&amp;#34;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/Phishing-Analysis-2/1.png&#34; alt=&#34;phishing-2&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; &lt;a href=&#34;mailto:amazon@zyevantoby.cn&#34;&gt;amazon@zyevantoby.cn&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;question-2&#34;&gt;&lt;strong&gt;Question 2&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;**What is the recipient email address? &lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Search for &amp;#34;To&amp;#34;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/Phishing-Analysis-2/2.png&#34; alt=&#34;phishing-2&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; &lt;a href=&#34;mailto:saintington73@outlook.com&#34;&gt;saintington73@outlook.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;question-3&#34;&gt;&lt;strong&gt;Question 3&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;What is the subject line of the email?&lt;/strong&gt; &lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Search for &amp;#34;Subject&amp;#34;&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/Phishing-Analysis-2/3.png&#34; alt=&#34;phishing-2&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; Your Account has been locked&lt;/p&gt;&#xA;&lt;h3 id=&#34;question-4&#34;&gt;&lt;strong&gt;Question 4&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;What company is the attacker trying to imitate?&lt;/strong&gt; &lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Look for &amp;#34;From&amp;#34; &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/Phishing-Analysis-2/4.png&#34; alt=&#34;phishing-2&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; amazon&lt;/p&gt;&#xA;&lt;h3 id=&#34;question-5&#34;&gt;&lt;strong&gt;Question 5&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;What is the date and time the email was sent? (As copied from a text editor)&lt;/strong&gt; &lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Malicious PowerShell Analysis</title>
-      <link>http://localhost:1313/walkthroughs/maliciouspowershellanalysis/</link>
-      <pubDate>Sat, 05 Jul 2025 13:40:46 +0200</pubDate>
-      <guid>http://localhost:1313/walkthroughs/maliciouspowershellanalysis/</guid>
-      <description>&lt;p&gt;In this write-up, I’ll be investigating a challenge named &lt;a href=&#34;https://blueteamlabs.online/home/challenge/malicious-powershell-analysis-bf6b52faef&#34;&gt;&lt;strong&gt;Malicious PowerShell Analysis&lt;/strong&gt;&lt;/a&gt; from Blue Team Labs Online. This challenge isn’t particularly difficult, making it a great exercise for learning or sharpening malware analysis skills.&lt;/p&gt;&#xA;&lt;h3 id=&#34;-step-1-downloading-the-file&#34;&gt;🧪 &lt;strong&gt;Step 1: Downloading the File&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;First, I downloaded the malicious file to an isolated analysis environment (virtual machine).&lt;/p&gt;&#xA;&lt;p&gt;The file came as an encrypted ZIP archive named:&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/Walkthroughs/MaliciousPowershellAnalysis/1.png&#34; alt=&#34;maliciousPowershellAnalysis&#34;&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;-step-2-hash-analysis&#34;&gt;🔍 &lt;strong&gt;Step 2: Hash Analysis&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;To begin the investigation, I calculated the file’s MD5 hash using &lt;code&gt;md5sum&lt;/code&gt;, then submitted it to multiple threat intelligence platforms:&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>BTLO on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/btlo/</link><description>Recent content in BTLO on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sat, 05 Jul 2025 15:16:47 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/btlo/index.xml" rel="self" type="application/rss+xml"/><item><title>Memory Analysis - Ransomware</title><link>https://ittechnetworkk.github.io/walkthroughs/memoryanalysis-ransomware/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/memoryanalysis-ransomware/</guid><description>&lt;p>Lab URL: &lt;a href="https://blueteamlabs.online/home/challenge/memory-analysis-ransomware-7da6c9244d">https://blueteamlabs.online/home/challenge/memory-analysis-ransomware-7da6c9244d&lt;/a>&lt;/p>
+&lt;h3 id="question-1">&lt;strong>Question 1&lt;/strong>&lt;/h3>
+&lt;p>Run “vol.py -f infected.vmem &amp;ndash;profile=Win7SP1x86 psscan” that will list all processes. What is the name of the suspicious process?&lt;/p>
+&lt;pre tabindex="0">&lt;code>vol.py -f infected.vmem --profile=Win7SP1x86 psscan
+&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/MemoryAnalysis-Ransomware/1.png" alt="MemoryAnalysis-Ransomware">&lt;/p>
+&lt;p>&lt;strong>Answer:&lt;/strong> @WanaDecryptor&lt;/p>
+&lt;h3 id="question-2">&lt;strong>Question 2&lt;/strong>&lt;/h3>
+&lt;p>What is the parent process ID for the suspicious process?&lt;/p>
+&lt;pre tabindex="0">&lt;code>vol3 -f infected.vmem windows.pslist
+&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/MemoryAnalysis-Ransomware/2.png" alt="MemoryAnalysis-Ransomware">&lt;/p>
+&lt;p>&lt;strong>Answer:&lt;/strong> 2732&lt;/p>
+&lt;h3 id="question-3">&lt;strong>Question 3&lt;/strong>&lt;/h3>
+&lt;p>What is the initial malicious executable that created this process?&lt;/p>
+&lt;pre tabindex="0">&lt;code>vol3 -f infected.vmem windows.cmdline
+
+OR
+
+vol3 -f infected.vmem windows.filescan |grep -E &amp;#34;.exe&amp;#34;
+&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/MemoryAnalysis-Ransomware/3.png" alt="MemoryAnalysis-Ransomware">&lt;/p></description></item><item><title>Network Analysis - Ransomware</title><link>https://ittechnetworkk.github.io/walkthroughs/networkanalysis-ransomware/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/networkanalysis-ransomware/</guid><description>&lt;p>Lab URL: &lt;a href="https://blueteamlabs.online/home/challenge/network-analysis-ransomware-3dd520c7ec">https://blueteamlabs.online/home/challenge/network-analysis-ransomware-3dd520c7ec&lt;/a>&lt;/p>
+&lt;h3 id="question-1">&lt;strong>Question 1&lt;/strong>&lt;/h3>
+&lt;p>&lt;strong>What is the operating system of the host from which the network traffic was captured?&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>remnux@remnux:~/Downloads/BTLO Network Analysis - Ransomware/Challenge Files$ file *
+
+help_recover_instructions.HTM: HTML document, ASCII text, with very long lines
+help_recover_instructions.png: PNG image data, 1150 x 1000, 8-bit/color RGBA, non-interlaced
+help_recover_instructions.TXT: ASCII text, with CRLF line terminators
+ransom_traffic.pcapng: pcapng capture file - version 1.0
+Tender.pdf.micro: data
+&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/NetworkAnalysisRansomware/1.png" alt="networkforensics">&lt;/p>
+&lt;pre tabindex="0">&lt;code>wireshark ransom_traffic.pcapng
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>Statistics &amp;gt; Capture File Properties&lt;/strong>&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/NetworkAnalysisRansomware/1.1.png" alt="networkforensics">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/NetworkAnalysisRansomware/1.2.png" alt="networkforensics">&lt;/p></description></item><item><title>Phishing Analysis 2</title><link>https://ittechnetworkk.github.io/walkthroughs/phishinganalysis-2/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/phishinganalysis-2/</guid><description>&lt;p>Lab URL: &lt;a href="https://blueteamlabs.online/home/challenge/phishing-analysis-2-a1091574b8">https://blueteamlabs.online/home/challenge/phishing-analysis-2-a1091574b8&lt;/a>&lt;/p>
+&lt;h3 id="question-1">&lt;strong>Question 1&lt;/strong>&lt;/h3>
+&lt;p>&lt;strong>What is the sending email address?&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>Search for &amp;#34;From&amp;#34;
+&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Phishing-Analysis-2/1.png" alt="phishing-2">&lt;/p>
+&lt;p>&lt;strong>Answer:&lt;/strong> &lt;a href="mailto:amazon@zyevantoby.cn">amazon@zyevantoby.cn&lt;/a>&lt;/p>
+&lt;h3 id="question-2">&lt;strong>Question 2&lt;/strong>&lt;/h3>
+&lt;p>**What is the recipient email address? &lt;/p>
+&lt;pre tabindex="0">&lt;code>Search for &amp;#34;To&amp;#34;
+&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Phishing-Analysis-2/2.png" alt="phishing-2">&lt;/p>
+&lt;p>&lt;strong>Answer:&lt;/strong> &lt;a href="mailto:saintington73@outlook.com">saintington73@outlook.com&lt;/a>&lt;/p>
+&lt;h3 id="question-3">&lt;strong>Question 3&lt;/strong>&lt;/h3>
+&lt;p>&lt;strong>What is the subject line of the email?&lt;/strong> &lt;/p>
+&lt;pre tabindex="0">&lt;code>Search for &amp;#34;Subject&amp;#34;
+&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Phishing-Analysis-2/3.png" alt="phishing-2">&lt;/p>
+&lt;p>&lt;strong>Answer:&lt;/strong> Your Account has been locked&lt;/p>
+&lt;h3 id="question-4">&lt;strong>Question 4&lt;/strong>&lt;/h3>
+&lt;p>&lt;strong>What company is the attacker trying to imitate?&lt;/strong> &lt;/p>
+&lt;pre tabindex="0">&lt;code>Look for &amp;#34;From&amp;#34; 
+&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Phishing-Analysis-2/4.png" alt="phishing-2">&lt;/p>
+&lt;p>&lt;strong>Answer:&lt;/strong> amazon&lt;/p>
+&lt;h3 id="question-5">&lt;strong>Question 5&lt;/strong>&lt;/h3>
+&lt;p>&lt;strong>What is the date and time the email was sent? (As copied from a text editor)&lt;/strong> &lt;/p></description></item><item><title>Malicious PowerShell Analysis</title><link>https://ittechnetworkk.github.io/walkthroughs/maliciouspowershellanalysis/</link><pubDate>Sat, 05 Jul 2025 13:40:46 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/maliciouspowershellanalysis/</guid><description>&lt;p>In this write-up, I’ll be investigating a challenge named &lt;a href="https://blueteamlabs.online/home/challenge/malicious-powershell-analysis-bf6b52faef">&lt;strong>Malicious PowerShell Analysis&lt;/strong>&lt;/a> from Blue Team Labs Online. This challenge isn’t particularly difficult, making it a great exercise for learning or sharpening malware analysis skills.&lt;/p>
+&lt;h3 id="-step-1-downloading-the-file">🧪 &lt;strong>Step 1: Downloading the File&lt;/strong>&lt;/h3>
+&lt;p>First, I downloaded the malicious file to an isolated analysis environment (virtual machine).&lt;/p>
+&lt;p>The file came as an encrypted ZIP archive named:&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/MaliciousPowershellAnalysis/1.png" alt="maliciousPowershellAnalysis">&lt;/p>
+&lt;h3 id="-step-2-hash-analysis">🔍 &lt;strong>Step 2: Hash Analysis&lt;/strong>&lt;/h3>
+&lt;p>To begin the investigation, I calculated the file’s MD5 hash using &lt;code>md5sum&lt;/code>, then submitted it to multiple threat intelligence platforms:&lt;/p></description></item></channel></rss>

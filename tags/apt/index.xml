@@ -1,20 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Apt on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/apt/</link>
-    <description>Recent content in Apt on ittechnetworkk</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Sat, 05 Jul 2025 15:16:47 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/apt/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>3CX Supply Chain</title>
-      <link>http://localhost:1313/walkthroughs/3cxsupplychain/</link>
-      <pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate>
-      <guid>http://localhost:1313/walkthroughs/3cxsupplychain/</guid>
-      <description>&lt;p&gt;Lab URL: &lt;a href=&#34;https://cyberdefenders.org/blueteam-ctf-challenges/3cx-supply-chain/&#34;&gt;https://cyberdefenders.org/blueteam-ctf-challenges/3cx-supply-chain/&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;question-1&#34;&gt;&lt;strong&gt;Question 1&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Understanding the scope of the attack and identifying which versions exhibit malicious behavior is crucial for making informed decisions if these compromised versions are present in the organization. How many versions of 3CX &lt;strong&gt;running on Windows&lt;/strong&gt; have been flagged as malware?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Search for hash&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/3CX-Supply-Chain/1.png&#34; alt=&#34;3CX-Supply-Chain&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; 2&lt;/p&gt;&#xA;&lt;h3 id=&#34;question-2&#34;&gt;&lt;strong&gt;Question 2&lt;/strong&gt;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Determining the age of the malware can help assess the extent of the compromise and track the evolution of malware families and variants. What&amp;rsquo;s the UTC creation time of the &lt;code&gt;.msi&lt;/code&gt; malware?&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Apt on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/apt/</link><description>Recent content in Apt on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sat, 05 Jul 2025 15:16:47 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/apt/index.xml" rel="self" type="application/rss+xml"/><item><title>3CX Supply Chain</title><link>https://ittechnetworkk.github.io/walkthroughs/3cxsupplychain/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/3cxsupplychain/</guid><description>&lt;p>Lab URL: &lt;a href="https://cyberdefenders.org/blueteam-ctf-challenges/3cx-supply-chain/">https://cyberdefenders.org/blueteam-ctf-challenges/3cx-supply-chain/&lt;/a>&lt;/p>
+&lt;h3 id="question-1">&lt;strong>Question 1&lt;/strong>&lt;/h3>
+&lt;p>&lt;strong>Understanding the scope of the attack and identifying which versions exhibit malicious behavior is crucial for making informed decisions if these compromised versions are present in the organization. How many versions of 3CX &lt;strong>running on Windows&lt;/strong> have been flagged as malware?&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>Search for hash
+&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/3CX-Supply-Chain/1.png" alt="3CX-Supply-Chain">&lt;/p>
+&lt;p>&lt;strong>Answer:&lt;/strong> 2&lt;/p>
+&lt;h3 id="question-2">&lt;strong>Question 2&lt;/strong>&lt;/h3>
+&lt;p>&lt;strong>Determining the age of the malware can help assess the extent of the compromise and track the evolution of malware families and variants. What&amp;rsquo;s the UTC creation time of the &lt;code>.msi&lt;/code> malware?&lt;/strong>&lt;/p></description></item></channel></rss>

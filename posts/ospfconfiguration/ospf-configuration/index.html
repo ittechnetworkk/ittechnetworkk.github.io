@@ -1,629 +1,77 @@
-<!DOCTYPE html>
-<html lang="en-us">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> OSPF Konfigürasyonu | ittechnetworkk</title>
-  <link rel = 'canonical' href = 'http://localhost:1313/posts/ospfconfiguration/ospf-configuration/'>
-  <meta name="description" content="Hi, I&#39;m Soner, and this is my personal blog where I share insights, guides, and articles on various tech topics, including Networking, Linux, Windows, Virtualization, Firewalls, IoT, and more. I&#39;m constantly learning and exploring new technologies, and this blog is where I document my journey. ">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="robots" content="all,follow">
-  <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:url" content="http://localhost:1313/posts/ospfconfiguration/ospf-configuration/">
-  <meta property="og:site_name" content="ittechnetworkk">
-  <meta property="og:title" content="OSPF Konfigürasyonu">
-  <meta property="og:description" content="OSPF (Open Short Path First), dinamik bir yönlendirme protokolüdür. OSPF bir Link State Routing protokolüdür. Bundan dolayı network haritasının tamamına hakimdir Bazı özellikleri şöyledir:
-Açık kaynaklıdır, SPF(Shortest Path First) algoritmasını kullanır, Classless (Sınıfsız) bir protokoldür, CIDR (Classless Inter-Domain Routing), VLSM(Veriable Length Subnet Masking) destekler, Load balancing destekler, Güncelleme süresi hızlıdır, Administrative Distance değeri 110’dur, Area yapısı ile ölçeklenebilir, Kimlik doğrulamayı destekler (MD5) Metrik değeri olarak Cost kullanır. Multicast 224.0.0.5 ve 224.0.0.6 adreslerinden yayın yapar. 89 portunu kullanır. OSPF Paket Tipleri:">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-03-31T22:57:40+01:00">
-    <meta property="article:modified_time" content="2024-03-31T22:57:40+01:00">
-    <meta property="article:tag" content="IPv4">
-    <meta property="article:tag" content="Routing">
-    <meta property="article:tag" content="Ospf">
-
-  
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="OSPF Konfigürasyonu">
-  <meta name="twitter:description" content="OSPF (Open Short Path First), dinamik bir yönlendirme protokolüdür. OSPF bir Link State Routing protokolüdür. Bundan dolayı network haritasının tamamına hakimdir Bazı özellikleri şöyledir:
-Açık kaynaklıdır, SPF(Shortest Path First) algoritmasını kullanır, Classless (Sınıfsız) bir protokoldür, CIDR (Classless Inter-Domain Routing), VLSM(Veriable Length Subnet Masking) destekler, Load balancing destekler, Güncelleme süresi hızlıdır, Administrative Distance değeri 110’dur, Area yapısı ile ölçeklenebilir, Kimlik doğrulamayı destekler (MD5) Metrik değeri olarak Cost kullanır. Multicast 224.0.0.5 ve 224.0.0.6 adreslerinden yayın yapar. 89 portunu kullanır. OSPF Paket Tipleri:">
-
-  
-  
-    
-  
-  
-
-  
-  
-  
-  <link rel="stylesheet" href="http://localhost:1313/css/styles.bdd621ce0dc4beed42cba9d295fbb7a846b8870c3fda65b870471926d718c2543ebb5d8d248ba9a5554cba6ec2e05b0dc829190fd4e4fef576beaa4c3f244abe.css" integrity="sha512-vdYhzg3Evu1Cy6nSlfu3qEa4hww/2mW4cEcZJtcYwlQ&#43;u12NJIuppVVMum7C4FsNyCkZD9Tk/vV2vqpMPyRKvg==">
-
-  
-   <link rel="stylesheet" href="http://localhost:1313/css/custom.css">  <link rel="stylesheet" href="http://localhost:1313/css/lightbox.css">  <link rel="stylesheet" href="http://localhost:1313/css/tools.css"> 
-  
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  
-
-  
-<link rel="icon" type="image/png" href="http://localhost:1313/images/favicon.ico" />
-
-  
-</head> 
-<body class="max-width mx-auto px3 ltr">
-  <div class="content index py4">
-
-  <div id="header-post">
-  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
-         
-        <li><a href="/">Home</a></li>
-         
-        <li><a href="/posts">Posts</a></li>
-         
-        <li><a href="/walkthroughs">Walkthroughs</a></li>
-         
-        <li><a href="/projects">Projects</a></li>
-         
-        <li><a href="/tools/">Tools</a></li>
-         
-        <li><a href="/resources">Resources</a></li>
-         
-        <li><a href="/library">Library</a></li>
-         
-        <li><a href="/about">About</a></li>
-        
-      </ul>
-    </span>
-    <br/>
-    <span id="actions">
-      <ul>
-        
-        <li>
-          <a class="icon" href=" http://localhost:1313/posts/etherchannel/etherchannel/" aria-label="Previous">
-            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
-          </a>
-        </li>
-        
-        
-        <li>
-          <a class="icon" href="http://localhost:1313/posts/ospfauthentication/ospf-authentication/" aria-label="Next">
-            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
-          </a>
-        </li>
-        
-        <li>
-          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
-            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
-          </a>
-        </li>
-        <li>
-          <a class="icon" href="#" aria-label="Share">
-            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
-          </a>
-        </li>
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
-    </span>
-    <br/>
-    <div id="share" style="display: none">
-      
-      <ul>
-  
-  
-    
-  
-  
-  <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fospfconfiguration%2fospf-configuration%2f" aria-label="Facebook">
-      <i class="fab fa-facebook " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fospfconfiguration%2fospf-configuration%2f&text=OSPF%20Konfig%c3%bcrasyonu" aria-label="Twitter">
-      <i class="fab fa-twitter " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fospfconfiguration%2fospf-configuration%2f&title=OSPF%20Konfig%c3%bcrasyonu" aria-label="Linkedin">
-      <i class="fab fa-linkedin " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fospfconfiguration%2fospf-configuration%2f&is_video=false&description=OSPF%20Konfig%c3%bcrasyonu" aria-label="Pinterest">
-      <i class="fab fa-pinterest " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=OSPF%20Konfig%c3%bcrasyonu&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fospfconfiguration%2fospf-configuration%2f" aria-label="Email">
-      <i class="fas fa-envelope " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fospfconfiguration%2fospf-configuration%2f&title=OSPF%20Konfig%c3%bcrasyonu" aria-label="Pocket">
-      <i class="fab fa-get-pocket " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fospfconfiguration%2fospf-configuration%2f&title=OSPF%20Konfig%c3%bcrasyonu" aria-label="reddit">
-      <i class="fab fa-reddit " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fospfconfiguration%2fospf-configuration%2f&name=OSPF%20Konfig%c3%bcrasyonu&description=%3cp%3eOSPF%20%28Open%20Short%20Path%20First%29%2c%20dinamik%20bir%20y%c3%b6nlendirme%20protokol%c3%bcd%c3%bcr.%20OSPF%20bir%20Link%20State%20Routing%20protokol%c3%bcd%c3%bcr.%20Bundan%20dolay%c4%b1%20network%20haritas%c4%b1n%c4%b1n%20tamam%c4%b1na%20hakimdir%20Baz%c4%b1%20%c3%b6zellikleri%20%c5%9f%c3%b6yledir%3a%3c%2fp%3e%0a%3cul%3e%0a%3cli%3eA%c3%a7%c4%b1k%20kaynakl%c4%b1d%c4%b1r%2c%3c%2fli%3e%0a%3cli%3eSPF%28Shortest%20Path%20First%29%20algoritmas%c4%b1n%c4%b1%20kullan%c4%b1r%2c%3c%2fli%3e%0a%3cli%3eClassless%20%28S%c4%b1n%c4%b1fs%c4%b1z%29%20bir%20protokold%c3%bcr%2c%3c%2fli%3e%0a%3cli%3eCIDR%20%28Classless%20Inter-Domain%20Routing%29%2c%20VLSM%28Veriable%20Length%20Subnet%20Masking%29%20destekler%2c%3c%2fli%3e%0a%3cli%3eLoad%20balancing%20destekler%2c%3c%2fli%3e%0a%3cli%3eG%c3%bcncelleme%20s%c3%bcresi%20h%c4%b1zl%c4%b1d%c4%b1r%2c%3c%2fli%3e%0a%3cli%3eAdministrative%20Distance%20de%c4%9feri%20110%26rsquo%3bdur%2c%3c%2fli%3e%0a%3cli%3eArea%20yap%c4%b1s%c4%b1%20ile%20%c3%b6l%c3%a7eklenebilir%2c%3c%2fli%3e%0a%3cli%3eKimlik%20do%c4%9frulamay%c4%b1%20destekler%20%28MD5%29%3c%2fli%3e%0a%3cli%3eMetrik%20de%c4%9feri%20olarak%20Cost%20kullan%c4%b1r.%3c%2fli%3e%0a%3cli%3eMulticast%20224.0.0.5%20ve%20224.0.0.6%20adreslerinden%20yay%c4%b1n%20yapar.%3c%2fli%3e%0a%3cli%3e89%20portunu%20kullan%c4%b1r.%3c%2fli%3e%0a%3c%2ful%3e%0a%3cp%3e%3cstrong%3eOSPF%20Paket%20Tipleri%3a%3c%2fstrong%3e%3c%2fp%3e" aria-label="Tumblr">
-      <i class="fab fa-tumblr " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fospfconfiguration%2fospf-configuration%2f&t=OSPF%20Konfig%c3%bcrasyonu" aria-label="Hacker News">
-      <i class="fab fa-hacker-news " aria-hidden="true"></i>
-    </a>
-  </li>
-</ul>
-
-    </div>
-    
-    <div id="toc">
-      <nav id="TableOfContents"></nav>
-    </div>
-    
-  </span>
-</div>
-
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      <h1 class="posttitle" itemprop="name headline">
-        OSPF Konfigürasyonu
-      </h1>
-      <div class="meta">
-        
-        <div class="author-info" style="font-size: 1.1em; margin-bottom: 10px;">
-          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <strong>Author:</strong> <span itemprop="name">Soner Sahin</span>
-          </span>
-        </div>
-        
-        <div class="postdate">
-          
-          <time datetime="2024-03-31 22:57:40 &#43;0100 &#43;0100" itemprop="datePublished">2024-03-31</time>
-          
-        </div>
-        
-        
-        <div class="article-read-time">
-          <i class="far fa-clock"></i>
-          
-          7 minute read
-        </div>
-        
-        
-        <div class="article-category">
-            <i class="fas fa-archive"></i>
-            
-            
-            <a class="category-link" href="/categories/network">Network</a>
-            
-        </div>
-        
-        
-        <div class="article-tag">
-            <i class="fas fa-tag"></i>
-            
-            
-            <a class="tag-link" href="/tags/ipv4" rel="tag">IPv4</a>
-            
-             ,  
-            <a class="tag-link" href="/tags/routing" rel="tag">routing</a>
-            
-             ,  
-            <a class="tag-link" href="/tags/ospf" rel="tag">ospf</a>
-            
-        </div>
-        
-      </div>
-    </header>
-
-    
-    
-
-    
-    
-    <div class="content" itemprop="articleBody">
-      <p>OSPF (Open Short Path First), dinamik bir yönlendirme protokolüdür. OSPF bir Link State Routing protokolüdür. Bundan dolayı network haritasının tamamına hakimdir Bazı özellikleri şöyledir:</p>
-<ul>
-<li>Açık kaynaklıdır,</li>
-<li>SPF(Shortest Path First) algoritmasını kullanır,</li>
-<li>Classless (Sınıfsız) bir protokoldür,</li>
-<li>CIDR (Classless Inter-Domain Routing), VLSM(Veriable Length Subnet Masking) destekler,</li>
-<li>Load balancing destekler,</li>
-<li>Güncelleme süresi hızlıdır,</li>
-<li>Administrative Distance değeri 110&rsquo;dur,</li>
-<li>Area yapısı ile ölçeklenebilir,</li>
-<li>Kimlik doğrulamayı destekler (MD5)</li>
-<li>Metrik değeri olarak Cost kullanır.</li>
-<li>Multicast 224.0.0.5 ve 224.0.0.6 adreslerinden yayın yapar.</li>
-<li>89 portunu kullanır.</li>
-</ul>
-<p><strong>OSPF Paket Tipleri:</strong></p>
-<ul>
-<li><strong>Hello:</strong> Komşuluk kurmak ve devam ettirmek için kullanılan pakettir. Defaultta 10 saniyede bir header ile gönderilir.</li>
-<li><strong>Database Description (DBD):</strong> İki router arasındaki LSDB&rsquo;nin aynı olup olmasığını kontrol etmek için gönderilir.</li>
-<li><strong>Link-State Request (LSR):</strong> Komşu bir routerdan belirli bir Link-State kaydını istemek için kullanılır.</li>
-<li><strong>Link State Update (LSU):</strong> Kendisinden istenen Link-State kayıtlarını göndermek için kullanılır. Request ile istenir Update ile gönderilir.</li>
-<li><strong>Link-State Acknowledgement (LSAck):</strong> Kabul edilmiş olan Link-State Advertisement headerlarının bir listesini içeriyor kabul ettikten sonra. Yani bir paketi aldığını onaylamak için kullanılır.</li>
-</ul>
-<p>OSPF 224.0.0.5 multicast adresinden Hello paketiyle komşuluk kurar.
-Bir OSPF Hello paketi aşağıdakileri içerir;</p>
-<ul>
-<li><strong>Router ID:</strong>
-<ul>
-<li>IP formatında olmalıdır (fakat IP adresi ile karıştırıllmamalıdır) ve diğer komşu routerlarınkinden farklı olmalıdır. Router ID aynı zamanda DR ve BDR seçimi için de kullanılan bir değerdir.</li>
-<li>Manuel olarak yapılandırıılır:
-<ul>
-<li><code>&quot;router-id 2.2.2.2&quot;</code></li>
-</ul>
-</li>
-<li>Manuel olarak yapılandırılmazsa en büyük loopback IP adresi olur. Eğer loopback IP adresi de yok ise en büyük fiziksel interface IP adresi olur.</li>
-</ul>
-</li>
-<li><strong>Hello/Dead Interval:</strong>
-<ul>
-<li>Defaultta 10 saniyede bir Hello paketi, 40 saniyede ise Dead Interval paketi gönderilir. Dead Interval süresi defaultta Hello paketinin 4 katıdır. Yani Hello paketini 20 saniyeye çıkarırsak Dead Interval paketi 80 saniye olacaktır. Bu değerler değiştirilebilir. Fakat komşuluk kurulabilmesi için tüm routerlada aynı olmak zorundadır.</li>
-<li>Değiştimek için:
-<ul>
-<li><code>&quot;ip ospf hello-interval 1-65535&quot;</code></li>
-<li><code>&quot;ip ospf dead-interval 1-65535&quot;</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Neighbors:</strong>
-<ul>
-<li>Komşuluklar listelenir.</li>
-</ul>
-</li>
-<li><strong>Area ID:</strong>
-<ul>
-<li>Yönetimi basitleştirmek, trafik ve kaynak kullanımını optimize etmek için kullanılır.</li>
-<li>Routerların komşılık kurabiilmesi için aynı area içinde olamaları gerekir.</li>
-<li>Area&rsquo;lar IP formatında veya decimal formatta yazılabilir.</li>
-<li>Örn:
-<ul>
-<li><code>&quot;network 0.0.0.0 255.255.255.255 area 5.5.5.5&quot;</code></li>
-<li><code>&quot;network 0.0.0.0 255.255.255.255 area 5&quot;</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Authentication Data:</strong>
-<ul>
-<li>Eğer Authentication varsa bununla ilgili bilgiler yer alır.</li>
-</ul>
-</li>
-<li><strong>Router Priority:</strong>
-<ul>
-<li>Router öncelik değeridir. Default değeri 1&rsquo;dir</li>
-</ul>
-</li>
-<li><strong>DR ve BDR IP Adresleri:</strong>
-<ul>
-<li>DR ve BDR Routerlar&rsquo;ın IP bilgileri yer alır.</li>
-</ul>
-</li>
-</ul>
-<p><strong>Komşuluk İlişkisi Kurmak İçin Ne Gerekir?</strong></p>
-<ul>
-<li>Subnet,</li>
-<li>Area ID,</li>
-<li>Hello/Dead Interval değerleri,</li>
-<li>Authentication,</li>
-<li>Area Stub Flag,</li>
-<li>MTU</li>
-</ul>
-<p><strong>OSPF Neighbor States (Komşuluk Durumları):</strong></p>
-<ul>
-<li><strong>Down State:</strong> Henüz Hello paketleri alınmamış olan durumdur. Her OSPF çalıştıran router burdan başlar.</li>
-<li><strong>Init State:</strong> Bir router diğer OSPF routerından Hello paketi aldığı durumdur, fakat henüz iki taraflı görüşme yok.</li>
-<li><strong>2-Way State:</strong> BKomşu router Hello mesajını alıyor ve kendisi de bir Hello mesajıyla yanıt veriyor. İki yönlü iletişim burada başlıyor.</li>
-<li><strong>ExStart State:</strong> Her iki router arasında LSDB değişimi başlıyor. Master ve Slave seçimleri de burada yapılıyor.</li>
-<li><strong>Exchange State:</strong> DBD Paketleri değiş tokuş edilir.</li>
-<li><strong>Loading State:</strong> Bir routerın bilmediği her network için LSR (Link-State Request) bağlantı durumu istekleri gönderdiği durumdur.</li>
-<li><strong>Full State:</strong> Her iki routerda da LSDB&rsquo;ler eşitlenmiş olur. Bu aşamadan sonra artık OSPF yönlendirmesi başlıyor.</li>
-</ul>
-<p>Komşuluk kurulduktan sonra komşu routerlar arasında LSA; Link State Advertisement yani Bağlantı Durumu İlanı paketleri gider gelir. Her Router bir LSA Database&rsquo;i tutar, buna da LSDB; Bağlantı Durumu Veritabanı denir. Routerlar arasında gidip gelen LSA paketleri LSDB&rsquo;ye yazılır. Daha sonra bu LSDB&rsquo;ler de routerlala paylaşılır. Bu sayede aynı area içerisinde her routerda aynı LSDB&rsquo;ler oluşturulmuş oluyor.</p>
-<p><img src="/images/OSPFConfiguration/1.png" alt="ospf"></p>
-<p>Bu LSDB&rsquo;ler sayesinde rotalar oluşturuluyor ve SPF Algoritması aracılığıyla network topolojisi çıkarılıyor. En iyi yol da Routing Tablosu&rsquo;na yazılıyor.
+<!doctype html><html lang=en-us><head><link rel=preload href=/lib/font-awesome/webfonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/lib/font-awesome/webfonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/lib/font-awesome/webfonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>OSPF Konfigürasyonu | ittechnetworkk</title><link rel=canonical href=https://ittechnetworkk.github.io/posts/ospfconfiguration/ospf-configuration/><meta name=description content="Hi, I'm Soner, and this is my personal blog where I share insights, guides, and articles on various tech topics, including Networking, Linux, Windows, Virtualization, Firewalls, IoT, and more. I'm constantly learning and exploring new technologies, and this blog is where I document my journey. "><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name=robots content="all,follow"><meta name=googlebot content="index,follow,snippet,archive"><meta property="og:url" content="https://ittechnetworkk.github.io/posts/ospfconfiguration/ospf-configuration/"><meta property="og:site_name" content="ittechnetworkk"><meta property="og:title" content="OSPF Konfigürasyonu"><meta property="og:description" content="OSPF (Open Short Path First), dinamik bir yönlendirme protokolüdür. OSPF bir Link State Routing protokolüdür. Bundan dolayı network haritasının tamamına hakimdir Bazı özellikleri şöyledir:
+Açık kaynaklıdır, SPF(Shortest Path First) algoritmasını kullanır, Classless (Sınıfsız) bir protokoldür, CIDR (Classless Inter-Domain Routing), VLSM(Veriable Length Subnet Masking) destekler, Load balancing destekler, Güncelleme süresi hızlıdır, Administrative Distance değeri 110’dur, Area yapısı ile ölçeklenebilir, Kimlik doğrulamayı destekler (MD5) Metrik değeri olarak Cost kullanır. Multicast 224.0.0.5 ve 224.0.0.6 adreslerinden yayın yapar. 89 portunu kullanır. OSPF Paket Tipleri:"><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-03-31T22:57:40+01:00"><meta property="article:modified_time" content="2024-03-31T22:57:40+01:00"><meta property="article:tag" content="IPv4"><meta property="article:tag" content="Routing"><meta property="article:tag" content="Ospf"><meta name=twitter:card content="summary"><meta name=twitter:title content="OSPF Konfigürasyonu"><meta name=twitter:description content="OSPF (Open Short Path First), dinamik bir yönlendirme protokolüdür. OSPF bir Link State Routing protokolüdür. Bundan dolayı network haritasının tamamına hakimdir Bazı özellikleri şöyledir:
+Açık kaynaklıdır, SPF(Shortest Path First) algoritmasını kullanır, Classless (Sınıfsız) bir protokoldür, CIDR (Classless Inter-Domain Routing), VLSM(Veriable Length Subnet Masking) destekler, Load balancing destekler, Güncelleme süresi hızlıdır, Administrative Distance değeri 110’dur, Area yapısı ile ölçeklenebilir, Kimlik doğrulamayı destekler (MD5) Metrik değeri olarak Cost kullanır. Multicast 224.0.0.5 ve 224.0.0.6 adreslerinden yayın yapar. 89 portunu kullanır. OSPF Paket Tipleri:"><link rel=stylesheet href=https://ittechnetworkk.github.io/css/styles.bdd621ce0dc4beed42cba9d295fbb7a846b8870c3fda65b870471926d718c2543ebb5d8d248ba9a5554cba6ec2e05b0dc829190fd4e4fef576beaa4c3f244abe.css integrity="sha512-vdYhzg3Evu1Cy6nSlfu3qEa4hww/2mW4cEcZJtcYwlQ+u12NJIuppVVMum7C4FsNyCkZD9Tk/vV2vqpMPyRKvg=="><link rel=stylesheet href=https://ittechnetworkk.github.io/css/custom.css><link rel=stylesheet href=https://ittechnetworkk.github.io/css/lightbox.css><link rel=stylesheet href=https://ittechnetworkk.github.io/css/tools.css><link rel=stylesheet href=https://ittechnetworkk.github.io/css/tools-cards.css><link rel=stylesheet href=https://ittechnetworkk.github.io/css/post-cards.css><link rel=stylesheet href=https://ittechnetworkk.github.io/css/posts-cards.css><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script><script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]--><link rel=icon type=image/png href=https://ittechnetworkk.github.io/images/favicon.ico></head><body class="max-width mx-auto px3 ltr"><div class="content index py4"><div id=header-post><a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=menu-icon-tablet href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=top-icon-tablet href=# onclick='$("html, body").animate({scrollTop:0},"fast")' style=display:none aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+<span id=menu><span id=nav><ul><li><a href=/>Home</a></li><li><a href=/posts>Posts</a></li><li><a href=/walkthroughs>Walkthroughs</a></li><li><a href=/projects>Projects</a></li><li><a href=/tools/>Tools</a></li><li><a href=/resources>Resources</a></li><li><a href=/library>Library</a></li><li><a href=/about>About</a></li></ul></span><br><span id=actions><ul><li><a class=icon href=https://ittechnetworkk.github.io/posts/etherchannel/etherchannel/ aria-label=Previous><i class="fas fa-chevron-left" aria-hidden=true onmouseover='$("#i-prev").toggle()' onmouseout='$("#i-prev").toggle()'></i></a></li><li><a class=icon href=https://ittechnetworkk.github.io/posts/ospfauthentication/ospf-authentication/ aria-label=Next><i class="fas fa-chevron-right" aria-hidden=true onmouseover='$("#i-next").toggle()' onmouseout='$("#i-next").toggle()'></i></a></li><li><a class=icon href=# onclick='$("html, body").animate({scrollTop:0},"fast")' aria-label="Top of Page"><i class="fas fa-chevron-up" aria-hidden=true onmouseover='$("#i-top").toggle()' onmouseout='$("#i-top").toggle()'></i></a></li><li><a class=icon href=# aria-label=Share><i class="fas fa-share-alt" aria-hidden=true onmouseover='$("#i-share").toggle()' onmouseout='$("#i-share").toggle()' onclick='return $("#share").toggle(),!1'></i></a></li></ul><span id=i-prev class=info style=display:none>Previous post</span>
+<span id=i-next class=info style=display:none>Next post</span>
+<span id=i-top class=info style=display:none>Back to top</span>
+<span id=i-share class=info style=display:none>Share post</span></span><br><div id=share style=display:none><ul><li><a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfconfiguration%2fospf-configuration%2f" aria-label=Facebook><i class="fab fa-facebook" aria-hidden=true></i></a></li><li><a class=icon href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfconfiguration%2fospf-configuration%2f&text=OSPF%20Konfig%c3%bcrasyonu" aria-label=Twitter><i class="fab fa-twitter" aria-hidden=true></i></a></li><li><a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfconfiguration%2fospf-configuration%2f&title=OSPF%20Konfig%c3%bcrasyonu" aria-label=Linkedin><i class="fab fa-linkedin" aria-hidden=true></i></a></li><li><a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfconfiguration%2fospf-configuration%2f&is_video=false&description=OSPF%20Konfig%c3%bcrasyonu" aria-label=Pinterest><i class="fab fa-pinterest" aria-hidden=true></i></a></li><li><a class=icon href="mailto:?subject=OSPF%20Konfig%c3%bcrasyonu&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfconfiguration%2fospf-configuration%2f" aria-label=Email><i class="fas fa-envelope" aria-hidden=true></i></a></li><li><a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfconfiguration%2fospf-configuration%2f&title=OSPF%20Konfig%c3%bcrasyonu" aria-label=Pocket><i class="fab fa-get-pocket" aria-hidden=true></i></a></li><li><a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfconfiguration%2fospf-configuration%2f&title=OSPF%20Konfig%c3%bcrasyonu" aria-label=reddit><i class="fab fa-reddit" aria-hidden=true></i></a></li><li><a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfconfiguration%2fospf-configuration%2f&name=OSPF%20Konfig%c3%bcrasyonu&description=%3cp%3eOSPF%20%28Open%20Short%20Path%20First%29%2c%20dinamik%20bir%20y%c3%b6nlendirme%20protokol%c3%bcd%c3%bcr.%20OSPF%20bir%20Link%20State%20Routing%20protokol%c3%bcd%c3%bcr.%20Bundan%20dolay%c4%b1%20network%20haritas%c4%b1n%c4%b1n%20tamam%c4%b1na%20hakimdir%20Baz%c4%b1%20%c3%b6zellikleri%20%c5%9f%c3%b6yledir%3a%3c%2fp%3e%0a%3cul%3e%0a%3cli%3eA%c3%a7%c4%b1k%20kaynakl%c4%b1d%c4%b1r%2c%3c%2fli%3e%0a%3cli%3eSPF%28Shortest%20Path%20First%29%20algoritmas%c4%b1n%c4%b1%20kullan%c4%b1r%2c%3c%2fli%3e%0a%3cli%3eClassless%20%28S%c4%b1n%c4%b1fs%c4%b1z%29%20bir%20protokold%c3%bcr%2c%3c%2fli%3e%0a%3cli%3eCIDR%20%28Classless%20Inter-Domain%20Routing%29%2c%20VLSM%28Veriable%20Length%20Subnet%20Masking%29%20destekler%2c%3c%2fli%3e%0a%3cli%3eLoad%20balancing%20destekler%2c%3c%2fli%3e%0a%3cli%3eG%c3%bcncelleme%20s%c3%bcresi%20h%c4%b1zl%c4%b1d%c4%b1r%2c%3c%2fli%3e%0a%3cli%3eAdministrative%20Distance%20de%c4%9feri%20110%26rsquo%3bdur%2c%3c%2fli%3e%0a%3cli%3eArea%20yap%c4%b1s%c4%b1%20ile%20%c3%b6l%c3%a7eklenebilir%2c%3c%2fli%3e%0a%3cli%3eKimlik%20do%c4%9frulamay%c4%b1%20destekler%20%28MD5%29%3c%2fli%3e%0a%3cli%3eMetrik%20de%c4%9feri%20olarak%20Cost%20kullan%c4%b1r.%3c%2fli%3e%0a%3cli%3eMulticast%20224.0.0.5%20ve%20224.0.0.6%20adreslerinden%20yay%c4%b1n%20yapar.%3c%2fli%3e%0a%3cli%3e89%20portunu%20kullan%c4%b1r.%3c%2fli%3e%0a%3c%2ful%3e%0a%3cp%3e%3cstrong%3eOSPF%20Paket%20Tipleri%3a%3c%2fstrong%3e%3c%2fp%3e" aria-label=Tumblr><i class="fab fa-tumblr" aria-hidden=true></i></a></li><li><a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfconfiguration%2fospf-configuration%2f&t=OSPF%20Konfig%c3%bcrasyonu" aria-label="Hacker News"><i class="fab fa-hacker-news" aria-hidden=true></i></a></li></ul></div><div id=toc><nav id=TableOfContents></nav></div></span></div><article class=post itemscope itemtype=http://schema.org/BlogPosting><header><h1 class=posttitle itemprop="name headline">OSPF Konfigürasyonu</h1><div class=meta><div class=author-info style=font-size:1.1em;margin-bottom:10px><span class=author itemprop=author itemscope itemtype=http://schema.org/Person><strong>Author:</strong> <span itemprop=name>Soner Sahin</span></span></div><div class=postdate><time datetime="2024-03-31 22:57:40 +0100 +0100" itemprop=datePublished>2024-03-31</time></div><div class=article-read-time><i class="far fa-clock"></i>
+7 minute read</div><div class=article-category><i class="fas fa-archive"></i>
+<a class=category-link href=/categories/network>Network</a></div><div class=article-tag><i class="fas fa-tag"></i>
+<a class=tag-link href=/tags/ipv4 rel=tag>IPv4</a>
+,
+<a class=tag-link href=/tags/routing rel=tag>routing</a>
+,
+<a class=tag-link href=/tags/ospf rel=tag>ospf</a></div></div></header><div class=content itemprop=articleBody><p>OSPF (Open Short Path First), dinamik bir yönlendirme protokolüdür. OSPF bir Link State Routing protokolüdür. Bundan dolayı network haritasının tamamına hakimdir Bazı özellikleri şöyledir:</p><ul><li>Açık kaynaklıdır,</li><li>SPF(Shortest Path First) algoritmasını kullanır,</li><li>Classless (Sınıfsız) bir protokoldür,</li><li>CIDR (Classless Inter-Domain Routing), VLSM(Veriable Length Subnet Masking) destekler,</li><li>Load balancing destekler,</li><li>Güncelleme süresi hızlıdır,</li><li>Administrative Distance değeri 110&rsquo;dur,</li><li>Area yapısı ile ölçeklenebilir,</li><li>Kimlik doğrulamayı destekler (MD5)</li><li>Metrik değeri olarak Cost kullanır.</li><li>Multicast 224.0.0.5 ve 224.0.0.6 adreslerinden yayın yapar.</li><li>89 portunu kullanır.</li></ul><p><strong>OSPF Paket Tipleri:</strong></p><ul><li><strong>Hello:</strong> Komşuluk kurmak ve devam ettirmek için kullanılan pakettir. Defaultta 10 saniyede bir header ile gönderilir.</li><li><strong>Database Description (DBD):</strong> İki router arasındaki LSDB&rsquo;nin aynı olup olmasığını kontrol etmek için gönderilir.</li><li><strong>Link-State Request (LSR):</strong> Komşu bir routerdan belirli bir Link-State kaydını istemek için kullanılır.</li><li><strong>Link State Update (LSU):</strong> Kendisinden istenen Link-State kayıtlarını göndermek için kullanılır. Request ile istenir Update ile gönderilir.</li><li><strong>Link-State Acknowledgement (LSAck):</strong> Kabul edilmiş olan Link-State Advertisement headerlarının bir listesini içeriyor kabul ettikten sonra. Yani bir paketi aldığını onaylamak için kullanılır.</li></ul><p>OSPF 224.0.0.5 multicast adresinden Hello paketiyle komşuluk kurar.
+Bir OSPF Hello paketi aşağıdakileri içerir;</p><ul><li><strong>Router ID:</strong><ul><li>IP formatında olmalıdır (fakat IP adresi ile karıştırıllmamalıdır) ve diğer komşu routerlarınkinden farklı olmalıdır. Router ID aynı zamanda DR ve BDR seçimi için de kullanılan bir değerdir.</li><li>Manuel olarak yapılandırıılır:<ul><li><code>"router-id 2.2.2.2"</code></li></ul></li><li>Manuel olarak yapılandırılmazsa en büyük loopback IP adresi olur. Eğer loopback IP adresi de yok ise en büyük fiziksel interface IP adresi olur.</li></ul></li><li><strong>Hello/Dead Interval:</strong><ul><li>Defaultta 10 saniyede bir Hello paketi, 40 saniyede ise Dead Interval paketi gönderilir. Dead Interval süresi defaultta Hello paketinin 4 katıdır. Yani Hello paketini 20 saniyeye çıkarırsak Dead Interval paketi 80 saniye olacaktır. Bu değerler değiştirilebilir. Fakat komşuluk kurulabilmesi için tüm routerlada aynı olmak zorundadır.</li><li>Değiştimek için:<ul><li><code>"ip ospf hello-interval 1-65535"</code></li><li><code>"ip ospf dead-interval 1-65535"</code></li></ul></li></ul></li><li><strong>Neighbors:</strong><ul><li>Komşuluklar listelenir.</li></ul></li><li><strong>Area ID:</strong><ul><li>Yönetimi basitleştirmek, trafik ve kaynak kullanımını optimize etmek için kullanılır.</li><li>Routerların komşılık kurabiilmesi için aynı area içinde olamaları gerekir.</li><li>Area&rsquo;lar IP formatında veya decimal formatta yazılabilir.</li><li>Örn:<ul><li><code>"network 0.0.0.0 255.255.255.255 area 5.5.5.5"</code></li><li><code>"network 0.0.0.0 255.255.255.255 area 5"</code></li></ul></li></ul></li><li><strong>Authentication Data:</strong><ul><li>Eğer Authentication varsa bununla ilgili bilgiler yer alır.</li></ul></li><li><strong>Router Priority:</strong><ul><li>Router öncelik değeridir. Default değeri 1&rsquo;dir</li></ul></li><li><strong>DR ve BDR IP Adresleri:</strong><ul><li>DR ve BDR Routerlar&rsquo;ın IP bilgileri yer alır.</li></ul></li></ul><p><strong>Komşuluk İlişkisi Kurmak İçin Ne Gerekir?</strong></p><ul><li>Subnet,</li><li>Area ID,</li><li>Hello/Dead Interval değerleri,</li><li>Authentication,</li><li>Area Stub Flag,</li><li>MTU</li></ul><p><strong>OSPF Neighbor States (Komşuluk Durumları):</strong></p><ul><li><strong>Down State:</strong> Henüz Hello paketleri alınmamış olan durumdur. Her OSPF çalıştıran router burdan başlar.</li><li><strong>Init State:</strong> Bir router diğer OSPF routerından Hello paketi aldığı durumdur, fakat henüz iki taraflı görüşme yok.</li><li><strong>2-Way State:</strong> BKomşu router Hello mesajını alıyor ve kendisi de bir Hello mesajıyla yanıt veriyor. İki yönlü iletişim burada başlıyor.</li><li><strong>ExStart State:</strong> Her iki router arasında LSDB değişimi başlıyor. Master ve Slave seçimleri de burada yapılıyor.</li><li><strong>Exchange State:</strong> DBD Paketleri değiş tokuş edilir.</li><li><strong>Loading State:</strong> Bir routerın bilmediği her network için LSR (Link-State Request) bağlantı durumu istekleri gönderdiği durumdur.</li><li><strong>Full State:</strong> Her iki routerda da LSDB&rsquo;ler eşitlenmiş olur. Bu aşamadan sonra artık OSPF yönlendirmesi başlıyor.</li></ul><p>Komşuluk kurulduktan sonra komşu routerlar arasında LSA; Link State Advertisement yani Bağlantı Durumu İlanı paketleri gider gelir. Her Router bir LSA Database&rsquo;i tutar, buna da LSDB; Bağlantı Durumu Veritabanı denir. Routerlar arasında gidip gelen LSA paketleri LSDB&rsquo;ye yazılır. Daha sonra bu LSDB&rsquo;ler de routerlala paylaşılır. Bu sayede aynı area içerisinde her routerda aynı LSDB&rsquo;ler oluşturulmuş oluyor.</p><p><img src=/images/OSPFConfiguration/1.png alt=ospf></p><p>Bu LSDB&rsquo;ler sayesinde rotalar oluşturuluyor ve SPF Algoritması aracılığıyla network topolojisi çıkarılıyor. En iyi yol da Routing Tablosu&rsquo;na yazılıyor.
 Bu durum her 30 dk&rsquo;da bir yapılır. Eğer topolojide bir değişiklik olursa. LSA paketleriyle LSDB&rsquo;ler güncellenir, paylaşılır ve SPF Algoritması tekrardan çalışır.
 Bu gerçekleştikten sonra 30 dk boyunca LSA paketleri network trafiği oluşturmaz. Sadece Hello paketleri gidip gelir.
-Bu durum her area için aynıdır. Aynı area içerisindeki routerların LSDB&rsquo;leri aynıdır.</p>
-<p><strong>OSPF Tabloları:</strong>
-3 çeşit tablo bulunur;</p>
-<ul>
-<li>Neighbor Table (Komşuluk Tablosu),</li>
-<li>Topology Table (Topoloji Tablosu),</li>
-<li>Routing Table (Yönlendirme Tablosu).</li>
-</ul>
-<p><strong>OSPF Cost (Maliyet) Hesaplaması:</strong>
+Bu durum her area için aynıdır. Aynı area içerisindeki routerların LSDB&rsquo;leri aynıdır.</p><p><strong>OSPF Tabloları:</strong>
+3 çeşit tablo bulunur;</p><ul><li>Neighbor Table (Komşuluk Tablosu),</li><li>Topology Table (Topoloji Tablosu),</li><li>Routing Table (Yönlendirme Tablosu).</li></ul><p><strong>OSPF Cost (Maliyet) Hesaplaması:</strong>
 OSPF en düşük maliyetli yolu hesaplar ve Routing Tablosu&rsquo;na yazar. Peki nasıl hesaplanır?
 Referans bant genişliğinin interface bant genişliğine bölümüyle hesaplanır.
-Referans Bant Genişliği defaultta 100 Mbps yani 100.000.000 bps&rsquo;dir.</p>
-<p><img src="/images/OSPFConfiguration/2.png" alt="ospf"></p>
-<p>Buradaki örnekte A makinesi B makinesine giderken kullanacağı 2 yol vardır. Eğer RIP gibi Next Hop Protokü olan bir dinamik yönlendirme protokolü olsaydı R1 ve R2 üzerinden hedefe giderdi.
+Referans Bant Genişliği defaultta 100 Mbps yani 100.000.000 bps&rsquo;dir.</p><p><img src=/images/OSPFConfiguration/2.png alt=ospf></p><p>Buradaki örnekte A makinesi B makinesine giderken kullanacağı 2 yol vardır. Eğer RIP gibi Next Hop Protokü olan bir dinamik yönlendirme protokolü olsaydı R1 ve R2 üzerinden hedefe giderdi.
 Fakat OSPF protokolünde Cost hesabı yapılır ve en yüksek hızda paketi iletmek için R1 - R2 ve R3 üzerinden paketi iletecektir.
 Peki bu hesabı nasıl yaptı?
 Öncelikle hız formatlarını bps olarak dönüştüreceğiz.
 Referans Bant Genişliği = 100 Mbps = 100.000.000 bps
 Interface Bant Genişliği = 100 Mbps = 100.000.000 bps
 Daha sonra förmüle göre referans alınan bant genişliğini (100 Mbps )interface bant genişliğine böleceğiz( 100 Mbps).
-Cost = 100.000.000 / 100.000.000 = 1</p>
-<p>R1 ve R2 üzerinden hesabı da yapalım:
-Cost = 100.000.000 / 10.000.000 = 10</p>
-<p>Aşağıdaki tabloda bazı maliyet hesapları yer almaktadır:</p>
-<ul>
-<li>128 Kbps = 128.000 bps        Cost=100.000.000/128.000=781</li>
-<li>1544 Kbps = 1.544.000 bps       Cost=100.000.000/1.544.000=64</li>
-<li>10 Mbps = 10.000.000 bps       Cost=100.000.000/10.000.000=10</li>
-<li>100 Mbps = 100.000.000 bps       Cost=100.000.000/100.000.000=1</li>
-<li>1 Gbps = 1.000.000.000 bps       Cost=100.000.000/1.000.000.000=0.1 ~ 1</li>
-<li>10 Gbps = 10.000.000.000 bps       Cost=100.000.000/10.000.000.000=0.01 ~ 1</li>
-</ul>
-<p>100 Mbps üzeri hızlar için cost değeri 1&rsquo;dir. Bunun sebebi referans bant genişliğinin 100 Mbps alınmasıdır. Bu sorunu aşmak için referans bant genişliğini değiştirmemiz gerekiyor. Bunu da tüm routerlar için yapmamız gerekir.
+Cost = 100.000.000 / 100.000.000 = 1</p><p>R1 ve R2 üzerinden hesabı da yapalım:
+Cost = 100.000.000 / 10.000.000 = 10</p><p>Aşağıdaki tabloda bazı maliyet hesapları yer almaktadır:</p><ul><li>128 Kbps = 128.000 bps Cost=100.000.000/128.000=781</li><li>1544 Kbps = 1.544.000 bps Cost=100.000.000/1.544.000=64</li><li>10 Mbps = 10.000.000 bps Cost=100.000.000/10.000.000=10</li><li>100 Mbps = 100.000.000 bps Cost=100.000.000/100.000.000=1</li><li>1 Gbps = 1.000.000.000 bps Cost=100.000.000/1.000.000.000=0.1 ~ 1</li><li>10 Gbps = 10.000.000.000 bps Cost=100.000.000/10.000.000.000=0.01 ~ 1</li></ul><p>100 Mbps üzeri hızlar için cost değeri 1&rsquo;dir. Bunun sebebi referans bant genişliğinin 100 Mbps alınmasıdır. Bu sorunu aşmak için referans bant genişliğini değiştirmemiz gerekiyor. Bunu da tüm routerlar için yapmamız gerekir.
 Bir diğer önemli nokta ise ne kadar yapmamız gerek?
 Bunu da networkteki en yüksek hız baz alınarak yapılması gerekir. Şu şekilde değiştirebiliriz;
 <code>router ospf 1</code>
-<code>auto-cost reference-bandwidth 10000 (10 Gbps)</code></p>
-<p>Manuel olarak Cost değerini ayarlamak için ise;
+<code>auto-cost reference-bandwidth 10000 (10 Gbps)</code></p><p>Manuel olarak Cost değerini ayarlamak için ise;
 <code>interface g0/0</code>
-<code>ip ospf cost XXX</code></p>
-<p><strong>OSPF Area Kavramı:</strong>
+<code>ip ospf cost XXX</code></p><p><strong>OSPF Area Kavramı:</strong>
 Router sayısının az olduğu networklerde LSA paketleri networkü çok fazla yormaz, fazla yük oluşturmaz. Fakat networkteki cihaz sayısı arttıkça LSA paketleri artar ve LSDB&rsquo;ler de aynı şekilde büyür. Bundan dolayı SPF Algoritması daha fazla kaynak tüketmeye başlayacaktır.
 Bu sebeple area kavramı geliştirilmiştir. Yani networkü belli parçalara bölerek fazladan trafiğin önüne geçilmiştir. Birden fazla area olan networklere Multiarea denir.
-Avantajları:</p>
-<ul>
-<li>Trafik ve kaynak kullanımı optimize ediliyor,</li>
-<li>Yönetim basitleşiyor,</li>
-<li>Yönlendirme güncellemeleri azalıyor,</li>
-<li>Yönlendirme tabloları küçülüyor.
+Avantajları:</p><ul><li>Trafik ve kaynak kullanımı optimize ediliyor,</li><li>Yönetim basitleşiyor,</li><li>Yönlendirme güncellemeleri azalıyor,</li><li>Yönlendirme tabloları küçülüyor.
 Birden fazla areanın oluşturduğu sisteme Autonomous System (AS) denir. Bir Autonomous System&rsquo;de tüm arealar Backbone Area (Omurga Area) olan area 0&rsquo;a bağlı olması gerekir. Yani ortamda bir tane area 0 olması gerekiyor. Bunun dışındakikilere standart area denir.
 Bu arealar arasındaki bağlantıyı da Area Border Router (ABR)&rsquo;lar sağlıyor. Yani farklı areaları birbirine bağlayan routerlara ABR-Area Border Router denir.
-ABR&rsquo;ler farklı areaları birbirlerine bağladıkları için birden fazla LSDB tutarlar.</li>
-</ul>
-<p><strong>OSPF Router Çeşitleri:</strong></p>
-<ul>
-<li><strong>Internal Routers:</strong> Aynı LSDB&rsquo;lere sahip routerlara denir (R7-R8-R4-R5-R6).</li>
-<li><strong>Backbone Routers:</strong> Area 0&rsquo;a en az bir interfacesinden bağlı olan routerlara denir (R2-R3-R7-R8).</li>
-<li><strong>Area Border Routers:</strong> Farklı areaları birbirine bağlayan routerlara denir (R2-R3).</li>
-<li><strong>Autonomous System Boundary Routers (ASBR):</strong> En az bir interfacesi dış bir networke bağlı olan routerlara denir (R8). Bağlı olduğu router farklı bir yönlendirme protokolü çalıştırıyor olabilir (Örn: EIGRP).</li>
-</ul>
-<p><img src="/images/OSPFConfiguration/3.png" alt="ospf"></p>
-<p><strong>OSPF DR ve BDR Kavramı:</strong>
+ABR&rsquo;ler farklı areaları birbirlerine bağladıkları için birden fazla LSDB tutarlar.</li></ul><p><strong>OSPF Router Çeşitleri:</strong></p><ul><li><strong>Internal Routers:</strong> Aynı LSDB&rsquo;lere sahip routerlara denir (R7-R8-R4-R5-R6).</li><li><strong>Backbone Routers:</strong> Area 0&rsquo;a en az bir interfacesinden bağlı olan routerlara denir (R2-R3-R7-R8).</li><li><strong>Area Border Routers:</strong> Farklı areaları birbirine bağlayan routerlara denir (R2-R3).</li><li><strong>Autonomous System Boundary Routers (ASBR):</strong> En az bir interfacesi dış bir networke bağlı olan routerlara denir (R8). Bağlı olduğu router farklı bir yönlendirme protokolü çalıştırıyor olabilir (Örn: EIGRP).</li></ul><p><img src=/images/OSPFConfiguration/3.png alt=ospf></p><p><strong>OSPF DR ve BDR Kavramı:</strong>
 Bir ethernet networkünde aynı segment içerisinde çok fazla komşuluk ilişkisi oluşabiliyor. :ok fazla komşuluk ilişkisi kurulması da aynı Link-State Update&rsquo;lerinin tüm komşular arasında iletilmesine neden oluyor. Bu da aşırı bir trafiğe neden oluyor. Bunu önlemek için DR ve BDR seçimi yapılıyor.
 DR = Designated Router
-BDR = Backup Designated Router</p>
-<p>DR ve BDR seçmek için 2 yol vardır:</p>
-<ul>
-<li>Priority: En büyük olan seçilir (defaultta 1 &lsquo;dir. 1-255 arası seçilebilir).</li>
-<li>Router ID : En büyük olan BDR seçilir.</li>
-</ul>
-<p>DR Down olduğunda BDR devreye girer. Fakat DR tekrar up olduğunda eskisi gibi DR rolünde olmaz. Yani giden gitmiştir gittiği gün bitmiştir.
+BDR = Backup Designated Router</p><p>DR ve BDR seçmek için 2 yol vardır:</p><ul><li>Priority: En büyük olan seçilir (defaultta 1 &lsquo;dir. 1-255 arası seçilebilir).</li><li>Router ID : En büyük olan BDR seçilir.</li></ul><p>DR Down olduğunda BDR devreye girer. Fakat DR tekrar up olduğunda eskisi gibi DR rolünde olmaz. Yani giden gitmiştir gittiği gün bitmiştir.
 DR ve BDR seçimi her bir areada değil, her bir Multi-Access Segmentte yapılır. Her ethernet segmenti için ayrı bir DR ve BDR seçimi yapılır.
 Bir routerın DR mı BDR mı olduğu şu komutla öğrenilir:
-<code>show ip ospf neighbor</code></p>
-<p><img src="/images/OSPFConfiguration/4.png" alt="ospf"></p>
-<p>R2 ve R5 arasında  henhangi bir DR ve BDR seçilmez. Çünkü DR ve BDR seçimi, ethernet gibi Broadcast Multi-Access linklerde seçilir, Point to Point linklerde seçilmiyor.
+<code>show ip ospf neighbor</code></p><p><img src=/images/OSPFConfiguration/4.png alt=ospf></p><p>R2 ve R5 arasında henhangi bir DR ve BDR seçilmez. Çünkü DR ve BDR seçimi, ethernet gibi Broadcast Multi-Access linklerde seçilir, Point to Point linklerde seçilmiyor.
 DR ve BDR&rsquo;ı priority değerine göre manuel seçelim. R3&rsquo;ü DR ve R1&rsquo;i BDR yapalım.
 <strong>R3:</strong>
 <code>interface gi0/0</code>
-<code>ip ospf priority 2</code></p>
-<p><strong>R1:</strong>
+<code>ip ospf priority 2</code></p><p><strong>R1:</strong>
 <code>interface gi0/0</code>
-<code>ip ospf priority 1</code></p>
-<p><strong>OSPF Passive Interface:</strong>
+<code>ip ospf priority 1</code></p><p><strong>OSPF Passive Interface:</strong>
 Hello paketlerinin gitmesini istemediğimiz interfaceleri pasif duruma getirerek gereksiz trafik oluşmasını engelleyebiliriz.
-Örneğin aşağıdaki topolojide R1, R2 ve R3 Router&rsquo;larının gi0/0 interfacelerine Hello paketi gitmesine gerek yoktur çünkü komşuluk kuracak bir router yoktur.</p>
-<p><img src="/images/OSPFConfiguration/5.png" alt="ospf"></p>
-<p>Bundan dolayı şu komutla kapatıyoruz:
+Örneğin aşağıdaki topolojide R1, R2 ve R3 Router&rsquo;larının gi0/0 interfacelerine Hello paketi gitmesine gerek yoktur çünkü komşuluk kuracak bir router yoktur.</p><p><img src=/images/OSPFConfiguration/5.png alt=ospf></p><p>Bundan dolayı şu komutla kapatıyoruz:
 <strong>R1:</strong>
 <code>router ospf 1</code>
-<code>passive-interface gi0/0</code></p>
-<p><strong>R2:</strong>
+<code>passive-interface gi0/0</code></p><p><strong>R2:</strong>
 <code>router ospf 1</code>
-<code>passive-interface gi0/0</code></p>
-<p><strong>R3:</strong>
+<code>passive-interface gi0/0</code></p><p><strong>R3:</strong>
 <code>router ospf 1</code>
-<code>passive-interface gi0/0</code></p>
-<p><strong>OSPF Virtual-Link:</strong>
-Bir Autonomous System&rsquo;de tüm arealar Backbone Area&rsquo;ya bağl olması gerekir.  Bazı durumlarda arealar doğrudan Backbone Area&rsquo;ya yani Area 0&rsquo;a bağlı olmayabiliyor. Bu durumda Virtual Link devreye giriyor ve routerlar arasında sanal bir link oluşturarak bu sorunu çözüyoruz.
-Örneğin aşağıdaki topolojide olduğu gibi Area 2 doğrudan Area 0&rsquo;a bağlı değil. Bu sorunu çözmek için R2 ve R4 arasında bir Virtual Link oluşturuyoruz.</p>
-<p><img src="/images/OSPFConfiguration/6.png" alt="ospf"></p>
-<p><strong>R2:</strong>
+<code>passive-interface gi0/0</code></p><p><strong>OSPF Virtual-Link:</strong>
+Bir Autonomous System&rsquo;de tüm arealar Backbone Area&rsquo;ya bağl olması gerekir. Bazı durumlarda arealar doğrudan Backbone Area&rsquo;ya yani Area 0&rsquo;a bağlı olmayabiliyor. Bu durumda Virtual Link devreye giriyor ve routerlar arasında sanal bir link oluşturarak bu sorunu çözüyoruz.
+Örneğin aşağıdaki topolojide olduğu gibi Area 2 doğrudan Area 0&rsquo;a bağlı değil. Bu sorunu çözmek için R2 ve R4 arasında bir Virtual Link oluşturuyoruz.</p><p><img src=/images/OSPFConfiguration/6.png alt=ospf></p><p><strong>R2:</strong>
 <code>router ospf 1</code>
-<code>area 1 virtual-link 4.4.4.4</code></p>
-<p><strong>R4:</strong>
+<code>area 1 virtual-link 4.4.4.4</code></p><p><strong>R4:</strong>
 <code>router ospf 1</code>
-<code>area 1 virtual-link 2.2.2.2</code></p>
-<p><strong>OSPF Default Route Yayınlama:</strong>
-OSPF Default Route&rsquo;u kendi içinde dağıtmasını destekler. Default rotanın ve daha fazlasını anlattığım yazıma da <a href="https://sonersahin.com/statik-yonlendirme/">buradan</a> ulaşabilirsiniz.
+<code>area 1 virtual-link 2.2.2.2</code></p><p><strong>OSPF Default Route Yayınlama:</strong>
+OSPF Default Route&rsquo;u kendi içinde dağıtmasını destekler. Default rotanın ve daha fazlasını anlattığım yazıma da <a href=https://sonersahin.com/statik-yonlendirme/>buradan</a> ulaşabilirsiniz.
 Default Route&rsquo;u duyurmak için aşağıdaki komut kullanılır:
-<code>default-information originate</code></p>
-<p>Teşekkürler,</p>
-<p>İyi Çalışmalar.</p>
-
-    </div>
-  </article>
-
-  
-  
-
-
-
-
-
-
-  <div id="footer-post-container">
-  <div id="footer-post">
-
-    <div id="nav-footer" style="display: none">
-      <ul>
-         
-          <li><a href="/">Home</a></li>
-         
-          <li><a href="/posts">Posts</a></li>
-         
-          <li><a href="/walkthroughs">Walkthroughs</a></li>
-         
-          <li><a href="/projects">Projects</a></li>
-         
-          <li><a href="/tools/">Tools</a></li>
-         
-          <li><a href="/resources">Resources</a></li>
-         
-          <li><a href="/library">Library</a></li>
-         
-          <li><a href="/about">About</a></li>
-        
-      </ul>
-    </div>
-
-    
-    <div id="toc-footer" style="display: none">
-      <nav id="TableOfContents"></nav>
-    </div>
-    
-
-    <div id="share-footer" style="display: none">
-      
-      <ul>
-  
-  
-    
-  
-  
-  <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fospfconfiguration%2fospf-configuration%2f" aria-label="Facebook">
-      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fospfconfiguration%2fospf-configuration%2f&text=OSPF%20Konfig%c3%bcrasyonu" aria-label="Twitter">
-      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fospfconfiguration%2fospf-configuration%2f&title=OSPF%20Konfig%c3%bcrasyonu" aria-label="Linkedin">
-      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fospfconfiguration%2fospf-configuration%2f&is_video=false&description=OSPF%20Konfig%c3%bcrasyonu" aria-label="Pinterest">
-      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=OSPF%20Konfig%c3%bcrasyonu&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fospfconfiguration%2fospf-configuration%2f" aria-label="Email">
-      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fospfconfiguration%2fospf-configuration%2f&title=OSPF%20Konfig%c3%bcrasyonu" aria-label="Pocket">
-      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fospfconfiguration%2fospf-configuration%2f&title=OSPF%20Konfig%c3%bcrasyonu" aria-label="reddit">
-      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fospfconfiguration%2fospf-configuration%2f&name=OSPF%20Konfig%c3%bcrasyonu&description=%3cp%3eOSPF%20%28Open%20Short%20Path%20First%29%2c%20dinamik%20bir%20y%c3%b6nlendirme%20protokol%c3%bcd%c3%bcr.%20OSPF%20bir%20Link%20State%20Routing%20protokol%c3%bcd%c3%bcr.%20Bundan%20dolay%c4%b1%20network%20haritas%c4%b1n%c4%b1n%20tamam%c4%b1na%20hakimdir%20Baz%c4%b1%20%c3%b6zellikleri%20%c5%9f%c3%b6yledir%3a%3c%2fp%3e%0a%3cul%3e%0a%3cli%3eA%c3%a7%c4%b1k%20kaynakl%c4%b1d%c4%b1r%2c%3c%2fli%3e%0a%3cli%3eSPF%28Shortest%20Path%20First%29%20algoritmas%c4%b1n%c4%b1%20kullan%c4%b1r%2c%3c%2fli%3e%0a%3cli%3eClassless%20%28S%c4%b1n%c4%b1fs%c4%b1z%29%20bir%20protokold%c3%bcr%2c%3c%2fli%3e%0a%3cli%3eCIDR%20%28Classless%20Inter-Domain%20Routing%29%2c%20VLSM%28Veriable%20Length%20Subnet%20Masking%29%20destekler%2c%3c%2fli%3e%0a%3cli%3eLoad%20balancing%20destekler%2c%3c%2fli%3e%0a%3cli%3eG%c3%bcncelleme%20s%c3%bcresi%20h%c4%b1zl%c4%b1d%c4%b1r%2c%3c%2fli%3e%0a%3cli%3eAdministrative%20Distance%20de%c4%9feri%20110%26rsquo%3bdur%2c%3c%2fli%3e%0a%3cli%3eArea%20yap%c4%b1s%c4%b1%20ile%20%c3%b6l%c3%a7eklenebilir%2c%3c%2fli%3e%0a%3cli%3eKimlik%20do%c4%9frulamay%c4%b1%20destekler%20%28MD5%29%3c%2fli%3e%0a%3cli%3eMetrik%20de%c4%9feri%20olarak%20Cost%20kullan%c4%b1r.%3c%2fli%3e%0a%3cli%3eMulticast%20224.0.0.5%20ve%20224.0.0.6%20adreslerinden%20yay%c4%b1n%20yapar.%3c%2fli%3e%0a%3cli%3e89%20portunu%20kullan%c4%b1r.%3c%2fli%3e%0a%3c%2ful%3e%0a%3cp%3e%3cstrong%3eOSPF%20Paket%20Tipleri%3a%3c%2fstrong%3e%3c%2fp%3e" aria-label="Tumblr">
-      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fospfconfiguration%2fospf-configuration%2f&t=OSPF%20Konfig%c3%bcrasyonu" aria-label="Hacker News">
-      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-</ul>
-
-    </div>
-
-    <div id="actions-footer">
-      
-        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
-          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-        
-        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
-          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        
-        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
-          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
-          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
-    </div>
-
-  </div>
-</div>
-
-
-  <footer id="footer">
-  <div class="footer-left">
-    Copyright  &copy; 2025  ittechnetworkk 
-  </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-         
-        <li><a href="/">Home</a></li>
-         
-        <li><a href="/posts">Posts</a></li>
-         
-        <li><a href="/walkthroughs">Walkthroughs</a></li>
-         
-        <li><a href="/projects">Projects</a></li>
-         
-        <li><a href="/tools/">Tools</a></li>
-         
-        <li><a href="/resources">Resources</a></li>
-         
-        <li><a href="/library">Library</a></li>
-         
-        <li><a href="/about">About</a></li>
-        
-      </ul>
-    </nav>
-  </div>
-</footer>
-
-
-  </div>
-</body>
-
-<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
-<script src=/lib/jquery/jquery.min.js></script>
-<script src=/js/main.js></script>
-<script src=/js/lightbox.js></script>
-
-<script src=/js/code-copy.js></script>
-
-
-
-
-</html> 
+<code>default-information originate</code></p><p>Teşekkürler,</p><p>İyi Çalışmalar.</p></div></article><div id=footer-post-container><div id=footer-post><div id=nav-footer style=display:none><ul><li><a href=/>Home</a></li><li><a href=/posts>Posts</a></li><li><a href=/walkthroughs>Walkthroughs</a></li><li><a href=/projects>Projects</a></li><li><a href=/tools/>Tools</a></li><li><a href=/resources>Resources</a></li><li><a href=/library>Library</a></li><li><a href=/about>About</a></li></ul></div><div id=toc-footer style=display:none><nav id=TableOfContents></nav></div><div id=share-footer style=display:none><ul><li><a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfconfiguration%2fospf-configuration%2f" aria-label=Facebook><i class="fab fa-facebook fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfconfiguration%2fospf-configuration%2f&text=OSPF%20Konfig%c3%bcrasyonu" aria-label=Twitter><i class="fab fa-twitter fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfconfiguration%2fospf-configuration%2f&title=OSPF%20Konfig%c3%bcrasyonu" aria-label=Linkedin><i class="fab fa-linkedin fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfconfiguration%2fospf-configuration%2f&is_video=false&description=OSPF%20Konfig%c3%bcrasyonu" aria-label=Pinterest><i class="fab fa-pinterest fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="mailto:?subject=OSPF%20Konfig%c3%bcrasyonu&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfconfiguration%2fospf-configuration%2f" aria-label=Email><i class="fas fa-envelope fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfconfiguration%2fospf-configuration%2f&title=OSPF%20Konfig%c3%bcrasyonu" aria-label=Pocket><i class="fab fa-get-pocket fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfconfiguration%2fospf-configuration%2f&title=OSPF%20Konfig%c3%bcrasyonu" aria-label=reddit><i class="fab fa-reddit fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfconfiguration%2fospf-configuration%2f&name=OSPF%20Konfig%c3%bcrasyonu&description=%3cp%3eOSPF%20%28Open%20Short%20Path%20First%29%2c%20dinamik%20bir%20y%c3%b6nlendirme%20protokol%c3%bcd%c3%bcr.%20OSPF%20bir%20Link%20State%20Routing%20protokol%c3%bcd%c3%bcr.%20Bundan%20dolay%c4%b1%20network%20haritas%c4%b1n%c4%b1n%20tamam%c4%b1na%20hakimdir%20Baz%c4%b1%20%c3%b6zellikleri%20%c5%9f%c3%b6yledir%3a%3c%2fp%3e%0a%3cul%3e%0a%3cli%3eA%c3%a7%c4%b1k%20kaynakl%c4%b1d%c4%b1r%2c%3c%2fli%3e%0a%3cli%3eSPF%28Shortest%20Path%20First%29%20algoritmas%c4%b1n%c4%b1%20kullan%c4%b1r%2c%3c%2fli%3e%0a%3cli%3eClassless%20%28S%c4%b1n%c4%b1fs%c4%b1z%29%20bir%20protokold%c3%bcr%2c%3c%2fli%3e%0a%3cli%3eCIDR%20%28Classless%20Inter-Domain%20Routing%29%2c%20VLSM%28Veriable%20Length%20Subnet%20Masking%29%20destekler%2c%3c%2fli%3e%0a%3cli%3eLoad%20balancing%20destekler%2c%3c%2fli%3e%0a%3cli%3eG%c3%bcncelleme%20s%c3%bcresi%20h%c4%b1zl%c4%b1d%c4%b1r%2c%3c%2fli%3e%0a%3cli%3eAdministrative%20Distance%20de%c4%9feri%20110%26rsquo%3bdur%2c%3c%2fli%3e%0a%3cli%3eArea%20yap%c4%b1s%c4%b1%20ile%20%c3%b6l%c3%a7eklenebilir%2c%3c%2fli%3e%0a%3cli%3eKimlik%20do%c4%9frulamay%c4%b1%20destekler%20%28MD5%29%3c%2fli%3e%0a%3cli%3eMetrik%20de%c4%9feri%20olarak%20Cost%20kullan%c4%b1r.%3c%2fli%3e%0a%3cli%3eMulticast%20224.0.0.5%20ve%20224.0.0.6%20adreslerinden%20yay%c4%b1n%20yapar.%3c%2fli%3e%0a%3cli%3e89%20portunu%20kullan%c4%b1r.%3c%2fli%3e%0a%3c%2ful%3e%0a%3cp%3e%3cstrong%3eOSPF%20Paket%20Tipleri%3a%3c%2fstrong%3e%3c%2fp%3e" aria-label=Tumblr><i class="fab fa-tumblr fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fospfconfiguration%2fospf-configuration%2f&t=OSPF%20Konfig%c3%bcrasyonu" aria-label="Hacker News"><i class="fab fa-hacker-news fa-lg" aria-hidden=true></i></a></li></ul></div><div id=actions-footer><a id=menu-toggle class=icon href=# onclick='return $("#nav-footer").toggle(),!1' aria-label=Menu><i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
+<a id=toc-toggle class=icon href=# onclick='return $("#toc-footer").toggle(),!1' aria-label=TOC><i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
+<a id=share-toggle class=icon href=# onclick='return $("#share-footer").toggle(),!1' aria-label=Share><i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
+<a id=top style=display:none class=icon href=# onclick='$("html, body").animate({scrollTop:0},"fast")' aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a></div></div></div><footer id=footer><div class=footer-left>Copyright &copy; 2025 ittechnetworkk</div><div class=footer-right><nav><ul><li><a href=/>Home</a></li><li><a href=/posts>Posts</a></li><li><a href=/walkthroughs>Walkthroughs</a></li><li><a href=/projects>Projects</a></li><li><a href=/tools/>Tools</a></li><li><a href=/resources>Resources</a></li><li><a href=/library>Library</a></li><li><a href=/about>About</a></li></ul></nav></div></footer></div></body><link rel=stylesheet href=/lib/font-awesome/css/all.min.css><script src=/lib/jquery/jquery.min.js></script><script src=/js/main.js></script><script src=/js/lightbox.js></script><script src=/js/code-copy.js></script></html>

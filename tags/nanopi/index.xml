@@ -1,27 +1,34 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Nanopi on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/nanopi/</link>
-    <description>Recent content in Nanopi on ittechnetworkk</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Fri, 03 Jan 2025 23:00:44 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/nanopi/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Nanopi R2S Ipfire Kurulumu</title>
-      <link>http://localhost:1313/posts/nanopir2sipfirekurulumu/nanopir2s-ipfire/</link>
-      <pubDate>Fri, 03 Jan 2025 23:00:44 +0100</pubDate>
-      <guid>http://localhost:1313/posts/nanopir2sipfirekurulumu/nanopir2s-ipfire/</guid>
-      <description>&lt;p&gt;Merhaba, bu yazıda, NanoPi R2S cihazıma IPFire kurulumunu anlatacağım.&lt;/p&gt;&#xA;&lt;p&gt;Kullandığım ekipmanlar:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;NanoPi R2S,&lt;/li&gt;&#xA;&lt;li&gt;MicroSD Kart,&lt;/li&gt;&#xA;&lt;li&gt;Kart Okuyucu,&lt;/li&gt;&#xA;&lt;li&gt;Type C Güç Kablosu,&lt;/li&gt;&#xA;&lt;li&gt;USB to Serial Kablo,&lt;/li&gt;&#xA;&lt;li&gt;Ethernet Kablosu,&lt;/li&gt;&#xA;&lt;li&gt;Terminal yazılımı (Putty or minicom),&lt;/li&gt;&#xA;&lt;li&gt;Balena Etcher.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;İlk olarak &lt;a href=&#34;https://cdimage.debian.org/mirror/ipfire.org/releases/ipfire-2.x/2.27-core167/ipfire-2.27.2gb-ext4.aarch64-full-core167.img.xz&#34;&gt;IPFire imaj dosyasını&lt;/a&gt; indiriyorum ve Balena Etcher aracıyla SD Kart&amp;rsquo;a yazdırıyorum.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/NanoPiR2SIPFireKurulumu/1.png&#34; alt=&#34;ipfire&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Bu işlem bittikten sonra SD Kart&amp;rsquo;ı cihaza takıyorum.&lt;/p&gt;&#xA;&lt;p&gt;Serial Kablo&amp;rsquo;yu da aşağıdaki şekilde cihaza bağlıyorum.&#xA;Siyah Kablo » G&#xA;Beyaz Kablo » TX&#xA;Turkuaz Kablo » RX&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Adguard Kurulumu (NanoPi R2S)</title>
-      <link>http://localhost:1313/posts/nanopirsadguard/nanopirs-adguard/</link>
-      <pubDate>Sun, 12 May 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/nanopirsadguard/nanopirs-adguard/</guid>
-      <description>&lt;p&gt;Merhaba, bu yazımda önceden aldığım fakat değerlendiremediğim NanoPi R2S cihazına Adguard Home kurmayı anlatacağım.&lt;/p&gt;&#xA;&lt;p&gt;Bazı özellikleri şöyledir:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Rockchip RK3328,&lt;/li&gt;&#xA;&lt;li&gt;1GB DDR4 RAM,&lt;/li&gt;&#xA;&lt;li&gt;MicroSD x1 for external storage up to 128GB,&lt;/li&gt;&#xA;&lt;li&gt;2x Gigabit Ethernet,&lt;/li&gt;&#xA;&lt;li&gt;USB 2.0 Host x1: USB Type A,&lt;/li&gt;&#xA;&lt;li&gt;USB-C x1:&lt;/li&gt;&#xA;&lt;li&gt;SYS LED(Red) x1,  WAN LED(Green) x1,  LAN LED(Green) x1,&lt;/li&gt;&#xA;&lt;li&gt;Reset buton&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Metal kasa içerisine konmuş küçük ama merak uyandırıcı bir cihaz.&lt;/p&gt;&#xA;&lt;p&gt;Peki Adguard Home nedir?&#xA;&lt;a href=&#34;https://adguard.com/tr/adguard-home/overview.html&#34;&gt;Adguard Home&lt;/a&gt; bilenler için Pi-Hole benzeri fakat daha gelişmiş özellikleri olan bir yazılımdır.&#xA;Bazı özellikleri aşağıdaki gibidir:&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nanopi on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/nanopi/</link><description>Recent content in Nanopi on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Fri, 03 Jan 2025 23:00:44 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/nanopi/index.xml" rel="self" type="application/rss+xml"/><item><title>Nanopi R2S Ipfire Kurulumu</title><link>https://ittechnetworkk.github.io/posts/nanopir2sipfirekurulumu/nanopir2s-ipfire/</link><pubDate>Fri, 03 Jan 2025 23:00:44 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/nanopir2sipfirekurulumu/nanopir2s-ipfire/</guid><description>&lt;p>Merhaba, bu yazıda, NanoPi R2S cihazıma IPFire kurulumunu anlatacağım.&lt;/p>
+&lt;p>Kullandığım ekipmanlar:&lt;/p>
+&lt;ol>
+&lt;li>NanoPi R2S,&lt;/li>
+&lt;li>MicroSD Kart,&lt;/li>
+&lt;li>Kart Okuyucu,&lt;/li>
+&lt;li>Type C Güç Kablosu,&lt;/li>
+&lt;li>USB to Serial Kablo,&lt;/li>
+&lt;li>Ethernet Kablosu,&lt;/li>
+&lt;li>Terminal yazılımı (Putty or minicom),&lt;/li>
+&lt;li>Balena Etcher.&lt;/li>
+&lt;/ol>
+&lt;p>İlk olarak &lt;a href="https://cdimage.debian.org/mirror/ipfire.org/releases/ipfire-2.x/2.27-core167/ipfire-2.27.2gb-ext4.aarch64-full-core167.img.xz">IPFire imaj dosyasını&lt;/a> indiriyorum ve Balena Etcher aracıyla SD Kart&amp;rsquo;a yazdırıyorum.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/NanoPiR2SIPFireKurulumu/1.png" alt="ipfire">&lt;/p>
+&lt;p>Bu işlem bittikten sonra SD Kart&amp;rsquo;ı cihaza takıyorum.&lt;/p>
+&lt;p>Serial Kablo&amp;rsquo;yu da aşağıdaki şekilde cihaza bağlıyorum.
+Siyah Kablo » G
+Beyaz Kablo » TX
+Turkuaz Kablo » RX&lt;/p></description></item><item><title>Adguard Kurulumu (NanoPi R2S)</title><link>https://ittechnetworkk.github.io/posts/nanopirsadguard/nanopirs-adguard/</link><pubDate>Sun, 12 May 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/nanopirsadguard/nanopirs-adguard/</guid><description>&lt;p>Merhaba, bu yazımda önceden aldığım fakat değerlendiremediğim NanoPi R2S cihazına Adguard Home kurmayı anlatacağım.&lt;/p>
+&lt;p>Bazı özellikleri şöyledir:&lt;/p>
+&lt;ul>
+&lt;li>Rockchip RK3328,&lt;/li>
+&lt;li>1GB DDR4 RAM,&lt;/li>
+&lt;li>MicroSD x1 for external storage up to 128GB,&lt;/li>
+&lt;li>2x Gigabit Ethernet,&lt;/li>
+&lt;li>USB 2.0 Host x1: USB Type A,&lt;/li>
+&lt;li>USB-C x1:&lt;/li>
+&lt;li>SYS LED(Red) x1, WAN LED(Green) x1, LAN LED(Green) x1,&lt;/li>
+&lt;li>Reset buton&lt;/li>
+&lt;/ul>
+&lt;p>Metal kasa içerisine konmuş küçük ama merak uyandırıcı bir cihaz.&lt;/p>
+&lt;p>Peki Adguard Home nedir?
+&lt;a href="https://adguard.com/tr/adguard-home/overview.html">Adguard Home&lt;/a> bilenler için Pi-Hole benzeri fakat daha gelişmiş özellikleri olan bir yazılımdır.
+Bazı özellikleri aşağıdaki gibidir:&lt;/p></description></item></channel></rss>

@@ -1,259 +1,22 @@
-<!DOCTYPE html>
-<html lang="en-us">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-  
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> Network Troubleshooting | ittechnetworkk</title>
-  <link rel = 'canonical' href = 'http://localhost:1313/posts/networktroubleshooting/network-troubleshooting/'>
-  <meta name="description" content="Hi, I&#39;m Soner, and this is my personal blog where I share insights, guides, and articles on various tech topics, including Networking, Linux, Windows, Virtualization, Firewalls, IoT, and more. I&#39;m constantly learning and exploring new technologies, and this blog is where I document my journey. ">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta name="robots" content="all,follow">
-  <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:url" content="http://localhost:1313/posts/networktroubleshooting/network-troubleshooting/">
-  <meta property="og:site_name" content="ittechnetworkk">
-  <meta property="og:title" content="Network Troubleshooting">
-  <meta property="og:description" content="İlk olarak eğer hatanın nereden kaynaklandığını az çok tahmin edebiliyorsak ilk o noktaya yoğunlaşmakta fayda olacağını düşünüyorum diyerek başlamak istiyorum.
+<!doctype html><html lang=en-us><head><link rel=preload href=/lib/font-awesome/webfonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/lib/font-awesome/webfonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/lib/font-awesome/webfonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>Network Troubleshooting | ittechnetworkk</title><link rel=canonical href=https://ittechnetworkk.github.io/posts/networktroubleshooting/network-troubleshooting/><meta name=description content="Hi, I'm Soner, and this is my personal blog where I share insights, guides, and articles on various tech topics, including Networking, Linux, Windows, Virtualization, Firewalls, IoT, and more. I'm constantly learning and exploring new technologies, and this blog is where I document my journey. "><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name=robots content="all,follow"><meta name=googlebot content="index,follow,snippet,archive"><meta property="og:url" content="https://ittechnetworkk.github.io/posts/networktroubleshooting/network-troubleshooting/"><meta property="og:site_name" content="ittechnetworkk"><meta property="og:title" content="Network Troubleshooting"><meta property="og:description" content="İlk olarak eğer hatanın nereden kaynaklandığını az çok tahmin edebiliyorsak ilk o noktaya yoğunlaşmakta fayda olacağını düşünüyorum diyerek başlamak istiyorum.
 Network’te bir sorunu çözerken yaklaşımımızın adım adım olacak şekilde ilk olarak en yakınımızdaki cihaz veya uygulama veya katman olmalıdır.
 Peki ne demek istiyorum?
 Aşağıda örnek bir senaryom var. Bu senaryoda PC1 İnternete erişemediğini varsayalım.
-Buradaki senaryomda, PC’nin bütün ayarlarını gözden geçirdikten sonra yani PC’nin Ethernet kablosu, IP Adres, Default Gateway, DNS gibi.">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-07-28T22:57:40+01:00">
-    <meta property="article:modified_time" content="2024-07-28T22:57:40+01:00">
-    <meta property="article:tag" content="Troubleshooting">
-
-  
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Network Troubleshooting">
-  <meta name="twitter:description" content="İlk olarak eğer hatanın nereden kaynaklandığını az çok tahmin edebiliyorsak ilk o noktaya yoğunlaşmakta fayda olacağını düşünüyorum diyerek başlamak istiyorum.
+Buradaki senaryomda, PC’nin bütün ayarlarını gözden geçirdikten sonra yani PC’nin Ethernet kablosu, IP Adres, Default Gateway, DNS gibi."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-07-28T22:57:40+01:00"><meta property="article:modified_time" content="2024-07-28T22:57:40+01:00"><meta property="article:tag" content="Troubleshooting"><meta name=twitter:card content="summary"><meta name=twitter:title content="Network Troubleshooting"><meta name=twitter:description content="İlk olarak eğer hatanın nereden kaynaklandığını az çok tahmin edebiliyorsak ilk o noktaya yoğunlaşmakta fayda olacağını düşünüyorum diyerek başlamak istiyorum.
 Network’te bir sorunu çözerken yaklaşımımızın adım adım olacak şekilde ilk olarak en yakınımızdaki cihaz veya uygulama veya katman olmalıdır.
 Peki ne demek istiyorum?
 Aşağıda örnek bir senaryom var. Bu senaryoda PC1 İnternete erişemediğini varsayalım.
-Buradaki senaryomda, PC’nin bütün ayarlarını gözden geçirdikten sonra yani PC’nin Ethernet kablosu, IP Adres, Default Gateway, DNS gibi.">
-
-  
-  
-    
-  
-  
-
-  
-  
-  
-  <link rel="stylesheet" href="http://localhost:1313/css/styles.bdd621ce0dc4beed42cba9d295fbb7a846b8870c3fda65b870471926d718c2543ebb5d8d248ba9a5554cba6ec2e05b0dc829190fd4e4fef576beaa4c3f244abe.css" integrity="sha512-vdYhzg3Evu1Cy6nSlfu3qEa4hww/2mW4cEcZJtcYwlQ&#43;u12NJIuppVVMum7C4FsNyCkZD9Tk/vV2vqpMPyRKvg==">
-
-  
-   <link rel="stylesheet" href="http://localhost:1313/css/custom.css">  <link rel="stylesheet" href="http://localhost:1313/css/lightbox.css">  <link rel="stylesheet" href="http://localhost:1313/css/tools.css"> 
-  
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  
-
-  
-<link rel="icon" type="image/png" href="http://localhost:1313/images/favicon.ico" />
-
-  
-</head> 
-<body class="max-width mx-auto px3 ltr">
-  <div class="content index py4">
-
-  <div id="header-post">
-  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;" aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
-         
-        <li><a href="/">Home</a></li>
-         
-        <li><a href="/posts">Posts</a></li>
-         
-        <li><a href="/walkthroughs">Walkthroughs</a></li>
-         
-        <li><a href="/projects">Projects</a></li>
-         
-        <li><a href="/tools/">Tools</a></li>
-         
-        <li><a href="/resources">Resources</a></li>
-         
-        <li><a href="/library">Library</a></li>
-         
-        <li><a href="/about">About</a></li>
-        
-      </ul>
-    </span>
-    <br/>
-    <span id="actions">
-      <ul>
-        
-        <li>
-          <a class="icon" href=" http://localhost:1313/posts/gpgnedir/gpg-nedir/" aria-label="Previous">
-            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
-          </a>
-        </li>
-        
-        
-        <li>
-          <a class="icon" href="http://localhost:1313/posts/proxmoxpnetlab/proxmox-pnet/" aria-label="Next">
-            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
-          </a>
-        </li>
-        
-        <li>
-          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
-            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
-          </a>
-        </li>
-        <li>
-          <a class="icon" href="#" aria-label="Share">
-            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
-          </a>
-        </li>
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
-    </span>
-    <br/>
-    <div id="share" style="display: none">
-      
-      <ul>
-  
-  
-    
-  
-  
-  <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f" aria-label="Facebook">
-      <i class="fab fa-facebook " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&text=Network%20Troubleshooting" aria-label="Twitter">
-      <i class="fab fa-twitter " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&title=Network%20Troubleshooting" aria-label="Linkedin">
-      <i class="fab fa-linkedin " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&is_video=false&description=Network%20Troubleshooting" aria-label="Pinterest">
-      <i class="fab fa-pinterest " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=Network%20Troubleshooting&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f" aria-label="Email">
-      <i class="fas fa-envelope " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&title=Network%20Troubleshooting" aria-label="Pocket">
-      <i class="fab fa-get-pocket " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&title=Network%20Troubleshooting" aria-label="reddit">
-      <i class="fab fa-reddit " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&name=Network%20Troubleshooting&description=%3cp%3e%c4%b0lk%20olarak%20e%c4%9fer%20hatan%c4%b1n%20nereden%20kaynakland%c4%b1%c4%9f%c4%b1n%c4%b1%20az%20%c3%a7ok%20tahmin%20edebiliyorsak%20ilk%20o%20noktaya%20yo%c4%9funla%c5%9fmakta%20fayda%20olaca%c4%9f%c4%b1n%c4%b1%20d%c3%bc%c5%9f%c3%bcn%c3%bcyorum%20diyerek%20ba%c5%9flamak%20istiyorum.%3c%2fp%3e%0a%3cp%3eNetwork%26rsquo%3bte%20bir%20sorunu%20%c3%a7%c3%b6zerken%20yakla%c5%9f%c4%b1m%c4%b1m%c4%b1z%c4%b1n%20ad%c4%b1m%20ad%c4%b1m%20olacak%20%c5%9fekilde%20ilk%20olarak%20en%20yak%c4%b1n%c4%b1m%c4%b1zdaki%20cihaz%20veya%20uygulama%20veya%20katman%20olmal%c4%b1d%c4%b1r.%3c%2fp%3e%0a%3cp%3ePeki%20ne%20demek%20istiyorum%3f%3c%2fp%3e%0a%3cp%3eA%c5%9fa%c4%9f%c4%b1da%20%c3%b6rnek%20bir%20senaryom%20var.%20Bu%20senaryoda%20PC1%20%c4%b0nternete%20eri%c5%9femedi%c4%9fini%20varsayal%c4%b1m.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fnetwork-troubleshooting%2f1.png%22%20alt%3d%22troubleshooting%22%3e%3c%2fp%3e%0a%3cp%3eBuradaki%20senaryomda%2c%20PC%26rsquo%3bnin%20b%c3%bct%c3%bcn%20ayarlar%c4%b1n%c4%b1%20g%c3%b6zden%20ge%c3%a7irdikten%20sonra%20yani%20PC%26rsquo%3bnin%20Ethernet%20kablosu%2c%20IP%20Adres%2c%20Default%20Gateway%2c%20DNS%20gibi.%3c%2fp%3e" aria-label="Tumblr">
-      <i class="fab fa-tumblr " aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&t=Network%20Troubleshooting" aria-label="Hacker News">
-      <i class="fab fa-hacker-news " aria-hidden="true"></i>
-    </a>
-  </li>
-</ul>
-
-    </div>
-    
-    <div id="toc">
-      <nav id="TableOfContents"></nav>
-    </div>
-    
-  </span>
-</div>
-
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      <h1 class="posttitle" itemprop="name headline">
-        Network Troubleshooting
-      </h1>
-      <div class="meta">
-        
-        <div class="author-info" style="font-size: 1.1em; margin-bottom: 10px;">
-          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <strong>Author:</strong> <span itemprop="name">Soner Sahin</span>
-          </span>
-        </div>
-        
-        <div class="postdate">
-          
-          <time datetime="2024-07-28 22:57:40 &#43;0100 &#43;0100" itemprop="datePublished">2024-07-28</time>
-          
-        </div>
-        
-        
-        <div class="article-read-time">
-          <i class="far fa-clock"></i>
-          
-          6 minute read
-        </div>
-        
-        
-        <div class="article-category">
-            <i class="fas fa-archive"></i>
-            
-            
-            <a class="category-link" href="/categories/network">Network</a>
-            
-        </div>
-        
-        
-        <div class="article-tag">
-            <i class="fas fa-tag"></i>
-            
-            
-            <a class="tag-link" href="/tags/troubleshooting" rel="tag">troubleshooting</a>
-            
-        </div>
-        
-      </div>
-    </header>
-
-    
-    
-
-    
-    
-    <div class="content" itemprop="articleBody">
-      <p>İlk olarak eğer hatanın nereden kaynaklandığını az çok tahmin edebiliyorsak ilk o noktaya yoğunlaşmakta fayda olacağını düşünüyorum diyerek başlamak istiyorum.</p>
-<p>Network&rsquo;te bir sorunu çözerken yaklaşımımızın adım adım olacak şekilde ilk olarak en yakınımızdaki cihaz veya uygulama veya katman olmalıdır.</p>
-<p>Peki ne demek istiyorum?</p>
-<p>Aşağıda örnek bir senaryom var. Bu senaryoda PC1 İnternete erişemediğini varsayalım.</p>
-<p><img src="/images/network-troubleshooting/1.png" alt="troubleshooting"></p>
-<p>Buradaki senaryomda, PC&rsquo;nin bütün ayarlarını gözden geçirdikten sonra yani PC&rsquo;nin Ethernet kablosu, IP Adres, Default Gateway, DNS gibi.</p>
-<p>Ethernet bağlantısında sıkıntı olmadığını anladıktan sonra PC&rsquo;nin diğer bilgilerinin doğruluğunu teyit etmek için aşağıdaki komutları kullanabiliriz.</p>
-<p>Linux:</p>
-<pre tabindex="0"><code>ifconfig
-</code></pre><pre tabindex="0"><code>┌─[ssnrshnn@monster]─[~]
+Buradaki senaryomda, PC’nin bütün ayarlarını gözden geçirdikten sonra yani PC’nin Ethernet kablosu, IP Adres, Default Gateway, DNS gibi."><link rel=stylesheet href=https://ittechnetworkk.github.io/css/styles.bdd621ce0dc4beed42cba9d295fbb7a846b8870c3fda65b870471926d718c2543ebb5d8d248ba9a5554cba6ec2e05b0dc829190fd4e4fef576beaa4c3f244abe.css integrity="sha512-vdYhzg3Evu1Cy6nSlfu3qEa4hww/2mW4cEcZJtcYwlQ+u12NJIuppVVMum7C4FsNyCkZD9Tk/vV2vqpMPyRKvg=="><link rel=stylesheet href=https://ittechnetworkk.github.io/css/custom.css><link rel=stylesheet href=https://ittechnetworkk.github.io/css/lightbox.css><link rel=stylesheet href=https://ittechnetworkk.github.io/css/tools.css><link rel=stylesheet href=https://ittechnetworkk.github.io/css/tools-cards.css><link rel=stylesheet href=https://ittechnetworkk.github.io/css/post-cards.css><link rel=stylesheet href=https://ittechnetworkk.github.io/css/posts-cards.css><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script><script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]--><link rel=icon type=image/png href=https://ittechnetworkk.github.io/images/favicon.ico></head><body class="max-width mx-auto px3 ltr"><div class="content index py4"><div id=header-post><a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=menu-icon-tablet href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=top-icon-tablet href=# onclick='$("html, body").animate({scrollTop:0},"fast")' style=display:none aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+<span id=menu><span id=nav><ul><li><a href=/>Home</a></li><li><a href=/posts>Posts</a></li><li><a href=/walkthroughs>Walkthroughs</a></li><li><a href=/projects>Projects</a></li><li><a href=/tools/>Tools</a></li><li><a href=/resources>Resources</a></li><li><a href=/library>Library</a></li><li><a href=/about>About</a></li></ul></span><br><span id=actions><ul><li><a class=icon href=https://ittechnetworkk.github.io/posts/gpgnedir/gpg-nedir/ aria-label=Previous><i class="fas fa-chevron-left" aria-hidden=true onmouseover='$("#i-prev").toggle()' onmouseout='$("#i-prev").toggle()'></i></a></li><li><a class=icon href=https://ittechnetworkk.github.io/posts/proxmoxpnetlab/proxmox-pnet/ aria-label=Next><i class="fas fa-chevron-right" aria-hidden=true onmouseover='$("#i-next").toggle()' onmouseout='$("#i-next").toggle()'></i></a></li><li><a class=icon href=# onclick='$("html, body").animate({scrollTop:0},"fast")' aria-label="Top of Page"><i class="fas fa-chevron-up" aria-hidden=true onmouseover='$("#i-top").toggle()' onmouseout='$("#i-top").toggle()'></i></a></li><li><a class=icon href=# aria-label=Share><i class="fas fa-share-alt" aria-hidden=true onmouseover='$("#i-share").toggle()' onmouseout='$("#i-share").toggle()' onclick='return $("#share").toggle(),!1'></i></a></li></ul><span id=i-prev class=info style=display:none>Previous post</span>
+<span id=i-next class=info style=display:none>Next post</span>
+<span id=i-top class=info style=display:none>Back to top</span>
+<span id=i-share class=info style=display:none>Share post</span></span><br><div id=share style=display:none><ul><li><a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f" aria-label=Facebook><i class="fab fa-facebook" aria-hidden=true></i></a></li><li><a class=icon href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&text=Network%20Troubleshooting" aria-label=Twitter><i class="fab fa-twitter" aria-hidden=true></i></a></li><li><a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&title=Network%20Troubleshooting" aria-label=Linkedin><i class="fab fa-linkedin" aria-hidden=true></i></a></li><li><a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&is_video=false&description=Network%20Troubleshooting" aria-label=Pinterest><i class="fab fa-pinterest" aria-hidden=true></i></a></li><li><a class=icon href="mailto:?subject=Network%20Troubleshooting&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f" aria-label=Email><i class="fas fa-envelope" aria-hidden=true></i></a></li><li><a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&title=Network%20Troubleshooting" aria-label=Pocket><i class="fab fa-get-pocket" aria-hidden=true></i></a></li><li><a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&title=Network%20Troubleshooting" aria-label=reddit><i class="fab fa-reddit" aria-hidden=true></i></a></li><li><a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&name=Network%20Troubleshooting&description=%3cp%3e%c4%b0lk%20olarak%20e%c4%9fer%20hatan%c4%b1n%20nereden%20kaynakland%c4%b1%c4%9f%c4%b1n%c4%b1%20az%20%c3%a7ok%20tahmin%20edebiliyorsak%20ilk%20o%20noktaya%20yo%c4%9funla%c5%9fmakta%20fayda%20olaca%c4%9f%c4%b1n%c4%b1%20d%c3%bc%c5%9f%c3%bcn%c3%bcyorum%20diyerek%20ba%c5%9flamak%20istiyorum.%3c%2fp%3e%0a%3cp%3eNetwork%26rsquo%3bte%20bir%20sorunu%20%c3%a7%c3%b6zerken%20yakla%c5%9f%c4%b1m%c4%b1m%c4%b1z%c4%b1n%20ad%c4%b1m%20ad%c4%b1m%20olacak%20%c5%9fekilde%20ilk%20olarak%20en%20yak%c4%b1n%c4%b1m%c4%b1zdaki%20cihaz%20veya%20uygulama%20veya%20katman%20olmal%c4%b1d%c4%b1r.%3c%2fp%3e%0a%3cp%3ePeki%20ne%20demek%20istiyorum%3f%3c%2fp%3e%0a%3cp%3eA%c5%9fa%c4%9f%c4%b1da%20%c3%b6rnek%20bir%20senaryom%20var.%20Bu%20senaryoda%20PC1%20%c4%b0nternete%20eri%c5%9femedi%c4%9fini%20varsayal%c4%b1m.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fnetwork-troubleshooting%2f1.png%22%20alt%3d%22troubleshooting%22%3e%3c%2fp%3e%0a%3cp%3eBuradaki%20senaryomda%2c%20PC%26rsquo%3bnin%20b%c3%bct%c3%bcn%20ayarlar%c4%b1n%c4%b1%20g%c3%b6zden%20ge%c3%a7irdikten%20sonra%20yani%20PC%26rsquo%3bnin%20Ethernet%20kablosu%2c%20IP%20Adres%2c%20Default%20Gateway%2c%20DNS%20gibi.%3c%2fp%3e" aria-label=Tumblr><i class="fab fa-tumblr" aria-hidden=true></i></a></li><li><a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&t=Network%20Troubleshooting" aria-label="Hacker News"><i class="fab fa-hacker-news" aria-hidden=true></i></a></li></ul></div><div id=toc><nav id=TableOfContents></nav></div></span></div><article class=post itemscope itemtype=http://schema.org/BlogPosting><header><h1 class=posttitle itemprop="name headline">Network Troubleshooting</h1><div class=meta><div class=author-info style=font-size:1.1em;margin-bottom:10px><span class=author itemprop=author itemscope itemtype=http://schema.org/Person><strong>Author:</strong> <span itemprop=name>Soner Sahin</span></span></div><div class=postdate><time datetime="2024-07-28 22:57:40 +0100 +0100" itemprop=datePublished>2024-07-28</time></div><div class=article-read-time><i class="far fa-clock"></i>
+6 minute read</div><div class=article-category><i class="fas fa-archive"></i>
+<a class=category-link href=/categories/network>Network</a></div><div class=article-tag><i class="fas fa-tag"></i>
+<a class=tag-link href=/tags/troubleshooting rel=tag>troubleshooting</a></div></div></header><div class=content itemprop=articleBody><p>İlk olarak eğer hatanın nereden kaynaklandığını az çok tahmin edebiliyorsak ilk o noktaya yoğunlaşmakta fayda olacağını düşünüyorum diyerek başlamak istiyorum.</p><p>Network&rsquo;te bir sorunu çözerken yaklaşımımızın adım adım olacak şekilde ilk olarak en yakınımızdaki cihaz veya uygulama veya katman olmalıdır.</p><p>Peki ne demek istiyorum?</p><p>Aşağıda örnek bir senaryom var. Bu senaryoda PC1 İnternete erişemediğini varsayalım.</p><p><img src=/images/network-troubleshooting/1.png alt=troubleshooting></p><p>Buradaki senaryomda, PC&rsquo;nin bütün ayarlarını gözden geçirdikten sonra yani PC&rsquo;nin Ethernet kablosu, IP Adres, Default Gateway, DNS gibi.</p><p>Ethernet bağlantısında sıkıntı olmadığını anladıktan sonra PC&rsquo;nin diğer bilgilerinin doğruluğunu teyit etmek için aşağıdaki komutları kullanabiliriz.</p><p>Linux:</p><pre tabindex=0><code>ifconfig
+</code></pre><pre tabindex=0><code>┌─[ssnrshnn@monster]─[~]
 └──╼ $ifconfig 
 docker0: flags=4099&lt;UP,BROADCAST,MULTICAST&gt;  mtu 1500
         inet 172.17.0.1  netmask 255.255.0.0  broadcast 172.17.255.255
@@ -279,34 +42,9 @@ lo: flags=73&lt;UP,LOOPBACK,RUNNING&gt;  mtu 65536
         RX errors 0  dropped 0  overruns 0  frame 0
         TX packets 59715  bytes 9639629 (9.6 MB)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-</code></pre><p>Windows:</p>
-<pre tabindex="0"><code>ipconfig
+</code></pre><p>Windows:</p><pre tabindex=0><code>ipconfig
 ipconfig /all
-</code></pre><p>Router&rsquo;ın sol bacağına ulaşılıp ulaşılamadığı kontrol edilir.</p>
-<p>Eğer sorunsuz bir şekilde ping&rsquo;e eğer karşılık yok ise, sorunun kapsamını ve kafamızda bazı olabilecek olası sorunlar canlanabilir.</p>
-<p>Örneğin, PC ve Router arasındaki kablolamada bir sorun olabilir(bakır kablolarda manyetik alandan geçiyorsa sorun olabilir veya yanlış çakılmış olabilir vs.), Router Interface&rsquo;sinde sorun olabilir(IP adresi, subnet hataları vb.) gibi gibi sorunlar.</p>
-<p>Bu kısma yoğunlaşıp hatayı düzeltip devam edebiliriz.</p>
-<p>Bir sonraki adım, Router&rsquo;ın sağ bacağına gitmek olacak. Buraya da sorunsuz ulaşabiliyorsak, diyebiliz ki Network Layer&rsquo;da sorun yok.</p>
-<p>Eğer sorun varsa yine aynı şekilde birkaç senaryo canlanabilir:</p>
-<p>Örneğin; Routing&rsquo;lerde bir sorun olabilir veya yanlış yazılmış olabilir, yine aynı şekilde Interface&rsquo;de bir yanlışlık yapılmış olabilir, ACL&rsquo;lerde bir sıralama hatası veya yanlış yazım hatası olabilir gibi gibi.</p>
-<p>Bu noktaya yoğunlaşıp hatayı düzeltip devam edebiliriz.</p>
-<p>Peki sorun networkümüzde değil de nerede? Bir sonraki adımda kime gideceğiz?</p>
-<p>Bu noktada ve aslında birçok noktada yorumlayabileceğimiz ve kullanabileceğimiz bir takım araçlar var.</p>
-<p>Yorum kısmında yapılacak şey ping mesajlarına dönen cevap.</p>
-<p>Ping&rsquo;e dönen yanıtlar bize bazı bilgiler verebilir.</p>
-<p>Örneğin:</p>
-<ol>
-<li><strong>Unknown host</strong>: Bu yanıt, girdiğiniz ana bilgisayar adının veya IP adresinin tanınmadığını veya bir IP adresine çözümlenemediğini gösterir.</li>
-<li><strong>Destination host unreachable</strong>:  Hedefe Erişilemedi</li>
-<li><strong>General failure error</strong>: Bu yanıt genellikle ping işlemi sırasında meydana gelen daha genel bir hatayı gösterir.</li>
-<li><strong>Request timed out</strong>: Genellikle hedef ana bilgisayarın veya ağın ping isteğine yanıt vermediğini gösterir.</li>
-<li><strong>Time to Live Exceeded:</strong> Zaman aşımı</li>
-</ol>
-<p>Bir diğer araç olan &ldquo;tracert&rdquo; da networkte sorun çözerken işimize yarayacaktır.</p>
-<p>tracert aracı ile birlikte gideceğimiz hedefi belirtirsek, hedefe giderken geçilen routerları önümüze çıkaracaktır.</p>
-<p>tracert aracının Linux&rsquo;taki karşılığı &ldquo;traceroute&quot;dir.</p>
-<p>Örnek bir tracert çıktısı:</p>
-<pre tabindex="0"><code>┌─[ssnrshnn@monster]─[~]
+</code></pre><p>Router&rsquo;ın sol bacağına ulaşılıp ulaşılamadığı kontrol edilir.</p><p>Eğer sorunsuz bir şekilde ping&rsquo;e eğer karşılık yok ise, sorunun kapsamını ve kafamızda bazı olabilecek olası sorunlar canlanabilir.</p><p>Örneğin, PC ve Router arasındaki kablolamada bir sorun olabilir(bakır kablolarda manyetik alandan geçiyorsa sorun olabilir veya yanlış çakılmış olabilir vs.), Router Interface&rsquo;sinde sorun olabilir(IP adresi, subnet hataları vb.) gibi gibi sorunlar.</p><p>Bu kısma yoğunlaşıp hatayı düzeltip devam edebiliriz.</p><p>Bir sonraki adım, Router&rsquo;ın sağ bacağına gitmek olacak. Buraya da sorunsuz ulaşabiliyorsak, diyebiliz ki Network Layer&rsquo;da sorun yok.</p><p>Eğer sorun varsa yine aynı şekilde birkaç senaryo canlanabilir:</p><p>Örneğin; Routing&rsquo;lerde bir sorun olabilir veya yanlış yazılmış olabilir, yine aynı şekilde Interface&rsquo;de bir yanlışlık yapılmış olabilir, ACL&rsquo;lerde bir sıralama hatası veya yanlış yazım hatası olabilir gibi gibi.</p><p>Bu noktaya yoğunlaşıp hatayı düzeltip devam edebiliriz.</p><p>Peki sorun networkümüzde değil de nerede? Bir sonraki adımda kime gideceğiz?</p><p>Bu noktada ve aslında birçok noktada yorumlayabileceğimiz ve kullanabileceğimiz bir takım araçlar var.</p><p>Yorum kısmında yapılacak şey ping mesajlarına dönen cevap.</p><p>Ping&rsquo;e dönen yanıtlar bize bazı bilgiler verebilir.</p><p>Örneğin:</p><ol><li><strong>Unknown host</strong>: Bu yanıt, girdiğiniz ana bilgisayar adının veya IP adresinin tanınmadığını veya bir IP adresine çözümlenemediğini gösterir.</li><li><strong>Destination host unreachable</strong>:  Hedefe Erişilemedi</li><li><strong>General failure error</strong>: Bu yanıt genellikle ping işlemi sırasında meydana gelen daha genel bir hatayı gösterir.</li><li><strong>Request timed out</strong>: Genellikle hedef ana bilgisayarın veya ağın ping isteğine yanıt vermediğini gösterir.</li><li><strong>Time to Live Exceeded:</strong> Zaman aşımı</li></ol><p>Bir diğer araç olan &ldquo;tracert&rdquo; da networkte sorun çözerken işimize yarayacaktır.</p><p>tracert aracı ile birlikte gideceğimiz hedefi belirtirsek, hedefe giderken geçilen routerları önümüze çıkaracaktır.</p><p>tracert aracının Linux&rsquo;taki karşılığı &ldquo;traceroute"dir.</p><p>Örnek bir tracert çıktısı:</p><pre tabindex=0><code>┌─[ssnrshnn@monster]─[~]
 └──╼ $traceroute 8.8.8.8
 traceroute to 8.8.8.8 (8.8.8.8), 30 hops max, 60 byte packets
  1  _gateway (X.X.X.X)  65.569 ms  65.541 ms  65.756 ms
@@ -317,35 +55,8 @@ traceroute to 8.8.8.8 (8.8.8.8), 30 hops max, 60 byte packets
  6  178.132.85.120 (178.132.85.120)  108.410 ms 173.194.121.208 (173.194.121.208)  145.002 ms 178.132.85.120 (178.132.85.120)  144.919 ms
  7  * * *
  8  dns.google (8.8.8.8)  115.157 ms  115.041 ms  115.032 ms
-</code></pre><p>Görüldüğü gibi 8.8.8.8 adresine giderken hangi routerlar üzerinden geçtiğimizi görebiliyoruz.</p>
-<p>Peki biz internete çıkabiliyoruz ama sorun nerede?</p>
-<p>Sorun belki de gitmek istediğimiz yerdedir?</p>
-<p>Hedef portun açık olup olmadığını kontrol edebiliriz.</p>
-<p>Bunun için &ldquo;telnet&rdquo; aracını kullanabiliriz. Veya &ldquo;nmap&rdquo;.</p>
-<p>Telnet sadece uzak bağlantılar için değil portun açık olup olmadığını anlamak için de kullanabiliriz.</p>
-<p>Örneğin, hedef cihazın 80 portunun açık olup olmadığına bakalım:</p>
-<pre tabindex="0"><code>telnet 10.10.50.55 80
-</code></pre><p>Peki başka ne gibi sorunlar karşımıza çıkabilir?</p>
-<ul>
-<li>Routing (Statik, Dinamik),</li>
-<li>Firewall Kuralları ile ilgili yanlış konfigürasyon,</li>
-<li>VPN sorunları,</li>
-<li>DNS Sorunları,</li>
-<li>DHCP Server yanlış konfigürasyonu veya Server&rsquo;ın hizmet verememesi,</li>
-<li>Switch yanlış konfigürasyonu,</li>
-<li>IP-Subnet hatalı konfigürasyonu,</li>
-<li>ACL&rsquo;lerin hatalı konfigürasyonu,</li>
-<li>ISP kaynaklı sorunlar,</li>
-<li>Loop sorunları.</li>
-</ul>
-<p>Sorun zaten büyük ihtimalle en fazla 2 veya 3 gözden geçirmeden sorun bulunmuş ve çözülmüş olacaktır.</p>
-<p>Burada örnek bir senaryoda anlatmak istediğim şey networkte sorun çözerken adım adım soruna nasıl yaklaşmamız gerektiğine değinmekti.</p>
-<p>Bu ve bu tarz network sorunlarını da aynı yaklaşımla bulmak ve düzeltmek işimizi kolaylaştıractır.</p>
-<p>Bunların dışında Network&rsquo;te sorun çözerken kullanılan diğer araçlar:</p>
-<ol>
-<li><strong>nslookup:</strong> DNS kayıtlarıyla ilgili bilgiler verir. Örnek bir nslookup çıktısı:</li>
-</ol>
-<pre tabindex="0"><code>┌─[ssnrshnn@monster]─[~]
+</code></pre><p>Görüldüğü gibi 8.8.8.8 adresine giderken hangi routerlar üzerinden geçtiğimizi görebiliyoruz.</p><p>Peki biz internete çıkabiliyoruz ama sorun nerede?</p><p>Sorun belki de gitmek istediğimiz yerdedir?</p><p>Hedef portun açık olup olmadığını kontrol edebiliriz.</p><p>Bunun için &ldquo;telnet&rdquo; aracını kullanabiliriz. Veya &ldquo;nmap&rdquo;.</p><p>Telnet sadece uzak bağlantılar için değil portun açık olup olmadığını anlamak için de kullanabiliriz.</p><p>Örneğin, hedef cihazın 80 portunun açık olup olmadığına bakalım:</p><pre tabindex=0><code>telnet 10.10.50.55 80
+</code></pre><p>Peki başka ne gibi sorunlar karşımıza çıkabilir?</p><ul><li>Routing (Statik, Dinamik),</li><li>Firewall Kuralları ile ilgili yanlış konfigürasyon,</li><li>VPN sorunları,</li><li>DNS Sorunları,</li><li>DHCP Server yanlış konfigürasyonu veya Server&rsquo;ın hizmet verememesi,</li><li>Switch yanlış konfigürasyonu,</li><li>IP-Subnet hatalı konfigürasyonu,</li><li>ACL&rsquo;lerin hatalı konfigürasyonu,</li><li>ISP kaynaklı sorunlar,</li><li>Loop sorunları.</li></ul><p>Sorun zaten büyük ihtimalle en fazla 2 veya 3 gözden geçirmeden sorun bulunmuş ve çözülmüş olacaktır.</p><p>Burada örnek bir senaryoda anlatmak istediğim şey networkte sorun çözerken adım adım soruna nasıl yaklaşmamız gerektiğine değinmekti.</p><p>Bu ve bu tarz network sorunlarını da aynı yaklaşımla bulmak ve düzeltmek işimizi kolaylaştıractır.</p><p>Bunların dışında Network&rsquo;te sorun çözerken kullanılan diğer araçlar:</p><ol><li><strong>nslookup:</strong> DNS kayıtlarıyla ilgili bilgiler verir. Örnek bir nslookup çıktısı:</li></ol><pre tabindex=0><code>┌─[ssnrshnn@monster]─[~]
 └──╼ $nslookup -type=ns google.com
 Server:		127.0.0.53
 Address:	127.0.0.53#53
@@ -365,19 +76,7 @@ ns1.google.com	has AAAA address 2001:4860:4802:32::a
 ns2.google.com	has AAAA address 2001:4860:4802:34::a
 ns3.google.com	has AAAA address 2001:4860:4802:36::a
 ns4.google.com	has AAAA address 2001:4860:4802:38::a
-</code></pre><p>nslookup komutunu çeşitli parametrelerle özelleştirebilirsiniz.</p>
-<ul>
-<li>nslookup -type=mx google.com: Mail Exchanger sorgulaması yapar.</li>
-<li>nslookup -type=ns google.com: Name Server sorgulaması yapar.</li>
-<li>nslookup -type=ptr google.com: PTR sorgulaması yapar.</li>
-<li>nslookup -type=soa google.com: SOA kaydı sorgulaması yapar.</li>
-<li>nslookup -type=cname google.com: CNAME sorgulaması yapar.</li>
-<li>nslookup -type=txt google.com: DNS dışında bilgiler içeren sorgulama tipi</li>
-</ul>
-<ol start="2">
-<li><strong>netstat:</strong> Network bağlantılarını, routing tablosu gibi bilgileri verir. Örnek bir nslookup çıktısı:</li>
-</ol>
-<pre tabindex="0"><code>┌─[ssnrshnn@monster]─[~]
+</code></pre><p>nslookup komutunu çeşitli parametrelerle özelleştirebilirsiniz.</p><ul><li>nslookup -type=mx google.com: Mail Exchanger sorgulaması yapar.</li><li>nslookup -type=ns google.com: Name Server sorgulaması yapar.</li><li>nslookup -type=ptr google.com: PTR sorgulaması yapar.</li><li>nslookup -type=soa google.com: SOA kaydı sorgulaması yapar.</li><li>nslookup -type=cname google.com: CNAME sorgulaması yapar.</li><li>nslookup -type=txt google.com: DNS dışında bilgiler içeren sorgulama tipi</li></ul><ol start=2><li><strong>netstat:</strong> Network bağlantılarını, routing tablosu gibi bilgileri verir. Örnek bir nslookup çıktısı:</li></ol><pre tabindex=0><code>┌─[ssnrshnn@monster]─[~]
 └──╼ $sudo netstat -tunlp
 [sudo] password for ssnrshnn: 
 Active Internet connections (only servers)
@@ -400,26 +99,7 @@ udp6       0      0 :::5353                 :::*                                
 udp6       0      0 :::32785                :::*                                867/avahi-daemon: r 
 udp6       0      0 fe80::ed44:1e28:966:546 :::*                                874/NetworkManager  
 udp6       0      0 fe80::d56a:31dc:852:546 :::*                                874/NetworkManager
-</code></pre><p>netstat da birçok şekilde özelleştirilebilir. Sık kullanılan netstat parametreleri:</p>
-<ul>
-<li><strong>netstat -a:</strong> Tüm TCP ve UDP bağlantılarını getirir.</li>
-<li><strong>netstat -o:</strong> PID numaraları ve uygulamaya göre gösterir.</li>
-<li><strong>netstat -r:</strong> Routing tablosunu gösterir.</li>
-<li><strong>netstat -i:</strong> Interfaceleri listeler.</li>
-<li><strong>netstat -s:</strong> Network istatistiklerini gösterir.</li>
-<li><strong>netstat -p:</strong> Bağlantıların PID/Program isimlerini gösterir.</li>
-<li><strong>netstat -l:</strong> Dinlenen bağlantıları listeler.</li>
-<li><strong>netstat -a:</strong> Tüm bağlantıları listeler.</li>
-</ul>
-<p>Aynı zamanda parametreleri kombinasyon yaparak da kullanabiliriz. Örneğin:</p>
-<ul>
-<li><strong>netstat -ano</strong></li>
-<li><strong>netstat -tunlp</strong></li>
-</ul>
-<ol start="3">
-<li><strong>dig:</strong> Alan adlarıyla ilgili detaylı sorgulamalar yapar. Örnek bir dig çıktısı:</li>
-</ol>
-<pre tabindex="0"><code>┌─[✗]─[ssnrshnn@monster]─[~]
+</code></pre><p>netstat da birçok şekilde özelleştirilebilir. Sık kullanılan netstat parametreleri:</p><ul><li><strong>netstat -a:</strong> Tüm TCP ve UDP bağlantılarını getirir.</li><li><strong>netstat -o:</strong> PID numaraları ve uygulamaya göre gösterir.</li><li><strong>netstat -r:</strong> Routing tablosunu gösterir.</li><li><strong>netstat -i:</strong> Interfaceleri listeler.</li><li><strong>netstat -s:</strong> Network istatistiklerini gösterir.</li><li><strong>netstat -p:</strong> Bağlantıların PID/Program isimlerini gösterir.</li><li><strong>netstat -l:</strong> Dinlenen bağlantıları listeler.</li><li><strong>netstat -a:</strong> Tüm bağlantıları listeler.</li></ul><p>Aynı zamanda parametreleri kombinasyon yaparak da kullanabiliriz. Örneğin:</p><ul><li><strong>netstat -ano</strong></li><li><strong>netstat -tunlp</strong></li></ul><ol start=3><li><strong>dig:</strong> Alan adlarıyla ilgili detaylı sorgulamalar yapar. Örnek bir dig çıktısı:</li></ol><pre tabindex=0><code>┌─[✗]─[ssnrshnn@monster]─[~]
 └──╼ $dig google.com
 
 ; &lt;&lt;&gt;&gt; DiG 9.18.28-0ubuntu0.22.04.1-Ubuntu &lt;&lt;&gt;&gt; google.com
@@ -440,182 +120,7 @@ google.com.		148	IN	A	142.250.185.174
 ;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
 ;; WHEN: Sat Jul 27 11:55:34 CEST 2024
 ;; MSG SIZE  rcvd: 55
-</code></pre><p>dig aracı da birçok şekilde özelleştirilebilir. Örnek kullanım ve parametleri:</p>
-<ul>
-<li><strong>dig google.com MX:</strong> MX kaygını sorgular.</li>
-<li><strong>dig google.com SOA:</strong> SOA kaydı sorgular.</li>
-<li><strong>dig google.com TTL:</strong> TTL değerlerini sorgular.</li>
-<li><strong>dig google.com CNAME:</strong> CNAME kaydını sorgular.</li>
-<li><strong>dig google.com NS:</strong> Name Server kaydını sorgular.</li>
-<li><strong>dig ns3.google.com. google.com:</strong> Spesifik Name Server kaydını sorgular.</li>
-</ul>
-<p>Çok daha fazlasını &ldquo;dig -h&rdquo; komutuyla bulabilirsiniz.</p>
-<ol start="4">
-<li><strong>mtr:</strong> Hem ping hem de traceroute komutlarının özelleklerinin birleştirilmiş halidir. Aynı zamanda gecikmeleri de anlık olarak gösteren güzel bir araçtır. Örnek bir mtr sorgu çıktısı:</li>
-</ol>
-<p><img src="/images/network-troubleshooting/2.png" alt="troubleshooting"></p>
-<p>Umarım faydalı olmuştur.</p>
-<p>Teşekkürler,</p>
-<p>İyi Çalışmalar.</p>
-
-    </div>
-  </article>
-
-  
-  
-
-
-
-
-
-
-  <div id="footer-post-container">
-  <div id="footer-post">
-
-    <div id="nav-footer" style="display: none">
-      <ul>
-         
-          <li><a href="/">Home</a></li>
-         
-          <li><a href="/posts">Posts</a></li>
-         
-          <li><a href="/walkthroughs">Walkthroughs</a></li>
-         
-          <li><a href="/projects">Projects</a></li>
-         
-          <li><a href="/tools/">Tools</a></li>
-         
-          <li><a href="/resources">Resources</a></li>
-         
-          <li><a href="/library">Library</a></li>
-         
-          <li><a href="/about">About</a></li>
-        
-      </ul>
-    </div>
-
-    
-    <div id="toc-footer" style="display: none">
-      <nav id="TableOfContents"></nav>
-    </div>
-    
-
-    <div id="share-footer" style="display: none">
-      
-      <ul>
-  
-  
-    
-  
-  
-  <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f" aria-label="Facebook">
-      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&text=Network%20Troubleshooting" aria-label="Twitter">
-      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&title=Network%20Troubleshooting" aria-label="Linkedin">
-      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&is_video=false&description=Network%20Troubleshooting" aria-label="Pinterest">
-      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="mailto:?subject=Network%20Troubleshooting&body=Check out this article: http%3a%2f%2flocalhost%3a1313%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f" aria-label="Email">
-      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://getpocket.com/save?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&title=Network%20Troubleshooting" aria-label="Pocket">
-      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&title=Network%20Troubleshooting" aria-label="reddit">
-      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&name=Network%20Troubleshooting&description=%3cp%3e%c4%b0lk%20olarak%20e%c4%9fer%20hatan%c4%b1n%20nereden%20kaynakland%c4%b1%c4%9f%c4%b1n%c4%b1%20az%20%c3%a7ok%20tahmin%20edebiliyorsak%20ilk%20o%20noktaya%20yo%c4%9funla%c5%9fmakta%20fayda%20olaca%c4%9f%c4%b1n%c4%b1%20d%c3%bc%c5%9f%c3%bcn%c3%bcyorum%20diyerek%20ba%c5%9flamak%20istiyorum.%3c%2fp%3e%0a%3cp%3eNetwork%26rsquo%3bte%20bir%20sorunu%20%c3%a7%c3%b6zerken%20yakla%c5%9f%c4%b1m%c4%b1m%c4%b1z%c4%b1n%20ad%c4%b1m%20ad%c4%b1m%20olacak%20%c5%9fekilde%20ilk%20olarak%20en%20yak%c4%b1n%c4%b1m%c4%b1zdaki%20cihaz%20veya%20uygulama%20veya%20katman%20olmal%c4%b1d%c4%b1r.%3c%2fp%3e%0a%3cp%3ePeki%20ne%20demek%20istiyorum%3f%3c%2fp%3e%0a%3cp%3eA%c5%9fa%c4%9f%c4%b1da%20%c3%b6rnek%20bir%20senaryom%20var.%20Bu%20senaryoda%20PC1%20%c4%b0nternete%20eri%c5%9femedi%c4%9fini%20varsayal%c4%b1m.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fnetwork-troubleshooting%2f1.png%22%20alt%3d%22troubleshooting%22%3e%3c%2fp%3e%0a%3cp%3eBuradaki%20senaryomda%2c%20PC%26rsquo%3bnin%20b%c3%bct%c3%bcn%20ayarlar%c4%b1n%c4%b1%20g%c3%b6zden%20ge%c3%a7irdikten%20sonra%20yani%20PC%26rsquo%3bnin%20Ethernet%20kablosu%2c%20IP%20Adres%2c%20Default%20Gateway%2c%20DNS%20gibi.%3c%2fp%3e" aria-label="Tumblr">
-      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-  <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&t=Network%20Troubleshooting" aria-label="Hacker News">
-      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
-    </a>
-  </li>
-</ul>
-
-    </div>
-
-    <div id="actions-footer">
-      
-        <a id="menu-toggle" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;" aria-label="Menu">
-          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-        
-        <a id="toc-toggle" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;" aria-label="TOC">
-          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        
-        <a id="share-toggle" class="icon" href="#" onclick="$('#share-footer').toggle();return false;" aria-label="Share">
-          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Top of Page">
-          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
-    </div>
-
-  </div>
-</div>
-
-
-  <footer id="footer">
-  <div class="footer-left">
-    Copyright  &copy; 2025  ittechnetworkk 
-  </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-         
-        <li><a href="/">Home</a></li>
-         
-        <li><a href="/posts">Posts</a></li>
-         
-        <li><a href="/walkthroughs">Walkthroughs</a></li>
-         
-        <li><a href="/projects">Projects</a></li>
-         
-        <li><a href="/tools/">Tools</a></li>
-         
-        <li><a href="/resources">Resources</a></li>
-         
-        <li><a href="/library">Library</a></li>
-         
-        <li><a href="/about">About</a></li>
-        
-      </ul>
-    </nav>
-  </div>
-</footer>
-
-
-  </div>
-</body>
-
-<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
-<script src=/lib/jquery/jquery.min.js></script>
-<script src=/js/main.js></script>
-<script src=/js/lightbox.js></script>
-
-<script src=/js/code-copy.js></script>
-
-
-
-
-</html> 
+</code></pre><p>dig aracı da birçok şekilde özelleştirilebilir. Örnek kullanım ve parametleri:</p><ul><li><strong>dig google.com MX:</strong> MX kaygını sorgular.</li><li><strong>dig google.com SOA:</strong> SOA kaydı sorgular.</li><li><strong>dig google.com TTL:</strong> TTL değerlerini sorgular.</li><li><strong>dig google.com CNAME:</strong> CNAME kaydını sorgular.</li><li><strong>dig google.com NS:</strong> Name Server kaydını sorgular.</li><li><strong>dig ns3.google.com. google.com:</strong> Spesifik Name Server kaydını sorgular.</li></ul><p>Çok daha fazlasını &ldquo;dig -h&rdquo; komutuyla bulabilirsiniz.</p><ol start=4><li><strong>mtr:</strong> Hem ping hem de traceroute komutlarının özelleklerinin birleştirilmiş halidir. Aynı zamanda gecikmeleri de anlık olarak gösteren güzel bir araçtır. Örnek bir mtr sorgu çıktısı:</li></ol><p><img src=/images/network-troubleshooting/2.png alt=troubleshooting></p><p>Umarım faydalı olmuştur.</p><p>Teşekkürler,</p><p>İyi Çalışmalar.</p></div></article><div id=footer-post-container><div id=footer-post><div id=nav-footer style=display:none><ul><li><a href=/>Home</a></li><li><a href=/posts>Posts</a></li><li><a href=/walkthroughs>Walkthroughs</a></li><li><a href=/projects>Projects</a></li><li><a href=/tools/>Tools</a></li><li><a href=/resources>Resources</a></li><li><a href=/library>Library</a></li><li><a href=/about>About</a></li></ul></div><div id=toc-footer style=display:none><nav id=TableOfContents></nav></div><div id=share-footer style=display:none><ul><li><a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f" aria-label=Facebook><i class="fab fa-facebook fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&text=Network%20Troubleshooting" aria-label=Twitter><i class="fab fa-twitter fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&title=Network%20Troubleshooting" aria-label=Linkedin><i class="fab fa-linkedin fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&is_video=false&description=Network%20Troubleshooting" aria-label=Pinterest><i class="fab fa-pinterest fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="mailto:?subject=Network%20Troubleshooting&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f" aria-label=Email><i class="fas fa-envelope fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&title=Network%20Troubleshooting" aria-label=Pocket><i class="fab fa-get-pocket fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&title=Network%20Troubleshooting" aria-label=reddit><i class="fab fa-reddit fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&name=Network%20Troubleshooting&description=%3cp%3e%c4%b0lk%20olarak%20e%c4%9fer%20hatan%c4%b1n%20nereden%20kaynakland%c4%b1%c4%9f%c4%b1n%c4%b1%20az%20%c3%a7ok%20tahmin%20edebiliyorsak%20ilk%20o%20noktaya%20yo%c4%9funla%c5%9fmakta%20fayda%20olaca%c4%9f%c4%b1n%c4%b1%20d%c3%bc%c5%9f%c3%bcn%c3%bcyorum%20diyerek%20ba%c5%9flamak%20istiyorum.%3c%2fp%3e%0a%3cp%3eNetwork%26rsquo%3bte%20bir%20sorunu%20%c3%a7%c3%b6zerken%20yakla%c5%9f%c4%b1m%c4%b1m%c4%b1z%c4%b1n%20ad%c4%b1m%20ad%c4%b1m%20olacak%20%c5%9fekilde%20ilk%20olarak%20en%20yak%c4%b1n%c4%b1m%c4%b1zdaki%20cihaz%20veya%20uygulama%20veya%20katman%20olmal%c4%b1d%c4%b1r.%3c%2fp%3e%0a%3cp%3ePeki%20ne%20demek%20istiyorum%3f%3c%2fp%3e%0a%3cp%3eA%c5%9fa%c4%9f%c4%b1da%20%c3%b6rnek%20bir%20senaryom%20var.%20Bu%20senaryoda%20PC1%20%c4%b0nternete%20eri%c5%9femedi%c4%9fini%20varsayal%c4%b1m.%3c%2fp%3e%0a%3cp%3e%3cimg%20src%3d%22%2fimages%2fnetwork-troubleshooting%2f1.png%22%20alt%3d%22troubleshooting%22%3e%3c%2fp%3e%0a%3cp%3eBuradaki%20senaryomda%2c%20PC%26rsquo%3bnin%20b%c3%bct%c3%bcn%20ayarlar%c4%b1n%c4%b1%20g%c3%b6zden%20ge%c3%a7irdikten%20sonra%20yani%20PC%26rsquo%3bnin%20Ethernet%20kablosu%2c%20IP%20Adres%2c%20Default%20Gateway%2c%20DNS%20gibi.%3c%2fp%3e" aria-label=Tumblr><i class="fab fa-tumblr fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fnetworktroubleshooting%2fnetwork-troubleshooting%2f&t=Network%20Troubleshooting" aria-label="Hacker News"><i class="fab fa-hacker-news fa-lg" aria-hidden=true></i></a></li></ul></div><div id=actions-footer><a id=menu-toggle class=icon href=# onclick='return $("#nav-footer").toggle(),!1' aria-label=Menu><i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
+<a id=toc-toggle class=icon href=# onclick='return $("#toc-footer").toggle(),!1' aria-label=TOC><i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
+<a id=share-toggle class=icon href=# onclick='return $("#share-footer").toggle(),!1' aria-label=Share><i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
+<a id=top style=display:none class=icon href=# onclick='$("html, body").animate({scrollTop:0},"fast")' aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a></div></div></div><footer id=footer><div class=footer-left>Copyright &copy; 2025 ittechnetworkk</div><div class=footer-right><nav><ul><li><a href=/>Home</a></li><li><a href=/posts>Posts</a></li><li><a href=/walkthroughs>Walkthroughs</a></li><li><a href=/projects>Projects</a></li><li><a href=/tools/>Tools</a></li><li><a href=/resources>Resources</a></li><li><a href=/library>Library</a></li><li><a href=/about>About</a></li></ul></nav></div></footer></div></body><link rel=stylesheet href=/lib/font-awesome/css/all.min.css><script src=/lib/jquery/jquery.min.js></script><script src=/js/main.js></script><script src=/js/lightbox.js></script><script src=/js/code-copy.js></script></html>

@@ -1,27 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Windows on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/windows/</link>
-    <description>Recent content in Windows on ittechnetworkk</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Tue, 18 Mar 2025 11:14:26 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/windows/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>[EN] Active Directory Domain Controller Installation</title>
-      <link>http://localhost:1313/posts/addcinstallation/ad-dc-installation/</link>
-      <pubDate>Tue, 18 Mar 2025 11:14:26 +0100</pubDate>
-      <guid>http://localhost:1313/posts/addcinstallation/ad-dc-installation/</guid>
-      <description>&lt;p&gt;Hi everyone,&lt;/p&gt;&#xA;&lt;p&gt;In this article, I will show you how to install the &lt;strong&gt;Active Directory Domain Controller&lt;/strong&gt; role on a Windows Server.&lt;/p&gt;&#xA;&lt;p&gt;I will be using &lt;strong&gt;Windows Server 2022&lt;/strong&gt;, which is already installed.&lt;/p&gt;&#xA;&lt;p&gt;The installation process will be as follows:&lt;/p&gt;&#xA;&lt;p&gt;Before starting the installation, we need to configure a few things.&lt;/p&gt;&#xA;&lt;p&gt;First, we need to assign a static IP address to our server.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ADDCInstallation/1.png&#34; alt=&#34;esxi&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ADDCInstallation/2.png&#34; alt=&#34;esxi&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ADDCInstallation/3.png&#34; alt=&#34;esxi&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ADDCInstallation/4.png&#34; alt=&#34;esxi&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ADDCInstallation/5.png&#34; alt=&#34;esxi&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ADDCInstallation/6.png&#34; alt=&#34;esxi&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/ADDCInstallation/7.png&#34; alt=&#34;esxi&#34;&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Windows Server NIC Teaming</title>
-      <link>http://localhost:1313/posts/windowsservernicteaming/windows-server-nic-teaming/</link>
-      <pubDate>Thu, 10 Oct 2024 22:57:40 +0100</pubDate>
-      <guid>http://localhost:1313/posts/windowsservernicteaming/windows-server-nic-teaming/</guid>
-      <description>&lt;p&gt;Windows Server&amp;rsquo;da NIC Teaming, birden fazla ethernet kartının tek bir kart gibi kullanılmasına denir. Örneğin 4 x 1Gb kartlarımız var, bunları NIC Teaming yaparsak 4Gb olarak çalışan bir kart haline gelecektir.&lt;/p&gt;&#xA;&lt;p&gt;NIC Teaming&amp;rsquo;in bazı avantajları aşağıdaki gibidir.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Bant Genişliği,&lt;/li&gt;&#xA;&lt;li&gt;Yedeklilik,&lt;/li&gt;&#xA;&lt;li&gt;Verimlilik.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;NIC Teaming yaparken mutlaka karşılığının olması gerekir yoksa çalışmaz. Yani Windows Server&amp;rsquo;ın karşısındaki Switch&amp;rsquo;den de LACP yapılması gerekir.&lt;/p&gt;&#xA;&lt;p&gt;NIC Teaming yapma adımları aşağıdaki gibidir.&lt;/p&gt;&#xA;&lt;p&gt;Aşağıdaki görseldeki &amp;ldquo;NIC Teaming    Disabled&amp;rdquo; yazan seçeneğe geliyorum.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Windows on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/windows/</link><description>Recent content in Windows on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Tue, 18 Mar 2025 11:14:26 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml"/><item><title>[EN] Active Directory Domain Controller Installation</title><link>https://ittechnetworkk.github.io/posts/addcinstallation/ad-dc-installation/</link><pubDate>Tue, 18 Mar 2025 11:14:26 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/addcinstallation/ad-dc-installation/</guid><description>&lt;p>Hi everyone,&lt;/p>
+&lt;p>In this article, I will show you how to install the &lt;strong>Active Directory Domain Controller&lt;/strong> role on a Windows Server.&lt;/p>
+&lt;p>I will be using &lt;strong>Windows Server 2022&lt;/strong>, which is already installed.&lt;/p>
+&lt;p>The installation process will be as follows:&lt;/p>
+&lt;p>Before starting the installation, we need to configure a few things.&lt;/p>
+&lt;p>First, we need to assign a static IP address to our server.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/ADDCInstallation/1.png" alt="esxi">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/ADDCInstallation/2.png" alt="esxi">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/ADDCInstallation/3.png" alt="esxi">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/ADDCInstallation/4.png" alt="esxi">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/ADDCInstallation/5.png" alt="esxi">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/ADDCInstallation/6.png" alt="esxi">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/ADDCInstallation/7.png" alt="esxi">&lt;/p></description></item><item><title>Windows Server NIC Teaming</title><link>https://ittechnetworkk.github.io/posts/windowsservernicteaming/windows-server-nic-teaming/</link><pubDate>Thu, 10 Oct 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/windowsservernicteaming/windows-server-nic-teaming/</guid><description>&lt;p>Windows Server&amp;rsquo;da NIC Teaming, birden fazla ethernet kartının tek bir kart gibi kullanılmasına denir. Örneğin 4 x 1Gb kartlarımız var, bunları NIC Teaming yaparsak 4Gb olarak çalışan bir kart haline gelecektir.&lt;/p>
+&lt;p>NIC Teaming&amp;rsquo;in bazı avantajları aşağıdaki gibidir.&lt;/p>
+&lt;ul>
+&lt;li>Bant Genişliği,&lt;/li>
+&lt;li>Yedeklilik,&lt;/li>
+&lt;li>Verimlilik.&lt;/li>
+&lt;/ul>
+&lt;p>NIC Teaming yaparken mutlaka karşılığının olması gerekir yoksa çalışmaz. Yani Windows Server&amp;rsquo;ın karşısındaki Switch&amp;rsquo;den de LACP yapılması gerekir.&lt;/p>
+&lt;p>NIC Teaming yapma adımları aşağıdaki gibidir.&lt;/p>
+&lt;p>Aşağıdaki görseldeki &amp;ldquo;NIC Teaming Disabled&amp;rdquo; yazan seçeneğe geliyorum.&lt;/p></description></item></channel></rss>

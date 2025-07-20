@@ -1,20 +1,58 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Docker on ittechnetworkk</title>
-    <link>http://localhost:1313/categories/docker/</link>
-    <description>Recent content in Docker on ittechnetworkk</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Sat, 08 Feb 2025 21:46:11 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/docker/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Docker Notlarım</title>
-      <link>http://localhost:1313/posts/dockernotlarim/docker-notlarim/</link>
-      <pubDate>Sat, 08 Feb 2025 21:46:11 +0100</pubDate>
-      <guid>http://localhost:1313/posts/dockernotlarim/docker-notlarim/</guid>
-      <description>&lt;p&gt;Docker&amp;rsquo;a giriş notlarım. Bu notlar Özgür Öztürk&amp;rsquo;ün Docker Eğitiminden aldığım notlarımdır.&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#Container oluşturulduktan sonra date uygulaması çalıştırılacak. Container başka bir uygulama ile başlatılacak.&#xA;docker container run --name deneme httpd date&#xA;&#xA;#Container&amp;#39;i arka planda çalıştırmak için&#xA;docker container run -d deneme2&#xA;&#xA;#Container içerisinde komut çalıştırmak için &amp;#34;exec&amp;#34;&#xA;docker container exec 94ef4e4f89 ls&#xA;&#xA;#Çalışan container&amp;#39;a nasıl bağlanılır&#xA;docker container exec -it deneme1 sh&#xA;&#xA;#Bir sanal makine ile Container&amp;#39;in farkı; Container&amp;#39;de kernel yoktur, üzerinde çalıştığı hostun kernel&amp;#39;ini kullanır.&#xA;&#xA;#Container ile ilgili daha fazla bilgi edinmek için&#xA;docker container inspect deneme1&#xA;docker network inspect bridge&#xA;docker image inspect fedora&#xA;&#xA;#Container&amp;#39;a bağlanıp değişiklik yapılması pek önerilmez. Bazılarına bağlanılmaz bile.&#xA;&#xA;#Container loglarına bakmak için&#xA;docker container logs deneme1&#xA;&#xA;#Container loglarını zaman damgalarıyla göstermek için&#xA;docker container logs -t deneme1&#xA;&#xA;#Container loglarındaki son birkaç satırı görmek için&#xA;docker container logs --tail 5 deneme1&#xA;&#xA;#Container loglarını canlı görmek için &#xA;docker container logs -f deneme1&#xA;&#xA;#Container&amp;#39;ın kaynaklarına bakmak için&#xA;docker container top webserver&#xA;docker container stats webserver&#xA;docker stats &#xA;&#xA;#Container&amp;#39;ları sınırlamadığımız sürece host makinedeki kaynakları sınırsız kullanabilir.&#xA;Bu container&amp;#39;ların kaynaklarını kısıtlayabiliriz.&#xA;#Container&amp;#39;ın memory kısıtlaması için&#xA;docker container run -d --name deneme3 --memory=1G httpd&#xA;docker container run -d --name deneme3 --memory=500K httpd&#xA;&#xA;#CPU kısıtlaması için iki yol vardır&#xA;#Container sadece 1 core kullanabilecek random olarak&#xA;docker run -d --name cpukisit --cpus=&amp;#34;1&amp;#34; httpd&#xA;&#xA;#Container 2 ve 8 nolu core&amp;#39;ları kullanabilecek&#xA;docker container run -d --name cpukisit2 --cpuset-cpus=&amp;#34;2,8&amp;#34; httpd&#xA;&#xA;#Container&amp;#39;de swap belirlemek için&#xA;docker run -d --name swap --memory-swap=1G httpd&#xA;&#xA;#Tüm containerları topluca silmek için&#xA;docker container prune&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/Docker/1.png&#34; alt=&#34;docker&#34;&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docker on ittechnetworkk</title><link>https://ittechnetworkk.github.io/categories/docker/</link><description>Recent content in Docker on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sat, 08 Feb 2025 21:46:11 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/categories/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>Docker Notlarım</title><link>https://ittechnetworkk.github.io/posts/dockernotlarim/docker-notlarim/</link><pubDate>Sat, 08 Feb 2025 21:46:11 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dockernotlarim/docker-notlarim/</guid><description>&lt;p>Docker&amp;rsquo;a giriş notlarım. Bu notlar Özgür Öztürk&amp;rsquo;ün Docker Eğitiminden aldığım notlarımdır.&lt;/p>
+&lt;pre tabindex="0">&lt;code>#Container oluşturulduktan sonra date uygulaması çalıştırılacak. Container başka bir uygulama ile başlatılacak.
+docker container run --name deneme httpd date
+
+#Container&amp;#39;i arka planda çalıştırmak için
+docker container run -d deneme2
+
+#Container içerisinde komut çalıştırmak için &amp;#34;exec&amp;#34;
+docker container exec 94ef4e4f89 ls
+
+#Çalışan container&amp;#39;a nasıl bağlanılır
+docker container exec -it deneme1 sh
+
+#Bir sanal makine ile Container&amp;#39;in farkı; Container&amp;#39;de kernel yoktur, üzerinde çalıştığı hostun kernel&amp;#39;ini kullanır.
+
+#Container ile ilgili daha fazla bilgi edinmek için
+docker container inspect deneme1
+docker network inspect bridge
+docker image inspect fedora
+
+#Container&amp;#39;a bağlanıp değişiklik yapılması pek önerilmez. Bazılarına bağlanılmaz bile.
+
+#Container loglarına bakmak için
+docker container logs deneme1
+
+#Container loglarını zaman damgalarıyla göstermek için
+docker container logs -t deneme1
+
+#Container loglarındaki son birkaç satırı görmek için
+docker container logs --tail 5 deneme1
+
+#Container loglarını canlı görmek için 
+docker container logs -f deneme1
+
+#Container&amp;#39;ın kaynaklarına bakmak için
+docker container top webserver
+docker container stats webserver
+docker stats 
+
+#Container&amp;#39;ları sınırlamadığımız sürece host makinedeki kaynakları sınırsız kullanabilir.
+Bu container&amp;#39;ların kaynaklarını kısıtlayabiliriz.
+#Container&amp;#39;ın memory kısıtlaması için
+docker container run -d --name deneme3 --memory=1G httpd
+docker container run -d --name deneme3 --memory=500K httpd
+
+#CPU kısıtlaması için iki yol vardır
+#Container sadece 1 core kullanabilecek random olarak
+docker run -d --name cpukisit --cpus=&amp;#34;1&amp;#34; httpd
+
+#Container 2 ve 8 nolu core&amp;#39;ları kullanabilecek
+docker container run -d --name cpukisit2 --cpuset-cpus=&amp;#34;2,8&amp;#34; httpd
+
+#Container&amp;#39;de swap belirlemek için
+docker run -d --name swap --memory-swap=1G httpd
+
+#Tüm containerları topluca silmek için
+docker container prune
+&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Docker/1.png" alt="docker">&lt;/p></description></item></channel></rss>

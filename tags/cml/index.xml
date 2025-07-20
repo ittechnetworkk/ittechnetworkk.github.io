@@ -1,20 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>CML on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/cml/</link>
-    <description>Recent content in CML on ittechnetworkk</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Fri, 03 Jan 2025 23:31:39 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/cml/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Cml Freetrial</title>
-      <link>http://localhost:1313/posts/ciscocmlfreetrial/cml-freetrial/</link>
-      <pubDate>Fri, 03 Jan 2025 23:31:39 +0100</pubDate>
-      <guid>http://localhost:1313/posts/ciscocmlfreetrial/cml-freetrial/</guid>
-      <description>&lt;p&gt;CiscoCMLFreeTrial&#xA;Merhabalar, bu yazımda Cml Freetrial konusunu anlatacağım.&lt;/p&gt;&#xA;&lt;p&gt;Ben Vmware Workstation Pro&amp;rsquo;ya kuracağım, aşağıdaki linkten ilgili kurulum dosyalarını indiriyorum.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://software.cisco.com/download/home/286193282/type/286326381/release/2.8.0%20Free%20Tier&#34;&gt;https://software.cisco.com/download/home/286193282/type/286326381/release/2.8.0%20Free%20Tier&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/CiscoCMLFreeTrial/1.png&#34; alt=&#34;cml&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Görseldeki en alt iki dosyayı indiriyorum&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;cml2_f_2.8.0-6_amd64-32.ova&lt;/li&gt;&#xA;&lt;li&gt;refplat-20241016-freetier-iso&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Kurulum adımları sırasıyla aşağıdaki gibi olacaktır.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;VMWare:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;File &amp;gt; Open &amp;gt; cml2_f_2.8.0-6_amd64-32.ova&lt;/p&gt;&#xA;&lt;p&gt;.ova uzantılı dosya import edildikten sonra bunu editliyoruz.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/CiscoCMLFreeTrial/2.png&#34; alt=&#34;cml&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Burada .iso uzantılı dosyanın yolunu belirtiyoruz.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/CiscoCMLFreeTrial/3.png&#34; alt=&#34;cml&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/CiscoCMLFreeTrial/4.png&#34; alt=&#34;cml&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Aşağıdaki kutucuğun işaretli olması gerekiyor.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/CiscoCMLFreeTrial/5.png&#34; alt=&#34;cml&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/CiscoCMLFreeTrial/6.png&#34; alt=&#34;cml&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/CiscoCMLFreeTrial/7.png&#34; alt=&#34;cml&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/CiscoCMLFreeTrial/8.png&#34; alt=&#34;cml&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/CiscoCMLFreeTrial/9.png&#34; alt=&#34;cml&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/CiscoCMLFreeTrial/10.png&#34; alt=&#34;cml&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/CiscoCMLFreeTrial/11.png&#34; alt=&#34;cml&#34;&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CML on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/cml/</link><description>Recent content in CML on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Fri, 03 Jan 2025 23:31:39 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/cml/index.xml" rel="self" type="application/rss+xml"/><item><title>Cml Freetrial</title><link>https://ittechnetworkk.github.io/posts/ciscocmlfreetrial/cml-freetrial/</link><pubDate>Fri, 03 Jan 2025 23:31:39 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ciscocmlfreetrial/cml-freetrial/</guid><description>&lt;p>CiscoCMLFreeTrial
+Merhabalar, bu yazımda Cml Freetrial konusunu anlatacağım.&lt;/p>
+&lt;p>Ben Vmware Workstation Pro&amp;rsquo;ya kuracağım, aşağıdaki linkten ilgili kurulum dosyalarını indiriyorum.&lt;/p>
+&lt;p>&lt;a href="https://software.cisco.com/download/home/286193282/type/286326381/release/2.8.0%20Free%20Tier">https://software.cisco.com/download/home/286193282/type/286326381/release/2.8.0%20Free%20Tier&lt;/a>&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/CiscoCMLFreeTrial/1.png" alt="cml">&lt;/p>
+&lt;p>Görseldeki en alt iki dosyayı indiriyorum&lt;/p>
+&lt;ul>
+&lt;li>cml2_f_2.8.0-6_amd64-32.ova&lt;/li>
+&lt;li>refplat-20241016-freetier-iso&lt;/li>
+&lt;/ul>
+&lt;p>Kurulum adımları sırasıyla aşağıdaki gibi olacaktır.&lt;/p>
+&lt;p>&lt;strong>VMWare:&lt;/strong>&lt;/p>
+&lt;p>File &amp;gt; Open &amp;gt; cml2_f_2.8.0-6_amd64-32.ova&lt;/p>
+&lt;p>.ova uzantılı dosya import edildikten sonra bunu editliyoruz.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/CiscoCMLFreeTrial/2.png" alt="cml">&lt;/p>
+&lt;p>Burada .iso uzantılı dosyanın yolunu belirtiyoruz.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/CiscoCMLFreeTrial/3.png" alt="cml">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/CiscoCMLFreeTrial/4.png" alt="cml">&lt;/p>
+&lt;p>Aşağıdaki kutucuğun işaretli olması gerekiyor.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/CiscoCMLFreeTrial/5.png" alt="cml">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/CiscoCMLFreeTrial/6.png" alt="cml">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/CiscoCMLFreeTrial/7.png" alt="cml">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/CiscoCMLFreeTrial/8.png" alt="cml">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/CiscoCMLFreeTrial/9.png" alt="cml">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/CiscoCMLFreeTrial/10.png" alt="cml">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/CiscoCMLFreeTrial/11.png" alt="cml">&lt;/p></description></item></channel></rss>

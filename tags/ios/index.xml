@@ -1,34 +1,98 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>IOS on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/ios/</link>
-    <description>Recent content in IOS on ittechnetworkk</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Fri, 21 Feb 2025 22:19:46 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/ios/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>[EN] GRE Over IPSEC LAB</title>
-      <link>http://localhost:1313/posts/greoveripsec-lab/gre-over-ipsec-lab/</link>
-      <pubDate>Fri, 21 Feb 2025 22:19:46 +0100</pubDate>
-      <guid>http://localhost:1313/posts/greoveripsec-lab/gre-over-ipsec-lab/</guid>
-      <description>&lt;p&gt;Hello everyone, in this LAB I will configure GRE over IPSec Tunnels with following topology.&lt;/p&gt;&#xA;&lt;p&gt;In this topology some configurations have been done. So networks can already reach with each other. I will just focus on GRE over IPSec Tunnels between the networks of Customer-A and Customer-B.&lt;/p&gt;&#xA;&lt;p&gt;GRE Subnet for Customer-A: 192.168.1.0/24&lt;/p&gt;&#xA;&lt;p&gt;GRE Subnet for Customer-B: 192.168.2.0/24&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/GREoverIPSEC-LAB/1.png&#34; alt=&#34;gre-over-ipsec-lab&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;R1:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#GRE CONFIGURATION&#xA;R1(config)#int tunnel 1&#xA;R1(config-if)#ip addr 192.168.1.10 255.255.255.0&#xA;R1(config-if)#tunnel source e0/1&#xA;R1(config-if)#tunnel destination 1.1.4.2 &#xA;R1(config-if)#exit&#xA;&#xA;&#xA;#IPSEC CONFIGURATION&#xA;R1(config)#crypto isakmp policy 100&#xA;R1(config-isakmp)#authentication pre-share &#xA;R1(config-isakmp)#encryption aes &#xA;R1(config-isakmp)#group 14&#xA;R1(config-isakmp)#hash sha&#xA;R1(config-isakmp)#exit&#xA;&#xA;R1(config)#crypto isakmp key ittechnetworkk address 1.1.4.2&#xA;&#xA;R1(config)#crypto ipsec transform-set XYZ esp-aes esp-sha-hmac &#xA;R1(cfg-crypto-trans)#mode transport &#xA;R1(cfg-crypto-trans)#exit&#xA;&#xA;R1(config)#ip access-list extended GRE-IPSEC&#xA;R1(config-ext-nacl)#permit gre host 1.1.1.2 host 1.1.4.2&#xA;R1(config-ext-nacl)#exit&#xA;&#xA;R1(config)#crypto map IPSEC 10 ipsec-isakmp &#xA;R1(config-crypto-map)#match address GRE-IPSEC&#xA;R1(config-crypto-map)#set peer 1.1.4.2&#xA;R1(config-crypto-map)#set transform-set XYZ&#xA;R1(config-crypto-map)#exit&#xA;&#xA;R1(config)#int e0/1&#xA;R1(config-if)#crypto map IPSEC&#xA;R1(config-if)#exit&#xA;&#xA;&#xA;#ROUTING&#xA;R1(config)#ip route 10.0.4.0 255.255.255.0 tunnel 1&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R10:&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[EN] GRE LAB</title>
-      <link>http://localhost:1313/posts/gre-lab/gre-lab/</link>
-      <pubDate>Fri, 21 Feb 2025 22:18:30 +0100</pubDate>
-      <guid>http://localhost:1313/posts/gre-lab/gre-lab/</guid>
-      <description>&lt;p&gt;Hello everyone, in this LAB I will configure GRE Tunnels.&lt;/p&gt;&#xA;&lt;p&gt;I will implement the following topology. In this topology some configurations have been done. So networks can already reach with each other. I will just focus on GRE Tunnels between the networks of Customer-A and Customer-B.&lt;/p&gt;&#xA;&lt;p&gt;I will use 192.168.1.0/24 subnet for Customer-A, 192.168.2.0/24 subnet for Customer-B.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/GRE-LAB/1.png&#34; alt=&#34;gre-lab&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;R1:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#TUNNEL CONFIGURATION&#xA;R1&amp;gt;en&#xA;R1#conf t&#xA;R1(config)#int tunnel 1&#xA;R1(config-if)#ip addr 192.168.1.10 255.255.255.0&#xA;R1(config-if)#tunnel source e0/1&#xA;R1(config-if)#tunnel destination 1.1.4.2 &#xA;R1(config-if)#exit&#xA;&#xA;#ROUTING&#xA;R1(config)#ip route 10.0.4.0 255.255.255.0 tunnel 1    &#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R10:&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>[EN] VRF-Lite Configuration</title>
-      <link>http://localhost:1313/posts/vrflitelab/vrf-lite/</link>
-      <pubDate>Fri, 21 Feb 2025 02:36:28 +0100</pubDate>
-      <guid>http://localhost:1313/posts/vrflitelab/vrf-lite/</guid>
-      <description>&lt;p&gt;Hello everyone, in this LAB I will configure GRE Tunnels with following topology.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/VRFLiteLAB/1.png&#34; alt=&#34;vrf-lite&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;R1:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#INTERFACE CONFIGURATION&#xA;R1&amp;gt;en&#xA;R1#conf t&#xA;R1(config)#int e0/0&#xA;R1(config-if)#ip addr 10.0.1.1 255.255.255.0&#xA;R1(config-if)#no sh&#xA;R1(config-if)#int e0/1&#xA;R1(config-if)#ip addr 1.1.1.2 255.255.255.252&#xA;R1(config-if)#no sh&#xA;R1(config-if)#exit&#xA;&#xA;#OSPF&#xA;R1(config)#router ospf 1&#xA;R1(config-router)#network 1.1.1.0 0.0.0.3 area 0&#xA;R1(config-router)#network 10.0.1.0 0.0.0.255 area 0&#xA;R1(config-router)#exit&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R2:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#INTERFACE CONFIGURATION&#xA;R2&amp;gt;en&#xA;R2#conf t&#xA;R2(config)#int e0/0&#xA;R2(config-if)#ip addr 10.0.2.1 255.255.255.0&#xA;R2(config-if)#no sh&#xA;R2(config-if)#int e0/2&#xA;R2(config-if)#ip addr 1.1.2.2 255.255.255.252&#xA;R2(config-if)#no sh&#xA;R2(config-if)#exit&#xA;&#xA;#OSPF&#xA;R2(config)#router ospf 1&#xA;R2(config-router)#network 10.0.2.0 0.0.0.255 area 0&#xA;R2(config-router)#network 1.1.2.0 0.0.0.3 area 0&#xA;R2(config-router)#exit&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R3:&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IOS on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/ios/</link><description>Recent content in IOS on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Fri, 21 Feb 2025 22:19:46 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/ios/index.xml" rel="self" type="application/rss+xml"/><item><title>[EN] GRE Over IPSEC LAB</title><link>https://ittechnetworkk.github.io/posts/greoveripsec-lab/gre-over-ipsec-lab/</link><pubDate>Fri, 21 Feb 2025 22:19:46 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/greoveripsec-lab/gre-over-ipsec-lab/</guid><description>&lt;p>Hello everyone, in this LAB I will configure GRE over IPSec Tunnels with following topology.&lt;/p>
+&lt;p>In this topology some configurations have been done. So networks can already reach with each other. I will just focus on GRE over IPSec Tunnels between the networks of Customer-A and Customer-B.&lt;/p>
+&lt;p>GRE Subnet for Customer-A: 192.168.1.0/24&lt;/p>
+&lt;p>GRE Subnet for Customer-B: 192.168.2.0/24&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/GREoverIPSEC-LAB/1.png" alt="gre-over-ipsec-lab">&lt;/p>
+&lt;p>&lt;strong>R1:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>#GRE CONFIGURATION
+R1(config)#int tunnel 1
+R1(config-if)#ip addr 192.168.1.10 255.255.255.0
+R1(config-if)#tunnel source e0/1
+R1(config-if)#tunnel destination 1.1.4.2 
+R1(config-if)#exit
+
+
+#IPSEC CONFIGURATION
+R1(config)#crypto isakmp policy 100
+R1(config-isakmp)#authentication pre-share 
+R1(config-isakmp)#encryption aes 
+R1(config-isakmp)#group 14
+R1(config-isakmp)#hash sha
+R1(config-isakmp)#exit
+
+R1(config)#crypto isakmp key ittechnetworkk address 1.1.4.2
+
+R1(config)#crypto ipsec transform-set XYZ esp-aes esp-sha-hmac 
+R1(cfg-crypto-trans)#mode transport 
+R1(cfg-crypto-trans)#exit
+
+R1(config)#ip access-list extended GRE-IPSEC
+R1(config-ext-nacl)#permit gre host 1.1.1.2 host 1.1.4.2
+R1(config-ext-nacl)#exit
+
+R1(config)#crypto map IPSEC 10 ipsec-isakmp 
+R1(config-crypto-map)#match address GRE-IPSEC
+R1(config-crypto-map)#set peer 1.1.4.2
+R1(config-crypto-map)#set transform-set XYZ
+R1(config-crypto-map)#exit
+
+R1(config)#int e0/1
+R1(config-if)#crypto map IPSEC
+R1(config-if)#exit
+
+
+#ROUTING
+R1(config)#ip route 10.0.4.0 255.255.255.0 tunnel 1
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>R10:&lt;/strong>&lt;/p></description></item><item><title>[EN] GRE LAB</title><link>https://ittechnetworkk.github.io/posts/gre-lab/gre-lab/</link><pubDate>Fri, 21 Feb 2025 22:18:30 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/gre-lab/gre-lab/</guid><description>&lt;p>Hello everyone, in this LAB I will configure GRE Tunnels.&lt;/p>
+&lt;p>I will implement the following topology. In this topology some configurations have been done. So networks can already reach with each other. I will just focus on GRE Tunnels between the networks of Customer-A and Customer-B.&lt;/p>
+&lt;p>I will use 192.168.1.0/24 subnet for Customer-A, 192.168.2.0/24 subnet for Customer-B.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/GRE-LAB/1.png" alt="gre-lab">&lt;/p>
+&lt;p>&lt;strong>R1:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>#TUNNEL CONFIGURATION
+R1&amp;gt;en
+R1#conf t
+R1(config)#int tunnel 1
+R1(config-if)#ip addr 192.168.1.10 255.255.255.0
+R1(config-if)#tunnel source e0/1
+R1(config-if)#tunnel destination 1.1.4.2 
+R1(config-if)#exit
+
+#ROUTING
+R1(config)#ip route 10.0.4.0 255.255.255.0 tunnel 1 
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>R10:&lt;/strong>&lt;/p></description></item><item><title>[EN] VRF-Lite Configuration</title><link>https://ittechnetworkk.github.io/posts/vrflitelab/vrf-lite/</link><pubDate>Fri, 21 Feb 2025 02:36:28 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/vrflitelab/vrf-lite/</guid><description>&lt;p>Hello everyone, in this LAB I will configure GRE Tunnels with following topology.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/VRFLiteLAB/1.png" alt="vrf-lite">&lt;/p>
+&lt;p>&lt;strong>R1:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>#INTERFACE CONFIGURATION
+R1&amp;gt;en
+R1#conf t
+R1(config)#int e0/0
+R1(config-if)#ip addr 10.0.1.1 255.255.255.0
+R1(config-if)#no sh
+R1(config-if)#int e0/1
+R1(config-if)#ip addr 1.1.1.2 255.255.255.252
+R1(config-if)#no sh
+R1(config-if)#exit
+
+#OSPF
+R1(config)#router ospf 1
+R1(config-router)#network 1.1.1.0 0.0.0.3 area 0
+R1(config-router)#network 10.0.1.0 0.0.0.255 area 0
+R1(config-router)#exit
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>R2:&lt;/strong>&lt;/p>
+&lt;pre tabindex="0">&lt;code>#INTERFACE CONFIGURATION
+R2&amp;gt;en
+R2#conf t
+R2(config)#int e0/0
+R2(config-if)#ip addr 10.0.2.1 255.255.255.0
+R2(config-if)#no sh
+R2(config-if)#int e0/2
+R2(config-if)#ip addr 1.1.2.2 255.255.255.252
+R2(config-if)#no sh
+R2(config-if)#exit
+
+#OSPF
+R2(config)#router ospf 1
+R2(config-router)#network 10.0.2.0 0.0.0.255 area 0
+R2(config-router)#network 1.1.2.0 0.0.0.3 area 0
+R2(config-router)#exit
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>R3:&lt;/strong>&lt;/p></description></item></channel></rss>

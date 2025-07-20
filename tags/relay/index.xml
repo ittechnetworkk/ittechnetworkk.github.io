@@ -1,20 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Relay on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/relay/</link>
-    <description>Recent content in Relay on ittechnetworkk</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Sun, 14 Jan 2024 23:43:35 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/relay/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>DHCP Relay Agent</title>
-      <link>http://localhost:1313/posts/dhcprelayagent/dhcp-relay-agent/</link>
-      <pubDate>Sun, 14 Jan 2024 23:43:35 +0100</pubDate>
-      <guid>http://localhost:1313/posts/dhcprelayagent/dhcp-relay-agent/</guid>
-      <description>&lt;p&gt;DHCP, cihazlara IP, DNS, Default Gateway dağıtan protokoldür. Bu protokol client-server mantığıyla çalışır. İstemci talep eder ve server hizmet verir. UDP çalışır ve 4 aşamada işlem tamamlanır.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/DHCPRelayAgent/8.png&#34; alt=&#34;dhcp&#34;&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Client, DHCP Discover paketini networke gönderir. Bunun anlamı &amp;ldquo;Bana IP verecek bir DHCP Server var mı?&amp;rdquo;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Server, DHCP Offer paketiyle karşılık verir ve der ki &amp;ldquo;Evet ben verebilirim&amp;rdquo;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Client, DHCP Request paketiyle IP adresi talep eder.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Server, DHCP Ack paketiyle ile cihaza IP adresi ataması yapar.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Relay on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/relay/</link><description>Recent content in Relay on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sun, 14 Jan 2024 23:43:35 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/relay/index.xml" rel="self" type="application/rss+xml"/><item><title>DHCP Relay Agent</title><link>https://ittechnetworkk.github.io/posts/dhcprelayagent/dhcp-relay-agent/</link><pubDate>Sun, 14 Jan 2024 23:43:35 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dhcprelayagent/dhcp-relay-agent/</guid><description>&lt;p>DHCP, cihazlara IP, DNS, Default Gateway dağıtan protokoldür. Bu protokol client-server mantığıyla çalışır. İstemci talep eder ve server hizmet verir. UDP çalışır ve 4 aşamada işlem tamamlanır.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/DHCPRelayAgent/8.png" alt="dhcp">&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Client, DHCP Discover paketini networke gönderir. Bunun anlamı &amp;ldquo;Bana IP verecek bir DHCP Server var mı?&amp;rdquo;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Server, DHCP Offer paketiyle karşılık verir ve der ki &amp;ldquo;Evet ben verebilirim&amp;rdquo;.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Client, DHCP Request paketiyle IP adresi talep eder.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Server, DHCP Ack paketiyle ile cihaza IP adresi ataması yapar.&lt;/p></description></item></channel></rss>
