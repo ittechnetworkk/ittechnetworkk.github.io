@@ -148,6 +148,22 @@
     --card-icon-color: #2bbc8a;
 }
 
+.card-soc {
+    --card-bg-from: #2d2d2d;
+    --card-bg-to: #1a1a1a;
+    --card-border: #444;
+    --card-hover-border: #2bbc8a;
+    --card-icon-color: #2bbc8a;
+}
+
+.card-monitoring {
+    --card-bg-from: #2d2d2d;
+    --card-bg-to: #1a1a1a;
+    --card-border: #444;
+    --card-hover-border: #2bbc8a;
+    --card-icon-color: #2bbc8a;
+}
+
 /* Default card for uncategorized */
 .card-default {
     --card-bg-from: #2d2d2d;
