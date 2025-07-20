@@ -63,7 +63,21 @@ Router#wr
  &amp;lt;local_ip&amp;gt;10.1.8.10&amp;lt;/local_ip&amp;gt; # Wazuh Server IP
 &amp;lt;/remote&amp;gt;
 &lt;/code>&lt;/pre>&lt;h2 id="alternative-port-configuration">&lt;strong>Alternative Port Configuration:&lt;/strong>&lt;/h2>
-&lt;p>If you want to use a different port (e.g., 1514 for TCP or 10514 for custom UDP), modify the configuration:&lt;/p></description></item><item><title>ESP32-NTP Server Project</title><link>https://ittechnetworkk.github.io/posts/esp32/esp32-ntp/</link><pubDate>Sat, 07 Jun 2025 06:50:06 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/esp32/esp32-ntp/</guid><description>&lt;p>ESP32-NTP Server Project&lt;/p>
+&lt;p>If you want to use a different port (e.g., 1514 for TCP or 10514 for custom UDP), modify the configuration:&lt;/p></description></item><item><title>Cacti Installation</title><link>https://ittechnetworkk.github.io/posts/cacti/cacti-install/</link><pubDate>Sat, 19 Jul 2025 14:37:10 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/cacti/cacti-install/</guid><description>&lt;p>Merhabalar, bu yazımda Cacti Monitoring yazılımını Rasperry pi Zero&amp;rsquo;ya kurulumunu göstereceğim.&lt;/p>
+&lt;p>&lt;a href="https://github.com/Cacti/cacti">Cacti&lt;/a>, açık kaynak kodlu bir network monitoring yazılımıdır.&lt;/p>
+&lt;p>Ben Raspberry Pi Zero&amp;rsquo;ya kuracağım,&lt;/p>
+&lt;p>Başlayalım.&lt;/p>
+&lt;p>Kullandığım donanım ve yazılımlar:&lt;/p>
+&lt;ul>
+&lt;li>Raspberry Pi Zero 2W,&lt;/li>
+&lt;li>SD Kart,&lt;/li>
+&lt;li>Kart Okuyucu,&lt;/li>
+&lt;li>Raspberry Pi Güç Kablosu,&lt;/li>
+&lt;li>ImagerPi&lt;/li>
+&lt;/ul>
+&lt;p>İlk olarak ImagerPi kullanarak SD Kart&amp;rsquo;a Raspbian işletim sistemini kuruyorum.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Cacti/1.png" alt="cacti">&lt;/p>
+&lt;p>Yazdırma işlemi bittikten sonra, SD Kart&amp;rsquo;ı cihaza takıp güç kablosunu modemin usb portuna bağlıyorum (güncellemeleri ve kurulumları daha hızlı yapabilmek için).&lt;/p></description></item><item><title>ESP32-NTP Server Project</title><link>https://ittechnetworkk.github.io/posts/esp32/esp32-ntp/</link><pubDate>Sat, 07 Jun 2025 06:50:06 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/esp32/esp32-ntp/</guid><description>&lt;p>ESP32-NTP Server Project&lt;/p>
 &lt;p>&lt;a href="https://github.com/ssnrshnn/ESP32-NTP">https://github.com/ssnrshnn/ESP32-NTP&lt;/a>&lt;/p>
 &lt;p>&lt;strong>Photos:&lt;/strong>&lt;/p>
 &lt;p>&lt;img src="https://ittechnetworkk.github.io/images/esp32/1.jpg" alt="esp32">&lt;/p>

@@ -1,20 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Monitoring on ittechnetworkk</title>
-    <link>http://localhost:1313/tags/monitoring/</link>
-    <description>Recent content in Monitoring on ittechnetworkk</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <copyright>ittechnetworkk</copyright>
-    <lastBuildDate>Sat, 19 Jul 2025 14:37:10 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/monitoring/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Cacti Installation</title>
-      <link>http://localhost:1313/posts/cacti/cacti-install/</link>
-      <pubDate>Sat, 19 Jul 2025 14:37:10 +0200</pubDate>
-      <guid>http://localhost:1313/posts/cacti/cacti-install/</guid>
-      <description>&lt;p&gt;Merhabalar, bu yazımda Cacti Monitoring yazılımını Rasperry pi Zero&amp;rsquo;ya kurulumunu göstereceğim.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/Cacti/cacti&#34;&gt;Cacti&lt;/a&gt;, açık kaynak kodlu bir network monitoring yazılımıdır.&lt;/p&gt;&#xA;&lt;p&gt;Ben Raspberry Pi Zero&amp;rsquo;ya kuracağım,&lt;/p&gt;&#xA;&lt;p&gt;Başlayalım.&lt;/p&gt;&#xA;&lt;p&gt;Kullandığım donanım ve yazılımlar:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Raspberry Pi Zero 2W,&lt;/li&gt;&#xA;&lt;li&gt;SD Kart,&lt;/li&gt;&#xA;&lt;li&gt;Kart Okuyucu,&lt;/li&gt;&#xA;&lt;li&gt;Raspberry Pi Güç Kablosu,&lt;/li&gt;&#xA;&lt;li&gt;ImagerPi&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;İlk olarak ImagerPi kullanarak SD Kart&amp;rsquo;a Raspbian işletim sistemini kuruyorum.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/Cacti/1.png&#34; alt=&#34;cacti&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Yazdırma işlemi bittikten sonra, SD Kart&amp;rsquo;ı cihaza takıp güç kablosunu modemin usb portuna bağlıyorum (güncellemeleri ve kurulumları daha hızlı yapabilmek için).&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Monitoring on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/monitoring/</link><description>Recent content in Monitoring on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sat, 19 Jul 2025 14:37:10 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/monitoring/index.xml" rel="self" type="application/rss+xml"/><item><title>Cacti Installation</title><link>https://ittechnetworkk.github.io/posts/cacti/cacti-install/</link><pubDate>Sat, 19 Jul 2025 14:37:10 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/cacti/cacti-install/</guid><description>&lt;p>Merhabalar, bu yazımda Cacti Monitoring yazılımını Rasperry pi Zero&amp;rsquo;ya kurulumunu göstereceğim.&lt;/p>
+&lt;p>&lt;a href="https://github.com/Cacti/cacti">Cacti&lt;/a>, açık kaynak kodlu bir network monitoring yazılımıdır.&lt;/p>
+&lt;p>Ben Raspberry Pi Zero&amp;rsquo;ya kuracağım,&lt;/p>
+&lt;p>Başlayalım.&lt;/p>
+&lt;p>Kullandığım donanım ve yazılımlar:&lt;/p>
+&lt;ul>
+&lt;li>Raspberry Pi Zero 2W,&lt;/li>
+&lt;li>SD Kart,&lt;/li>
+&lt;li>Kart Okuyucu,&lt;/li>
+&lt;li>Raspberry Pi Güç Kablosu,&lt;/li>
+&lt;li>ImagerPi&lt;/li>
+&lt;/ul>
+&lt;p>İlk olarak ImagerPi kullanarak SD Kart&amp;rsquo;a Raspbian işletim sistemini kuruyorum.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Cacti/1.png" alt="cacti">&lt;/p>
+&lt;p>Yazdırma işlemi bittikten sonra, SD Kart&amp;rsquo;ı cihaza takıp güç kablosunu modemin usb portuna bağlıyorum (güncellemeleri ve kurulumları daha hızlı yapabilmek için).&lt;/p></description></item></channel></rss>

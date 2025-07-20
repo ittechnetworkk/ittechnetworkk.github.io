@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/linux/</link><description>Recent content in Linux on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sat, 08 Feb 2025 21:46:11 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Docker Notlarım</title><link>https://ittechnetworkk.github.io/posts/dockernotlarim/docker-notlarim/</link><pubDate>Sat, 08 Feb 2025 21:46:11 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dockernotlarim/docker-notlarim/</guid><description>&lt;p>Docker&amp;rsquo;a giriş notlarım. Bu notlar Özgür Öztürk&amp;rsquo;ün Docker Eğitiminden aldığım notlarımdır.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/linux/</link><description>Recent content in Linux on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sat, 19 Jul 2025 14:37:10 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>Cacti Installation</title><link>https://ittechnetworkk.github.io/posts/cacti/cacti-install/</link><pubDate>Sat, 19 Jul 2025 14:37:10 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/cacti/cacti-install/</guid><description>&lt;p>Merhabalar, bu yazımda Cacti Monitoring yazılımını Rasperry pi Zero&amp;rsquo;ya kurulumunu göstereceğim.&lt;/p>
+&lt;p>&lt;a href="https://github.com/Cacti/cacti">Cacti&lt;/a>, açık kaynak kodlu bir network monitoring yazılımıdır.&lt;/p>
+&lt;p>Ben Raspberry Pi Zero&amp;rsquo;ya kuracağım,&lt;/p>
+&lt;p>Başlayalım.&lt;/p>
+&lt;p>Kullandığım donanım ve yazılımlar:&lt;/p>
+&lt;ul>
+&lt;li>Raspberry Pi Zero 2W,&lt;/li>
+&lt;li>SD Kart,&lt;/li>
+&lt;li>Kart Okuyucu,&lt;/li>
+&lt;li>Raspberry Pi Güç Kablosu,&lt;/li>
+&lt;li>ImagerPi&lt;/li>
+&lt;/ul>
+&lt;p>İlk olarak ImagerPi kullanarak SD Kart&amp;rsquo;a Raspbian işletim sistemini kuruyorum.&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Cacti/1.png" alt="cacti">&lt;/p>
+&lt;p>Yazdırma işlemi bittikten sonra, SD Kart&amp;rsquo;ı cihaza takıp güç kablosunu modemin usb portuna bağlıyorum (güncellemeleri ve kurulumları daha hızlı yapabilmek için).&lt;/p></description></item><item><title>Docker Notlarım</title><link>https://ittechnetworkk.github.io/posts/dockernotlarim/docker-notlarim/</link><pubDate>Sat, 08 Feb 2025 21:46:11 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dockernotlarim/docker-notlarim/</guid><description>&lt;p>Docker&amp;rsquo;a giriş notlarım. Bu notlar Özgür Öztürk&amp;rsquo;ün Docker Eğitiminden aldığım notlarımdır.&lt;/p>
 &lt;pre tabindex="0">&lt;code>#Container oluşturulduktan sonra date uygulaması çalıştırılacak. Container başka bir uygulama ile başlatılacak.
 docker container run --name deneme httpd date
 
