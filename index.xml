@@ -3609,10 +3609,10 @@ DHCP Snooping&amp;rsquo;in yaptığı ise belirli bir port veya portlar üzerind
 &lt;li>RIPv2 Multicast(224.0.0.9) yayın yapar, subnet bilgisini gönderir, kimlik doğrulama desteği vardır.&lt;/li>
 &lt;/ul>
 &lt;p>&lt;strong>RIPv2 Konfigürasyonu:&lt;/strong>
-Aşağıdaki örnek topolojiyi uygulayalım.&lt;/p></description></item><item><title>Projects</title><link>https://ittechnetworkk.github.io/projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ittechnetworkk.github.io/projects/</guid><description>&lt;h3 id="security-operation-center-setuphttpswindows-process-treevercelapp">&lt;a href="https://windows-process-tree.vercel.app/">Security Operation Center Setup&lt;/a>&lt;/h3>
+Aşağıdaki örnek topolojiyi uygulayalım.&lt;/p></description></item><item><title>Projects</title><link>https://ittechnetworkk.github.io/projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ittechnetworkk.github.io/projects/</guid><description>&lt;h3 id="security-operation-center-setuphttpsittechnetworkkgithubiopostssecurityoperationcenterinstallationsecurity-operation-center-installation">&lt;a href="https://ittechnetworkk.github.io/posts/securityoperationcenterinstallation/security-operation-center-installation/">Security Operation Center Setup&lt;/a>&lt;/h3>
 &lt;p>A comprehensive web-based reference tool for analyzing Windows process trees, including legitimate usage patterns, suspicious indicators, and associated MITRE ATT&amp;amp;CK techniques.&lt;/p>
-&lt;p>&lt;a href="https://windows-process-tree.vercel.app/">View Project Details →&lt;/a>&lt;/p>
-&lt;h3 id="security-operation-centerhttpswindows-process-treevercelapp">&lt;a href="https://windows-process-tree.vercel.app/">Security Operation Center&lt;/a>&lt;/h3>
+&lt;p>&lt;a href="https://ittechnetworkk.github.io/posts/securityoperationcenterinstallation/security-operation-center-installation/">View Project Details →&lt;/a>&lt;/p>
+&lt;h3 id="windows-process-tree-referencehttpswindows-process-treevercelapp">&lt;a href="https://windows-process-tree.vercel.app/">Windows Process Tree Reference&lt;/a>&lt;/h3>
 &lt;p>A comprehensive web-based reference tool for analyzing Windows process trees, including legitimate usage patterns, suspicious indicators, and associated MITRE ATT&amp;amp;CK techniques.&lt;/p>
 &lt;p>&lt;a href="https://windows-process-tree.vercel.app/">View Project Details →&lt;/a>&lt;/p>
 &lt;h3 id="windows-eventid-lookuphttpseventlookupvercelapp">&lt;a href="https://eventlookup.vercel.app/">Windows EventID Lookup&lt;/a>&lt;/h3>
