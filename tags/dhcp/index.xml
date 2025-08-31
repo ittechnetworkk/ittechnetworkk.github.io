@@ -1,4 +1,34 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dhcp on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/dhcp/</link><description>Recent content in Dhcp on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Thu, 23 Jan 2025 01:06:35 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/dhcp/index.xml" rel="self" type="application/rss+xml"/><item><title>[EN] DHCP Server Configuration</title><link>https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/</link><pubDate>Thu, 23 Jan 2025 01:06:35 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/</guid><description>&lt;p>Hello there!&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dhcp on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/dhcp/</link><description>Recent content in Dhcp on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sun, 31 Aug 2025 03:37:10 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/dhcp/index.xml" rel="self" type="application/rss+xml"/><item><title>[EN] DHCP Server Installation On Windows Server 2022</title><link>https://ittechnetworkk.github.io/posts/windowsserver2022dhcpserverinstallation/windowsserver2022dhcpinstallation/</link><pubDate>Sun, 31 Aug 2025 03:37:10 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/windowsserver2022dhcpserverinstallation/windowsserver2022dhcpinstallation/</guid><description>&lt;p>Hi everyone,&lt;/p>
+&lt;p>In this article, I will walk you through how to install DHCP Server Role in Windows Server.&lt;/p>
+&lt;p>Steps will be as follows&lt;/p>
+&lt;h2 id="1---install-dhcp-server-role">&lt;strong>1 - Install DHCP Server Role&lt;/strong>&lt;/h2>
+&lt;p>Server Manager &amp;gt; Add roles and features&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/1.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/2.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/3.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/4.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/5.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/6.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/7.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/8.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/9.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/10.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/11.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/12.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/13.png" alt="WinDHCP">&lt;/p>
+&lt;h2 id="2---configure-dhcp-server">&lt;strong>2 - Configure DHCP Server&lt;/strong>&lt;/h2>
+&lt;p>Server Manager &amp;gt; DHCP&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/14.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/15.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/16.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/17.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/18.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/19.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/20.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/21.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/22.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/23.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/24.png" alt="WinDHCP">&lt;/p></description></item><item><title>[EN] DHCP Server Configuration</title><link>https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/</link><pubDate>Thu, 23 Jan 2025 01:06:35 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/</guid><description>&lt;p>Hello there!&lt;/p>
 &lt;p>In this article, I’m going to show you how to install and configure a DHCP server.&lt;/p>
 &lt;p>I’m going to install the DHCP server role on an Ubuntu server. However, the process is almost the same for all distributions.&lt;/p>
 &lt;p>We need to install the &lt;code>isc-dhcp-server&lt;/code> package for DHCP role.&lt;/p>

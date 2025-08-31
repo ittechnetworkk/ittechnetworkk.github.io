@@ -1,4 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Windows on ittechnetworkk</title><link>https://ittechnetworkk.github.io/categories/windows/</link><description>Recent content in Windows on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sun, 17 Aug 2025 15:38:38 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/categories/windows/index.xml" rel="self" type="application/rss+xml"/><item><title>[EN] Security Operation Center Setup</title><link>https://ittechnetworkk.github.io/posts/securityoperationcenterinstallation/security-operation-center-installation/</link><pubDate>Sun, 17 Aug 2025 15:38:38 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/securityoperationcenterinstallation/security-operation-center-installation/</guid><description>&lt;p>Hi everyone! In this article, I will take you through my Security Operation Center environment on Hetzner, which is a German company that provides web hosting services and data centers.&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Windows on ittechnetworkk</title><link>https://ittechnetworkk.github.io/categories/windows/</link><description>Recent content in Windows on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sun, 31 Aug 2025 04:04:25 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/categories/windows/index.xml" rel="self" type="application/rss+xml"/><item><title>[EN] Windows Logon Types</title><link>https://ittechnetworkk.github.io/posts/windowslogontypes/windowslogontypes/</link><pubDate>Sun, 31 Aug 2025 04:04:25 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/windowslogontypes/windowslogontypes/</guid><description>&lt;p>Hi everyone,&lt;/p>
+&lt;p>In this article, I will walk you through Windows Logon Types.&lt;/p>
+&lt;p>Windows operating systems support multiple logon types, each designed for specific authentication scenarios. Understanding these logon types is crucial for system administrators, security professionals, and anyone managing Windows environments.&lt;/p>
+&lt;p>Below is a concise overview of the main logon types, along with real-world examples for each.&lt;/p>
+&lt;h2 id="1-interactive-logon-type-2">1. Interactive Logon (Type 2)&lt;/h2>
+&lt;p>&lt;strong>Description:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Occurs when a user logs on to a computer locally (e.g., at the console or via Remote Desktop).&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>Scenario:&lt;/strong>&lt;/p></description></item><item><title>[EN] DHCP Server Installation On Windows Server 2022</title><link>https://ittechnetworkk.github.io/posts/windowsserver2022dhcpserverinstallation/windowsserver2022dhcpinstallation/</link><pubDate>Sun, 31 Aug 2025 03:37:10 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/windowsserver2022dhcpserverinstallation/windowsserver2022dhcpinstallation/</guid><description>&lt;p>Hi everyone,&lt;/p>
+&lt;p>In this article, I will walk you through how to install DHCP Server Role in Windows Server.&lt;/p>
+&lt;p>Steps will be as follows&lt;/p>
+&lt;h2 id="1---install-dhcp-server-role">&lt;strong>1 - Install DHCP Server Role&lt;/strong>&lt;/h2>
+&lt;p>Server Manager &amp;gt; Add roles and features&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/1.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/2.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/3.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/4.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/5.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/6.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/7.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/8.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/9.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/10.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/11.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/12.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/13.png" alt="WinDHCP">&lt;/p>
+&lt;h2 id="2---configure-dhcp-server">&lt;strong>2 - Configure DHCP Server&lt;/strong>&lt;/h2>
+&lt;p>Server Manager &amp;gt; DHCP&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/14.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/15.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/16.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/17.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/18.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/19.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/20.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/21.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/22.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/23.png" alt="WinDHCP">&lt;/p>
+&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/24.png" alt="WinDHCP">&lt;/p></description></item><item><title>[EN] Security Operation Center Setup</title><link>https://ittechnetworkk.github.io/posts/securityoperationcenterinstallation/security-operation-center-installation/</link><pubDate>Sun, 17 Aug 2025 15:38:38 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/securityoperationcenterinstallation/security-operation-center-installation/</guid><description>&lt;p>Hi everyone! In this article, I will take you through my Security Operation Center environment on Hetzner, which is a German company that provides web hosting services and data centers.&lt;/p>
 &lt;p>I want to start by sharing my excitement with you.&lt;/p>
 &lt;p>I have been interested in IT for some time and have built several lab environments, ranging from small to large. After gaining experience, I wanted to build my own SOC environment to gain more real-life experience.&lt;/p></description></item><item><title>[EN] Wazuh Sysmon Integration</title><link>https://ittechnetworkk.github.io/posts/wazuhsysmonintegration/wazuh-sysmon-integration/</link><pubDate>Tue, 12 Aug 2025 00:33:51 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/wazuhsysmonintegration/wazuh-sysmon-integration/</guid><description>&lt;p>Hi everyone, in this article I will guide you how to integrate Sysmon and Wazuh SIEM tool.&lt;/p>
 &lt;p>Sysmon is a tool that allows us to collect and analyse logs easier in a center. Sysmon has also some other benefits that makes our investigations easier.&lt;/p>
