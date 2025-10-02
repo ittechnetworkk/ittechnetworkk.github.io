@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mitre on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/mitre/</link><description>Recent content in Mitre on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Thu, 02 Oct 2025 16:32:09 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/mitre/index.xml" rel="self" type="application/rss+xml"/><item><title>[EN] Caldera Lateral Movement-Certutil Adversary Emulation</title><link>https://ittechnetworkk.github.io/posts/caldera_lateralmovementcertutil_attack_scenario/lateralmovementcertutil/</link><pubDate>Thu, 02 Oct 2025 16:32:09 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/caldera_lateralmovementcertutil_attack_scenario/lateralmovementcertutil/</guid><description>&lt;p>Hi everyone, in this article I will perform an attack scenario using Caldera and show you its effects on victim machines using LimaCharlie as EDR.&lt;/p>
+&lt;p>I will use an adversary template called &lt;strong>Lateral Movement - Certutil&lt;/strong> in Caldera which consists of three steps shown below.&lt;/p>
+&lt;p>&lt;strong>Step 1:&lt;/strong> Local FQDN&lt;/p>
+&lt;pre tabindex="0">&lt;code>Description: Uses Windows libraries to get the FQDN of the infected host
+Tactic: Discovery
+Technique Name: Host Discovery
+Technique ID: TA0007
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>Command:&lt;/strong>&lt;/p></description></item></channel></rss>
