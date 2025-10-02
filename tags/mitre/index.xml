@@ -5,4 +5,6 @@
 Tactic: Discovery
 Technique Name: Host Discovery
 Technique ID: TA0007
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>Command:&lt;/strong>&lt;/p></description></item></channel></rss>
+&lt;/code>&lt;/pre>&lt;p>&lt;strong>Command:&lt;/strong>&lt;/p></description></item><item><title>[EN] Caldera Alice 2.0 Adversary Emulation</title><link>https://ittechnetworkk.github.io/posts/caldera_alice2.0_attack_scenario/calderaalice2.0/</link><pubDate>Tue, 30 Sep 2025 19:28:28 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/caldera_alice2.0_attack_scenario/calderaalice2.0/</guid><description>&lt;p>Hi everyone, In this article I will perform an attack scenario using Caldera and will show its effects in Wazuh (SIEM/XDR) and LimaCharlie (EDR).&lt;/p>
+&lt;p>LimaCharlie can integrate with the Atomic Red Team extension, which I will use in Caldera to perform the attack. Therefore, you don&amp;rsquo;t need to install Atomic Red Team separately.&lt;/p>
+&lt;p>In my lab environment for this attack scenario, I have a Client1 machine and an AD-DC machine, and I have already installed Caldera agents on both.&lt;/p></description></item></channel></rss>
