@@ -3007,8 +3007,11 @@ R1(config-if)#exit
 &lt;/div></description></item><item><title>Library</title><link>https://ittechnetworkk.github.io/library/</link><pubDate>Wed, 03 Apr 2024 00:00:00 +0000</pubDate><guid>https://ittechnetworkk.github.io/library/</guid><description>&lt;h2 id="-my-personal-library">📚 My Personal Library&lt;/h2>
 &lt;p>Welcome to my personal library collection! Here you&amp;rsquo;ll find a curated list of movies, TV series, and books that I&amp;rsquo;ve enjoyed or plan to enjoy in the future.&lt;/p>
 &lt;h1 id="-movies">🎬 Movies&lt;/h1>
-&lt;h3 id="watched-187">Watched (187)&lt;/h3>
+&lt;h3 id="watched-190">Watched (190)&lt;/h3>
 &lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Play Dirty (2025)&lt;/strong> - Action/Thriller&lt;/p>
+&lt;/li>
 &lt;li>
 &lt;p>&lt;strong>F1 (2025)&lt;/strong> - Action/Sport&lt;/p>
 &lt;/li>
@@ -3025,10 +3028,7 @@ R1(config-if)#exit
 &lt;p>&lt;strong>Road House (2024)&lt;/strong> - Action/Thriller&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;strong>Sixty Minutes (2024)&lt;/strong> - Action/Sport&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;strong>İllegal Hayatlar: Meclis (2024)&lt;/strong> - Comedy&lt;/p></description></item><item><title>OSPF Authentication</title><link>https://ittechnetworkk.github.io/posts/ospfauthentication/ospf-authentication/</link><pubDate>Sun, 31 Mar 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ospfauthentication/ospf-authentication/</guid><description>&lt;p>OSPF Authentication, OSPF network trafiğinin güvenliğini artırmak amacıyla kullanılır.
+&lt;p>&lt;strong>Sixty Minutes (2024)&lt;/strong> - Action/Sport&lt;/p></description></item><item><title>OSPF Authentication</title><link>https://ittechnetworkk.github.io/posts/ospfauthentication/ospf-authentication/</link><pubDate>Sun, 31 Mar 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ospfauthentication/ospf-authentication/</guid><description>&lt;p>OSPF Authentication, OSPF network trafiğinin güvenliğini artırmak amacıyla kullanılır.
 3 Çeşit doğrulama yöntemi vardır;&lt;/p>
 &lt;p>1- Plain Text Authentication,&lt;/p>
 &lt;p>2- MD5 Authentication,&lt;/p>
