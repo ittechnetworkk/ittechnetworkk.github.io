@@ -1,7 +1,217 @@
-<!doctype html><html lang=en-us><head><link rel=preload href=/lib/font-awesome/webfonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/lib/font-awesome/webfonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/lib/font-awesome/webfonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin=anonymous><link rel=preload href=/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2 as=font type=font/woff2 crossorigin=anonymous><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>Subnet Calculator | ittechnetworkk</title><link rel=canonical href=https://ittechnetworkk.github.io/subnet-calculator/><meta name=description content="Hi, I'm Soner, and this is my personal blog where I share insights, guides, and articles on various tech topics, including Networking, Linux, Windows, Virtualization, Firewalls, IoT, and more. I'm constantly learning and exploring new technologies, and this blog is where I document my journey. "><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name=robots content="all,follow"><meta name=googlebot content="index,follow,snippet,archive"><meta property="og:url" content="https://ittechnetworkk.github.io/subnet-calculator/"><meta property="og:site_name" content="ittechnetworkk"><meta property="og:title" content="Subnet Calculator"><meta property="og:description" content="Advanced IPv4 and IPv6 subnet calculator with comprehensive network information"><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:published_time" content="2024-02-27T00:00:00+00:00"><meta property="article:modified_time" content="2024-02-27T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Subnet Calculator"><meta name=twitter:description content="Advanced IPv4 and IPv6 subnet calculator with comprehensive network information"><link rel=stylesheet href=https://ittechnetworkk.github.io/css/styles.bdd621ce0dc4beed42cba9d295fbb7a846b8870c3fda65b870471926d718c2543ebb5d8d248ba9a5554cba6ec2e05b0dc829190fd4e4fef576beaa4c3f244abe.css integrity="sha512-vdYhzg3Evu1Cy6nSlfu3qEa4hww/2mW4cEcZJtcYwlQ+u12NJIuppVVMum7C4FsNyCkZD9Tk/vV2vqpMPyRKvg=="><link rel=stylesheet href=https://ittechnetworkk.github.io/css/custom.css><link rel=stylesheet href=https://ittechnetworkk.github.io/css/lightbox.css><link rel=stylesheet href=https://ittechnetworkk.github.io/css/tools.css><link rel=stylesheet href=https://ittechnetworkk.github.io/css/tools-cards.css><link rel=stylesheet href=https://ittechnetworkk.github.io/css/post-cards.css><link rel=stylesheet href=https://ittechnetworkk.github.io/css/posts-cards.css><!--[if lt IE 9]><script src=https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js></script><script src=https://oss.maxcdn.com/respond/1.4.2/respond.min.js></script><![endif]--><link rel=icon type=image/png href=https://ittechnetworkk.github.io/images/favicon.ico></head><body class="max-width mx-auto px3 ltr"><div class="content index py4"><link rel=stylesheet href=/css/custom.min.08723c608d61ffd5e055a58e9e73ac558e1273a64221321a91fdfc38a02f4b10.css><header id=header><a href=https://ittechnetworkk.github.io/><div id=logo class=font-awesome-logo><i class="fas fa-medal fa-4x" aria-hidden=true style=color:#2bbc8a></i></div><div id=title><h1>ittechnetworkk</h1></div></a><div id=nav class=nav-container><ul><li class=icon><a href=# aria-label=Menu><i class="fas fa-bars fa-2x" aria-hidden=true></i></a></li><li><a href=/>Home</a></li><li><a href=/posts>Posts</a></li><li><a href=/walkthroughs>Walkthroughs</a></li><li><a href=/projects>Projects</a></li><li class=has-dropdown><a href=/tools/>Tools</a><div class=nav-dropdown><a href=/what-is-my-ip>What is my IP?</a>
-<a href=/subnet-calculator>Subnet Calculator</a>
-<a href=/cisco-ios-config>Cisco IOS Config Generator</a>
-<a href=/junos-config>Junos Config Generator</a></div></li><li><a href=/resources>Resources</a></li><li><a href=/library>Library</a></li><li><a href=/about>About</a></li></ul></div></header><article class=post itemscope itemtype=http://schema.org/BlogPosting><div class=content itemprop=articleBody><link rel=stylesheet href=/css/subnet-calculator.min.c829ca238b0afafd30eb43aa97b444de8f354b007bd7c152ed91dff2e2907d3f.css><script src=/js/subnet-calculator.min.0285b0b8939f2f0bc59e6e762964be4c08253c742bd8bd0819d35c56a71afcfc.js></script><div class=tool-card><h1 class=tool-title>Advanced Subnet Calculator</h1><p class=tool-description>Calculate comprehensive subnet information including network address, broadcast address, usable IP range, and more. Supports both IPv4 and IPv6.</p><div class=subnet-calculator><div class=input-group><label for=ip>IP Address (IPv4 or IPv6):</label>
-<input type=text id=ip placeholder="e.g., 192.168.1.0 or 2001:db8::"></div><div class=input-group><label for=cidr>CIDR Notation:</label>
-<input type=number id=cidr min=0 max=128 placeholder="e.g., 24 for IPv4, 64 for IPv6"></div><div class=input-group><label for=numSubnets>Number of Subnets (optional):</label>
-<input type=number id=numSubnets min=0 max=256 placeholder="Leave empty for no subdivision"></div><button class=calculate-button onclick=calculateSubnet()>Calculate</button><div id=result></div></div><div class=features-list><h3>Features</h3><ul><li>IPv4 and IPv6 support</li><li>Binary representation of addresses</li><li>Network & Broadcast address calculation</li><li>Usable IP range determination</li><li>Wildcard mask calculation</li><li>IP address classification</li><li>Multiple subnet division calculator</li><li>VLSM support</li></ul></div></div></div></article><footer id=footer><div class=footer-left>Copyright &copy; 2025 ittechnetworkk</div><div class=footer-right><nav><ul><li><a href=/>Home</a></li><li><a href=/posts>Posts</a></li><li><a href=/walkthroughs>Walkthroughs</a></li><li><a href=/projects>Projects</a></li><li><a href=/tools/>Tools</a></li><li><a href=/resources>Resources</a></li><li><a href=/library>Library</a></li><li><a href=/about>About</a></li></ul></nav></div></footer></div></body><link rel=stylesheet href=/lib/font-awesome/css/all.min.css><script src=/lib/jquery/jquery.min.js></script><script src=/js/main.js></script><script src=/js/lightbox.js></script></html>
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/font-awesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/lib/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Subnet Calculator | ittechnetworkk</title>
+  <link rel = 'canonical' href = 'http://localhost:1313/subnet-calculator/'>
+  <meta name="description" content="Hi, I&#39;m Soner, and this is my personal blog where I share insights, guides, and articles on various tech topics, including Networking, Linux, Windows, Virtualization, Firewalls, IoT, and more. I&#39;m constantly learning and exploring new technologies, and this blog is where I document my journey. ">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:url" content="http://localhost:1313/subnet-calculator/">
+  <meta property="og:site_name" content="ittechnetworkk">
+  <meta property="og:title" content="Subnet Calculator">
+  <meta property="og:description" content="Advanced IPv4 and IPv6 subnet calculator with comprehensive network information">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2024-02-27T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-02-27T00:00:00+00:00">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Subnet Calculator">
+  <meta name="twitter:description" content="Advanced IPv4 and IPv6 subnet calculator with comprehensive network information">
+
+  
+  
+    
+  
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/styles.bdd621ce0dc4beed42cba9d295fbb7a846b8870c3fda65b870471926d718c2543ebb5d8d248ba9a5554cba6ec2e05b0dc829190fd4e4fef576beaa4c3f244abe.css" integrity="sha512-vdYhzg3Evu1Cy6nSlfu3qEa4hww/2mW4cEcZJtcYwlQ&#43;u12NJIuppVVMum7C4FsNyCkZD9Tk/vV2vqpMPyRKvg==">
+
+  
+   <link rel="stylesheet" href="http://localhost:1313/css/custom.css">  <link rel="stylesheet" href="http://localhost:1313/css/lightbox.css">  <link rel="stylesheet" href="http://localhost:1313/css/tools.css">  <link rel="stylesheet" href="http://localhost:1313/css/tools-cards.css">  <link rel="stylesheet" href="http://localhost:1313/css/post-cards.css">  <link rel="stylesheet" href="http://localhost:1313/css/posts-cards.css"> 
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="http://localhost:1313/images/favicon.ico" />
+
+  
+</head> 
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+    
+
+<link rel="stylesheet" href="/css/custom.min.08723c608d61ffd5e055a58e9e73ac558e1273a64221321a91fdfc38a02f4b10.css">
+
+<header id="header">
+  <a href="http://localhost:1313/">
+  
+    
+      <div id="logo" class="font-awesome-logo">
+        <i class="fas fa-medal fa-4x" aria-hidden="true" style="color: #2bbc8a;"></i>
+      </div>
+    
+  
+  <div id="title">
+    <h1>ittechnetworkk</h1>
+  </div>
+  </a>
+  <div id="nav" class="nav-container">
+    <ul>
+      <li class="icon">
+        <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x" aria-hidden="true"></i></a>
+      </li>
+      
+        
+          <li>
+            <a href="/">Home</a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/posts">Posts</a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/walkthroughs">Walkthroughs</a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/projects">Projects</a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/resources">Resources</a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/library">Library</a>
+          </li>
+        
+      
+        
+          <li>
+            <a href="/about">About</a>
+          </li>
+        
+      
+    </ul>
+  </div>
+</header>
+
+
+
+    
+
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="content" itemprop="articleBody">
+        
+<link rel="stylesheet" href="/css/subnet-calculator.min.c829ca238b0afafd30eb43aa97b444de8f354b007bd7c152ed91dff2e2907d3f.css">
+
+
+<script src="/js/subnet-calculator.min.0285b0b8939f2f0bc59e6e762964be4c08253c742bd8bd0819d35c56a71afcfc.js"></script>
+
+<div class="tool-card">
+    <h1 class="tool-title">Advanced Subnet Calculator</h1>
+    <p class="tool-description">Calculate comprehensive subnet information including network address, broadcast address, usable IP range, and more. Supports both IPv4 and IPv6.</p>
+
+    <div class="subnet-calculator">
+        <div class="input-group">
+            <label for="ip">IP Address (IPv4 or IPv6):</label>
+            <input type="text" id="ip" placeholder="e.g., 192.168.1.0 or 2001:db8::">
+        </div>
+        <div class="input-group">
+            <label for="cidr">CIDR Notation:</label>
+            <input type="number" id="cidr" min="0" max="128" placeholder="e.g., 24 for IPv4, 64 for IPv6">
+        </div>
+        <div class="input-group">
+            <label for="numSubnets">Number of Subnets (optional):</label>
+            <input type="number" id="numSubnets" min="0" max="256" placeholder="Leave empty for no subdivision">
+        </div>
+        <button class="calculate-button" onclick="calculateSubnet()">Calculate</button>
+        <div id="result"></div>
+    </div>
+
+    <div class="features-list">
+        <h3>Features</h3>
+        <ul>
+            <li>IPv4 and IPv6 support</li>
+            <li>Binary representation of addresses</li>
+            <li>Network & Broadcast address calculation</li>
+            <li>Usable IP range determination</li>
+            <li>Wildcard mask calculation</li>
+            <li>IP address classification</li>
+            <li>Multiple subnet division calculator</li>
+            <li>VLSM support</li>
+        </ul>
+    </div>
+</div> 
+
+    </div>
+</article>
+
+
+
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2025  ittechnetworkk 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">Home</a></li>
+         
+        <li><a href="/posts">Posts</a></li>
+         
+        <li><a href="/walkthroughs">Walkthroughs</a></li>
+         
+        <li><a href="/projects">Projects</a></li>
+         
+        <li><a href="/resources">Resources</a></li>
+         
+        <li><a href="/library">Library</a></li>
+         
+        <li><a href="/about">About</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+<script src=/js/lightbox.js></script>
+</html>
