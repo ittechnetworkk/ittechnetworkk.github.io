@@ -1243,7 +1243,7 @@ Merhabalar, bu yazımda Cml Freetrial konusunu anlatacağım.&lt;/p>
 Siyah Kablo » G
 Beyaz Kablo » TX
 Turkuaz Kablo » RX&lt;/p></description></item><item><title>About</title><link>https://ittechnetworkk.github.io/about/</link><pubDate>Thu, 05 Dec 2024 22:55:21 +0100</pubDate><guid>https://ittechnetworkk.github.io/about/</guid><description>&lt;div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
- &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/8pv4cNoTUhc?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
+ &lt;iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/8pv4cNoTUhc?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video">&lt;/iframe>
  &lt;/div>
 
 &lt;p>Ey Türk gençliği!
@@ -2472,11 +2472,11 @@ DHCP Snooping&amp;rsquo;in yaptığı ise belirli bir port veya portlar üzerind
 &lt;li>RIPv2 Multicast(224.0.0.9) yayın yapar, subnet bilgisini gönderir, kimlik doğrulama desteği vardır.&lt;/li>
 &lt;/ul>
 &lt;p>&lt;strong>RIPv2 Konfigürasyonu:&lt;/strong>
-Aşağıdaki örnek topolojiyi uygulayalım.&lt;/p></description></item><item><title>Projects</title><link>https://ittechnetworkk.github.io/projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ittechnetworkk.github.io/projects/</guid><description>&lt;h3 id="beelzebub-honeypot-dashboardhttpsittechnetworkkgithubiopostsbeelzebubdashboardbeelzebub-dashboard">&lt;a href="https://ittechnetworkk.github.io//posts/beelzebubdashboard/beelzebub-dashboard/">Beelzebub Honeypot Dashboard&lt;/a>&lt;/h3>
+Aşağıdaki örnek topolojiyi uygulayalım.&lt;/p></description></item><item><title>Projects</title><link>https://ittechnetworkk.github.io/projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://ittechnetworkk.github.io/projects/</guid><description>&lt;h3 id="beelzebub-honeypot-dashboard">&lt;a href="https://ittechnetworkk.github.io//posts/beelzebubdashboard/beelzebub-dashboard/">Beelzebub Honeypot Dashboard&lt;/a>&lt;/h3>
 &lt;p>Hi everyone, in this article I would like to introduce you to my new project about visualizing &lt;a href="https://github.com/mariocandela/beelzebub">Beelzebub&lt;/a> logs, which is an AI-supported open-source honeypot solution that I modified slightly to achieve higher efficiency.&lt;/p>
 &lt;p>&lt;a href="https:https://ittechnetworkk.github.io//posts/beelzebubdashboard/beelzebub-dashboard/">View Project Details →&lt;/a>&lt;/p>
-&lt;h3 id="security-operation-center-setuphttpsittechnetworkkgithubiopostssecurityoperationcenterinstallationsecurity-operation-center-installation">&lt;a href="https://ittechnetworkk.github.io/posts/securityoperationcenterinstallation/security-operation-center-installation/">Security Operation Center Setup&lt;/a>&lt;/h3>
+&lt;h3 id="security-operation-center-setup">&lt;a href="https://ittechnetworkk.github.io/posts/securityoperationcenterinstallation/security-operation-center-installation/">Security Operation Center Setup&lt;/a>&lt;/h3>
 &lt;p>A comprehensive web-based reference tool for analyzing Windows process trees, including legitimate usage patterns, suspicious indicators, and associated MITRE ATT&amp;amp;CK techniques.&lt;/p>
 &lt;p>&lt;a href="https://ittechnetworkk.github.io/posts/securityoperationcenterinstallation/security-operation-center-installation/">View Project Details →&lt;/a>&lt;/p>
-&lt;h3 id="windows-process-tree-referencehttpswindows-process-treevercelapp">&lt;a href="https://windows-process-tree.vercel.app/">Windows Process Tree Reference&lt;/a>&lt;/h3>
+&lt;h3 id="windows-process-tree-reference">&lt;a href="https://windows-process-tree.vercel.app/">Windows Process Tree Reference&lt;/a>&lt;/h3>
 &lt;p>A comprehensive web-based reference tool for analyzing Windows process trees, including legitimate usage patterns, suspicious indicators, and associated MITRE ATT&amp;amp;CK techniques.&lt;/p></description></item></channel></rss>
