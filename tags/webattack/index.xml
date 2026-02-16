@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Webattack on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/webattack/</link><description>Recent content in Webattack on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sat, 05 Jul 2025 15:16:47 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/webattack/index.xml" rel="self" type="application/rss+xml"/><item><title>SOC141 - Multiple HTTP 500 Response</title><link>https://ittechnetworkk.github.io/walkthroughs/soc142/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/soc142/</guid><description>&lt;p>EventID : 89
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Webattack on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/webattack/</link><description>Recent content in Webattack on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sat, 05 Jul 2025 15:16:47 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/webattack/index.xml" rel="self" type="application/rss+xml"/><item><title>SOC141 - Multiple HTTP 500 Response</title><link>https://ittechnetworkk.github.io/walkthroughs/soc142/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/soc142/</guid><description>&lt;p&gt;EventID : 89
 Event Time : Apr, 18, 2021, 01:00 PM
 Rule : SOC142 - Multiple HTTP 500 Response
-Level : Security Analyst&lt;/p>
-&lt;p>Source Address : 101.32.223.119
+Level : Security Analyst&lt;/p&gt;
+&lt;p&gt;Source Address : 101.32.223.119
 Source Hostname : 101.32.223.119
 Destination Address : 172.16.20.6
 Destination Hostname : SQLServer
-Username : www-data&lt;/p>
-&lt;p>Request URL : https://172.16.20.6/userNumber=1 AND (SELECT * FROM Users) = 1
-User Agent : Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&lt;/p>
-&lt;p>Device Action : Allowed&lt;/p></description></item></channel></rss>
+Username : www-data&lt;/p&gt;
+&lt;p&gt;Request URL : https://172.16.20.6/userNumber=1 AND (SELECT * FROM Users) = 1
+User Agent : Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&lt;/p&gt;
+&lt;p&gt;Device Action : Allowed&lt;/p&gt;</description></item></channel></rss>

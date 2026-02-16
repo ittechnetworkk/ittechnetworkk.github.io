@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dual-Stack on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/dual-stack/</link><description>Recent content in Dual-Stack on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Thu, 06 Jun 2024 22:57:40 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/dual-stack/index.xml" rel="self" type="application/rss+xml"/><item><title>IPv6 Geçiş Çalışmaları İkili Yığın Yöntemi</title><link>https://ittechnetworkk.github.io/posts/ikiliyiginyontemi/ikili-yigin-yontemi/</link><pubDate>Thu, 06 Jun 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ikiliyiginyontemi/ikili-yigin-yontemi/</guid><description>&lt;p>Bu yöntem, IPv4&amp;rsquo;den IPv6&amp;rsquo;ya geçiş yöntemlerinden biri olan tünelleme tekniğidir. Bu yöntemde, cihazların hem IPv4 hem de IPv6 adreslerini birlikte kullanması yöntemidir.
-Yani IPv4 ile gelen cihaz IPv4, IPv6 ile gelen cihaz IPv6 ile haberleşir.&lt;/p>
-&lt;p>Uygulamada daha net anlaşılacaktır.&lt;/p>
-&lt;p>Aşağıdaki topolojiyi uygulayacağım.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/IkiliYiginYontemi/1.png" alt="ipv6">&lt;/p>
-&lt;p>Yapılacaklar:&lt;/p>
-&lt;ol>
-&lt;li>Router ve VPC&amp;rsquo;lerin Interface&amp;rsquo;lerine IPv4 ve IPv6 adreslerini tanımla,&lt;/li>
-&lt;li>Networklerin birbirleriyle haberleşmesi için statik rotalar yaz,&lt;/li>
-&lt;li>Test et.&lt;/li>
-&lt;/ol>
-&lt;p>&lt;strong>1. Router ve VPC&amp;rsquo;lerin Interface&amp;rsquo;lerine IPv4 ve IPv6 adreslerini tanımla,&lt;/strong>&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dual-Stack on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/dual-stack/</link><description>Recent content in Dual-Stack on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Thu, 06 Jun 2024 22:57:40 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/dual-stack/index.xml" rel="self" type="application/rss+xml"/><item><title>IPv6 Geçiş Çalışmaları İkili Yığın Yöntemi</title><link>https://ittechnetworkk.github.io/posts/ikiliyiginyontemi/ikili-yigin-yontemi/</link><pubDate>Thu, 06 Jun 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ikiliyiginyontemi/ikili-yigin-yontemi/</guid><description>&lt;p&gt;Bu yöntem, IPv4&amp;rsquo;den IPv6&amp;rsquo;ya geçiş yöntemlerinden biri olan tünelleme tekniğidir. Bu yöntemde, cihazların hem IPv4 hem de IPv6 adreslerini birlikte kullanması yöntemidir.
+Yani IPv4 ile gelen cihaz IPv4, IPv6 ile gelen cihaz IPv6 ile haberleşir.&lt;/p&gt;
+&lt;p&gt;Uygulamada daha net anlaşılacaktır.&lt;/p&gt;
+&lt;p&gt;Aşağıdaki topolojiyi uygulayacağım.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/IkiliYiginYontemi/1.png" alt="ipv6"&gt;&lt;/p&gt;
+&lt;p&gt;Yapılacaklar:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Router ve VPC&amp;rsquo;lerin Interface&amp;rsquo;lerine IPv4 ve IPv6 adreslerini tanımla,&lt;/li&gt;
+&lt;li&gt;Networklerin birbirleriyle haberleşmesi için statik rotalar yaz,&lt;/li&gt;
+&lt;li&gt;Test et.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;1. Router ve VPC&amp;rsquo;lerin Interface&amp;rsquo;lerine IPv4 ve IPv6 adreslerini tanımla,&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>

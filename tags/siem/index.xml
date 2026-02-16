@@ -1,21 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Siem on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/siem/</link><description>Recent content in Siem on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Thu, 02 Oct 2025 23:09:17 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/siem/index.xml" rel="self" type="application/rss+xml"/><item><title>[EN] Splunk Installation</title><link>https://ittechnetworkk.github.io/posts/splunkinstallation/splunk-installation/</link><pubDate>Thu, 02 Oct 2025 23:09:17 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/splunkinstallation/splunk-installation/</guid><description>&lt;p>Hi everyone, in this article I will guide you how to install Splunk Enterprise on Linux server and Universal Forwarder on Ubuntu Client.&lt;/p>
-&lt;p>Splunk is one of the best SIEM solution that stands out with its comprehensive, valuable and strong features. Splunk is a Cisco company which means it has a strong development background.&lt;/p>
-&lt;p>We can install and use Splunk for free with trial version.&lt;/p>
-&lt;p>Here is how to download and install.&lt;/p></description></item><item><title>[EN] Caldera Alice 2.0 Adversary Emulation</title><link>https://ittechnetworkk.github.io/posts/caldera_alice2.0_attack_scenario/calderaalice2.0/</link><pubDate>Tue, 30 Sep 2025 19:28:28 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/caldera_alice2.0_attack_scenario/calderaalice2.0/</guid><description>&lt;p>Hi everyone, In this article I will perform an attack scenario using Caldera and will show its effects in Wazuh (SIEM/XDR) and LimaCharlie (EDR).&lt;/p>
-&lt;p>LimaCharlie can integrate with the Atomic Red Team extension, which I will use in Caldera to perform the attack. Therefore, you don&amp;rsquo;t need to install Atomic Red Team separately.&lt;/p>
-&lt;p>In my lab environment for this attack scenario, I have a Client1 machine and an AD-DC machine, and I have already installed Caldera agents on both.&lt;/p></description></item><item><title>[EN] Remove a Client on Wazuh Server</title><link>https://ittechnetworkk.github.io/posts/removingaclientonwazuhserver/removeaclientonwazuh/</link><pubDate>Sun, 31 Aug 2025 03:53:01 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/removingaclientonwazuhserver/removeaclientonwazuh/</guid><description>&lt;p>Hi everyone,&lt;/p>
-&lt;p>In this article, I will walk you through how to delete a user from Wazuh server. There are a few ways to do this.&lt;/p>
-&lt;p>Here is one of the simple way to delete a client from Wazuh server.&lt;/p>
-&lt;p>You can delete a user by following the commands that are shown in the images below.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/wazuhclientremove/1.png" alt="wazuh">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/wazuhclientremove/2.png" alt="wazuh">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/wazuhclientremove/3.png" alt="wazuh">&lt;/p>
-&lt;p>Thank you for taking time to read this article, I hope you will find it helpful.&lt;/p></description></item><item><title>[EN] Fortigate Wazuh Integration</title><link>https://ittechnetworkk.github.io/posts/fortigatewazuhintegration/fortigate-wazuh-integration/</link><pubDate>Sat, 19 Jul 2025 15:26:52 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/fortigatewazuhintegration/fortigate-wazuh-integration/</guid><description>&lt;p>Hi everyone, in this article I will guide you through how to integrate Fortigate firewall with the Wazuh SIEM tool for centralized logging and monitoring.&lt;/p>
-&lt;p>Fortigate is one of the best firewall solutions used in networks of all sizes worldwide. Wazuh is also one of the best open-source SIEM platforms available.&lt;/p>
-&lt;p>In this article, I will show you how to send Fortigate logs to the Wazuh SIEM platform to centralize all environment logs in one location.&lt;/p></description></item><item><title>[EN] Cisco Device Syslog Integration with Wazuh SIEM</title><link>https://ittechnetworkk.github.io/posts/ciscowazuhintegration/cisco-wazuh-integration/</link><pubDate>Sat, 19 Jul 2025 14:50:44 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/ciscowazuhintegration/cisco-wazuh-integration/</guid><description>&lt;p>Hi everyone, in this article I will guide you through how to integrate Cisco devices (switches and routers) with the Wazuh SIEM tool for centralized logging and monitoring.&lt;/p>
-&lt;p>The integration will be done in the following steps:&lt;/p>
-&lt;h2 id="cisco-switch-configuration">&lt;strong>Cisco switch configuration:&lt;/strong>&lt;/h2>
-&lt;pre tabindex="0">&lt;code># VLAN Configuration for Switch
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SIEM on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/siem/</link><description>Recent content in SIEM on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Thu, 02 Oct 2025 23:09:17 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/siem/index.xml" rel="self" type="application/rss+xml"/><item><title>[EN] Splunk Installation</title><link>https://ittechnetworkk.github.io/posts/splunkinstallation/splunk-installation/</link><pubDate>Thu, 02 Oct 2025 23:09:17 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/splunkinstallation/splunk-installation/</guid><description>&lt;p&gt;Hi everyone, in this article I will guide you how to install Splunk Enterprise on Linux server and Universal Forwarder on Ubuntu Client.&lt;/p&gt;
+&lt;p&gt;Splunk is one of the best SIEM solution that stands out with its comprehensive, valuable and strong features. Splunk is a Cisco company which means it has a strong development background.&lt;/p&gt;
+&lt;p&gt;We can install and use Splunk for free with trial version.&lt;/p&gt;
+&lt;p&gt;Here is how to download and install.&lt;/p&gt;</description></item><item><title>[EN] Caldera Alice 2.0 Adversary Emulation</title><link>https://ittechnetworkk.github.io/posts/caldera_alice2.0_attack_scenario/calderaalice2.0/</link><pubDate>Tue, 30 Sep 2025 19:28:28 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/caldera_alice2.0_attack_scenario/calderaalice2.0/</guid><description>&lt;p&gt;Hi everyone, In this article I will perform an attack scenario using Caldera and will show its effects in Wazuh (SIEM/XDR) and LimaCharlie (EDR).&lt;/p&gt;
+&lt;p&gt;LimaCharlie can integrate with the Atomic Red Team extension, which I will use in Caldera to perform the attack. Therefore, you don&amp;rsquo;t need to install Atomic Red Team separately.&lt;/p&gt;
+&lt;p&gt;In my lab environment for this attack scenario, I have a Client1 machine and an AD-DC machine, and I have already installed Caldera agents on both.&lt;/p&gt;</description></item><item><title>[EN] Remove a Client on Wazuh Server</title><link>https://ittechnetworkk.github.io/posts/removingaclientonwazuhserver/removeaclientonwazuh/</link><pubDate>Sun, 31 Aug 2025 03:53:01 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/removingaclientonwazuhserver/removeaclientonwazuh/</guid><description>&lt;p&gt;Hi everyone,&lt;/p&gt;
+&lt;p&gt;In this article, I will walk you through how to delete a user from Wazuh server. There are a few ways to do this.&lt;/p&gt;
+&lt;p&gt;Here is one of the simple way to delete a client from Wazuh server.&lt;/p&gt;
+&lt;p&gt;You can delete a user by following the commands that are shown in the images below.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/wazuhclientremove/1.png" alt="wazuh"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/wazuhclientremove/2.png" alt="wazuh"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/wazuhclientremove/3.png" alt="wazuh"&gt;&lt;/p&gt;
+&lt;p&gt;Thank you for taking time to read this article, I hope you will find it helpful.&lt;/p&gt;</description></item><item><title>[EN] Fortigate Wazuh Integration</title><link>https://ittechnetworkk.github.io/posts/fortigatewazuhintegration/fortigate-wazuh-integration/</link><pubDate>Sat, 19 Jul 2025 15:26:52 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/fortigatewazuhintegration/fortigate-wazuh-integration/</guid><description>&lt;p&gt;Hi everyone, in this article I will guide you through how to integrate Fortigate firewall with the Wazuh SIEM tool for centralized logging and monitoring.&lt;/p&gt;
+&lt;p&gt;Fortigate is one of the best firewall solutions used in networks of all sizes worldwide. Wazuh is also one of the best open-source SIEM platforms available.&lt;/p&gt;
+&lt;p&gt;In this article, I will show you how to send Fortigate logs to the Wazuh SIEM platform to centralize all environment logs in one location.&lt;/p&gt;</description></item><item><title>[EN] Cisco Device Syslog Integration with Wazuh SIEM</title><link>https://ittechnetworkk.github.io/posts/ciscowazuhintegration/cisco-wazuh-integration/</link><pubDate>Sat, 19 Jul 2025 14:50:44 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/ciscowazuhintegration/cisco-wazuh-integration/</guid><description>&lt;p&gt;Hi everyone, in this article I will guide you through how to integrate Cisco devices (switches and routers) with the Wazuh SIEM tool for centralized logging and monitoring.&lt;/p&gt;
+&lt;p&gt;The integration will be done in the following steps:&lt;/p&gt;
+&lt;h2 id="cisco-switch-configuration"&gt;&lt;strong&gt;Cisco switch configuration:&lt;/strong&gt;&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;# VLAN Configuration for Switch
 Switch&amp;gt;enable
 Switch#configure terminal
 Switch(config)#interface vlan1
@@ -40,8 +40,8 @@ Switch(config)# ip route 10.1.8.0 255.255.255.0 10.1.5.1
 # Save 
 Switch(config)#end
 Switch#wr
-&lt;/code>&lt;/pre>&lt;h2 id="cisco-router-configuration">&lt;strong>Cisco router configuration:&lt;/strong>&lt;/h2>
-&lt;pre tabindex="0">&lt;code># Interface Configuration for Router
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="cisco-router-configuration"&gt;&lt;strong&gt;Cisco router configuration:&lt;/strong&gt;&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;# Interface Configuration for Router
 Router&amp;gt;enable
 Router#configure terminal
 Router(config)#interface e0/0
@@ -66,13 +66,13 @@ Router(config)# ip route 10.1.8.0 255.255.255.0 10.1.5.1
 # Save 
 Router(config)#end
 Router#wr
-&lt;/code>&lt;/pre>&lt;h2 id="wazuh-server-configuration">&lt;strong>Wazuh Server Configuration:&lt;/strong>&lt;/h2>
-&lt;pre tabindex="0">&lt;code>&amp;lt;remote&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="wazuh-server-configuration"&gt;&lt;strong&gt;Wazuh Server Configuration:&lt;/strong&gt;&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;&amp;lt;remote&amp;gt; 
  &amp;lt;connection&amp;gt;syslog&amp;lt;/connection&amp;gt; 
  &amp;lt;port&amp;gt;514&amp;lt;/port&amp;gt; 
  &amp;lt;protocol&amp;gt;udp&amp;lt;/protocol&amp;gt; 
  &amp;lt;allowed-ips&amp;gt;10.1.5.100&amp;lt;/allowed-ips&amp;gt; # Switch/Router IP
  &amp;lt;local_ip&amp;gt;10.1.8.10&amp;lt;/local_ip&amp;gt; # Wazuh Server IP
 &amp;lt;/remote&amp;gt;
-&lt;/code>&lt;/pre>&lt;h2 id="alternative-port-configuration">&lt;strong>Alternative Port Configuration:&lt;/strong>&lt;/h2>
-&lt;p>If you want to use a different port (e.g., 1514 for TCP or 10514 for custom UDP), modify the configuration:&lt;/p></description></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="alternative-port-configuration"&gt;&lt;strong&gt;Alternative Port Configuration:&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;If you want to use a different port (e.g., 1514 for TCP or 10514 for custom UDP), modify the configuration:&lt;/p&gt;</description></item></channel></rss>

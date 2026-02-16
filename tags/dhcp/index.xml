@@ -1,41 +1,41 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dhcp on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/dhcp/</link><description>Recent content in Dhcp on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sun, 31 Aug 2025 03:37:10 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/dhcp/index.xml" rel="self" type="application/rss+xml"/><item><title>[EN] DHCP Server Installation On Windows Server 2022</title><link>https://ittechnetworkk.github.io/posts/windowsserver2022dhcpserverinstallation/windowsserver2022dhcpinstallation/</link><pubDate>Sun, 31 Aug 2025 03:37:10 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/windowsserver2022dhcpserverinstallation/windowsserver2022dhcpinstallation/</guid><description>&lt;p>Hi everyone,&lt;/p>
-&lt;p>In this article, I will walk you through how to install DHCP Server Role in Windows Server.&lt;/p>
-&lt;p>Steps will be as follows&lt;/p>
-&lt;h2 id="1---install-dhcp-server-role">&lt;strong>1 - Install DHCP Server Role&lt;/strong>&lt;/h2>
-&lt;p>Server Manager &amp;gt; Add roles and features&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/1.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/2.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/3.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/4.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/5.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/6.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/7.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/8.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/9.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/10.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/11.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/12.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/13.png" alt="WinDHCP">&lt;/p>
-&lt;h2 id="2---configure-dhcp-server">&lt;strong>2 - Configure DHCP Server&lt;/strong>&lt;/h2>
-&lt;p>Server Manager &amp;gt; DHCP&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/14.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/15.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/16.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/17.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/18.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/19.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/20.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/21.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/22.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/23.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/24.png" alt="WinDHCP">&lt;/p></description></item><item><title>[EN] DHCP Server Configuration</title><link>https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/</link><pubDate>Thu, 23 Jan 2025 01:06:35 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/</guid><description>&lt;p>Hello there!&lt;/p>
-&lt;p>In this article, I’m going to show you how to install and configure a DHCP server.&lt;/p>
-&lt;p>I’m going to install the DHCP server role on an Ubuntu server. However, the process is almost the same for all distributions.&lt;/p>
-&lt;p>We need to install the &lt;code>isc-dhcp-server&lt;/code> package for DHCP role.&lt;/p>
-&lt;p>Let&amp;rsquo;s get started.&lt;/p>
-&lt;pre tabindex="0">&lt;code>ubuntu@ubuntu:~$ sudo apt install isc-dhcp-server
-&lt;/code>&lt;/pre>&lt;p>After the package is installed, let’s check the service called &lt;code>isc-dhcp-server&lt;/code>.&lt;/p>
-&lt;pre tabindex="0">&lt;code>ubuntu@ubuntu:~$ systemctl status isc-dhcp-server
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DHCP on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/dhcp/</link><description>Recent content in DHCP on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sun, 31 Aug 2025 03:37:10 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/dhcp/index.xml" rel="self" type="application/rss+xml"/><item><title>[EN] DHCP Server Installation On Windows Server 2022</title><link>https://ittechnetworkk.github.io/posts/windowsserver2022dhcpserverinstallation/windowsserver2022dhcpinstallation/</link><pubDate>Sun, 31 Aug 2025 03:37:10 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/windowsserver2022dhcpserverinstallation/windowsserver2022dhcpinstallation/</guid><description>&lt;p&gt;Hi everyone,&lt;/p&gt;
+&lt;p&gt;In this article, I will walk you through how to install DHCP Server Role in Windows Server.&lt;/p&gt;
+&lt;p&gt;Steps will be as follows&lt;/p&gt;
+&lt;h2 id="1---install-dhcp-server-role"&gt;&lt;strong&gt;1 - Install DHCP Server Role&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Server Manager &amp;gt; Add roles and features&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/1.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/2.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/3.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/4.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/5.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/6.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/7.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/8.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/9.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/10.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/11.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/12.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/13.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;h2 id="2---configure-dhcp-server"&gt;&lt;strong&gt;2 - Configure DHCP Server&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Server Manager &amp;gt; DHCP&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/14.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/15.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/16.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/17.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/18.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/19.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/20.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/21.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/22.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/23.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/24.png" alt="WinDHCP"&gt;&lt;/p&gt;</description></item><item><title>[EN] DHCP Server Configuration</title><link>https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/</link><pubDate>Thu, 23 Jan 2025 01:06:35 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/</guid><description>&lt;p&gt;Hello there!&lt;/p&gt;
+&lt;p&gt;In this article, I’m going to show you how to install and configure a DHCP server.&lt;/p&gt;
+&lt;p&gt;I’m going to install the DHCP server role on an Ubuntu server. However, the process is almost the same for all distributions.&lt;/p&gt;
+&lt;p&gt;We need to install the &lt;code&gt;isc-dhcp-server&lt;/code&gt; package for DHCP role.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s get started.&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;ubuntu@ubuntu:~$ sudo apt install isc-dhcp-server
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After the package is installed, let’s check the service called &lt;code&gt;isc-dhcp-server&lt;/code&gt;.&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;ubuntu@ubuntu:~$ systemctl status isc-dhcp-server
 × isc-dhcp-server.service - ISC DHCP IPv4 server
  Loaded: loaded (/lib/systemd/system/isc-dhcp-server.service; enabled; vendor preset: enabled)
  Active: failed (Result: exit-code) since Wed 2025-01-22 22:22:49 UTC; 1min 46s ago
@@ -43,10 +43,10 @@
  Process: 1553 ExecStart=/bin/sh -ec CONFIG_FILE=/etc/dhcp/dhcpd.conf; if [ -f /etc/ltsp/dhcpd.conf ]; then CONFIG_F&amp;gt;
  Main PID: 1553 (code=exited, status=1/FAILURE)
  CPU: 7ms
-&lt;/code>&lt;/pre>&lt;p>As you can see, the service is currently not working. We will configure it and then start the service.&lt;/p></description></item><item><title>Ubuntu 22.04 DHCP Server Konfigürasyonu</title><link>https://ittechnetworkk.github.io/posts/ubuntudhcpserver/ubuntu-dhcp-server/</link><pubDate>Thu, 07 Nov 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ubuntudhcpserver/ubuntu-dhcp-server/</guid><description>&lt;p>Merhabalar bu yazımda, Ubuntu-22.04 Server&amp;rsquo;a DHCP rolü kurup konfigürasyonunu yapacağım.&lt;/p>
-&lt;p>Ubuntu&amp;rsquo;ya DHCP rolü vermeden önce, Server&amp;rsquo;ın IP adresini statik olarak ayarlıyorum.&lt;/p>
-&lt;p>Statik IP adresi tanımlamak için &amp;ldquo;/etc/netplan/00-installer-config.yaml&amp;rdquo; dosyasını düzenliyorum.&lt;/p>
-&lt;pre tabindex="0">&lt;code>network:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;As you can see, the service is currently not working. We will configure it and then start the service.&lt;/p&gt;</description></item><item><title>Ubuntu 22.04 DHCP Server Konfigürasyonu</title><link>https://ittechnetworkk.github.io/posts/ubuntudhcpserver/ubuntu-dhcp-server/</link><pubDate>Thu, 07 Nov 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ubuntudhcpserver/ubuntu-dhcp-server/</guid><description>&lt;p&gt;Merhabalar bu yazımda, Ubuntu-22.04 Server&amp;rsquo;a DHCP rolü kurup konfigürasyonunu yapacağım.&lt;/p&gt;
+&lt;p&gt;Ubuntu&amp;rsquo;ya DHCP rolü vermeden önce, Server&amp;rsquo;ın IP adresini statik olarak ayarlıyorum.&lt;/p&gt;
+&lt;p&gt;Statik IP adresi tanımlamak için &amp;ldquo;/etc/netplan/00-installer-config.yaml&amp;rdquo; dosyasını düzenliyorum.&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;network:
   version: 2
   renderer: networkd
   ethernets:
@@ -58,33 +58,33 @@
       routes:
         - to: default
           via: 192.168.1.1
-&lt;/code>&lt;/pre>&lt;p>Değişiklikleri geçerli kılmak için:&lt;/p>
-&lt;pre tabindex="0">&lt;code>sudo netplan apply
-&lt;/code>&lt;/pre>&lt;p>Grafik arayüzü ile yapılandırmak için &amp;ldquo;nmtui&amp;rdquo; aracını kullanabilirsiniz.&lt;/p>
-&lt;p>DHCP Server Rolü Kurulumu:&lt;/p>
-&lt;pre tabindex="0">&lt;code>sudo apt install isc-dhcp-server
-&lt;/code>&lt;/pre>&lt;p>DHCP rolü yüklendikten sonra, konfigürasyon dosyası &amp;ldquo;/etc/dhcp/dhcpd.conf&amp;quot;dur.&lt;/p></description></item><item><title>DHCPv6</title><link>https://ittechnetworkk.github.io/posts/dhcpv6/dhcpv6/</link><pubDate>Fri, 31 May 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dhcpv6/dhcpv6/</guid><description>&lt;p>DHCP(Dynamic Host Configuration Protocol), bir networkteki bir cihaza IP, DNS, Default Gateway parametrelerini dağıtan servistir. Yani networkteki bir cihazın başka bir cihaz ile konuşmasını sağlayacak parametlereleri dağıtan servistir.
-DHCPv6, DHCPv4&amp;rsquo;den bazı özellikleriyle ayrılıyor. DHCPv6 2 şekilde yapılandırılabilir.&lt;/p>
-&lt;ul>
-&lt;li>Stateful(Durumlu) DHCPv6,&lt;/li>
-&lt;li>Stateless SLAAC (Durumsuz) DHCPv6&lt;/li>
-&lt;/ul>
-&lt;p>Stateful DHCPv6 tıpkı DHCPv4 gibi, bir DHCP server üzerinden parametreleri dağıtmaktır.&lt;/p>
-&lt;p>Stateless SLAAC DHCPv6 da ise herhangi bir DHCP server olmaksızın cihazların Router üzerinden IPv6 parametrelerini alıp otomatik olarak kendini yapılandırmasıdır.&lt;/p></description></item><item><title>DHCP Relay Agent</title><link>https://ittechnetworkk.github.io/posts/dhcprelayagent/dhcp-relay-agent/</link><pubDate>Sun, 14 Jan 2024 23:43:35 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dhcprelayagent/dhcp-relay-agent/</guid><description>&lt;p>DHCP, cihazlara IP, DNS, Default Gateway dağıtan protokoldür. Bu protokol client-server mantığıyla çalışır. İstemci talep eder ve server hizmet verir. UDP çalışır ve 4 aşamada işlem tamamlanır.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/DHCPRelayAgent/8.png" alt="dhcp">&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>Client, DHCP Discover paketini networke gönderir. Bunun anlamı &amp;ldquo;Bana IP verecek bir DHCP Server var mı?&amp;rdquo;.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Server, DHCP Offer paketiyle karşılık verir ve der ki &amp;ldquo;Evet ben verebilirim&amp;rdquo;.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Client, DHCP Request paketiyle IP adresi talep eder.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Server, DHCP Ack paketiyle ile cihaza IP adresi ataması yapar.&lt;/p></description></item><item><title>DHCP Snooping</title><link>https://ittechnetworkk.github.io/posts/dhcpsnooping/dhcp-snooping/</link><pubDate>Sun, 31 Dec 2023 23:44:03 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dhcpsnooping/dhcp-snooping/</guid><description>&lt;p>DHCP(Dynamic Host Configuration Protocol), ağdaki cihazlarımıza otomatik olarak IP, DNS, Default Gateway bilgilerini dağıtan servistir. Ağa yeni bir cihaz katıldığında, kablo takılır takılmaz IP almak için Broadcast yayın yapar. Eğer ortamda DHCP servisi varsa o da karşılık verir. Toplam 4 aşamada IP alma işlemi tamamlanır.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/DHCPSnooping/8.png" alt="dhcp">&lt;/p>
-&lt;p>Bu paketler Broadcast paketler olduğu için ağdaki herkese ulaşır bu da her zaman için iyi olmayabilir. Örneğin bir network yapısında iki DHCP server aynı anda çalışabilir. Biri istenmeyen, kötü niyetli de olabilir ve cihaza istediği IP, DNS, Default Gateway bilgisi dağıtarak, trafiği istenmeyen şekilde etkileyebilir. DHCP Snooping&amp;rsquo;i aktif hale getirmek gerekir.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Değişiklikleri geçerli kılmak için:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;sudo netplan apply
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Grafik arayüzü ile yapılandırmak için &amp;ldquo;nmtui&amp;rdquo; aracını kullanabilirsiniz.&lt;/p&gt;
+&lt;p&gt;DHCP Server Rolü Kurulumu:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;sudo apt install isc-dhcp-server
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;DHCP rolü yüklendikten sonra, konfigürasyon dosyası &amp;ldquo;/etc/dhcp/dhcpd.conf&amp;quot;dur.&lt;/p&gt;</description></item><item><title>DHCPv6</title><link>https://ittechnetworkk.github.io/posts/dhcpv6/dhcpv6/</link><pubDate>Fri, 31 May 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dhcpv6/dhcpv6/</guid><description>&lt;p&gt;DHCP(Dynamic Host Configuration Protocol), bir networkteki bir cihaza IP, DNS, Default Gateway parametrelerini dağıtan servistir. Yani networkteki bir cihazın başka bir cihaz ile konuşmasını sağlayacak parametlereleri dağıtan servistir.
+DHCPv6, DHCPv4&amp;rsquo;den bazı özellikleriyle ayrılıyor. DHCPv6 2 şekilde yapılandırılabilir.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Stateful(Durumlu) DHCPv6,&lt;/li&gt;
+&lt;li&gt;Stateless SLAAC (Durumsuz) DHCPv6&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Stateful DHCPv6 tıpkı DHCPv4 gibi, bir DHCP server üzerinden parametreleri dağıtmaktır.&lt;/p&gt;
+&lt;p&gt;Stateless SLAAC DHCPv6 da ise herhangi bir DHCP server olmaksızın cihazların Router üzerinden IPv6 parametrelerini alıp otomatik olarak kendini yapılandırmasıdır.&lt;/p&gt;</description></item><item><title>DHCP Relay Agent</title><link>https://ittechnetworkk.github.io/posts/dhcprelayagent/dhcp-relay-agent/</link><pubDate>Sun, 14 Jan 2024 23:43:35 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dhcprelayagent/dhcp-relay-agent/</guid><description>&lt;p&gt;DHCP, cihazlara IP, DNS, Default Gateway dağıtan protokoldür. Bu protokol client-server mantığıyla çalışır. İstemci talep eder ve server hizmet verir. UDP çalışır ve 4 aşamada işlem tamamlanır.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/DHCPRelayAgent/8.png" alt="dhcp"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Client, DHCP Discover paketini networke gönderir. Bunun anlamı &amp;ldquo;Bana IP verecek bir DHCP Server var mı?&amp;rdquo;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Server, DHCP Offer paketiyle karşılık verir ve der ki &amp;ldquo;Evet ben verebilirim&amp;rdquo;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Client, DHCP Request paketiyle IP adresi talep eder.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Server, DHCP Ack paketiyle ile cihaza IP adresi ataması yapar.&lt;/p&gt;</description></item><item><title>DHCP Snooping</title><link>https://ittechnetworkk.github.io/posts/dhcpsnooping/dhcp-snooping/</link><pubDate>Sun, 31 Dec 2023 23:44:03 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dhcpsnooping/dhcp-snooping/</guid><description>&lt;p&gt;DHCP(Dynamic Host Configuration Protocol), ağdaki cihazlarımıza otomatik olarak IP, DNS, Default Gateway bilgilerini dağıtan servistir. Ağa yeni bir cihaz katıldığında, kablo takılır takılmaz IP almak için Broadcast yayın yapar. Eğer ortamda DHCP servisi varsa o da karşılık verir. Toplam 4 aşamada IP alma işlemi tamamlanır.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/DHCPSnooping/8.png" alt="dhcp"&gt;&lt;/p&gt;
+&lt;p&gt;Bu paketler Broadcast paketler olduğu için ağdaki herkese ulaşır bu da her zaman için iyi olmayabilir. Örneğin bir network yapısında iki DHCP server aynı anda çalışabilir. Biri istenmeyen, kötü niyetli de olabilir ve cihaza istediği IP, DNS, Default Gateway bilgisi dağıtarak, trafiği istenmeyen şekilde etkileyebilir. DHCP Snooping&amp;rsquo;i aktif hale getirmek gerekir.
 DHCP Server&amp;rsquo;ın kim ve switch&amp;rsquo;in hangi portundan bağlı olduğunu bildiğimiz için, switch&amp;rsquo;e bunu öğretebiliriz ve bu sayede bu kötü senaryonun önüne geçmiş oluruz.
-DHCP Snooping&amp;rsquo;in yaptığı ise belirli bir port veya portlar üzerinden DHCP trafiğine izin verir geri kalanını engeller.&lt;/p></description></item></channel></rss>
+DHCP Snooping&amp;rsquo;in yaptığı ise belirli bir port veya portlar üzerinden DHCP trafiğine izin verir geri kalanını engeller.&lt;/p&gt;</description></item></channel></rss>

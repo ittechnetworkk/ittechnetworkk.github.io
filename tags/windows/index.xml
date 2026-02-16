@@ -1,68 +1,68 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Windows on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/windows/</link><description>Recent content in Windows on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Tue, 30 Sep 2025 19:28:28 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml"/><item><title>[EN] Caldera Alice 2.0 Adversary Emulation</title><link>https://ittechnetworkk.github.io/posts/caldera_alice2.0_attack_scenario/calderaalice2.0/</link><pubDate>Tue, 30 Sep 2025 19:28:28 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/caldera_alice2.0_attack_scenario/calderaalice2.0/</guid><description>&lt;p>Hi everyone, In this article I will perform an attack scenario using Caldera and will show its effects in Wazuh (SIEM/XDR) and LimaCharlie (EDR).&lt;/p>
-&lt;p>LimaCharlie can integrate with the Atomic Red Team extension, which I will use in Caldera to perform the attack. Therefore, you don&amp;rsquo;t need to install Atomic Red Team separately.&lt;/p>
-&lt;p>In my lab environment for this attack scenario, I have a Client1 machine and an AD-DC machine, and I have already installed Caldera agents on both.&lt;/p></description></item><item><title>[EN] Windows Logon Types</title><link>https://ittechnetworkk.github.io/posts/windowslogontypes/windowslogontypes/</link><pubDate>Sun, 31 Aug 2025 04:04:25 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/windowslogontypes/windowslogontypes/</guid><description>&lt;p>Hi everyone,&lt;/p>
-&lt;p>In this article, I will walk you through Windows Logon Types.&lt;/p>
-&lt;p>Windows operating systems support multiple logon types, each designed for specific authentication scenarios. Understanding these logon types is crucial for system administrators, security professionals, and anyone managing Windows environments.&lt;/p>
-&lt;p>Below is a concise overview of the main logon types, along with real-world examples for each.&lt;/p>
-&lt;h2 id="1-interactive-logon-type-2">1. Interactive Logon (Type 2)&lt;/h2>
-&lt;p>&lt;strong>Description:&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>Occurs when a user logs on to a computer locally (e.g., at the console or via Remote Desktop).&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Scenario:&lt;/strong>&lt;/p></description></item><item><title>[EN] DHCP Server Installation On Windows Server 2022</title><link>https://ittechnetworkk.github.io/posts/windowsserver2022dhcpserverinstallation/windowsserver2022dhcpinstallation/</link><pubDate>Sun, 31 Aug 2025 03:37:10 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/windowsserver2022dhcpserverinstallation/windowsserver2022dhcpinstallation/</guid><description>&lt;p>Hi everyone,&lt;/p>
-&lt;p>In this article, I will walk you through how to install DHCP Server Role in Windows Server.&lt;/p>
-&lt;p>Steps will be as follows&lt;/p>
-&lt;h2 id="1---install-dhcp-server-role">&lt;strong>1 - Install DHCP Server Role&lt;/strong>&lt;/h2>
-&lt;p>Server Manager &amp;gt; Add roles and features&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/1.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/2.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/3.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/4.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/5.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/6.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/7.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/8.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/9.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/10.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/11.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/12.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/13.png" alt="WinDHCP">&lt;/p>
-&lt;h2 id="2---configure-dhcp-server">&lt;strong>2 - Configure DHCP Server&lt;/strong>&lt;/h2>
-&lt;p>Server Manager &amp;gt; DHCP&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/14.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/15.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/16.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/17.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/18.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/19.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/20.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/21.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/22.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/23.png" alt="WinDHCP">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/24.png" alt="WinDHCP">&lt;/p></description></item><item><title>[EN] Security Operation Center Setup</title><link>https://ittechnetworkk.github.io/posts/securityoperationcenterinstallation/security-operation-center-installation/</link><pubDate>Sun, 17 Aug 2025 15:38:38 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/securityoperationcenterinstallation/security-operation-center-installation/</guid><description>&lt;p>Hi everyone! In this article, I will take you through my Security Operation Center environment on Hetzner, which is a German company that provides web hosting services and data centers.&lt;/p>
-&lt;p>I want to start by sharing my excitement with you.&lt;/p>
-&lt;p>I have been interested in IT for some time and have built several lab environments, ranging from small to large. After gaining experience, I wanted to build my own SOC environment to gain more real-life experience.&lt;/p></description></item><item><title>[EN] Wazuh Sysmon Integration</title><link>https://ittechnetworkk.github.io/posts/wazuhsysmonintegration/wazuh-sysmon-integration/</link><pubDate>Tue, 12 Aug 2025 00:33:51 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/wazuhsysmonintegration/wazuh-sysmon-integration/</guid><description>&lt;p>Hi everyone, in this article I will guide you how to integrate Sysmon and Wazuh SIEM tool.&lt;/p>
-&lt;p>Sysmon is a tool that allows us to collect and analyse logs easier in a center. Sysmon has also some other benefits that makes our investigations easier.&lt;/p>
-&lt;p>Sysmon is used in Linux systems as well. (&lt;a href="https://github.com/microsoft/SysmonForLinux">https://github.com/microsoft/SysmonForLinux&lt;/a>)&lt;/p>
-&lt;p>In this article I will show you how to download, install Sysmon and then how to send Sysmon logs into Wazuh SIEM tool.&lt;/p></description></item><item><title>[EN] Active Directory Domain Controller Installation</title><link>https://ittechnetworkk.github.io/posts/addcinstallation/ad-dc-installation/</link><pubDate>Tue, 18 Mar 2025 11:14:26 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/addcinstallation/ad-dc-installation/</guid><description>&lt;p>Hi everyone,&lt;/p>
-&lt;p>In this article, I will show you how to install the &lt;strong>Active Directory Domain Controller&lt;/strong> role on a Windows Server.&lt;/p>
-&lt;p>I will be using &lt;strong>Windows Server 2022&lt;/strong>, which is already installed.&lt;/p>
-&lt;p>The installation process will be as follows:&lt;/p>
-&lt;p>Before starting the installation, we need to configure a few things.&lt;/p>
-&lt;p>First, we need to assign a static IP address to our server.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/ADDCInstallation/1.png" alt="esxi">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/ADDCInstallation/2.png" alt="esxi">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/ADDCInstallation/3.png" alt="esxi">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/ADDCInstallation/4.png" alt="esxi">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/ADDCInstallation/5.png" alt="esxi">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/ADDCInstallation/6.png" alt="esxi">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/ADDCInstallation/7.png" alt="esxi">&lt;/p></description></item><item><title>Windows Server NIC Teaming</title><link>https://ittechnetworkk.github.io/posts/windowsservernicteaming/windows-server-nic-teaming/</link><pubDate>Thu, 10 Oct 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/windowsservernicteaming/windows-server-nic-teaming/</guid><description>&lt;p>Windows Server&amp;rsquo;da NIC Teaming, birden fazla ethernet kartının tek bir kart gibi kullanılmasına denir. Örneğin 4 x 1Gb kartlarımız var, bunları NIC Teaming yaparsak 4Gb olarak çalışan bir kart haline gelecektir.&lt;/p>
-&lt;p>NIC Teaming&amp;rsquo;in bazı avantajları aşağıdaki gibidir.&lt;/p>
-&lt;ul>
-&lt;li>Bant Genişliği,&lt;/li>
-&lt;li>Yedeklilik,&lt;/li>
-&lt;li>Verimlilik.&lt;/li>
-&lt;/ul>
-&lt;p>NIC Teaming yaparken mutlaka karşılığının olması gerekir yoksa çalışmaz. Yani Windows Server&amp;rsquo;ın karşısındaki Switch&amp;rsquo;den de LACP yapılması gerekir.&lt;/p>
-&lt;p>NIC Teaming yapma adımları aşağıdaki gibidir.&lt;/p>
-&lt;p>Aşağıdaki görseldeki &amp;ldquo;NIC Teaming Disabled&amp;rdquo; yazan seçeneğe geliyorum.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Windows on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/windows/</link><description>Recent content in Windows on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Tue, 30 Sep 2025 19:28:28 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml"/><item><title>[EN] Caldera Alice 2.0 Adversary Emulation</title><link>https://ittechnetworkk.github.io/posts/caldera_alice2.0_attack_scenario/calderaalice2.0/</link><pubDate>Tue, 30 Sep 2025 19:28:28 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/caldera_alice2.0_attack_scenario/calderaalice2.0/</guid><description>&lt;p&gt;Hi everyone, In this article I will perform an attack scenario using Caldera and will show its effects in Wazuh (SIEM/XDR) and LimaCharlie (EDR).&lt;/p&gt;
+&lt;p&gt;LimaCharlie can integrate with the Atomic Red Team extension, which I will use in Caldera to perform the attack. Therefore, you don&amp;rsquo;t need to install Atomic Red Team separately.&lt;/p&gt;
+&lt;p&gt;In my lab environment for this attack scenario, I have a Client1 machine and an AD-DC machine, and I have already installed Caldera agents on both.&lt;/p&gt;</description></item><item><title>[EN] Windows Logon Types</title><link>https://ittechnetworkk.github.io/posts/windowslogontypes/windowslogontypes/</link><pubDate>Sun, 31 Aug 2025 04:04:25 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/windowslogontypes/windowslogontypes/</guid><description>&lt;p&gt;Hi everyone,&lt;/p&gt;
+&lt;p&gt;In this article, I will walk you through Windows Logon Types.&lt;/p&gt;
+&lt;p&gt;Windows operating systems support multiple logon types, each designed for specific authentication scenarios. Understanding these logon types is crucial for system administrators, security professionals, and anyone managing Windows environments.&lt;/p&gt;
+&lt;p&gt;Below is a concise overview of the main logon types, along with real-world examples for each.&lt;/p&gt;
+&lt;h2 id="1-interactive-logon-type-2"&gt;1. Interactive Logon (Type 2)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Description:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Occurs when a user logs on to a computer locally (e.g., at the console or via Remote Desktop).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Scenario:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>[EN] DHCP Server Installation On Windows Server 2022</title><link>https://ittechnetworkk.github.io/posts/windowsserver2022dhcpserverinstallation/windowsserver2022dhcpinstallation/</link><pubDate>Sun, 31 Aug 2025 03:37:10 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/windowsserver2022dhcpserverinstallation/windowsserver2022dhcpinstallation/</guid><description>&lt;p&gt;Hi everyone,&lt;/p&gt;
+&lt;p&gt;In this article, I will walk you through how to install DHCP Server Role in Windows Server.&lt;/p&gt;
+&lt;p&gt;Steps will be as follows&lt;/p&gt;
+&lt;h2 id="1---install-dhcp-server-role"&gt;&lt;strong&gt;1 - Install DHCP Server Role&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Server Manager &amp;gt; Add roles and features&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/1.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/2.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/3.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/4.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/5.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/6.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/7.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/8.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/9.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/10.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/11.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/12.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/13.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;h2 id="2---configure-dhcp-server"&gt;&lt;strong&gt;2 - Configure DHCP Server&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Server Manager &amp;gt; DHCP&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/14.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/15.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/16.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/17.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/18.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/19.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/20.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/21.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/22.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/23.png" alt="WinDHCP"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/WindowsDHCP/24.png" alt="WinDHCP"&gt;&lt;/p&gt;</description></item><item><title>[EN] Security Operation Center Setup</title><link>https://ittechnetworkk.github.io/posts/securityoperationcenterinstallation/security-operation-center-installation/</link><pubDate>Sun, 17 Aug 2025 15:38:38 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/securityoperationcenterinstallation/security-operation-center-installation/</guid><description>&lt;p&gt;Hi everyone! In this article, I will take you through my Security Operation Center environment on Hetzner, which is a German company that provides web hosting services and data centers.&lt;/p&gt;
+&lt;p&gt;I want to start by sharing my excitement with you.&lt;/p&gt;
+&lt;p&gt;I have been interested in IT for some time and have built several lab environments, ranging from small to large. After gaining experience, I wanted to build my own SOC environment to gain more real-life experience.&lt;/p&gt;</description></item><item><title>[EN] Wazuh Sysmon Integration</title><link>https://ittechnetworkk.github.io/posts/wazuhsysmonintegration/wazuh-sysmon-integration/</link><pubDate>Tue, 12 Aug 2025 00:33:51 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/wazuhsysmonintegration/wazuh-sysmon-integration/</guid><description>&lt;p&gt;Hi everyone, in this article I will guide you how to integrate Sysmon and Wazuh SIEM tool.&lt;/p&gt;
+&lt;p&gt;Sysmon is a tool that allows us to collect and analyse logs easier in a center. Sysmon has also some other benefits that makes our investigations easier.&lt;/p&gt;
+&lt;p&gt;Sysmon is used in Linux systems as well. (&lt;a href="https://github.com/microsoft/SysmonForLinux"&gt;https://github.com/microsoft/SysmonForLinux&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;In this article I will show you how to download, install Sysmon and then how to send Sysmon logs into Wazuh SIEM tool.&lt;/p&gt;</description></item><item><title>[EN] Active Directory Domain Controller Installation</title><link>https://ittechnetworkk.github.io/posts/addcinstallation/ad-dc-installation/</link><pubDate>Tue, 18 Mar 2025 11:14:26 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/addcinstallation/ad-dc-installation/</guid><description>&lt;p&gt;Hi everyone,&lt;/p&gt;
+&lt;p&gt;In this article, I will show you how to install the &lt;strong&gt;Active Directory Domain Controller&lt;/strong&gt; role on a Windows Server.&lt;/p&gt;
+&lt;p&gt;I will be using &lt;strong&gt;Windows Server 2022&lt;/strong&gt;, which is already installed.&lt;/p&gt;
+&lt;p&gt;The installation process will be as follows:&lt;/p&gt;
+&lt;p&gt;Before starting the installation, we need to configure a few things.&lt;/p&gt;
+&lt;p&gt;First, we need to assign a static IP address to our server.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/ADDCInstallation/1.png" alt="esxi"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/ADDCInstallation/2.png" alt="esxi"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/ADDCInstallation/3.png" alt="esxi"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/ADDCInstallation/4.png" alt="esxi"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/ADDCInstallation/5.png" alt="esxi"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/ADDCInstallation/6.png" alt="esxi"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/ADDCInstallation/7.png" alt="esxi"&gt;&lt;/p&gt;</description></item><item><title>Windows Server NIC Teaming</title><link>https://ittechnetworkk.github.io/posts/windowsservernicteaming/windows-server-nic-teaming/</link><pubDate>Thu, 10 Oct 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/windowsservernicteaming/windows-server-nic-teaming/</guid><description>&lt;p&gt;Windows Server&amp;rsquo;da NIC Teaming, birden fazla ethernet kartının tek bir kart gibi kullanılmasına denir. Örneğin 4 x 1Gb kartlarımız var, bunları NIC Teaming yaparsak 4Gb olarak çalışan bir kart haline gelecektir.&lt;/p&gt;
+&lt;p&gt;NIC Teaming&amp;rsquo;in bazı avantajları aşağıdaki gibidir.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bant Genişliği,&lt;/li&gt;
+&lt;li&gt;Yedeklilik,&lt;/li&gt;
+&lt;li&gt;Verimlilik.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;NIC Teaming yaparken mutlaka karşılığının olması gerekir yoksa çalışmaz. Yani Windows Server&amp;rsquo;ın karşısındaki Switch&amp;rsquo;den de LACP yapılması gerekir.&lt;/p&gt;
+&lt;p&gt;NIC Teaming yapma adımları aşağıdaki gibidir.&lt;/p&gt;
+&lt;p&gt;Aşağıdaki görseldeki &amp;ldquo;NIC Teaming Disabled&amp;rdquo; yazan seçeneğe geliyorum.&lt;/p&gt;</description></item></channel></rss>

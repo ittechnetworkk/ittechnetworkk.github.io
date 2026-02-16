@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docker on ittechnetworkk</title><link>https://ittechnetworkk.github.io/categories/docker/</link><description>Recent content in Docker on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sat, 08 Feb 2025 21:46:11 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/categories/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>Docker Notlarım</title><link>https://ittechnetworkk.github.io/posts/dockernotlarim/docker-notlarim/</link><pubDate>Sat, 08 Feb 2025 21:46:11 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dockernotlarim/docker-notlarim/</guid><description>&lt;p>Docker&amp;rsquo;a giriş notlarım. Bu notlar Özgür Öztürk&amp;rsquo;ün Docker Eğitiminden aldığım notlarımdır.&lt;/p>
-&lt;pre tabindex="0">&lt;code>#Container oluşturulduktan sonra date uygulaması çalıştırılacak. Container başka bir uygulama ile başlatılacak.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docker on ittechnetworkk</title><link>https://ittechnetworkk.github.io/categories/docker/</link><description>Recent content in Docker on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sat, 08 Feb 2025 21:46:11 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/categories/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>Docker Notlarım</title><link>https://ittechnetworkk.github.io/posts/dockernotlarim/docker-notlarim/</link><pubDate>Sat, 08 Feb 2025 21:46:11 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dockernotlarim/docker-notlarim/</guid><description>&lt;p&gt;Docker&amp;rsquo;a giriş notlarım. Bu notlar Özgür Öztürk&amp;rsquo;ün Docker Eğitiminden aldığım notlarımdır.&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;#Container oluşturulduktan sonra date uygulaması çalıştırılacak. Container başka bir uygulama ile başlatılacak.
 docker container run --name deneme httpd date
 
 #Container&amp;#39;i arka planda çalıştırmak için
@@ -55,4 +55,4 @@ docker run -d --name swap --memory-swap=1G httpd
 
 #Tüm containerları topluca silmek için
 docker container prune
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Docker/1.png" alt="docker">&lt;/p></description></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Docker/1.png" alt="docker"&gt;&lt;/p&gt;</description></item></channel></rss>

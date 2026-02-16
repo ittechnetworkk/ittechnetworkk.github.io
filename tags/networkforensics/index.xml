@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Networkforensics on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/networkforensics/</link><description>Recent content in Networkforensics on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Mon, 16 Feb 2026 11:10:21 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/networkforensics/index.xml" rel="self" type="application/rss+xml"/><item><title>[EN] Wireshark Filters</title><link>https://ittechnetworkk.github.io/posts/wiresharkfilters/wireshark_filters/</link><pubDate>Mon, 16 Feb 2026 11:10:21 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/wiresharkfilters/wireshark_filters/</guid><description>&lt;p&gt;&lt;strong&gt;ICMP Request and Reply:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;icmp.type==8 #Request
+icmp.type==0 #Reply
+icmp.type==8 or icmp.type==0 #Both
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;TCP Flags:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;URG (Urgent)
+ACK (Acknowledgement)
+PSH (Push)
+RST (Reset)
+SYN (Synchronize)
+FIN (Finish)
+ECN (Explicit Congestion Notification)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SYN Request:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;tcp.flags.syn==1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SYN+ACK Reply:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;tcp.flags.syn==1 and tcp.flags.ack==1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;TCP Null Scan:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;tcp.flags==0x00
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;TCP RST:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;tcp.flags.reset==1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SYN and FIN flags:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;tcp.flags==0x003
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;OS Fingerprinting:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;(tcp.flags==0x02) &amp;amp;&amp;amp; (tcp.window_size &amp;lt; 1025)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;FTP Brute Force:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;ftp.response.code==220
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;HTTP Response Codes:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;http.response.code = 200
+http.response.code = 404
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;HTTP Requests:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;http.request
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;HTTP Request Method:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;http.request.method == &amp;#34;POST&amp;#34;
+http.request.method == &amp;#34;GET&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;HTTP Packet Filter:&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>

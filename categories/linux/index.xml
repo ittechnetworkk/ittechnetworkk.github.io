@@ -1,91 +1,97 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on ittechnetworkk</title><link>https://ittechnetworkk.github.io/categories/linux/</link><description>Recent content in Linux on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Fri, 07 Nov 2025 17:17:44 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>[EN] Wazuh Fail2ban Integration</title><link>https://ittechnetworkk.github.io/posts/wazuhfail2ban/wazuh-fail2ban/</link><pubDate>Fri, 07 Nov 2025 17:17:44 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/wazuhfail2ban/wazuh-fail2ban/</guid><description>&lt;p>Hi everyone! In this article I’ll walk you through installing and configuring Fail2Ban and then show you how to integrate it with Wazuh.&lt;/p>
-&lt;p>Fail2Ban scans log files for repeated authentication failures and automatically bans the offending IP address. Pairing Fail2Ban with Wazuh gives you centralized visibility over those bans and unbans across all of your monitored hosts.&lt;/p>
-&lt;h3 id="installation">Installation&lt;/h3>
-&lt;p>Update your package index and install Fail2Ban:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1&lt;/span>&lt;span>sudo apt update
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2&lt;/span>&lt;span>sudo apt install fail2ban
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Verify the installation:&lt;/p></description></item><item><title>[EN] Wazuh Auditd Integration</title><link>https://ittechnetworkk.github.io/posts/wazuhauditd/wazuh-auditd/</link><pubDate>Fri, 07 Nov 2025 17:11:11 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/wazuhauditd/wazuh-auditd/</guid><description>&lt;p>Hi everyone! In this article I’ll walk you through installing Auditd on a Linux system and integrating it with Wazuh.&lt;/p>
-&lt;p>Auditd (the Linux Auditing System) records security-relevant activity so you can understand what is happening on your hosts. By tailoring the ruleset, you can increase visibility and build detections that match your environment.&lt;/p>
-&lt;h3 id="installation">Installation&lt;/h3>
-&lt;p>Install Auditd on Debian/Ubuntu with the following command:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1&lt;/span>&lt;span>sudo apt -y install auditd
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Start the service and enable it at boot:&lt;/p></description></item><item><title>[EN] Wazuh Suricata Integration</title><link>https://ittechnetworkk.github.io/posts/wazuhsuricata/wazuh-suricata/</link><pubDate>Fri, 07 Nov 2025 17:06:01 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/wazuhsuricata/wazuh-suricata/</guid><description>&lt;p>Hi everyone! In this article I will walk you through installing Suricata on Ubuntu 24.04 and integrating its logs with Wazuh for centralized monitoring.&lt;/p>
-&lt;h3 id="installing-suricata">Installing Suricata&lt;/h3>
-&lt;p>Start by adding the official Suricata PPA, then update the package cache and install Suricata:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1&lt;/span>&lt;span>sudo add-apt-repository ppa:oisf/suricata-stable -y
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2&lt;/span>&lt;span>sudo apt update
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3&lt;/span>&lt;span>sudo apt install suricata -y
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Enable Suricata to start automatically and launch the service:&lt;/p></description></item><item><title>[EN] Wazuh File Integrity Monitoring (FIM)</title><link>https://ittechnetworkk.github.io/posts/wazuhfim/wazuh-fim/</link><pubDate>Fri, 07 Nov 2025 16:59:49 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/wazuhfim/wazuh-fim/</guid><description>&lt;p>Hi everyone, in this article I&amp;rsquo;ll introduce you to Wazuh&amp;rsquo;s File Integrity Monitoring feature.&lt;/p>
-&lt;p>FIM is one of Wazuh&amp;rsquo;s most powerful features that monitors your environments for new files, changes, and more.&lt;/p>
-&lt;p>With this feature, you have great monitoring, visibility, and awareness capabilities over your environments.&lt;/p>
-&lt;p>You can also integrate it with YARA, VirusTotal, ClamAV, and CDB Lists to identify whether files are harmful or not. This is a great capability, and I&amp;rsquo;ll show you how to integrate them in the next ones.&lt;/p></description></item><item><title>[EN] A Honeypot Story</title><link>https://ittechnetworkk.github.io/posts/ahoneypotstory/a-honeypot-story/</link><pubDate>Wed, 29 Oct 2025 10:36:54 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ahoneypotstory/a-honeypot-story/</guid><description>&lt;p>Hi everyone. In this article, I’ll walk you through my research on an AI-powered honeypot project that I deployed in the cloud to observe various attacker Tactic and Technics.&lt;/p>
-&lt;p>I built a honeypot in a cloud environment using &lt;a href="https://beelzebub.ai/">Beelzebub&lt;/a>, an AI-supported honeypot, to evaluate how effective it is—and it performed very well.&lt;/p>
-&lt;p>Before AI honeypots, you typically had two choices: convert a real machine into a honeypot (very effective but risky), or deploy traditional honeypots (safer but easier for attackers to detect). The core idea of a honeypot is to imitate a real system inside or outside your network so you can observe malicious behavior and act before a real breach occurs. However, depending on your network configuration, attackers may still identify the deception. If you allow outbound internet access, an attacker might leverage it for malicious activity that could harm your organization’s reputation. If you don’t allow outbound access, you either need to simulate realistic responses or accept that the system may be exposed as a honeypot.&lt;/p></description></item><item><title>Airpods in linux</title><link>https://ittechnetworkk.github.io/posts/airpodsinlinux/airpodsinlinux/</link><pubDate>Sun, 31 Aug 2025 03:58:55 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/airpodsinlinux/airpodsinlinux/</guid><description>&lt;p>Selamlar! Bu yazıda AirPods&amp;rsquo;u Linux&amp;rsquo;ta nasıl kullanabileceğimizden kısaca bahsedeceğim.&lt;/p>
-&lt;p>&lt;code>/etc/bluetooth/main.conf&lt;/code> dosyasına aşağıdaki satırı eklemeniz veya varsa aşağıdaki şekilde düzeltmeniz işi çözecektir:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1&lt;/span>&lt;span>&lt;span style="color:#8be9fd;font-style:italic">ControllerMode&lt;/span> &lt;span style="color:#ff79c6">=&lt;/span> bredr
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Daha sonra Bluetooth ile tekrar bir tarama yaparsanız, Linux cihazınız AirPods&amp;rsquo;u görecektir.&lt;/p>
-&lt;p>&lt;strong>Not:&lt;/strong> Değişikliklerin etkili olması için Bluetooth servisini yeniden başlatmanız gerekebilir:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1&lt;/span>&lt;span>sudo systemctl restart bluetooth
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Teşekkürler,&lt;/p>
-&lt;p>İyi çalışmalar.&lt;/p></description></item><item><title>[EN] Security Operation Center Setup</title><link>https://ittechnetworkk.github.io/posts/securityoperationcenterinstallation/security-operation-center-installation/</link><pubDate>Sun, 17 Aug 2025 15:38:38 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/securityoperationcenterinstallation/security-operation-center-installation/</guid><description>&lt;p>Hi everyone! In this article, I will take you through my Security Operation Center environment on Hetzner, which is a German company that provides web hosting services and data centers.&lt;/p>
-&lt;p>I want to start by sharing my excitement with you.&lt;/p>
-&lt;p>I have been interested in IT for some time and have built several lab environments, ranging from small to large. After gaining experience, I wanted to build my own SOC environment to gain more real-life experience.&lt;/p></description></item><item><title>[EN] Journalctl Commands</title><link>https://ittechnetworkk.github.io/posts/usefulljournalctlcommands/journalctl-commands/</link><pubDate>Fri, 08 Aug 2025 02:47:54 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/usefulljournalctlcommands/journalctl-commands/</guid><description>&lt;p>A comprehensive guide to using &lt;code>journalctl&lt;/code> for viewing and managing systemd journal logs.&lt;/p>
-&lt;h2 id="table-of-contents">Table of Contents&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="#top-10-most-useful-commands">Top 10 Most Useful Commands&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#basic-commands">Basic Commands&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#filtering-options">Filtering Options&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#time-based-filtering">Time-Based Filtering&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#service-specific-logs">Service-Specific Logs&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#output-formats">Output Formats&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#advanced-usage">Advanced Usage&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#common-use-cases">Common Use Cases&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#log-management">Log Management&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h2 id="top-10-most-useful-commands">Top 10 Most Useful Commands&lt;/h2>
-&lt;p>Here are the 10 most essential journalctl commands you&amp;rsquo;ll use daily:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1&lt;/span>&lt;span>&lt;span style="color:#6272a4"># 1. View all journal entries&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2&lt;/span>&lt;span>journalctl
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3&lt;/span>&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4&lt;/span>&lt;span>&lt;span style="color:#6272a4"># 2. Follow logs in real-time&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5&lt;/span>&lt;span>journalctl -f
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6&lt;/span>&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7&lt;/span>&lt;span>&lt;span style="color:#6272a4"># 3. View logs since last boot&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8&lt;/span>&lt;span>journalctl -b
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9&lt;/span>&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10&lt;/span>&lt;span>&lt;span style="color:#6272a4"># 4. View logs for specific service&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11&lt;/span>&lt;span>journalctl -u service_name
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12&lt;/span>&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13&lt;/span>&lt;span>&lt;span style="color:#6272a4"># 5. View only error messages&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14&lt;/span>&lt;span>journalctl -p err
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15&lt;/span>&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16&lt;/span>&lt;span>&lt;span style="color:#6272a4"># 6. View logs since specific time&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17&lt;/span>&lt;span>journalctl --since &lt;span style="color:#f1fa8c">&amp;#34;1 hour ago&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18&lt;/span>&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19&lt;/span>&lt;span>&lt;span style="color:#6272a4"># 7. Show last 50 lines&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20&lt;/span>&lt;span>journalctl -n &lt;span style="color:#bd93f9">50&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21&lt;/span>&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22&lt;/span>&lt;span>&lt;span style="color:#6272a4"># 8. View logs in reverse order (newest first)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23&lt;/span>&lt;span>journalctl -r
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24&lt;/span>&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25&lt;/span>&lt;span>&lt;span style="color:#6272a4"># 9. Check journal disk usage&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26&lt;/span>&lt;span>journalctl --disk-usage
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27&lt;/span>&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28&lt;/span>&lt;span>&lt;span style="color:#6272a4"># 10. Clean up logs older than 7 days&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29&lt;/span>&lt;span>sudo journalctl --vacuum-time&lt;span style="color:#ff79c6">=&lt;/span>7d
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="basic-commands">Basic Commands&lt;/h2>
-&lt;p>&lt;strong>View all journal entries&lt;/strong>&lt;/p></description></item><item><title>[EN] SSH Server Configuration</title><link>https://ittechnetworkk.github.io/posts/sshserverconfiguration/ssh-server-configuration/</link><pubDate>Sat, 08 Feb 2025 15:23:57 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/sshserverconfiguration/ssh-server-configuration/</guid><description>&lt;p>Hi everyone, in this article, I will show you how to configure an SSH server in detail.&lt;/p>
-&lt;p>SSH (Secure Shell Protocol) is a widely-used protocol that securely connects and manages remote servers. In this tutorial, you will learn how to set up and configure an SSH server from scratch.&lt;/p>
-&lt;p>To set up an SSH server, you need to install the &lt;code>openssh-server&lt;/code> package on the server and the &lt;code>openssh-client&lt;/code> package on the client.&lt;/p></description></item><item><title>Cockpit Kurulumu</title><link>https://ittechnetworkk.github.io/posts/cockpitinstallation/cockpit/</link><pubDate>Fri, 24 Jan 2025 22:16:16 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/cockpitinstallation/cockpit/</guid><description>&lt;p>Selamlar, bu yazımda Linux sunucularda Cockpit kurulumuna değineceğim.&lt;/p>
-&lt;p>&lt;a href="https://cockpit-project.org/">Cockpit&lt;/a>, Linux sunucuları yönetebilmeyi sağlayan bir araçtır.&lt;/p>
-&lt;p>Cockpit&amp;rsquo;i kurduktan sonra sunucuyu web tarayıcısı üzerinden yönetebilmeyi sağlar.&lt;/p>
-&lt;p>Alternatif olarak, Webmin, cPanel, Plesk, DirectAdmin gibi araçlar da bulunur.&lt;/p>
-&lt;p>Kurulumu oldukça kolaydır. Ben Fedora Server üzerine kurulumunu göstereceğim.&lt;/p>
-&lt;p>Ayrıca &lt;a href="https://cockpit-project.org/running.html">Web Sitesini&amp;rsquo;de &lt;/a>ziyaret edebilirsiniz.&lt;/p>
-&lt;pre tabindex="0">&lt;code>fedora@fedora:~$ sudo dnf check-update
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Linux on ittechnetworkk</title><link>https://ittechnetworkk.github.io/categories/linux/</link><description>Recent content in Linux on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Tue, 20 Jan 2026 10:58:28 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml"/><item><title>[EN] Wazuh ClamAV Monitoring</title><link>https://ittechnetworkk.github.io/posts/wazuhclamav/wazuh_clamav_monitoring/</link><pubDate>Tue, 20 Jan 2026 10:58:28 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/wazuhclamav/wazuh_clamav_monitoring/</guid><description>&lt;p&gt;This guide will walk you through setting up ClamAV antivirus integrating it with Wazuh for centralized security monitoring. This setup enables automatic malware detection, detailed logging through the Wazuh security platform.&lt;/p&gt;
+&lt;h1 id="part-1-install-clamav"&gt;Part 1: Install ClamAV&lt;/h1&gt;
+&lt;h2 id="step-1-install-clamav-and-dependencies"&gt;Step 1: Install ClamAV and Dependencies&lt;/h2&gt;
+&lt;p&gt;Update your package list and install ClamAV along with its daemon, update tool, and inotify utilities:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1&lt;/span&gt;&lt;span&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;2&lt;/span&gt;&lt;span&gt;sudo apt install clamav clamav-daemon clamav-freshclam inotify-tools -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Package descriptions:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>[EN] Wazuh Fail2ban Integration</title><link>https://ittechnetworkk.github.io/posts/wazuhfail2ban/wazuh-fail2ban/</link><pubDate>Fri, 07 Nov 2025 17:17:44 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/wazuhfail2ban/wazuh-fail2ban/</guid><description>&lt;p&gt;Hi everyone! In this article I’ll walk you through installing and configuring Fail2Ban and then show you how to integrate it with Wazuh.&lt;/p&gt;
+&lt;p&gt;Fail2Ban scans log files for repeated authentication failures and automatically bans the offending IP address. Pairing Fail2Ban with Wazuh gives you centralized visibility over those bans and unbans across all of your monitored hosts.&lt;/p&gt;
+&lt;h3 id="installation"&gt;Installation&lt;/h3&gt;
+&lt;p&gt;Update your package index and install Fail2Ban:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1&lt;/span&gt;&lt;span&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;2&lt;/span&gt;&lt;span&gt;sudo apt install fail2ban
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Verify the installation:&lt;/p&gt;</description></item><item><title>[EN] Wazuh Auditd Integration</title><link>https://ittechnetworkk.github.io/posts/wazuhauditd/wazuh-auditd/</link><pubDate>Fri, 07 Nov 2025 17:11:11 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/wazuhauditd/wazuh-auditd/</guid><description>&lt;p&gt;Hi everyone! In this article I’ll walk you through installing Auditd on a Linux system and integrating it with Wazuh.&lt;/p&gt;
+&lt;p&gt;Auditd (the Linux Auditing System) records security-relevant activity so you can understand what is happening on your hosts. By tailoring the ruleset, you can increase visibility and build detections that match your environment.&lt;/p&gt;
+&lt;h3 id="installation"&gt;Installation&lt;/h3&gt;
+&lt;p&gt;Install Auditd on Debian/Ubuntu with the following command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1&lt;/span&gt;&lt;span&gt;sudo apt -y install auditd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Start the service and enable it at boot:&lt;/p&gt;</description></item><item><title>[EN] Wazuh Suricata Integration</title><link>https://ittechnetworkk.github.io/posts/wazuhsuricata/wazuh-suricata/</link><pubDate>Fri, 07 Nov 2025 17:06:01 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/wazuhsuricata/wazuh-suricata/</guid><description>&lt;p&gt;Hi everyone! In this article I will walk you through installing Suricata on Ubuntu 24.04 and integrating its logs with Wazuh for centralized monitoring.&lt;/p&gt;
+&lt;h3 id="installing-suricata"&gt;Installing Suricata&lt;/h3&gt;
+&lt;p&gt;Start by adding the official Suricata PPA, then update the package cache and install Suricata:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-sh" data-lang="sh"&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1&lt;/span&gt;&lt;span&gt;sudo add-apt-repository ppa:oisf/suricata-stable -y
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;2&lt;/span&gt;&lt;span&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;3&lt;/span&gt;&lt;span&gt;sudo apt install suricata -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Enable Suricata to start automatically and launch the service:&lt;/p&gt;</description></item><item><title>[EN] Wazuh File Integrity Monitoring (FIM)</title><link>https://ittechnetworkk.github.io/posts/wazuhfim/wazuh-fim/</link><pubDate>Fri, 07 Nov 2025 16:59:49 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/wazuhfim/wazuh-fim/</guid><description>&lt;p&gt;Hi everyone, in this article I&amp;rsquo;ll introduce you to Wazuh&amp;rsquo;s File Integrity Monitoring feature.&lt;/p&gt;
+&lt;p&gt;FIM is one of Wazuh&amp;rsquo;s most powerful features that monitors your environments for new files, changes, and more.&lt;/p&gt;
+&lt;p&gt;With this feature, you have great monitoring, visibility, and awareness capabilities over your environments.&lt;/p&gt;
+&lt;p&gt;You can also integrate it with YARA, VirusTotal, ClamAV, and CDB Lists to identify whether files are harmful or not. This is a great capability, and I&amp;rsquo;ll show you how to integrate them in the next ones.&lt;/p&gt;</description></item><item><title>[EN] A Honeypot Story</title><link>https://ittechnetworkk.github.io/posts/ahoneypotstory/a-honeypot-story/</link><pubDate>Wed, 29 Oct 2025 10:36:54 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ahoneypotstory/a-honeypot-story/</guid><description>&lt;p&gt;Hi everyone. In this article, I’ll walk you through my research on an AI-powered honeypot project that I deployed in the cloud to observe various attacker Tactic and Technics.&lt;/p&gt;
+&lt;p&gt;I built a honeypot in a cloud environment using &lt;a href="https://beelzebub.ai/"&gt;Beelzebub&lt;/a&gt;, an AI-supported honeypot, to evaluate how effective it is—and it performed very well.&lt;/p&gt;
+&lt;p&gt;Before AI honeypots, you typically had two choices: convert a real machine into a honeypot (very effective but risky), or deploy traditional honeypots (safer but easier for attackers to detect). The core idea of a honeypot is to imitate a real system inside or outside your network so you can observe malicious behavior and act before a real breach occurs. However, depending on your network configuration, attackers may still identify the deception. If you allow outbound internet access, an attacker might leverage it for malicious activity that could harm your organization’s reputation. If you don’t allow outbound access, you either need to simulate realistic responses or accept that the system may be exposed as a honeypot.&lt;/p&gt;</description></item><item><title>Airpods in linux</title><link>https://ittechnetworkk.github.io/posts/airpodsinlinux/airpodsinlinux/</link><pubDate>Sun, 31 Aug 2025 03:58:55 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/airpodsinlinux/airpodsinlinux/</guid><description>&lt;p&gt;Selamlar! Bu yazıda AirPods&amp;rsquo;u Linux&amp;rsquo;ta nasıl kullanabileceğimizden kısaca bahsedeceğim.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/etc/bluetooth/main.conf&lt;/code&gt; dosyasına aşağıdaki satırı eklemeniz veya varsa aşağıdaki şekilde düzeltmeniz işi çözecektir:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1&lt;/span&gt;&lt;span&gt;&lt;span style="color:#8be9fd;font-style:italic"&gt;ControllerMode&lt;/span&gt; &lt;span style="color:#ff79c6"&gt;=&lt;/span&gt; bredr
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Daha sonra Bluetooth ile tekrar bir tarama yaparsanız, Linux cihazınız AirPods&amp;rsquo;u görecektir.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Not:&lt;/strong&gt; Değişikliklerin etkili olması için Bluetooth servisini yeniden başlatmanız gerekebilir:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1&lt;/span&gt;&lt;span&gt;sudo systemctl restart bluetooth
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Teşekkürler,&lt;/p&gt;
+&lt;p&gt;İyi çalışmalar.&lt;/p&gt;</description></item><item><title>[EN] Security Operation Center Setup</title><link>https://ittechnetworkk.github.io/posts/securityoperationcenterinstallation/security-operation-center-installation/</link><pubDate>Sun, 17 Aug 2025 15:38:38 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/securityoperationcenterinstallation/security-operation-center-installation/</guid><description>&lt;p&gt;Hi everyone! In this article, I will take you through my Security Operation Center environment on Hetzner, which is a German company that provides web hosting services and data centers.&lt;/p&gt;
+&lt;p&gt;I want to start by sharing my excitement with you.&lt;/p&gt;
+&lt;p&gt;I have been interested in IT for some time and have built several lab environments, ranging from small to large. After gaining experience, I wanted to build my own SOC environment to gain more real-life experience.&lt;/p&gt;</description></item><item><title>[EN] Journalctl Commands</title><link>https://ittechnetworkk.github.io/posts/usefulljournalctlcommands/journalctl-commands/</link><pubDate>Fri, 08 Aug 2025 02:47:54 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/usefulljournalctlcommands/journalctl-commands/</guid><description>&lt;p&gt;A comprehensive guide to using &lt;code&gt;journalctl&lt;/code&gt; for viewing and managing systemd journal logs.&lt;/p&gt;
+&lt;h2 id="table-of-contents"&gt;Table of Contents&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#top-10-most-useful-commands"&gt;Top 10 Most Useful Commands&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#basic-commands"&gt;Basic Commands&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#filtering-options"&gt;Filtering Options&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#time-based-filtering"&gt;Time-Based Filtering&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#service-specific-logs"&gt;Service-Specific Logs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#output-formats"&gt;Output Formats&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#advanced-usage"&gt;Advanced Usage&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#common-use-cases"&gt;Common Use Cases&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#log-management"&gt;Log Management&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="top-10-most-useful-commands"&gt;Top 10 Most Useful Commands&lt;/h2&gt;
+&lt;p&gt;Here are the 10 most essential journalctl commands you&amp;rsquo;ll use daily:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt; 1&lt;/span&gt;&lt;span&gt;&lt;span style="color:#6272a4"&gt;# 1. View all journal entries&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt; 2&lt;/span&gt;&lt;span&gt;journalctl
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt; 3&lt;/span&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt; 4&lt;/span&gt;&lt;span&gt;&lt;span style="color:#6272a4"&gt;# 2. Follow logs in real-time&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt; 5&lt;/span&gt;&lt;span&gt;journalctl -f
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt; 6&lt;/span&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt; 7&lt;/span&gt;&lt;span&gt;&lt;span style="color:#6272a4"&gt;# 3. View logs since last boot&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt; 8&lt;/span&gt;&lt;span&gt;journalctl -b
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt; 9&lt;/span&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;10&lt;/span&gt;&lt;span&gt;&lt;span style="color:#6272a4"&gt;# 4. View logs for specific service&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;11&lt;/span&gt;&lt;span&gt;journalctl -u service_name
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;12&lt;/span&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;13&lt;/span&gt;&lt;span&gt;&lt;span style="color:#6272a4"&gt;# 5. View only error messages&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;14&lt;/span&gt;&lt;span&gt;journalctl -p err
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;15&lt;/span&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;16&lt;/span&gt;&lt;span&gt;&lt;span style="color:#6272a4"&gt;# 6. View logs since specific time&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;17&lt;/span&gt;&lt;span&gt;journalctl --since &lt;span style="color:#f1fa8c"&gt;&amp;#34;1 hour ago&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;18&lt;/span&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;19&lt;/span&gt;&lt;span&gt;&lt;span style="color:#6272a4"&gt;# 7. Show last 50 lines&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;20&lt;/span&gt;&lt;span&gt;journalctl -n &lt;span style="color:#bd93f9"&gt;50&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;21&lt;/span&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;22&lt;/span&gt;&lt;span&gt;&lt;span style="color:#6272a4"&gt;# 8. View logs in reverse order (newest first)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;23&lt;/span&gt;&lt;span&gt;journalctl -r
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;24&lt;/span&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;25&lt;/span&gt;&lt;span&gt;&lt;span style="color:#6272a4"&gt;# 9. Check journal disk usage&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;26&lt;/span&gt;&lt;span&gt;journalctl --disk-usage
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;27&lt;/span&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;28&lt;/span&gt;&lt;span&gt;&lt;span style="color:#6272a4"&gt;# 10. Clean up logs older than 7 days&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;29&lt;/span&gt;&lt;span&gt;sudo journalctl --vacuum-time&lt;span style="color:#ff79c6"&gt;=&lt;/span&gt;7d
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="basic-commands"&gt;Basic Commands&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;View all journal entries&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>[EN] SSH Server Configuration</title><link>https://ittechnetworkk.github.io/posts/sshserverconfiguration/ssh-server-configuration/</link><pubDate>Sat, 08 Feb 2025 15:23:57 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/sshserverconfiguration/ssh-server-configuration/</guid><description>&lt;p&gt;Hi everyone, in this article, I will show you how to configure an SSH server in detail.&lt;/p&gt;
+&lt;p&gt;SSH (Secure Shell Protocol) is a widely-used protocol that securely connects and manages remote servers. In this tutorial, you will learn how to set up and configure an SSH server from scratch.&lt;/p&gt;
+&lt;p&gt;To set up an SSH server, you need to install the &lt;code&gt;openssh-server&lt;/code&gt; package on the server and the &lt;code&gt;openssh-client&lt;/code&gt; package on the client.&lt;/p&gt;</description></item><item><title>Cockpit Kurulumu</title><link>https://ittechnetworkk.github.io/posts/cockpitinstallation/cockpit/</link><pubDate>Fri, 24 Jan 2025 22:16:16 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/cockpitinstallation/cockpit/</guid><description>&lt;p&gt;Selamlar, bu yazımda Linux sunucularda Cockpit kurulumuna değineceğim.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://cockpit-project.org/"&gt;Cockpit&lt;/a&gt;, Linux sunucuları yönetebilmeyi sağlayan bir araçtır.&lt;/p&gt;
+&lt;p&gt;Cockpit&amp;rsquo;i kurduktan sonra sunucuyu web tarayıcısı üzerinden yönetebilmeyi sağlar.&lt;/p&gt;
+&lt;p&gt;Alternatif olarak, Webmin, cPanel, Plesk, DirectAdmin gibi araçlar da bulunur.&lt;/p&gt;
+&lt;p&gt;Kurulumu oldukça kolaydır. Ben Fedora Server üzerine kurulumunu göstereceğim.&lt;/p&gt;
+&lt;p&gt;Ayrıca &lt;a href="https://cockpit-project.org/running.html"&gt;Web Sitesini&amp;rsquo;de &lt;/a&gt;ziyaret edebilirsiniz.&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;fedora@fedora:~$ sudo dnf check-update
 fedora@fedora:~$ sudo dnf install cockpit
-&lt;/code>&lt;/pre>&lt;p>Kurulum bittikten sonra servisi başlatıp daha sonra enable ediyorum. Cockpit servisinin adı &lt;code>cockpit.socket&lt;/code> tir.&lt;/p>
-&lt;pre tabindex="0">&lt;code>fedora@fedora:~$ systemctl start cockpit.socket
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Kurulum bittikten sonra servisi başlatıp daha sonra enable ediyorum. Cockpit servisinin adı &lt;code&gt;cockpit.socket&lt;/code&gt; tir.&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;fedora@fedora:~$ systemctl start cockpit.socket
 fedora@fedora:~$ systemctl enable --now cockpit.socket
 fedora@fedora:~$ systemctl status cockpit.socket
 ● cockpit.socket - Cockpit Web Service Socket
@@ -104,17 +110,17 @@ fedora@fedora:~$ systemctl status cockpit.socket
 
 Jan 20 16:42:14 fedora systemd[1]: Starting cockpit.socket - Cockpit Web Service Socket...
 Jan 20 16:42:14 fedora systemd[1]: Listening on cockpit.socket - Cockpit Web Service Socket.
-&lt;/code>&lt;/pre>&lt;p>Kurulum ve servisi hallettikten sonra Cockpit&amp;rsquo;in hangi portta çalıştığını bulmak için yukarıdaki &lt;code>systemctl&lt;/code> çıktısına bakabilir veya ağ bağlantılarını kontrol edebilirsiniz.&lt;/p></description></item><item><title>[EN] NetworkManager Installation</title><link>https://ittechnetworkk.github.io/posts/networkmanagerinstallation/network-manager-installation/</link><pubDate>Fri, 24 Jan 2025 21:46:46 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/networkmanagerinstallation/network-manager-installation/</guid><description>&lt;p>Hi there, in this article, I will show you how to switch &lt;code>netplan&lt;/code> to &lt;code>NetworkManager&lt;/code> to manage network interfaces on Ubuntu.&lt;/p>
-&lt;p>As you know, Ubuntu uses netplan as the default tool for network management. However NetworkManager is often a better choice due to its advanced features and ease of use.&lt;/p>
-&lt;p>In this guide, I’ll walk you through the steps to install and configure NetworkManager on an Ubuntu Server.&lt;/p>
-&lt;p>&lt;strong>Step 1: Install NetworkManager&lt;/strong>&lt;/p></description></item><item><title>[EN] DHCP Server Configuration</title><link>https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/</link><pubDate>Thu, 23 Jan 2025 01:06:35 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/</guid><description>&lt;p>Hello there!&lt;/p>
-&lt;p>In this article, I’m going to show you how to install and configure a DHCP server.&lt;/p>
-&lt;p>I’m going to install the DHCP server role on an Ubuntu server. However, the process is almost the same for all distributions.&lt;/p>
-&lt;p>We need to install the &lt;code>isc-dhcp-server&lt;/code> package for DHCP role.&lt;/p>
-&lt;p>Let&amp;rsquo;s get started.&lt;/p>
-&lt;pre tabindex="0">&lt;code>ubuntu@ubuntu:~$ sudo apt install isc-dhcp-server
-&lt;/code>&lt;/pre>&lt;p>After the package is installed, let’s check the service called &lt;code>isc-dhcp-server&lt;/code>.&lt;/p>
-&lt;pre tabindex="0">&lt;code>ubuntu@ubuntu:~$ systemctl status isc-dhcp-server
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Kurulum ve servisi hallettikten sonra Cockpit&amp;rsquo;in hangi portta çalıştığını bulmak için yukarıdaki &lt;code&gt;systemctl&lt;/code&gt; çıktısına bakabilir veya ağ bağlantılarını kontrol edebilirsiniz.&lt;/p&gt;</description></item><item><title>[EN] NetworkManager Installation</title><link>https://ittechnetworkk.github.io/posts/networkmanagerinstallation/network-manager-installation/</link><pubDate>Fri, 24 Jan 2025 21:46:46 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/networkmanagerinstallation/network-manager-installation/</guid><description>&lt;p&gt;Hi there, in this article, I will show you how to switch &lt;code&gt;netplan&lt;/code&gt; to &lt;code&gt;NetworkManager&lt;/code&gt; to manage network interfaces on Ubuntu.&lt;/p&gt;
+&lt;p&gt;As you know, Ubuntu uses netplan as the default tool for network management. However NetworkManager is often a better choice due to its advanced features and ease of use.&lt;/p&gt;
+&lt;p&gt;In this guide, I’ll walk you through the steps to install and configure NetworkManager on an Ubuntu Server.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Step 1: Install NetworkManager&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>[EN] DHCP Server Configuration</title><link>https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/</link><pubDate>Thu, 23 Jan 2025 01:06:35 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dhcpserver/dhcp-server-configuration/</guid><description>&lt;p&gt;Hello there!&lt;/p&gt;
+&lt;p&gt;In this article, I’m going to show you how to install and configure a DHCP server.&lt;/p&gt;
+&lt;p&gt;I’m going to install the DHCP server role on an Ubuntu server. However, the process is almost the same for all distributions.&lt;/p&gt;
+&lt;p&gt;We need to install the &lt;code&gt;isc-dhcp-server&lt;/code&gt; package for DHCP role.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s get started.&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;ubuntu@ubuntu:~$ sudo apt install isc-dhcp-server
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;After the package is installed, let’s check the service called &lt;code&gt;isc-dhcp-server&lt;/code&gt;.&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;ubuntu@ubuntu:~$ systemctl status isc-dhcp-server
 × isc-dhcp-server.service - ISC DHCP IPv4 server
  Loaded: loaded (/lib/systemd/system/isc-dhcp-server.service; enabled; vendor preset: enabled)
  Active: failed (Result: exit-code) since Wed 2025-01-22 22:22:49 UTC; 1min 46s ago
@@ -122,16 +128,16 @@ Jan 20 16:42:14 fedora systemd[1]: Listening on cockpit.socket - Cockpit Web Ser
  Process: 1553 ExecStart=/bin/sh -ec CONFIG_FILE=/etc/dhcp/dhcpd.conf; if [ -f /etc/ltsp/dhcpd.conf ]; then CONFIG_F&amp;gt;
  Main PID: 1553 (code=exited, status=1/FAILURE)
  CPU: 7ms
-&lt;/code>&lt;/pre>&lt;p>As you can see, the service is currently not working. We will configure it and then start the service.&lt;/p></description></item><item><title>Debian Server IP Konfigürasyonu</title><link>https://ittechnetworkk.github.io/posts/debianip/debian-ip/</link><pubDate>Sun, 19 Jan 2025 23:56:33 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/debianip/debian-ip/</guid><description>&lt;p>Selamlar, bu yazımda Debian Server&amp;rsquo;a nasıl statik veya dinamik IP tanımlanacağını göstereceğim.&lt;/p>
-&lt;p>Her Linux dağıtımında statik IP&amp;rsquo;ler aynı şekilde tanımlanmayabilir.&lt;/p>
-&lt;p>Linux sistemlerde her şey bir dosyadan okunduğu için bunun için de bir ilgili bir dosya vardır.&lt;/p>
-&lt;p>Debian&amp;rsquo;da bu dosya şuradadır:&lt;/p>
-&lt;ul>
-&lt;li>/etc/network/interfaces&lt;/li>
-&lt;/ul>
-&lt;p>Şimdi bu dosyayı editleyelim.&lt;/p>
-&lt;p>Dosyanın ilk hali şu şekildedir:&lt;/p>
-&lt;pre tabindex="0">&lt;code># This file describes the network interfaces available on your system
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;As you can see, the service is currently not working. We will configure it and then start the service.&lt;/p&gt;</description></item><item><title>Debian Server IP Konfigürasyonu</title><link>https://ittechnetworkk.github.io/posts/debianip/debian-ip/</link><pubDate>Sun, 19 Jan 2025 23:56:33 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/debianip/debian-ip/</guid><description>&lt;p&gt;Selamlar, bu yazımda Debian Server&amp;rsquo;a nasıl statik veya dinamik IP tanımlanacağını göstereceğim.&lt;/p&gt;
+&lt;p&gt;Her Linux dağıtımında statik IP&amp;rsquo;ler aynı şekilde tanımlanmayabilir.&lt;/p&gt;
+&lt;p&gt;Linux sistemlerde her şey bir dosyadan okunduğu için bunun için de bir ilgili bir dosya vardır.&lt;/p&gt;
+&lt;p&gt;Debian&amp;rsquo;da bu dosya şuradadır:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;/etc/network/interfaces&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Şimdi bu dosyayı editleyelim.&lt;/p&gt;
+&lt;p&gt;Dosyanın ilk hali şu şekildedir:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;# This file describes the network interfaces available on your system
 # and how to activate them. For more information, see interfaces(5).
 
 source /etc/network/interfaces.d/*
@@ -139,21 +145,21 @@ source /etc/network/interfaces.d/*
 # The loopback network interface
 auto lo
 iface lo inet loopback
-&lt;/code>&lt;/pre>&lt;p>Bazı parametreler sisteminize bağlı olarak değişiklik gösterebilir.&lt;/p></description></item><item><title>Fedora Server IP Konfigürasyonu</title><link>https://ittechnetworkk.github.io/posts/fedoraip/fedora-ip/</link><pubDate>Sun, 19 Jan 2025 22:51:26 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/fedoraip/fedora-ip/</guid><description>&lt;p>Selamlar, bu yazımda Fedora Server&amp;rsquo;a nasıl statik veya dinamik IP tanımlanacağını göstereceğim.&lt;/p>
-&lt;p>Her Linux dağıtımında statik IP&amp;rsquo;ler aynı şekilde tanımlanmayabilir. Fakat mantığını bilmek bir adım önde başlamak demektir.&lt;/p>
-&lt;p>Linux sistemlerde her şey bir dosyadan okunduğu için bunun için de bir ilgili bir dosya vardır.&lt;/p>
-&lt;p>Fedora&amp;rsquo;da bu dosya şuradadır:&lt;/p>
-&lt;p>NetworkManager kullanılmadığında;&lt;/p>
-&lt;ul>
-&lt;li>/etc/sysconfig/network-scripts/ifcfg-ens33&lt;/li>
-&lt;/ul>
-&lt;p>NetworkManager kullanıldığında;&lt;/p>
-&lt;ul>
-&lt;li>/etc/NetworkManager/system-connections/ens33.nmconnection&lt;/li>
-&lt;/ul>
-&lt;p>Şimdi bu dosyayı editleyelim.&lt;/p>
-&lt;p>Dosyanın ilk hali şu şekildedir:&lt;/p>
-&lt;pre tabindex="0">&lt;code>[connection]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Bazı parametreler sisteminize bağlı olarak değişiklik gösterebilir.&lt;/p&gt;</description></item><item><title>Fedora Server IP Konfigürasyonu</title><link>https://ittechnetworkk.github.io/posts/fedoraip/fedora-ip/</link><pubDate>Sun, 19 Jan 2025 22:51:26 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/fedoraip/fedora-ip/</guid><description>&lt;p&gt;Selamlar, bu yazımda Fedora Server&amp;rsquo;a nasıl statik veya dinamik IP tanımlanacağını göstereceğim.&lt;/p&gt;
+&lt;p&gt;Her Linux dağıtımında statik IP&amp;rsquo;ler aynı şekilde tanımlanmayabilir. Fakat mantığını bilmek bir adım önde başlamak demektir.&lt;/p&gt;
+&lt;p&gt;Linux sistemlerde her şey bir dosyadan okunduğu için bunun için de bir ilgili bir dosya vardır.&lt;/p&gt;
+&lt;p&gt;Fedora&amp;rsquo;da bu dosya şuradadır:&lt;/p&gt;
+&lt;p&gt;NetworkManager kullanılmadığında;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;/etc/sysconfig/network-scripts/ifcfg-ens33&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;NetworkManager kullanıldığında;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;/etc/NetworkManager/system-connections/ens33.nmconnection&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Şimdi bu dosyayı editleyelim.&lt;/p&gt;
+&lt;p&gt;Dosyanın ilk hali şu şekildedir:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;[connection]
 id=ens160
 uuid=36903561-eb7f-38c2-986b-b098913248de
 type=ethernet
@@ -171,14 +177,14 @@ addr-gen-mode=eui64
 method=auto
 
 [proxy]
-&lt;/code>&lt;/pre>&lt;p>Bazı parametreler sisteminize bağlı olarak değişiklik gösterebilir, fakat bizim ilgilendiğimiz kısım şimdilik &lt;code>[ipv4]&lt;/code> kısmı.&lt;/p></description></item><item><title>[EN] Linux Process Prioritization</title><link>https://ittechnetworkk.github.io/posts/linuxprocessprioritization/linux-process-prioritization/</link><pubDate>Sat, 11 Jan 2025 05:03:17 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/linuxprocessprioritization/linux-process-prioritization/</guid><description>&lt;p>In this article I am going to talk about Linux process Prioritization.&lt;/p>
-&lt;p>Sometimes we may want to prioritize our more important processes in Linux.&lt;/p>
-&lt;p>We prioritize process or processes that are more important for us with &amp;ldquo;NICE&amp;rdquo; parameters.&lt;/p>
-&lt;p>Each process has a &amp;ldquo;NICE&amp;rdquo; value. This value prioritizes processes.&lt;/p>
-&lt;p>The lower we set this value, the higher the priority of the process. However, this value can only be set between &amp;ldquo;+20&amp;rdquo; and &amp;ldquo;-20&amp;rdquo;.&lt;/p></description></item><item><title>Ubuntu 22.04 DHCP Server Konfigürasyonu</title><link>https://ittechnetworkk.github.io/posts/ubuntudhcpserver/ubuntu-dhcp-server/</link><pubDate>Thu, 07 Nov 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ubuntudhcpserver/ubuntu-dhcp-server/</guid><description>&lt;p>Merhabalar bu yazımda, Ubuntu-22.04 Server&amp;rsquo;a DHCP rolü kurup konfigürasyonunu yapacağım.&lt;/p>
-&lt;p>Ubuntu&amp;rsquo;ya DHCP rolü vermeden önce, Server&amp;rsquo;ın IP adresini statik olarak ayarlıyorum.&lt;/p>
-&lt;p>Statik IP adresi tanımlamak için &amp;ldquo;/etc/netplan/00-installer-config.yaml&amp;rdquo; dosyasını düzenliyorum.&lt;/p>
-&lt;pre tabindex="0">&lt;code>network:
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Bazı parametreler sisteminize bağlı olarak değişiklik gösterebilir, fakat bizim ilgilendiğimiz kısım şimdilik &lt;code&gt;[ipv4]&lt;/code&gt; kısmı.&lt;/p&gt;</description></item><item><title>[EN] Linux Process Prioritization</title><link>https://ittechnetworkk.github.io/posts/linuxprocessprioritization/linux-process-prioritization/</link><pubDate>Sat, 11 Jan 2025 05:03:17 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/linuxprocessprioritization/linux-process-prioritization/</guid><description>&lt;p&gt;In this article I am going to talk about Linux process Prioritization.&lt;/p&gt;
+&lt;p&gt;Sometimes we may want to prioritize our more important processes in Linux.&lt;/p&gt;
+&lt;p&gt;We prioritize process or processes that are more important for us with &amp;ldquo;NICE&amp;rdquo; parameters.&lt;/p&gt;
+&lt;p&gt;Each process has a &amp;ldquo;NICE&amp;rdquo; value. This value prioritizes processes.&lt;/p&gt;
+&lt;p&gt;The lower we set this value, the higher the priority of the process. However, this value can only be set between &amp;ldquo;+20&amp;rdquo; and &amp;ldquo;-20&amp;rdquo;.&lt;/p&gt;</description></item><item><title>Ubuntu 22.04 DHCP Server Konfigürasyonu</title><link>https://ittechnetworkk.github.io/posts/ubuntudhcpserver/ubuntu-dhcp-server/</link><pubDate>Thu, 07 Nov 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ubuntudhcpserver/ubuntu-dhcp-server/</guid><description>&lt;p&gt;Merhabalar bu yazımda, Ubuntu-22.04 Server&amp;rsquo;a DHCP rolü kurup konfigürasyonunu yapacağım.&lt;/p&gt;
+&lt;p&gt;Ubuntu&amp;rsquo;ya DHCP rolü vermeden önce, Server&amp;rsquo;ın IP adresini statik olarak ayarlıyorum.&lt;/p&gt;
+&lt;p&gt;Statik IP adresi tanımlamak için &amp;ldquo;/etc/netplan/00-installer-config.yaml&amp;rdquo; dosyasını düzenliyorum.&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;network:
   version: 2
   renderer: networkd
   ethernets:
@@ -190,24 +196,24 @@ method=auto
       routes:
         - to: default
           via: 192.168.1.1
-&lt;/code>&lt;/pre>&lt;p>Değişiklikleri geçerli kılmak için:&lt;/p>
-&lt;pre tabindex="0">&lt;code>sudo netplan apply
-&lt;/code>&lt;/pre>&lt;p>Grafik arayüzü ile yapılandırmak için &amp;ldquo;nmtui&amp;rdquo; aracını kullanabilirsiniz.&lt;/p>
-&lt;p>DHCP Server Rolü Kurulumu:&lt;/p>
-&lt;pre tabindex="0">&lt;code>sudo apt install isc-dhcp-server
-&lt;/code>&lt;/pre>&lt;p>DHCP rolü yüklendikten sonra, konfigürasyon dosyası &amp;ldquo;/etc/dhcp/dhcpd.conf&amp;quot;dur.&lt;/p></description></item><item><title>Updog</title><link>https://ittechnetworkk.github.io/posts/updog/updog/</link><pubDate>Fri, 11 Oct 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/updog/updog/</guid><description>&lt;p>Updog, SimpleHTTPServer alternatifi bir araçtır. Çok hızlı ve kolay bir şekilde localinizde bir HTTP Server ayağa kaldırmanızı sağlayan Python ile yazılmış &lt;a href="https://github.com/sc0tfree/updog">açık kaynak kodlu&lt;/a> bir araçtır.&lt;/p>
-&lt;p>Encryption ve Authentication destekler. Kendinden imzalı bir SSL sertifikası ve parola ile de bir Authentication sağlar.&lt;/p>
-&lt;p>Updog Yükleme:&lt;/p>
-&lt;pre tabindex="0">&lt;code>pip3 install updog
-&lt;/code>&lt;/pre>&lt;p>Updog kullanımı oldukça kolaydır aşağıda updog ile kullanılan tüm parametrelerini görebilirsiniz.&lt;/p>
-&lt;p>-d &lt;br>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Değişiklikleri geçerli kılmak için:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;sudo netplan apply
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Grafik arayüzü ile yapılandırmak için &amp;ldquo;nmtui&amp;rdquo; aracını kullanabilirsiniz.&lt;/p&gt;
+&lt;p&gt;DHCP Server Rolü Kurulumu:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;sudo apt install isc-dhcp-server
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;DHCP rolü yüklendikten sonra, konfigürasyon dosyası &amp;ldquo;/etc/dhcp/dhcpd.conf&amp;quot;dur.&lt;/p&gt;</description></item><item><title>Updog</title><link>https://ittechnetworkk.github.io/posts/updog/updog/</link><pubDate>Fri, 11 Oct 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/updog/updog/</guid><description>&lt;p&gt;Updog, SimpleHTTPServer alternatifi bir araçtır. Çok hızlı ve kolay bir şekilde localinizde bir HTTP Server ayağa kaldırmanızı sağlayan Python ile yazılmış &lt;a href="https://github.com/sc0tfree/updog"&gt;açık kaynak kodlu&lt;/a&gt; bir araçtır.&lt;/p&gt;
+&lt;p&gt;Encryption ve Authentication destekler. Kendinden imzalı bir SSL sertifikası ve parola ile de bir Authentication sağlar.&lt;/p&gt;
+&lt;p&gt;Updog Yükleme:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;pip3 install updog
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Updog kullanımı oldukça kolaydır aşağıda updog ile kullanılan tüm parametrelerini görebilirsiniz.&lt;/p&gt;
+&lt;p&gt;-d &lt;br&gt;
 -p
-&amp;ndash;password &lt;br>
-&amp;ndash;ssl &lt;br>
-&amp;ndash;version &lt;br>
--h&lt;/p>
-&lt;p>Bir örnek:&lt;/p>
-&lt;pre tabindex="0">&lt;code>┌─[ssnrshnn@MARVEL]─[~/test]
+&amp;ndash;password &lt;br&gt;
+&amp;ndash;ssl &lt;br&gt;
+&amp;ndash;version &lt;br&gt;
+-h&lt;/p&gt;
+&lt;p&gt;Bir örnek:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;┌─[ssnrshnn@MARVEL]─[~/test]
 └──╼ $ls
 test1.txt
 
@@ -220,52 +226,52 @@ WARNING: This is a development server. Do not use it in a production deployment.
  * Running on https://127.0.0.1:6654
  * Running on https://192.168.1.121:6654
 Press CTRL+C to quit
-&lt;/code>&lt;/pre>&lt;p>İlgili IP adresine gidecek olursak aşağıdaki gibi bir ekran karşılayacak bizi. Burada Username kısmı boş, Password kısmına ise belirlediğimiz parolayı yazıyoruz.&lt;/p></description></item><item><title>GPG Nedir?</title><link>https://ittechnetworkk.github.io/posts/gpgnedir/gpg-nedir/</link><pubDate>Tue, 23 Jul 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/gpgnedir/gpg-nedir/</guid><description>&lt;p>GPG (GNU Privacy Guard )&lt;a href="https://datatracker.ietf.org/doc/html/rfc4880">RFC4880&lt;/a> , GPL Lisanslı bir şifreleme ve imzalama aracıdır. Linux&amp;rsquo;da defaultta gelir, Windows için &lt;a href="https://www.gnupg.org/download/">Web Sitesi&lt;/a>&amp;rsquo;nden indirilebilir.&lt;/p>
-&lt;p>GPG asimetrik şifreleme algoritması kullanır. Yani Public ve Prive anahtarlar vasıtasıyla dataları şifreler veya çözer.&lt;/p>
-&lt;p>Nedir bu Public ve Prive anahtarlar?&lt;/p>
-&lt;p>2 kişi düşünelim birbirleriyle haberleşmek istesin. Her kişinin 2 anahtarı olur. Biri &amp;ldquo;Public Key&amp;rdquo; yani paylaşılan anahtar. Diğeri ise &amp;ldquo;Private key&amp;rdquo; yani gizli kalması gereken anahtar.&lt;/p>
-&lt;p>X kişisi Y kişisine gizli bir mesaj göndermek isterse bu mesajı Y kişisinin &amp;ldquo;Public Key&amp;quot;i ile şifrelemesi gerekir.&lt;/p></description></item><item><title>Raspberry Pi Syslog Server</title><link>https://ittechnetworkk.github.io/posts/raspberrypisyslogserver/raspberrypi-syslog/</link><pubDate>Mon, 15 Jul 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/raspberrypisyslogserver/raspberrypi-syslog/</guid><description>&lt;p>Merhaba, bu yazımda bi Raspberry Pi Zero&amp;rsquo;ya Syslog server rolü verip, bir Cisco Switch&amp;rsquo;e bu Syslog server konfigürasyonunu yapacağım.&lt;/p>
-&lt;p>Bu Lab için kullanacağım donanım ve yazılımlar:&lt;/p>
-&lt;ul>
-&lt;li>Raspberry Pi Zero 2W,&lt;/li>
-&lt;li>Cisco 2960 Switch,&lt;/li>
-&lt;li>SD Cart,&lt;/li>
-&lt;li>Kart Reader,&lt;/li>
-&lt;li>Ethernet Kablosu,&lt;/li>
-&lt;li>MicroUSB Power Cable,&lt;/li>
-&lt;li>Switch Power Cable,&lt;/li>
-&lt;li>ImagerPi.&lt;/li>
-&lt;/ul>
-&lt;p>İlk olarak ImagerPi kullanarak SD Kart&amp;rsquo;a Ubuntu işletim sistemini kuruyorum.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/RaspberryPiSyslogServer/1.png" alt="syslog">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/RaspberryPiSyslogServer/2.png" alt="syslog">&lt;/p>
-&lt;p>SD Kart&amp;rsquo;ı Raspberry Pi&amp;rsquo;a takıp, modemin yakınında güç kablosunu takıp cihazı açıyorum.&lt;/p></description></item><item><title>Raspberry Pi e-Paper Uygulaması</title><link>https://ittechnetworkk.github.io/posts/epaper/raspberry-pi-epaper/</link><pubDate>Tue, 25 Jun 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/epaper/raspberry-pi-epaper/</guid><description>&lt;p>Merhabalar, bu yazıda Raspbery Pi Zero kullanarak anlık olarak Saati, Tarihi, IP bilgisini, Hostname&amp;rsquo;i ve Download/Upload değerlerini gösteren bir proje yapacağım.&lt;/p>
-&lt;p>Bu proje için Raspberry Pi Zero&amp;rsquo;ya uygun 2.13Inch bir e-Paper Display kullanacağım.&lt;/p>
-&lt;p>Kullanacağım donanım ve yazılımlar aşağıdaki gibidir.&lt;/p>
-&lt;ul>
-&lt;li>Raspberry Pi Zero,&lt;/li>
-&lt;li>&lt;a href="https://de.aliexpress.com/item/33005909532.html?spm=a2g0o.order_list.order_list_main.148.42cd5c5fmmGynP&amp;amp;gatewayAdapt=glo2deu">2.13 Inch E-Paper Display&lt;/a>,&lt;/li>
-&lt;li>&lt;a href="https://www.amazon.com/-/de/dp/B09JZH16WH/ref=sr_1_3?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&amp;amp;sr=8-3">3.7V 1000mah UPS&lt;/a>,&lt;/li>
-&lt;li>SD Card,&lt;/li>
-&lt;li>Card Reader,&lt;/li>
-&lt;li>&lt;a href="https://www.raspberrypi.com/software/">Raspberry Pi Imager&lt;/a>,&lt;/li>
-&lt;li>&lt;a href="https://de.aliexpress.com/item/1005005924842887.html?spm=a2g0o.order_list.order_list_main.183.42cd5c5fmmGynP&amp;amp;gatewayAdapt=glo2deu">Ve birkaç vida&lt;/a>.&lt;/li>
-&lt;/ul>
-&lt;p>Donanımlar görüntü itibariyle aşağıdaki gibidir:
-&lt;img src="https://ittechnetworkk.github.io/images/EPaper/hardware.jpg" alt="raspberrypi">&lt;/p>
-&lt;p>İlk olarak Raspberry Pi Imager kullanarak işletim sistemini SD Kart&amp;rsquo;a yazdıracağım&lt;/p></description></item><item><title>Adguard Kurulumu (NanoPi R2S)</title><link>https://ittechnetworkk.github.io/posts/nanopirsadguard/nanopirs-adguard/</link><pubDate>Sun, 12 May 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/nanopirsadguard/nanopirs-adguard/</guid><description>&lt;p>Merhaba, bu yazımda önceden aldığım fakat değerlendiremediğim NanoPi R2S cihazına Adguard Home kurmayı anlatacağım.&lt;/p>
-&lt;p>Bazı özellikleri şöyledir:&lt;/p>
-&lt;ul>
-&lt;li>Rockchip RK3328,&lt;/li>
-&lt;li>1GB DDR4 RAM,&lt;/li>
-&lt;li>MicroSD x1 for external storage up to 128GB,&lt;/li>
-&lt;li>2x Gigabit Ethernet,&lt;/li>
-&lt;li>USB 2.0 Host x1: USB Type A,&lt;/li>
-&lt;li>USB-C x1:&lt;/li>
-&lt;li>SYS LED(Red) x1, WAN LED(Green) x1, LAN LED(Green) x1,&lt;/li>
-&lt;li>Reset buton&lt;/li>
-&lt;/ul>
-&lt;p>Metal kasa içerisine konmuş küçük ama merak uyandırıcı bir cihaz.&lt;/p>
-&lt;p>Peki Adguard Home nedir?
-&lt;a href="https://adguard.com/tr/adguard-home/overview.html">Adguard Home&lt;/a> bilenler için Pi-Hole benzeri fakat daha gelişmiş özellikleri olan bir yazılımdır.
-Bazı özellikleri aşağıdaki gibidir:&lt;/p></description></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;İlgili IP adresine gidecek olursak aşağıdaki gibi bir ekran karşılayacak bizi. Burada Username kısmı boş, Password kısmına ise belirlediğimiz parolayı yazıyoruz.&lt;/p&gt;</description></item><item><title>GPG Nedir?</title><link>https://ittechnetworkk.github.io/posts/gpgnedir/gpg-nedir/</link><pubDate>Tue, 23 Jul 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/gpgnedir/gpg-nedir/</guid><description>&lt;p&gt;GPG (GNU Privacy Guard )&lt;a href="https://datatracker.ietf.org/doc/html/rfc4880"&gt;RFC4880&lt;/a&gt; , GPL Lisanslı bir şifreleme ve imzalama aracıdır. Linux&amp;rsquo;da defaultta gelir, Windows için &lt;a href="https://www.gnupg.org/download/"&gt;Web Sitesi&lt;/a&gt;&amp;rsquo;nden indirilebilir.&lt;/p&gt;
+&lt;p&gt;GPG asimetrik şifreleme algoritması kullanır. Yani Public ve Prive anahtarlar vasıtasıyla dataları şifreler veya çözer.&lt;/p&gt;
+&lt;p&gt;Nedir bu Public ve Prive anahtarlar?&lt;/p&gt;
+&lt;p&gt;2 kişi düşünelim birbirleriyle haberleşmek istesin. Her kişinin 2 anahtarı olur. Biri &amp;ldquo;Public Key&amp;rdquo; yani paylaşılan anahtar. Diğeri ise &amp;ldquo;Private key&amp;rdquo; yani gizli kalması gereken anahtar.&lt;/p&gt;
+&lt;p&gt;X kişisi Y kişisine gizli bir mesaj göndermek isterse bu mesajı Y kişisinin &amp;ldquo;Public Key&amp;quot;i ile şifrelemesi gerekir.&lt;/p&gt;</description></item><item><title>Raspberry Pi Syslog Server</title><link>https://ittechnetworkk.github.io/posts/raspberrypisyslogserver/raspberrypi-syslog/</link><pubDate>Mon, 15 Jul 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/raspberrypisyslogserver/raspberrypi-syslog/</guid><description>&lt;p&gt;Merhaba, bu yazımda bi Raspberry Pi Zero&amp;rsquo;ya Syslog server rolü verip, bir Cisco Switch&amp;rsquo;e bu Syslog server konfigürasyonunu yapacağım.&lt;/p&gt;
+&lt;p&gt;Bu Lab için kullanacağım donanım ve yazılımlar:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Raspberry Pi Zero 2W,&lt;/li&gt;
+&lt;li&gt;Cisco 2960 Switch,&lt;/li&gt;
+&lt;li&gt;SD Cart,&lt;/li&gt;
+&lt;li&gt;Kart Reader,&lt;/li&gt;
+&lt;li&gt;Ethernet Kablosu,&lt;/li&gt;
+&lt;li&gt;MicroUSB Power Cable,&lt;/li&gt;
+&lt;li&gt;Switch Power Cable,&lt;/li&gt;
+&lt;li&gt;ImagerPi.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;İlk olarak ImagerPi kullanarak SD Kart&amp;rsquo;a Ubuntu işletim sistemini kuruyorum.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/RaspberryPiSyslogServer/1.png" alt="syslog"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/RaspberryPiSyslogServer/2.png" alt="syslog"&gt;&lt;/p&gt;
+&lt;p&gt;SD Kart&amp;rsquo;ı Raspberry Pi&amp;rsquo;a takıp, modemin yakınında güç kablosunu takıp cihazı açıyorum.&lt;/p&gt;</description></item><item><title>Raspberry Pi e-Paper Uygulaması</title><link>https://ittechnetworkk.github.io/posts/epaper/raspberry-pi-epaper/</link><pubDate>Tue, 25 Jun 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/epaper/raspberry-pi-epaper/</guid><description>&lt;p&gt;Merhabalar, bu yazıda Raspbery Pi Zero kullanarak anlık olarak Saati, Tarihi, IP bilgisini, Hostname&amp;rsquo;i ve Download/Upload değerlerini gösteren bir proje yapacağım.&lt;/p&gt;
+&lt;p&gt;Bu proje için Raspberry Pi Zero&amp;rsquo;ya uygun 2.13Inch bir e-Paper Display kullanacağım.&lt;/p&gt;
+&lt;p&gt;Kullanacağım donanım ve yazılımlar aşağıdaki gibidir.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Raspberry Pi Zero,&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://de.aliexpress.com/item/33005909532.html?spm=a2g0o.order_list.order_list_main.148.42cd5c5fmmGynP&amp;amp;gatewayAdapt=glo2deu"&gt;2.13 Inch E-Paper Display&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.amazon.com/-/de/dp/B09JZH16WH/ref=sr_1_3?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&amp;amp;sr=8-3"&gt;3.7V 1000mah UPS&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;SD Card,&lt;/li&gt;
+&lt;li&gt;Card Reader,&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.raspberrypi.com/software/"&gt;Raspberry Pi Imager&lt;/a&gt;,&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://de.aliexpress.com/item/1005005924842887.html?spm=a2g0o.order_list.order_list_main.183.42cd5c5fmmGynP&amp;amp;gatewayAdapt=glo2deu"&gt;Ve birkaç vida&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Donanımlar görüntü itibariyle aşağıdaki gibidir:
+&lt;img src="https://ittechnetworkk.github.io/images/EPaper/hardware.jpg" alt="raspberrypi"&gt;&lt;/p&gt;
+&lt;p&gt;İlk olarak Raspberry Pi Imager kullanarak işletim sistemini SD Kart&amp;rsquo;a yazdıracağım&lt;/p&gt;</description></item><item><title>Adguard Kurulumu (NanoPi R2S)</title><link>https://ittechnetworkk.github.io/posts/nanopirsadguard/nanopirs-adguard/</link><pubDate>Sun, 12 May 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/nanopirsadguard/nanopirs-adguard/</guid><description>&lt;p&gt;Merhaba, bu yazımda önceden aldığım fakat değerlendiremediğim NanoPi R2S cihazına Adguard Home kurmayı anlatacağım.&lt;/p&gt;
+&lt;p&gt;Bazı özellikleri şöyledir:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rockchip RK3328,&lt;/li&gt;
+&lt;li&gt;1GB DDR4 RAM,&lt;/li&gt;
+&lt;li&gt;MicroSD x1 for external storage up to 128GB,&lt;/li&gt;
+&lt;li&gt;2x Gigabit Ethernet,&lt;/li&gt;
+&lt;li&gt;USB 2.0 Host x1: USB Type A,&lt;/li&gt;
+&lt;li&gt;USB-C x1:&lt;/li&gt;
+&lt;li&gt;SYS LED(Red) x1, WAN LED(Green) x1, LAN LED(Green) x1,&lt;/li&gt;
+&lt;li&gt;Reset buton&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Metal kasa içerisine konmuş küçük ama merak uyandırıcı bir cihaz.&lt;/p&gt;
+&lt;p&gt;Peki Adguard Home nedir?
+&lt;a href="https://adguard.com/tr/adguard-home/overview.html"&gt;Adguard Home&lt;/a&gt; bilenler için Pi-Hole benzeri fakat daha gelişmiş özellikleri olan bir yazılımdır.
+Bazı özellikleri aşağıdaki gibidir:&lt;/p&gt;</description></item></channel></rss>

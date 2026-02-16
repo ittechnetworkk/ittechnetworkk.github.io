@@ -1,39 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Phishing on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/phishing/</link><description>Recent content in Phishing on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sat, 05 Jul 2025 15:16:47 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/phishing/index.xml" rel="self" type="application/rss+xml"/><item><title>Phishing Analysis 2</title><link>https://ittechnetworkk.github.io/walkthroughs/phishinganalysis-2/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/phishinganalysis-2/</guid><description>&lt;p>Lab URL: &lt;a href="https://blueteamlabs.online/home/challenge/phishing-analysis-2-a1091574b8">https://blueteamlabs.online/home/challenge/phishing-analysis-2-a1091574b8&lt;/a>&lt;/p>
-&lt;h3 id="question-1">&lt;strong>Question 1&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>What is the sending email address?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>Search for &amp;#34;From&amp;#34;
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Phishing-Analysis-2/1.png" alt="phishing-2">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> &lt;a href="mailto:amazon@zyevantoby.cn">amazon@zyevantoby.cn&lt;/a>&lt;/p>
-&lt;h3 id="question-2">&lt;strong>Question 2&lt;/strong>&lt;/h3>
-&lt;p>**What is the recipient email address? &lt;/p>
-&lt;pre tabindex="0">&lt;code>Search for &amp;#34;To&amp;#34;
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Phishing-Analysis-2/2.png" alt="phishing-2">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> &lt;a href="mailto:saintington73@outlook.com">saintington73@outlook.com&lt;/a>&lt;/p>
-&lt;h3 id="question-3">&lt;strong>Question 3&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>What is the subject line of the email?&lt;/strong> &lt;/p>
-&lt;pre tabindex="0">&lt;code>Search for &amp;#34;Subject&amp;#34;
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Phishing-Analysis-2/3.png" alt="phishing-2">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> Your Account has been locked&lt;/p>
-&lt;h3 id="question-4">&lt;strong>Question 4&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>What company is the attacker trying to imitate?&lt;/strong> &lt;/p>
-&lt;pre tabindex="0">&lt;code>Look for &amp;#34;From&amp;#34; 
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Phishing-Analysis-2/4.png" alt="phishing-2">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> amazon&lt;/p>
-&lt;h3 id="question-5">&lt;strong>Question 5&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>What is the date and time the email was sent? (As copied from a text editor)&lt;/strong> &lt;/p></description></item><item><title>SOC141 - Phishing URL Detected</title><link>https://ittechnetworkk.github.io/walkthroughs/soc141/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/soc141/</guid><description>&lt;p>EventID : 86
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Phishing on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/phishing/</link><description>Recent content in Phishing on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sat, 05 Jul 2025 15:16:47 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/phishing/index.xml" rel="self" type="application/rss+xml"/><item><title>Phishing Analysis 2</title><link>https://ittechnetworkk.github.io/walkthroughs/phishinganalysis-2/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/phishinganalysis-2/</guid><description>&lt;p&gt;Lab URL: &lt;a href="https://blueteamlabs.online/home/challenge/phishing-analysis-2-a1091574b8"&gt;https://blueteamlabs.online/home/challenge/phishing-analysis-2-a1091574b8&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="question-1"&gt;&lt;strong&gt;Question 1&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;What is the sending email address?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Search for &amp;#34;From&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Phishing-Analysis-2/1.png" alt="phishing-2"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; &lt;a href="mailto:amazon@zyevantoby.cn"&gt;amazon@zyevantoby.cn&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="question-2"&gt;&lt;strong&gt;Question 2&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;**What is the recipient email address? &lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Search for &amp;#34;To&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Phishing-Analysis-2/2.png" alt="phishing-2"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; &lt;a href="mailto:saintington73@outlook.com"&gt;saintington73@outlook.com&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="question-3"&gt;&lt;strong&gt;Question 3&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;What is the subject line of the email?&lt;/strong&gt; &lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Search for &amp;#34;Subject&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Phishing-Analysis-2/3.png" alt="phishing-2"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; Your Account has been locked&lt;/p&gt;
+&lt;h3 id="question-4"&gt;&lt;strong&gt;Question 4&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;What company is the attacker trying to imitate?&lt;/strong&gt; &lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Look for &amp;#34;From&amp;#34; 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Phishing-Analysis-2/4.png" alt="phishing-2"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; amazon&lt;/p&gt;
+&lt;h3 id="question-5"&gt;&lt;strong&gt;Question 5&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;What is the date and time the email was sent? (As copied from a text editor)&lt;/strong&gt; &lt;/p&gt;</description></item><item><title>SOC141 - Phishing URL Detected</title><link>https://ittechnetworkk.github.io/walkthroughs/soc141/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/soc141/</guid><description>&lt;p&gt;EventID : 86
 Event Time : Mar, 22, 2021, 09:23 PM
 Rule : SOC141 - Phishing URL Detected
-Level : Security Analyst&lt;/p>
-&lt;p>Source Address : 172.16.17.49
+Level : Security Analyst&lt;/p&gt;
+&lt;p&gt;Source Address : 172.16.17.49
 Source Hostname : EmilyComp
 Destination Address : 91.189.114.8
-Destination Hostname : mogagrocol.ru&lt;/p>
-&lt;p>Username : ellie
-Request URL : &lt;a href="http://mogagrocol.ru/wp-content/plugins/akismet/fv/index.php?email=ellie@letsdefend.io">http://mogagrocol.ru/wp-content/plugins/akismet/fv/index.php?email=ellie@letsdefend.io&lt;/a>
-User Agent : Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&lt;/p>
-&lt;p>Device Action : Allowed&lt;/p>
-&lt;p>&lt;strong>Log Management:&lt;/strong>&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/SOC141/Log-1.png" alt="SOC141">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/SOC141/Log-2.png" alt="SOC141">&lt;/p>
-&lt;p>&lt;strong>Endpoint Security:&lt;/strong>&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/SOC141/Endpoint-1.png" alt="SOC141">&lt;/p></description></item></channel></rss>
+Destination Hostname : mogagrocol.ru&lt;/p&gt;
+&lt;p&gt;Username : ellie
+Request URL : &lt;a href="http://mogagrocol.ru/wp-content/plugins/akismet/fv/index.php?email=ellie@letsdefend.io"&gt;http://mogagrocol.ru/wp-content/plugins/akismet/fv/index.php?email=ellie@letsdefend.io&lt;/a&gt;
+User Agent : Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&lt;/p&gt;
+&lt;p&gt;Device Action : Allowed&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Log Management:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/SOC141/Log-1.png" alt="SOC141"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/SOC141/Log-2.png" alt="SOC141"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Endpoint Security:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/SOC141/Endpoint-1.png" alt="SOC141"&gt;&lt;/p&gt;</description></item></channel></rss>

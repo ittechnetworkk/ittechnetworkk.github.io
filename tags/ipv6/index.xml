@@ -1,42 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ipv6 on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/ipv6/</link><description>Recent content in Ipv6 on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Tue, 25 Jun 2024 22:57:40 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/ipv6/index.xml" rel="self" type="application/rss+xml"/><item><title>IPv6 Static Routing</title><link>https://ittechnetworkk.github.io/posts/ipv6staticrouting/ipv6-static-routing/</link><pubDate>Tue, 25 Jun 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ipv6staticrouting/ipv6-static-routing/</guid><description>&lt;p>Static Route hedefe gitmek için manuel olarak yazılan rotadır. Static Route küçük networkler için kullanılabilir. Fakat orta ve büyük networklerde iş yükünü fazlaca artırabilir.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/ipv6-static-routing/1.png" alt="routing">&lt;/p>
-&lt;p>Bu da diğer Dynamic Routing protokollerinden ayıran bir özelliğidir. Bu demektir ki bir networkte Dynamic Routing Protokolü çalışsa bile öncelik statik olarak yazılan rotadadır.&lt;/p>
-&lt;p>&lt;strong>Static Route Yazımı:&lt;/strong>
-Statik rota yazmak oldukça kolaydır. Aşağıda 2 farklı yazımı görebilirsiniz. İkisi de kullanılabilir.&lt;/p>
-&lt;pre tabindex="0">&lt;code>Router(config)#ipv6 route 2001:3::/64 2001:2::2
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ipv6 on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/ipv6/</link><description>Recent content in Ipv6 on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Tue, 25 Jun 2024 22:57:40 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/ipv6/index.xml" rel="self" type="application/rss+xml"/><item><title>IPv6 Static Routing</title><link>https://ittechnetworkk.github.io/posts/ipv6staticrouting/ipv6-static-routing/</link><pubDate>Tue, 25 Jun 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ipv6staticrouting/ipv6-static-routing/</guid><description>&lt;p&gt;Static Route hedefe gitmek için manuel olarak yazılan rotadır. Static Route küçük networkler için kullanılabilir. Fakat orta ve büyük networklerde iş yükünü fazlaca artırabilir.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/ipv6-static-routing/1.png" alt="routing"&gt;&lt;/p&gt;
+&lt;p&gt;Bu da diğer Dynamic Routing protokollerinden ayıran bir özelliğidir. Bu demektir ki bir networkte Dynamic Routing Protokolü çalışsa bile öncelik statik olarak yazılan rotadadır.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Static Route Yazımı:&lt;/strong&gt;
+Statik rota yazmak oldukça kolaydır. Aşağıda 2 farklı yazımı görebilirsiniz. İkisi de kullanılabilir.&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Router(config)#ipv6 route 2001:3::/64 2001:2::2
 Router(config)#ipv6 route 2001:3::/64 gi0/1
-&lt;/code>&lt;/pre>&lt;p>Bunun anlamı; &lt;em>&lt;strong>2001:3::/64&lt;/strong>&lt;/em> networküne gitmek için &lt;em>&lt;strong>2001:2::2&lt;/strong>&lt;/em> yolunu kullan.
-veya yine &lt;em>&lt;strong>2001:3::/64&lt;/strong>&lt;/em> networküne gitmek için &lt;em>&lt;strong>gi0/1&lt;/strong>&lt;/em> interfacesini kullan.&lt;/p></description></item><item><title>IPv6 Geçiş Çalışmaları İkili Yığın Yöntemi</title><link>https://ittechnetworkk.github.io/posts/ikiliyiginyontemi/ikili-yigin-yontemi/</link><pubDate>Thu, 06 Jun 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ikiliyiginyontemi/ikili-yigin-yontemi/</guid><description>&lt;p>Bu yöntem, IPv4&amp;rsquo;den IPv6&amp;rsquo;ya geçiş yöntemlerinden biri olan tünelleme tekniğidir. Bu yöntemde, cihazların hem IPv4 hem de IPv6 adreslerini birlikte kullanması yöntemidir.
-Yani IPv4 ile gelen cihaz IPv4, IPv6 ile gelen cihaz IPv6 ile haberleşir.&lt;/p>
-&lt;p>Uygulamada daha net anlaşılacaktır.&lt;/p>
-&lt;p>Aşağıdaki topolojiyi uygulayacağım.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/IkiliYiginYontemi/1.png" alt="ipv6">&lt;/p>
-&lt;p>Yapılacaklar:&lt;/p>
-&lt;ol>
-&lt;li>Router ve VPC&amp;rsquo;lerin Interface&amp;rsquo;lerine IPv4 ve IPv6 adreslerini tanımla,&lt;/li>
-&lt;li>Networklerin birbirleriyle haberleşmesi için statik rotalar yaz,&lt;/li>
-&lt;li>Test et.&lt;/li>
-&lt;/ol>
-&lt;p>&lt;strong>1. Router ve VPC&amp;rsquo;lerin Interface&amp;rsquo;lerine IPv4 ve IPv6 adreslerini tanımla,&lt;/strong>&lt;/p></description></item><item><title>DHCPv6</title><link>https://ittechnetworkk.github.io/posts/dhcpv6/dhcpv6/</link><pubDate>Fri, 31 May 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dhcpv6/dhcpv6/</guid><description>&lt;p>DHCP(Dynamic Host Configuration Protocol), bir networkteki bir cihaza IP, DNS, Default Gateway parametrelerini dağıtan servistir. Yani networkteki bir cihazın başka bir cihaz ile konuşmasını sağlayacak parametlereleri dağıtan servistir.
-DHCPv6, DHCPv4&amp;rsquo;den bazı özellikleriyle ayrılıyor. DHCPv6 2 şekilde yapılandırılabilir.&lt;/p>
-&lt;ul>
-&lt;li>Stateful(Durumlu) DHCPv6,&lt;/li>
-&lt;li>Stateless SLAAC (Durumsuz) DHCPv6&lt;/li>
-&lt;/ul>
-&lt;p>Stateful DHCPv6 tıpkı DHCPv4 gibi, bir DHCP server üzerinden parametreleri dağıtmaktır.&lt;/p>
-&lt;p>Stateless SLAAC DHCPv6 da ise herhangi bir DHCP server olmaksızın cihazların Router üzerinden IPv6 parametrelerini alıp otomatik olarak kendini yapılandırmasıdır.&lt;/p></description></item><item><title>IPv4 IPv6 Tünelleme</title><link>https://ittechnetworkk.github.io/posts/ipv4ipv6tunelleme/ipv4-ipv6-tunelleme/</link><pubDate>Fri, 31 May 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ipv4ipv6tunelleme/ipv4-ipv6-tunelleme/</guid><description>&lt;p>Bu yöntem, IPv4&amp;rsquo;den IPv6&amp;rsquo;ya geçiş yöntemlerinden biri olan tünelleme tekniğidir. Bu yöntemde, IPv6 networkleri IPv4 üzerinden tünellenerek birbirleriyle haberleşirler. IPv4-IPv6 geçiş aşamalarında kullanılabilecek bu yöntemin yanı sıra Dual Stack, Translation yöntemleri de vardır.&lt;/p>
-&lt;p>IPv4-IPv6 Tünelleme tekniği için aşağıdaki topolojiyi uygulayacağım.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Ipv4Ipv6Tunelleme/1.png" alt="ipv6">&lt;/p>
-&lt;p>Yapılacaklar:&lt;/p>
-&lt;ol>
-&lt;li>Interfacelere IP ver.&lt;/li>
-&lt;li>Sırasıyla tunnel oluştur.&lt;/li>
-&lt;li>Statik route yazarak networkleri haberleştir.&lt;/li>
-&lt;li>Test&lt;/li>
-&lt;/ol>
-&lt;p>&lt;strong>1. Interfacelere IP ver.&lt;/strong>
-&lt;strong>R1:&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>R1#configure terminal 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Bunun anlamı; &lt;em&gt;&lt;strong&gt;2001:3::/64&lt;/strong&gt;&lt;/em&gt; networküne gitmek için &lt;em&gt;&lt;strong&gt;2001:2::2&lt;/strong&gt;&lt;/em&gt; yolunu kullan.
+veya yine &lt;em&gt;&lt;strong&gt;2001:3::/64&lt;/strong&gt;&lt;/em&gt; networküne gitmek için &lt;em&gt;&lt;strong&gt;gi0/1&lt;/strong&gt;&lt;/em&gt; interfacesini kullan.&lt;/p&gt;</description></item><item><title>IPv6 Geçiş Çalışmaları İkili Yığın Yöntemi</title><link>https://ittechnetworkk.github.io/posts/ikiliyiginyontemi/ikili-yigin-yontemi/</link><pubDate>Thu, 06 Jun 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ikiliyiginyontemi/ikili-yigin-yontemi/</guid><description>&lt;p&gt;Bu yöntem, IPv4&amp;rsquo;den IPv6&amp;rsquo;ya geçiş yöntemlerinden biri olan tünelleme tekniğidir. Bu yöntemde, cihazların hem IPv4 hem de IPv6 adreslerini birlikte kullanması yöntemidir.
+Yani IPv4 ile gelen cihaz IPv4, IPv6 ile gelen cihaz IPv6 ile haberleşir.&lt;/p&gt;
+&lt;p&gt;Uygulamada daha net anlaşılacaktır.&lt;/p&gt;
+&lt;p&gt;Aşağıdaki topolojiyi uygulayacağım.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/IkiliYiginYontemi/1.png" alt="ipv6"&gt;&lt;/p&gt;
+&lt;p&gt;Yapılacaklar:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Router ve VPC&amp;rsquo;lerin Interface&amp;rsquo;lerine IPv4 ve IPv6 adreslerini tanımla,&lt;/li&gt;
+&lt;li&gt;Networklerin birbirleriyle haberleşmesi için statik rotalar yaz,&lt;/li&gt;
+&lt;li&gt;Test et.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;1. Router ve VPC&amp;rsquo;lerin Interface&amp;rsquo;lerine IPv4 ve IPv6 adreslerini tanımla,&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>DHCPv6</title><link>https://ittechnetworkk.github.io/posts/dhcpv6/dhcpv6/</link><pubDate>Fri, 31 May 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dhcpv6/dhcpv6/</guid><description>&lt;p&gt;DHCP(Dynamic Host Configuration Protocol), bir networkteki bir cihaza IP, DNS, Default Gateway parametrelerini dağıtan servistir. Yani networkteki bir cihazın başka bir cihaz ile konuşmasını sağlayacak parametlereleri dağıtan servistir.
+DHCPv6, DHCPv4&amp;rsquo;den bazı özellikleriyle ayrılıyor. DHCPv6 2 şekilde yapılandırılabilir.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Stateful(Durumlu) DHCPv6,&lt;/li&gt;
+&lt;li&gt;Stateless SLAAC (Durumsuz) DHCPv6&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Stateful DHCPv6 tıpkı DHCPv4 gibi, bir DHCP server üzerinden parametreleri dağıtmaktır.&lt;/p&gt;
+&lt;p&gt;Stateless SLAAC DHCPv6 da ise herhangi bir DHCP server olmaksızın cihazların Router üzerinden IPv6 parametrelerini alıp otomatik olarak kendini yapılandırmasıdır.&lt;/p&gt;</description></item><item><title>IPv4 IPv6 Tünelleme</title><link>https://ittechnetworkk.github.io/posts/ipv4ipv6tunelleme/ipv4-ipv6-tunelleme/</link><pubDate>Fri, 31 May 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ipv4ipv6tunelleme/ipv4-ipv6-tunelleme/</guid><description>&lt;p&gt;Bu yöntem, IPv4&amp;rsquo;den IPv6&amp;rsquo;ya geçiş yöntemlerinden biri olan tünelleme tekniğidir. Bu yöntemde, IPv6 networkleri IPv4 üzerinden tünellenerek birbirleriyle haberleşirler. IPv4-IPv6 geçiş aşamalarında kullanılabilecek bu yöntemin yanı sıra Dual Stack, Translation yöntemleri de vardır.&lt;/p&gt;
+&lt;p&gt;IPv4-IPv6 Tünelleme tekniği için aşağıdaki topolojiyi uygulayacağım.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Ipv4Ipv6Tunelleme/1.png" alt="ipv6"&gt;&lt;/p&gt;
+&lt;p&gt;Yapılacaklar:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Interfacelere IP ver.&lt;/li&gt;
+&lt;li&gt;Sırasıyla tunnel oluştur.&lt;/li&gt;
+&lt;li&gt;Statik route yazarak networkleri haberleştir.&lt;/li&gt;
+&lt;li&gt;Test&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;1. Interfacelere IP ver.&lt;/strong&gt;
+&lt;strong&gt;R1:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;R1#configure terminal 
 R1(config)#int e0/0
 R1(config-if)#ip addr 192.168.3.2 255.255.255.0
 R1(config-if)#no sh
@@ -47,4 +47,4 @@ R1(config-if)#int loopback 0
 R1(config-if)#ipv6 addr 2001:1::1/64
 R1(config-if)#no sh
 R1(config-if)#exit
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>R2:&lt;/strong>&lt;/p></description></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R2:&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>

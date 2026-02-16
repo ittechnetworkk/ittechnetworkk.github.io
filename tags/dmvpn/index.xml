@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DMVPN on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/dmvpn/</link><description>Recent content in DMVPN on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Wed, 11 Sep 2024 22:57:40 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/dmvpn/index.xml" rel="self" type="application/rss+xml"/><item><title>DMVPN Phase 1 EIGRP</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase1eigrp/dmvpn-phase1-eigrp/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase1eigrp/dmvpn-phase1-eigrp/</guid><description>&lt;p>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p>
-&lt;p>Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase1EIGRP/1.png" alt="DMVPN">&lt;/p>
-&lt;p>Başlayalım.&lt;/p>
-&lt;p>&lt;strong>HUB:&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>HUB#conf t 
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DMVPN on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/dmvpn/</link><description>Recent content in DMVPN on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Wed, 11 Sep 2024 22:57:40 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/dmvpn/index.xml" rel="self" type="application/rss+xml"/><item><title>DMVPN Phase 1 EIGRP</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase1eigrp/dmvpn-phase1-eigrp/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase1eigrp/dmvpn-phase1-eigrp/</guid><description>&lt;p&gt;Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p&gt;
+&lt;p&gt;Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase1EIGRP/1.png" alt="DMVPN"&gt;&lt;/p&gt;
+&lt;p&gt;Başlayalım.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;HUB:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;HUB#conf t 
 HUB(config)#int tun0 
 HUB(config-if)#no sh
 HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 
@@ -16,8 +16,8 @@ HUB(config-if)#ip nhrp authentication Marvel1 
 HUB(config-if)#ip nhrp map multicast dynamic 
 HUB(config-if)#end
 HUB#wr
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-1:&lt;/strong>*&lt;/p>
-&lt;pre tabindex="0">&lt;code>SPOKE-1#conf t
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-1:&lt;/strong&gt;*&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;SPOKE-1#conf t
 SPOKE-1(config)#int tun0
 SPOKE-1(config-if)#no sh
 SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0
@@ -32,12 +32,12 @@ SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1
 SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1
 SPOKE-1(config-if)#end
 SPOKE-1#wr
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-2:&lt;/strong>*&lt;/p></description></item><item><title>DMVPN Phase 1 OSPF</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase1ospf/dmvpn-phase1-ospf/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase1ospf/dmvpn-phase1-ospf/</guid><description>&lt;p>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p>
-&lt;p>Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase1OSPF/1.png" alt="DMVPN">&lt;/p>
-&lt;p>Başlayalım.&lt;/p>
-&lt;p>&lt;strong>HUB:&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>HUB#conf t 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-2:&lt;/strong&gt;*&lt;/p&gt;</description></item><item><title>DMVPN Phase 1 OSPF</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase1ospf/dmvpn-phase1-ospf/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase1ospf/dmvpn-phase1-ospf/</guid><description>&lt;p&gt;Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p&gt;
+&lt;p&gt;Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase1OSPF/1.png" alt="DMVPN"&gt;&lt;/p&gt;
+&lt;p&gt;Başlayalım.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;HUB:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;HUB#conf t 
 HUB(config)#int tun0 
 HUB(config-if)#no sh
 HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 
@@ -50,8 +50,8 @@ HUB(config-if)#ip nhrp authentication Marvel1 
 HUB(config-if)#ip nhrp map multicast dynamic 
 HUB(config-if)#end
 HUB#wr
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-1:&lt;/strong>*&lt;/p>
-&lt;pre tabindex="0">&lt;code>SPOKE-1#conf t
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-1:&lt;/strong&gt;*&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;SPOKE-1#conf t
 SPOKE-1(config)#int tun0
 SPOKE-1(config-if)#no sh
 SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0
@@ -66,12 +66,12 @@ SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1
 SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1
 SPOKE-1(config-if)#end
 SPOKE-1#wr
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-2:&lt;/strong>*&lt;/p></description></item><item><title>DMVPN Phase 1 RIP</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase1rip/dmvpn-phase1-rip/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase1rip/dmvpn-phase1-rip/</guid><description>&lt;p>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p>
-&lt;p>Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase1RIP/1.png" alt="DMVPN">&lt;/p>
-&lt;p>Başlayalım.&lt;/p>
-&lt;p>&lt;strong>HUB:&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>HUB#conf t 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-2:&lt;/strong&gt;*&lt;/p&gt;</description></item><item><title>DMVPN Phase 1 RIP</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase1rip/dmvpn-phase1-rip/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase1rip/dmvpn-phase1-rip/</guid><description>&lt;p&gt;Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p&gt;
+&lt;p&gt;Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase1RIP/1.png" alt="DMVPN"&gt;&lt;/p&gt;
+&lt;p&gt;Başlayalım.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;HUB:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;HUB#conf t 
 HUB(config)#int tun0 
 HUB(config-if)#no sh
 HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 
@@ -84,8 +84,8 @@ HUB(config-if)#ip nhrp authentication Marvel1 
 HUB(config-if)#ip nhrp map multicast dynamic 
 HUB(config-if)#end
 HUB#wr
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-1:&lt;/strong>*&lt;/p>
-&lt;pre tabindex="0">&lt;code>SPOKE-1#conf t
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-1:&lt;/strong&gt;*&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;SPOKE-1#conf t
 SPOKE-1(config)#int tun0
 SPOKE-1(config-if)#no sh
 SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0
@@ -100,12 +100,12 @@ SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1
 SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1
 SPOKE-1(config-if)#end
 SPOKE-1#wr
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-2:&lt;/strong>*&lt;/p></description></item><item><title>DMVPN Phase 2 EIGRP</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase2eigrp/dmvpn-phase2-eigrp/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase2eigrp/dmvpn-phase2-eigrp/</guid><description>&lt;p>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p>
-&lt;p>Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase2EIGRP/1.png" alt="DMVPN">&lt;/p>
-&lt;p>Başlayalım.&lt;/p>
-&lt;p>&lt;strong>HUB:&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>HUB#conf t 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-2:&lt;/strong&gt;*&lt;/p&gt;</description></item><item><title>DMVPN Phase 2 EIGRP</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase2eigrp/dmvpn-phase2-eigrp/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase2eigrp/dmvpn-phase2-eigrp/</guid><description>&lt;p&gt;Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p&gt;
+&lt;p&gt;Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase2EIGRP/1.png" alt="DMVPN"&gt;&lt;/p&gt;
+&lt;p&gt;Başlayalım.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;HUB:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;HUB#conf t 
 HUB(config)#int tun0 
 HUB(config-if)#no sh
 HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 
@@ -118,8 +118,8 @@ HUB(config-if)#ip nhrp authentication Marvel1 
 HUB(config-if)#ip nhrp map multicast dynamic 
 HUB(config-if)#end
 HUB#wr
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-1:&lt;/strong>*&lt;/p>
-&lt;pre tabindex="0">&lt;code>SPOKE-1#conf t
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-1:&lt;/strong&gt;*&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;SPOKE-1#conf t
 SPOKE-1(config)#int tun0
 SPOKE-1(config-if)#no sh
 SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0
@@ -134,12 +134,12 @@ SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1
 SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1
 SPOKE-1(config-if)#end
 SPOKE-1#wr
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-2:&lt;/strong>*&lt;/p></description></item><item><title>DMVPN Phase 2 OSPF</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase2ospf/dmvpn-phase2-ospf/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase2ospf/dmvpn-phase2-ospf/</guid><description>&lt;p>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p>
-&lt;p>Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase2OSPF/1.png" alt="DMVPN">&lt;/p>
-&lt;p>Başlayalım.&lt;/p>
-&lt;p>&lt;strong>HUB:&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>HUB#conf t 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-2:&lt;/strong&gt;*&lt;/p&gt;</description></item><item><title>DMVPN Phase 2 OSPF</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase2ospf/dmvpn-phase2-ospf/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase2ospf/dmvpn-phase2-ospf/</guid><description>&lt;p&gt;Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p&gt;
+&lt;p&gt;Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase2OSPF/1.png" alt="DMVPN"&gt;&lt;/p&gt;
+&lt;p&gt;Başlayalım.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;HUB:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;HUB#conf t 
 HUB(config)#int tun0 
 HUB(config-if)#no sh
 HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 
@@ -152,8 +152,8 @@ HUB(config-if)#ip nhrp authentication Marvel1 
 HUB(config-if)#ip nhrp map multicast dynamic 
 HUB(config-if)#end
 HUB#wr
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-1:&lt;/strong>*&lt;/p>
-&lt;pre tabindex="0">&lt;code>SPOKE-1#conf t
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-1:&lt;/strong&gt;*&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;SPOKE-1#conf t
 SPOKE-1(config)#int tun0
 SPOKE-1(config-if)#no sh
 SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0
@@ -168,12 +168,12 @@ SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1
 SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1
 SPOKE-1(config-if)#end
 SPOKE-1#wr
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-2:&lt;/strong>*&lt;/p></description></item><item><title>DMVPN Phase 2 RIP</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase2rip/dmvpn-phase2-rip/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase2rip/dmvpn-phase2-rip/</guid><description>&lt;p>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p>
-&lt;p>Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase2RIP/1.png" alt="DMVPN">&lt;/p>
-&lt;p>Başlayalım.&lt;/p>
-&lt;p>&lt;strong>HUB:&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>HUB#conf t 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-2:&lt;/strong&gt;*&lt;/p&gt;</description></item><item><title>DMVPN Phase 2 RIP</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase2rip/dmvpn-phase2-rip/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase2rip/dmvpn-phase2-rip/</guid><description>&lt;p&gt;Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p&gt;
+&lt;p&gt;Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase2RIP/1.png" alt="DMVPN"&gt;&lt;/p&gt;
+&lt;p&gt;Başlayalım.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;HUB:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;HUB#conf t 
 HUB(config)#int tun0 
 HUB(config-if)#no sh
 HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 
@@ -186,8 +186,8 @@ HUB(config-if)#ip nhrp authentication Marvel1 
 HUB(config-if)#ip nhrp map multicast dynamic 
 HUB(config-if)#end
 HUB#wr
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-1:&lt;/strong>*&lt;/p>
-&lt;pre tabindex="0">&lt;code>SPOKE-1#conf t
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-1:&lt;/strong&gt;*&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;SPOKE-1#conf t
 SPOKE-1(config)#int tun0
 SPOKE-1(config-if)#no sh
 SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0
@@ -202,12 +202,12 @@ SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1
 SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1
 SPOKE-1(config-if)#end
 SPOKE-1#wr
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-2:&lt;/strong>*&lt;/p></description></item><item><title>DMVPN Phase 3 EIGRP</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase3eigrp/dmvpn-phase3-eigrp/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase3eigrp/dmvpn-phase3-eigrp/</guid><description>&lt;p>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p>
-&lt;p>Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase3EIGRP/1.png" alt="DMVPN">&lt;/p>
-&lt;p>Başlayalım.&lt;/p>
-&lt;p>&lt;strong>HUB:&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>HUB#conf t 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-2:&lt;/strong&gt;*&lt;/p&gt;</description></item><item><title>DMVPN Phase 3 EIGRP</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase3eigrp/dmvpn-phase3-eigrp/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase3eigrp/dmvpn-phase3-eigrp/</guid><description>&lt;p&gt;Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p&gt;
+&lt;p&gt;Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase3EIGRP/1.png" alt="DMVPN"&gt;&lt;/p&gt;
+&lt;p&gt;Başlayalım.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;HUB:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;HUB#conf t 
 HUB(config)#int tun0 
 HUB(config-if)#no sh
 HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 
@@ -220,8 +220,8 @@ HUB(config-if)#ip nhrp authentication Marvel1 
 HUB(config-if)#ip nhrp map multicast dynamic 
 HUB(config-if)#end
 HUB#wr
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-1:&lt;/strong>*&lt;/p>
-&lt;pre tabindex="0">&lt;code>SPOKE-1#conf t
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-1:&lt;/strong&gt;*&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;SPOKE-1#conf t
 SPOKE-1(config)#int tun0
 SPOKE-1(config-if)#no sh
 SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0
@@ -236,12 +236,12 @@ SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1
 SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1
 SPOKE-1(config-if)#end
 SPOKE-1#wr
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-2:&lt;/strong>*&lt;/p></description></item><item><title>DMVPN Phase 3 OSPF</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase3ospf/dmvpn-phase3-ospf/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase3ospf/dmvpn-phase3-ospf/</guid><description>&lt;p>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p>
-&lt;p>Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase3OSPF/1.png" alt="DMVPN">&lt;/p>
-&lt;p>Başlayalım.&lt;/p>
-&lt;p>&lt;strong>HUB:&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>HUB#conf t 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-2:&lt;/strong&gt;*&lt;/p&gt;</description></item><item><title>DMVPN Phase 3 OSPF</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase3ospf/dmvpn-phase3-ospf/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase3ospf/dmvpn-phase3-ospf/</guid><description>&lt;p&gt;Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p&gt;
+&lt;p&gt;Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase3OSPF/1.png" alt="DMVPN"&gt;&lt;/p&gt;
+&lt;p&gt;Başlayalım.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;HUB:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;HUB#conf t 
 HUB(config)#int tun0 
 HUB(config-if)#no sh
 HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 
@@ -254,8 +254,8 @@ HUB(config-if)#ip nhrp authentication Marvel1 
 HUB(config-if)#ip nhrp map multicast dynamic 
 HUB(config-if)#end
 HUB#wr
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-1:&lt;/strong>*&lt;/p>
-&lt;pre tabindex="0">&lt;code>SPOKE-1#conf t
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-1:&lt;/strong&gt;*&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;SPOKE-1#conf t
 SPOKE-1(config)#int tun0
 SPOKE-1(config-if)#no sh
 SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0
@@ -270,12 +270,12 @@ SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1
 SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1
 SPOKE-1(config-if)#end
 SPOKE-1#wr
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-2:&lt;/strong>*&lt;/p></description></item><item><title>DMVPN Phase 3 RIP</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase3rip/dmvpn-phase3-rip/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase3rip/dmvpn-phase3-rip/</guid><description>&lt;p>Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p>
-&lt;p>Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase3RIP/1.png" alt="DMVPN">&lt;/p>
-&lt;p>Başlayalım.&lt;/p>
-&lt;p>&lt;strong>HUB:&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>HUB#conf t 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-2:&lt;/strong&gt;*&lt;/p&gt;</description></item><item><title>DMVPN Phase 3 RIP</title><link>https://ittechnetworkk.github.io/posts/dmvpnphase3rip/dmvpn-phase3-rip/</link><pubDate>Wed, 11 Sep 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/dmvpnphase3rip/dmvpn-phase3-rip/</guid><description>&lt;p&gt;Merhaba bu yazıda DMVPN Phase 1 ve RIP protokolü ile Hub ve Spoke&amp;rsquo;ların dinamik bir şekilde haberleşmesinden bahsedeceğim.&lt;/p&gt;
+&lt;p&gt;Aşağıda oluşturduğum topoloji ile devam edeceğim.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/DMVPNPhase3RIP/1.png" alt="DMVPN"&gt;&lt;/p&gt;
+&lt;p&gt;Başlayalım.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;HUB:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;HUB#conf t 
 HUB(config)#int tun0 
 HUB(config-if)#no sh
 HUB(config-if)#ip addr 10.0.0.1 255.255.255.0 
@@ -288,8 +288,8 @@ HUB(config-if)#ip nhrp authentication Marvel1 
 HUB(config-if)#ip nhrp map multicast dynamic 
 HUB(config-if)#end
 HUB#wr
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-1:&lt;/strong>*&lt;/p>
-&lt;pre tabindex="0">&lt;code>SPOKE-1#conf t
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-1:&lt;/strong&gt;*&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;SPOKE-1#conf t
 SPOKE-1(config)#int tun0
 SPOKE-1(config-if)#no sh
 SPOKE-1(config-if)#ip addr 10.0.0.2 255.255.255.0
@@ -304,4 +304,4 @@ SPOKE-1(config-if)#ip nhrp map 10.0.0.1 1.1.1.1
 SPOKE-1(config-if)#ip nhrp map multicast 1.1.1.1
 SPOKE-1(config-if)#end
 SPOKE-1#wr
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>SPOKE-2:&lt;/strong>*&lt;/p></description></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;SPOKE-2:&lt;/strong&gt;*&lt;/p&gt;</description></item></channel></rss>

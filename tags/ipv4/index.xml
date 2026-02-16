@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IPv4 on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/ipv4/</link><description>Recent content in IPv4 on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sun, 07 Apr 2024 22:57:40 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/ipv4/index.xml" rel="self" type="application/rss+xml"/><item><title>OSPF LAB</title><link>https://ittechnetworkk.github.io/posts/ospflab/ospf-lab/</link><pubDate>Sun, 07 Apr 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ospflab/ospf-lab/</guid><description>&lt;p>Bu Lab’daki amacım OSPF’in genel bir tekrarını yapmak olacak. Komutları uzun uzun yazıyor olacağım.&lt;/p>
-&lt;p>Aşağıdaki topolojiyi uygulayacağım.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/OSPFLAB/1.png" alt="ospf">&lt;/p>
-&lt;p>Bu Lab&amp;rsquo;da istenilenler topolojinin sol üst köşesinde yazıyor.&lt;/p>
-&lt;p>Buna göre;&lt;/p>
-&lt;p>&lt;strong>1- İlk olarak router interfacelerine ve VPC&amp;rsquo;lere sırasıyla IP&amp;rsquo;lerini vererek başlıyorum.&lt;/strong>&lt;/p>
-&lt;p>&lt;strong>R1:&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>R1#configure terminal 
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IPv4 on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/ipv4/</link><description>Recent content in IPv4 on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sun, 07 Apr 2024 22:57:40 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/ipv4/index.xml" rel="self" type="application/rss+xml"/><item><title>OSPF LAB</title><link>https://ittechnetworkk.github.io/posts/ospflab/ospf-lab/</link><pubDate>Sun, 07 Apr 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ospflab/ospf-lab/</guid><description>&lt;p&gt;Bu Lab’daki amacım OSPF’in genel bir tekrarını yapmak olacak. Komutları uzun uzun yazıyor olacağım.&lt;/p&gt;
+&lt;p&gt;Aşağıdaki topolojiyi uygulayacağım.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/OSPFLAB/1.png" alt="ospf"&gt;&lt;/p&gt;
+&lt;p&gt;Bu Lab&amp;rsquo;da istenilenler topolojinin sol üst köşesinde yazıyor.&lt;/p&gt;
+&lt;p&gt;Buna göre;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1- İlk olarak router interfacelerine ve VPC&amp;rsquo;lere sırasıyla IP&amp;rsquo;lerini vererek başlıyorum.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;R1:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;R1#configure terminal 
 R1(config)#int e0/0
 R1(config-if)#ip addr 10.0.1.1 255.255.255.0
 R1(config-if)#no sh
@@ -22,30 +22,30 @@ R1(config-if)#int e1/0
 R1(config-if)#ip addr 10.0.0.1 255.255.255.0
 R1(config-if)#no sh
 R1(config-if)#exit
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>R2:&lt;/strong>&lt;/p></description></item><item><title>OSPF Konfigürasyonu</title><link>https://ittechnetworkk.github.io/posts/ospfconfiguration/ospf-configuration/</link><pubDate>Sun, 31 Mar 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ospfconfiguration/ospf-configuration/</guid><description>&lt;p>OSPF (Open Short Path First), dinamik bir yönlendirme protokolüdür. OSPF bir Link State Routing protokolüdür. Bundan dolayı network haritasının tamamına hakimdir Bazı özellikleri şöyledir:&lt;/p>
-&lt;ul>
-&lt;li>Açık kaynaklıdır,&lt;/li>
-&lt;li>SPF(Shortest Path First) algoritmasını kullanır,&lt;/li>
-&lt;li>Classless (Sınıfsız) bir protokoldür,&lt;/li>
-&lt;li>CIDR (Classless Inter-Domain Routing), VLSM(Veriable Length Subnet Masking) destekler,&lt;/li>
-&lt;li>Load balancing destekler,&lt;/li>
-&lt;li>Güncelleme süresi hızlıdır,&lt;/li>
-&lt;li>Administrative Distance değeri 110&amp;rsquo;dur,&lt;/li>
-&lt;li>Area yapısı ile ölçeklenebilir,&lt;/li>
-&lt;li>Kimlik doğrulamayı destekler (MD5)&lt;/li>
-&lt;li>Metrik değeri olarak Cost kullanır.&lt;/li>
-&lt;li>Multicast 224.0.0.5 ve 224.0.0.6 adreslerinden yayın yapar.&lt;/li>
-&lt;li>89 portunu kullanır.&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>OSPF Paket Tipleri:&lt;/strong>&lt;/p></description></item><item><title>Static Routing</title><link>https://ittechnetworkk.github.io/posts/staticrouting/static-routing/</link><pubDate>Mon, 18 Mar 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/staticrouting/static-routing/</guid><description>&lt;p>Static Routing, yönlendirme tablosuna manuel olarak route eklenmesidir.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R2:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>OSPF Konfigürasyonu</title><link>https://ittechnetworkk.github.io/posts/ospfconfiguration/ospf-configuration/</link><pubDate>Sun, 31 Mar 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/ospfconfiguration/ospf-configuration/</guid><description>&lt;p&gt;OSPF (Open Short Path First), dinamik bir yönlendirme protokolüdür. OSPF bir Link State Routing protokolüdür. Bundan dolayı network haritasının tamamına hakimdir Bazı özellikleri şöyledir:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Açık kaynaklıdır,&lt;/li&gt;
+&lt;li&gt;SPF(Shortest Path First) algoritmasını kullanır,&lt;/li&gt;
+&lt;li&gt;Classless (Sınıfsız) bir protokoldür,&lt;/li&gt;
+&lt;li&gt;CIDR (Classless Inter-Domain Routing), VLSM(Veriable Length Subnet Masking) destekler,&lt;/li&gt;
+&lt;li&gt;Load balancing destekler,&lt;/li&gt;
+&lt;li&gt;Güncelleme süresi hızlıdır,&lt;/li&gt;
+&lt;li&gt;Administrative Distance değeri 110&amp;rsquo;dur,&lt;/li&gt;
+&lt;li&gt;Area yapısı ile ölçeklenebilir,&lt;/li&gt;
+&lt;li&gt;Kimlik doğrulamayı destekler (MD5)&lt;/li&gt;
+&lt;li&gt;Metrik değeri olarak Cost kullanır.&lt;/li&gt;
+&lt;li&gt;Multicast 224.0.0.5 ve 224.0.0.6 adreslerinden yayın yapar.&lt;/li&gt;
+&lt;li&gt;89 portunu kullanır.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;OSPF Paket Tipleri:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Static Routing</title><link>https://ittechnetworkk.github.io/posts/staticrouting/static-routing/</link><pubDate>Mon, 18 Mar 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/staticrouting/static-routing/</guid><description>&lt;p&gt;Static Routing, yönlendirme tablosuna manuel olarak route eklenmesidir.
 Topoloji değişikliklerinde networklerin de yine güncellenmesi manuel olarak yapılmalıdır.
-Administrative Distance değeri 1&amp;rsquo;dir&lt;/p>
-&lt;p>Aşağıdaki topolojiyi uygulayacağız.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/StaticRouting/2.png" alt="UTP">&lt;/p>
-&lt;p>Bu topolojide tüm cihazların birbirleriyle iletişim kurmasını istiyoruz. Başlayalım&lt;/p>
-&lt;p>&lt;strong>1-&lt;/strong> Router interfacelerine ve VPC&amp;rsquo;lere IP&amp;rsquo;lerini verelim.&lt;/p>
-&lt;p>&lt;strong>R1:&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>R1#enable 
+Administrative Distance değeri 1&amp;rsquo;dir&lt;/p&gt;
+&lt;p&gt;Aşağıdaki topolojiyi uygulayacağız.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/StaticRouting/2.png" alt="UTP"&gt;&lt;/p&gt;
+&lt;p&gt;Bu topolojide tüm cihazların birbirleriyle iletişim kurmasını istiyoruz. Başlayalım&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1-&lt;/strong&gt; Router interfacelerine ve VPC&amp;rsquo;lere IP&amp;rsquo;lerini verelim.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;R1:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;R1#enable 
 R1#conf t 
 R1(config)#int e0/0
 R1(config-if)#ip add 192.168.1.1 255.255.255.0
@@ -56,8 +56,8 @@ R1(config-if)#no sh
 R1(config-if)#int s1/1
 R1(config-if)#ip addr 3.3.3.2 255.255.255.0
 R1(config-if)#no sh
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>R2:&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>R2#enable
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R2:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;R2#enable
 R2#conf t
 R2(config)#int e0/0
 R2(config-if)#ip add 192.168.2.1 255.255.255.0
@@ -68,4 +68,4 @@ R2(config-if)#no sh
 R2(config-if)#int s1/1
 R2(config-if)#ip add 1.1.1.1 255.255.255.0
 R2(config-if)#no sh
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>R3:&lt;/strong>&lt;/p></description></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R3:&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>

@@ -1,91 +1,91 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Firewall on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/firewall/</link><description>Recent content in Firewall on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sun, 17 Aug 2025 15:38:38 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/firewall/index.xml" rel="self" type="application/rss+xml"/><item><title>[EN] Security Operation Center Setup</title><link>https://ittechnetworkk.github.io/posts/securityoperationcenterinstallation/security-operation-center-installation/</link><pubDate>Sun, 17 Aug 2025 15:38:38 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/securityoperationcenterinstallation/security-operation-center-installation/</guid><description>&lt;p>Hi everyone! In this article, I will take you through my Security Operation Center environment on Hetzner, which is a German company that provides web hosting services and data centers.&lt;/p>
-&lt;p>I want to start by sharing my excitement with you.&lt;/p>
-&lt;p>I have been interested in IT for some time and have built several lab environments, ranging from small to large. After gaining experience, I wanted to build my own SOC environment to gain more real-life experience.&lt;/p></description></item><item><title>[EN] Fortigate Wazuh Integration</title><link>https://ittechnetworkk.github.io/posts/fortigatewazuhintegration/fortigate-wazuh-integration/</link><pubDate>Sat, 19 Jul 2025 15:26:52 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/fortigatewazuhintegration/fortigate-wazuh-integration/</guid><description>&lt;p>Hi everyone, in this article I will guide you through how to integrate Fortigate firewall with the Wazuh SIEM tool for centralized logging and monitoring.&lt;/p>
-&lt;p>Fortigate is one of the best firewall solutions used in networks of all sizes worldwide. Wazuh is also one of the best open-source SIEM platforms available.&lt;/p>
-&lt;p>In this article, I will show you how to send Fortigate logs to the Wazuh SIEM platform to centralize all environment logs in one location.&lt;/p></description></item><item><title>Nanopi R2S Ipfire Kurulumu</title><link>https://ittechnetworkk.github.io/posts/nanopir2sipfirekurulumu/nanopir2s-ipfire/</link><pubDate>Fri, 03 Jan 2025 23:00:44 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/nanopir2sipfirekurulumu/nanopir2s-ipfire/</guid><description>&lt;p>Merhaba, bu yazıda, NanoPi R2S cihazıma IPFire kurulumunu anlatacağım.&lt;/p>
-&lt;p>Kullandığım ekipmanlar:&lt;/p>
-&lt;ol>
-&lt;li>NanoPi R2S,&lt;/li>
-&lt;li>MicroSD Kart,&lt;/li>
-&lt;li>Kart Okuyucu,&lt;/li>
-&lt;li>Type C Güç Kablosu,&lt;/li>
-&lt;li>USB to Serial Kablo,&lt;/li>
-&lt;li>Ethernet Kablosu,&lt;/li>
-&lt;li>Terminal yazılımı (Putty or minicom),&lt;/li>
-&lt;li>Balena Etcher.&lt;/li>
-&lt;/ol>
-&lt;p>İlk olarak &lt;a href="https://cdimage.debian.org/mirror/ipfire.org/releases/ipfire-2.x/2.27-core167/ipfire-2.27.2gb-ext4.aarch64-full-core167.img.xz">IPFire imaj dosyasını&lt;/a> indiriyorum ve Balena Etcher aracıyla SD Kart&amp;rsquo;a yazdırıyorum.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/NanoPiR2SIPFireKurulumu/1.png" alt="ipfire">&lt;/p>
-&lt;p>Bu işlem bittikten sonra SD Kart&amp;rsquo;ı cihaza takıyorum.&lt;/p>
-&lt;p>Serial Kablo&amp;rsquo;yu da aşağıdaki şekilde cihaza bağlıyorum.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Firewall on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/firewall/</link><description>Recent content in Firewall on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sun, 17 Aug 2025 15:38:38 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/firewall/index.xml" rel="self" type="application/rss+xml"/><item><title>[EN] Security Operation Center Setup</title><link>https://ittechnetworkk.github.io/posts/securityoperationcenterinstallation/security-operation-center-installation/</link><pubDate>Sun, 17 Aug 2025 15:38:38 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/securityoperationcenterinstallation/security-operation-center-installation/</guid><description>&lt;p&gt;Hi everyone! In this article, I will take you through my Security Operation Center environment on Hetzner, which is a German company that provides web hosting services and data centers.&lt;/p&gt;
+&lt;p&gt;I want to start by sharing my excitement with you.&lt;/p&gt;
+&lt;p&gt;I have been interested in IT for some time and have built several lab environments, ranging from small to large. After gaining experience, I wanted to build my own SOC environment to gain more real-life experience.&lt;/p&gt;</description></item><item><title>[EN] Fortigate Wazuh Integration</title><link>https://ittechnetworkk.github.io/posts/fortigatewazuhintegration/fortigate-wazuh-integration/</link><pubDate>Sat, 19 Jul 2025 15:26:52 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/fortigatewazuhintegration/fortigate-wazuh-integration/</guid><description>&lt;p&gt;Hi everyone, in this article I will guide you through how to integrate Fortigate firewall with the Wazuh SIEM tool for centralized logging and monitoring.&lt;/p&gt;
+&lt;p&gt;Fortigate is one of the best firewall solutions used in networks of all sizes worldwide. Wazuh is also one of the best open-source SIEM platforms available.&lt;/p&gt;
+&lt;p&gt;In this article, I will show you how to send Fortigate logs to the Wazuh SIEM platform to centralize all environment logs in one location.&lt;/p&gt;</description></item><item><title>Nanopi R2S Ipfire Kurulumu</title><link>https://ittechnetworkk.github.io/posts/nanopir2sipfirekurulumu/nanopir2s-ipfire/</link><pubDate>Fri, 03 Jan 2025 23:00:44 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/nanopir2sipfirekurulumu/nanopir2s-ipfire/</guid><description>&lt;p&gt;Merhaba, bu yazıda, NanoPi R2S cihazıma IPFire kurulumunu anlatacağım.&lt;/p&gt;
+&lt;p&gt;Kullandığım ekipmanlar:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;NanoPi R2S,&lt;/li&gt;
+&lt;li&gt;MicroSD Kart,&lt;/li&gt;
+&lt;li&gt;Kart Okuyucu,&lt;/li&gt;
+&lt;li&gt;Type C Güç Kablosu,&lt;/li&gt;
+&lt;li&gt;USB to Serial Kablo,&lt;/li&gt;
+&lt;li&gt;Ethernet Kablosu,&lt;/li&gt;
+&lt;li&gt;Terminal yazılımı (Putty or minicom),&lt;/li&gt;
+&lt;li&gt;Balena Etcher.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;İlk olarak &lt;a href="https://cdimage.debian.org/mirror/ipfire.org/releases/ipfire-2.x/2.27-core167/ipfire-2.27.2gb-ext4.aarch64-full-core167.img.xz"&gt;IPFire imaj dosyasını&lt;/a&gt; indiriyorum ve Balena Etcher aracıyla SD Kart&amp;rsquo;a yazdırıyorum.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/NanoPiR2SIPFireKurulumu/1.png" alt="ipfire"&gt;&lt;/p&gt;
+&lt;p&gt;Bu işlem bittikten sonra SD Kart&amp;rsquo;ı cihaza takıyorum.&lt;/p&gt;
+&lt;p&gt;Serial Kablo&amp;rsquo;yu da aşağıdaki şekilde cihaza bağlıyorum.
 Siyah Kablo » G
 Beyaz Kablo » TX
-Turkuaz Kablo » RX&lt;/p></description></item><item><title>Cisco ASA ASDM Enable</title><link>https://ittechnetworkk.github.io/posts/asa5510asdm/asa5510-asdm/</link><pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/asa5510asdm/asa5510-asdm/</guid><description>&lt;p>Merhaba, bu yazımda Cisco ASA 5510 cihazını web arayüzünden yönetebilmek için gerekli konfigürasyonları göstereceğim.&lt;/p>
-&lt;p>İlk olarak asdm imajını çekiyorum:&lt;/p>
-&lt;pre tabindex="0">&lt;code>ASA(config)# show disk0:
+Turkuaz Kablo » RX&lt;/p&gt;</description></item><item><title>Cisco ASA ASDM Enable</title><link>https://ittechnetworkk.github.io/posts/asa5510asdm/asa5510-asdm/</link><pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/asa5510asdm/asa5510-asdm/</guid><description>&lt;p&gt;Merhaba, bu yazımda Cisco ASA 5510 cihazını web arayüzünden yönetebilmek için gerekli konfigürasyonları göstereceğim.&lt;/p&gt;
+&lt;p&gt;İlk olarak asdm imajını çekiyorum:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;ASA(config)# show disk0:
 ASA(config)# asdm image flash:/asdm-649.bin 
-&lt;/code>&lt;/pre>&lt;p>HTTP servisini enable ediyorum:&lt;/p>
-&lt;pre tabindex="0">&lt;code>ASA# conf t
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;HTTP servisini enable ediyorum:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;ASA# conf t
 ASA(config)# http server enable
-&lt;/code>&lt;/pre>&lt;p>GUI&amp;rsquo;e erişebilecek network aralığını belirliyorum:&lt;/p>
-&lt;pre tabindex="0">&lt;code>ASA(config)# http 192.168.1.0 255.255.255.0 management
-&lt;/code>&lt;/pre>&lt;p>Username ve Password belirliyorum:&lt;/p>
-&lt;pre tabindex="0">&lt;code>ASA(config)# username &amp;lt;User&amp;gt; password &amp;lt;Password&amp;gt; privilege 15
-&lt;/code>&lt;/pre>&lt;p>Management Interface&amp;rsquo;ye IP veriyorum:&lt;/p>
-&lt;pre tabindex="0">&lt;code>ASA(config)# interface Management0/0
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;GUI&amp;rsquo;e erişebilecek network aralığını belirliyorum:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;ASA(config)# http 192.168.1.0 255.255.255.0 management
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Username ve Password belirliyorum:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;ASA(config)# username &amp;lt;User&amp;gt; password &amp;lt;Password&amp;gt; privilege 15
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Management Interface&amp;rsquo;ye IP veriyorum:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;ASA(config)# interface Management0/0
 ASA(config)# ip addr 192.168.1.2 255.255.255.0
 ASA(config)# no sh
-&lt;/code>&lt;/pre>&lt;p>Tarayıcımızdan cihazın IP adresine gidecek olursak web arayüzü bizi karşılayacaktır.&lt;/p></description></item><item><title>Cisco ASA Password Recovery</title><link>https://ittechnetworkk.github.io/posts/asa5510passwordrecovery/asa5510-password-recovery/</link><pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/asa5510passwordrecovery/asa5510-password-recovery/</guid><description>&lt;p>Merhabalar bu yazımda Cisco ASA 5500 serisi cihazın password recovery işlemini göstereceğim.&lt;/p>
-&lt;p>İlk olarak cihaza console kablosu ile bağlanıyorum cihazı başlatıyorum.&lt;/p>
-&lt;p>Cihaz başlarken aşağıdaki gibi bir ekran geldiğinde &amp;ldquo;ESC&amp;rdquo; tuşuna basıp &amp;ldquo;rommon&amp;rdquo; moduna geçiyorum.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/ASAPasswordRecovery/1.png" alt="asa">&lt;/p>
-&lt;p>Bu kısımda &amp;ldquo;ESC&amp;rdquo; tuşuna basar basmaz aşağıdaki &amp;ldquo;rommon&amp;rdquo; modu karşımıza çıkacaktır.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/ASAPasswordRecovery/2.png" alt="asa">&lt;/p>
-&lt;p>Password recovery için aşağıdaki komutları sırasıyla yazıyorum:&lt;/p>
-&lt;pre tabindex="0">&lt;code>rommon #0&amp;gt; confreg 0x41
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Tarayıcımızdan cihazın IP adresine gidecek olursak web arayüzü bizi karşılayacaktır.&lt;/p&gt;</description></item><item><title>Cisco ASA Password Recovery</title><link>https://ittechnetworkk.github.io/posts/asa5510passwordrecovery/asa5510-password-recovery/</link><pubDate>Mon, 02 Dec 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/asa5510passwordrecovery/asa5510-password-recovery/</guid><description>&lt;p&gt;Merhabalar bu yazımda Cisco ASA 5500 serisi cihazın password recovery işlemini göstereceğim.&lt;/p&gt;
+&lt;p&gt;İlk olarak cihaza console kablosu ile bağlanıyorum cihazı başlatıyorum.&lt;/p&gt;
+&lt;p&gt;Cihaz başlarken aşağıdaki gibi bir ekran geldiğinde &amp;ldquo;ESC&amp;rdquo; tuşuna basıp &amp;ldquo;rommon&amp;rdquo; moduna geçiyorum.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/ASAPasswordRecovery/1.png" alt="asa"&gt;&lt;/p&gt;
+&lt;p&gt;Bu kısımda &amp;ldquo;ESC&amp;rdquo; tuşuna basar basmaz aşağıdaki &amp;ldquo;rommon&amp;rdquo; modu karşımıza çıkacaktır.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/ASAPasswordRecovery/2.png" alt="asa"&gt;&lt;/p&gt;
+&lt;p&gt;Password recovery için aşağıdaki komutları sırasıyla yazıyorum:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;rommon #0&amp;gt; confreg 0x41
 rommon #0&amp;gt; confreg
 rommon #0&amp;gt; boot
-&lt;/code>&lt;/pre>&lt;p>&amp;ldquo;confreg&amp;rdquo; komutundan sonra çıkan soruları aşağıdaki gibi seçiyorum.&lt;/p></description></item><item><title>Cisco ASA SSH Konfigürasyonu</title><link>https://ittechnetworkk.github.io/posts/asa5510ssh/asa5510-ssh/</link><pubDate>Sun, 01 Dec 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/asa5510ssh/asa5510-ssh/</guid><description>&lt;p>Merhabalar, bu yazımda Cisco ASA 5510&amp;rsquo;a SSH konfigürasyonu yapmayı göstereceğim.&lt;/p>
-&lt;p>İlk olarak bir kullanıcı oluşturuyorum:&lt;/p>
-&lt;pre tabindex="0">&lt;code>ASA# conf t
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&amp;ldquo;confreg&amp;rdquo; komutundan sonra çıkan soruları aşağıdaki gibi seçiyorum.&lt;/p&gt;</description></item><item><title>Cisco ASA SSH Konfigürasyonu</title><link>https://ittechnetworkk.github.io/posts/asa5510ssh/asa5510-ssh/</link><pubDate>Sun, 01 Dec 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/asa5510ssh/asa5510-ssh/</guid><description>&lt;p&gt;Merhabalar, bu yazımda Cisco ASA 5510&amp;rsquo;a SSH konfigürasyonu yapmayı göstereceğim.&lt;/p&gt;
+&lt;p&gt;İlk olarak bir kullanıcı oluşturuyorum:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;ASA# conf t
 ASA(config)# username &amp;lt;User&amp;gt; password &amp;lt;Password&amp;gt; privilege 15
-&lt;/code>&lt;/pre>&lt;p>Kimlik doğrulama modunu ayarlıyorum:&lt;/p>
-&lt;pre tabindex="0">&lt;code>ASA(config)# aaa authentication ssh console LOCAL
-&lt;/code>&lt;/pre>&lt;p>SSH versiyonunu 2 yapıyorum ve timeout değerini ayarlıyorum:&lt;/p>
-&lt;pre tabindex="0">&lt;code>ASA(config)# ssh version 2
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Kimlik doğrulama modunu ayarlıyorum:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;ASA(config)# aaa authentication ssh console LOCAL
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;SSH versiyonunu 2 yapıyorum ve timeout değerini ayarlıyorum:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;ASA(config)# ssh version 2
 ASA(config)# ssh timeout 30
-&lt;/code>&lt;/pre>&lt;p>Bir domain adı ve anahtar çifti yaratıyorum:&lt;/p>
-&lt;pre tabindex="0">&lt;code>ASA(config)# domain-name sonersahin.local
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Bir domain adı ve anahtar çifti yaratıyorum:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;ASA(config)# domain-name sonersahin.local
 ASA(config)# crypto key generate rsa modulus 1024
-&lt;/code>&lt;/pre>&lt;p>Cihaza SSH yapacak network aralığı belirliyorum, isterseniz sadece belli bir IP adresini de yapabilirsiniz:&lt;/p></description></item><item><title>RaspberryPi Ipfire Kurulumu</title><link>https://ittechnetworkk.github.io/posts/raspberrypiipfire/raspberrypi-ipfire/</link><pubDate>Sun, 19 May 2024 23:00:44 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/raspberrypiipfire/raspberrypi-ipfire/</guid><description>&lt;p>Bu yazımda yeni aldığım Raspberry Pi 4 B modeline IPFire kurulumunu anlatacağım.
-&lt;a href="https://www.ipfire.org/">IPFire&lt;/a>, açık kaynak kodlu Linux tabanlı bir firewall yazılımıdır. IPFire&amp;rsquo;ı ISO olarak indirip bir sanal makine olarak da kurup inceleyebilirsiniz. Az kaynak tüketir ve işlevseldir.&lt;/p>
-&lt;p>&lt;a href="https://www.ipfire.org/about">IPFire&amp;rsquo;ın bazı özellikleri:&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>Network Security,&lt;/li>
-&lt;li>VLAN,&lt;/li>
-&lt;li>DHCP,&lt;/li>
-&lt;li>NTP,&lt;/li>
-&lt;li>Captive Portal,&lt;/li>
-&lt;li>Web Proxy,&lt;/li>
-&lt;li>VPN,&lt;/li>
-&lt;li>DNS,&lt;/li>
-&lt;li>IPS,&lt;/li>
-&lt;li>QoS,
-Ve çok daha fazlası.&lt;/li>
-&lt;/ul>
-&lt;p>Kullandığım Donanım ve Yazılımlar:&lt;/p>
-&lt;ol>
-&lt;li>Raspberry Pi 4 B,&lt;/li>
-&lt;li>Kart Okuyucu,&lt;/li>
-&lt;li>Harici Ethernet Kartı,&lt;/li>
-&lt;li>USB to TypeC Güç Kablosu,&lt;/li>
-&lt;li>Mouse,&lt;/li>
-&lt;li>SD Kart,&lt;/li>
-&lt;li>HDMI to Micro HDMI Dönüştürücü,&lt;/li>
-&lt;li>Klavye,&lt;/li>
-&lt;li>Monitor,&lt;/li>
-&lt;li>HDMI to HDMI,&lt;/li>
-&lt;li>2 Ethernet kablosu,&lt;/li>
-&lt;li>BalenaEtcher.&lt;/li>
-&lt;/ol>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/RaspberryPiIPFire/17.jpg" alt="ipfire">&lt;/p></description></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Cihaza SSH yapacak network aralığı belirliyorum, isterseniz sadece belli bir IP adresini de yapabilirsiniz:&lt;/p&gt;</description></item><item><title>RaspberryPi Ipfire Kurulumu</title><link>https://ittechnetworkk.github.io/posts/raspberrypiipfire/raspberrypi-ipfire/</link><pubDate>Sun, 19 May 2024 23:00:44 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/raspberrypiipfire/raspberrypi-ipfire/</guid><description>&lt;p&gt;Bu yazımda yeni aldığım Raspberry Pi 4 B modeline IPFire kurulumunu anlatacağım.
+&lt;a href="https://www.ipfire.org/"&gt;IPFire&lt;/a&gt;, açık kaynak kodlu Linux tabanlı bir firewall yazılımıdır. IPFire&amp;rsquo;ı ISO olarak indirip bir sanal makine olarak da kurup inceleyebilirsiniz. Az kaynak tüketir ve işlevseldir.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.ipfire.org/about"&gt;IPFire&amp;rsquo;ın bazı özellikleri:&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Network Security,&lt;/li&gt;
+&lt;li&gt;VLAN,&lt;/li&gt;
+&lt;li&gt;DHCP,&lt;/li&gt;
+&lt;li&gt;NTP,&lt;/li&gt;
+&lt;li&gt;Captive Portal,&lt;/li&gt;
+&lt;li&gt;Web Proxy,&lt;/li&gt;
+&lt;li&gt;VPN,&lt;/li&gt;
+&lt;li&gt;DNS,&lt;/li&gt;
+&lt;li&gt;IPS,&lt;/li&gt;
+&lt;li&gt;QoS,
+Ve çok daha fazlası.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Kullandığım Donanım ve Yazılımlar:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Raspberry Pi 4 B,&lt;/li&gt;
+&lt;li&gt;Kart Okuyucu,&lt;/li&gt;
+&lt;li&gt;Harici Ethernet Kartı,&lt;/li&gt;
+&lt;li&gt;USB to TypeC Güç Kablosu,&lt;/li&gt;
+&lt;li&gt;Mouse,&lt;/li&gt;
+&lt;li&gt;SD Kart,&lt;/li&gt;
+&lt;li&gt;HDMI to Micro HDMI Dönüştürücü,&lt;/li&gt;
+&lt;li&gt;Klavye,&lt;/li&gt;
+&lt;li&gt;Monitor,&lt;/li&gt;
+&lt;li&gt;HDMI to HDMI,&lt;/li&gt;
+&lt;li&gt;2 Ethernet kablosu,&lt;/li&gt;
+&lt;li&gt;BalenaEtcher.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/RaspberryPiIPFire/17.jpg" alt="ipfire"&gt;&lt;/p&gt;</description></item></channel></rss>

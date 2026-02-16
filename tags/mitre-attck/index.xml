@@ -1,23 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MITRE ATT&amp;CK on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/mitre-attck/</link><description>Recent content in MITRE ATT&amp;CK on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sun, 06 Jul 2025 11:50:38 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/mitre-attck/index.xml" rel="self" type="application/rss+xml"/><item><title>Nonyx</title><link>https://ittechnetworkk.github.io/walkthroughs/nonyx/</link><pubDate>Sun, 06 Jul 2025 11:50:38 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/nonyx/</guid><description>&lt;p>Lab URL: &lt;a href="https://blueteamlabs.online/home/investigation/nonyx-63b4769449">https://blueteamlabs.online/home/investigation/nonyx-63b4769449&lt;/a>&lt;/p>
-&lt;h3 id="question-1">&lt;strong>Question 1&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>Which process most likely contains injected code, providing its name, PID, and memory address? (Format: Name, PID, Address)&lt;/strong> &lt;/p>
-&lt;pre tabindex="0">&lt;code>python vol.py -f ../BlackEnergy.vnem malfind
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/Nonyx/1.png" alt="Nonyx">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> svchost.exe, 856, 0xc30000&lt;/p>
-&lt;h3 id="question-2">&lt;strong>Question 2&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>What dump file in the malfind output directory corresponds to the memory address identified for code injection? (Format: Output File Name)&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>python vol.py -f ../BlackEnergy.vnem --profile=WinXPSP2x86 malfind --dump . --pid 856
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/Nonyx/2.png" alt="Nonyx">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> process.0x80ff88d8.0xc30000.dmp&lt;/p>
-&lt;h3 id="question-3">&lt;strong>Question 3&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>Which full filename path is referenced in the strings output of the memory section identified by malfind as containing a portable executable (PE32/MZ header)? (Format: Filename Path)&lt;/strong> &lt;/p></description></item><item><title>Reveal Lab</title><link>https://ittechnetworkk.github.io/walkthroughs/reveallab/</link><pubDate>Sat, 05 Jul 2025 14:46:23 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/reveallab/</guid><description>&lt;p>Lab URL: &lt;a href="https://cyberdefenders.org/blueteam-ctf-challenges/reveal/">https://cyberdefenders.org/blueteam-ctf-challenges/reveal/&lt;/a>&lt;/p>
-&lt;h3 id="question-1">&lt;strong>Question 1&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>Identifying the name of the malicious process helps in understanding the nature of the attack. What is the name of the malicious process?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>vol3 -f 192-Reveal.dmp windows.cmdline
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/RevealLab/1.png" alt="Reveal">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> Powershell.exe&lt;/p>
-&lt;h3 id="question-2">&lt;strong>Question 2&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>Knowing the parent process ID (PPID) of the malicious process aids in tracing the process hierarchy and understanding the attack flow. What is the parent PID of the malicious process?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>vol3 -f 192-Reveal.dmp windows.pslist
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/RevealLab/2.png" alt="Reveal">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> 4120&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>MITRE ATT&amp;CK on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/mitre-attck/</link><description>Recent content in MITRE ATT&amp;CK on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sun, 06 Jul 2025 11:50:38 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/mitre-attck/index.xml" rel="self" type="application/rss+xml"/><item><title>Nonyx</title><link>https://ittechnetworkk.github.io/walkthroughs/nonyx/</link><pubDate>Sun, 06 Jul 2025 11:50:38 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/nonyx/</guid><description>&lt;p&gt;Lab URL: &lt;a href="https://blueteamlabs.online/home/investigation/nonyx-63b4769449"&gt;https://blueteamlabs.online/home/investigation/nonyx-63b4769449&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="question-1"&gt;&lt;strong&gt;Question 1&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Which process most likely contains injected code, providing its name, PID, and memory address? (Format: Name, PID, Address)&lt;/strong&gt; &lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;python vol.py -f ../BlackEnergy.vnem malfind
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/Nonyx/1.png" alt="Nonyx"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; svchost.exe, 856, 0xc30000&lt;/p&gt;
+&lt;h3 id="question-2"&gt;&lt;strong&gt;Question 2&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;What dump file in the malfind output directory corresponds to the memory address identified for code injection? (Format: Output File Name)&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;python vol.py -f ../BlackEnergy.vnem --profile=WinXPSP2x86 malfind --dump . --pid 856
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/Nonyx/2.png" alt="Nonyx"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; process.0x80ff88d8.0xc30000.dmp&lt;/p&gt;
+&lt;h3 id="question-3"&gt;&lt;strong&gt;Question 3&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Which full filename path is referenced in the strings output of the memory section identified by malfind as containing a portable executable (PE32/MZ header)? (Format: Filename Path)&lt;/strong&gt; &lt;/p&gt;</description></item><item><title>Reveal Lab</title><link>https://ittechnetworkk.github.io/walkthroughs/reveallab/</link><pubDate>Sat, 05 Jul 2025 14:46:23 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/reveallab/</guid><description>&lt;p&gt;Lab URL: &lt;a href="https://cyberdefenders.org/blueteam-ctf-challenges/reveal/"&gt;https://cyberdefenders.org/blueteam-ctf-challenges/reveal/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="question-1"&gt;&lt;strong&gt;Question 1&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Identifying the name of the malicious process helps in understanding the nature of the attack. What is the name of the malicious process?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;vol3 -f 192-Reveal.dmp windows.cmdline
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/RevealLab/1.png" alt="Reveal"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; Powershell.exe&lt;/p&gt;
+&lt;h3 id="question-2"&gt;&lt;strong&gt;Question 2&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Knowing the parent process ID (PPID) of the malicious process aids in tracing the process hierarchy and understanding the attack flow. What is the parent PID of the malicious process?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;vol3 -f 192-Reveal.dmp windows.pslist
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/RevealLab/2.png" alt="Reveal"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; 4120&lt;/p&gt;</description></item></channel></rss>

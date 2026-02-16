@@ -1,235 +1,235 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Walkthroughs on ittechnetworkk</title><link>https://ittechnetworkk.github.io/categories/walkthroughs/</link><description>Recent content in Walkthroughs on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sun, 06 Jul 2025 11:50:38 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/categories/walkthroughs/index.xml" rel="self" type="application/rss+xml"/><item><title>Nonyx</title><link>https://ittechnetworkk.github.io/walkthroughs/nonyx/</link><pubDate>Sun, 06 Jul 2025 11:50:38 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/nonyx/</guid><description>&lt;p>Lab URL: &lt;a href="https://blueteamlabs.online/home/investigation/nonyx-63b4769449">https://blueteamlabs.online/home/investigation/nonyx-63b4769449&lt;/a>&lt;/p>
-&lt;h3 id="question-1">&lt;strong>Question 1&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>Which process most likely contains injected code, providing its name, PID, and memory address? (Format: Name, PID, Address)&lt;/strong> &lt;/p>
-&lt;pre tabindex="0">&lt;code>python vol.py -f ../BlackEnergy.vnem malfind
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/Nonyx/1.png" alt="Nonyx">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> svchost.exe, 856, 0xc30000&lt;/p>
-&lt;h3 id="question-2">&lt;strong>Question 2&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>What dump file in the malfind output directory corresponds to the memory address identified for code injection? (Format: Output File Name)&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>python vol.py -f ../BlackEnergy.vnem --profile=WinXPSP2x86 malfind --dump . --pid 856
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/Nonyx/2.png" alt="Nonyx">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> process.0x80ff88d8.0xc30000.dmp&lt;/p>
-&lt;h3 id="question-3">&lt;strong>Question 3&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>Which full filename path is referenced in the strings output of the memory section identified by malfind as containing a portable executable (PE32/MZ header)? (Format: Filename Path)&lt;/strong> &lt;/p></description></item><item><title>3CX Supply Chain</title><link>https://ittechnetworkk.github.io/walkthroughs/3cxsupplychain/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/3cxsupplychain/</guid><description>&lt;p>Lab URL: &lt;a href="https://cyberdefenders.org/blueteam-ctf-challenges/3cx-supply-chain/">https://cyberdefenders.org/blueteam-ctf-challenges/3cx-supply-chain/&lt;/a>&lt;/p>
-&lt;h3 id="question-1">&lt;strong>Question 1&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>Understanding the scope of the attack and identifying which versions exhibit malicious behavior is crucial for making informed decisions if these compromised versions are present in the organization. How many versions of 3CX &lt;strong>running on Windows&lt;/strong> have been flagged as malware?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>Search for hash
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/3CX-Supply-Chain/1.png" alt="3CX-Supply-Chain">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> 2&lt;/p>
-&lt;h3 id="question-2">&lt;strong>Question 2&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>Determining the age of the malware can help assess the extent of the compromise and track the evolution of malware families and variants. What&amp;rsquo;s the UTC creation time of the &lt;code>.msi&lt;/code> malware?&lt;/strong>&lt;/p></description></item><item><title>Amadey</title><link>https://ittechnetworkk.github.io/walkthroughs/amadey/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/amadey/</guid><description>&lt;p>Lab URL: &lt;a href="https://cyberdefenders.org/blueteam-ctf-challenges/amadey/">https://cyberdefenders.org/blueteam-ctf-challenges/amadey/&lt;/a>&lt;/p>
-&lt;h3 id="question-1">&lt;strong>Question 1&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>In the memory dump analysis, determining the root of the malicious activity is essential for comprehending the extent of the intrusion. What is the name of the parent process that triggered this malicious behavior?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>python3 vol.py -f windows.vmem windows.pslist
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Amadey/1.png" alt="amadey">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> lssass.exe&lt;/p>
-&lt;h3 id="question-2">&lt;strong>Question 2&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>Once the rogue process is identified, its exact location on the device can reveal more about its nature and source. Where is this process housed on the workstation?&lt;/strong>&lt;/p></description></item><item><title>Lespion</title><link>https://ittechnetworkk.github.io/walkthroughs/lespion/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/lespion/</guid><description>&lt;p>Lab URL: &lt;a href="https://cyberdefenders.org/blueteam-ctf-challenges/lespion/">https://cyberdefenders.org/blueteam-ctf-challenges/lespion/&lt;/a>&lt;/p>
-&lt;h3 id="question-1">&lt;strong>Question 1&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>File -&amp;gt; Github.txt: What API key did the insider add to his GitHub repositories?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>cat Github.txt
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Walkthroughs on ittechnetworkk</title><link>https://ittechnetworkk.github.io/categories/walkthroughs/</link><description>Recent content in Walkthroughs on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sun, 06 Jul 2025 11:50:38 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/categories/walkthroughs/index.xml" rel="self" type="application/rss+xml"/><item><title>Nonyx</title><link>https://ittechnetworkk.github.io/walkthroughs/nonyx/</link><pubDate>Sun, 06 Jul 2025 11:50:38 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/nonyx/</guid><description>&lt;p&gt;Lab URL: &lt;a href="https://blueteamlabs.online/home/investigation/nonyx-63b4769449"&gt;https://blueteamlabs.online/home/investigation/nonyx-63b4769449&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="question-1"&gt;&lt;strong&gt;Question 1&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Which process most likely contains injected code, providing its name, PID, and memory address? (Format: Name, PID, Address)&lt;/strong&gt; &lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;python vol.py -f ../BlackEnergy.vnem malfind
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/Nonyx/1.png" alt="Nonyx"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; svchost.exe, 856, 0xc30000&lt;/p&gt;
+&lt;h3 id="question-2"&gt;&lt;strong&gt;Question 2&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;What dump file in the malfind output directory corresponds to the memory address identified for code injection? (Format: Output File Name)&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;python vol.py -f ../BlackEnergy.vnem --profile=WinXPSP2x86 malfind --dump . --pid 856
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/Nonyx/2.png" alt="Nonyx"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; process.0x80ff88d8.0xc30000.dmp&lt;/p&gt;
+&lt;h3 id="question-3"&gt;&lt;strong&gt;Question 3&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Which full filename path is referenced in the strings output of the memory section identified by malfind as containing a portable executable (PE32/MZ header)? (Format: Filename Path)&lt;/strong&gt; &lt;/p&gt;</description></item><item><title>3CX Supply Chain</title><link>https://ittechnetworkk.github.io/walkthroughs/3cxsupplychain/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/3cxsupplychain/</guid><description>&lt;p&gt;Lab URL: &lt;a href="https://cyberdefenders.org/blueteam-ctf-challenges/3cx-supply-chain/"&gt;https://cyberdefenders.org/blueteam-ctf-challenges/3cx-supply-chain/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="question-1"&gt;&lt;strong&gt;Question 1&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Understanding the scope of the attack and identifying which versions exhibit malicious behavior is crucial for making informed decisions if these compromised versions are present in the organization. How many versions of 3CX &lt;strong&gt;running on Windows&lt;/strong&gt; have been flagged as malware?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Search for hash
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/3CX-Supply-Chain/1.png" alt="3CX-Supply-Chain"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; 2&lt;/p&gt;
+&lt;h3 id="question-2"&gt;&lt;strong&gt;Question 2&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Determining the age of the malware can help assess the extent of the compromise and track the evolution of malware families and variants. What&amp;rsquo;s the UTC creation time of the &lt;code&gt;.msi&lt;/code&gt; malware?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Amadey</title><link>https://ittechnetworkk.github.io/walkthroughs/amadey/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/amadey/</guid><description>&lt;p&gt;Lab URL: &lt;a href="https://cyberdefenders.org/blueteam-ctf-challenges/amadey/"&gt;https://cyberdefenders.org/blueteam-ctf-challenges/amadey/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="question-1"&gt;&lt;strong&gt;Question 1&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;In the memory dump analysis, determining the root of the malicious activity is essential for comprehending the extent of the intrusion. What is the name of the parent process that triggered this malicious behavior?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;python3 vol.py -f windows.vmem windows.pslist
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Amadey/1.png" alt="amadey"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; lssass.exe&lt;/p&gt;
+&lt;h3 id="question-2"&gt;&lt;strong&gt;Question 2&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Once the rogue process is identified, its exact location on the device can reveal more about its nature and source. Where is this process housed on the workstation?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Lespion</title><link>https://ittechnetworkk.github.io/walkthroughs/lespion/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/lespion/</guid><description>&lt;p&gt;Lab URL: &lt;a href="https://cyberdefenders.org/blueteam-ctf-challenges/lespion/"&gt;https://cyberdefenders.org/blueteam-ctf-challenges/lespion/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="question-1"&gt;&lt;strong&gt;Question 1&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;File -&amp;gt; Github.txt: What API key did the insider add to his GitHub repositories?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;cat Github.txt
 https://github.com/EMarseille99
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Lespion/1.1.png" alt="lespion">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Lespion/1.2.png" alt="lespion">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Lespion/1.3.png" alt="lespion">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Lespion/1.4.png" alt="lespion">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> aJFRaLHjMXvYZgLPwiJkroYLGRkNBW&lt;/p>
-&lt;h3 id="question-2">&lt;strong>Question 2&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>File -&amp;gt; Github.txt: What plaintext password did the insider add to his GitHub repositories?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>Search: Password
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Lespion/1.1.png" alt="lespion"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Lespion/1.2.png" alt="lespion"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Lespion/1.3.png" alt="lespion"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Lespion/1.4.png" alt="lespion"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; aJFRaLHjMXvYZgLPwiJkroYLGRkNBW&lt;/p&gt;
+&lt;h3 id="question-2"&gt;&lt;strong&gt;Question 2&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;File -&amp;gt; Github.txt: What plaintext password did the insider add to his GitHub repositories?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Search: Password
 UGljYXNzb0JhZ3VldHRlOTk=
 Decode Base64
-&lt;/code>&lt;/pre>&lt;pre tabindex="0">&lt;code>echo &amp;#34;UGljYXNzb0JhZ3VldHRlOTk=&amp;#34; |base64 -d
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Lespion/2.1.png" alt="lespion">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Lespion/2.2.png" alt="lespion">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> PicassoBaguette99&lt;/p>
-&lt;h3 id="question-3">&lt;strong>Question 3&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>File -&amp;gt; Github.txt: What cryptocurrency mining tool did the insider use?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>Surfing on the Repositories Page
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Lespion/3.png" alt="lespion">&lt;/p></description></item><item><title>Memory Analysis - Ransomware</title><link>https://ittechnetworkk.github.io/walkthroughs/memoryanalysis-ransomware/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/memoryanalysis-ransomware/</guid><description>&lt;p>Lab URL: &lt;a href="https://blueteamlabs.online/home/challenge/memory-analysis-ransomware-7da6c9244d">https://blueteamlabs.online/home/challenge/memory-analysis-ransomware-7da6c9244d&lt;/a>&lt;/p>
-&lt;h3 id="question-1">&lt;strong>Question 1&lt;/strong>&lt;/h3>
-&lt;p>Run “vol.py -f infected.vmem &amp;ndash;profile=Win7SP1x86 psscan” that will list all processes. What is the name of the suspicious process?&lt;/p>
-&lt;pre tabindex="0">&lt;code>vol.py -f infected.vmem --profile=Win7SP1x86 psscan
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/MemoryAnalysis-Ransomware/1.png" alt="MemoryAnalysis-Ransomware">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> @WanaDecryptor&lt;/p>
-&lt;h3 id="question-2">&lt;strong>Question 2&lt;/strong>&lt;/h3>
-&lt;p>What is the parent process ID for the suspicious process?&lt;/p>
-&lt;pre tabindex="0">&lt;code>vol3 -f infected.vmem windows.pslist
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/MemoryAnalysis-Ransomware/2.png" alt="MemoryAnalysis-Ransomware">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> 2732&lt;/p>
-&lt;h3 id="question-3">&lt;strong>Question 3&lt;/strong>&lt;/h3>
-&lt;p>What is the initial malicious executable that created this process?&lt;/p>
-&lt;pre tabindex="0">&lt;code>vol3 -f infected.vmem windows.cmdline
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;echo &amp;#34;UGljYXNzb0JhZ3VldHRlOTk=&amp;#34; |base64 -d
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Lespion/2.1.png" alt="lespion"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Lespion/2.2.png" alt="lespion"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; PicassoBaguette99&lt;/p&gt;
+&lt;h3 id="question-3"&gt;&lt;strong&gt;Question 3&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;File -&amp;gt; Github.txt: What cryptocurrency mining tool did the insider use?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Surfing on the Repositories Page
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Lespion/3.png" alt="lespion"&gt;&lt;/p&gt;</description></item><item><title>Memory Analysis - Ransomware</title><link>https://ittechnetworkk.github.io/walkthroughs/memoryanalysis-ransomware/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/memoryanalysis-ransomware/</guid><description>&lt;p&gt;Lab URL: &lt;a href="https://blueteamlabs.online/home/challenge/memory-analysis-ransomware-7da6c9244d"&gt;https://blueteamlabs.online/home/challenge/memory-analysis-ransomware-7da6c9244d&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="question-1"&gt;&lt;strong&gt;Question 1&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Run “vol.py -f infected.vmem &amp;ndash;profile=Win7SP1x86 psscan” that will list all processes. What is the name of the suspicious process?&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;vol.py -f infected.vmem --profile=Win7SP1x86 psscan
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/MemoryAnalysis-Ransomware/1.png" alt="MemoryAnalysis-Ransomware"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; @WanaDecryptor&lt;/p&gt;
+&lt;h3 id="question-2"&gt;&lt;strong&gt;Question 2&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;What is the parent process ID for the suspicious process?&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;vol3 -f infected.vmem windows.pslist
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/MemoryAnalysis-Ransomware/2.png" alt="MemoryAnalysis-Ransomware"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; 2732&lt;/p&gt;
+&lt;h3 id="question-3"&gt;&lt;strong&gt;Question 3&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;What is the initial malicious executable that created this process?&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;vol3 -f infected.vmem windows.cmdline
 
 OR
 
 vol3 -f infected.vmem windows.filescan |grep -E &amp;#34;.exe&amp;#34;
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/MemoryAnalysis-Ransomware/3.png" alt="MemoryAnalysis-Ransomware">&lt;/p></description></item><item><title>Network Analysis - Ransomware</title><link>https://ittechnetworkk.github.io/walkthroughs/networkanalysis-ransomware/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/networkanalysis-ransomware/</guid><description>&lt;p>Lab URL: &lt;a href="https://blueteamlabs.online/home/challenge/network-analysis-ransomware-3dd520c7ec">https://blueteamlabs.online/home/challenge/network-analysis-ransomware-3dd520c7ec&lt;/a>&lt;/p>
-&lt;h3 id="question-1">&lt;strong>Question 1&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>What is the operating system of the host from which the network traffic was captured?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>remnux@remnux:~/Downloads/BTLO Network Analysis - Ransomware/Challenge Files$ file *
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/MemoryAnalysis-Ransomware/3.png" alt="MemoryAnalysis-Ransomware"&gt;&lt;/p&gt;</description></item><item><title>Network Analysis - Ransomware</title><link>https://ittechnetworkk.github.io/walkthroughs/networkanalysis-ransomware/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/networkanalysis-ransomware/</guid><description>&lt;p&gt;Lab URL: &lt;a href="https://blueteamlabs.online/home/challenge/network-analysis-ransomware-3dd520c7ec"&gt;https://blueteamlabs.online/home/challenge/network-analysis-ransomware-3dd520c7ec&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="question-1"&gt;&lt;strong&gt;Question 1&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;What is the operating system of the host from which the network traffic was captured?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;remnux@remnux:~/Downloads/BTLO Network Analysis - Ransomware/Challenge Files$ file *
 
 help_recover_instructions.HTM: HTML document, ASCII text, with very long lines
 help_recover_instructions.png: PNG image data, 1150 x 1000, 8-bit/color RGBA, non-interlaced
 help_recover_instructions.TXT: ASCII text, with CRLF line terminators
 ransom_traffic.pcapng: pcapng capture file - version 1.0
 Tender.pdf.micro: data
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/NetworkAnalysisRansomware/1.png" alt="networkforensics">&lt;/p>
-&lt;pre tabindex="0">&lt;code>wireshark ransom_traffic.pcapng
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>Statistics &amp;gt; Capture File Properties&lt;/strong>&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/NetworkAnalysisRansomware/1.1.png" alt="networkforensics">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/NetworkAnalysisRansomware/1.2.png" alt="networkforensics">&lt;/p></description></item><item><title>Phishing Analysis 2</title><link>https://ittechnetworkk.github.io/walkthroughs/phishinganalysis-2/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/phishinganalysis-2/</guid><description>&lt;p>Lab URL: &lt;a href="https://blueteamlabs.online/home/challenge/phishing-analysis-2-a1091574b8">https://blueteamlabs.online/home/challenge/phishing-analysis-2-a1091574b8&lt;/a>&lt;/p>
-&lt;h3 id="question-1">&lt;strong>Question 1&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>What is the sending email address?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>Search for &amp;#34;From&amp;#34;
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Phishing-Analysis-2/1.png" alt="phishing-2">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> &lt;a href="mailto:amazon@zyevantoby.cn">amazon@zyevantoby.cn&lt;/a>&lt;/p>
-&lt;h3 id="question-2">&lt;strong>Question 2&lt;/strong>&lt;/h3>
-&lt;p>**What is the recipient email address? &lt;/p>
-&lt;pre tabindex="0">&lt;code>Search for &amp;#34;To&amp;#34;
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Phishing-Analysis-2/2.png" alt="phishing-2">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> &lt;a href="mailto:saintington73@outlook.com">saintington73@outlook.com&lt;/a>&lt;/p>
-&lt;h3 id="question-3">&lt;strong>Question 3&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>What is the subject line of the email?&lt;/strong> &lt;/p>
-&lt;pre tabindex="0">&lt;code>Search for &amp;#34;Subject&amp;#34;
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Phishing-Analysis-2/3.png" alt="phishing-2">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> Your Account has been locked&lt;/p>
-&lt;h3 id="question-4">&lt;strong>Question 4&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>What company is the attacker trying to imitate?&lt;/strong> &lt;/p>
-&lt;pre tabindex="0">&lt;code>Look for &amp;#34;From&amp;#34; 
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Phishing-Analysis-2/4.png" alt="phishing-2">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> amazon&lt;/p>
-&lt;h3 id="question-5">&lt;strong>Question 5&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>What is the date and time the email was sent? (As copied from a text editor)&lt;/strong> &lt;/p></description></item><item><title>PsExec Hunt</title><link>https://ittechnetworkk.github.io/walkthroughs/psexec-hunt/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/psexec-hunt/</guid><description>&lt;p>Lab URL: &lt;a href="https://cyberdefenders.org/blueteam-ctf-challenges/psexec-hunt/">https://cyberdefenders.org/blueteam-ctf-challenges/psexec-hunt/&lt;/a>&lt;/p>
-&lt;h3 id="question-1">&lt;strong>Question 1&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>To effectively trace the attacker&amp;rsquo;s activities within our network, can you identify the IP address of the machine from which the attacker initially gained access?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>wireshark &amp;gt; Statistics &amp;gt; IPv4
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/PsExec-Hunt/1.png" alt="psexec">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> 10.0.0.130&lt;/p>
-&lt;h3 id="question-2">&lt;strong>Question 2&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>To fully understand the extent of the breach, can you determine the machine&amp;rsquo;s hostname to which the attacker first pivoted?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>Wireshark Filter
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/NetworkAnalysisRansomware/1.png" alt="networkforensics"&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;wireshark ransom_traffic.pcapng
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Statistics &amp;gt; Capture File Properties&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/NetworkAnalysisRansomware/1.1.png" alt="networkforensics"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/NetworkAnalysisRansomware/1.2.png" alt="networkforensics"&gt;&lt;/p&gt;</description></item><item><title>Phishing Analysis 2</title><link>https://ittechnetworkk.github.io/walkthroughs/phishinganalysis-2/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/phishinganalysis-2/</guid><description>&lt;p&gt;Lab URL: &lt;a href="https://blueteamlabs.online/home/challenge/phishing-analysis-2-a1091574b8"&gt;https://blueteamlabs.online/home/challenge/phishing-analysis-2-a1091574b8&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="question-1"&gt;&lt;strong&gt;Question 1&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;What is the sending email address?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Search for &amp;#34;From&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Phishing-Analysis-2/1.png" alt="phishing-2"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; &lt;a href="mailto:amazon@zyevantoby.cn"&gt;amazon@zyevantoby.cn&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="question-2"&gt;&lt;strong&gt;Question 2&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;**What is the recipient email address? &lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Search for &amp;#34;To&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Phishing-Analysis-2/2.png" alt="phishing-2"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; &lt;a href="mailto:saintington73@outlook.com"&gt;saintington73@outlook.com&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="question-3"&gt;&lt;strong&gt;Question 3&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;What is the subject line of the email?&lt;/strong&gt; &lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Search for &amp;#34;Subject&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Phishing-Analysis-2/3.png" alt="phishing-2"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; Your Account has been locked&lt;/p&gt;
+&lt;h3 id="question-4"&gt;&lt;strong&gt;Question 4&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;What company is the attacker trying to imitate?&lt;/strong&gt; &lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Look for &amp;#34;From&amp;#34; 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Phishing-Analysis-2/4.png" alt="phishing-2"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; amazon&lt;/p&gt;
+&lt;h3 id="question-5"&gt;&lt;strong&gt;Question 5&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;What is the date and time the email was sent? (As copied from a text editor)&lt;/strong&gt; &lt;/p&gt;</description></item><item><title>PsExec Hunt</title><link>https://ittechnetworkk.github.io/walkthroughs/psexec-hunt/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/psexec-hunt/</guid><description>&lt;p&gt;Lab URL: &lt;a href="https://cyberdefenders.org/blueteam-ctf-challenges/psexec-hunt/"&gt;https://cyberdefenders.org/blueteam-ctf-challenges/psexec-hunt/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="question-1"&gt;&lt;strong&gt;Question 1&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;To effectively trace the attacker&amp;rsquo;s activities within our network, can you identify the IP address of the machine from which the attacker initially gained access?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;wireshark &amp;gt; Statistics &amp;gt; IPv4
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/PsExec-Hunt/1.png" alt="psexec"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; 10.0.0.130&lt;/p&gt;
+&lt;h3 id="question-2"&gt;&lt;strong&gt;Question 2&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;To fully understand the extent of the breach, can you determine the machine&amp;rsquo;s hostname to which the attacker first pivoted?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Wireshark Filter
 ip.addr==10.0.0.130
 
 Packet 131
 NetBIOS Domain Name
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/PsExec-Hunt/2.png" alt="psexec">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> sales-pc&lt;/p>
-&lt;h3 id="question-3">&lt;strong>Question 3&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>Knowing the username of the account the attacker used for authentication will give us insights into the extent of the breach. What is the username utilized by the attacker for authentication?&lt;/strong>&lt;/p></description></item><item><title>Red Stealer</title><link>https://ittechnetworkk.github.io/walkthroughs/redstealer/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/redstealer/</guid><description>&lt;p>Lab URL: &lt;a href="https://cyberdefenders.org/blueteam-ctf-challenges/red-stealer/">https://cyberdefenders.org/blueteam-ctf-challenges/red-stealer/&lt;/a>&lt;/p>
-&lt;h3 id="question-1">&lt;strong>Question 1&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>Categorizing malware enables a quicker and clearer understanding of its unique behaviors and attack vectors. What category has Microsoft identified for that malware in VirusTotal?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>Search Hash in VirusTotal
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/PsExec-Hunt/2.png" alt="psexec"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; sales-pc&lt;/p&gt;
+&lt;h3 id="question-3"&gt;&lt;strong&gt;Question 3&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Knowing the username of the account the attacker used for authentication will give us insights into the extent of the breach. What is the username utilized by the attacker for authentication?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Red Stealer</title><link>https://ittechnetworkk.github.io/walkthroughs/redstealer/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/redstealer/</guid><description>&lt;p&gt;Lab URL: &lt;a href="https://cyberdefenders.org/blueteam-ctf-challenges/red-stealer/"&gt;https://cyberdefenders.org/blueteam-ctf-challenges/red-stealer/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="question-1"&gt;&lt;strong&gt;Question 1&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Categorizing malware enables a quicker and clearer understanding of its unique behaviors and attack vectors. What category has Microsoft identified for that malware in VirusTotal?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Search Hash in VirusTotal
 248FCC901AFF4E4B4C48C91E4D78A939BF681C9A1BC24ADDC3551B32768F907B
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/RedStealer/1.png" alt="RedStealer">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> trojan&lt;/p>
-&lt;h3 id="question-2">&lt;strong>Question 2&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>Clearly identifying the name of the malware file improves communication among the SOC team. What is the file name associated with this malware?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>Take a look at the top of the Virus total Page
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/RedStealer/2.png" alt="RedStealer">&lt;/p></description></item><item><title>SOC127 - SQL Injection Detected</title><link>https://ittechnetworkk.github.io/walkthroughs/soc127/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/soc127/</guid><description>&lt;p>EventID : 235
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/RedStealer/1.png" alt="RedStealer"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; trojan&lt;/p&gt;
+&lt;h3 id="question-2"&gt;&lt;strong&gt;Question 2&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Clearly identifying the name of the malware file improves communication among the SOC team. What is the file name associated with this malware?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Take a look at the top of the Virus total Page
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/RedStealer/2.png" alt="RedStealer"&gt;&lt;/p&gt;</description></item><item><title>SOC127 - SQL Injection Detected</title><link>https://ittechnetworkk.github.io/walkthroughs/soc127/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/soc127/</guid><description>&lt;p&gt;EventID : 235
 Event Time : Mar, 07, 2024, 12:51 PM
 Rule : SOC127 - SQL Injection Detected
-Level : Security Analyst&lt;/p>
-&lt;p>Source Address : 118.194.247.28
+Level : Security Analyst&lt;/p&gt;
+&lt;p&gt;Source Address : 118.194.247.28
 Destination Address : 172.16.20.12
 Destination Hostname : WebServer1000
-Request URL : GET /?douj=3034%20AND%201%3D1%20UNION%20ALL%20SELECT%201%2CNULL%2C%27%3Cscript%3Ealert%28%22XSS%22%29%3C%2Fscript%3E%27%2Ctable_name%20FROM%20information_schema.tables%20WHERE%202%3E1&amp;ndash;%2F%2A%2A%2F%3B%20EXEC%20xp_cmdshell%28%27cat%20..%2F..%2F..%2Fetc%2Fpasswd%27%29%23 HTTP/1.1 200 865&lt;/p>
-&lt;p>Device Action : Allowed&lt;/p>
-&lt;p>&lt;strong>Request URL Decoding:&lt;/strong>&lt;/p>
-&lt;p>&lt;strong>Request:&lt;/strong>&lt;/p>
-&lt;p>GET /?douj=3034%20AND%201%3D1%20UNION%20ALL%20SELECT%201%2CNULL%2C%27%3Cscript%3Ealert%28%22XSS%22%29%3C%2Fscript%3E%27%2Ctable_name%20FROM%20information_schema.tables%20WHERE%202%3E1&amp;ndash;%2F%2A%2A%2F%3B%20EXEC%20xp_cmdshell%28%27cat%20..%2F..%2F..%2Fetc%2Fpasswd%27%29%23 HTTP/1.1 200 865&lt;/p>
-&lt;p>&lt;strong>Result:&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>GET /?douj=3034 AND 1=1 UNION ALL SELECT 1,NULL,&amp;#39;&amp;lt;script&amp;gt;alert(&amp;#34;XSS&amp;#34;)&amp;lt;/script&amp;gt;&amp;#39;,table_name FROM information_schema.tables WHERE 2&amp;gt;1--/**/; EXEC xp_cmdshell(&amp;#39;cat ../../../etc/passwd&amp;#39;)# HTTP/1.1 200 865 
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>Threat Intel:&lt;/strong>&lt;/p></description></item><item><title>SOC141 - Multiple HTTP 500 Response</title><link>https://ittechnetworkk.github.io/walkthroughs/soc142/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/soc142/</guid><description>&lt;p>EventID : 89
+Request URL : GET /?douj=3034%20AND%201%3D1%20UNION%20ALL%20SELECT%201%2CNULL%2C%27%3Cscript%3Ealert%28%22XSS%22%29%3C%2Fscript%3E%27%2Ctable_name%20FROM%20information_schema.tables%20WHERE%202%3E1&amp;ndash;%2F%2A%2A%2F%3B%20EXEC%20xp_cmdshell%28%27cat%20..%2F..%2F..%2Fetc%2Fpasswd%27%29%23 HTTP/1.1 200 865&lt;/p&gt;
+&lt;p&gt;Device Action : Allowed&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Request URL Decoding:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Request:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;GET /?douj=3034%20AND%201%3D1%20UNION%20ALL%20SELECT%201%2CNULL%2C%27%3Cscript%3Ealert%28%22XSS%22%29%3C%2Fscript%3E%27%2Ctable_name%20FROM%20information_schema.tables%20WHERE%202%3E1&amp;ndash;%2F%2A%2A%2F%3B%20EXEC%20xp_cmdshell%28%27cat%20..%2F..%2F..%2Fetc%2Fpasswd%27%29%23 HTTP/1.1 200 865&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Result:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;GET /?douj=3034 AND 1=1 UNION ALL SELECT 1,NULL,&amp;#39;&amp;lt;script&amp;gt;alert(&amp;#34;XSS&amp;#34;)&amp;lt;/script&amp;gt;&amp;#39;,table_name FROM information_schema.tables WHERE 2&amp;gt;1--/**/; EXEC xp_cmdshell(&amp;#39;cat ../../../etc/passwd&amp;#39;)# HTTP/1.1 200 865 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Threat Intel:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>SOC141 - Multiple HTTP 500 Response</title><link>https://ittechnetworkk.github.io/walkthroughs/soc142/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/soc142/</guid><description>&lt;p&gt;EventID : 89
 Event Time : Apr, 18, 2021, 01:00 PM
 Rule : SOC142 - Multiple HTTP 500 Response
-Level : Security Analyst&lt;/p>
-&lt;p>Source Address : 101.32.223.119
+Level : Security Analyst&lt;/p&gt;
+&lt;p&gt;Source Address : 101.32.223.119
 Source Hostname : 101.32.223.119
 Destination Address : 172.16.20.6
 Destination Hostname : SQLServer
-Username : www-data&lt;/p>
-&lt;p>Request URL : https://172.16.20.6/userNumber=1 AND (SELECT * FROM Users) = 1
-User Agent : Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&lt;/p>
-&lt;p>Device Action : Allowed&lt;/p></description></item><item><title>SOC141 - Phishing URL Detected</title><link>https://ittechnetworkk.github.io/walkthroughs/soc141/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/soc141/</guid><description>&lt;p>EventID : 86
+Username : www-data&lt;/p&gt;
+&lt;p&gt;Request URL : https://172.16.20.6/userNumber=1 AND (SELECT * FROM Users) = 1
+User Agent : Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&lt;/p&gt;
+&lt;p&gt;Device Action : Allowed&lt;/p&gt;</description></item><item><title>SOC141 - Phishing URL Detected</title><link>https://ittechnetworkk.github.io/walkthroughs/soc141/</link><pubDate>Sat, 05 Jul 2025 15:16:47 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/soc141/</guid><description>&lt;p&gt;EventID : 86
 Event Time : Mar, 22, 2021, 09:23 PM
 Rule : SOC141 - Phishing URL Detected
-Level : Security Analyst&lt;/p>
-&lt;p>Source Address : 172.16.17.49
+Level : Security Analyst&lt;/p&gt;
+&lt;p&gt;Source Address : 172.16.17.49
 Source Hostname : EmilyComp
 Destination Address : 91.189.114.8
-Destination Hostname : mogagrocol.ru&lt;/p>
-&lt;p>Username : ellie
-Request URL : &lt;a href="http://mogagrocol.ru/wp-content/plugins/akismet/fv/index.php?email=ellie@letsdefend.io">http://mogagrocol.ru/wp-content/plugins/akismet/fv/index.php?email=ellie@letsdefend.io&lt;/a>
-User Agent : Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&lt;/p>
-&lt;p>Device Action : Allowed&lt;/p>
-&lt;p>&lt;strong>Log Management:&lt;/strong>&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/SOC141/Log-1.png" alt="SOC141">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/SOC141/Log-2.png" alt="SOC141">&lt;/p>
-&lt;p>&lt;strong>Endpoint Security:&lt;/strong>&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/SOC141/Endpoint-1.png" alt="SOC141">&lt;/p></description></item><item><title>Memory Analysis</title><link>https://ittechnetworkk.github.io/walkthroughs/memoryanalysis-letsdefend/</link><pubDate>Sat, 05 Jul 2025 15:04:55 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/memoryanalysis-letsdefend/</guid><description>&lt;p>Lab URL: &lt;a href="https://app.letsdefend.io/challenge/memory-analysis">https://app.letsdefend.io/challenge/memory-analysis&lt;/a>&lt;/p>
-&lt;h3 id="question-1">&lt;strong>Question 1&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>What was the date and time when Memory from the compromised endpoint was acquired?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>vol -f dump.mem windows.info
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/MemoryAnalysis-Letsdefend/1.png" alt="MemoryAnalysis-Letsdefend">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> 2022-07-26 18:16:32&lt;/p>
-&lt;h3 id="question-2">&lt;strong>Question 2&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>What was the suspicious process running on the system? (Format : name.extension)&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>vol -f dump.mem windows.pslist
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/MemoryAnalysis-Letsdefend/2.png" alt="MemoryAnalysis-Letsdefend">&lt;/p>
-&lt;p>explorer.exe &amp;gt; lsass.exe ????&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> lsass.exe&lt;/p>
-&lt;h3 id="question-3">&lt;strong>Question 3&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>Analyze and find the malicious tool running on the system by the attacker (Format name.extension)&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>vol -f dump.mem -o . windows.dumpfiles --pid 7592
+Destination Hostname : mogagrocol.ru&lt;/p&gt;
+&lt;p&gt;Username : ellie
+Request URL : &lt;a href="http://mogagrocol.ru/wp-content/plugins/akismet/fv/index.php?email=ellie@letsdefend.io"&gt;http://mogagrocol.ru/wp-content/plugins/akismet/fv/index.php?email=ellie@letsdefend.io&lt;/a&gt;
+User Agent : Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36&lt;/p&gt;
+&lt;p&gt;Device Action : Allowed&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Log Management:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/SOC141/Log-1.png" alt="SOC141"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/SOC141/Log-2.png" alt="SOC141"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Endpoint Security:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/SOC141/Endpoint-1.png" alt="SOC141"&gt;&lt;/p&gt;</description></item><item><title>Memory Analysis</title><link>https://ittechnetworkk.github.io/walkthroughs/memoryanalysis-letsdefend/</link><pubDate>Sat, 05 Jul 2025 15:04:55 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/memoryanalysis-letsdefend/</guid><description>&lt;p&gt;Lab URL: &lt;a href="https://app.letsdefend.io/challenge/memory-analysis"&gt;https://app.letsdefend.io/challenge/memory-analysis&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="question-1"&gt;&lt;strong&gt;Question 1&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;What was the date and time when Memory from the compromised endpoint was acquired?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;vol -f dump.mem windows.info
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/MemoryAnalysis-Letsdefend/1.png" alt="MemoryAnalysis-Letsdefend"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; 2022-07-26 18:16:32&lt;/p&gt;
+&lt;h3 id="question-2"&gt;&lt;strong&gt;Question 2&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;What was the suspicious process running on the system? (Format : name.extension)&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;vol -f dump.mem windows.pslist
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/MemoryAnalysis-Letsdefend/2.png" alt="MemoryAnalysis-Letsdefend"&gt;&lt;/p&gt;
+&lt;p&gt;explorer.exe &amp;gt; lsass.exe ????&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; lsass.exe&lt;/p&gt;
+&lt;h3 id="question-3"&gt;&lt;strong&gt;Question 3&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Analyze and find the malicious tool running on the system by the attacker (Format name.extension)&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;vol -f dump.mem -o . windows.dumpfiles --pid 7592
 
 strings -n 5 file.0xdf0e86793960.0xdf0e8708e520.ImageSectionObject.lsass.exe.img
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/MemoryAnalysis-Letsdefend/3.png" alt="MemoryAnalysis-Letsdefend">&lt;/p></description></item><item><title>Reveal Lab</title><link>https://ittechnetworkk.github.io/walkthroughs/reveallab/</link><pubDate>Sat, 05 Jul 2025 14:46:23 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/reveallab/</guid><description>&lt;p>Lab URL: &lt;a href="https://cyberdefenders.org/blueteam-ctf-challenges/reveal/">https://cyberdefenders.org/blueteam-ctf-challenges/reveal/&lt;/a>&lt;/p>
-&lt;h3 id="question-1">&lt;strong>Question 1&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>Identifying the name of the malicious process helps in understanding the nature of the attack. What is the name of the malicious process?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>vol3 -f 192-Reveal.dmp windows.cmdline
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/RevealLab/1.png" alt="Reveal">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> Powershell.exe&lt;/p>
-&lt;h3 id="question-2">&lt;strong>Question 2&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>Knowing the parent process ID (PPID) of the malicious process aids in tracing the process hierarchy and understanding the attack flow. What is the parent PID of the malicious process?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>vol3 -f 192-Reveal.dmp windows.pslist
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/RevealLab/2.png" alt="Reveal">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> 4120&lt;/p></description></item><item><title>Ramnit Lab</title><link>https://ittechnetworkk.github.io/walkthroughs/ramnit/</link><pubDate>Sat, 05 Jul 2025 14:02:53 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/ramnit/</guid><description>&lt;p>Lab URL: &lt;a href="https://cyberdefenders.org/blueteam-ctf-challenges/ramnit/">https://cyberdefenders.org/blueteam-ctf-challenges/ramnit/&lt;/a>&lt;/p>
-&lt;h3 id="question-1">&lt;strong>Question 1&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>What is the name of the process responsible for the suspicious activity?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>vol3 -f memory.dmp windows.pstree
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/RamnitLab/1-2.png" alt="Ramnit">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> ChromeSetup.exe&lt;/p>
-&lt;h3 id="question-2">&lt;strong>Question 2&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>What is the exact path of the executable for the malicious process?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>vol3 -f memory.dmp windows.pstree
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/RamnitLab/1-2.png" alt="Ramnit">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> C:\Users\alex\Downloads\ChromeSetup.exe&lt;/p>
-&lt;h3 id="question-3">&lt;strong>Question 3&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>Identifying network connections is crucial for understanding the malware&amp;rsquo;s communication strategy. What IP address did the malware attempt to connect to?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>vol3 -f memory.dmp windows.netscan |grep 4628
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/RamnitLab/3.png" alt="Ramnit">&lt;/p></description></item><item><title>BlackEnergy Lab</title><link>https://ittechnetworkk.github.io/walkthroughs/blackenergylab/</link><pubDate>Sat, 05 Jul 2025 13:40:46 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/blackenergylab/</guid><description>&lt;p>Lab URL: &lt;a href="https://cyberdefenders.org/blueteam-ctf-challenges/blackenergy/">https://cyberdefenders.org/blueteam-ctf-challenges/blackenergy/&lt;/a>&lt;/p>
-&lt;h3 id="question-1">&lt;strong>Question 1&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>Which volatility profile would be best for this machine?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>vol.py -f CYBERDEF-567078-20230213-171333.raw imageinfo
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>Answer:&lt;/strong> WinXPSP2x86&lt;/p>
-&lt;h3 id="question-2">&lt;strong>Question 2&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>How many processes were running when the image was acquired?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>vol.py -f CYBERDEF-567078-20230213-171333.raw --profile=WinXPSP2x86 pslist
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>Answer:&lt;/strong> 19&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/BlackEnergyLab/2.png" alt="BlackEnergy">&lt;/p>
-&lt;h3 id="question-3">&lt;strong>Question 3&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>What is the process ID of &lt;code>cmd.exe&lt;/code>?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>vol.py -f CYBERDEF-567078-20230213-171333.raw --profile=WinXPSP2x86 pslist |grep cmd
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>Answer:&lt;/strong> 1960&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/BlackEnergyLab/3.png" alt="BlackEnergy">&lt;/p>
-&lt;h3 id="question-4">&lt;strong>Question 4&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>What is the name of the most suspicious process?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>vol.py -f CYBERDEF-567078-20230213-171333.raw --profile=WinXPSP2x86 pslist
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>Answer:&lt;/strong> rootkit.exe&lt;/p></description></item><item><title>Malicious PowerShell Analysis</title><link>https://ittechnetworkk.github.io/walkthroughs/maliciouspowershellanalysis/</link><pubDate>Sat, 05 Jul 2025 13:40:46 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/maliciouspowershellanalysis/</guid><description>&lt;p>In this write-up, I’ll be investigating a challenge named &lt;a href="https://blueteamlabs.online/home/challenge/malicious-powershell-analysis-bf6b52faef">&lt;strong>Malicious PowerShell Analysis&lt;/strong>&lt;/a> from Blue Team Labs Online. This challenge isn’t particularly difficult, making it a great exercise for learning or sharpening malware analysis skills.&lt;/p>
-&lt;h3 id="-step-1-downloading-the-file">🧪 &lt;strong>Step 1: Downloading the File&lt;/strong>&lt;/h3>
-&lt;p>First, I downloaded the malicious file to an isolated analysis environment (virtual machine).&lt;/p>
-&lt;p>The file came as an encrypted ZIP archive named:&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/MaliciousPowershellAnalysis/1.png" alt="maliciousPowershellAnalysis">&lt;/p>
-&lt;h3 id="-step-2-hash-analysis">🔍 &lt;strong>Step 2: Hash Analysis&lt;/strong>&lt;/h3>
-&lt;p>To begin the investigation, I calculated the file’s MD5 hash using &lt;code>md5sum&lt;/code>, then submitted it to multiple threat intelligence platforms:&lt;/p></description></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/MemoryAnalysis-Letsdefend/3.png" alt="MemoryAnalysis-Letsdefend"&gt;&lt;/p&gt;</description></item><item><title>Reveal Lab</title><link>https://ittechnetworkk.github.io/walkthroughs/reveallab/</link><pubDate>Sat, 05 Jul 2025 14:46:23 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/reveallab/</guid><description>&lt;p&gt;Lab URL: &lt;a href="https://cyberdefenders.org/blueteam-ctf-challenges/reveal/"&gt;https://cyberdefenders.org/blueteam-ctf-challenges/reveal/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="question-1"&gt;&lt;strong&gt;Question 1&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Identifying the name of the malicious process helps in understanding the nature of the attack. What is the name of the malicious process?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;vol3 -f 192-Reveal.dmp windows.cmdline
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/RevealLab/1.png" alt="Reveal"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; Powershell.exe&lt;/p&gt;
+&lt;h3 id="question-2"&gt;&lt;strong&gt;Question 2&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Knowing the parent process ID (PPID) of the malicious process aids in tracing the process hierarchy and understanding the attack flow. What is the parent PID of the malicious process?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;vol3 -f 192-Reveal.dmp windows.pslist
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/RevealLab/2.png" alt="Reveal"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; 4120&lt;/p&gt;</description></item><item><title>Ramnit Lab</title><link>https://ittechnetworkk.github.io/walkthroughs/ramnit/</link><pubDate>Sat, 05 Jul 2025 14:02:53 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/ramnit/</guid><description>&lt;p&gt;Lab URL: &lt;a href="https://cyberdefenders.org/blueteam-ctf-challenges/ramnit/"&gt;https://cyberdefenders.org/blueteam-ctf-challenges/ramnit/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="question-1"&gt;&lt;strong&gt;Question 1&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;What is the name of the process responsible for the suspicious activity?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;vol3 -f memory.dmp windows.pstree
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/RamnitLab/1-2.png" alt="Ramnit"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; ChromeSetup.exe&lt;/p&gt;
+&lt;h3 id="question-2"&gt;&lt;strong&gt;Question 2&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;What is the exact path of the executable for the malicious process?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;vol3 -f memory.dmp windows.pstree
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/RamnitLab/1-2.png" alt="Ramnit"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; C:\Users\alex\Downloads\ChromeSetup.exe&lt;/p&gt;
+&lt;h3 id="question-3"&gt;&lt;strong&gt;Question 3&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Identifying network connections is crucial for understanding the malware&amp;rsquo;s communication strategy. What IP address did the malware attempt to connect to?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;vol3 -f memory.dmp windows.netscan |grep 4628
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/RamnitLab/3.png" alt="Ramnit"&gt;&lt;/p&gt;</description></item><item><title>BlackEnergy Lab</title><link>https://ittechnetworkk.github.io/walkthroughs/blackenergylab/</link><pubDate>Sat, 05 Jul 2025 13:40:46 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/blackenergylab/</guid><description>&lt;p&gt;Lab URL: &lt;a href="https://cyberdefenders.org/blueteam-ctf-challenges/blackenergy/"&gt;https://cyberdefenders.org/blueteam-ctf-challenges/blackenergy/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="question-1"&gt;&lt;strong&gt;Question 1&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Which volatility profile would be best for this machine?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;vol.py -f CYBERDEF-567078-20230213-171333.raw imageinfo
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; WinXPSP2x86&lt;/p&gt;
+&lt;h3 id="question-2"&gt;&lt;strong&gt;Question 2&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;How many processes were running when the image was acquired?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;vol.py -f CYBERDEF-567078-20230213-171333.raw --profile=WinXPSP2x86 pslist
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; 19&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/BlackEnergyLab/2.png" alt="BlackEnergy"&gt;&lt;/p&gt;
+&lt;h3 id="question-3"&gt;&lt;strong&gt;Question 3&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;What is the process ID of &lt;code&gt;cmd.exe&lt;/code&gt;?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;vol.py -f CYBERDEF-567078-20230213-171333.raw --profile=WinXPSP2x86 pslist |grep cmd
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; 1960&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/BlackEnergyLab/3.png" alt="BlackEnergy"&gt;&lt;/p&gt;
+&lt;h3 id="question-4"&gt;&lt;strong&gt;Question 4&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;What is the name of the most suspicious process?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;vol.py -f CYBERDEF-567078-20230213-171333.raw --profile=WinXPSP2x86 pslist
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; rootkit.exe&lt;/p&gt;</description></item><item><title>Malicious PowerShell Analysis</title><link>https://ittechnetworkk.github.io/walkthroughs/maliciouspowershellanalysis/</link><pubDate>Sat, 05 Jul 2025 13:40:46 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/maliciouspowershellanalysis/</guid><description>&lt;p&gt;In this write-up, I’ll be investigating a challenge named &lt;a href="https://blueteamlabs.online/home/challenge/malicious-powershell-analysis-bf6b52faef"&gt;&lt;strong&gt;Malicious PowerShell Analysis&lt;/strong&gt;&lt;/a&gt; from Blue Team Labs Online. This challenge isn’t particularly difficult, making it a great exercise for learning or sharpening malware analysis skills.&lt;/p&gt;
+&lt;h3 id="-step-1-downloading-the-file"&gt;🧪 &lt;strong&gt;Step 1: Downloading the File&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;First, I downloaded the malicious file to an isolated analysis environment (virtual machine).&lt;/p&gt;
+&lt;p&gt;The file came as an encrypted ZIP archive named:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/MaliciousPowershellAnalysis/1.png" alt="maliciousPowershellAnalysis"&gt;&lt;/p&gt;
+&lt;h3 id="-step-2-hash-analysis"&gt;🔍 &lt;strong&gt;Step 2: Hash Analysis&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;To begin the investigation, I calculated the file’s MD5 hash using &lt;code&gt;md5sum&lt;/code&gt;, then submitted it to multiple threat intelligence platforms:&lt;/p&gt;</description></item></channel></rss>

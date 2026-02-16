@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GEO Location on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/geo-location/</link><description>Recent content in GEO Location on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sat, 05 Jul 2025 14:02:53 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/geo-location/index.xml" rel="self" type="application/rss+xml"/><item><title>Ramnit Lab</title><link>https://ittechnetworkk.github.io/walkthroughs/ramnit/</link><pubDate>Sat, 05 Jul 2025 14:02:53 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/ramnit/</guid><description>&lt;p>Lab URL: &lt;a href="https://cyberdefenders.org/blueteam-ctf-challenges/ramnit/">https://cyberdefenders.org/blueteam-ctf-challenges/ramnit/&lt;/a>&lt;/p>
-&lt;h3 id="question-1">&lt;strong>Question 1&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>What is the name of the process responsible for the suspicious activity?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>vol3 -f memory.dmp windows.pstree
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/RamnitLab/1-2.png" alt="Ramnit">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> ChromeSetup.exe&lt;/p>
-&lt;h3 id="question-2">&lt;strong>Question 2&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>What is the exact path of the executable for the malicious process?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>vol3 -f memory.dmp windows.pstree
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/RamnitLab/1-2.png" alt="Ramnit">&lt;/p>
-&lt;p>&lt;strong>Answer:&lt;/strong> C:\Users\alex\Downloads\ChromeSetup.exe&lt;/p>
-&lt;h3 id="question-3">&lt;strong>Question 3&lt;/strong>&lt;/h3>
-&lt;p>&lt;strong>Identifying network connections is crucial for understanding the malware&amp;rsquo;s communication strategy. What IP address did the malware attempt to connect to?&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>vol3 -f memory.dmp windows.netscan |grep 4628
-&lt;/code>&lt;/pre>&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/RamnitLab/3.png" alt="Ramnit">&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GEO Location on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/geo-location/</link><description>Recent content in GEO Location on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sat, 05 Jul 2025 14:02:53 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/geo-location/index.xml" rel="self" type="application/rss+xml"/><item><title>Ramnit Lab</title><link>https://ittechnetworkk.github.io/walkthroughs/ramnit/</link><pubDate>Sat, 05 Jul 2025 14:02:53 +0200</pubDate><guid>https://ittechnetworkk.github.io/walkthroughs/ramnit/</guid><description>&lt;p&gt;Lab URL: &lt;a href="https://cyberdefenders.org/blueteam-ctf-challenges/ramnit/"&gt;https://cyberdefenders.org/blueteam-ctf-challenges/ramnit/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="question-1"&gt;&lt;strong&gt;Question 1&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;What is the name of the process responsible for the suspicious activity?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;vol3 -f memory.dmp windows.pstree
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/RamnitLab/1-2.png" alt="Ramnit"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; ChromeSetup.exe&lt;/p&gt;
+&lt;h3 id="question-2"&gt;&lt;strong&gt;Question 2&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;What is the exact path of the executable for the malicious process?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;vol3 -f memory.dmp windows.pstree
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/RamnitLab/1-2.png" alt="Ramnit"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer:&lt;/strong&gt; C:\Users\alex\Downloads\ChromeSetup.exe&lt;/p&gt;
+&lt;h3 id="question-3"&gt;&lt;strong&gt;Question 3&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Identifying network connections is crucial for understanding the malware&amp;rsquo;s communication strategy. What IP address did the malware attempt to connect to?&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;vol3 -f memory.dmp windows.netscan |grep 4628
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/Walkthroughs/RamnitLab/3.png" alt="Ramnit"&gt;&lt;/p&gt;</description></item></channel></rss>

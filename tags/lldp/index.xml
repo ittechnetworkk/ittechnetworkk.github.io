@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LLDP on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/lldp/</link><description>Recent content in LLDP on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Thu, 08 Feb 2024 23:39:19 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/lldp/index.xml" rel="self" type="application/rss+xml"/><item><title>CDP LLDP Protokolleri</title><link>https://ittechnetworkk.github.io/posts/cdp-lldp/cdp-lldp/</link><pubDate>Thu, 08 Feb 2024 23:39:19 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/cdp-lldp/cdp-lldp/</guid><description>&lt;p>&lt;strong>A-CDP Protokolü:&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>CDP (Cisco Discovery Protocol), Cisco cihazlara özel cihaz keşif protokolüdür.&lt;/li>
-&lt;li>Layer 2 seviyesinde çalışır.&lt;/li>
-&lt;li>Cihaz türü, IP adresi, yazılım sürümü, işletim sistemi gibi bilgileri elde etmemizi sağlar.&lt;/li>
-&lt;li>Varsayılan olarak açık gelir. İstenirse port bazında açabilir veya kapatabiliriz.&lt;/li>
-&lt;li>Networkü tanımak için kullanılır fakat her zaman için iyi olmayabilir.&lt;/li>
-&lt;li>60 saniyede bir CDP mesajı yollanır, 180 saniye tabloda tutulur.&lt;/li>
-&lt;li>Multicast yayın yapar.&lt;/li>
-&lt;/ul>
-&lt;p>CDP Cihaz keşfi komutları:&lt;/p>
-&lt;pre tabindex="0">&lt;code>R1#show cdp neighbors 
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LLDP on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/lldp/</link><description>Recent content in LLDP on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Thu, 08 Feb 2024 23:39:19 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/lldp/index.xml" rel="self" type="application/rss+xml"/><item><title>CDP LLDP Protokolleri</title><link>https://ittechnetworkk.github.io/posts/cdp-lldp/cdp-lldp/</link><pubDate>Thu, 08 Feb 2024 23:39:19 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/cdp-lldp/cdp-lldp/</guid><description>&lt;p&gt;&lt;strong&gt;A-CDP Protokolü:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CDP (Cisco Discovery Protocol), Cisco cihazlara özel cihaz keşif protokolüdür.&lt;/li&gt;
+&lt;li&gt;Layer 2 seviyesinde çalışır.&lt;/li&gt;
+&lt;li&gt;Cihaz türü, IP adresi, yazılım sürümü, işletim sistemi gibi bilgileri elde etmemizi sağlar.&lt;/li&gt;
+&lt;li&gt;Varsayılan olarak açık gelir. İstenirse port bazında açabilir veya kapatabiliriz.&lt;/li&gt;
+&lt;li&gt;Networkü tanımak için kullanılır fakat her zaman için iyi olmayabilir.&lt;/li&gt;
+&lt;li&gt;60 saniyede bir CDP mesajı yollanır, 180 saniye tabloda tutulur.&lt;/li&gt;
+&lt;li&gt;Multicast yayın yapar.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;CDP Cihaz keşfi komutları:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;R1#show cdp neighbors 
 R1#show cdp neighbors detail
-&lt;/code>&lt;/pre>&lt;p>CDP Kapatmak için:&lt;/p></description></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;CDP Kapatmak için:&lt;/p&gt;</description></item></channel></rss>

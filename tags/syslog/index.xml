@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Syslog on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/syslog/</link><description>Recent content in Syslog on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sat, 19 Jul 2025 15:26:52 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/syslog/index.xml" rel="self" type="application/rss+xml"/><item><title>[EN] Fortigate Wazuh Integration</title><link>https://ittechnetworkk.github.io/posts/fortigatewazuhintegration/fortigate-wazuh-integration/</link><pubDate>Sat, 19 Jul 2025 15:26:52 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/fortigatewazuhintegration/fortigate-wazuh-integration/</guid><description>&lt;p>Hi everyone, in this article I will guide you through how to integrate Fortigate firewall with the Wazuh SIEM tool for centralized logging and monitoring.&lt;/p>
-&lt;p>Fortigate is one of the best firewall solutions used in networks of all sizes worldwide. Wazuh is also one of the best open-source SIEM platforms available.&lt;/p>
-&lt;p>In this article, I will show you how to send Fortigate logs to the Wazuh SIEM platform to centralize all environment logs in one location.&lt;/p></description></item><item><title>[EN] Cisco Device Syslog Integration with Wazuh SIEM</title><link>https://ittechnetworkk.github.io/posts/ciscowazuhintegration/cisco-wazuh-integration/</link><pubDate>Sat, 19 Jul 2025 14:50:44 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/ciscowazuhintegration/cisco-wazuh-integration/</guid><description>&lt;p>Hi everyone, in this article I will guide you through how to integrate Cisco devices (switches and routers) with the Wazuh SIEM tool for centralized logging and monitoring.&lt;/p>
-&lt;p>The integration will be done in the following steps:&lt;/p>
-&lt;h2 id="cisco-switch-configuration">&lt;strong>Cisco switch configuration:&lt;/strong>&lt;/h2>
-&lt;pre tabindex="0">&lt;code># VLAN Configuration for Switch
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Syslog on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/syslog/</link><description>Recent content in Syslog on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sat, 19 Jul 2025 15:26:52 +0200</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/syslog/index.xml" rel="self" type="application/rss+xml"/><item><title>[EN] Fortigate Wazuh Integration</title><link>https://ittechnetworkk.github.io/posts/fortigatewazuhintegration/fortigate-wazuh-integration/</link><pubDate>Sat, 19 Jul 2025 15:26:52 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/fortigatewazuhintegration/fortigate-wazuh-integration/</guid><description>&lt;p&gt;Hi everyone, in this article I will guide you through how to integrate Fortigate firewall with the Wazuh SIEM tool for centralized logging and monitoring.&lt;/p&gt;
+&lt;p&gt;Fortigate is one of the best firewall solutions used in networks of all sizes worldwide. Wazuh is also one of the best open-source SIEM platforms available.&lt;/p&gt;
+&lt;p&gt;In this article, I will show you how to send Fortigate logs to the Wazuh SIEM platform to centralize all environment logs in one location.&lt;/p&gt;</description></item><item><title>[EN] Cisco Device Syslog Integration with Wazuh SIEM</title><link>https://ittechnetworkk.github.io/posts/ciscowazuhintegration/cisco-wazuh-integration/</link><pubDate>Sat, 19 Jul 2025 14:50:44 +0200</pubDate><guid>https://ittechnetworkk.github.io/posts/ciscowazuhintegration/cisco-wazuh-integration/</guid><description>&lt;p&gt;Hi everyone, in this article I will guide you through how to integrate Cisco devices (switches and routers) with the Wazuh SIEM tool for centralized logging and monitoring.&lt;/p&gt;
+&lt;p&gt;The integration will be done in the following steps:&lt;/p&gt;
+&lt;h2 id="cisco-switch-configuration"&gt;&lt;strong&gt;Cisco switch configuration:&lt;/strong&gt;&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;# VLAN Configuration for Switch
 Switch&amp;gt;enable
 Switch#configure terminal
 Switch(config)#interface vlan1
@@ -28,8 +28,8 @@ Switch(config)# ip route 10.1.8.0 255.255.255.0 10.1.5.1
 # Save 
 Switch(config)#end
 Switch#wr
-&lt;/code>&lt;/pre>&lt;h2 id="cisco-router-configuration">&lt;strong>Cisco router configuration:&lt;/strong>&lt;/h2>
-&lt;pre tabindex="0">&lt;code># Interface Configuration for Router
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="cisco-router-configuration"&gt;&lt;strong&gt;Cisco router configuration:&lt;/strong&gt;&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;# Interface Configuration for Router
 Router&amp;gt;enable
 Router#configure terminal
 Router(config)#interface e0/0
@@ -54,28 +54,28 @@ Router(config)# ip route 10.1.8.0 255.255.255.0 10.1.5.1
 # Save 
 Router(config)#end
 Router#wr
-&lt;/code>&lt;/pre>&lt;h2 id="wazuh-server-configuration">&lt;strong>Wazuh Server Configuration:&lt;/strong>&lt;/h2>
-&lt;pre tabindex="0">&lt;code>&amp;lt;remote&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="wazuh-server-configuration"&gt;&lt;strong&gt;Wazuh Server Configuration:&lt;/strong&gt;&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;&amp;lt;remote&amp;gt; 
  &amp;lt;connection&amp;gt;syslog&amp;lt;/connection&amp;gt; 
  &amp;lt;port&amp;gt;514&amp;lt;/port&amp;gt; 
  &amp;lt;protocol&amp;gt;udp&amp;lt;/protocol&amp;gt; 
  &amp;lt;allowed-ips&amp;gt;10.1.5.100&amp;lt;/allowed-ips&amp;gt; # Switch/Router IP
  &amp;lt;local_ip&amp;gt;10.1.8.10&amp;lt;/local_ip&amp;gt; # Wazuh Server IP
 &amp;lt;/remote&amp;gt;
-&lt;/code>&lt;/pre>&lt;h2 id="alternative-port-configuration">&lt;strong>Alternative Port Configuration:&lt;/strong>&lt;/h2>
-&lt;p>If you want to use a different port (e.g., 1514 for TCP or 10514 for custom UDP), modify the configuration:&lt;/p></description></item><item><title>Raspberry Pi Syslog Server</title><link>https://ittechnetworkk.github.io/posts/raspberrypisyslogserver/raspberrypi-syslog/</link><pubDate>Mon, 15 Jul 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/raspberrypisyslogserver/raspberrypi-syslog/</guid><description>&lt;p>Merhaba, bu yazımda bi Raspberry Pi Zero&amp;rsquo;ya Syslog server rolü verip, bir Cisco Switch&amp;rsquo;e bu Syslog server konfigürasyonunu yapacağım.&lt;/p>
-&lt;p>Bu Lab için kullanacağım donanım ve yazılımlar:&lt;/p>
-&lt;ul>
-&lt;li>Raspberry Pi Zero 2W,&lt;/li>
-&lt;li>Cisco 2960 Switch,&lt;/li>
-&lt;li>SD Cart,&lt;/li>
-&lt;li>Kart Reader,&lt;/li>
-&lt;li>Ethernet Kablosu,&lt;/li>
-&lt;li>MicroUSB Power Cable,&lt;/li>
-&lt;li>Switch Power Cable,&lt;/li>
-&lt;li>ImagerPi.&lt;/li>
-&lt;/ul>
-&lt;p>İlk olarak ImagerPi kullanarak SD Kart&amp;rsquo;a Ubuntu işletim sistemini kuruyorum.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/RaspberryPiSyslogServer/1.png" alt="syslog">&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/RaspberryPiSyslogServer/2.png" alt="syslog">&lt;/p>
-&lt;p>SD Kart&amp;rsquo;ı Raspberry Pi&amp;rsquo;a takıp, modemin yakınında güç kablosunu takıp cihazı açıyorum.&lt;/p></description></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="alternative-port-configuration"&gt;&lt;strong&gt;Alternative Port Configuration:&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;If you want to use a different port (e.g., 1514 for TCP or 10514 for custom UDP), modify the configuration:&lt;/p&gt;</description></item><item><title>Raspberry Pi Syslog Server</title><link>https://ittechnetworkk.github.io/posts/raspberrypisyslogserver/raspberrypi-syslog/</link><pubDate>Mon, 15 Jul 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/raspberrypisyslogserver/raspberrypi-syslog/</guid><description>&lt;p&gt;Merhaba, bu yazımda bi Raspberry Pi Zero&amp;rsquo;ya Syslog server rolü verip, bir Cisco Switch&amp;rsquo;e bu Syslog server konfigürasyonunu yapacağım.&lt;/p&gt;
+&lt;p&gt;Bu Lab için kullanacağım donanım ve yazılımlar:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Raspberry Pi Zero 2W,&lt;/li&gt;
+&lt;li&gt;Cisco 2960 Switch,&lt;/li&gt;
+&lt;li&gt;SD Cart,&lt;/li&gt;
+&lt;li&gt;Kart Reader,&lt;/li&gt;
+&lt;li&gt;Ethernet Kablosu,&lt;/li&gt;
+&lt;li&gt;MicroUSB Power Cable,&lt;/li&gt;
+&lt;li&gt;Switch Power Cable,&lt;/li&gt;
+&lt;li&gt;ImagerPi.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;İlk olarak ImagerPi kullanarak SD Kart&amp;rsquo;a Ubuntu işletim sistemini kuruyorum.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/RaspberryPiSyslogServer/1.png" alt="syslog"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/RaspberryPiSyslogServer/2.png" alt="syslog"&gt;&lt;/p&gt;
+&lt;p&gt;SD Kart&amp;rsquo;ı Raspberry Pi&amp;rsquo;a takıp, modemin yakınında güç kablosunu takıp cihazı açıyorum.&lt;/p&gt;</description></item></channel></rss>

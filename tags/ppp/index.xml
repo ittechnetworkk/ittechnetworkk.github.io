@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ppp on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/ppp/</link><description>Recent content in Ppp on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sun, 14 Apr 2024 22:57:40 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/ppp/index.xml" rel="self" type="application/rss+xml"/><item><title>PPP Multilink Konfigürasyonu</title><link>https://ittechnetworkk.github.io/posts/pppmultilink/ppp-multilink/</link><pubDate>Sun, 14 Apr 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/pppmultilink/ppp-multilink/</guid><description>&lt;p>PPP Multilink, routerlar arasındaki birden fazla fiziksel bağlantıyı tek bir mantıksal bağlantı yapmak amacıyla kullanılır.
-Bazı özellikleri:&lt;/p>
-&lt;ul>
-&lt;li>Yük Dengeleme,&lt;/li>
-&lt;li>Bant Genişliğinin Artırılması,&lt;/li>
-&lt;li>Verimlilik,&lt;/li>
-&lt;li>Yedeklilik.&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Multilink PPP LAB:&lt;/strong>
-Aşağıdaki basit yapıyı konfigüre edeceğim.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/ppp-multilink/1.png" alt="ppp">&lt;/p>
-&lt;p>Bu yapıda serial 4 kablo ile bağlanmış iki router var. R1 ile başlayalım.&lt;/p>
-&lt;p>&lt;strong>R1:&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>R1#conf t
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ppp on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/ppp/</link><description>Recent content in Ppp on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sun, 14 Apr 2024 22:57:40 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/ppp/index.xml" rel="self" type="application/rss+xml"/><item><title>PPP Multilink Konfigürasyonu</title><link>https://ittechnetworkk.github.io/posts/pppmultilink/ppp-multilink/</link><pubDate>Sun, 14 Apr 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/pppmultilink/ppp-multilink/</guid><description>&lt;p&gt;PPP Multilink, routerlar arasındaki birden fazla fiziksel bağlantıyı tek bir mantıksal bağlantı yapmak amacıyla kullanılır.
+Bazı özellikleri:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Yük Dengeleme,&lt;/li&gt;
+&lt;li&gt;Bant Genişliğinin Artırılması,&lt;/li&gt;
+&lt;li&gt;Verimlilik,&lt;/li&gt;
+&lt;li&gt;Yedeklilik.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Multilink PPP LAB:&lt;/strong&gt;
+Aşağıdaki basit yapıyı konfigüre edeceğim.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/ppp-multilink/1.png" alt="ppp"&gt;&lt;/p&gt;
+&lt;p&gt;Bu yapıda serial 4 kablo ile bağlanmış iki router var. R1 ile başlayalım.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;R1:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;R1#conf t
 R1(config)#interface multilink 1
 R1(config-if)#ip addr 10.0.0.1 255.255.255.0
 R1(config-if)#no sh
@@ -43,4 +43,4 @@ R1(config-if)#ppp multilink
 R1(config-if)#ppp multilink group 1
 R1(config-if)#no sh
 R1(config-if)#exit
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>R2:&lt;/strong>&lt;/p></description></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R2:&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>

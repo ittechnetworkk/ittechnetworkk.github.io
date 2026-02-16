@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dietpi on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/dietpi/</link><description>Recent content in Dietpi on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sun, 12 May 2024 22:57:40 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/dietpi/index.xml" rel="self" type="application/rss+xml"/><item><title>Adguard Kurulumu (NanoPi R2S)</title><link>https://ittechnetworkk.github.io/posts/nanopirsadguard/nanopirs-adguard/</link><pubDate>Sun, 12 May 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/nanopirsadguard/nanopirs-adguard/</guid><description>&lt;p>Merhaba, bu yazımda önceden aldığım fakat değerlendiremediğim NanoPi R2S cihazına Adguard Home kurmayı anlatacağım.&lt;/p>
-&lt;p>Bazı özellikleri şöyledir:&lt;/p>
-&lt;ul>
-&lt;li>Rockchip RK3328,&lt;/li>
-&lt;li>1GB DDR4 RAM,&lt;/li>
-&lt;li>MicroSD x1 for external storage up to 128GB,&lt;/li>
-&lt;li>2x Gigabit Ethernet,&lt;/li>
-&lt;li>USB 2.0 Host x1: USB Type A,&lt;/li>
-&lt;li>USB-C x1:&lt;/li>
-&lt;li>SYS LED(Red) x1, WAN LED(Green) x1, LAN LED(Green) x1,&lt;/li>
-&lt;li>Reset buton&lt;/li>
-&lt;/ul>
-&lt;p>Metal kasa içerisine konmuş küçük ama merak uyandırıcı bir cihaz.&lt;/p>
-&lt;p>Peki Adguard Home nedir?
-&lt;a href="https://adguard.com/tr/adguard-home/overview.html">Adguard Home&lt;/a> bilenler için Pi-Hole benzeri fakat daha gelişmiş özellikleri olan bir yazılımdır.
-Bazı özellikleri aşağıdaki gibidir:&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dietpi on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/dietpi/</link><description>Recent content in Dietpi on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Sun, 12 May 2024 22:57:40 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/dietpi/index.xml" rel="self" type="application/rss+xml"/><item><title>Adguard Kurulumu (NanoPi R2S)</title><link>https://ittechnetworkk.github.io/posts/nanopirsadguard/nanopirs-adguard/</link><pubDate>Sun, 12 May 2024 22:57:40 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/nanopirsadguard/nanopirs-adguard/</guid><description>&lt;p&gt;Merhaba, bu yazımda önceden aldığım fakat değerlendiremediğim NanoPi R2S cihazına Adguard Home kurmayı anlatacağım.&lt;/p&gt;
+&lt;p&gt;Bazı özellikleri şöyledir:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Rockchip RK3328,&lt;/li&gt;
+&lt;li&gt;1GB DDR4 RAM,&lt;/li&gt;
+&lt;li&gt;MicroSD x1 for external storage up to 128GB,&lt;/li&gt;
+&lt;li&gt;2x Gigabit Ethernet,&lt;/li&gt;
+&lt;li&gt;USB 2.0 Host x1: USB Type A,&lt;/li&gt;
+&lt;li&gt;USB-C x1:&lt;/li&gt;
+&lt;li&gt;SYS LED(Red) x1, WAN LED(Green) x1, LAN LED(Green) x1,&lt;/li&gt;
+&lt;li&gt;Reset buton&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Metal kasa içerisine konmuş küçük ama merak uyandırıcı bir cihaz.&lt;/p&gt;
+&lt;p&gt;Peki Adguard Home nedir?
+&lt;a href="https://adguard.com/tr/adguard-home/overview.html"&gt;Adguard Home&lt;/a&gt; bilenler için Pi-Hole benzeri fakat daha gelişmiş özellikleri olan bir yazılımdır.
+Bazı özellikleri aşağıdaki gibidir:&lt;/p&gt;</description></item></channel></rss>

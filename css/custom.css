@@ -1,0 +1,215 @@
+.nav-container {
+    position: relative;
+    margin-top: 10px;
+}
+
+.nav-dropdown {
+    display: none;
+    position: absolute;
+    background: #2d2d2d;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    z-index: 1000;
+    margin-top: 0;
+    padding-top: 10px; /* Add padding to create hover space */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    transform: translateY(-10px);
+}
+
+.nav-dropdown::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px; /* Invisible hover space */
+}
+
+.nav-dropdown a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.nav-dropdown a:hover {
+    background: #333;
+    color: #4CAF50;
+    padding-left: 20px; /* Slight indent on hover */
+}
+
+/* Show dropdown on hover */
+.has-dropdown {
+    position: relative;
+}
+
+.has-dropdown:hover > .nav-dropdown,
+.has-dropdown:focus-within > .nav-dropdown {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Create hover area between main menu and dropdown */
+.has-dropdown > a::after {
+    content: "▼";
+    font-size: 0.7em;
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    transition: transform 0.2s ease;
+}
+
+.has-dropdown:hover > a::after {
+    transform: rotate(180deg);
+}
+
+/* Active state for dropdown items */
+.nav-dropdown a.active {
+    color: #4CAF50;
+    background: #333;
+}
+
+/* Add hover area between menu and dropdown */
+.has-dropdown::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: transparent;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .nav-dropdown {
+        position: static;
+        background: #333;
+        padding-left: 20px;
+        box-shadow: none;
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    .has-dropdown::after,
+    .nav-dropdown::before {
+        display: none;
+    }
+
+    /* Improve tap targets */
+    .nav-dropdown a {
+        padding: 15px 20px;
+        font-size: 16px;
+    }
+
+    /* Better spacing for mobile */
+    .nav-container {
+        margin-top: 15px;
+    }
+
+    /* Ensure text is readable */
+    body {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    /* Improve button/link tap targets */
+    a, button {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 12px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    /* Prevent horizontal scrolling */
+    .content {
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    /* Better spacing for content */
+    article {
+        padding: 0 15px;
+    }
+
+    /* Improve form elements on mobile */
+    input, select, textarea {
+        font-size: 16px;
+        padding: 12px;
+        margin: 8px 0;
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    /* Improve table display on mobile */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Better image handling */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Custom Font Awesome Logo Styling */
+    .font-awesome-logo {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .font-awesome-logo i {
+        font-size: 2.5rem !important;
+    }
+}
+
+/* Touch-friendly hover states */
+@media (hover: none) {
+    a:hover, button:hover {
+        opacity: 1 !important;
+    }
+    
+    .nav-dropdown {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Custom Font Awesome Logo Styling */
+.font-awesome-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2bbc8a 0%, #134e5e 100%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.font-awesome-logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.font-awesome-logo i {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark theme adjustments */
+.dark .font-awesome-logo {
+    background: linear-gradient(135deg, #2bbc8a 0%, #1a1a1a 100%);
+    border: 2px solid #2bbc8a;
+} 

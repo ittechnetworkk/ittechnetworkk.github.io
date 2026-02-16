@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRF-Lite on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/vrf-lite/</link><description>Recent content in VRF-Lite on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Fri, 21 Feb 2025 02:36:28 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/vrf-lite/index.xml" rel="self" type="application/rss+xml"/><item><title>[EN] VRF-Lite Configuration</title><link>https://ittechnetworkk.github.io/posts/vrflitelab/vrf-lite/</link><pubDate>Fri, 21 Feb 2025 02:36:28 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/vrflitelab/vrf-lite/</guid><description>&lt;p>Hello everyone, in this LAB I will configure GRE Tunnels with following topology.&lt;/p>
-&lt;p>&lt;img src="https://ittechnetworkk.github.io/images/VRFLiteLAB/1.png" alt="vrf-lite">&lt;/p>
-&lt;p>&lt;strong>R1:&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>#INTERFACE CONFIGURATION
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>VRF-Lite on ittechnetworkk</title><link>https://ittechnetworkk.github.io/tags/vrf-lite/</link><description>Recent content in VRF-Lite on ittechnetworkk</description><generator>Hugo</generator><language>en-us</language><copyright>ittechnetworkk</copyright><lastBuildDate>Fri, 21 Feb 2025 02:36:28 +0100</lastBuildDate><atom:link href="https://ittechnetworkk.github.io/tags/vrf-lite/index.xml" rel="self" type="application/rss+xml"/><item><title>[EN] VRF-Lite Configuration</title><link>https://ittechnetworkk.github.io/posts/vrflitelab/vrf-lite/</link><pubDate>Fri, 21 Feb 2025 02:36:28 +0100</pubDate><guid>https://ittechnetworkk.github.io/posts/vrflitelab/vrf-lite/</guid><description>&lt;p&gt;Hello everyone, in this LAB I will configure GRE Tunnels with following topology.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://ittechnetworkk.github.io/images/VRFLiteLAB/1.png" alt="vrf-lite"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;R1:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;#INTERFACE CONFIGURATION
 R1&amp;gt;en
 R1#conf t
 R1(config)#int e0/0
@@ -17,8 +17,8 @@ R1(config)#router ospf 1
 R1(config-router)#network 1.1.1.0 0.0.0.3 area 0
 R1(config-router)#network 10.0.1.0 0.0.0.255 area 0
 R1(config-router)#exit
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>R2:&lt;/strong>&lt;/p>
-&lt;pre tabindex="0">&lt;code>#INTERFACE CONFIGURATION
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R2:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;#INTERFACE CONFIGURATION
 R2&amp;gt;en
 R2#conf t
 R2(config)#int e0/0
@@ -34,4 +34,4 @@ R2(config)#router ospf 1
 R2(config-router)#network 10.0.2.0 0.0.0.255 area 0
 R2(config-router)#network 1.1.2.0 0.0.0.3 area 0
 R2(config-router)#exit
-&lt;/code>&lt;/pre>&lt;p>&lt;strong>R3:&lt;/strong>&lt;/p></description></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;R3:&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>
